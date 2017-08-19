@@ -9,3 +9,372 @@
 \fi
 
 \chapter{Introduction}
+
+%Section outlining everything
+
+\section{Scientific Background}
+This project aims to develop a light sheet microscope imaging system to permit the three dimensional tracking of particles through biological samples. This will be used to monitor how toxic proteins travel between cells and how virus particles infect their host organisms with minimal %With the ability to image very quickly and tracking three dimensionally particulate targets (such as virus particles) with minimal
+photo-damage to the sample, using animal models such as drosophila. This system will be based on the work of Ernst Stelzer who pioneered digital light sheet technology \cite{Huisken2004}.
+
+A light sheet microscope uses orthogonal illumination and detection to optically section biological samples.
+A previous system was built in order to study developmental biology. This project aims to improve upon this design so as to facilitate a novel particle tracking technique.
+
+The new system will:
+\begin{itemize}
+	\item Be more vibrationally stable for low noise tracking
+	\item Accommodate a three dimensional stage for particle tracking and volume imaging with nanometre resolution
+	\item Use structured illumination modes that can provide higher resolution than standard illumination
+	\item Provide more excitation wavelengths to enable improved biological flexibility in terms of fluorescent dyes that can be used with better specificity
+	\item Feature a user-friendly software interface so that users can produce images independently with a strong programming architecture for future collaborative development.
+\end{itemize}
+%The new system will be designed to be: ; ; ;  and
+
+\subsection{Motivation}
+ %Other viruses are more deadly such as HIV, by understanding viruses medicine may be better equipped to cure or prevent infection.
+%Viral infection and Alzheimer's are currently
+Viruses are carriers of infectious disease in humans, by hijacking the internal working of the cell the virus replicates using the machinery of the cell. \SI{80}{\percent} of adults in the UK are thought to be infected with Herpes Simplex Virus 1 (cold sores) which is currently medically incurable \cite{Herpes}; only the symptoms can be suppressed. Understanding virus pathology is a requirement for assisting in therapeutic intervention. The virus structure is well understood through high resolution techniques such as Atomic Force Microscopy and Electron Microscopy.  In this group we have used super resolution techniques to study the Herpes Simplex Virus 1 structure \textit{in vitro} \cite{Laine2015}. Contemporary biological models of viral infectivity dynamics are based on \textit{in vitro} studies %; by tracking a single virus particle through its entire infection process \textit{in vivo}.
+Studying these dynamics \textit{in vivo} and following a virus through its entire process in a living organism could provide new, useful insights and understanding which could be used to suppress or reverse viral infection in humans. Virus particles are smaller than the diffraction limit  (\SI{20}{\nano\meter} - \SI{200}{\nano\meter}); optical super resolution techniques can image sub-diffraction limit and have observed Human Immunodeficiency Virus 1 \cite{Pereira2012}. Virus particles move tens of nanometres on the time scale of milliseconds \cite{Brandenburg2007}, these techniques currently do not produce the temporal resolution required to accurately track virus particles \cite{Brandenburg2007} in three dimensions and are limited to \textit{in vitro} studies.
+
+Dementia among the rapidly ageing first world population is becoming a heavy burden on healthcare; as of 2015 there are \SI{850000}{} people in the UK suffering with dementia\cite{Judd}. Alzheimer's disease (AD) is a neurodegenerative affliction accounting for 62\% of all dementia suffers. Amyloid fibril plaques and neurofibrillary tangles (NTF) are commonly found in post mortem AD sufferers' brains. It is believed that misfolded Amyloid plaques trigger the accumulation of neurofibrillary tangles and a toxic species of microtubule-associated protein, tau \cite{Ittner2011,King2002}. Within our group we have studied Amyloid fibril aggregation using super resolution techniques and the role of tau proteins in neuronal dysfunction. We have demonstrated that extracellular tau can initiate tau pathology in AD \cite{Michel2014a}, a complimentary \textit{in vivo} study on tau protein's \cite{DeCalignon2012} dynamic propagation in axons would serve to elucidate AD pathology.
+
+These issues can be addressed using light sheet technology. Light sheet microscopes use orthogonal plane illumination to optically section biological samples, allowing an \textit{in vivo} three dimensional study. Confocal microscopy also produces optical sectioning, however its raster scanning nature means it is a slow technique. Orthogonal illumination and detection allows detection rates comparable to wide-field. Light sheet technology is also a low photo-toxcity method compared to confocal and as such can image for extended periods of time at millisecond resolution.
+
+Particle localisation techniques are compatible with light sheet microscopy and can be used to accurately localise particles to sub-pixel, sub-diffraction limited positions in two dimensions. In conjunction with a novel third dimensional tracking technique, exclusive to light sheet, full sub-diffraction limited tracking is viable \cite{Spille2015a}. This will then enable the \textit{in vivo} study of virus trafficking through a host cell and protein propagation in neurons with unparalleled temporal resolution.
+
+%needed to track
+%To localise sub-diffraction limited particles in a light sheet system in
+
+%A new technique exclusive to light sheet technology will allow the tracking of sparse sub-diffraction limited particle
+
+
+%Virus particles are carriers of infectious disease within humans. Virus structure sub-diffraction limit in size, the smallest being \SI{20}{\nano\meter} and \textit{human immunodeficiency virus type 1} being \SI{125\pm14}{\nano\meter}
+
+%\textit{Herpes Simplex Virus 1}  being is well known from AFM and Electron microscopy. Recently super resolution techniques verified this structure aswell. A virus is composed
+
+%Monitoring virus motion within a cell gives insights to the pathology and understanding of infectivity of the virus.
+
+%TODO Motivations
+
+%The motivation of this project is to aid the endeavours of biology through advanced imaging capability to tackle important biological questions. Questions involving diseases such as Alzheimer's and cancer so they can be better understood and thus curable
+
+
+%Similiarly the
+
+% is \SI{20}{\nano\meter}
+%\begin{itemize}
+%
+%\item Viruses are carriers of infectious disease within humans
+%
+%
+%\item Virus and spore structure statically well known using AFM and Electron beam. Dynamics, \textit{in vivo} less understood pathology currently monitored \textit{in vitro} and a full single virus nor spore particle has never been tracked through its entire infection process
+%
+%
+%\item The applications of this microscope are varied and include:
+%
+%\item Virus and spore trafficking pathology in vivo.
+%\item Tracking of molecule dynamics of neurodegenerative diseases such as Alzeihmers.
+%\item (Maybe?) Development of cancers and tumours.
+%
+%\item Optical microscopy can be used to study these processes however, they are at a length of 10-200nm below the diffraction limit of visible light.  Not only are these processes small but they are fast (cite). Super-resolution techniques exist to break the diffraction limit however, they sacrifice temporal resolution for spatial resolution.
+%
+%\item Localisation can track particles to precisions below the dffraction limit.
+%
+%\item Light sheet microscopy creates optical sectioning for three dimensional \textit{in vivo} study of these processes. A recent innovation in light sheet microscopy means that particles can be track axially as well as laterally, in real time and \textit{in vivo}.
+%
+%\item It is expected that this system will be able to accurately track virus and spore pathology \textit{in vivo} , a feat which has not yet been realised.
+%
+%\end{itemize}
+
+%\subsection{Aims}
+
+
+\subsection{Structure}
+
+Here, a light sheet microscope is developed to track particles in three dimensions with millisecond temporal resolution. Firstly the theory of fluorescence microscopy and light sheet microscopy is discussed with a comparison to other similar techniques followed by a review of particle tracking methods which are considered in the context of a light sheet microscope. The current biological model of virus pathology and tau protein propagation and their challenges is then presented. This report then discusses the methods and materials used to build a light sheet microscope up until its current state. Finally the progress of the microscope is summarised and the future work for the project is discussed in terms of experiments needed (once the system is operational) to determine its ability and limitations when applied to virus and tau protein tracking.
+
+\section{Optical Microscopic Imaging}
+
+Biological processes occur at the sub micrometer-nanometre scale and thus can be studied using optical microscopes \cite{Murphy2012e}. %Optical microscopy's % history is long and rich with %and the concepts behind the optical microscope have not changed since the times of Galileo's telescope .
+The essential components of an optical microscope have not changed in over 200 years \cite{Bradbury1998,Masters2001b}. These components are: a condenser lens, to concentrate illumination into the sample; an objective lens, to collect and magnify the emissions from the sample and a tube lens to focus the light from the objective onto the image plane and an eyepiece, now more commonly a digital camera for recording. With the discovery of fluorescence and development of fluorescent proteins (labels), contrast and sensitivity improved dramatically. This section will briefly introduce the physical principles of fluorescence and its impact on optical microscopy.
+
+\subsection{Fluorescence}
+
+Fluorescent molecules emit light at a longer wavelength than the incident photons. Fluorescence occurs when excited electrons (electrons not in the ground state) relax back to their ground state. This process is quantum mechanical whereby photons are emitted with energy equal to the energy of the difference of the ground and excited state \cite{Lakowicz2007}.
+%In a perfect system incident light would excite the electrons to the first excited state (see Equation \eqref{eq:excitation}) and during the electron's relaxation an identical photon would re-emit some time later.
+Fluorescently emitted photons will be of a lower energy and hence have a longer wavelength (\textbf{Stoke's Shift}). An excited electron will not typically excite to exactly the first excited state, but more likely a slightly higher degenerate energy state. From here the electrons will, over time, ``trickle" down to the lowest energy level available whilst emitting phonons (vibrational energy packets) until eventually they reach the first excited state ($S_1$), relax and emit a fluorescent photon (see Equation \eqref{eq:emission}). Figure \ref{fig:jablonski} demonstrates this excitation and emission process through the use of a \textbf{Jablonski diagram}.
+
+\begin{align}
+&\text{Excitation}\nonumber\\
+S_0 &+ h \nu_{Ex} \rightarrow S_1 \label{eq:excitation}\\
+&\text{Emission}\nonumber\\
+S_1 &\rightarrow S_0 + \underbrace{h \nu_{Em}}_{\text{Photon}}  S_1 + \underbrace{\frac{1}{2} \hbar \omega}_{\text{Phonon}} \label{eq:emission}
+\end{align}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{jablonski_triplet}
+\caption[Standard jablonski diagram]{Jablonski diagram representing in colour the excitation of Alexa Fluor$^{\copyright}$ 488 in a standard two level fluorescent system.}
+\label{fig:jablonski}
+\end{figure}
+
+
+%\paragraph{Quantum Yield}~
+
+%The quantum yield ($Q_f$) of a fluorescent substance is a descriptor of how many photons are pumped in versus how many are then observed. For instance, the likelihood of Alexa Fluor\copyright 488 (a standard Fluorescent dye) emitting a photons when in the first excited state is 91 \%. A high quantum yield is a very favourable in fluorescent microscopy as it means the sample does not need to be bombarded over-zealously in an attempt to produce an observable fluorescent signal.
+
+\subsubsection{Fluorescence Lifetime}\label{sec:lifetime}
+
+Fluorescence lifetime is a valuable extra dimension of information exploited in biological imaging. The time an electron spends in the excited state will vary randomly but it will be governed by a probability; the longer the electron is in this high energy state the fewer electrons in a population will also be excited. If one were to excite a population of fluorescent molecules into an excited state the population would begin to decay with an associated time constant $\tau$, see Equation \eqref{eq:rateeq}. $Q_{21}$ is a non-radiative process that has a direct environmental dependence with an impact on $\tau$, as a result the decay constant can be affected (and therefore measure) by a multitude of factors including photochemistry, local viscosity \cite{Suhling2012}, temperature \cite{Schaerli2009}, pH and more.
+
+\begin{align}
+[S_1] (t) &= [S_1]_0 e^{-\frac{t}{\tau}}\label{eq:rateeq}\\
+&\text{where}\nonumber\\
+\tau = &\frac{1}{\underbrace{A_{21}}_{\text{Radiative}} + Q_{21}}
+\end{align}
+
+\subsubsection{Photo-bleaching} \label{sec:photobleaching}
+
+%As an impulse of light causes a fluorescent decay so does a consistent exposure of light cause the decay of a population of a sample. This process is called photo-bleaching and occurs when a sample is illuminated so much that the photochemistry of the molecules is altered.
+If a molecule for instance is excited to a singlet excited state $[S_1]$ but decays atypically to a triplet state $[T_1]$ photo-bleaching may occur, see Figure \ref{fig:jablonski}. In the triplet state the molecule is then susceptible to covalent reaction inhibiting the typical fluorescent reaction.  Molecules in triplet states tend to also have longer lifetimes as the decay process from a triplet state is normally forbidden in terms of radiative decay. Explicitly for microscopy photo-bleaching is named fading as it literally means a sample that is imaged over an extended time will produce less fluorescent signal and fade.
+
+\subsubsection{Photo-toxicity}
+
+As well as fluorophores photo-bleaching due to exposure, biological specimens can be overly exposed to light. Most biologicals are exposed to solar EM radiation regularly and most of those utilise it in some manner, as a result overly exposing a sample to photons can be toxic to them causing experimental complications and oddities in observed reactions or even death. A reasonable standard to consider as a ``safe" exposure for a biological is that of the solar constant; it is a fair assumption that most biologicals are capable of surviving the Sun as they have evolved in that manner. The Sun has a solar constant of $\sim\SI{1}{\kilo\watt\per\meter\squared}= \SI{1}{\nano\watt\per\micro\meter\squared} $, assuming \SI{10}{} minutes of exposure is also safe that would imply an energy density of  $\sim \SI{0.6}{\micro\joule\per\meter\squared}$. A cell diameter is $\sim\SI{100}{\micro\meter}$ and an embryo diameter is $\sim \SI{900}{\micro\meter}$ meaning they should only be exposed to tens of millijoules and hundreds of millijoules respectively \cite{Stelzer2015}.
+
+\subsection{Widefield Fluorescent  Microscopy}
+
+%The fluorescent microscope has impacted microscopy tremendously.
+The key concept behind the fluorescent microscope is the ability to separate excitation and emission. Classical optical microscopes as well as electron microscopes both had the %very real
+problem of separating these signals. Non-fluorescent optical microscopy employed many techniques including dark field and phase contrast microscopy to avoid this problem, however they could not address it so fundamentally \cite{Murphy2012e}. Through fluorescence the signal retrieved from the sample is chromatically labelled. %, meaning the wanted signal and the unwanted signal have different colours.
+The invention of the dichroic mirror allowed these signals to be physically redirected and therefore detected completely independently. Excitation and emission filters are used to improve light source spectra and limit scattered light emissions, see Figure \ref{fig:filtercube}.
+
+%The notion is similar to that of the 3D glasses phase of the mid 80s. A projector would project both images of left and right eye superimposed to the viewing audience; a viewer without glasses saw a mixed non-3D signal, with the glasses each eye saw the correct image as the glasses filtered the unnecessary and confusing information creating a 3D effect.
+
+%\subsubsection{Filter Cube}
+
+%The equivalent of the 80s 3D glasses in an epi-fluorescent microscopy is dichroic filter cube.
+%In signal processing unmixing two or more signals alone is a lax and poor mechanism, the unmixed signals need to be cleaned to ensure each are fully independent. The dichroic filter cube is at the heart of the fluorescence microscope splitting and cleaning signals. It uses: an excitation filter, to ensure the excitation light is of the correct colour (especially useful if the source is a broad spectral source); a dichroic mirror to redirect the emitted sample information and an emission filter to ensure that any partially reflected, unwanted light signal is fully omitted, see Figure
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\linewidth]{filtercube}
+	\caption[Fluorescent filter cube]{Standard fluorescent filter cube. (1) Excitation filter (2) Dichroic mirror (3) Emission barrier}
+	\label{fig:filtercube}
+\end{figure}
+\subsubsection{Limitations}
+
+\paragraph{The Point Spread Function}~
+
+\textbf{Spatial resolution} is the ability of an observer to physically distinguish two close objects in an image \cite{Tsekenis2015}. Wide-field microscopes are classically limited to \SI{250}{\nano\meter} resolution as the wavelength of visible light is of this magnitude \cite{Bradbury1998}. Within a microscope the true limiter is the impulse response of a lens when passing light. A lens, when focussing and magnifying, can be thought of as a low pass filter; it permits low resolution information up until a cut-off frequency. In the Fourier plane this filtering is a circle of radius:
+
+\begin{align}
+k_r = n\frac{2 NA}{\lambda}
+\end{align}
+
+The inverse transform of this frequency filtering produces the function convolved with the sample being imaged, the \textbf{P}oint \textbf{S}pread \textbf{F}unction. See Figure \ref{fig:Airy_Disc} for a graphical interpretation.
+
+\paragraph{The Rayleigh Limit}~
+
+Lord Rayleigh appraised a limit of resolution in an optical system in terms of the separation of two Airy disc point spread functions. Rayleigh defined the limit as the distance when the maximum of the PSF is positioned on top of the first minima of the other. This definition implies a contrast between the two functions of \SI{27}{\percent}; if the intensity trough seen from two airy discs in a microscope is lower than that, then by Rayleigh's criterion (see Equation \ref{eq:rayleigh}) the two objects cannot confidently be resolved, see Figure \ref{fig:rayleighlimit}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{rayleighlimit}
+	\caption[Rayleigh Limit]{Two identical objects separated such that they are "barely resolved", the contrast (intensity difference) between their superposition being 73\% of the intensity maximum. }
+	\label{fig:rayleighlimit}
+\end{figure}
+\begin{align}
+r = \frac{\lambda}{2nNA}=\frac{1}{k_r}\label{eq:rayleigh}
+\end{align}
+%Optical magnification not directly improve the spatial resolution, it expands and stretches an image.
+Non-optical far field techniques can resolve much smaller than the diffraction limit.  %These techniques are limited in resolution by the size of their \textit{probe};
+However, each is limited in its biological imaging capacity. %An electron microscope would not only kill any biological sample but to properly image the sample it needs to be coated in a conductive material to ensure charge does not accumulate.
+Electron microscopy uses electrons instead of photons to observe Angstrom sized particle \cite{Ruska1941}. An electron microscope is limited by its De Broglie wavelength, the effective size of an electron, on the pico meter scale \cite{Ahmed2011,Bradbury1998}. Electron microscopes are impractical for \textit{in vivo} biological studies, as high intensity electron beams require conductive dissipater coatings which impede and damage biological processes.
+
+Atomic force microscopes use sensitive piezo crystals to position and record surface information from samples using a cantilever at the nanometre scale \cite{Binnig1988}. The tip of an AFM is convolved with the profile of the surface and so is limited in resolution to the size of an atom. Atomic force microscopes are slow raster scanning imaging techniques but more crucially offer no sample specificity, which is requisite to biology as it involves querying how two biological agents interact or how an agent acts in environment: e.g  observing diseased cell interactions in a mouse brain model \cite{Misgeld2006}, monitoring cancerous tumours \cite{Hoffman2005} and understanding virus structure \cite{Pereira2012}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{Airy_Disc}
+	\caption[Airy Disc]{Graphic representing the point spread function in arbitrary units of a lens. This function is convolved with any sample being imaged through its respective lens.}
+	\label{fig:Airy_Disc}
+\end{figure}
+
+
+%\subsection{Image Sensing}
+%
+%Dark Current
+%Flat field
+%Windowing and shutters
+
+\section{Three Dimensional Imaging in Life Sciences}
+
+%\subsection{Introduction}
+
+Thick biological samples cannot be imaged well in classical optical microscopes. The depth of field of the point spread function and general occlusion caused by imaging through material meant that biologists would historically mechanically section their samples in preparation. Mechanical sectioning is highly invasive which is why Zsigmondy originally suggested (1912) the ultra-microscope as a way optically sectioning \cite{Mappes2012}. This technique involved shining sunlight through a very narrow slit perpendicular to the optics of the microscope. Transmitted light microscopes relied on lighting beneath the sample and the eyepiece positioned above, this technique was proposed to alleviate out of focus light blurring the image of the sample. However, the difficulty and inherent mechanical issues of the technique meant that confocal microscopy by Marvin Minksy (1957) \cite{Minsky1957} became the standard tool of biological imaging.
+
+\subsection{Confocal Microscopy}
+
+Confocal microscopy offers several advantages whilst also being entirely compatible with current fluorescent labelling techniques. By placing a small pin hole in the detector arm of a standard epi-fluorescent microscope, out of focus light from above and below the focal plane is rejected \cite{Minsky1957}, see Figure \ref{fig:confocal_optical}. This intrinsically allows microscopy in three dimensions, in thick biological samples with an improved axial and lateral resolution improvement over wide-field \cite{Claxton2006}, see Figure \ref{fig:confocal_otf}. Confocal microscopy does have its disadvantages too; the pin hole in the detection arm means that the image needs to be constructed by raster scanning a point of light through a sample, which is slow. This can be achieved using a Nipkow disc or a pair of conventional galvanometer mirrors whose angle is dependent on input voltage. The use of this pin-hole has severe consequences in terms of photon efficiency. Firstly, the majority of the photons emitting from the sample are discarded, meaning that to get a good, high contrast image in a wide-field microscope will require a less intense light source. Secondly, as mentioned in Section \ref{sec:photobleaching} most confocal microscopes use light intensities in the ``multiple-suns" regime \cite{Stelzer2015}, which as discussed, is likely to be an unnatural level of exposure.
+
+\subsubsection{Two Photon Microscopy (2P)}
+%Typical epi-fluorescent microscopy lacks optical sectioning due to out of focus light mixing with in focus light. This additional light is an effective noise which is ideally omitted.
+In confocal microscopy out of focus light is removed by using a pinhole in the focal plane; the fluorescent dye in the out of focus areas of the sample will still be exposed to this out of focus light and so photo bleaching still occurs but with there is better optical sectioning \cite{Helmchen2005}. Two photon microscopy optically sections by exploiting fluorophores which only emit when two photons are present for excitation, for this to occur the local photon density has to be high and so the focal point is the only place where fluorescent emission is likely to occur.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\linewidth]{confocal_optical}
+\caption[Confocal microscope principle]{Confocal microscopes reject out of focus light in the detection path, improving axial and lateral resolution for the sake of speed of image acquisition and photo-toxicity. }
+\label{fig:confocal_optical}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{confocal_otf}
+	\caption[Confocal resolution improvement]{Widefield versus confocal point spread function demonstrating axial and lateral resolution improvements \cite{Claxton2006}}
+	\label{fig:confocal_otf}
+\end{figure}
+
+\subsection{Selective Plane Illumination Microscopy Principles}
+By using orthogonal illumination and detection (as in Figure \ref{fig:huisken_spim_setup}) \textbf{S}elective \textbf{P}lane \textbf{I}llumination \textbf{M}icroscopy is fast and less photo-toxic than confocal microscopy and two photon with only slightly lower lateral and axial resolution. A typical diode laser in a SPIM will supply up to \SI{100}{\milli\watt} in a beam waist of \SI{3}{\micro\meter}  with an area of \SI{\sim7}{\micro\meter\squared}  which is \SI{\sim14}{\micro\watt\per\meter\squared} meaning its toxicity is in that of the ``single sun" regime. Depending on the field of view SPIM can be as little as 500 times faster than confocal as it does not need to acquire its signal by raster scanning, point-wise. SPIM has permitted the studies of \textit{in vivo} whole samples typically for developmental biology \cite{Huisken2004,Verveer2007a} with minimal photo-toxic repercussions. Its advantages have been successfully demonstrated where the several day development embryos of \textit{Drosophila}  \cite{Huisken2004} and Zebrafish \cite{Mickoleit2014} have been observed.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{huisken_spim_setup}
+\caption[Single Plane Imaging Microscope principle]{Diagram demonstrating the geometrical configuration of illumination and objective \cite{Huisken2009}.}
+\label{fig:huisken_spim_setup}
+\end{figure}
+
+\subsubsection{Modalities}
+
+Orthogonal illumination can be created in two modalities. A cylindrical lens can be used to image a light source onto a sample as a thin sheet of light. \textbf{d}igitally \textbf{S}canned \textbf{L}ight sheet \textbf{M}icroscopy uses galvanometer mirrors to rapidly scan a thin light source through a sample \cite{Keller2008}. Using cylindrical lenses to create a light sheet is implicitly faster than digitally scanned light sheets, however the bottleneck with each is due to the exposure time of the camera. %High frame rates produce low contrast.
+A galvanometer mirror can oscillate at tens of kilohertz which is a hundred fold faster than typical sCMOS cameras can capture. The major advantage of a cylindrical lens is that it is cheaper and more easily aligned than its counterpart the galvanometer scan mirror, which is why projects like \textit{OpenSPIM}\footnote{\textit{OpenSPIM} is a project to bring affordable light sheet microscopy to scientists who have little or no experience with optics, engineering or hardware interfacing. Projects like this and \textit{OpenSIM} ensure that the technology is freely available to benefit everyone so that biological and medical understanding can be furthered efficiently and universally.}\cite{Gualda2013,Pitrone2013} make use of cylindrical lenses to ensure SPIM is more available and affordable to lay builders and users. For the expense and technical ability needed for dLSM it does offer advantages such as better optical sectioning, a more homogeneous field of view and crucially the ability to positively exploit effects of the system, such as confocal slit scanning.
+
+\subsubsection{Confocal Slit Scanning}
+
+Confocal slit scanning is a technique which heavily exploits the scanning nature of dLSM. sCMOS cameras in SPIM systems expose all the pixels equally in a frame, a shutter then rolls exporting all the pixel values so that each pixel of the current frame is synchronised and the final image is not torn or sheared.  Confocal slit scanning exposes several rows of camera pixels with roughly equal width to  the scanning laser beam. This area of active pixels is rolled synchronously with the movement of the laser scanning. The result is a virtual slit that confocally improves the resolution and contrast of a captured image though potentially needing more photons to create an image of the same overall intensity \cite{Baumgart2012}.
+
+\subsubsection{Non-Classical Illumination}
+
+SPIM is fundamentally limited in terms of field of view and axial resolution when using classical illumination. A typical light sheet created using a cylindrical lens or virtually will have a beam waist, a section along the propogating wave where its thickness is its smallest. As such, light used to optically section a sample will not propagate uniformly and this thickness expands more steeply the narrower the beam waist is \cite{Silfvast2004}.  Betzig et al demonstrated very successfully how Bessel beam illumination can be exploited. By creating an annular ring of light in the Fourier plane a narrow propagating and self reconstructing light sheet can be produced \cite{Chen2014}. Crucially the beam waist and extension of this type of illumination profile has no dependence, so the field of view homogeneity can be maintained whilst squeezing the light sheet to a diffraction limited thickness. Bessel beams can be created online using spatial light modulators, as well as offline using phase masks.
+
+\paragraph{Spatial Light Modulators}~
+
+A \textbf{S}patial \textbf{L}ight \textbf{M}odulator is a digitally addressable two dimensional surface which can control either phase or intensity of incident light at any of its pixels. To this end one can create dynamic structure in illumination, which would be very difficult classically. %However, this bastion of optical manipulation is also limited.
+The pixel nature of an SLM means that the reflected light will suffer from artefactual noise. To correct for this, incident light impinges the SLM at a shallow angle (to ensure the image is not sheared, Hamamatsu recommends a maximum $5^o$ angle)  where the exit light does not follow the optical path through the remainder of the system. Instead this ``zero order" light is absorbed by a beam block, and the desired modified wave front is steered using a projection on the SLM.
+
+Not any phase or intensity pattern can be projected either, each pixel will have a limited pitch with quantised steps through its dynamic range. This means that if two neighbouring pixels need very large phase differences compared to the full dynamic range, sample issues may cause incident light to behave unpredictably.
+
+SLMs are typically made using liquid crystals, nematic or ferroelectric. Ferroelectric liquid crystals are very fast (\SI{\sim 500}{\hertz} \cite{Meadowlark2015}) but are limited to binary phase or intensity. Nematic liquid crystals can rotate proportionate to electric field voltage allowing continuous phase modulation but are slow in comparison (\SI{\sim 60}{\hertz} \cite{Hamamatsu2015}). Liquid crystals can also suffer photo damage, though advances in coating technology and liquid crystal chemistry have set the intensity damage threshold to limits outside of those used by visible light microscopy; liquid crystals however are still susceptible to light with wavelengths outside of typical operations. Wavelengths below \SI{400}{\nano\meter} being damaging for Hamamatsu's SLMs for instance \cite{Hamamatsu2015}.
+
+\subsubsection{Tunable Lens Scanning}\label{sec:tunable}
+
+A tunable lens is a device which can perturb the focus of a deformable lens, usually liquid (deformed by electro-wetting) or plastic (mechanical deformation). The change in lens curvature affects the focal length of the tunable lens.  Using a pair of tunable lenses allows sufficient degrees of freedom to be able to control both the position and extension of the light sheet independently. Changing the focal length of the lenses so that the light is collimated but the magnification of the excitation beam at the back aperture (which controls the NA) of the objective is larger, this will extend the beam (increasing the beam waist), whilst changing the focal lengths (so that the excitation light at the back aperture is convergent or divergent) will reposition the beam waist of the light sheet further away or closer to the objective \cite{Chmielewski2015}.
+
+This level of fine control enables one to circumvent the typical trade off between light sheet extension and thickness. By stitching several thin light sheet images obtained at different depths in the sample, creates an overall higher resolution image for the sacrifice of speed and photo-toxicity. Changing the position of the light sheet (when its extension is short) as it is scanned through the sample means one can \textit{bend} the light sheet around an area of interest, increasing resolution of key components of a sample and greatly reducing overall photo-toxic effects.
+
+%TODO figure?
+
+
+\section{Particle Tracking In Life Science}
+
+%\subsection{Particle Tracking}
+
+Particle tracking is a relatively young but vital tool in modern quantitative biology and the field of bio-informatics. A particle can refer to anything that is particulate and is not exclusively large or small, circular or spherical etc. These techniques are very useful at numerically quantifying and detecting large population movements to discern general trends. For instance, pollen grain diffusion; a singular grain of pollen will be erratic and random whereas several hundred recorded paths will reveal a general diffusive trend through averaging. Particle tracking lends itself very heavily to the study of intracellular dynamics, answering important biological questions such as: viral infection movement \cite{Brandenburg2007}, intracellular membrane dynamics \cite{Chenouard2014}, genome maintenance, gene transcript \cite{Planchon2011} and more \cite{Cognet2014}.
+
+Particle tracking using light sheet microscopy is very relevant due to the high imaging speeds required to study particles that are both small and fast. Confocal microscopes suffer because they cannot temporally resolve particles; widefield microscopes suffer because they cannot provide three dimensional data; SPIM can offer both.
+
+\subsection{Particle Spatial Localisation}~
+
+Particle tracking can be broadly described as a two stage process. Spatial localisation then temporal localisation. The spatial localisation of a particle involves accurately marking where one or many particles are within an image. Humans are naturally able to do this as they have evolved to notice patterns and anomalies. Programming a computer to undertake this exercise was an early feat in the field of computer vision \cite{Crocker1996}. Crocker et al deconstructed the problem into logical computable steps.
+
+Firstly Crocker's data was deconstructed as singular images in two dimensions rather than full video volumetric data. Secondly each image was corrected for any distortion or error as digitised video is inherently imperfect and may not be truly representative. Each image has a threshold found from an estimate of the background value of the image. This threshold removes substantial noise that would otherwise contribute to the final result. Pixels with local maximum brightness are identified as ``candidate" particles and compete with other candidates within a pre-defined radius slightly larger than the expected size of the particle. \footnote{Methods since Crocker for a truly blind particle recognition have since been proposed but Crocker serves as a poignant historical but still relevant method of particle tracking using Computer Vision}
+
+A centroid (centre of mass) fitting procedure is employed under the assumption that, to a first order approximation, spherical scattering emitters can be well-defined by a Gaussian profile. By fitting a Gaussian profile and using tens of pixels to minimise error, particulate positioning can be defined to sub-pixel accuracy. The most common method of Gaussian fitting due to its ease of implementation, speed, precision and robustness is iterative least squares fitting.
+
+\paragraph{Overlap}~
+
+It should be noted that an obvious flaw with Crocker's method is that it does not account for overlapping particles. This problem is apparent in dense particulate systems; experimental and computational methods are addressing this \cite{Serge2008}, but for the most part these cases are marked as rare outliers and typically rejected in particle tracking routines as samples are usually constructed with a sensible sparsity.
+
+
+\subsection{Particle Temporal Localisation}~
+
+%The planet Pluto was originally discovered by Tombaugh in 1930 by comparing two images of the night sky a few hours apart. He would place an image in each side of his \textit{Blink comparator} and switch having his left or right eye open very quickly. With this he could intuitively notice trajectories of bodies in the sky. If his two images were taken years apart, his blink comparison metric would have been entirely chaotic. He chose a time span which ensured the that he could assign \textit{beyond reasonable doubt} likely trajectories between each image.
+
+%The same principle applies to l
+When localising particles temporally, images of particle distributions need to be taken swiftly enough so that any change in particle position is small enough such that it can be judged as the same particle but in a different position at a  time later, \textit{beyond reasonable doubt}. Computationally this is achieved by assigning a global cost metric to the distance between particles which is then minimised to find the most likely solution of how particles in the first image have translated into the second image.
+
+\subsection{Single Particle Tracking}
+
+Tracking individual particles is an important tool for modern biology. It has been used to study virus trafficking and how viruses penetrate the nucleus of a cell \cite{Brandenburg2007}; intracellular transport such as the movement of mRNA \cite{Spille2015a}; cell membrane dynamics \cite{Cognet2014} and more.
+
+
+\subsubsection{Light sheet single particle tracking}
+
+A very novel and exclusive way of full three dimensional particle tracking using SPIM has been proposed. By using a static lightsheet and an XYZ translator one can move a particle back into the FOV laterally if it drifts. Once the particle is re-localised, the encoded position on the $z$ aspect of the stage is then equal to the position of the axial position of the particle by virtue of the repositioning. The $x$ and $y$ position are then derived using Crocker's centroid fitting from the resulting image accurately in post processing.
+
+This method vastly improves the lateral resolution of the SPIM system as well. Volumetric methods would limit the lateral resolution to half the beam waist, $\sim 1 \mu m$, whereas this method is exclusively limited by the step size of the z translator (which can be very high resolution when using piezoelectric crystals) and one's ability to ensure the particle is precisely central within the excitation laser (which is then dependent on the particle size). Spille demonstrated this technique very successfully on a single molecule of mRNA ($50 nm$ \cite{Spille2015a}) moving on the membrane of a nucleus \cite{Spille2015a}. SPIM's speed makes the technique very enticing as it is unrivalled for the purposes of particle tracking. See Figure \ref{fig:SPIMSPT}.
+
+This method could then be further improved using a tunable lens excitation, by tracking the position of the particle in $x$ using the tunable lens and $y$ by narrowing the trace of the scan mirror, the temporal and spatial resolution of single particle tracking could be vastly improved yet again. Z position information could also be encoded into the image by virtue of light beam intensity. By ensuring the particle is limited to half of the beam profile of the light sheet, then intensity of the particle would be proportional to a Gaussian curve z position. This method could prove to be faster, more accurate and less perturbing on the sample as mechanical motion would be removed.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{tracking/1_piezo_track}
+		\caption{Static Particle localised in $xy$}
+		\label{fig:SPIMSPT1}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{tracking/2_piezo_track}
+		\caption{Particle diffuses out of light sheet}
+		\label{fig:SPIMSPT2}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{tracking/3_piezo_track}
+		\caption{$z$ stage repositions so that particle is within light-sheet}
+		\label{fig:SPIMSPT3}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{tracking/4_piezo_track}
+		\caption{Particle in light sheet, $z$ position recorded}
+		\label{fig:SPIMSPT4}
+	\end{subfigure}
+	\caption{Routine to track particles three dimensionally in SPIM}
+	\label{fig:SPIMSPT}
+\end{figure}
+
+\subsubsection{Remote Focusing}
+
+There are three ways in which to realise the full three dimensional SPIM. The simplest way is to move the sample through the light sheet as is done in Oblique Plane Imaging. The second method involves scanning the light sheet through \textit{z} which is potentially faster; the issue which then arises is that the light sheet moves out of the focal plane of the detection objective. The focal plane can be moved onto the light sheet by moving the excitation objective, however this method (like the first method) causes perturbations to the sample. Huisken et al offer an alternative where the focal length of the objective is adjusted by placing a tunable lens in the detection path (similar to section \ref{sec:tunable})\cite{Fahrbach2013}. %Tunable lens technology is exceptionally young compared to the history of glass optics and so its image aberration correction is not as well implemented. %. To that end critics of this technique suggest that a tunable lens in the detection arm will inherently introduce noticeable image degradation.
+Huisken shows using a contrast grid that image quality and aberrations are negligibility affect and goes on to produce 100 Hz volumetric imaging though on small volumes \cite{Fahrbach2013}.
+
+\section{Technologically limited Biological Questions}
+
+%\textit{In vitro} biology is limited to two dimensional biology on a glass plate
+
+%Current questions in biology are limited static images
+
+%C ancer, \textit{in vivo studies} have "progress[ed] in monitoring neurodegenerative disease pathobiology" \cite{Hoffman2005}
+%3D imaging in \textit{in vivo} is desirable and currently use complimentary techniques (microCT) to create 3D.
+\subsection{Neuro-degenerative Disease}
+
+%Tau proteins misfold to cause neurofibrillary tangles.
+
+Current Alzheimer's disease models suggest that Amyloid beta fibrils elongate creating Amyloid plaques. These plaques then pathologically cause an over production of tau in the first affected neuron. This over production in the first neuron quickly produces toxic levels of tau which propagate into neighbouring neurons, causing a cascade neuronal degeneration \cite{King2002}.
+
+Mechanisms for AD are not fully understood but tau protein misfolding is expected to play a role in the pathology\cite{LaFerla2008}. Our group has shown that extracellular tau proteins cause the endogenous over-production of tau proteins \cite{Michel2014a}. The group has begun to observe tau propagation in axons two dimensionally. Observing the movement of tau proteins between neurons three dimensionally would perhaps reveal the mechanisms by which tau pathology neurodegeneration occurs, more specifically how extracellular tau proteins originated. It is hypothesised that stress impact may be a cause of the secretion of tau proteins causing the degeneration of other neurons \cite{Gavett2011,Patterson2014a}. An \textit{in vivo} study in a live animal model being impacted could verify this using light sheet particulate tracking.
+
+It is possible that tau proteins move too quickly to be successfully tracked. In our group Tau proteins have been monitored to move between neurons via axons at a rate of \SI{480}{\micro\meter} per 20 minutes or 0.4 um per second. A standard confocal image exposure is on the order of 2 to 3 seconds, meaning a tau protein could displace during the image acquisition by \SI{1.2}{\micro\meter}. This movement during exposure could lead to a tau protein appearing to be of the order microns, whereas in fact it is of the order tens of nanometres. Light sheet technology can image \SI{300}{} times faster and so a propagating tau protein would only move \SI{4}{\nano\meter} during an acquisition, less than the size of the protein and so an acceptable error. Most importantly, tau is of comparable size to mRNA which has already been successfully tracked within a live cell using light sheet SPT \cite{Spille2015a}.
+
+\subsection{Virus Trafficking}
+
+Virus particles are of the same length scale as mRNA and tau proteins and so can also be tracked using light sheet SPT. Viruses reproduce by exploiting cell structure. A virus particle will interact with the cell membrane either singularly or in a plaque to release the contents of the virus inside the cell. Proteins are released to suppress the immuno-response and enable suitable conditions for the viral genome move into the cell. Once inside, the virus moves to areas within the cytoplasm or nucleus and begins replication. Replicated virons then leave the cell and the cycle continues. Individual virus particles may follow a multitude of different paths or even fails completely during infection. By tracking viral infection at the single virus level observers can deconstruct the dynamics of virus-cell interactions.
+
+There are several challenges in tracking virus particles. Firstly, viruses are small, varying from 20 to 200 nm, sub-diffraction limit. %Their speed may also be a factor %todo.
+Virus labelling is also difficult due to its size and nature. Fluorescent probes are comparable to the size of the virus and so can hinder infectivity. Proximity of the fluorescent probes due to virus size can also cause self-quenching within the probes \cite{Seisenberger2001}. Furthermore less than 1 \% of virus particles successfully reach the replication stage. Some viruses for instance require large plaques to breech a cell membrane. Finally a live tissue study is desirable in modern biology \cite{Brandenburg2007} which is logistically challenging in terms of mounting and ample preparation.
+
+Light sheet particle tracking can produce sub-diffraction limit 100 Hz video, resolution sufficient to watch virus particles \textit{in vivo}. Due to the low photo-toxicity of light sheet, multiple virus particles could be tracked concurrently without damaging the cell compared to confocal techniques. Light sheet has been used successfully on live tissue, in live animal models \cite{Keller2008} and importantly light sheet SPT has been used in a live cell \cite{Spille2013}. Light sheet particle tracking is by virtue three dimensional and \textit{in vivo} allowing an unprecedented level of detail in a viral study using this technique \cite{Hoffman2005}.
