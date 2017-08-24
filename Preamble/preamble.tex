@@ -199,3 +199,22 @@
 \fi
 
 % Example todo: \mynote{Hey! I have a note}
+
+%%%
+\usepackage{pgfplots}
+\usepackage{tikzscale}
+\usepackage{helvet}
+\usepackage[eulergreek]{sansmath}
+\pgfplotsset{
+  tick label style = {font=\sansmath\sffamily\footnotesize},
+  %every axis label = {font=\sansmath\sffamily},
+  %legend style = {font=\sansmath\sffamily},
+  %label style = {font=\sansmath\sffamily}
+}
+
+% https://github.com/matlab2tikz/matlab2tikz/issues/672
+\newlength{\figwidth}
+\newlength{\figheight}
+
+\setlength{\figwidth}{0.4\textwidth}
+\setlength{\figheight}{0.6180\figwidth}
