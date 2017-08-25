@@ -13,19 +13,29 @@
 \chapter[Light-sheet microscopy combined with remote force measurements]{Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development}
 
 %From Julien:
-How multicellular organisms enact the morphogenetic programmes that ensure their characteristic forms remains an enigma. Genetic screens have yielded an array of essential structural, patterning and signalling pathways with which morphogenesis is orchestrated.
-However, morphogenesis is ultimately a physical phenomenon that requires a physical explanation.  In vivo imaging of morphogenesis allows measurements that reveal stereotypical patterns in the cellular behaviour by individual and groups of cells.
-These are indicative of active force generation but are insufficient to construct a quantitative explanation of where forces are generated and how forces propagate within and between tissues. To overcome these limitations, we require a quantitative characterisation of the physical properties of the tissues involved.
-Only with this knowledge are we able to understand how forces propagate within tissues to bring about morphogenesis. Measurements of the properties of individual cells () and for bulk tissues () have revealed both viscoelastic or visco-elasto-plastic solids ().
-[Cell autonomous force generation uses actomyosin-based contractile activity. – need to mention intrinsic forces someplace]   Bulk tissue properties can be estimated using atomic force microscopy to investigate a tissue surface. Alternatively, micropipette aspiration can probe dissociated cells or explants, however deep tissue cannot be assessed directly. More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation,  oil droplets, or embedding tissue explants in matrix gel.
-Most recently, ferrofluid droplets have shown that local tissue properties, that change regarding the tissue localisation. We are still in need of methods that can give a repeated real-time readout of physical properties and relate those measurements to the underlying morphogenetic behaviour. [**What do we say that makes us different to oil droplets?]
+How multicellular organisms enact the morphogenetic programmes that ensure their characteristic forms remains an enigma.
+Genetic screens have yielded an array of essential structural, patterning and signalling pathways with which morphogenesis is orchestrated.
+However, morphogenesis is ultimately a physical phenomenon that requires a physical explanation.
+In vivo imaging of morphogenesis allows measurements that reveal stereotypical patterns in the cellular behaviour by individual and groups of cells.
+These are indicative of active force generation but are insufficient to construct a quantitative explanation of where forces are generated and how forces propagate within and between tissues.
+To overcome these limitations, we require a quantitative characterisation of the physical properties of the tissues involved.
+Only with this knowledge are we able to understand how forces propagate within tissues to bring about morphogenesis.
+Measurements of the properties of individual cells () and for bulk tissues () have revealed both viscoelastic or visco-elasto-plastic solids ().
+[Cell autonomous force generation uses actomyosin-based contractile activity. – need to mention intrinsic forces someplace]   Bulk tissue properties can be estimated using atomic force microscopy to investigate a tissue surface.
+Alternatively, micropipette aspiration can probe dissociated cells or explants, however deep tissue cannot be assessed directly.
+More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation,  oil droplets, or embedding tissue explants in matrix gel.
+Most recently, ferrofluid droplets have shown that local tissue properties, that change regarding the tissue localisation.
+We are still in need of methods that can give a repeated real-time readout of physical properties and relate those measurements to the underlying morphogenetic behaviour. [**What do we say that makes us different to oil droplets?]
 
 We sought a method that can give a non-destructive, quantitative measurement of local tissue physical properties at the length scale of a few cells, completed with seconds to minutes and repeatable over developmentally-significant periods.
 We chose to use biologically-compatible paramagnetic beads, implanted into the developing zebrafish embryo
 A four-pole electromagnetic device was built that produces a controlled magnetic field gradient in 3D, such that a bead can be moved with known force.
-Tracking bead movement gives the dynamic material properties of the surrounding tissue. In a first test of this approach, we have followed the emergence of the first cohesive tissue of the zebrafish blastula, between the “high” to “sphere” stages of development(). After the mid-blastula transition, mesenchymal blastomeres become first motile and adherent to form the tissue that will go on to contribute to the first morphogenetic movement of the embryo.
+Tracking bead movement gives the dynamic material properties of the surrounding tissue.
+In a first test of this approach, we have followed the emergence of the first cohesive tissue of the zebrafish blastula, between the “high” to “sphere” stages of development().
+After the mid-blastula transition, mesenchymal blastomeres become first motile and adherent to form the tissue that will go on to contribute to the first morphogenetic movement of the embryo.
 We could show for the first time that a three-fold elevation of tissue elasticity and viscosity  are associated with this development.
-This elevation is dependent upon E-cadherin-based adhesions and Rac-1 dependent cell protrusive activity, abrogating either interfered with these developmental changes. Interestingly, reducing Rho-kinase dependent cell contractility increased both tissue viscosity and elasticity  and raised the number of cell protrusions.
+This elevation is dependent upon E-cadherin-based adhesions and Rac-1 dependent cell protrusive activity, abrogating either interfered with these developmental changes.
+Interestingly, reducing Rho-kinase dependent cell contractility increased both tissue viscosity and elasticity  and raised the number of cell protrusions.
 To better comprehend the cellular basis for the physical properties detected by our new method, we combined magnetic tweezers with light sheet microscopy.
 Together, this permitted us to correlate a viscoelasticity with cell shape change and a viscosity with cell rearrangements, both cellular changes reduce as tissue elasticity and viscosity increase.
 We can now assign the viscoelastic component predominantly to cell shape change and viscosity to cell rearrangement.
@@ -48,35 +58,6 @@ We can now assign the viscoelastic component predominantly to cell shape change 
 %Contraints specifications and requirements
 \subsubsection{Force calibration}
 %Not much on this..
-  \if
-    1. Introduction
-    - it’s not known the forces; just a guess
-    - there is a qualitative understanding
-    - it’s not known much about anisotropy or patterning
-    - there are some methods but they lack addressing some key aspects: it’s not in vivo (most of all), using small distance between the bead and the pole; in a big system, the gradients would be small; needing bigger gradients for high forces
-    - we expect a maximum value of the magnetic field (iron B)
-    - other solutions based on permanent magnets will face a limitation in probing the dynamics
-
-    2. Controllable (time, magnitude, orientation, space) magnetic forces for in vivo embryo studied are generated by the device in Fig1 A.
-    2.1. Magnetic force acts on a magnetic superparamagnetic bead (why not other class of magnetic material ?, what sizes?) which is located in a magnetic field gradient.
-    2.2. The gradient is determined by a set of 4 magnetic poles (alpha, beta, gamma and delta) in form of tapered-ended cylinders (why tapered?),  arranged along the lines which connect the centre of a tetrahedron with its vertexes. Due to several constrains, especially the body size of the imaging components, the poles angles are slightly reduced from the ideal 36 degree to 30 degree (Fig1 E). The magnetic field generated by 4 coils (tagged as 1, 2, 3 and 4 (see Fig.1B) aimed to be identical, but small deviations inherent to the manufacturing process exist) is guided towards the poles using a low magnetic resistance closed circuit. For the poles, the same material is used to reduce to minimum the flux leakage at the interfaces. Depending on the sign and magnitude of the currents in every coil various gradients could be obtained.
-    2.3. A compromise should be made about the distances between the poles. Smaller distances – higher gradients, smaller fields needed, so smaller currents and less heat generated. However, the distances should be large enough to accommodate the sample studied but also the sample holder. In our case, zebrafish embryo is around 0.7 mm and it was placed in a squared capillar with an outer size of 1.4 mm (Fig1 D) and inner size of 1.0 mm (Fig1 E). For maximum output of the device, we aim for the centre of the capillary to coincide with the centre of the deformed tetrahedron (Fig.1 D) and the final distances between the poles is reported in Fig.1 C.
-    3. The effects of the forces generated by the device and the forces themselves are quantified via imaging techniques. For different studies, different approaches are more suitable.
-    3.1. Bright field (Fig.2 C) is the simplest and very efficient approach the evaluate the forces. The bead moves in a fluid with known viscosity and from its velocity one can infer the force. The planar velocities are extracted from detecting the bead position change in time (FindContours function from openCV library)
-    3.2. To calculate axial velocity, a 2 cameras configuration was used. They have different focal planes and when the bead is between these planes, one can extract it’s position with high presition based on the focus parameter and previous calibrated data (Fig.2 B).
-    3.3. The axial displacement should be corrected for the effect of the interface between the air (where the objective is) and the fluid (Fig.2 D).
-    3.4. Bright field is great to evaluate the response of the zebrafish tissue.
-    3.5. More informations, like cell distortion due to applied force can be obtained with more advanced imaging technique like confocal or light sheet.
-    3.6. A light sheet microscope was able to fit the small space available in our magnetic device (Fig. 2 E)
-
-    4. Chamber + transfer of calibration between different imaging technique. Sample fitt (maybe monting). Need to define an optimal coordinate system for every technique.
-
-    5. Force orientation – what the device can provide. What forces, as magnitude
-
-    6. Calibration
-
-    7. Rheology
-  \fi
 \subsection{Biological methods}
 \subsection{Bead and cell tracking}
 \subsubsection{Bead tracking}
