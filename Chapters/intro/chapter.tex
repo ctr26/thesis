@@ -1,11 +1,12 @@
-%!TEX root = ../thesis.tex
+%!TEX root = ../../thesis.tex
+%!TEX enableSynctex = true
 %*******************************************************************************
 %*********************************** First Chapter *****************************
 %*******************************************************************************
 \ifpdf
-    \graphicspath{{Chapter1/Figs/Raster/}{Chapter1/Figs/PDF/}{Chapter1/Figs/}}
+    \graphicspath{{Chapters/intro/Figs/Raster/}{Chapters/intro/Figs/PDF/}{Chapters/intro/Figs/}}
 \else
-    \graphicspath{{Chapter1/Figs/Vector/}{Chapter1/Figs/}}
+    \graphicspath{{Chapters/intro/Figs/Vector/}{Chapters/intro/Figs/}}
 \fi
 
 \chapter{Introduction}
@@ -209,6 +210,14 @@ Atomic force microscopes use sensitive piezo crystals to position and record sur
 
 \section{Three Dimensional Imaging in Life Sciences}
 
+
+  \begin{figure}
+  \centering
+  \def\svgwidth{0.6\textwidth}
+  \input{Chapters/intro/Figs/PDF/guassian_waist.pdf_tex}
+  \caption{You a consistent beaut $\sqrt2 w_0$}
+  \end{figure}
+
 %\subsection{Introduction}
 
 Thick biological samples cannot be imaged well in classical optical microscopes. The depth of field of the point spread function and general occlusion caused by imaging through material meant that biologists would historically mechanically section their samples in preparation. Mechanical sectioning is highly invasive which is why Zsigmondy originally suggested (1912) the ultra-microscope as a way optically sectioning \cite{Mappes2012}. This technique involved shining sunlight through a very narrow slit perpendicular to the optics of the microscope. Transmitted light microscopes relied on lighting beneath the sample and the eyepiece positioned above, this technique was proposed to alleviate out of focus light blurring the image of the sample. However, the difficulty and inherent mechanical issues of the technique meant that confocal microscopy by Marvin Minksy (1957) \cite{Minsky1957} became the standard tool of biological imaging.
@@ -223,7 +232,7 @@ In confocal microscopy out of focus light is removed by using a pinhole in the f
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\linewidth]{confocal_optical}
+\includegraphics[width=0.4\linewidth]{confocal_optical.pdf}
 \caption[Confocal microscope principle]{Confocal microscopes reject out of focus light in the detection path, improving axial and lateral resolution for the sake of speed of image acquisition and photo-toxicity. }
 \label{fig:confocal_optical}
 \end{figure}
