@@ -178,10 +178,10 @@
 
 \include{Appendix1/appendix1}
 \include{Appendix2/appendix2}
-
+\listoftodos
 \end{appendices}
 
 % *************************************** Index ********************************
 \printthesisindex % If index is present
-
+\immediate\write18{texcount -merge -sub=section \jobname.tex > count.txt}
 \end{document}
