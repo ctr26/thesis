@@ -33,7 +33,8 @@ Their Selective Plane Illumination Microscope (SPIM), seeded a rapid development
 \footnote{Design choices made here have heavily influenced the openSPIM project, an information toolkit found on the internet for constructing a LSFM}
 
 %High quality LSFM is dependent on how well the illumination is generated.
-%Huisken et al seminally used Gaussian laser emissions for the generation of their light sheets. Gaussian beams have a distinct trade-off when used in LSFM applications in that the thinner the light sheet designed the narrower the field of view; this can be seen in equation \eqref{eq:Guassian}, as $x$ increases or decreases (a movement away from the focus of the beam) the wider the beam gets.
+%Huisken et al seminally used Gaussian laser emissions for the generation of their light sheets.
+%Gaussian beams have a distinct trade-off when used in LSFM applications in that the thinner the light sheet designed the narrower the field of view; this can be seen in equation \eqref{eq:Guassian}, as $x$ increases or decreases (a movement away from the focus of the beam) the wider the beam gets.
 
 %The Rayleigh length (or confocal parameter) in equation \eqref{eq:Rayleigh} is a metric for the distance over which a Gaussian beam still propagates as if it were parallel (neither converging nor diverging), for LSFM this is the distance over which it can be assumed the light sheet is of homogeneous thickness.
 
@@ -53,7 +54,7 @@ Their Selective Plane Illumination Microscope (SPIM), seeded a rapid development
 \subsection{Optical Light sheet Generation}
 
 %High quality LSFM is dependent on how well the illumination is generated.
-Huisken~\emph{et~al} seminally used Gaussian laser emissions for the generation of their light sheets despite Gaussian beams have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
+Huisken~\emph{et~al} were seminal in their usage of Gaussian laser emissions for the generation of their light sheets despite Gaussian beams have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
 Equation~\eqref{eq:Guassian} models the Gaussian beam approximation where the full-width half-maximum ($\sqrt{\ln(2)}\omega(z)$) %\mynote[inline]{check maths}
 increases as a Lorentzian when a distance $z$ away from the focal plane (Equation~\eqref{eq:Lorrentzian}).
 The rate at which this occurs is dependent on the Rayleigh length in Equation~\eqref{eq:Rayleigh} which quantifies the trade-off.
@@ -64,7 +65,8 @@ Huisken also pioneered the use of a cylindrical lens to focus the Gaussian beam 
 The Gaussian nature of a beam's intensity for LSFM requires that the excitation beam is over expanded and later cropped by an aperture to create homogeneous illumination.
 The procedure is optically lossy, but, laser intensity is typically in surplus for fluorescence microscopy techniques; a typical fluorescent sample needs $2\pm 1.5$ mW versus a low end diode laser emitting $100$ mW+.
 
-%Huisken's SPIM had two distinct parts. The illumination path, which included a laser source beam expander to control the field of view of the light sheet and a  cylindrical lens to focus the beam into a thin sheet of light (Fig %FIGURE
+%Huisken's SPIM had two distinct parts.
+%The illumination path, which included a laser source beam expander to control the field of view of the light sheet and a  cylindrical lens to focus the beam into a thin sheet of light (Fig %FIGURE
 %); and the detection path, which was similar to a standard widefield microscope including an objective lens, a tube lens and a camera.
 
 \begin{align}
@@ -131,7 +133,7 @@ Efforts have been made to make light sheet imaging more accepted through novel o
 %and the excitation objective illuminating through a clear window in the chamber.
 Huisken~\emph{et~al.}, for instance, used two objectives in a horizontal configuration with a detection objective built into the sample chamber whilst the illuminating through a clear window.
 This configuration was chosen so that a sample could be lowered into the system and, crucially, rotated without gravity causing registration errors when reconstructing the volume tomographically.
-Rotational volumetric imaging also minimises shadows and improves image quality lost to scattering especially in thick (>$500 \mu m$) samples.
+Rotational volumetric imaging also minimises shadows and improves image quality lost to scattering especially in thick \(>500 \mu m\) samples.
 Mounting a sample from below and rotating produces the same result but requires a more sophisticated chamber design to contain the sample medium.
 A horizontal geometry is vital also for plant biology as the objectives do not inhibit the plant's natural tendency to be upright~\cite{wangenheim_rules_2016}. %TODO CITE Stelzer
 %Long working distance detection objectives have also been considered but the the lowered NA and
@@ -158,7 +160,8 @@ With choice objectives, adhered samples prepared with standard mounting procedur
 	\includegraphics[width=\columnwidth]{spim_optimal_imaging.png}
 	\caption{
 	(a): The simple SPIM field of view – only a quarter of a sample has optimum illumination (green) and excitation (red).
-	(b): by rotating a sample field of view can be quadrupled but at a cost in acquisition time. (c): By adding extra excitation and detection path the entire sample can be imaged without a rotation.
+	(b): by rotating a sample field of view can be quadrupled but at a cost in acquisition time.
+	(c): By adding extra excitation and detection path the entire sample can be imaged without a rotation.
 	(d): by making optical paths of a LSFM dual purpose a quadrant of a sample can be imaged from two orthogonal perspective and with correct image fusion achieve isotropic resolution.
 	tod}
 	\label{spim_optimal_imaging}
@@ -207,7 +210,8 @@ Where LSFM provides the most improvement over other techniques, such as in large
 , scattering becomes significant both for excitation and emission light.
 diSPIM however does not address inherent issues of scattering in thick samples, there is an \emph{optimal quarter} (see Figure~\ref{spim_optimal_imaging}) wherein excitation and emission photons are the least scattered.
 
-Krzic~\emph{et~al} returned to the horizontal orientation of Huisken's SPIM, and chose their objectives wisely in MuVU-SPIM where two excitation and two detection objectives were packed around a hanging sample. %cite objectives (Krzic et al. 2012)
+Krzic~\emph{et~al} returned to the horizontal orientation of Huisken's SPIM, and chose their objectives wisely in MuVU-SPIM where two excitation and two detection objectives were packed around a hanging sample.
+%cite objectives (Krzic et al. 2012)
 MuVu can reach all regions of its sample, but it cannot dodge scattering limitations homogeneously.
 %\subsection{Tomography}
 To minimise gross scattering, sample rotation is necessary, of course acquiring volumes tomographically raises its own unique issues such as volume registration, rotational synchonisation and lengthy acquisition times.
@@ -249,7 +253,9 @@ Assuming that a multi-mode fibre operates deterministically on an input light so
 %subsection{Oblique Plane}~\cite{dunsby_optically_2008}
 %subsection{Fibre SPIM}~\cite{ploschner_multimode_2015}
 
-%Optical fibre transforms input light, can comepnsate and produce light sheets, bessel light sheets and lattice etc. Demonstrated in 0.25 NA fibre. Could use soft glass fibre to prove concept further.
+%Optical fibre transforms input light, can comepnsate and produce light sheets, bessel light sheets and lattice etc.
+%Demonstrated in 0.25 NA fibre.
+%Could use soft glass fibre to prove concept further.
 
 %subsection{Confocal adaptor}
 
@@ -257,10 +263,12 @@ Assuming that a multi-mode fibre operates deterministically on an input light so
 % An asymmetric pair
 % an NA of 0.3 is needed to create a micron thick miaskla kzas
 % Gaussian beam illumination requires low NA excitation and so assymetric pairs are ideal with a high NA detection being then possible (with a loss of axial resolution)
-% Bessel illumination however requires high NA to construct the thin buy extended sheets and so are commcercially infeasible. Betzig et al. notabley used a custom excitation objective.
+% Bessel illumination however requires high NA to construct the thin buy extended sheets and so are commcercially infeasible.
+%Betzig et al. notabley used a custom excitation objective.
 % Biological samples should be given room.
 
-% Hence the ‘vertical at 90o’ approach can very attractive even if it cannot boast high NA excitation.  Another limitation arises from geometrical compatibility of the objectives i.e. their opening angles cannot exceed 90o and the front lens radius of one objective should not exceed the working distance of the other objective.
+% Hence the ‘vertical at 90o’ approach can very attractive even if it cannot boast high NA excitation.
+%Another limitation arises from geometrical compatibility of the objectives i.e. their opening angles cannot exceed 90o and the front lens radius of one objective should not exceed the working distance of the other objective.
 
 %High NA detection and low NA excitation leads to high lateral resolution and low axial resolution.
 
@@ -278,7 +286,8 @@ Assuming that a multi-mode fibre operates deterministically on an input light so
 \subsection{Gaussian Techniques}
 Illumination techniques have been proposed in a bid to circumvent the ubiquitous Gaussian beam extension versus thickness trade-off.
 The most intuitive approach is accepting the loss of FOV produced by Gaussian illumination and moving the focus of this strip of high axial resolution light to different parts of the sample.
-A final image can then be fused to achieve maximum axial resolution though with a direct cost for time of acquisition and photobleaching versus axial resolution, with an exceptionally high NA light sheet tending to becoming as slow and damaging as a confocal system . \mynote{CITE Variable light-sheet.}
+A final image can then be fused to achieve maximum axial resolution though with a direct cost for time of acquisition and photobleaching versus axial resolution, with an exceptionally high NA light sheet tending to becoming as slow and damaging as a confocal system.
+\mynote{CITE Variable light-sheet.}
 Fu~\emph{et~al.} proposed tiling multiple thin Gaussian light-sheets that are focally offset to create a similar tiling effect without the temporal loss~\cite{fu_imaging_2016}.
 %The technique of tiled light-sheets was proposed recently whereby multiple thin Gaussian light-sheets are superimposed and focally offset to create a similar tiling effect without the temporal loss \cite{fu_imaging_2016}.
 This effect was produced by using a Spatial Light Modulator whose hologram had superposed lens-like phase patterns superimposed.
@@ -306,7 +315,11 @@ This is then required to be deconvolved in post processing.
 Vettenburg~\emph{et~al}\cite{vettenburg_light-sheet_2014} demonstrated similar axial resolution improvement to Bessel beams whilst achieving a $\sim 3$ increase in field of view.
 %It logically follows to create a lattice of Airy beams, this
 %\mynote[inline]{TODO cite.}
-%Airy beams are generated with a phase distribution resembling coma aberrations. These beams are characterised by longer extent compared to typically achievable Bessel beams (e.g. extension of 160 µm versus 60 µm for a Bessel beam with similar diameter) (Vettenburg et al. 2014). However, the Airy beams exhibit a curvature similar to coma aberrations and unsymmetrical higher orders in the beam radial profile, creating a PSF with characteristic unsymmetrical elongation along the detection axis (Morris et al. 2009). These can be corrected by deconvolving a measured stack using software methods. This can produce better resolution images with larger field of view compared to similarly deconvolved images obtained using Gaussian and Bessel beams (Vettenburg et al. 2014). However, this superiority over Bessel beams has only been demonstrated in comparison with the most basic Bessel beam setup, which does not compensate for higher orders of the Bessel beam distribution
+%Airy beams are generated with a phase distribution resembling coma aberrations.
+%These beams are characterised by longer extent compared to typically achievable Bessel beams (e.g. extension of 160 µm versus 60 µm for a Bessel beam with similar diameter) (Vettenburg et al. 2014).
+%However, the Airy beams exhibit a curvature similar to coma aberrations and unsymmetrical higher orders in the beam radial profile, creating a PSF with characteristic unsymmetrical elongation along the detection axis (Morris et al. 2009). These can be corrected by deconvolving a measured stack using software methods.
+%This can produce better resolution images with larger field of view compared to similarly deconvolved images obtained using Gaussian and Bessel beams (Vettenburg et al. 2014).
+%However, this superiority over Bessel beams has only been demonstrated in comparison with the most basic Bessel beam setup, which does not compensate for higher orders of the Bessel beam distribution
 
 \begin{figure*}
 	\centering

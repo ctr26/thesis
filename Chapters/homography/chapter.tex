@@ -81,7 +81,8 @@ As illustrated in Figure \ref{fig:1}, this assumption then leads to a poorly-reg
   \caption{
   (a) Schematic of the %iSPIM using
   light-sheet optics using a large NA detection objective, the beam is scanned in $x$ to create a virtual sheet.
-  (b-e) For best image quality, the illumination planes (shown as red when not perfectly registerred to the illumination planes) must be registered to the detections planes (green). The linear registration (c) Tends to produce non-uniform out of focus illumnination across the image.
+  (b-e) For best image quality, the illumination planes (shown as red when not perfectly registerred to the illumination planes) must be registered to the detections planes (green).
+  The linear registration (c) Tends to produce non-uniform out of focus illumnination across the image.
   The affine registration (d) is commonly used to match the image centres between the top and bottom planes however the projective registration (e) for four control points provides superior performance due to decreased out-of-focus fluorescence.
   }
   \label{fig:1}
@@ -105,12 +106,14 @@ As illustrated in Figure \ref{fig:1}, this assumption then leads to a poorly-reg
 \subsection{Projective region of interest}
 
 %A more coplanar illumination
-The stack of illumination planes used in a 3D observation can be better matched to the detection planes by registering four corners of the available excitation 3D-FOV, using a projective transform. %TODO SHITE SENTENCE
+The stack of illumination planes used in a 3D observation can be better matched to the detection planes by registering four corners of the available excitation 3D-FOV, using a projective transform.%TODO SHITE SENTENCE
 %can therefore be achieved by registering the illumination to four corners of the available FOV, through the projective transform.
 %A projective transform can consider four coordinates meaning it an
-Projective transforms can map any quadrilateral onto any other, whereas an affine transformation can only register 3 points. %in a Euclidean geometry which will apply only scaling, translation, rotation and shearing.
+Projective transforms can map any quadrilateral onto any other, whereas an affine transformation can only register 3 points.
+%in a Euclidean geometry which will apply only scaling, translation, rotation and shearing.
 Higher order corrections could also be used, with an $n$-point correction using b-splines being one, computationally expensive option.
-%being a look-up table. %when very high order correction).
+%being a look-up table.
+%when very high order correction).
 However, such elastic transforms require more correspondences and are likely to incur additional errors through correspondence localisation precision.%, especially for quadrilaterals which only have four identifiable correspondences.
 %TODO Add in higher order corrections and elastic transform.
 
@@ -191,7 +194,8 @@ The matrix $\textbf{A}$ maps basis vectors to specific points, so that:
 \end{align}
 
 Since $\textbf{A}$ maps basis vectors to augmented positions, $\textbf{A}^{-1}$ decomposes an augmented position into basis vectors.
-Now, the calibration experiment provides control signals ($V_{x_i}$,$V_{z_i}$) which can be transformed to augmented vectors a and treated in the same way. Specifically, ${a(V_{x_1},V_{z_1},1) + b(V_{x_2},V_{z_2},1)+c(V_{x_3},V_{z_3},1) = (V_{x_4},V_{z_4},1)}$ for constants $a,b$ and $c$ so
+Now, the calibration experiment provides control signals ($V_{x_i}$,$V_{z_i}$) which can be transformed to augmented vectors a and treated in the same way
+Specifically, ${a(V_{x_1},V_{z_1},1) + b(V_{x_2},V_{z_2},1)+c(V_{x_3},V_{z_3},1) = (V_{x_4},V_{z_4},1)}$ for constants $a,b$ and $c$ so
 \begin{align}
   \begin{pmatrix}
   a  \\
@@ -245,7 +249,8 @@ z \\
 1
 \end{pmatrix}
 \end{align}
-where the $x$ range is normalised to run from $x_1 = x_3 = 0$ to $x_2 =x_4=1$, and $\textbf{A}^{-1}$ is heavily simplified by solving for $ \lambda, \mu$ and $\nu$. Finally
+where the $x$ range is normalised to run from $x_1 = x_3 = 0$ to $x_2 =x_4=1$, and $\textbf{A}^{-1}$ is heavily simplified by solving for $ \lambda, \mu$ and $\nu$
+Finally
 \begin{align}
 \begin{pmatrix}
 V_x  \\
@@ -488,9 +493,13 @@ non-extrema points can be interpolated to create signal trains rather than point
 %Advanced sCMOS can produce 100 Hz video
 %SPIM requires operations in between exposures which can be a significant percentage of the duty cycle.
 
-%SPIM imaging has three phases, the drive, exposure and return. During the drive phase the mirrors are underscanned for 2 ms prior to the exposure phase ensuring that mirrors have uniform velocity across the field of view, creating homogeneous illumination. During the exposure phase the mirrors travel linear from across the field of view requiring 10 ms for fast imaging. Finally during the return phase the mirrors are sinusoidally brought back to their start position, the use of a sinusoid reduces excessive inertia in the mirrors, increasing their lifetime; requiring another $\approx$ 2ms.
+%SPIM imaging has three phases, the drive, exposure and return.
+%During the drive phase the mirrors are underscanned for 2 ms prior to the exposure phase ensuring that mirrors have uniform velocity across the field of view, creating homogeneous illumination.
+%During the exposure phase the mirrors travel linear from across the field of view requiring 10 ms for fast imaging.
+%Finally during the return phase the mirrors are sinusoidally brought back to their start position, the use of a sinusoid reduces excessive inertia in the mirrors, increasing their lifetime; requiring another $\approx$ 2ms.
 
-%Signal trains explanation. Drive phase, linear phase, drive down phase.
+%Signal trains explanation.
+%Drive phase, linear phase, drive down phase.
 
 %Three dimensional regions of interest defined using affine transforms only consider 3 of the 4 positions.
 
@@ -529,7 +538,8 @@ and imaging the illumination beam in $xz$ for each step,
 as shown in Figure \ref{fig:2}a.
 Each beam profile was fit with a 2D Gaussian to create a map of $xz$ illumination positions corresponding to constant steps in scan lens.
 %voltage to position calibration map.
-Figure \ref{fig:2}b and \ref{fig:2}c show the residual deviation from desired positions when using a 4~pt and 3~pt registration respectively. The 4~pt correction is more faithful to experimental values.
+Figure \ref{fig:2}b and \ref{fig:2}c show the residual deviation from desired positions when using a 4~pt and 3~pt registration respectively.
+The 4~pt correction is more faithful to experimental values.
 %Figure \ref{fig:2}c computes the average discrepancy incrementing through the observation volume, using more of the area of the scan lens and the regions where the scan lens' telecentricty breaks down.
 The figure verifies that a 4~pt correction %will always
 produce a more valid fitting for a beam scanned across a telecentric lens, with a more significant improvement becoming apparent when using a larger region of the scan lens.
@@ -539,11 +549,14 @@ produce a more valid fitting for a beam scanned across a telecentric lens, with 
   \caption{\textbf{Scan lens characterisation} | Figure (a) shows the Illumination profile in the $xz$ plane for 400 scan positions, %as measured through a Nikon A1 scan lens.
   with a 3~pt registration.
   The beam positions in %the images from the stack in Figure
-  (a) were each localised by fitting a 2D Gaussian. The identified positions %fit
-  using a 3~pt (c) and 4~pt (b) %fitting over a quarter of the scan lens. (b) and (c) then each show
+  (a) were each localised by fitting a 2D Gaussian.
+  The identified positions %fit
+  using a 3~pt (c) and 4~pt (b) %fitting over a quarter of the scan lens
+  %(b) and (c) then each show
   show that the positional discrepancy of the 3~pt method is largely fixed by the 4~pt registration.
   %the positional discrepancy from ground truth data using their respective corrections.
-  % (c) increments the windows in (a) and (b) to retrieve an average correction discrepancy as a function of distance from the centre of the scan lens, measured in image space. %(c) shows a 3~pt correction progressively worsening.
+  % (c) increments the windows in (a) and (b) to retrieve an average correction discrepancy as a function of distance from the centre of the scan lens, measured in image space.
+  %(c) shows a 3~pt correction progressively worsening.
   }
   \label{fig:2}
 \end{figure}
@@ -559,7 +572,8 @@ reduce image fidelity due to decreased illumination in the imaging plane as well
 excess background fluorescence.
 Figures \ref{fig:3} show the 4~pt registration largely eliminates this %with the
 mismatch for real samples including fluorescent beads, dyes and a model organism.
-%; higher order corrections provide diminishing returns. %TODO fix this
+%; higher order corrections provide diminishing returns.
+%TODO fix this
 %The 4~pt correction intends to better align the detection and focal planes for each image, as such a 3~pt correction will produce a non-uniform blurring in comparison.
 
 \begin{figure*}[h]
@@ -568,10 +582,12 @@ mismatch for real samples including fluorescent beads, dyes and a model organism
   (a-b) Ratios of intensity maxima of localised fluorescent bead images
   %Localised beads' peak intensities
   were compared in 3D observation volumes %recorded
-  using 3 and 4~pt corrections. (a) These ratios show an %peak
+  using 3 and 4~pt corrections.
+  (a) These ratios show an %peak
   average 42\% increase in contrast for the 4 pt. case, %peak intensity
   with an increasing effect when traveling axially (b).
-  (c) The corresponding graph for a beam scanned through dye solution also demonstrates greater light capture efficiency which becomes more significant with depth. The image maxima was taken as a good measure of beam to image plane focus.
+  (c) The corresponding graph for a beam scanned through dye solution also demonstrates greater light capture efficiency which becomes more significant with depth.
+  The image maxima was taken as a good measure of beam to image plane focus.
   In (d) we show a transgenic Zebrafish expressing mCherry:beta-actinCAAX, in which the membrane contrast is substantially improved by the 4~pt registration.% and is used to visually compare the 4~pt and the 3~pt correction.}
   }
   \label{fig:3}
