@@ -54,7 +54,7 @@ Their Selective Plane Illumination Microscope (SPIM), seeded a rapid development
 
 %High quality LSFM is dependent on how well the illumination is generated.
 Huisken~\emph{et~al} seminally used Gaussian laser emissions for the generation of their light sheets despite Gaussian beams have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
-Equation~\eqref{eq:Guassian} models the Gaussian beam approximation where the full-width half-maximum ($\sqrt{\ln(2)}\omega(z)$) %\todo[inline]{check maths}
+Equation~\eqref{eq:Guassian} models the Gaussian beam approximation where the full-width half-maximum ($\sqrt{\ln(2)}\omega(z)$) %\mynote[inline]{check maths}
 increases as a Lorentzian when a distance $z$ away from the focal plane (Equation~\eqref{eq:Lorrentzian}).
 The rate at which this occurs is dependent on the Rayleigh length in Equation~\eqref{eq:Rayleigh} which quantifies the trade-off.
 The confocal parameter ($b=2z_R$) is a metric for the distance over which a Gaussian beam propagates as if it were parallel (neither converging nor diverging).
@@ -169,7 +169,7 @@ With choice objectives, adhered samples prepared with standard mounting procedur
 In a bid to maximise sample accessibility and numerical aperture, Betzig~\emph{et~al.}~\cite{chen_lattice_2014} commissioned a high NA (0.6) custom excitation objective to fit with their high NA (1.1) detection objective (Nikon CFI75).
 In mounting the orthogonal pair at an angle such that they were flush so a flat surface, Betzig~\emph{et~al.} created the most unhindered sample mounting conditions realistically feasible using two objectives.
 Tricks to circumvent objectives interfering with sample mounting are needed as high NA objectives are physically large.
-%Numerical aperture depends on the $\sin$ of the collecting angle of light , intuitively this requires that the detecting objective to awkward in non-epifluorescence orientations. \todo{reword}
+%Numerical aperture depends on the $\sin$ of the collecting angle of light , intuitively this requires that the detecting objective to awkward in non-epifluorescence orientations. \mynote{reword}
 %Moreover, the desire for high resolution images can cause spacial incompatibility between both objectives.
 Moreover,  high NA objectives typically have short working distances and require both objectives to be close, and likely cause spacial incompatibilities even with the narrowest excitation objectives.
 See figure~\ref{fig:objectivecompatibility} for a detailed comparison.
@@ -278,7 +278,7 @@ Assuming that a multi-mode fibre operates deterministically on an input light so
 \subsection{Gaussian Techniques}
 Illumination techniques have been proposed in a bid to circumvent the ubiquitous Gaussian beam extension versus thickness trade-off.
 The most intuitive approach is accepting the loss of FOV produced by Gaussian illumination and moving the focus of this strip of high axial resolution light to different parts of the sample.
-A final image can then be fused to achieve maximum axial resolution though with a direct cost for time of acquisition and photobleaching versus axial resolution, with an exceptionally high NA light sheet tending to becoming as slow and damaging as a confocal system . \todo[inline]{CITE Variable light-sheet.}
+A final image can then be fused to achieve maximum axial resolution though with a direct cost for time of acquisition and photobleaching versus axial resolution, with an exceptionally high NA light sheet tending to becoming as slow and damaging as a confocal system . \mynote[inline]{CITE Variable light-sheet.}
 Fu~\emph{et~al.} proposed tiling multiple thin Gaussian light-sheets that are focally offset to create a similar tiling effect without the temporal loss~\cite{fu_imaging_2016}.
 %The technique of tiled light-sheets was proposed recently whereby multiple thin Gaussian light-sheets are superimposed and focally offset to create a similar tiling effect without the temporal loss \cite{fu_imaging_2016}.
 This effect was produced by using a Spatial Light Modulator whose hologram had superposed lens-like phase patterns superimposed.
@@ -290,7 +290,7 @@ Species of exotic beam do exist which do not subscribe to classical Gaussian bea
 Bessel beams are non-diffracting and self healing, meaning they reconstruct behind occlusions making them very desirable for light-sheet applications.
 They can be optically constructed from either an axicon lens or a amplitude mask with a annual ring opening, the latter being inexpensive but the most optically lossy.
 Unlike Gaussian optics their extension and thickness can be theoretically entirely decoupled, in practice a Bessel-Gauss beam only behaves over short distances \cite{gao_3d_2014} of up to $\sim 30\mu m$.
-%\todo[inline]{how short?}
+%\mynote[inline]{how short?}
 % with the thickness being controlled by the outter-most radius and their extension
 %Be beams both self heal,
 Bessel beams however suffer from having multiple undesirable orders, the more ideal a Bessel beam is the more intensity is retained in its outer rings.
@@ -305,7 +305,7 @@ Though they extend several fold further than Bessel beams, their curvature produ
 This is then required to be deconvolved in post processing.
 Vettenburg~\emph{et~al}\cite{vettenburg_light-sheet_2014} demonstrated similar axial resolution improvement to Bessel beams whilst achieving a $\sim 3$ increase in field of view.
 %It logically follows to create a lattice of Airy beams, this
-%\todo[inline]{TODO cite.}
+%\mynote[inline]{TODO cite.}
 %Airy beams are generated with a phase distribution resembling coma aberrations. These beams are characterised by longer extent compared to typically achievable Bessel beams (e.g. extension of 160 µm versus 60 µm for a Bessel beam with similar diameter) (Vettenburg et al. 2014). However, the Airy beams exhibit a curvature similar to coma aberrations and unsymmetrical higher orders in the beam radial profile, creating a PSF with characteristic unsymmetrical elongation along the detection axis (Morris et al. 2009). These can be corrected by deconvolving a measured stack using software methods. This can produce better resolution images with larger field of view compared to similarly deconvolved images obtained using Gaussian and Bessel beams (Vettenburg et al. 2014). However, this superiority over Bessel beams has only been demonstrated in comparison with the most basic Bessel beam setup, which does not compensate for higher orders of the Bessel beam distribution
 
 \begin{figure*}
