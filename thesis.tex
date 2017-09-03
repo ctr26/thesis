@@ -103,7 +103,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapter4/chapter4}
+  \includeonly{Chapters/dualslit/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -134,15 +134,24 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
+%\includefrom{Chapters/intro/}{chapter}
+%\includefrom{Chapters/literature/}{chapter}
+%\includefrom{Chapters/homography/}{chapter}
+%\includefrom{Chapters/tweezers/}{chapter}
+%\includefrom{Chapters/spt/}{chapter}
+%\includefrom{Chapters/chamber/}{chapter}
+%\includefrom{Chapters/literature/}{chapter}
+%\includefrom{Chapters/dualslit/}{chapter}
 
-\include{Chapters/intro/chapter.tex}
-\include{Chapters/literature/chapter.tex}
-\include{Chapters/homography/chapter.tex}
-\include{Chapters/tweezers/chapter.tex}
-\include{Chapters/spt/chapter.tex}
-\include{Chapters/chamber/chapter.tex}
-\include{Chapters/literature/chapter.tex}
-\include{Chapters/dualslit/chapter.tex}
+\include{Chapters/intro/chapter}
+\include{Chapters/literature/chapter}
+\include{Chapters/homography/chapter}
+\include{Chapters/tweezers/chapter}
+\include{Chapters/spt/chapter}
+\include{Chapters/chamber/chapter}
+\include{Chapters/literature/chapter}
+\include{Chapters/dualslit/chapter}
+
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
 %\backmatter
