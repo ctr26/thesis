@@ -1,6 +1,6 @@
 *.tdo*
 .DS_Store*
-*.aux*
+=*.aux*
 *.log*
 *.lof*
 *.lot*
@@ -36,3 +36,6 @@ thesis.run.xml*
 *run.xml*
 *.latexmkrc*
 *_latexmk*
+*.bat
+*.ini
++
