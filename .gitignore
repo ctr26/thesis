@@ -39,3 +39,4 @@ thesis.run.xml*
 *.bat
 *.ini
 +
+*.aux
