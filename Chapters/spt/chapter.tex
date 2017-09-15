@@ -22,3 +22,153 @@
 \subsection{Neural Networks} %Need to try training using this using convolutional neural networks
 \section{Results}
 \section{Virion Tracking using SPT}
+
+
+\subsection{Introduction}
+Herpesviruses are among the most complex and largest of the clinically relevant viruses.
+Their virions possess a size of $\sim$ 200 nm and establish life-long infections in their hosts.
+Herpesviruses are extremely widespread in vertebrates and humans.
+For example, it is estimated that up to 85% of the population worldwide are infected by herpes simplex virus 1 (HSV-1) and around 25% by HSV-2\.
+Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immuno-compromised patients [1].
+Herpesviruses also cause a significant disease burden in animals that can lead to economic problems for livestock farmers.
+Viral infections begin when infectious virus particles (virions) invade the organism by first attaching to and then entering susceptible cells.
+After this initial event, viruses hijack the cellular machinery to replicate, produce progeny virus particles, and spread infection.
+Herpesviruses pass through two distinct stages in their life cycle: lytic replication and latency.
+Although many studies exist about the replication cycle of herpesviruses, not much is known about the later stages of the infection cycle, the assembly of virus particles and their egress from the cell.
+Assembly and egress of viruses are essential stages in the herpesvirus lytic replication, hence contributing directly to pathogenesis.
+Support for the today largely recognized model of assembly and egress was provided mostly by electron micrographs (reviewed in [2, 3]).
+
+\subsection{Herpesvirus structure}
+The common virion morphology of herpesviruses suggests that also their mechanisms of assembly and maturation are comparable, although nucleotide or amino acid homology in genes and proteins between the three subfamilies is low due to a high degree of genetic and evolutionary diversity.
+In herpesviruses, the DNA genome is packaged in a nucleocapsid which is enveloped by a lipid membrane containing many viral membrane proteins.
+Nucleocapsid and envelope are separated by a complex, proteinacious matrix called the tegument.
+Herpes simplex virus type 1 (HSV-1) is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
+The capsid is built up by the capsid proteins (capsomers) and possesses an icosahedral symmetry (assembly of capsid reviewed in [4]).
+The tegument is a densely packed protein layer around the nucleocapsid, and essential for structural integrity and functionality of the virion.
+While the nucleocapsid structure and protein composition is well understood, much less is known about the structure and assembly of the tegument.
+The tegument can be divided into inner tegument (capsid-associated part) and outer tegument (envelope-proximal part).
+The composition of the tegument varies for different herpesviruses.
+For HSV-1, more than 20 viral tegument proteins are known [5, 6].
+Most of these tegument proteins possess multiple functions e.g.
+in the entry of viruses into the cell, transport of incoming nucleocapsids to the nuclear pore and genome release, as well as nuclear assembly and egress, nucleocapsid maturation and directed release from the cell.
+Contained in the viral envelope of HSV-1 are at least 11 glycoproteins as well as several membrane-associated proteins which play important roles in viral entry and egress as well as virus-induced cell fusion [2, 7].
+
+
+\subsection{Herpesvirus infection cycle}
+To initiate infection, herpesviruses first bind to cellular surface proteins which act as virus receptors.
+Due to direct fusion to the plasma membrane or endocytosis [8], the viral capsid is delivered into the cytosol.
+Incoming capsids move towards the nuclear pore complexes by use of the cellular microtubule-associated motor system [9, 10].
+There, they release the viral DNA through the nuclear pores into the nucleus [11].
+Virion proteins drive the initial transcription to produce immediate early mRNAs.
+Translation of these early mRNAs promotes further phases of viral gene transcription and replication of the viral DNA.
+In ongoing, efficient infection, replication of viral DNA is provoked through actions of viral polymerases and other viral replicative machinery.
+These replicated DNAs are used as templates for late mRNAs, which produce viral structural proteins, and are also packaged into capsids late in infection (reviewed in [4]).
+The egress pathway follows four steps (schematically shown in Figure 1):
+(1) capsid assembly and genome encapsidation in the nucleus,
+(2) primary envelopment and de-envelopment at the nuclear envelope,
+(3) tegumentation and secondary envelopment in the cytoplasm, and
+(4) exocytosis at the plasma membrane or cell-to-cells spread at cell junctions.
+In the nucleus, capsid proteins autocatalytically coassemle with and around the so-called portal complex in late infection [4].
+Nucleocapsid assembly is a very dynamic process.
+The viral proteins have to recognize and cleave packaging signals at genomic termini, dock at the portal complex and pump the DNA inside the capsid [4].
+After capsids are formed and packaged in the nucleus, the capsids have to traverse the nuclear envelope.
+The nowadays largely accepted model proposes a process designated as nuclear egress.
+The nuclear envelope consists of a double membrane - the inner and outer nuclear membranes (INM, ONM) - and therefore presents a strong physical barrier.
+Mediated by several viral tegument and membrane proteins, the capsids bud into the INM (primary envelopment) to form an enveloped particle in the perinuclear space, fuse with the ONM (de-envelopment) and are released into the cytoplasm [12].
+In the cytosol, capsids associate with more tegument proteins and bind onto and bud into cytoplasmic membranes derived from endosomes and/or the trans-Golgi network (secondary envelopment) [13, 14].
+Although detailed mechanisms are not understood, it seems that tegument maturation is directly connected to secondary envelopment via direct protein-protein interactions.
+Enveloped virions are secreted from cells by exocytosis [15, 16].
+
+Figure 1: Scheme of assembly and egress pathway of virus particles.
+From [2].
+After capsids are formed in the nucleus, they bud into the inner nuclear membrane (INM) (primary envelopment) to form an enveloped particle in the perinuclear space.
+These particles fuse with the outer nuclear membrane (ONM) (de-envelopment) and are released into the cytoplasm, leaving the envelope in the ONM.
+In the cytosol, capsids bind onto and bud into cytoplasmic membranes (secondary envelopment), and enveloped virions are secreted from cells (release).
+TGN, trans-Golgi network.
+What is known about the early steps of tegument assembly?
+Tegumentation occurs during virion maturation.
+Complex protein-protein interactions mediate tegument assembly.
+The intricate network of protein-protein interactions makes characterizing the precise function(s) of any individual protein difficult.
+The tegument composition changes during assembly and egress (reviewed in [2, 17]).
+The diversity of the tegument components raises the challenging question of how and where they are selected for incorporation into nascent virions.
+Overall, it is supposed that early coating with few tegument proteins occurs at the nuclear stage, some viral proteins are shed during nuclear egress, and other tegument proteins are acquired in the cytosol and during secondary envelopment [18].
+One would suspect that early tegumentation plays a role primarily for virus egress, i.e.
+for directed transportation to the inner nuclear membrane, primary envelopment, de-envelopment and/or further unknown functions.
+A recent study, using 3D single particle tracking, has shown that nuclear herpesvirus capsids do not use directed motility to reach the nuclear envelope.
+Thus, viral proteins work by changing the nuclear architecture to create space for capsid free diffusion rather than activating capsids for transport [19].
+After reaching the INM, budding occurs in order to transfer the capsids from the nucleus in the perinuclear space.
+The viral proteins pUL31 and pUL34 form the so-called nuclear egress complex [20, 21], whose formation is crucial for budding [17, 22].
+pUL34 is a membrane protein attached to nuclear membranes, and upon complex formation also pUL31 accumulates at the nuclear rim [20].
+Both proteins are present on perinuclear capsids, but are then shed from the capsids and not existent on mature extracellular virions [17].
+Contradicting results were published if and which proteins of the mature tegument assemble at the capsids already within the nucleus.
+pUL36, pUL37, pUL41, pUL47, pUL48, pUL49, pUS3, ICP0, ICP4 are part of the tegument layer in mature virions and have been reported to partially localize within the nucleus.
+These findings have not been confirmed in other studies, and it is unclear whether these proteins associate with the nuclear capsids [5, 23\-32].
+Much evidence for early recruitment onto the capsids is found for pUS3, pUL36, pUL37, pUL41 and pUL49 which were identified in mature and perinuclear virions [18, 21, 33\-35].
+An increasing volume of evidence suggests that ICP0 and ICP4 are present on mature virions, but the intracellular compartment where this interaction occurs is open for debate [35\-39].
+Although they are not essential for nuclear egress [2], some of the putative early tegument proteins play a role in primary envelopment and/or de-envelopment [17, 40].
+Finally, whether any other tegument proteins also interact with nuclear capsids is presently unknown.
+
+\subsection{Single virus tracking}
+While optical imaging is generally limited to a resolution of $\sim$ 250 nm by the laws of diffraction, sparse emitters can be localized with much higher precision by fitting a model function to their intensity distribution.
+Beneath the methods of super-resolution imaging, awarded by the Nobel Prize in chemistry in 2014, the principles of localisation microscopy are also applied in single particle tracking (SPT) as was shown already in early single molecule studies [41, 42].
+SPT is a real-time imaging technique that monitors the movement of individual particles and can provide information about dynamic behaviour in a cellular context.
+Many studies exist on virus trafficking between and inside cells using single particle tracking (reviewed in [43]).
+In general, more studies about the early stage of infection, virus entry and transport, exist than studies about the late stages of infection, virus assembly and egress.
+Only few and recent works probe exclusively the molecular egress pathway of herpesviruses.
+Hogue et al.
+used total internal reflection fluorescence (TIRF) microscopy to selectively visualize fluorescent pseudorabies viruses near the plasma membrane and follow them during exocytosis [16].
+Sandbaumhüter et al. could show by a motility analysis of fluorescent HSV-1 that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 [44].
+The mentioned examples show that single-virus tracking can reveal detailed information about the dynamics of single viruses inside cells with high spatial and temporal resolution.
+But due to a limited depth of field, particles observed in a 3D volume usually leave the axial detection range rapidly.
+Thus, data analysis often relies on two dimensional projections of short trajectory fragments and might not accurately represent three-dimensional (3D) particle motion if the specimen structure is not isotropic [45].
+Several technical approaches already exist to perform SPT in three dimensions [46-49].
+In the field of virology, very few studies make use of 3D SPT to date.
+Orbital tracking in two planes was applied to track prototype foamy virus (PFV) in real-time inside cells [50], and a rotating, oblique light sheet and astigmatic detection were used to image and track viral capsids with high temporal and spatial resolution inside the cell nucleus [19].
+The new technical development opens up exiting perspectives in studying herpesvirus assembly and egress in vivo.
+
+\subsection{Aims}
+Until now, no quantitative and systematic approach exists that makes use of fluorescence microscopy with all its capacity in single molecule imaging to investigate herpesvirus tegument assembly inside infected cells.
+Generally, it is assumed that tegumentation starts directly after capsid formation, but direct evidence from live-cell data is missing.
+In the current project, we aim to prove that the first steps of tegumentation take place inside the nucleus.
+Several viral proteins have been identified as possible candidates for early tegumentation.
+We plan to investigate their cellular location, attachment to nuclear capsids and functional roles.
+In order to achieve our goals, we choose an interdisciplinary approach at the interface of advanced fluorescence microscopy, virus biology and quantitative single particle tracking.
+The methods we propose will allow us for the first time to look at both virion assembly state and motion through the cell at the same time.
+Bringing together the expertise of myself and my former group (Prof. Kubitscheck, single particle tracking) and the hosting institution (Prof. Kaminski, SPIM and superresolution imaging) in collaboration with Dr. Crump (virus biology) will make this an ideal combination for success.
+
+Which tegument proteins are assembled at the capsids in the nucleus?
+Several proteins of the mature tegument of HSV-1 have been suspected to assemble at capsids within the nucleus.
+We intend to investigate the presence of the following candidates inside the nucleus of infected cells and upon nuclear capsids:
+1)	pUL36 and pUL37:
+pUL36 (>330 kDa) is most probably required for stabilisation of the capsid vertex-specific component (CVSC, a complex of capsid proteins pUL17 and pUL25) of nuclear and cytoplasmic capsids [51].
+The CVSC promotes nuclear egress of DNA-filled capsids by direct interaction of pUL25 with pUL31 [52].
+pUL36 mediates binding of pUL37, the second-largest tegument protein [53].
+Both proteins appear to link capsid and tegument [2].
+2)	pUL47, pUL48, and pUL49:
+These are the most abundant tegument proteins in the mature virion, and act as central organizers of the tegument [54].
+pUL48 is recruited to capsids mainly by interaction with pUL36 [55].
+All three proteins are not directly involved in nuclear egress, but might help to organize and stabilize the early tegument.
+3)	pUS3 and pUL13:
+Both proteins are kinases.
+pUS3 and pUL13 may participate in primary envelopment by regulating the localization of the HSV-1 pUL31/pUL34 complex at the inner nuclear membrane [21, 56-59].
+However, pUS3 itself is not essential for primary envelopment, but rather plays a role in de-envelopment [21, 56, 57].
+4)	ICP0 and pUL41: The proteins are regulators of viral transcription, and host/viral translation and immune response, respectively [5].
+ICP0 is probably recruited onto the capsids by pUL49 [38].
+Incorporation of pUL41 may be facilitated by interaction with pUL48, pUL49 and possibly pUL47 [54].
+First, we will systematically image the cellular distribution of the mentioned tegument proteins, especially during the phase of capsid assembly and egress.
+Hence, we will use dual fluorescent viruses with capsid (pUL35 or pUL25) and tegument proteins of interest tagged with auto-fluorescent proteins (mTurquoise, EGFP and mCherry), and perform live-cell time-lapse imaging.
+In order to obtain image sequences with high quality and detail, we plan to apply a resolution- and contrast-enhancing imaging technique such as structured illumination microscopy (SIM).
+We will further investigate the attachment of the tegument to single capsids.
+We intend to analyze co-localization of capsid and tegument proteins using two approaches: (a) single particle tracking in combination with image correlation [60], and (b) correlation between dual-colour motion trajectories [61].
+
+What are the functional roles of early tegument proteins?
+
+Recently, it was discovered that nuclear capsids are not actively transported, but move mostly by free diffusion [19].
+Hence, we assume that the most probable functions of early tegument proteins consist in organization and promotion of nuclear egress and availability as binding partners for other tegument or viral membrane proteins.
+After screening which of the investigated proteins attach to capsids, we will determine the location of the tegumented capsids with regard to the nucleus structure.
+We assume that the location of attachment is connected to the functional role.
+E.g. pUL36 is supposed to stabilize the complex of the capsid-associated proteins pUL17 and pUL25, hence very early attachment of this protein near the sites of capsid assembly would be expected.
+pUS3, ICP0 and pUL13 have been described to be involved in primary envelopment, thus we would suspect that assembly of these proteins would occur near the nuclear membrane.
+In order to analyze if putative early tegument proteins play a role in primary envelopment, we will examine if binding of tegument proteins provokes changes in capsid mobility due to membrane interaction.
+Co-localization with the nuclear egress complex (labelled pUL31 or pUL34 proteins) will provide further evidence about participation in primary envelopment.
+In a final step, we will investigate in which order tegument proteins bind to capsids what will give evidence about in vivo protein-protein interactions.
