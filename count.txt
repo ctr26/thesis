@@ -2,13 +2,13 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 16735
-Words in headers: 380
+Words in text: 18131
+Words in headers: 407
 Words outside text (captions, etc.): 695
-Number of headers: 131
+Number of headers: 145
 Number of floats/tables/figures: 16
-Number of math inlines: 149
-Number of math displayed: 22
+Number of math inlines: 176
+Number of math displayed: 33
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   117+7+0 (2/0/0/0) _top_
@@ -26,6 +26,12 @@ Subcounts:
   1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets
   605+12+173 (4/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
+  102+5+0 (1/0/0/0) Chapter: Stereoscopically Reconstructed Optical Projection Tomography
+  727+4+0 (3/0/9/2) Section: Tomography (Pedro)
+  526+15+0 (7/0/18/9) Section: Stereoscopic Imaging
+  0+1+0 (1/0/0/0) Section: flOPT
+  0+1+0 (1/0/0/0) Section: Results
+  41+1+0 (1/0/0/0) Section: Discussion
   591+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
   215+9+0 (3/0/0/0) Section: Tissue dynamics in developing organisms
   0+5+0 (1/0/0/0) Section: Methods of measuring tissue dynamics

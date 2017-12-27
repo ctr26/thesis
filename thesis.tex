@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,index,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -103,7 +103,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapters/spt/chapter}
+  \includeonly{Chapters/flopt/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -146,6 +146,7 @@
 \include{Chapters/intro/chapter}
 \include{Chapters/literature/chapter}
 \include{Chapters/homography/chapter}
+\include{Chapters/flopt/chapter}
 \include{Chapters/tweezers/chapter}
 \include{Chapters/spt/chapter}
 \include{Chapters/chamber/chapter}
