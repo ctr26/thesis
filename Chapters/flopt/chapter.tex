@@ -39,6 +39,12 @@ In other words, the image recorded by the detector is a projection of the attenu
 These two modalities can work together to display fluorescent signals in the context of the whole organism anatomy.
 OPT attempts to address the scale gap between the tomographic techniques described above (samples larger than 10 mm), and light microscopy techniques (samples smaller than 1 mm) to image biological samples in the 1-10 mm regime.
 
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/flopt/Figs/PDF/OPT_digram}
+  \caption{Principle of OPT, a respective rotation between the sample and the detector illumination pair is iterated, the volumetric image is later reconstructed.}
+\end{figure}
+
 \subsection{Reconstruction}
 
 Photons from an illumination source impinge on the sample and are attenuated as they traverse the volume of the sample towards a detector.
@@ -60,12 +66,11 @@ is shown in figure 5).
 A high pass filter such as a ramp filter is commonly used to counter the blurring caused by this oversampling.
 FBP be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
 \begin{align}
-R_{fpb}(x,y) = \int_{0}^{\pi} f'(xcos(\theta)+ysin(\theta),\theta)dxdy
+R_{fpb}(x,y) = \int_{0}^{\pi} f'(x\cos(\theta)+y\sin(\theta),\theta)dxdy
 \intertext{where $f'$ is the filtered projection data, and $R_{fbp}$ is the back-projected image.}
 \end{align}
 
 \subsubsection{Aim}
-
 
 
 \section{Stereoscopic Imaging}
@@ -117,10 +122,15 @@ The two camera-centered coordinate systems are related by a rotation $R$ and tra
     T \times \mathbf{X'}_c &= T \times R\mathbf{X'}_c \label{Xprime = RTX}
 \end{align}
 
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/flopt/Figs/PDF/epi-polar-geom}
+  \caption{Epi-polar geometry described for two adjacent views (or cameras of a scene).}
+\end{figure}
+
 \subsubsection{Essential Matrix}
 
 Taking the scalar product with $\mathbf{X'_c}$, we obtain:
-
 \begin{align}
     \mathbf{X'}_c \cdot (\mathbf{T} \times \mathbf{X'}_c) &= \mathbf{X'}_c\cdot (\mathbf{T} \times R\mathbf{X'}_c)\nonumber \\
     \mathbf{X'}_c \cdot (\mathbf{T} \times R\mathbf{X'}_c) &= 0 \nonumber
@@ -150,7 +160,6 @@ The constraint also holds for rays $\mathbf{p}$, which are parallel to the camer
 \begin{align}
 \mathbf{p}'^T E \mathbf{p} = 0 \label{eq:pEp}
 \end{align}
-
 This is the epipolar constraint.
 If we observe a point $\mathbf{p}$ in one image, then its position $\mathbf{p'}$ in the other image must lie on the line defined by \eqref{eq:pEp}.
 The essential matrix can convert from pixels to rays $\mathbf{p}$ assuming a calibrated camera.
@@ -242,14 +251,103 @@ Ambiguities in $\mathbf{T}$ and R are resolved by ensuring that visible points l
 As with the essential matrix, the fundamental matrix can be factorised into a skew-symmetric matrix corresponding
 to translation and a 3 × 3 non-singular matrix corresponding to rotation.
 
-\section{flOPT}
+\section{The new algorithm}
+
+The rotation may also not be orthogonal to the plane of detection.
+An observer will notice the trajectory of a fiducial following a conic section, usually an ellipse.
+During an OPT reconstruction there will be a fitting step to recover ellipse and to correct for it before applying a radon transform.
+This type of reconstruction not only ignores any mechanical jitter of the sample but also the possibility of a systematic drift.
+
+We have seen however that using two adjacent images of a scene, points may be triangulated within the scene given the rotational and translational matrices of the respect camera views.
+The inverse is also possible given a sufficient amount of reliable fiducial points in a scene.
+The recovery over a more exact description of the motion of the scene can eliminate any need for a fitting, recover and correct for drift as well as eliminate any mechanical jitter.
+Errors may then be introduced from fiducially mechanically slipping and localisation errors.
+
+Using the factorisation of the Fundamental, Essential or Homography matrix each adjacent view of a rotating scene can have it's translation and rotational matrices recovered.
+Here we will discuss a reconstruction using $F$ but the same principle applies for $E$ and $H$.
+
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/flopt/Figs/PDF/flOPT_principle}
+  \caption{Each iteration during an OPT acquisition will have an associate $R$ and $\mathbf{T}$, these matrices can be recovered from comparing the current iteration to the previously iteration.}
+\end{figure}
+
+There are two ways of reconstructing using matrix as described above.
+The first method involves computing F for two neighbouring images with 5 or more fiducials to remove ambiguity.
+Once F is calculated F is decomposed into $R_n$ and $T_n$ between each view $n$ and $n+1$.
+The image at view $n+1$ is then back projected to create a volume, the size is chosen to be suitably large (so that important data is not lost).
+Then all the prior rotation and translation matrices are series multiplied until until $R_n$ and $T_n$, this final matrix is inverted and applied to the back projected volume.
+This process is repeated for every angle and the back projected volume from each step is summed with every other step.
+Finally the remaining volume is filtered using a Ram-Lak filter \footnote{Linear ramp filter in Fourier space: $|v|$},
+By producing a series of of transformation matrices errors compound and the reconstruction of volumes degrades with more projections.
+
+The second method is more robust.
+Instead of calculating F between neighbouring images F is calculated between the current projection and the very first projection.
+F is then decomposed and the transformation matrix is inverted and applied to the back projected volume.
+The reoriented back projected volumes and summed as before and filtered.
+
+The second approach may be robust to compound errors but an additional programatic step is needed is know which beads in the first image correspond to beads in the current image.
+This can be is achieved using standard tracking and momentum particle tracking algorithms [cite].
+In both cases a decomposed F will produce 4 possible transformation pairs %(R,T; R,-T; -R,T; -R,-T) %TODO look this up.
+are produced.
+Once the first two views' transformation matrix is calculated the follows matrices can be chosen by likelihood or even subtracting \([Rn|Tn]\) from \(Rn-1|Tn-1\) and minimising.
+The first two views are more difficult to choose the correct decomposition for but it is possible if a suitable ideal matrix is given as a comparison.
 
 
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/flopt/Figs/PDF/flopt_algorithm}
+  \caption{Two dimensional representation of the reconstruction algorithm.
+  The rotational and translation matrices are recovered and inversely applied to back projected images.
+  The now realigned back projection are summated to produce an unfiltered back projection.}
+\end{figure}
+
+\subsection{}
 
 \subsection{Results}
 
-\section{Results}
+\begin{figure}
+  \centering
+  \hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/raw_input}
+    \caption{Raw input for OPT simulations, Lena.}
+    \label{fig:raw_input}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/sinugram_stretch}
+    \caption{Image of Lena (Figure \ref{fig:raw_input}) after rotation and projection in 2D, giving the sinugram.}
+    \label{fig:sinugram}
+  \end{subfigure}
+  \hfill
+  \label{fig:rawinputs}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_nofilter}
+    \caption{Unfiltered output of the radon transform}
+    \label{fig:iradon_nofilter}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_filter}
+    \caption{Ram-lak (Fourier ramp) filter applied to Figure \ref{fig:iradon_nofilter}.}
+    \label{fig:iradon_filter}
+  \end{subfigure}
+    \hfill
+    \label{fig:irandons}
+  \caption{The result of an Tomographic reconstruction requires Fourier filtering to normalise spatial contrast}
+\end{figure}
+
+Flowchart of algorithm?
+Insert graph of reconstruction and line profiles for cases with rotation 2D + 3D + drift
+Insert graph of reconstruction using KNOWN R|T
+
+
 \section{Discussion}
+
 Future work:
 It is possible to use 3 separate views to reconstruct a scene, this involves quaternion tensors versus matrices.
 The maths gets progressively harder but it is theoretically possible to input each view in directly into a special mathematical construct.
