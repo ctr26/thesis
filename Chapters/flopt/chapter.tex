@@ -279,20 +279,12 @@ The image at view $n+1$ is then back projected to create a volume, the size is c
 Then all the prior rotation and translation matrices are series multiplied until until $R_n$ and $T_n$, this final matrix is inverted and applied to the back projected volume.
 This process is repeated for every angle and the back projected volume from each step is summed with every other step.
 Finally the remaining volume is filtered using a Ram-Lak filter \footnote{Linear ramp filter in Fourier space: $|v|$},
-By producing a series of of transformation matrices errors compound and the reconstruction of volumes degrades with more projections.
+By producing a series of of transformation matrices errors compound and the reconstruction of volumes degrades with more projections, see Figure \ref{fig:irandons}.
 
 The second method is more robust.
 Instead of calculating F between neighbouring images F is calculated between the current projection and the very first projection.
 F is then decomposed and the transformation matrix is inverted and applied to the back projected volume.
 The reoriented back projected volumes and summed as before and filtered.
-
-The second approach may be robust to compound errors but an additional programatic step is needed is know which beads in the first image correspond to beads in the current image.
-This can be is achieved using standard tracking and momentum particle tracking algorithms [cite].
-In both cases a decomposed F will produce 4 possible transformation pairs %(R,T; R,-T; -R,T; -R,-T) %TODO look this up.
-are produced.
-Once the first two views' transformation matrix is calculated the follows matrices can be chosen by likelihood or even subtracting \([Rn|Tn]\) from \(Rn-1|Tn-1\) and minimising.
-The first two views are more difficult to choose the correct decomposition for but it is possible if a suitable ideal matrix is given as a comparison.
-
 
 \begin{figure}
   \centering
@@ -302,15 +294,31 @@ The first two views are more difficult to choose the correct decomposition for b
   The now realigned back projection are summated to produce an unfiltered back projection.}
 \end{figure}
 
-\subsection{}
+The second approach may be robust to compound errors but an additional programatic step is needed is know which beads in the first image correspond to beads in the current image.
+This can be is achieved using standard tracking and momentum particle tracking algorithms [cite].
+In both cases a decomposed F will produce 4 possible transformation pairs %(R,T; R,-T; -R,T; -R,-T) %TODO look this up.
+are produced.
+Once the first two views' transformation matrix is calculated the follows matrices can be chosen by likelihood or even subtracting \([Rn|Tn]\) from \(Rn-1|Tn-1\) and minimising.
+The first two views are more difficult to choose the correct decomposition for but it is possible if a suitable ideal matrix is given as a comparison.
 
 \subsection{Results}
+
+To verify the proposed algorithm works, it was applied to simulated data.
+The image of Lena
+\footnote{The image of Lena is used as a reference to a very early full colour digital scanner.
+The researchers in question realised that their presentation of the scanner's capabilities at a conference lacked a test image.
+The nearest image to hand was a Playboy magazine with Lena Söderberg as the centrefold.}
+is used here as a test image to verify the validity of each reconstruction.
+Superimposed on Lena are fiducial beads to track the rotation of the image, see Figure \ref{fig:raw_input}.
+The reference image was then rotated through 128 angles over $2\pi$ radians of rotation and projected along the $y$ axis to create a single line projection.
+This is repeated for each angle with each line projection stacked to create a sinugram, see Figure \ref{fig:sinugram_stretch}.
+
 
 \begin{figure}
   \centering
   \hfill
   \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/raw_input}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/rawinput_colour}
     \caption{Raw input for OPT simulations, Lena.}
     \label{fig:raw_input}
   \end{subfigure}\hfill
@@ -321,7 +329,21 @@ The first two views are more difficult to choose the correct decomposition for b
   \end{subfigure}
   \hfill
   \label{fig:rawinputs}
+  \caption{Reference images for OPT reconstruction.}
 \end{figure}
+
+In the standard algorithmic approach for OPT, the sinugram produced then undergoes the Radon transform, see Figure \ref{fig:iradon_nofilter} and then a post filtering, see Figure \ref{fig:iradon_nofilter}.
+Instead of the the radon transform the proposed algorithm is used.
+In Figure \ref{fig:flopt_comparison_line_profile} the two techniques are compared for ideal conditions of smooth, predictable rotation.
+The proposed algorithm produces by eye (see Figure \ref{fig:flopt_filter}) a faithful reconstruction on the original image.
+Both techniques however lose some of the original contrast of the image due to under-sampling of rotations.
+However, the proposed algorithm fairs worse in terms of contrast compared to a Radon transform.
+
+The case of a sample drifting systematically along the $x$ axis is now considered, this produces a helical path of a single fiducial within the sample.
+
+In Figure \ref{} the Radon transform fails to reconstruct with a slight helically.
+However, the proposed algorithm produces a similar result to that of a sample rotating without any systematic drift.
+
 
 \begin{figure}
   \centering
@@ -340,6 +362,22 @@ The first two views are more difficult to choose the correct decomposition for b
     \label{fig:irandons}
   \caption{The result of an Tomographic reconstruction requires Fourier filtering to normalise spatial contrast}
 \end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/flopt/Figs/PDF/results/comparison_line_profile}
+  \caption{Line profile comparison of the reconstruction of a reference image artificially rotated and projected using the standard radon transform and the new proposed algorithm.}
+  \label{fig:flopt_comparison_line_profile}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_filter}
+\caption{Reconstruction of a reference image using the new proposed algorithm}
+\label{fig:flopt_filter}
+\end{figure}
+
+%Textwidth is \the\textwidth
 
 Flowchart of algorithm?
 Insert graph of reconstruction and line profiles for cases with rotation 2D + 3D + drift
