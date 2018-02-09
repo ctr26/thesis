@@ -377,11 +377,47 @@ However, the proposed algorithm produces a similar result to that of a sample ro
 \label{fig:flopt_filter}
 \end{figure}
 
+The reconstruction algorithm was then applied to simulated OPT data with which a systematic drift was added.
+The resulting path of a single bead then resembles a helix, and importantly, with a different start and finishing positions.
+As shown in Figure (%todo insert figure)
+) the radon transform approach falls down whilst the proposed algorithm performs as well as it did prior.
+The path that any single bead draws out also could not be satisfactorily mapped to a conical section to characterise the motion observed.
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}
+\caption{Sinugram of a sample whose axis of rotation has a systematic drift}
+\label{fig:flopt_helix_sinugram}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/unfilttered_reconstruction_helix_iradon}
+    \caption{Unfiltered reconstruction using a radon transform}
+    \label{fig:unfilttered_reconstruction_helix_iradon}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/filtered_recon_helix}
+    \caption{Filtered reconstruction using the new algorithm}
+    \label{fig:filtered_recon_helix}
+  \end{subfigure}
+    \hfill
+    \label{fig:flopts}
+  \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}
+\end{figure}
+
+
+
 %Textwidth is \the\textwidth
 
-Flowchart of algorithm?
-Insert graph of reconstruction and line profiles for cases with rotation 2D + 3D + drift
-Insert graph of reconstruction using KNOWN R|T
+
+\todo{Flowchart of algorithm?}
+\todo{Insert graph of reconstruction and line profiles for cases with rotation 2D + 3D + drift}
+\todo{Insert graph of reconstruction using KNOWN R|T}
 
 
 \section{Discussion}
