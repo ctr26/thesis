@@ -410,18 +410,31 @@ The path that any single bead draws out also could not be satisfactorily mapped 
   \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}
 \end{figure}
 
-
-
 %Textwidth is \the\textwidth
 
 
 \todo{Flowchart of algorithm?}
-\todo{Insert graph of reconstruction and line profiles for cases with rotation 2D + 3D + drift}
 \todo{Insert graph of reconstruction using KNOWN R|T}
 
 
 \section{Discussion}
 
-Future work:
-It is possible to use 3 separate views to reconstruct a scene, this involves quaternion tensors versus matrices.
-The maths gets progressively harder but it is theoretically possible to input each view in directly into a special mathematical construct.
+
+
+A new algorithm for reconstructing OPT data has been demonstrated.
+The new algorithm uses multiple fiducials to recover the matrix which describes the rotation and translation.
+The quality of the reconstructions when compared to a standard radon transform is almost identical.
+
+\subsection{Future work}
+
+The work presented here so far only proof-of-concept and will require several steps in order apply it to real OPT data.
+Firstly a full bead tracking algorithm will need to be created to track multiple beads concurrently in an image series.
+A sensible approach would be to have a user select the fiducials in the image on the first frame and template match in a small window around the selection; this is similar to the algorithm described in chapter %TODO insert chapter
+Template is robust to occlusions provided the fidcuial is not fully eclipsed.
+If two fiducially occlude each other however this algorithm may switch their identities or both windows may follow one bead.
+This is a common problem in particle tracking algorithms but is essentially solved by using a weighted likelihood based on momentum.
+
+The theory behind the proposed algorithm relies on triangulation between two view points.
+However, it is possible to use three seperate views to reconstruct a scene with one approach being used quarternion tensors.
+A future version of this algorithm may be able to use 3 views to produce a more faithful transformation matrix.
+The mathematics for more than three views currently does not exist.

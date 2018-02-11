@@ -2,7 +2,7 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 21486
+Words in text: 21482
 Words in headers: 412
 Words outside text (captions, etc.): 972
 Number of headers: 146
@@ -29,7 +29,7 @@ Subcounts:
   102+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography
   727+4+22 (3/1/9/2) Section: Tomography (Pedro)
   526+15+12 (7/1/18/9) Section: Stereoscopic Imaging
-  857+4+243 (2/8/18/0) Section: The new algorithm
+  853+4+243 (2/8/18/0) Section: The new algorithm
   41+1+0 (1/0/0/0) Section: Discussion
   591+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
   215+9+0 (3/0/0/0) Section: Tissue dynamics in developing organisms
