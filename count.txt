@@ -2,13 +2,13 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 22146
-Words in headers: 417
+Words in text: 24006
+Words in headers: 422
 Words outside text (captions, etc.): 1235
-Number of headers: 146
+Number of headers: 148
 Number of floats/tables/figures: 30
-Number of math inlines: 216
-Number of math displayed: 35
+Number of math inlines: 252
+Number of math displayed: 41
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   117+7+0 (2/0/0/0) _top_
@@ -33,9 +33,9 @@ Subcounts:
   511+9+367 (2/8/24/0) Section: Results
   464+8+48 (4/1/1/0) Section: Discussion
   591+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
-  215+9+0 (3/0/0/0) Section: Tissue dynamics in developing organisms
+  217+9+0 (3/0/0/0) Section: Tissue dynamics in developing organisms
   0+5+0 (1/0/0/0) Section: Methods of measuring tissue dynamics
-  0+32+0 (14/0/0/0) Section: Magnetic tweezers combined with Light-sheet microscopy
+  1858+37+0 (16/0/36/6) Section: Magnetic tweezers combined with Light-sheet microscopy
   2652+53+0 (5/0/32/0) Section: Results
   593+20+0 (6/0/0/0) Section: Discussion
   0+7+0 (1/0/0/0) Chapter: Diffraction Limited Single Particle Tracking in SPIM
