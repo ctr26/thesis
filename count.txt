@@ -2,12 +2,12 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 24006
-Words in headers: 422
-Words outside text (captions, etc.): 1235
-Number of headers: 148
-Number of floats/tables/figures: 30
-Number of math inlines: 252
+Words in text: 24645
+Words in headers: 412
+Words outside text (captions, etc.): 1308
+Number of headers: 145
+Number of floats/tables/figures: 33
+Number of math inlines: 255
 Number of math displayed: 41
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -33,11 +33,11 @@ Subcounts:
   511+9+367 (2/8/24/0) Section: Results
   464+8+48 (4/1/1/0) Section: Discussion
   591+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
-  217+9+0 (3/0/0/0) Section: Tissue dynamics in developing organisms
-  0+5+0 (1/0/0/0) Section: Methods of measuring tissue dynamics
-  1858+37+0 (16/0/36/6) Section: Magnetic tweezers combined with Light-sheet microscopy
-  2652+53+0 (5/0/32/0) Section: Results
-  593+20+0 (6/0/0/0) Section: Discussion
+  217+7+0 (2/0/0/0) Section: Tissue dynamics in developing organisms
+  1436+18+0 (7/0/31/6) Section: Methods of measuring tissue dynamics
+  891+9+0 (5/0/3/0) Section: Algorithmic tracking
+  2751+59+73 (7/3/37/0) Section: Results
+  664+21+0 (7/0/0/0) Section: Discussion
   0+7+0 (1/0/0/0) Chapter: Diffraction Limited Single Particle Tracking in SPIM
   0+5+0 (3/0/0/0) Section: Single Particle Tracking
   0+10+0 (6/0/0/0) Section: Astigmatic Tracking
