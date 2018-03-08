@@ -316,14 +316,14 @@ Thus, the stereotypical tissue morphogenesis that shapes the embryo into a spher
 \subsection{Micro-rheology reveals increase in physical parameters during high- to-sphere- stage transformation}
 Even though it has been speculated that morphogenetic change must depend upon changes in the physical properties of tissues, there is little direct evidence to support this idea.
 We wish to ask if the changes that we see in cell movements and protrusive activity during the high- to sphere-stage transformation are accompanied by a modulation of physical properties of the blastoderm.
-To address this question, we developed a 3D magnetic tweezer device with which we could apply a known force to a 40µm diameter paramagnetic bead implanted into the blastoderm (ref other paper).
+To address this question, magnetic tweezers were used to apply a direct and known force to a 40 \si{40}{\micron} diameter super paramagnetic bead implanted into the blastoderm (%TODO reference).
 This device creates a 3D graded magnetic field within the volume between four iron poles surrounding a suspended zebrafish embryo.
 The device has been calibrated to deliver known forces along three orthogonal axes (see M\&M).
 [fluorescent beads covered with poly siloxane]
 
-We imaged implanted beads and the cells surrounding them in blastula-stage embryos for extensive periods and detected no changes in local cell arrangement, actin cytoskeleton organisation (assessed with GFP-lifeact) or myosin localisation (GFP-MII) (Figure S2).
+Beads were implanted and the cells surrounding them in blastula-stage embryos for extensive periods and detected no changes in local cell arrangement, actin cytoskeleton organisation (assessed with GFP-lifeact) or myosin localisation (GFP-MII) (Figure S2).
 Embryos containing a bead developed, as far as we are able to detect, unperturbed by its presence.
-We measured the physical properties of the tissue by applying a calibrated, constant force (in the order of 8nN) for 1 minute (Figure 2.A) and tracking the displacement of the bead during and after application.
+The physical properties of the tissue were measured by applying a calibrated, constant force (in the order of 8nN) for 1 minute and tracking the displacement of the bead during and after application.
 Force was directed alternately radially towards or away from the yolk at 3-minute intervals.
 Bead trajectories reveal that embryonic tissue acts as a viscoelastic medium.
 Trajectories invariably show an initial fast displacement followed by a slower, linear displacement or creep %TODO figure
@@ -333,10 +333,25 @@ Between high- to sphere-stage we see a significant and systematic reduction in t
 To quantify and further characterise these findings, we fitted a parameterised mechanical model that accounts for the shapes of bead trajectories over time.
 The most parsimonious model consists of a dashpot in series with parallel spring and dashpot  %TODO figute
 The dashpots are characterized by viscous coefficients $\nu$1 and $\nu$2, and the spring by an elastic modulus, E.
-Fitted parameters reveal that E increased by 3.1 times (E0min = 2.61Pa ± 0.57 s.e.m; E75min = 7.98 Pa ± 2.50 s.e.m.) and $\nu$1 by 1.8 times ($\nu$1 0min = 156.1 Pa.s ± 58.26 s.e.m.; $\nu$1 75min = 286.85  Pa.s ± 69.34 s.e.m) and $\nu$2 by 2.5 times ($\nu$2 0min = 15.82 Pa.s ± 3.20 s.e.m. ; $\nu$2 75min = 40.20 Pa.s ± 10.74 s.e.m.) over a developmental time of  ~75 min (Figure 2.C-E).
- No significant differences are found between the two directions of force application (Figure 2.C-E, pE = 0.089, p$\nu$1 = 0.427, p$\nu$2 = 0.904).
- This trend was seen irrespective of the starting developmental age of the embryo, excluding the likelihood of work hardening as an explanation.
- A developmental stiffening of the embryo was also seen in measurements of the apparent Young’s modulus as determined by AFM indentation (Figure S3).
+Fitted parameters reveal that E increased by 3 fold
+(
+$E_{\SI{0}{\minute}}$=\SI{2.61(57)}{\pascal};
+$E_{\SI{75}{\minute}}$=\SI{7.98(250)}{\pascal}
+)
+and $\eta_1$ 1.8 fold
+(
+$\eta_{1_{\SI{0}{\minute}}}$=\SI{156.1(583)}{\pascal\second};
+$\eta_{1_{\SI{75}{\minute}}}$=\SI{286.85(6934)}{\pascal\second}
+)
+and $\eta_2$ 2.5 fold
+(
+$\eta_{2_{\SI{0}{\minute}}}$=\SI{15.82(320)}{\pascal\second};
+$\eta_{2_{\SI{75}{\minute}}}$=\SI{40.20(1074)}{\pascal\second}
+)
+over a development time of \SI{75}{\minute}.
+No significant differences were found between the two directions of force application ($p_E > 0.05$, $p_{\eta_1} > 0.05$, $p_{\eta_2} > 0.05$).
+This trend was seen irrespective of the starting developmental age of the embryo, excluding the likelihood of work hardening as an explanation.
+%A developmental stiffening of the embryo was also seen in measurements of the apparent Young’s modulus as determined by AFM indentation (Figure S3).
  A characteristic time constant of the elastic deformation, $\tau$, can be derived from the ratio of $\nu$2 to E.
  Despite large changes in both of $\nu$2 and E, $\tau$ remains relatively constant over developmental time (Figure 2.F, mean = 5.33 s).
  This suggests that this tissue may contain a mechanism of self-regulation of $\tau$ or that both E and $\nu$2 are determined by a common feature.
@@ -407,7 +422,6 @@ Fitted parameters reveal that E increased by 3.1 times (E0min = 2.61Pa ± 0.57 s
        \label{fig:visco_time}
        }
 \end{figure}
-
 
 \subsection{Elasticity is linked with cell shape deformation and Viscosity with cell rearrangement.}
 
@@ -487,16 +501,17 @@ Interestingly, $\tau$ is affected by the different knock downs, stiffer embryo s
 
 Finally, we wished to ask how the changes rheological properties found for DNRAC and DNROCK treatments are reflected in the rates of cell and tissue deformation?
 We repeated fast light sheet imaging analyses with each knock-down treatment, to follow cell behaviours during force application.
-The resultant parameters do segregate according to their mechanical properties: softer DNRAC embryos present more cell deformation during the elastic period (pWT-DNRAC = 0.0013) and more cell rearrangement during the creep period (pWT-DNRAC = 0.0025), compared to WT.
-Cells in the stiffer DNROCK-injected embryos deform less in the elastic period (pWT-DNROCK = 0.017) and induce less cell rearrangement in the creep period (pWT-DNROCK = 0.13) (Figure 4.J).
-We can now combine data from all WT and experimental manipulation conditions to examine correlations within an extended range of developmental conditions.
-We confirm that the previously-observed correlations between cellular and rheological parameters hold true under this expanded range.
+The resultant parameters do segregate according to their mechanical properties: softer DNRAC embryos present more cell deformation during the elastic period ($p_{WT-DNRAC} = 0.0013$) and more cell rearrangement during the creep period ($p_{WT-DNRAC} = 0.0025$), compared to WT.
+Cells in the stiffer DNROCK-injected embryos deform less in the elastic period ($p_{WT-DNROCK} = 0.0017$) and induce less cell rearrangement in the creep period ($p_{WT-DNROCK} = 0.0013$) %TODO figure (Figure 4.J).
+%We can now combine data from all WT and experimental manipulation conditions to examine correlations within an extended range of developmental conditions.
+These results confirm the previously-observed correlations between cellular and rheological parameters hold true under this expanded range.
 Stiffness E is strongly correlated with initial cell shape deformation while $\nu$1 is strongly correlated with cell rearrangements.
 This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology.
 Since the measurement of bead movements are faster, easier and more sensitive than the associated cell measurements, this facilitate us gaining greater insight into the mechanics of developing tissues.
 
 \subsection{Biological methodology}
-Embryos were harvested just after fertilisation and incubated at 28.5ºC. Used lines were: wild types (WT), Tg(beta-actin:mCherry-CAAX) (labelling membranes), Tg(beta-actin:Lifeact-eGFP) (labelling F-actin) and Tg(beta-actin:Myosin2-mCherry).
+Embryos were harvested just after fertilisation and incubated at 28.5ºC.
+Used lines were: wild types (WT), Tg(beta-actin:mCherry-CAAX) (labelling membranes), Tg(beta-actin:Lifeact-eGFP) (labelling F-actin) and Tg(beta-actin:Myosin2-mCherry).
 
 \subsubsection{Bead and cell transplantation}
 Transplantations were at 1k-cell stage using a tip broken elongated capillary (REF) mounted on an oil filled pressurised system controlled by a syringe (REF).
@@ -506,7 +521,7 @@ Beads were incubated in 4\% BSA before grafting to reduce chances of bead reject
 
 \section{Discussion}
 %New technique for remote measurement of biological forces
-In this study, we have shown for the first time the direct link between cell behaviours and embryo morphogenesis through their measured mechanical properties, in the of the zebrafish blastula simple morphogenetic transformation.
+In this study, we have shown for the first time the direct link between cell behaviours and embryo morphogenesis through their measured mechanical properties, in the of the zebrafish blastula simple morphogenetic transformation. %TODO check this line
 We could apply directed force within a tissue and challenge this tissue mechanically and report the response of the tissue at cellular level.
 We also showed that these properties are controlled at molecular level, through a network made of actomyosin and cadherin as knock downs of Rac1, Rho-kinase and E-Cadherin have dramatic repercussions on all levels, from cell to embryo.
 
