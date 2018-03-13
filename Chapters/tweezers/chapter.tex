@@ -208,6 +208,13 @@ Acrylic panels were used to allow for a positioning camera (PiCam) to be placed 
 This aided with the position of the Zebrafish.
 The chamber was water tight and featured built-in heating pads to maintain the embryo medium at a comfortable $27^oC$ for the Zebrafish being imaged.
 
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/tweezers/Figs/PDF/fep_chamber}
+  \label{fig:fep_chamber}
+  \caption{3D printed chamber for housing Magnetic tweezers whilst providing ambient living conditions for a developing Zebrafish.}
+\end{figure}
+
 %Contraints specifications and requirements
 \subsubsection{Force calibration}
 
@@ -452,24 +459,28 @@ We find a good correlation between E and the rate of expansive cell shape deform
 This is consistent with the rapid elastic bead recoil being determined by an elastic recoil in cell shape, after the release of the imposed force.
 We conclude that the cellular signature, of the elastic periods are largely accounted for by cell shape deformations.
 
+%TODO edit below
 \begin{landscape}
   \begin{figure}
     \centering
      \includegraphics[width=\linewidth]{Chapters/tweezers/Figs/PDF/cell_tracking}
-      \caption{A-B: Sketch of typical rheological experiment (A) in WT embryo under SPIM (B) where blue represents cell extension and red is compression. 1-2-3 label regarding cells over time-lapse.
-      Yellow dot marks the original position of the bead centre.
-      C-D: Analysis of the coefficient of deformations $C_t$ and $C_C$ shows that tissue (C) and cells (D) are compressed at the front of the bead while they are stretched are the rear during bead pulling (n = 14 pulls, 3 embryos).
-      E-H: Analysis of cell area and cell aspect ratio reveals cells disappear from imaging plane, suggesting cells at the front rearrange in 3D, while at rear, cells are stretched (E).
-      Along developmental time, tissue deformation ($C_t$), cells deformation ($C_c$) and cell intercalation ($C_t$-$C-s$) during elastic phase (in \SI{}{\micro\metre\squared\per\minute}), at the front of the bead, show that tissue compression can be accounted mainly by cell shape changes (F), while, during creep phase, strain rates show that this accountancy is lost, suggesting cell rearrangement is major event (G).
-      When force is released, cells at the front relax to their original shape (H).
-      I-K: Correlation analysis of cell parameters and rheological parameters.
-      This is supported by correlations between elastic modulus E and cell shape change coefficient during elastic phase, at the front of the bead (I), between viscosity coefficient $\eta_1$ and cell rearrangement rate during creep phase (J), between elastic modulus $E$ and cell shape change coefficient during recoil phase (K).
-      Lines represent linear regressions.
-      }
+     \caption{p.t.o}
       \label{fig:cell_tracking}
   \end{figure}
-\end{landscape}
-
+\end{landscape}§
+\begin{figure}\ContinuedFloat
+  \caption{
+  A-B: Sketch of typical rheological experiment (A) in WT embryo under SPIM (B) where blue represents cell extension and red is compression. 1-2-3 label regarding cells over time-lapse.
+  Yellow dot marks the original position of the bead centre.
+  C-D: Analysis of the coefficient of deformations $C_t$ and $C_C$ shows that tissue (C) and cells (D) are compressed at the front of the bead while they are stretched are the rear during bead pulling (n = 14 pulls, 3 embryos).
+  E-H: Analysis of cell area and cell aspect ratio reveals cells disappear from imaging plane, suggesting cells at the front rearrange in 3D, while at rear, cells are stretched (E).
+  Along developmental time, tissue deformation ($C_t$), cells deformation ($C_c$) and cell intercalation ($C_t$-$C_s$) during elastic phase (in \SI{}{\micro\metre\squared\per\minute}), at the front of the bead, show that tissue compression can be accounted mainly by cell shape changes (F), while, during creep phase, strain rates show that this accountancy is lost, suggesting cell rearrangement is major event (G).
+  When force is released, cells at the front relax to their original shape (H).
+  I-K: Correlation analysis of cell parameters and rheological parameters.
+  This is supported by correlations between elastic modulus E and cell shape change coefficient during elastic phase, at the front of the bead (I), between viscosity coefficient $\eta_1$ and cell rearrangement rate during creep phase (J), between elastic modulus $E$ and cell shape change coefficient during recoil phase (K).
+  Lines represent linear regressions.
+  }
+\end{figure}
 To investigate how tissue deforms during the creep phase, which in the mechanical model is defined by $\nu$1, we visually inspected how cells in tissue in front and behind the bead behaved during this period.
 We see cells becoming compressed and moving out the plane (decreasing in area), in front of the bead and conversely cells becoming stretched and entering the plane at the rear (Figure 3 A, B).
 This behaviour can be quantified by comparing changes in cell aspect ratio and area through both the elastic and creep periods (Figure 3.E).
@@ -479,8 +490,8 @@ To quantify cell behaviours during the creep period, we measure cell and tissue 
 Tissue strain rate, cell shape strain rate and cell rearrangement rates are measured along the direction of force application (see M\&M).
 While the elastic periods were dominated by changes in cell shape, the creep period is characterised by cell rearrangements.
 Cell shape strain accounts for a small fraction of tissue strain rate (Figure 3.G), and does not correlate with $\nu$1 (front correlation = 0.345, p = 0.21; rear correlation = -0.052, p = 0.85).
-Nonetheless, measureable cell shape strain rates indicate some contribution persists through the creep period.
-However, cell intercalation strain rate does correlate with $\nu$1, both in front (Figure 3.J, pcorrelation = 0.0638, correlation factor = 0.49) and behind the bead (Figure S4, p = 0.035, correlation = -0.546).
+Nonetheless, measurable cell shape strain rates indicate some contribution persists through the creep period.
+However, cell intercalation strain rate does correlate with $\nu$1, both in front (Figure 3.J, $p_{correlation} = 0.0638$, correlation factor = 0.49) and behind the bead (Figure S4, $p = 0.035$, correlation $= -0.546$).
 We conclude that cell rearrangements are the major determinants of tissue viscosity in the creep period.
 
 %Good \/
@@ -544,11 +555,22 @@ The Superparamagetic beads used in this work are polystyrene spheres filled with
 Beads were incubated in 4\% BSA before grafting to reduce chances of bead rejection when injected.
 
 \section{Discussion}
+
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/tweezers/Figs/PDF/interconnected_protein_signalling}
+  \caption{Summary of effects of knockdowns in cell motion, cell protrusive activity and cell adhesion through the loss of function of Rac1, ROCK and E-Cadherin.
+  Based on literature, a feedback mechanism via mechano-sensing through Rac1 (blue, red and green arrows) is speculated to regulate the tissue rheology.
+  Rac1 activation promotes actin cytoskeleton elaboration, increasing cell stiffness, and the production of cell protrusions.
+  Protrusions provide a means of elaborating cell-cell adhesion, increasing tissue viscosity and enabling motility.
+  Motility is achieved by contraction relative to points of adhesion, providing both movement and effectively testing the mechanical compliance of the cell network, feeding back to activate Rac1.
+  }
+  \label{fig:interconnected_protein_signalling}
+\end{figure}
 %New technique for remote measurement of biological forces
 In this study, we have shown for the first time the direct link between cell behaviours and embryo morphogenesis through their measured mechanical properties, in the of the zebrafish blastula simple morphogenetic transformation. %TODO check this line
 We could apply directed force within a tissue and challenge this tissue mechanically and report the response of the tissue at cellular level.
 We also showed that these properties are controlled at molecular level, through a network made of actomyosin and cadherin as knock downs of Rac1, Rho-kinase and E-Cadherin have dramatic repercussions on all levels, from cell to embryo.
-
 
 \subsubsection{Rear versus Front}
 It is still not clear what happens at the rear of the bead, especially at early stages.
@@ -587,9 +609,9 @@ It is still unclear the fundamental mechanisms by which a particular type of mol
 This suggests strongly that tissue rheology is regulated at higher level than simply molecular and cellular.
 It shows that even if cells and molecular network have their own mechanical specificities, they must be integrated in a greater framework to predict their properties.
 
-\subsubsection{analysis}
+\subsubsection{Analysis}
 All tests were performed with R software.
-Student's t-test were performed for ellipse ratio and mean square displacement analyses. %Probably not including?
-Linear mixed effect model was performed to compare rheological parameter trends in different loss-of-function essays.
+%Student's t-test were performed for ellipse ratio and mean square displacement analyses. %Probably not including?
+Linear mixed effect model was performed to compare rheological parameter trends in different loss-of-function assays.
 Anova test compared linear fits on developmental trends of the rheological parameters between WT and loss of function conditions.
 Percentage bend correlation method was used for correlation between cell and rheological parameters, to take in account outliers.
