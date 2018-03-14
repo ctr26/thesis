@@ -344,6 +344,7 @@ an image splitter would have halved the overall image resolution in the $y$ axis
 
 \section{Results}
 
+%TODO Check this!
 \subsection{Ellipsoid to sphere transformation in early embryogenesis is dominated by cell motility and migration} %Lay out background of transformation
 After fertilisation, the zebrafish embryo undergoes series of synchronous cell divisions, followed by the first morphogenetic transformations.
 Before the embryo begins its epibolic spread over the yolk cell, an initial subtle transformation occurs.
@@ -374,10 +375,10 @@ This device creates a 3D graded magnetic field within the volume between four ir
 The device has been calibrated to deliver known forces along three orthogonal axes (see M\&M).
 [fluorescent beads covered with poly siloxane]
 
-Beads were implanted and the cells surrounding them in blastula-stage embryos for extensive periods and detected no changes in local cell arrangement, actin cytoskeleton organisation (assessed with GFP-lifeact) or myosin localisation (GFP-MII) (Figure S2).
+Beads were implanted and the cells surrounding them in blastula-stage embryos for extensive periods and detected no changes in local cell arrangement, actin cytoskeleton organisation (assessed with GFP-lifeact) or myosin localisation (GFP-MII). %TODO Check this in text
 Embryos containing a bead developed, as far as we are able to detect, unperturbed by its presence.
-The physical properties of the tissue were measured by applying a calibrated, constant force (in the order of 8nN) for 1 minute and tracking the displacement of the bead during and after application.
-Force was directed alternately radially towards or away from the yolk at 3-minute intervals.
+The physical properties of the tissue were measured by applying a calibrated, constant force (in the order of 8nN) for \SI{1}{\minute} and tracking the displacement of the bead during and after application.
+Force was directed alternately radially towards or away from the yolk at \SI{3}{\minute} intervals.
 Bead trajectories reveal that embryonic tissue acts as a viscoelastic medium.
 Trajectories invariably show an initial fast displacement followed by a slower, linear displacement or creep %TODO figure
 Upon release, the bead recoils rapidly towards its original position in a reversal of the initial fast displacement.
@@ -385,7 +386,7 @@ Displacement during the slower creep phase is not recovered %TODO figute
 Between high- to sphere-stage we see a significant and systematic reduction in the magnitudes of all phases of movement but not in the overall shapes of these trajectories  %TODO figute
 To quantify and further characterise these findings, we fitted a parameterised mechanical model that accounts for the shapes of bead trajectories over time.
 The most parsimonious model consists of a dashpot in series with parallel spring and dashpot  %TODO figute
-The dashpots are characterized by viscous coefficients $\nu$1 and $\nu$2, and the spring by an elastic modulus, E.
+The dashpots are characterised by viscous coefficients $\eta_1$ and $\eta_2$, and the spring by an elastic modulus, E.
 Fitted parameters reveal that E increased by 3 fold
 (
 $E_{\SI{0}{\minute}}$=\SI{2.61(57)}{\pascal};
@@ -405,10 +406,10 @@ over a development time of \SI{75}{\minute}.
 No significant differences were found between the two directions of force application ($p_E > 0.05$, $p_{\eta_1} > 0.05$, $p_{\eta_2} > 0.05$).
 This trend was seen irrespective of the starting developmental age of the embryo, excluding the likelihood of work hardening as an explanation.
 %A developmental stiffening of the embryo was also seen in measurements of the apparent Young’s modulus as determined by AFM indentation (Figure S3).
-A characteristic time constant of the elastic deformation, $\tau$, can be derived from the ratio of $\nu$2 to E .
-Despite large changes in both of $\nu$2 and E, $\tau$ remains relatively constant over developmental time (%TODO add figure
-mean = 5.33 s).
-This suggests that this tissue may contain a mechanism of self-regulation of $\tau$ or that both E and $\nu$2 are determined by a common feature.
+A characteristic time constant of the elastic deformation, $\tau$, can be derived from the ratio of $\nu_2$ to E.
+Despite large changes in both of $\eta_2$ and E, $\tau$ remains relatively constant over developmental time (%TODO add figure
+mean = \SI{5.33}{\second}).
+This suggests that this tissue may contain a mechanism of self-regulation of $\tau$ or that both E and $\eta_2$ are determined by a common feature.
 
 The proposed mechanical models provides a good explanation for the trajectory of the bead during the active force application and the initial recoil period.
 However, bead movements in the later recovery period are more erratic and not accounted for by the model.
@@ -536,7 +537,7 @@ Early cell shape changes give way to area changes during the creep period, this 
 %To quantify cell behaviours during the creep period, we measure cell and tissue strain rates using a simplified tissue tectonics approach (REF).
 %Tissue strain rate, cell shape strain rate and cell rearrangement rates are measured along the direction of force application (see M\&M).
 While the elastic periods were dominated by changes in cell shape, the creep period is characterised by cell rearrangements.
-Cell shape strain accounts for a small fraction of tissue strain rate (Figure \ref{fig:cell_tracking}.G), and does not correlate with $\nu$1 ($R^_\text{front}^2 = 0.345$, $p = 0.21$; ($R^_\text{rear}^2 = -0.052$, $p = 0.85$).
+Cell shape strain accounts for a small fraction of tissue strain rate (Figure \ref{fig:cell_tracking}.G), and does not correlate with $\eta_$ ($R^_\text{front}^2 = 0.345$, $p = 0.21$; ($R^_\text{rear}^2 = -0.052$, $p = 0.85$).
 Nonetheless, measurable cell shape strain rates indicate some contribution persists through the creep period.
 However, cell intercalation strain rate does correlate with $\nu_1$, both in front (Figure \ref{fig:cell_tracking}.J, $p_\text{correlation} = 0.0638$, $R^2 = 0.49$) and behind the bead ($p = 0.035$, correlation $= -0.546$).
 Cell rearrangements appear to be the major determinants of tissue viscosity in the creep period.
@@ -578,7 +579,7 @@ The injection of these dominant negative constructs affect early morphogenesis, 
 %Cortical myosin2 resembles the WT distribution in both DNRAC and MoECad injected embryos (Figure S7).
 %Interestingly, at both cellular and embryonic levels, the phenotypes of DNRAC and DNROCK treated embryos differ from WT in opposite ways, including embryo morphology, cell protrusion formation, cell migration and cell dispersion.
 %In the light of the MoECad results, we would predict that the physical properties of DNRAC-injected embryos should be less stiff and less viscous than WT those for DNROCK-injected would be stiffer and more viscous.
-When we measure those rheological parameters by magnetic bead displacement, we confirm these predictions: DNRAC embryos fail to increase stiffness and viscosities $\nu$1 and $\nu$2 (pE = 1.016e-09, p$\nu$1 = 1.87e-04, p$\nu$2 = 0.0028) while DNROCK embryos become stiffer and more viscous (pE = 7.59e-25, p$\nu$1 = 6.74e-15, p$\nu$2 =3.65e-12) than their WT counterparts (Figure 4.F-H).
+When we measure those rheological parameters by magnetic bead displacement, we confirm these predictions: DNRAC embryos fail to increase stiffness and viscosities $\eta_$ and $\eta_2$ ($p_E = 1.016e-09$, $p_{\eta_1}$ = 1.87e-04, $p_{\eta_2}$ = 0.0028) while DNROCK embryos become stiffer and more viscous (pE = 7.59e-25, p$\eta_$ = 6.74e-15, p$\eta_2$ =3.65e-12) than their WT counterparts (Figure 4.F-H).
 Interestingly, $\tau$ is affected by the different knock downs, stiffer embryo showing a shorter $\tau$ than softer ones (all p << 1e-5).
 
 Finally, we wished to ask how the changes rheological properties found for DNRAC and DNROCK treatments are reflected in the rates of cell and tissue deformation?
@@ -587,7 +588,7 @@ The resultant parameters do segregate according to their mechanical properties: 
 Cells in the stiffer DNROCK-injected embryos deform less in the elastic period ($p_{WT-DNROCK} = 0.0017$) and induce less cell rearrangement in the creep period ($p_{WT-DNROCK} = 0.0013$) %TODO figure (Figure 4.J).
 %We can now combine data from all WT and experimental manipulation conditions to examine correlations within an extended range of developmental conditions.
 These results confirm the previously-observed correlations between cellular and rheological parameters hold true under this expanded range.
-Stiffness E is strongly correlated with initial cell shape deformation while $\nu$1 is strongly correlated with cell rearrangements.
+Stiffness E is strongly correlated with initial cell shape deformation while $\eta_$ is strongly correlated with cell rearrangements.
 This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology.
 Since the measurement of bead movements are faster, easier and more sensitive than the associated cell measurements, this facilitate us gaining greater insight into the mechanics of developing tissues.
 
