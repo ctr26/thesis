@@ -47,22 +47,6 @@ We can now assign the viscoelastic component predominantly to cell shape change 
 
 \section{Tissue dynamics in developing organisms}
 
-\begin{figure}
-  \includegraphics{Chapters/tweezers/Figs/PDF/zebrafish_stages}
-  \caption{Periods of embryonal development of the zebrafish.
-  The embryo develops from a single cell into a larva in three days, undergoing morphologically apparent changes.
-  0 hours - Zygote: Cytoplasm streams toward the animal pole to form the blastodisc.
-  0.75 - Cleavage: The blastodisc undergoes several rounds of rapid, synchronous, partial cleavage to give 64 blastomeres (and a yolk cell).
-  2.25 - Blastula: The midblastula transition occurs. Epiboly begins.
-  5.25 - Gastrula: Further cell migration (gastrulation: involution, convergence, extension) forms the epiblast and hypoblast.
-  10 - Segmentation: Somites develop. Organogenesis starts. The tail appears.
-  24 - Pharyngula: The body axis straightens. Circulation begins and pigmentation develops. Fins begin development.
-  48 - Hatching: Primary organ systems complete morphogenesis. Cartilage develops. Hatching occurs.
-  72 - Early larva: The swim bladder inflates. Food-seeking behaviour appears.
-  }
-\end{figure}
-
-
 \subsection{Danio Rario}
 %From Fran edited
 The zebrafish (\emph{Danio rerio}) is a key model organism for vertebrate development.
@@ -76,6 +60,33 @@ Zebrafish grow is rapid, a single cell of a diameter of 0.7 mm becomes a 3.5 mm-
 Finally, Zebrafish are suitable for genetic studies, the genome is fully sequence and there exist tools for genetic manipulation.
 Breeding is simple, sexual maturity occurs at three months post fertilisation making for easy cross-breeding %TODO cite (D'Costa \& Shepherd, 2009)
 , and the costs of keeping zebrafish are lower than that of other vertebrates due to their low space requirements and minimal handler time for each. %TODO cite (Lieschke \& Currie, 2007).
+
+
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/tweezers/Figs/PDF/zebrafish_stages}
+  \label{fig:zebrafish_stages}
+  \caption{Periods of embryonal development of the zebrafish.
+  The embryo develops from a single cell into a larva in three days, undergoing morphologically apparent changes.
+  See Table \ref{tab:zfish_dev}
+  }
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular*}{\textwidth}{llp{25em}}
+    \SI{0}{\hour} &  Zygote & Cytoplasm streams toward the animal pole to form the blastodisc.\\
+    \SI{0.75}{\hour} &  Cleavage & The blastodisc undergoes several rounds of rapid, synchronous, partial cleavage to give 64 blastomeres (and a yolk cell).\\
+    \SI{2.25}{\hour} &  Blastula & The midblastula transition occurs. Epiboly begins.\\
+    \SI{5.25}{\hour} &  Gastrula & Further cell migration (gastrulation: involution, convergence, extension) forms the epiblast and hypoblast.\\
+    \SI{10}{\hour} & Segmentation & Somites develop. Organogenesis starts. The tail appears.\\
+    \SI{24}{\hour} & Pharyngula & The body axis straightens. Circulation begins and pigmentation develops. Fins begin development.\\
+    \SI{48}{\hour} & Hatching & Primary organ systems complete morphogenesis. Cartilage develops. Hatching occurs.\\
+    \SI{72}{\hour} & Early larva & The swim bladder inflates. Food-seeking behaviour appears.
+  \end{tabular*}
+  \caption{Developmental stages of Zebrafish}
+  \label{tab:zfish_dev}
+\end{table}
 
 %Additionally, the zebrafish is suitable for genetic studies: its genome sequence and tools for genetic manipulation are available, breeding is easy and possible from three months after fertilisation (D'Costa \& Shepherd, 2009), and the costs of keeping zebrafish are low compared with other vertebrates (Lieschke \& Currie, 2007).
 %From Fran
@@ -554,7 +565,7 @@ Early cell shape changes give way to area changes during the creep period, this 
 %To quantify cell behaviours during the creep period, we measure cell and tissue strain rates using a simplified tissue tectonics approach (REF).
 %Tissue strain rate, cell shape strain rate and cell rearrangement rates are measured along the direction of force application (see M\&M).
 While the elastic periods were dominated by changes in cell shape, the creep period is characterised by cell rearrangements.
-Cell shape strain accounts for a small fraction of tissue strain rate (Figure \ref{fig:cell_tracking}.G), and does not correlate with $\eta_$ ($R^_\text{front}^2 = 0.345$, $p = 0.21$; ($R^_\text{rear}^2 = -0.052$, $p = 0.85$).
+Cell shape strain accounts for a small fraction of tissue strain rate (Figure \ref{fig:cell_tracking}.G), and does not correlate with $\eta_1$ ($R_\text{front}^2 = 0.345$, $p = 0.21$; ($R_\text{rear}^2 = -0.052$, $p = 0.85$).
 Nonetheless, measurable cell shape strain rates indicate some contribution persists through the creep period.
 However, cell intercalation strain rate does correlate with $\nu_1$, both in front (Figure \ref{fig:cell_tracking}.J, $p_\text{correlation} = 0.0638$, $R^2 = 0.49$) and behind the bead ($p = 0.035$, correlation $= -0.546$).
 Cell rearrangements appear to be the major determinants of tissue viscosity in the creep period.
@@ -569,9 +580,9 @@ movement during bead displacement are consistent with our simple hypothesis of a
 We will measure how these changes affect embryo development, %cell behaviours
 and the mechanical properties of the blastoderm.
 Cell adhesion is a fundamental requirement for building a cohesive tissue, we reduced expression of E-Cadherin (cdh1).
-Using a knock-down Morpholino approach (MoECad), we show that knockdown of cell adhesion leads to embryos defective in the high-to-sphere transformation; these embryos failed to achieve a spherical shape (Figure 4.A).
-%At a cellular level, cell protrusions lose their radial polarity (Figure S5), while the number of protrusion per cell are not different (Figure 4B, C).
-%Further, cells in treated embryos have a reduced coefficient of diffusion (6.3 µm2/min, pWT-MoECad = 1.6*10-5), showing them less able to migrate as extensively as WT cells (Figure 4.B, p = 1.621e-05), though the directions of migration are as seen in WT ****[Check those directions].
+Using a knock-down Morpholino approach (MoECad), we show that knockdown of cell adhesion leads to embryos defective in the high-to-sphere transformation; these embryos failed to achieve a spherical shape (Figure \ref{cell_tracking}.A).
+%At a cellular level, cell protrusions lose their radial polarity (Figure S5), while the number of protrusion per cell are not different (Figure \ref{cell_tracking}B, C).
+%Further, cells in treated embryos have a reduced coefficient of diffusion (6.3 µm2/min, pWT-MoECad = 1.6*10-5), showing them less able to migrate as extensively as WT cells (Figure \ref{cell_tracking}.B, p = 1.621e-05), though the directions of migration are as seen in WT ****[Check those directions].
 Rheological measurements show that MoECad-treated embryos remain less stiff and less viscous than their WT counterparts.
 Further, they are reduced in the elevation of these properties over developmental time \ref{fig:visco_time}
 Developmental trends are significantly different to WT, $p_E = 5.63e-07$ , $p_{\nu_1} = 2.10e-03$, $p_{\nu_2} =0.042$).
@@ -584,8 +595,8 @@ Rac1 signalling using a dominant-negative Rac1 construct (DNRAC, ref), RhoA sign
 DNRAC we anticipate should eliminate protrusive activity, while DNROCK would reduce the activation of the molecular motor myosin-2.
 The injection of these dominant negative constructs affect early morphogenesis, DNRAC-injected embryos fail to progress to a spherical shape, while DNROCK injection causes a faster round-up of the embryo.
 %Myosin-2 inhibition via blebbistatin treatment gives the same phenotype as DNROCK treatment (Figure S5).
-%At a cellular level, cells in DNRAC-injected embryos produce far fewer protrusions (Figure 4B, freqWT = 2.05 extensions/frame/cell, freqDNRAC = 0.4 extension/frame/cell, p = 0.01386).
-%Cells in DNROCK-injected embryos make significantly more protrusions than WT (Figure 4B, freqDNROCK = 5.30 extensions/frame/cell, p = 0.0007866) and more cells display a multipolarity (Figure 4.C).
+%At a cellular level, cells in DNRAC-injected embryos produce far fewer protrusions (Figure \ref{cell_tracking}B, freqWT = 2.05 extensions/frame/cell, freqDNRAC = 0.4 extension/frame/cell, p = 0.01386).
+%Cells in DNROCK-injected embryos make significantly more protrusions than WT (Figure \ref{cell_tracking}B, freqDNROCK = 5.30 extensions/frame/cell, p = 0.0007866) and more cells display a multipolarity (Figure \ref{cell_tracking}.C).
 %Cell protrusions in DNROCK-injected embryos favour a radial distribution but are more dispersed and numerous than WT (Figure S6).
 %The increase in protrusion production in DNROCK embryos is as expected for a loss of function of myosin-2 in migratory cells [ref].
 %(Protrusions on DNRAC injected cells are too infrequent to perform statistical analyses.)
@@ -596,21 +607,22 @@ The injection of these dominant negative constructs affect early morphogenesis, 
 %Cortical myosin2 resembles the WT distribution in both DNRAC and MoECad injected embryos (Figure S7).
 %Interestingly, at both cellular and embryonic levels, the phenotypes of DNRAC and DNROCK treated embryos differ from WT in opposite ways, including embryo morphology, cell protrusion formation, cell migration and cell dispersion.
 %In the light of the MoECad results, we would predict that the physical properties of DNRAC-injected embryos should be less stiff and less viscous than WT those for DNROCK-injected would be stiffer and more viscous.
-When we measure those rheological parameters by magnetic bead displacement, we confirm these predictions: DNRAC embryos fail to increase stiffness and viscosities $\eta_$ and $\eta_2$ ($p_E = 1.016e-09$, $p_{\eta_1}$ = 1.87e-04, $p_{\eta_2}$ = 0.0028) while DNROCK embryos become stiffer and more viscous (pE = 7.59e-25, p$\eta_$ = 6.74e-15, p$\eta_2$ =3.65e-12) than their WT counterparts (Figure 4.F-H).
-Interestingly, $\tau$ is affected by the different knock downs, stiffer embryo showing a shorter $\tau$ than softer ones (all p << 1e-5).
+When we measure those rheological parameters by magnetic bead displacement, we confirm these predictions: DNRAC embryos fail to increase stiffness and viscosities $\eta_1$ and $\eta_2$ ($p_E = $ \SI{1.016e-09}, $p_{\eta_1}$ = \SI{1.876e-04}, $p_{\eta_2}$ = \SI{0.0028}) while DNROCK embryos become stiffer and more viscous ($p_E =$ \SI{7.59e-25}, $p_{\eta_1}$ = \SI{6.74e-15}, $p_{\eta_2} =$ \SI{3.65e-12}) than their WT counterparts (Figure .F-H).
+Interestingly, $\tau$ is affected by the different knock downs, stiffer embryo showing a shorter $\tau$ than softer ones ($p \ll $ \SI{1e-5}).
 
+%TODO edit \/
 Finally, we wished to ask how the changes rheological properties found for DNRAC and DNROCK treatments are reflected in the rates of cell and tissue deformation?
 We repeated fast light sheet imaging analyses with each knock-down treatment, to follow cell behaviours during force application.
 The resultant parameters do segregate according to their mechanical properties: softer DNRAC embryos present more cell deformation during the elastic period ($p_{WT-DNRAC} = 0.0013$) and more cell rearrangement during the creep period ($p_{WT-DNRAC} = 0.0025$), compared to WT.
-Cells in the stiffer DNROCK-injected embryos deform less in the elastic period ($p_{WT-DNROCK} = 0.0017$) and induce less cell rearrangement in the creep period ($p_{WT-DNROCK} = 0.0013$) %TODO figure (Figure 4.J).
+Cells in the stiffer DNROCK-injected embryos deform less in the elastic period ($p_{WT-DNROCK} = 0.0017$) and induce fewer cell rearrangements in the creep period ($p_{WT-DNROCK} = 0.0013$) (Figure \ref{cell_tracking}.J).
 %We can now combine data from all WT and experimental manipulation conditions to examine correlations within an extended range of developmental conditions.
 These results confirm the previously-observed correlations between cellular and rheological parameters hold true under this expanded range.
-Stiffness E is strongly correlated with initial cell shape deformation while $\eta_$ is strongly correlated with cell rearrangements.
+Stiffness E is strongly correlated with initial cell shape deformation while $\eta_1$ is strongly correlated with cell rearrangements.
 This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology.
 Since the measurement of bead movements are faster, easier and more sensitive than the associated cell measurements, this facilitate us gaining greater insight into the mechanics of developing tissues.
 
 \subsection{Biological methodology}
-Embryos were harvested just after fertilisation and incubated at 28.5ºC.
+Embryos were harvested just after fertilisation and incubated at \SI{28.5}{\celsius}.
 Used lines were: wild types (WT), Tg(beta-actin:mCherry-CAAX) (labelling membranes), Tg(beta-actin:Lifeact-eGFP) (labelling F-actin) and Tg(beta-actin:Myosin2-mCherry).
 
 \subsubsection{Bead and cell transplantation}
