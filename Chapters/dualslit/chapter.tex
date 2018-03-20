@@ -11,30 +11,93 @@
 \fi
 
 \chapter{Faster confocal slit scanning light-sheet microscopy}
+
+Confocal is good because pinhole but slow because Raster
+Lightsheet fast because parallel
+Can use an extended pin-hole or a slit to improve contrast and optical sectioning
+Linear spatial filter
+Synchronise slit to scanning beam
+
+Reject out-of-focus Lightsheet
+
+
 \section{Principles}
+
+
+
 \subsection{Simulations}
 % Use James' simulation to show 2 beads together produces a bad curve
 \section{Implementation}
+
+Galvo mirror and virtual Slit
+Galvo mirror and static slit with relay optics and de-scanning unit
+Galvo mirror and fast actuator
+
+Using virtual slit requires precise synchronisation.
+Need an initial delay, as sCMOS chip used here requires a 10ms period to initialise electronics.
+During this period the Galvo can be pre-driven so that the velocity is linear once the exposure begins
+The galvo is then sinusoidally returned at the end of the exposure.
+
 \subsection{Slit-descanning} %Huisken did this in hyperspectral paper
 \subsection{Improvement} %Could use fran's results or repeat mine (rather latter)
 
-  \begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.5\textwidth}
-    \input{Chapters/dualslit/Figs/PDF/optimal_slit_snr.tex}
-    \caption{You a beaut}
-    \end{subfigure}%
-\begin{subfigure}[b]{0.5\textwidth}
-      \centering
-    \input{Chapters/dualslit/Figs/PDF/optimal_slit_contrast.tex}
-    \caption{You a beaut}
-    \end{subfigure}%
-  \end{figure}
-
 \subsection{Limitations} %Show that mismatch between beam and slit xy is bad and z is bad
 \section{Double speed slit-scanning microscopy}
-\subsection{Implementation} % Talk about SLM options
-\subsubsection{Spatial light modulator} %Image of two beams with optimisation of intensity
-\subsubsection{All optical solution} %Polarisation insensitive better etc, option to make bessel.
-\subsection{Result}
+
+The sensor used in the Orca Flash v4 (as well as other sCMOS cameras including the Pco.Edge and Andor Zyla) consists of two adjacent Fairchild sCMOS chips.
+In global shutter mode a shutter will propagate outwards from the centre of the chip simultaneously and in the fastest exposure possible for each chip (10ms), this provides the maximum 100 Hz imaging.
+For confocal slit scanning the chips are addressed serially with a single thin shutter propagating from one side of the chip to the other.
+In this mode the maximum frame rate achievable was 50 Hz when confocally scanning.
+
+In this work a custom camera firmware was used to enable a pair of confocal slits to scan simultaneously providing the \SI{100}{\hertz} that was ordinarily available in global shutter mode.
+
+\subsection{Implementation}
+\subsubsection{SLM}
+Initially an SLM was imaged directly onto the first scan lens using a pair of imaging relays; the relay at the scan mirror made the image plane of the scan lens accessible whilst the second relay controlled the pixel size of the SLM at the imaging plane of the excitation objective.
+
+\subsubsection{Oversampling}
+A solution requiring no additional optics was conceived; by running the galvanometric mirrors at a very high frequency and pulsing the laser appropriately a sampling could be achieved that would appear to be two independent laser sources moving in unison.
+The round trip time of the mirror so that this sampling would be achieved would in the best case would have to match the time it takes for the shutter to move up one row of pixels, $\frac{\SI{10}{\milli\second}}{1024}$.
+The drive frequency would then exceed \SI{100}{\kilo\hertz}, which is not currently feasible with commercial scanning mirror technology
+
+\subsubsection{Optical approach}
+An alternative method was employed whereby immediately after all four colours were aligned spatially, a beam splitter was added with two returning mirrors, similarly to Michelson interferometer
+Instead of the two arms of the pseudo-interferometer being interfered, they were purposely aimed off to create a small angle in between them before reaching the scanning mirror.
+This slight angular difference, once imaged through the telecentric scan lens, then became a spatial separation at the imaging plane of the system that was easily tuned using the kinematic mirrors around the beam splitter.
+
+The all optical approach offered many advantages: The system was entirely polarisation insenstive and suffered minimal optical losses, especially when compared to using an SLM. As the duplication of the beams was now indepepednet of any beam shaping, actual beam shaping optics could be readily implemented, this had the potential for optics such as cubic phase masks and axicon lenses or even an SLM being inserted to create exotic beams.
+
+\begin{figure}
+  %\includegraphics{/path/to/figure}
+  \caption{Figure of two beams at image plane}
+  \label{}
+\end{figure}
+
+%\subsection{Implementation} % Talk about SLM options
+%\subsubsection{Spatial light modulator} %Image of two beams with optimisation of intensity
+%\subsubsection{All optical solution} %Polarisation insensitive better etc, option to make bessel.
+\subsection{Results}
+
+A characterisation of the optimal slit width of the virtual slit was needed to provide a maximal contrast.
+A volume of \SI{\sim 100} beads was imaged using varying slit widths.
+From these 100 beads over 5 volumes a single candidate bead that was not as part of an aggregate, sufficently bright and unobscured, was found.
+\SI{\sim 1000}%TODO check this
+beads
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.4\textwidth}
+  \input{Chapters/dualslit/Figs/PDF/optimal_slit_snr.tex}
+  \caption{You a beaut}
+  \end{subfigure}%
+\begin{subfigure}[b]{0.4\textwidth}
+    \centering
+  \input{Chapters/dualslit/Figs/PDF/optimal_slit_contrast.tex}
+  \caption{You a beaut}
+  \end{subfigure}%
+\end{figure}
+
+\section{Simulations and Theory}
+\subsection{Light-sheet}
+
 \subsection{Summary}
