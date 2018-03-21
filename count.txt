@@ -2,12 +2,12 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 24357
+Words in text: 24447
 Words in headers: 409
-Words outside text (captions, etc.): 1940
+Words outside text (captions, etc.): 2050
 Number of headers: 147
-Number of floats/tables/figures: 45
-Number of math inlines: 304
+Number of floats/tables/figures: 47
+Number of math inlines: 305
 Number of math displayed: 42
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -50,8 +50,8 @@ Subcounts:
   38+6+0 (1/0/0/0) Chapter: Faster confocal slit scanning light-sheet microscopy
   0+2+0 (2/0/0/0) Section: Principles
   73+4+0 (4/0/0/0) Section: Implementation
-  563+10+21 (6/2/2/1) Section: Double speed slit-scanning microscopy
-  416+10+62 (7/2/0/0) Section: Simulations and Theory
+  563+10+99 (6/3/2/1) Section: Double speed slit-scanning microscopy
+  506+10+94 (7/3/1/0) Section: Simulations and Theory
   1+3+0 (1/0/0/0) Chapter: Discussion and Conclusions
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   21+0+0 (1/0/1/0) Section: 

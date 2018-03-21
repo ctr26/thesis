@@ -51,6 +51,19 @@ In this mode the maximum frame rate achievable was 50 Hz when confocally scannin
 
 In this work a custom camera firmware was used to enable a pair of confocal slits to scan simultaneously providing the \SI{100}{\hertz} that was ordinarily available in global shutter mode.
 
+\begin{figure}
+  \centering
+  \includegraphics{dual_slit_scanning}
+  \caption{
+  Principle behind doubling the frame rate of the Orca Flash v4 when using slit scanning mode.
+  Standard exposure: In global shutter mode \SI{100}{\hertz} imaging may be achieved as each side of the sensor rolls an independent shutter.
+  Slit scanning: In normal slit scanning mode the shutter moves from one half of the chip to the other serially, halving available framerate.
+  Dual-slit scanning:
+  Having two shutters roll in slit scanning mode would make available the full of frame rate
+  }
+  \label{fig:dual_slit_scanning}
+\end{figure}
+
 \subsection{Implementation}
 \subsubsection{SLM}
 Initially an SLM was imaged directly onto the first scan lens using a pair of imaging relays; the relay at the scan mirror made the image plane of the scan lens accessible whilst the second relay controlled the pixel size of the SLM at the imaging plane of the excitation objective.
@@ -164,4 +177,27 @@ Schroff at for instance require $200 \times 200$ images for a single mSIM recons
 The proposed method would therefore increase the speed of this process by 200 fold.
 This is dwarfed by iSIM, which gives instantaneous super-resolved images at the cost of requiring extensive optics.
 
+\begin{figure}
+  \centering
+  \includegraphics{msim_slit}
+  \caption{
+  a) The capturing of a single mSIM frame;
+  b) mSIM illumination pattern as it rolls;
+  c) reconstructed slit-mSIM image;
+  d) OTF of a single mSIM frame;
+  e) OTF of reconstructed slit-mSIM frame
+  }
+  \label{}
+\end{figure}
+
+
+Reconstructions for SIM were achieved using fairSIM.
+fairSIM however assumes that each angle provided will have the same size OTF just rotated.
+However, when using slit scanning the OTF support is large; as such fairSIM, though it reconstructs succesfully, omits resolution in the $y$ direction.
+For this work a custom reconstruction algorithm will be needed to maximise reconstruction reconstruction.
+
 \subsection{Summary}
+
+The assumptions made here are that the imaging system is ideal, that imaging is only a frequency passband and that the axial is infinity thin.
+
+There exist adapters to split the image on the chip into two colours, could use slit scanning for that, though no room for tuning.
