@@ -1,0 +1,19 @@
+Hi Craig,
+
+I've scanned the hard copy - my handwriting is obviously terrible, but hopefully with the high resolution scan you will be able to read most of it. I'll send the original to Magdelene.
+
+
+General notes: It's good. I would buy what you're selling, I don't think you're overselling your data, and you did a fair job of explaining it. I might suggest a bit more description of the parameters and what elastic/stiff/strain etc. means because that is absolutely not common knowledge for biologists. I assume there is a separate methods chapter, because the methods were pretty quick and superficial. At least for biology PhDs the methods need to be very detailed - not quite a protocol, but they should include all the information you need for someone to repeat the experiment. Basically all the stuff you smooth over in the methods section for your paper you put in detail in the PhD, so that it is a useful resource for your lab once you leave.
+
+Your tenses are all wrong. Results are in past tense, conclusions are in present tense. This goes for talking about the literature as well. "Dragonspleen treatment increased wing size (Fig 3A); we conclude that dragonspleen contains unicornin which causes increased WingT synthesis.
+
+I mentioned this in the notes: You should have a detailed figure on the wt bead movement data (similar to fig 5.8) in place of fig 5.7, then the detailed figure on wt cell movement in fig 5.8, and then the comparison of different treatments that is in 5.7 as figure 5.9.
+
+The beginning of the chapter was written really obtusely - written like an arts student trying to sound clever about a simple topic. You don't have a simple topic, so you need to simplify the language. After the first couple paragraphs the rest of the writing was nice and clear.
+
+I forgot to look at the current Fig 5.9 before I scanned the manuscript. Basically the diagram doesn't make much sense to me. The arrows are like train tracks that you need to decipher, and some arrowheads are missing. Try to simplify it as much as possible.
+
+
+Congratulations on getting this far! Nearly there! Let me know if you have any questions. Best regards,
+
+   Colin
