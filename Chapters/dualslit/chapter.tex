@@ -10,32 +10,34 @@
     \graphicspath{{Chapters/dualslit/Figs/Vector/}{Chapters/dualslit/Figs/}}
 \fi
 
-\chapter{Faster confocal slit scanning light-sheet microscopy}
+\chapter{Developments in virtual confocal slit-scanning microscopy}
 
 %Confocal microscopy is a variant of a pointing scanning systems whereby a pin hole in a conjugate plane rejects out-of-focus light to enable volumetric imaging.
 %Similarly a slit may replace a pinhole greatly speeding up the acquisition process for the cost of resolution and %sectioning capabilities.
-In digitially scanned light-sheet microscopy, the swept beam may be conjugated to a slit to provide better contrast, resolution and sectioning in the direction of scanning.
+%In digitially scanned light-sheet microscopy, the swept beam may be conjugated to a slit to provide better contrast, resolution and sectioning in the direction of scanning.
 
 Conventional epi-illumination fluorescence microscopes illuminate the focal plane of the detection objective as well as a large fraction of the sample outside the focal plane.
 This leads to background intensity due to out-of-focus fluorescence, affecting resolution and contrast.
-Confocal-microscopes use a pin-hole in a conjugate to forcibly reject fluorescence from outside of the focal plane, producing overall better axially resolved images and contrast.
+Confocal-microscopes use a pin-hole in a conjugate image plane to forcibly reject fluorescence from outside of the focal plane, producing overall better axially resolved images and contrast and resolution.
 Sectioning by this means leads to a large photon dose throughout the sample and with a cost to overall speed.
 Light-sheet microscopes address this generally by illuminating with a \emph{thin} sheet of light orthogonally to the sample; but for having wide-field contrast and optical sectioning being on the order of the thickness of the light-sheet.
+
+\section{Single-beam confocal slit scanning}
 
 It was shown that a confocal microscope may be run faster by using a narrow slight rather than a pin-hole, this increased contrast and resolution in one direction only.
 The same principle can be applied to a digitally scanned light-sheet, provided the propagation of the beam is in the same direction of the slit.
 By scanning the slit and the beam concomitantly, an increase in resolution and contrast may be achieved in one direction.
-Moreover, the out-of-focus light being now being rejected then increases the overall axial resolution in one imaging direction.
+Moreover, the out-of-focus light now being rejected then increases the overall axial resolution in one imaging axis.
 
 There exist several approaches for the implementation of such a confocal slit system.
 The simplest approach is to add a slit in the conjugate image plane and synchronously shift the slit with the scanning illumination.
-The forces involved in accelerating a slit would be large as the slit would be moving at \SI{\sim 10}{\kilo\hertz}.
+The forces involved in accelerating a slit would be large as the slit would be moving at \SI{\sim 10}{\kilo\hertz} linearly.
 A more practical approach would involve de-scanning the entire image onto a static slit using galvanometric mirrors.
 This does introduce more complexity to a system, but has the potential to increase the overall available field of view beyond just the field number of the detection objective \cite{Huisken}.
 This technique was exploited to great effect by Huisken \emph{et. al.} whereby they used descanning to keep the emission photons of the beam along one row of pixels on a camera.
 they then filled the rest of the chip with spectral information by placing a diffractive element in emission path \cite{}.
 
-Physical slits may be substituted for virtual slits when exploiting the nature of sCMOS cameras.
+%Physical slits may be substituted for virtual slits when exploiting the nature of sCMOS cameras.
 By selectively activating pixels on an sCMOS detector for read-off, out-of-focus light may be rejected in a similar fashion to a real slit.
 The process of rolling a shutter occurs within the electronics of the camera for pixel read off by design.
 By synchronising the rolling of the shutter with the sweeping of the beam of light and controlling the width of the slit to near the width of the beam, live confocal imaging is possible (Figure \ref{fig:slit_scanning_alt}).
@@ -43,11 +45,45 @@ By synchronising the rolling of the shutter with the sweeping of the beam of lig
 \begin{figure}
   \centering
   \includegraphics{slit_scanning_alt}
-  \caption{Principle of confocal slit scanning using digital light-sheet microscopy.
+  \caption{The principle of confocal slit scanning using digital light-sheet microscopy.
   An incident beam (green) approaches orthogonally to the direction of the rolling shutter, the shutter consists of a width of active pixels (yellow).
   The inactive pixels correspond to out-of-focus light and are rejected from the final image.}
   \label{fig:slit_scanning_alt}
 \end{figure}
+
+\subsection{Implementation}
+
+%Talk about synchornisaiton
+
+
+\subsection{Optimisation}
+
+A characterisation of the optimal slit width of the virtual slit was needed to provide maximal imaging contrast.
+To measure this, \SI{200}{\nano\metre} fluorescent beads were suspended in 1\% agarose VII gel at a concentration of [insert concentration]. %%~2.3 × 1010 particles/mL
+The agarose was mounted by pipetting on warm to an lightly scratched PDMS bar, this helped adherence.
+Entire volumes (2048 $\times$ 2048 $\times$ \SI{100}{\micro\metre}) were imaged per each slit width varied.
+Beads were then localised manually through a axially projected image (see Chapter \ref{} %TODO insert chapter
+).
+
+\SI{\sim 31} were localised with a single candidate bead that was suitable as it was not part of an aggregate, it was sufficiently bright and unobscured
+By analysing both the SNR and the contrast of each cropped window around the candidate bead it was shown that the ideal slit width was \SI{2.51}{\micro\metre} which is on the order of the width of the incident laser beam.
+The SNR was evaluated by computing the ratio of its summed squared magnitude to that of the noise.
+The contrast was calculated by fitting a 2D Gaussian to each bead image and plotting the fitted amplitude $A$, from:
+
+\begin{align}
+  A e^{-\left(\frac{(x-x_0)^2}{2\sigma^2}-\frac{(y-y_0)^2}{2\sigma^2}\right)}
+\end{align}
+
+An optimal slit width of %TODO numbers
+was found (Figure \ref{fig:optimal_slit_snr_contrast})
+
+\begin{figure}
+  \centering
+  \includegraphics{Chapters/dualslit/Figs/PDF/optimal_slit_snr_contrast}
+  \caption{Optimising the confocal slit width by varying slit width on a single fluorescent bead}
+  \label{fig:optimal_slit_snr_contrast}
+\end{figure}
+
 
 %\section{Implementation}
 
@@ -86,7 +122,7 @@ In this work a custom camera firmware was used to enable a pair of confocal slit
   \label{fig:dual_slit_scanning}
 \end{figure}
 
-\subsection{Implementation}
+\subsection{Dual-beam implementation}
 \subsubsection{SLM}
 Initially an SLM was imaged directly onto the first scan lens using a relay pair of lenses (Figure \ref{fig:dual_beam_layouts} a)); the relay at the scan mirror made the image plane of the scan lens accessible whilst the second relay controlled the pixel size of the SLM at the imaging plane of the excitation objective.
 This implementation was polarisation sensitive and distributing an equal amount of power into each beam proved difficult due to the discrete nature of the voltage being applied to each SLM pixel.
@@ -122,42 +158,15 @@ As the duplication of the beams was now independent of any beam shaping, actual 
   \label{}
 \end{figure}
 
-%\subsection{Implementation} % Talk about SLM options
-%\subsubsection{Spatial light modulator} %Image of two beams with optimisation of intensity
-%\subsubsection{All optical solution} %Polarisation insensitive better etc, option to make bessel.
-\section{Results}
-\subsection{Slit optimisation}
-A characterisation of the optimal slit width of the virtual slit was needed to provide a maximal contrast.
-A volume of \SI{\sim 31} beads was imaged using varying slit widths.
-From these 100 beads over 5 volumes a single candidate bead that was not as part of an aggregate, sufficiently bright and unobscured, was found.
-By analysing both the SNR and the contrast of each cropped window around the candidate bead it was shown that the ideal slit width was \SI{2.51}{\micro\metre} which is on the order of the width of the incident laser beam.
-The SNR was evaluated by computing the ratio of its summed squared magnitude to that of the noise.
-The contrast was calculated by fitting a 2D Gaussian to each bead image and plotting the fitted amplitude $A$, from:
-
-\begin{align}
-  A e^{-\left(\frac{(x-x_0)^2}{2\sigma^2}-\frac{(y-y_0)^2}{2\sigma^2}\right)}
-\end{align}
-
-\begin{figure}
-  \centering
-  \includegraphics{Chapters/dualslit/Figs/PDF/optimal_slit_snr_contrast}
-  \caption{Optimising the confocal slit width by varying slit width on a single fluorescent bead}
-  \label{fig:optimal_slit_snr_contrast}
-\end{figure}
-
-\subsection{Dual-beam implementation}
+\subsubsection{System implementation}
 
 Two laser beams were created at the image plane that could be manually separated (Figure \ref{fig:real_dual_beams}).
 To position the beams the correct distance apart, the bottom most beam was aligned to middle of the field of view by reducing the field of view the camera by half and digitally aligning the \emph{primary} beam with the bottom of the image using the Galvanometric mirror.
 The \emph{secondary} beam was pushed to the top of the image using the kinematic mirror below.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.3\linewidth]{/Raster/dualbeams/170517_40ms_exposure_488nm_58_amp_4_spacing.png}
-  \caption{Image showing two parallel static beams in the light-sheet system visualised with Rhodamine.}
-  \label{fig:real_dual_beams}
-\end{figure}
-
+%\subsection{Implementation} % Talk about SLM options
+%\subsubsection{Spatial light modulator} %Image of two beams with optimisation of intensity
+%\subsubsection{All optical solution} %Polarisation insensitive better etc, option to make bessel.
  %\begin{figure}
 %\centering
 %\begin{subfigure}[b]{0.4\textwidth}
@@ -213,7 +222,8 @@ For these simulations 9 patterns were used, 3 angles and 3 phases; though fewer 
 \begin{figure}
   \centering
   \includegraphics{sim_slit}
-  \caption{}
+  \caption{a) Optical diagram for SLM implementation of dual-beam slit scanning.
+           b) Diagram showing a much simplified approach for creating two beams optically with minimal los of photons, light-polarisation insensitivity and without the need for an SLM.}
   \label{fig:sim_slit}
 \end{figure}
 
@@ -245,8 +255,72 @@ fairSIM however assumes that each angle provided will have the same size OTF jus
 However, when using slit scanning the OTF support is large; as such fairSIM, though it reconstructs succesfully, omits resolution in the $y$ direction.
 For this work a custom reconstruction algorithm will be needed to maximise reconstruction reconstruction.
 
-\subsection{Summary}
+\section{Discussion}
 
-The assumptions made here are that the imaging system is ideal, that imaging is only a frequency passband and that the axial is infinity thin.
+It has been demonstrated that confocal slit scanning makes an improvement on SNR for recorded imaged.
+This was characterised with beads.
+however, imaging speeds using confocal slit scanning are half maximum when using a single beam.
+to this end two beams were generated optically using a simple beam splitter and two mirrors.
+Each beam could be independently positioned such that they were separated by a half a sensor area, at the camera plane.
 
-There exist adapters to split the image on the chip into two colours, could use slit scanning for that, though no room for tuning.
+\subsection{Simulations}
+
+The effect of confocal slit scanning was explored \emph{in silico}, to verify the expectation that resolution and contrast could be improved using confocal slit scanning.
+This was considered for orthogonally imaging systems, such as is light-sheet microscopy, but as well for epi-illumination systems with some degree of control over the structure of the illumination.
+This would be realised by running a SLM at \SI{}{\kilo\hertz} rates, which is feasible for ferroelectric devices.
+Initially slit scanning was considered for a flat illumination control across an image, and again it was found that a resolution increase could be attained.
+Slit scanning was then applied to the, well-established, structured illumination techniques of SIM and mSIM.
+
+\subsubsection{SIM}
+
+Slit-scanned \emph{in silico} results were successfully reconstructed using fairSIM, an open source FIJI plugin.
+It was expected that the contrast improvement in SIM would be the primary benefit to the technique.
+
+However, it may be possible exploit the increase in resolution in one direction to increase the resolution of SIM further.
+Currently fairSIM only considers possible OTF supports which have rotational symmetry.
+The addition of confocal slit scanning means that, though the reconstruction is successful, higher resolution information afforded by slit scanning, is neglected.
+Going further, it may be possible in a real system to display a very fine SIM pattern in the direction of confocal slit scanning.
+The Moirè fringes of this image would ordinarily be blurred to the point where the SIM pattern in Fourier space would be outside of the passband.
+Using slit scanning with SIM may allow the recovery of these fringes, for reconstruction, potentially giving up to a 4$\times$ resolution improvement, with better optical sectioning and contrast.
+
+\subsubsection{mSIM}
+
+Slit-scanning mSIm was considered whereby the number of images to be reconstructed in the final image was square-rooted.
+ordinarily, in mSIM, the virtual pin-holing step is achieved computational by reconstructing from an $n\times n$ set of images; using slit scanning the reconstruction reduces to $n$ only.
+It was shown that the OTF of the reconstructed mSIM image continues to stretch in one direction up to 2 fold in the ideal.
+
+Using fewer images should reduce the amount of time needed, but as slit-scanning does reject photons there may be a trade off in real samples when acquiring a sufficient number of photons to reconstruct an image.
+
+\subsection{Future work}
+
+\subsection{Dual slit scanning}
+
+Confocal slit scanning can now be driven at full \SI{100}{\hertz} imaging rates and so could be applied to fast dynamic processes in need of contrast and axial resolution.
+The intent with the work was to apply this improvement to single particle tracking as time resolution is essential for characterising motion.
+An alternative manipulation of the nature of having two independent chips is to chromatically separate channels onto each of the chips.
+Such image splitting devices do exist, with the trade off of field of view for time-resolution.
+Due to the additional optics added to the light-sheet system for the astigmatic tracking module, there was not sufficient space to investigate this technique further.
+
+\subsection{Structured illumination slit scanning}
+
+The simulations presented here can be immediately adapted onto microscope systems with SLMs already embedded, provided there it is possible to control light intensity at the sample plane.
+For a 512$\times$512 field of view at \SI{40}{\milli\second} exposure, the SLM would need to be run at \SI{12.8}{\kilo\hertz} which is only viable for ferroelectric SLMs.
+For slit-scanning-SIM to become valuable a full reconstruction algorithm will need to be written that incorporates the potential one-directional resolution increase seen in the OTFs.
+
+
+
+%a full dark state can be realised
+%Dual slit work
+%% Attempt in real samples, apply to virus tracking.
+%Apple to real microscopes, should be a free upgrade as it is only computational.
+% Calculate refresh rate for 512 px
+
+
+%OTF has a funny shape
+%Interestingly the OTF, in the direction that ungoes a post-processing reconstruction,
+
+%future work, make an algorithm that works with SIM-slit-slit_scanning_alt
+
+%Demonstrated that slit scanning does improvement
+%The assumptions made here are that the imaging system is ideal, that imaging is only a frequency passband and that the axial is infinity thin.
+%There exist adapters to split the image on the chip into two colours, could use slit scanning for that, though no room for tuning.
