@@ -62,7 +62,7 @@ A projection is then the resulting intensity profile at the detector for a rotat
 This is defined mathematically as:
 
 \begin{align}
-    f(I,\theta) = \int \int R(x,y)\delta (xcos(\theta)+y sin(\theta)-I)dx dy
+    f(I,\theta) = \int \int R(x,y)\delta (x\cos(\theta)+y \sin(\theta)-I)dx dy
 \end{align}
 
 Where $f(I,\theta)$ is the Radon transform, and $R(x,y)$ represents a 2D slice of the sample.
@@ -76,7 +76,7 @@ a high pass filter is commonly used to compensate for the percieved blurring.
 %A high pass filter such as a ramp filter is commonly used to counter the blurring caused by this oversampling.
 FBP be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
 \begin{align}
-R_{fpb}(x,y) = \int_{0}^{\pi} f'(x\cos(\theta)+y\sin(\theta),\theta)dxdy
+R_{\text{fpb}}(x,y) = \int_{0}^{\pi} f'(x\cos(\theta)+y\sin(\theta),\theta)dxdy
 \intertext{where $f'$ is the filtered projection data, and $R_{fbp}$ is the back-projected image.}
 \end{align} \todo{Verify this?!?!?!}
 
