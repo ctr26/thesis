@@ -41,9 +41,9 @@ they then filled the rest of the chip with spectral information by placing a dif
 By selectively activating pixels on an sCMOS detector for read-off, out-of-focus light may be rejected in a similar fashion to a real slit.
 %The process of rolling a shutter occurs within the electronics of the camera for pixel read off by design.
 The rolling of the shutter with the concomitant sweeping of the beam of light allows for live confocal imaging is (Fig. \ref{fig:slit_scanning_alt}).
-The width of the slit adjusts the contrast and resolution of the final image, where an optimal SNR should be when the slit is of a similia.r
-Setting the width of the rolling slit to be similar to the width of the light beam
-Controlling the width of the slit to near the width of the beam,
+The width of the slit adjusts the contrast and resolution of the final image, where an optimal SNR should be when the slit is of a similar width to the waist of the incident beam.
+%Setting the width of the rolling slit to be similar to the width of the light beam
+%Controlling the width of the slit to near the width of the beam,
 
 \begin{figure}
   \centering
@@ -57,14 +57,29 @@ Controlling the width of the slit to near the width of the beam,
 \subsection{Implementation}
 
 %Talk about synchornisaiton
+Precise synchronisation is needed for confocal slit-scanning to be viable, as the time between the switching of active pixel rows is \SI{\sim 10}{\micro\second}.
+In the light-sheet system used here, this was achieved using fast electronics to send sets of packaged waveforms.
+Once a TTL 5V signal is sent to the camera, there is a \SI{10}{\milli\second} delay for the electronics to initialise on the camera.
+During this window the $y$ mirror, which creates the light-sheet, is pre-driven so that thew mirror is travelling at a constant velocity during the exposure window.
+The point of the start of the exposure window is found empirically (\SI{9.8}{\milli\second} after camera triggering) by tuning this window until the illumination profile, under slit scanning, is uniform when visualised using fluorescent dye.
+Once the exposure window is finished, the $y$ mirror is sinusoidally returned to the start voltage for the next exposure (Fig. \ref{fig:slit_signals}).
 
-\todonotes{Talk about the implementation and synchronisation (boring)}
-
+\begin{figure}
+  \centering
+  \includegraphics{slit_signals}
+  \caption{The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
+  A pre-drive phase for the $y$ mirror is needed to ensure the illumination profile of the light-sheet is uniform.
+  The cameras requires time to initialise the electronics and so a delay period is added within which the pre-drive of both mirrors is performed.
+  Both mirrors are sinusoidally returned to their start position ready for the next acquisition.
+  }
+  \label{fig:slit_signals}
+\end{figure}
 
 \subsection{Optimisation}
 
 A characterisation of the optimal slit width of the virtual slit was needed to provide maximal imaging contrast.
-To measure this, \SI{200}{\nano\metre} fluorescent beads were suspended in 1\% agarose VII gel at a concentration of [insert concentration]. %%~2.3 × 1010 particles/mL
+To measure this, \SI{200}{\nano\metre} fluorescent beads were suspended in 1\% agarose VII gel at a concentration of \SI{2.3e3}{\text{parts} \per\milli\litre}.
+% [insert concentration]. %%~2.3 × 10^10 particles/mL  10^-6
 The agarose was mounted by pipetting on warm to an lightly scratched PDMS bar, this helped adherence.
 Entire volumes (2048 $\times$ 2048 $\times$ \SI{100}{\micro\metre}) were imaged per each slit width varied.
 Beads were then localised manually through a axially projected image (see Chapter \ref{sec:} %TODO insert chapter
@@ -106,11 +121,11 @@ The contrast was calculated by fitting a 2D Gaussian to each bead image and plot
 \section{Double speed slit-scanning microscopy}
 
 The sensor used in the Orca Flash v4 (as well as other sCMOS cameras including the Pco.Edge and Andor Zyla) consists of two adjacent Fairchild sCMOS chips.
-In global shutter mode a shutter will propagate outwards from the centre of the chip simultaneously and in the fastest exposure possible for each chip (10ms), this provides the maximum \SI{100}{\hertz} imaging.
+In global shutter mode the shutter will propagate outwards from the centre of the chip simultaneously, and in the fastest exposure possible for each chip (10ms), this provides the maximum \SI{100}{\hertz} imaging.
 For confocal slit scanning the chips are addressed serially with a single thin shutter propagating from one side of the sensor to the other.
 In this mode the maximum frame rate achievable is \SI{50}{\hertz} when scanning confocally.
 
-In this work a custom camera firmware was used to enable a pair of confocal slits to scan simultaneously providing the \SI{100}{\hertz} that was ordinarily available in global shutter mode.
+Here a custom camera firmware was used to enable a pair of confocal slits to scan simultaneously providing the \SI{100}{\hertz} that was ordinarily available in global shutter mode.
 
 \begin{figure}
   \centering
@@ -127,7 +142,7 @@ In this work a custom camera firmware was used to enable a pair of confocal slit
   \label{fig:dual_slit_scanning}
 \end{figure}
 
-\subsection{Dual-beam implementation}
+\subsection{Implementation}
 \subsubsection{SLM}
 Initially an SLM was imaged directly onto the first scanning mirror using a relay pair of lenses (Fig. \ref{fig:dual_beam_layouts} a); the relay at the scan mirror allowed access to the image plane of the scan mirror, whilst the second relay controlled the pixel size of the SLM at the imaging plane of the excitation objective.
 This implementation was polarisation sensitive and caused difficult for distributing an equal amount of power into each beam, due to the discrete nature of the voltage being applied to each SLM pixel.

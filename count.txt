@@ -2,12 +2,12 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 25680
-Words in headers: 418
-Words outside text (captions, etc.): 2260
+Words in text: 25791
+Words in headers: 417
+Words outside text (captions, etc.): 2330
 Number of headers: 148
-Number of floats/tables/figures: 50
-Number of math inlines: 313
+Number of floats/tables/figures: 51
+Number of math inlines: 316
 Number of math displayed: 42
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -48,8 +48,8 @@ Subcounts:
   447+3+0 (2/0/0/0) Section: Method
   157+1+0 (1/0/0/0) Section: Remarks
   122+6+0 (1/0/0/0) Chapter: Developments in confocal virtual slit-scanning microscopy
-  532+6+61 (3/2/3/1) Section: Single beam confocal slit-scanning
-  613+11+152 (6/3/1/0) Section: Double speed slit-scanning microscopy
+  645+6+131 (3/3/6/1) Section: Single beam confocal slit-scanning
+  611+10+152 (6/3/1/0) Section: Double speed slit-scanning microscopy
   497+5+134 (4/3/3/0) Section: Structured illumination
   649+13+56 (7/1/4/0) Section: Discussion
   1+3+0 (1/0/0/0) Chapter: Discussion and Conclusions
