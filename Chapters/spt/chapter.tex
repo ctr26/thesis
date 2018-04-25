@@ -5,9 +5,9 @@
 %*******************************************************************************
 % **************************** Define Graphics Path **************************
 \ifpdf
-    \graphicspath{{Chapter/spt/Figs/Raster/}{Chapter/spt/Figs/PDF/}{Chapter/spt/Figs/}}
+    \graphicspath{{Chapters/spt/Figs/Raster/}{Chapters/spt/Figs/PDF/}{Chapters/spt/Figs/}}
 \else
-    \graphicspath{{Chapter/spt/Figs/Vector/}{Chapter/spt/Figs/}}
+    \graphicspath{{Chapters/spt/Figs/Vector/}{Chapters/spt/Figs/}}
 \fi
 
 \chapter{Diffraction limited single particle tracking in SPIM}
@@ -268,7 +268,7 @@ This method could prove to be faster, more accurate and less perturbing on the s
 	\label{fig:SPIMSPT}
 \end{figure}
 
-\subsubsection{Remote Focusing}
+\subsubsection{Remote focusing}
 
 There are three ways in which to realise the full three dimensional SPIM.
 The simplest way is to move the sample through the light sheet as is done in Oblique Plane Imaging.
@@ -279,7 +279,7 @@ Huisken \emph{et. al.} offer an alternative where the focal length of the object
 %To that end critics of this technique suggest that a tunable lens in the detection arm will inherently introduce noticeable image degradation.
 Huisken showed that using a contrast grid that image quality and aberrations are negligibility affect and goes on to produce 100 Hz volumetric imaging though on small volumes\cite{Fahrbach2013}.
 
-\section{Astigmatic Tracking}
+\section{Astigmatic tracking}
 
 To know whereabouts within the light-sheet the particle is so that the light-sheet may coarsely reposition, a finer axial localisation is needed across the waist of the sheet.
 Adding a weakly cylindrical lens along the detection optics will add astigmatism to the point spread function of the microscope.
@@ -330,7 +330,7 @@ Similarly the covariance of the calibration an image or volume can be used, thou
 To verify that single particle tracking in light-sheet microscopy was possible, the diffusion of a single diffraction limited (infinitesimal point) particle was simulated \emph{in silico}.
 To create the simulation, the particle was modelled to take a random walk of time steps $dt$ across a single imaging exposure of \SI{40}{\milli\second}.
 This simulated how the particle would appear to move within the light-sheet.
-The intensity of the final image of the particle was attenuated according to the Guassian intensity of the light-sheet axially($z$) and laterally ($x,y$) as per:
+The intensity of the final image of the particle was attenuated according to the Gaussian intensity of the light-sheet axially($z$) and laterally ($x,y$) as per:
 
 \begin{align}
   w_0 &= 1.4 \lambda \frac{ \text{NA}}{n}\\
@@ -345,7 +345,7 @@ Where $w_0$ is the beam waist; NA is the numerical aperture of the excitation ob
 
 A false astigmatism was added to the simulation, to emulate an approximate response of the system.
 To do this an Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was longer than the width of the light-sheet.
-To narrow Guassian as the particle moved through $z$ the standard Gaussian equation of:
+To narrow Gaussian as the particle moved through $z$ the standard Gaussian equation of:
 \begin{align}
   f(x,y) = e^{-\frac{x^2 + y^2}{\sigma^2} }
 \intertext{to}
@@ -356,24 +356,50 @@ In real optical systems astigmatism is non-linear but assumed to be linear for s
 
 \subsection{Assumptions}
 
-It is assumed that a particle will not diffuse sufficently quickly as to cause a deviance to the PSF then used to characterise the location of the particle.
+It is assumed that a particle will not diffuse sufficiently quickly as to cause a deviance to the PSF then used to characterise the location of the particle.
 However, assuming the worst case of a particle diffusing in a straight trajectory (in the 2D case) the localised position of the particle will be the average of the start and end positions of the particle.
-This smearing leads to very non-Guassian PSFs when diffusivity is high (Figure \ref{fig:})
-Worse still, the PSF response of the particle is also axially depependet when using an astigmatic lens.
-using the linear approximation of a linear astigmatic-like Guassian and assuming the worst case of a particle diffusing directly up, an analytical solution for the error incurred may be imputed:
+This smearing leads to very non-Gaussian PSFs when diffusivity is high (Figure \ref{fig:})
+Worse still, the PSF response of the particle is also axially dependent when using an astigmatic lens.
+using the linear approximation of a linear astigmatic-like Gaussian and assuming the worst case of a particle diffusing directly up, an analytical solution for the error incurred may be imputed:
+
 \begin{align}
-  {\int_{-\infty}^{\infty} \frac{\int_{0}^{L} e^{-\frac{x}{2(kz+c)}^2} dz}{e^{-\frac{x}{2kL+c}^2}} dx} \\
+%  {\int_{-\infty}^{\infty} \frac{\int_{0}^{L} e^{-\frac{x}{2(kz+c)}^2} dz}{e^{-\frac{x}{2kL+c}^2}} dx} \\
+  \text{PSF}_{\text{Expected}} &= \int_{0}^{L} e^{-\frac{x}{2(kz+c)}^2} dz \\
+  \text{PSF}_{\text{Reality}} &= e^{-\frac{x}{2kL+c}^2} \\
+  \text{Error} &= 2 \int_{-\infty}^{\infty} \frac{ |\text{PSF}_{\text{Expected}} - \text{PSF}_{\text{Reality}}|}{\text{PSF}_{\text{Expected}} + \text{PSF}_{\text{Reality}}} dx \\
+  \intertext{This integral does not compute, so instead relative areas beneath the Gaussians were considered}
+  \text{Error} &= 2 \frac{|\int_{-\infty}^{\infty} \text{PSF}_{\text{Expected}} - \int_{-\infty}^{\infty} \text{PSF}_{\text{Reality}}|}{\int_{-\infty}^{\infty} \text{PSF}_{\text{Expected}} + \int_{-\infty}^{\infty} \text{PSF}_{\text{Reality}}} dx \\
+  & = 2 \frac{\left(\frac{2 \sqrt{\pi }}{\sqrt{\frac{1}{(c+k L)^2}}}-\sqrt{\pi } (2 c+k L)\right)}{\sqrt{\pi } (2 c+k L)+\frac{2 \sqrt{\pi }}{\sqrt{\frac{1}{(c+k L)^2}}}}
 \end{align}
-The above expression only considers $x$ and $z$ for simplicty of calculation.
-The ratio of the linear Gaussian-like function and the expected ($e^{-\frac{x}{2kL+c}^2}$) Guassian is integrated over all space to provide an error value as a function of $L$ which is the distance the particle has traveled. %Which is related to the diffusion constant
-The result of integrating over all space returns a function several infinities, so a smaller window is considered.
-Using a factor of $c$ is valid as $c$ governs the minimal width of the PSF.
 
-%insert solution.
+\begin{figure}
+  \centering
+  \includegraphics{./mathematica/Guassian_astig_half_both}
+  \caption{}
+  \label{}
+\end{figure}
 
-\subsubsection{Analytical solution}
+The above expression only considers $x$ and $z$ for simplicity of calculation.
+The ratio of the linear Gaussian-like function and the expected ($e^{-\frac{x}{2kL+c}^2}$) Gaussian is integrated over all space to provide an error value as a function of $L$ which is the distance the particle has traveled.
+%Which is related to the diffusion constant
+%The result of integrating over all space returns a function several infinities, so a smaller window is considered.
+%Using a factor of $c$ is valid as $c$ governs the minimal width of the PSF.
 
-From the assumption of a near linear astigmatic response of the particle in the light-sheet, and ignoring the reduction in ene
+\begin{figure}
+  \includegraphics{./mathematica/Expected_versus_reality_error}
+  \caption{The degree of astigmatism $k$ was reframed such that it a substitute parameter represented the ratio of the width of the Gaussian at $z=0$ and $z=L$.
+  This graph shows that as the ratio approaches unity the error due to astigmatic smearing becomes $0$.
+  However, when the ratio of the widths approaches 0, the error does not approach infinity as would be expected.
+  }
+  \label{fig:Expected_versus_reality_error}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{./mathematica/Error_vs_L}
+  \caption{}
+  \label{fig:Error_vs_L}
+\end{figure}
 
 \begin{figure}
   \centering
@@ -413,12 +439,12 @@ Coverslips were submerged in the cellular solution and left to adhere and cultur
 \section{SPT using SPIM}
 
 The secondary optical relay was set to 2x magnification to unsure the camera was Nyquist limited and that there were sufficient pixels available to observe astigmatism on a single particle.
-The weakly cylindrical lens ($f = \SI{1}{\metre}$) was inserted in between the secondary relay and the camera unit at \SI{40}{\milli\metre} away from the apeture of the camera.
-This was found emperically to be sufficiently astigmatic by eye.
+The weakly cylindrical lens ($f = \SI{1}{\metre}$) was inserted in between the secondary relay and the camera unit at \SI{40}{\milli\metre} away from the aperture of the camera.
+This was found empirically to be sufficiently astigmatic by eye.
 Adding a cylindrical lens in an infinity space amplifies the effect and so a custom lens would have been needed.
 
 For calibration of the axial particle tracking an agarose gel of beads was imaged with objective and the light-sheet stepped through small axial steps.
-Moivng the stage would have better emulated how a particle would behave optically, however, the mechanical resolution and hysteresis of the stage made this infeasible.
+Moving the stage would have better emulated how a particle would behave optically, however, the mechanical resolution and hysteresis of the stage made this infeasible.
 
 \begin{figure}
   \centering
@@ -434,7 +460,7 @@ Moivng the stage would have better emulated how a particle would behave opticall
 
 \subsection{Future work}
 
-\subsubsection{Neural Networks} %Need to try training using this using convolutional neural networks
+\subsubsection{Neural networks} %Need to try training using this using convolutional neural networks
 %Also possible to
 
 So far the techniques presented for localising particles in an astigmatic system relies on a singular calibrated point emitter.
@@ -446,9 +472,7 @@ Convolutional neural networks work in a similar fashion except that the weightin
 
 By training a neural network on a given input segmented input image, with the known output of axial position,
 
-
-
-%C ancer, \textit{in vivo studies} have "progress[ed] in monitoring neurodegenerative disease pathobiology"\cite{Hoffman2005}
+%Cancer, \textit{in vivo studies} have "progress[ed] in monitoring neurodegenerative disease pathobiology"\cite{Hoffman2005}
 %3D imaging in \textit{in vivo} is desirable and currently use complimentary techniques (microCT) to create 3D.
 \subsubsection{Neuro-degenerative Disease}
 
