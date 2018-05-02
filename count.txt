@@ -3,12 +3,12 @@
 File: thesis.tex
 Encoding: utf8
 Words in text: 25816
-Words in headers: 412
+Words in headers: 422
 Words outside text (captions, etc.): 2442
-Number of headers: 149
-Number of floats/tables/figures: 56
+Number of headers: 152
+Number of floats/tables/figures: 57
 Number of math inlines: 341
-Number of math displayed: 47
+Number of math displayed: 50
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   117+7+0 (2/0/0/0) _top_
@@ -41,7 +41,7 @@ Subcounts:
   157+1+0 (1/0/0/0) Section: Remarks
   1781+16+0 (5/0/2/0) Chapter: Diffraction limited single particle tracking in SPIM
   983+20+62 (7/1/10/0) Section: Single Particle Tracking
-  864+12+80 (8/3/23/5) Section: Astigmatic tracking
+  864+22+80 (11/4/23/8) Section: Astigmatic tracking
   83+4+21 (3/1/1/0) Section: Results
   133+3+11 (1/1/1/0) Section: SPT using SPIM
   469+7+0 (4/0/0/0) Section: Conclusions

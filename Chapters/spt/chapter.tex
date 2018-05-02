@@ -354,7 +354,51 @@ To narrow Gaussian as the particle moved through $z$ the standard Gaussian equat
 Featuring an assumed linear astigmatism where $c$ is the bias value to create a minimum width of the particle the diffraction limited spot size and $k$ is the degree of astigmatism featuring.
 In real optical systems astigmatism is non-linear but assumed to be linear for short distances from the focal plane.
 
-\subsection{Assumptions}
+\subsection{Axial localisation motion error}
+
+\subsubsection{Model}
+
+\begin{align}
+  \intertext{}
+  e^{-\frac{x^2}{2 \left(\sigma(z)+c\right)^2}}
+\end{align}
+
+\begin{align}
+  \intertext{To simplify calculations all modelling will be considered as one-dimensional as the effect of astigmatism in second dimensional is independent. A Gaussian may be used here to model a particle as a Gaussian will likely be used as a fit for localisation of pixel data}
+  &e^{-\frac{x^2}{2 \sigma^2}}
+  \intertext{To create a simple model of astigmatism we assume that $\sigma$ depends on $z$ such that:}
+\sigma(z) &= kz + c
+\intertext{Where $k$ is the degree of astigmatism and $c$ is the particle size when there is no astigmatism.We can then redefine $k$ in terms $a$ where $a$ is a function of $c$ and $L_{\text{end}}$ where $L_{\text{end}}$ is the Width of the sheet. $a$ can then be used to define $k$ in terms of the particle's Gaussian being $\frac{1}{a}$ narrower at  $L_{\text{end}}$}
+k&= \frac{a c}{L_{\text{end}}}
+\intertext{By normalising the Gaussian model we simulate that an equivalent number of photons are being emitted by the particle, this allows the expected and reality PSFs to be compared.}
+\hat{\text{PSF}}_{\text{Expected}} &= \frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}}\\
+{\text{PSF}}_{\text{Expected}} &= e^{-\frac{x^2}{2 \sigma(z)^2}}
+ \intertext{Assuming that the particle moves a distance $L$ with uniform speed and uniform immersion of photons en-route, integrating the function with a scaling gives the real Gaussian.}
+\hat{\text{PSF}}_{\text{Reality}} &= \int_{0}^{L}\frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}} dz\\
+                                  &= \frac{h \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{L_{\text{end}}}^2 x^2}{2 c^2 (h+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
+{\text{PSF}}_{\text{Reality}} &= \frac{2 c (a L+h) e^{-\frac{h^2 x^2}{2 c^2 (a L+h)^2}}}{2 a c L} \\
+&+ \frac{h x\sqrt{2 \pi }\text{Erf}\left(\frac{ (h x)}{\sqrt{2} (a c L+c h)}\right)}{2 a c L} \\
+&+ \frac{h \left(2 c e^{-\frac{x^2}{2 c^2}}+\sqrt{2 \pi } x \text{Erf} \left(\frac{x}{\sqrt{2} c}\right)\right)}{2 a c L}
+\end{align}
+%Gaussian, approximation of a particle
+%PSF expected, width linearly depependent on z
+%PSF reality, integral between 0 and L, scaled by L
+\subsubsection{Cross correlation}
+
+\begin{align}
+  \intertext{To analytically compare the the expect and real results they were correlated using the function:}
+\int_{-\infty}^{\infty} &f(x)^* g(x+t) dx
+\intertext{The integral across all space of the result will give a single value signifying how well correlated the functions are:}
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} &f(t)^* g(x+t) dxdt
+\intertext{This only solves across all space for a unnormalised PSFs:}
+\int_{-\infty}^{\infty} &\text{PSF}_{\text{Reality}} (x)^* \text{PSF}_{\text{Expected}} (x+t) dxdt \\= \frac{\pi  c (a L+h)^2}{a h L \sqrt{\frac{h^2}{c^2 (a L+h)^2}}}+\frac{2 \pi  c^2 (a L+h)^2}{h^2}&+\frac{\pi  c h}{a L \sqrt{\frac{h^2}{c^2 (a L+h)^2}}}-\frac{2 \pi  h}{a \sqrt{\frac{1}{c^2}} L \sqrt{\frac{h^2}{c^2 (a L+h)^2}}}+\frac{2 \pi  c^2 (a L+h)^2}{a h L}
+\intertext{This only solves across all space for a unnormalised PSFs:}
+\end{align}
+
+\subsubsection{Full width half maximum}
+% Provided the smeared result is still Gaussian like, finding the FWHM will give an analogue of what a computer will fit.
+% Doesn't resolve
+%Taylor expansion
 
 It is assumed that a particle will not diffuse sufficiently quickly as to cause a deviance to the PSF then used to characterise the location of the particle.
 However, assuming the worst case of a particle diffusing in a straight trajectory (in the 2D case) the localised position of the particle will be the average of the start and end positions of the particle.
