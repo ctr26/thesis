@@ -2,13 +2,13 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 25816
-Words in headers: 422
+Words in text: 25934
+Words in headers: 425
 Words outside text (captions, etc.): 2442
-Number of headers: 152
+Number of headers: 153
 Number of floats/tables/figures: 57
-Number of math inlines: 341
-Number of math displayed: 50
+Number of math inlines: 346
+Number of math displayed: 58
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   117+7+0 (2/0/0/0) _top_
@@ -41,7 +41,8 @@ Subcounts:
   157+1+0 (1/0/0/0) Section: Remarks
   1781+16+0 (5/0/2/0) Chapter: Diffraction limited single particle tracking in SPIM
   983+20+62 (7/1/10/0) Section: Single Particle Tracking
-  864+22+80 (11/4/23/8) Section: Astigmatic tracking
+  698+9+0 (6/0/15/4) Section: Astigmatic tracking
+  284+16+80 (6/4/13/12) Section: Axial localisation motion induced error
   83+4+21 (3/1/1/0) Section: Results
   133+3+11 (1/1/1/0) Section: SPT using SPIM
   469+7+0 (4/0/0/0) Section: Conclusions
