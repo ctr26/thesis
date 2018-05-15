@@ -1,0 +1,22 @@
+%!tikz editor 1.0
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[graphics, active, tightpage]{preview}
+\usepackage{graphicx}
+\usetikzlibrary{positioning}
+
+\PreviewEnvironment{tikzpicture}
+
+%!tikz preamble begin
+
+%!tikz preamble end
+
+
+\begin{document}
+%!tikz source begin
+\begin{tikzpicture}
+  \node (img)  {\includegraphics{view3_diffusion}};
+  \node[below=of img, node distance=0cm, yshift=1cm] {$xy$ plane};
+  \node[left=of img, node distance=0cm, rotate=90, anchor=center,yshift=-0.7cm] {$z$ axis};
+ \end{tikzpicture}
+\end{document}
