@@ -15,12 +15,13 @@
 %Taken from Cat
 \subsection{Introduction}
 Herpesviruses are among the most complex and largest of the clinically relevant viruses and establish life-long infections in their hosts.
-They are widespread in vertebrates and humans up to 85\% of the population worldwide are infected by herpes simplex virus 1 (HSV-1) and around 25\% by HSV-2.
+They are widespread in vertebrates and humans with up to 85\% of the population worldwide being infected by herpes simplex virus 1 (HSV-1) and around 25\% by HSV-2.
 Herpes simplex virus type 1 (HSV-1) is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
 Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immuno-compromised patients \cite{[1]}.
 %Herpesviruses also cause a significant disease burden in animals that can lead to economic problems for livestock farmers.
 Viral infections begin when infectious virus particles (virions) invade the organism by attaching to and entering susceptible cells.
-After this initial event the virus hijacks the cellular machinery to replicate, produce progeny virus particles which then spread further infection.
+%After this initial event t
+The virus hijacks the cellular machinery to replicate and produce progeny virus particles which then spread further infection.
 Herpesviruses pass through two distinct stages in their life cycle: lytic replication and latency.
 %Although many studies exist about the replication cycle of herpesviruses,
 Not much is known about the later stages of the infection cycle, the assembly of virus particles and their egress from the cell.
@@ -52,7 +53,8 @@ Translation of these early mRNAs promotes further phases of viral gene transcrip
 %In ongoing, efficient infection, r
 Replication of the viral DNA is achieved through actions of viral polymerases and other viral replicative machinery.
 These replicated DNAs are used as templates for late mRNAs, which produce viral structural proteins, and are also packaged into capsids late in infection \cite{[4]}.
-The egress pathway follows four steps (schematically shown in Figure \ref{fig:viral_egress}):
+The egress pathway follows four steps (%schematically shown in
+Figure \ref{fig:viral_egress}):
 
 \begin{samepage}
   \begin{enumerate}
@@ -63,7 +65,7 @@ The egress pathway follows four steps (schematically shown in Figure \ref{fig:vi
   \end{enumerate}
 \end{samepage}
 
-In the nucleus the capsid proteins coassemble autocatalytically with and around the \emph{portal complex} in late infection \cite{[4]}.
+In the nucleus, the capsid proteins coassemble autocatalytically with and around the \emph{portal complex} in late infection \cite{[4]}.
 %Nucleocapsid assembly is a very dynamic process.
 %The viral proteins have to recognize and cleave packaging signals at genomic termini, dock at the portal complex and pump the DNA inside the capsid [4].
 After capsids are formed and packaged in the nucleus, the capsids %have to
@@ -84,8 +86,7 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
   After capsids are formed in the nucleus, they bud into the inner nuclear membrane (INM) (primary envelopment) to form an enveloped particle in the perinuclear space.
   These particles fuse with the outer nuclear membrane (ONM) (de-envelopment) and are released into the cytoplasm, leaving the envelope in the ONM.
   In the cytosol, capsids bind onto and bud into cytoplasmic membranes (secondary envelopment), and enveloped virions are secreted from cells (release).
-  TGN, trans-Golgi network.
-  Figure from [2].}
+  Figure from \cite{[2]}.}
   \label{fig:viral_egress}
 \end{figure}
 
@@ -171,18 +172,20 @@ Tracking individual particles is an important tool for modern biology.
 It has been used to study intracellular transport such as the movement of mRNA\cite{Spille2015a}; cell membrane dynamics\cite{Cognet2014} and more.
 % Beneath the methods of super-resolution imaging, awarded by the Nobel Prize in chemistry in 2014, the principles of localisation microscopy are also applied in single particle tracking (SPT) as was shown already in early single molecule studies [41, 42].
 %SPT is a real-time imaging technique that monitors the movement of individual particles and can provide information about dynamic behaviour within a biological system. %in a cellular context.
-Many studies exist on virus trafficking between and inside cells using single particle tracking \cite{(reviewed in [43])}.
+Many studies exist on inter and intra cellular viral trafficking
+%virus trafficking between and inside cells
+using single particle tracking \cite{(reviewed in [43])}.
 %In general, more studies about the early stage of infection, virus entry and transport, exist than studies about the late stages of infection, virus assembly and egress.
-Only few and recent works probe exclusively the molecular egress pathway of herpesviruses.
-Hogue \emph{et al.} \cite{[16]} used total internal reflection fluorescence (TIRF) microscopy to selectively visualise fluorescent pseudorabies viruses near the plasma membrane and follow them during exocytosis.
+Only few and recent works exclusively probe the molecular egress pathway of herpesviruses.
+Hogue \emph{et al.} \cite{[16]} used total internal reflection fluorescence (TIRF) microscopy to selectively visualise fluorescent Pseudorabies viruses near the plasma membrane and follow them during exocytosis.
 Sandbaumhüter \emph{et al.} showed, by a motility analysis of fluorescent HSV-1, that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 \cite{[44]}.
 Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using SPT \cite{Brandenburg2007}.
 %The mentioned examples show that single-virus tracking can reveal detailed information about the dynamics of single viruses inside cells with high spatial and temporal resolution.
 
-Due to a limited depth of field, particles observed in a 3D volume tend leave the axial detection range.
-Data analysis then often relies on two dimensional projections of short trajectory fragments and might not accurately represent three-dimensional (3D) particle motion if the specimen structure is not isotropic \cite{[45]}.
+Due to a limited depth of field, particles tracked in a 3D volume tend leave the axial detection range.
+%Data analysis then often relies on two dimensional projections of short trajectory fragments and might not accurately represent three-dimensional (3D) particle motion if the specimen structure is not isotropic \cite{[45]}.
 Several technical approaches already exist to perform SPT in three dimensions \cite{[46-49]}.
-In the field of virology, very few studies have made use of the available 3D SPT techniques.% to date.
+%In the field of virology, very few studies have made use of the available 3D SPT techniques.% to date.
 Orbital tracking in two planes was applied to track prototype foamy virus (PFV) in real-time inside cells \cite{[50]}, and a rotating, oblique light sheet and astigmatic detection were used to image and track viral capsids with high temporal and spatial resolution inside the cell nucleus \cite{[19]}.
 %The new technical development opens up existing perspectives in studying herpesvirus assembly and egress in vivo.
 
@@ -206,9 +209,9 @@ Particle tracking can be broadly described as a two stage process, spatial local
 %Humans are naturally able to do this as they have evolved to notice patterns and anomalies.
 %Programming a computer to undertake this exercise was an early feat in the field of computer vision\cite{Crocker1996}.
 Crocker \emph{et al.} deconstructed the problem into logical computable steps.
-
-Volumetric data is considered as singular images in two dimensions rather than full video volumetric data.
-Each image is then corrected for any distortion or error from the digitation process as well de-noised. %as digitised video is inherently imperfect and may not be truly representative.
+%Volumetric data is considered as singular images in two dimensions.
+Each image is %then
+corrected for any distortion or error from the digitation process as well a de-noising step. %as digitised video is inherently imperfect and may not be truly representative.
 %Each image has a threshold found from an estimate of the background value of the image.
 %This threshold removes substantial noise that would otherwise contribute to the final result.
 Pixels with local maximum brightness are identified as \emph{candidate} particles and compete with other candidates within a pre-defined radius slightly larger than the expected size of the particle.
@@ -219,7 +222,7 @@ By fitting a Gaussian profile %and using tens of pixels to minimise error,
 particulate positioning can be recorded with sub-pixel accuracy.
 %The most common method of
 Typically iterative least squares fitting is used %Gaussian fitting
-due to its ease of implementation, speed, precision and robustness is iterative least squares fitting.
+due to its ease of implementation, speed, precision and robustness.% is iterative least squares fitting.
 
 % \paragraph{Overlap}
 %
@@ -228,12 +231,12 @@ due to its ease of implementation, speed, precision and robustness is iterative 
 
 \subsection{Particle temporal localisation}
 
-Temporal localisation refers to the assignment of a linage to a particle.
+Temporal localisation refers to the assignment of linage to a particle.
 %The reliab With fast imaging the reliable of such an assignment
 Between frame 1 and 2, particulate identity is determined by how minimising the sum global distance between particles at each time point.
-From there, momentum can be assigned the a particle as well to increase the chance of two path identities being merged or switched.
+By farame 3, momentum can be assigned the a particle as well to decrease the chance of two path identities being falsely merged or switched.
 The same applies for acceleration and higher order speed derivatives, but with a lessening of overall significance.
-The overall chance of a lineage being correctly assigned largely relies on the sampling rate of the imaging, with higher rates being favoured.
+The overall chance of a lineage being correctly assigned largely relies on the sampling rate of the imaging, with higher rates being favourable.
 %particulate identify is determined from the closeness of
 
 %The planet Pluto was originally discovered by Tombaugh in 1930 by comparing two images of the night sky a few hours apart.
@@ -248,26 +251,31 @@ The overall chance of a lineage being correctly assigned largely relies on the s
 
 %\subsection{Single Particle Tracking}
 
+\subsection{Light sheet single particle tracking}
 
-
-
-\subsubsection{Light sheet single particle tracking}
-
-A very novel and exclusive way of full three dimensional particle tracking using SPIM has been proposed.
-By using a static lightsheet and an XYZ translator one can move a particle back into the FOV laterally if it drifts.
-Once the particle is re-localised, the encoded position on the \(z\) aspect of the stage is then equal to the position of the axial position of the particle by virtue of the repositioning.
-The \(x\) and \(y\) position are then derived using Crocker's centroid fitting from the resulting image accurately in post processing.
-
-This method vastly improves the lateral resolution of the SPIM system as well.
-Volumetric methods would limit the lateral resolution to half the beam waist, \(\sim 1 \mu m\), whereas this method is exclusively limited by the step size of the z translator (which can be very high resolution when using piezoelectric crystals) and one's ability to ensure the particle is precisely central within the excitation laser (which is then dependent on the particle size).
+Spille \emph{et. al.} proposed using light-sheet microscopy for tracking particles over long periods.
+This was achieved by shifting their light-sheet and detection objective at each recorded frame such that the particle was repositioned to the centre of the sheet.
+Alternatively, the entire sample could be relative to a static sheet.
 Spille demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
-SPIM's speed makes the technique very enticing as it is unrivalled for the purposes of particle tracking.
 See Figure\ref{fig:SPIMSPT}.
+%
+% demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
+%
+% A very novel and exclusive way of full three dimensional particle tracking using SPIM has been proposed.
+% By using a static light-sheet and an XYZ translator one can move a particle back into the FOV laterally if it drifts.
+% Once the particle is re-localised, the encoded position on the \(z\) aspect of the stage is then equal to the position of the axial position of the particle by virtue of the repositioning.
+% The \(x\) and \(y\) position are then derived using Crocker's centroid fitting from the resulting image accurately in post processing.
+%
+% This method vastly improves the lateral resolution of the SPIM system as well.
+% Volumetric methods would limit the lateral resolution to half the beam waist, \(\sim 1 \mu m\), whereas this method is exclusively limited by the step size of the z translator (which can be very high resolution when using piezoelectric crystals) and one's ability to ensure the particle is precisely central within the excitation laser (which is then dependent on the particle size).
+%
+% SPIM's speed makes the technique very enticing as it is unrivalled for the purposes of particle tracking.
 
-This method could then be further improved using a tunable lens excitation, by tracking the position of the particle in \(x\) using the tunable lens and \(y\) by narrowing the trace of the scan mirror, the temporal and spatial resolution of single particle tracking could be vastly improved yet again.
-Z position information could also be encoded into the image by virtue of light beam intensity.
-By ensuring the particle is limited to half of the beam profile of the light sheet, then intensity of the particle would be proportional to a Gaussian curve z position.
-This method could prove to be faster, more accurate and less perturbing on the sample as mechanical motion would be removed.
+
+% This method could then be further improved using a tunable lens excitation, by tracking the position of the particle in \(x\) using the tunable lens and \(y\) by narrowing the trace of the scan mirror, the temporal and spatial resolution of single particle tracking could be vastly improved yet again.
+% Z position information could also be encoded into the image by virtue of light beam intensity.
+% By ensuring the particle is limited to half of the beam profile of the light sheet, then intensity of the particle would be proportional to a Gaussian curve z position.
+% This method could prove to be faster, more accurate and less perturbing on the sample as mechanical motion would be removed.
 
 \begin{figure}
 	\centering
@@ -299,38 +307,29 @@ This method could prove to be faster, more accurate and less perturbing on the s
 	\label{fig:SPIMSPT}
 \end{figure}
 
-\subsubsection{Remote focusing}
-
-There are three ways in which to realise the full three dimensional SPIM.
-The simplest way is to move the sample through the light sheet as is done in Oblique Plane Imaging.
-The second method involves scanning the light sheet through \textit{z} which is potentially faster; the issue which then arises is that the light sheet moves out of the focal plane of the detection objective.
-The focal plane can be moved onto the light sheet by moving the excitation objective, however this method (like the first method) causes perturbations to the sample.
-Huisken \emph{et. al.} offer an alternative where the focal length of the objective is adjusted by placing a tuneable lens in the detection path (similar to section\ref{sec:tunable})\cite{Fahrbach2013}.
-%Tunable lens technology is exceptionally young compared to the history of glass optics and so its image aberration correction is not as well implemented.
-%To that end critics of this technique suggest that a tunable lens in the detection arm will inherently introduce noticeable image degradation.
-Huisken showed that using a contrast grid that image quality and aberrations are negligibility affect and goes on to produce 100 Hz volumetric imaging though on small volumes\cite{Fahrbach2013}.
-
 \section{Astigmatic tracking}
 
-To know whereabouts within the light-sheet the particle is so that the light-sheet may coarsely reposition, a finer axial localisation is needed across the waist of the sheet.
+For axial particle tracking using light-sheet microscopy, precise axial localisation is needed.
+%To know whereabouts within the light-sheet the particle is so that the light-sheet may coarsely reposition, a finer axial localisation is needed across the waist of the sheet.
 Adding a weakly cylindrical lens along the detection optics will add astigmatism to the point spread function of the microscope.
-The asymmetry in focal lengths in the axes of the imaging plane means that in one axis the focal point will be offset axially compared to the orthogonal axis.
-The result is that there in an overall axial asymmetry, and for point sources this allows axial position to be encoded in the image of the point source.
+The asymmetry in focal lengths in the imaging plane axes %of the imaging plane
+means that along one axis the focal point will be offset axially compared to the orthogonal axis.
+The result is that there in an overall axial asymmetry in the PSF, for point sources this allows axial position to be encoded in the recorded image.
 This technique was used to great effect in dSTORM and PALM systems which inherently rely on the localisation of point emitters.
-The range over which an cylindrical lens can axial encode is at most \SI{\sim 1}{\micro\metre}, before the non-linearity in the astigmatism becomes too great and the PSF is too blurred to compute.
+The range over which a cylindrical lens can axial encode is at most \SI{\sim 1}{\micro\metre}, before the non-linearity in the astigmatism becomes too great and the PSF is too blurred to compute.
 
 %Compare 2D guassian fitting ratio threatening
 %\subsection{Fitting} %Guassian fitting
 \subsection{Localisation}
 
-Assuming a accurate localisation in 2D of a point emitter, the image of the astigmatic point emitter needs to then be compared to a calibrated sample.
+Assuming an accurate localisation in 2D of a point emitter, the image of the astigmatic point emitter needs to then be compared to a calibrated sample.
 This is achieved by holding a point emitter and precisely moving it axially and recording an image stack.
 Typically the point emitter is held a gel-like phantom of the sample intending to be used.
 Once the calibration volume has been recorded, a trade-off between speed and accuracy is made.
 
 \subsubsection{Guassian fitting}
-One of the slower techniques to recover axial position is fitting a 2D Gaussian.
-The ratio of the FWHM of the Gaussian in the $x$ and $y$ directions will produce a calibration curve for axial position.
+A computational expensive and slow techniques to recover axial position is fitting a 2D Gaussian.
+The ratio of the FWHM of the Gaussian along the major and minor axes will produce a calibration curve for axial position.
 Attempting an iterative 2D Gaussian fitting in real-time is unrealistically with current computing capabilities, as such this technique is only useful in passive analysis of images already recorded.
 %Talk about accuracy
 
@@ -391,7 +390,7 @@ To narrow Gaussian as the particle moved through $z$ the standard Gaussian equat
 Featuring an assumed linear astigmatism where $c$ is the bias value to create a minimum width of the particle the diffraction limited spot size and $k$ is the degree of astigmatism featuring.
 In real optical systems astigmatism is non-linear but assumed to be linear for short distances from the focal plane.
 
-\section{Axial localisation motion induced error}
+\section{Motion induced astigmatic axial localisation error}
 
 It was demonstrated in the computational simulations that a particle moving in a real system will demonstrate a motion blur unique to having astigmatism.
 A single particle moving quickly in $xy$ will appear to stretch and the localised position of the particle will be the average of the start and end position.
@@ -412,9 +411,11 @@ k&= \frac{a c}{L_{\text{end}}}
 \intertext{By normalising the Gaussian model we simulate that an equivalent number of photons are being emitted by the particle, this allows the expected and real PSFs to be compared.}
 \hat{\text{PSF}}_{\text{Expected}} &= \frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}}\\
 {\text{PSF}}_{\text{Expected}} &= e^{-\frac{x^2}{2 \sigma(z)^2}}
+\end{align*}
+\begin{align*}
  \intertext{Assuming that the particle moves a distance $L$ with uniform speed and uniform emission of photons en-route, integrating the function gives the real PSF.}
 \hat{\text{PSF}}_{\text{Reality}} &= \frac{1}{L}\int_{0}^{L}\frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}} \mathop{dz}\\
-                                  &= \frac{{L_{\text{end}}} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{L_{\text{end}}}^2 x^2}{2 c^2 ({L_{\text{end}}}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
+&= \frac{{L_{\text{end}}} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{L_{\text{end}}}^2 x^2}{2 c^2 ({L_{\text{end}}}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
 \intertext{The integral has to be scaled by $\frac{1}{L}$ as integrating a function over $0 \to L$ will scale the total area by L. The resultant function is then by comparable with $\text{PSF}_{\text{Expected}}$.}
 {\text{PSF}}_{\text{Reality}} &= \frac{2 c (a L+L_{\text{end}}) e^{-\frac{L_{\text{end}}^2 x^2}{2 c^2 (a L+L_{\text{end}})^2}}}{2 a c L} \\
 &+ \frac{L_{\text{end}} x\sqrt{2 \pi }\text{Erf}\left(\frac{ (L_{\text{end}} x)}{\sqrt{2} (a c L+c L_{\text{end}})}\right)}{2 a c L} \\

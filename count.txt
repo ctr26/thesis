@@ -2,13 +2,13 @@
 [1;31m!!! Could not recognise package list, ignoring it instead. !!![0m
 File: thesis.tex
 Encoding: utf8
-Words in text: 25003
-Words in headers: 418
+Words in text: 24958
+Words in headers: 419
 Words outside text (captions, etc.): 2552
 Number of headers: 150
 Number of floats/tables/figures: 60
-Number of math inlines: 344
-Number of math displayed: 59
+Number of math inlines: 342
+Number of math displayed: 60
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   117+7+0 (2/0/0/0) _top_
@@ -17,7 +17,7 @@ Subcounts:
   1099+19+79 (9/4/11/4) Section: Optical Microscopic Imaging
   2360+29+102 (9/4/2/0) Section: Three Dimensional Imaging in Life Sciences
   270+3+21 (1/0/0/0) Chapter: Contemporary light-sheet technology}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
-  567+16+55 (5/0/10/1) Section: Generating Light Sheets
+  702+18+55 (6/0/10/1) Section: Generating Light Sheets
   620+13+98 (7/2/2/0) Section: Objective Arrangements
   386+5+0 (1/0/2/0) Section: Single Objective Light Sheet Microscopy
   568+9+0 (5/1/3/0) Section: Illumination
@@ -40,9 +40,9 @@ Subcounts:
   447+3+0 (2/0/0/0) Section: Method
   157+1+0 (1/0/0/0) Section: Remarks
   686+13+84 (4/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM
-  993+16+32 (5/1/10/0) Section: Single Particle Tracking
-  696+9+6 (6/1/15/4) Section: Astigmatic tracking
-  301+16+130 (6/5/13/13) Section: Axial localisation motion induced error
+  810+14+32 (4/1/10/0) Section: Single Particle Tracking
+  699+9+6 (6/1/13/4) Section: Astigmatic tracking
+  301+17+130 (6/5/13/14) Section: Motion induced astigmatic axial localisation error
   83+4+21 (3/1/1/0) Section: Results
   133+3+11 (1/1/1/0) Section: SPT using SPIM
   608+7+0 (4/0/0/0) Section: Conclusions
