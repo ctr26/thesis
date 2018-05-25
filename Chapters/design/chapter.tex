@@ -141,25 +141,27 @@ The set was chosen because of its suitable resolution due to the set having inte
   \end{figure}
 \end{landscape}
 
-A (\emph{Coherent Obis 561nm}) laser was used as the beam source.
-A pair of galvanometric mirrors (\emph{Cambridge Technology}) were used to produce 2D beam steering via an image relay, this approach is well established in scanning microscopy and is known to introduce ordinarily negligible field curvature.
-A telecentric scan lens (\emph{A1 Scan Lens} from Nikon) was used to convert beam angle to beam position; %\footnote{The exact make and model will not be mentioned the manufacturers do not wish for characterisation data to be published without their express permission}
-within the observation volume this acts to keep the sweeping beam parallel for a homogenous illumination and background.
-A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
-The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
-A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
+% A (\emph{Coherent Obis 561nm}) laser was used as the beam source.
+% A pair of galvanometric mirrors (\emph{Cambridge Technology}) were used to produce 2D beam steering via an image relay, this approach is well established in scanning microscopy and is known to introduce ordinarily negligible field curvature.
+% A telecentric scan lens (\emph{A1 Scan Lens} from Nikon) was used to convert beam angle to beam position; %\footnote{The exact make and model will not be mentioned the manufacturers do not wish for characterisation data to be published without their express permission}
+% within the observation volume this acts to keep the sweeping beam parallel for a homogenous illumination and background.
+% A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
+% The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
+% A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
 
 \subsection{Objectives}
 
+\nomenclature[z-WD]{WD}{WD of View}
+
 A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
-The water dipping objective used here has a 3.5 mm WD
-
-
-
+The water dipping objective used here has a \SI{3.5}{\milli\meter} WD and narrow physical profile; meaning that when matched with the bulky high NA detection objective there was mechanically interference, once their positioned with their foci were co-aligned.
+Very few objective pairs maximise detection and excitation NA whilst being water dipping and compatible, see Chapter \ref{chapter:chamber}.
+A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
 
 \subsection{Illumination}
 
-Four typical laser sources were chosen to allow good specificity and for multi-colour imaging.
+Four %typical
+laser sources were chosen to allow good specificity and for multi-colour imaging.
 %, future-proofing and overall versatility in the microscope.
 Wavelengths \textcolor{455nm}{\SI{455}{\nano\meter}} , \textcolor{488nm}{\SI{488}{\nano\meter}} , \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen as they are very typical fluorescent exciters of commercially available fluorophores in the visible range.
 The output power of the lasers (\SI{100}{\milli\watt}) is sufficient for good contrast images in SPIM, as it is within the single sun power regime.
@@ -178,10 +180,17 @@ To then circumvent this an intensity modulator such as an \textbf{A}cousto-\text
 The former solution is more economical and more predictable.
 White light sources are expensive and do not produce homogeneous emissions, each colour may have been wholly variant in terms of quality for instance.
 
-\subsection{Light Sheet Generation}
-To generate a virtual light sheet a telecentric (sometimes called an f theta lens) is used to translate scanning mirror angle into a laser position shift creating a light sheet from a static laser beam.
-This lens couples with the tube lens to partially fill the back aperture of the objective so that a suitably thin light sheet is produced, with an ideal field of view tuned to compensate for the Gaussian profile of laser light.
+\subsection{Light-sheet Generation}
+
+For generation of the light-sheet a galvanometric scanning mirror (\emph{Cambridge Technology}) was placed behind a telecentric  scan lens.
+The lens converts incident angle to emitted position such that a scanning mirrored placed on-axis a focal distance behind will produce a parallel sweeping beam.
+The light-sheet generating scanning mirror was conjugating using a pair of matched lenses, ina $4f$ configration, on a second scanning mirror.
+The second mirror was mounted at \SI{90}{\degree} to the light-sheet generating mirror to allow the sheet to move axially in the plane.
+This allowed for fast volumetric imaging as well as correction for distortions caused by the scanning optics, see Chapter \ref{chapter:homography}.
 See Figure \ref{fig:soldiworks_top} for a schematic of light sheet generation.
+
+% To generate a virtual light sheet a telecentric (sometimes called an f theta lens) is used to translate scanning mirror angle into a laser position shift creating a light sheet from a static laser beam.
+% This lens couples with the tube lens to partially fill the back aperture of the objective so that a suitably thin light sheet is produced, with an ideal field of view tuned to compensate for the Gaussian profile of laser light.
 
 % \subsubsection{Cage System}
 %
@@ -196,18 +205,37 @@ b) Scan mirror in z, scanning volumes. c) Position of telecentric lens. d) Tube 
 	\label{fig:soldiworks_top}
 \end{figure}
 
-\subsubsection{Scan Lens}
-%TODO something
-The scan lens was characterised (See appendix \ref{appendix:scanlens}) and placed at ... %TODO
-%See Appendix
+% \subsubsection{Scan Lens}
+% %TODO something
+% The scan lens was characterised (See appendix \ref{appendix:scanlens}) and placed at ... %TODO
+% %See Appendix
 
-\subsubsection{Back aperture fill}
+\subsubsection{Light-sheet shaping} %Edited
 
-In the the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
-To recreate a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter}  the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
-Therefore the excitation laser needs to be magnified \SI{1.7}{}$\times$.
-Standard optical lenses are heavily quantised in terms of their focal length, a viable magnification for instance would be a \SI{160}{\milli\meter} , \SI{30}{\milli\meter} pair placed just before the flip mirror.
-A very sensible use of lenses would involve exploiting the lens that conjugates the SLM to the image plane, provided the lens were placed after the flip mirror and not before, which is possible if the focal length of the SLM is set higher than \SI{330}{\milli\meter} and therefore placed after the flip mirror.
+% \nomenclature[z-FOV]{FOV}{Field of View}
+% \nomenclature[z-sCMOS]{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
+% \nomenclature[z-NA]{NA}{Numerical Apeture}
+
+\newacronym{FOV}{FOV}{Field of View}
+\newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
+\newacronym{NA}{NA}{Numerical Aperture}
+
+Using the Orca Flash v4 camera (with a chip size of \SI{13}{\milli\meter}) and a detection objective magnification of \SI{25\times}{}, gave a required \acrshort{FOV} of \SI{520}{\micro\meter}.
+To match this to the confocal width of a propagating beam required 0.15 \acrshort{NA} for \SI{561}{\nano\meter} light, providing a beam waist (light-sheet thickness) of \SI{1.3 \pm 1}{\micro\meter}, see equation \ref{eq:rayleigh}).
+To create a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter} the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
+Therefore the excitation beam needed to be magnified \SI{1.7}{} fold.
+
+Using an \emph{ITL200} tube lens with a \emph{Nikon A1} scan lens provided \SI{5.37\times} magnification (See appendix \ref{appendix:scanlens}), meaning the excitation objective back aperture would have been overfilled and the usable \acrshort{FOV} too small.
+To address this, an iris was placed at the back aperture of the objective to allow for manual tuning of the \acrshort{NA}.
+The downside of stopping down the back aperture, was that light was being discarded; as light-sheet systems do not require large doses of light to function (\SI{\sim1}{\milli\watt}), discarding the majority of the light from the \SI{100}{\milli\watt} sources did not impede imaging.
+
+%With a scan lens focal \SI{37.3\pm0.1}{\milli\meter}
+
+%In the the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
+%To recreate a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter}  the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
+%Therefore the excitation laser needs to be magnified \SI{1.7}{}$\times$.
+%Standard optical lenses are heavily quantised in terms of their focal length, a viable magnification for instance would be a \SI{160}{\milli\meter} , \SI{30}{\milli\meter} pair placed just before the flip mirror.
+%A very sensible use of lenses would involve exploiting the lens that conjugates the SLM to the image plane, provided the lens were placed after the flip mirror and not before, which is possible if the focal length of the SLM is set higher than \SI{330}{\milli\meter} and therefore placed after the flip mirror.
 
 %The beam waist was measured for one colour though each colour may require its own additional lenses as well as the overall demagnifying telescope.
 %These additional lenses directly after the laser heads would compensate for any width and colour dependent variances in the field of view of the light sheet; the gratuitous additional optics (six lens for three uncorrected colours) may make this solution inviable as the only correction it will achieve is likely a small improvement in light sheet homogeneity.
@@ -215,21 +243,32 @@ A very sensible use of lenses would involve exploiting the lens that conjugates 
 \subsection{Detection}
 
 %The optics surrounding the detection arm are far simpler than the excitation arm.
-The detection objective used was a planachromat \SI{25}{}$\times$ high (\SI{1.1}{}) numerical aperture objective, giving unparalleled lateral resolution for a water dipping lens.
+The detection lens used, was a PlanAchromat \SI{25}{}$\times$ high (\SI{1.1}{})\acrshort{NA} objective, giving unparalleled lateral resolution for a water dipping lens.
 This was coupled to second $ITL200$ tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
 Before the detector there is a Prior Filter wheel housing two emission filters from Semrock the $442/647 nm$ Yokogawa emission filter and Chroma the $ET605/70m$.
 The emission filter is used to reject excitation light scattered from the sample, though this signal should be weak it is very difficult to correct for this digitally and so the filters are necessary.
 
-\subsubsection{Additional relay}
+\subsubsection{Parfocal relay}
 
-A further lens relay was added on a optical rail after the
-%\section{Control}
+A further lens relay was added on a optical rail after the turning mirror.
+The relay comprised a tube lens and two objective lenses on a rotating turret.
+This provided a par-focal solution for magnifying image by 2$\times$ (\emph{Olympus 2x .. $TODO$}) and 1.25$\times$ (\emph{Olympus 2x .. $TODO$}) for 50$\times$ and 31.25$\times$ total magnifications respectively.
+Using microscope objectives for the additional optical relay ensured that there were minimal optical losses as the lenses are designed for the weak fluorescent signal, as well as them having minimal distortion and chromatic aberrations.
+%\section{Control
 
 %All signals controlling and sychronising the mirrors were generated by a ... %TODO
 
 \section{Software}
 
 \subsubsection{Control}
+
+\begin{figure}
+  \includegraphics{./control} %TODO my own.
+  \caption{Control schematic of digitally scanned light-sheet microscope. All control signals are generated within LabVIEW and distributed components. Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}
+  \label{fig:control}
+\end{figure}
+
+% Comntrol schematic illustrator.
 
 %We controlled this like that and here is a schematic of how it all connects:
 
@@ -257,9 +296,7 @@ Once the exposure window is finished, the $y$ mirror is sinusoidally returned to
   \label{fig:slit_signals}
 \end{figure}
 
-Control and synchronisation of the filter wheel and XYZ translation stage was achieved using RS232 as precise timing is not needed.
-As well, a direct feedback on the status of the stage and filter was desirable %from the controller on where the stage and Filter
-
+Control and synchronisation of the filter wheel and XYZ translation stage was achieved using RS232 serial commands, as precise timing was not needed and a direct feedback on the status of the stage and filter was desirable %from the controller on where the stage and Filter
 
 %TODO Basic overview.
 %Sample Area
