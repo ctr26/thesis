@@ -1,11 +1,11 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27511
-Words in headers: 482
-Words outside text (captions, etc.): 3079
-Number of headers: 174
-Number of floats/tables/figures: 70
-Number of math inlines: 366
+Words in text: 27841
+Words in headers: 486
+Words outside text (captions, etc.): 3054
+Number of headers: 175
+Number of floats/tables/figures: 69
+Number of math inlines: 365
 Number of math displayed: 61
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -21,8 +21,8 @@ Subcounts:
   568+9+0 (5/1/3/0) Section: Illumination
   0+7+0 (1/0/0/0) Chapter: Design and Considerations of the Light-sheet Microscope
   56+10+0 (3/0/0/0) Section: Objectives
-  1293+19+121 (10/3/17/0) Section: Hardware
-  1465+28+371 (15/7/3/0) Section: Control
+  1235+22+121 (12/3/16/0) Section: Hardware
+  1734+29+416 (14/7/6/0) Section: Software
   1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets
   434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
@@ -32,8 +32,8 @@ Subcounts:
   694+3+91 (1/3/14/1) Section: The proposed algorithm
   511+9+367 (2/8/24/0) Section: Results
   464+8+48 (4/1/1/0) Section: Discussion
-  122+6+0 (1/0/0/0) Chapter: Developments in confocal virtual slit-scanning microscopy
-  645+6+131 (3/3/6/1) Section: Single beam confocal slit-scanning
+  122+6+0 (1/0/0/0) Chapter: Developments in confocal virtual slit-scanning microscopy}\label{chapter:dualslit
+  503+5+61 (2/2/3/1) Section: Single beam confocal slit-scanning
   611+10+152 (6/3/1/0) Section: Double speed slit-scanning microscopy
   497+5+134 (4/3/3/0) Section: Structured illumination
   649+13+56 (7/1/4/0) Section: Discussion
@@ -54,8 +54,9 @@ Subcounts:
   915+10+48 (5/1/3/0) Section: Algorithmic bead tracking
   1668+67+452 (7/6/75/0) Section: Results
   547+2+0 (2/0/0/0) Section: Discussion
-  1+3+0 (1/0/0/0) Chapter: Discussion and Conclusions
+  0+3+0 (1/0/0/0) Chapter: Discussion and Conclusions
+  262+1+0 (1/0/0/0) Chapter: Perspectives
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
-  295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens
+  295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   193+5+0 (1/0/0/0) Chapter: Installing the CUED class file
 

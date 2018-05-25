@@ -28,6 +28,8 @@
 
 \chapter{Design and Considerations of the Light-sheet Microscope}
 \section{Objectives}
+
+
 \subsection{Embryonic imaging for Mechanobiology}
 \subsection{Cellular imaging for Viral Egress}
 
@@ -47,8 +49,44 @@ Any optical development project comprises of a series of sub-systems, modules wh
 
 \section{Hardware}
 
+The design presented here is an adaptation of a previous light-sheet microscope, whose entire optical assembly was mounted on a set of rails rotated at \SI{45}{\degree}.
+The upgrade and redesign of the system was made such that the excitation and detection paths of the system could be extended and so that liquid tuneable lenses could be mounted in the direction of gravity to reduce induced optical aberrations.
+
+The previous design cantilevered the detection optics away from the frame, causing general instability.
+For precise tracking of single virions, a more stable suspension of objectives was needed.
 
 \subsection{Mechanical Design}
+
+The mechanical design of the system consists of two optical breadboards mounted one above the other on \SI{50.8}{\milli\metre} stabilising metal posts.
+A large rectangle of material was removed from the upper board to allow the objective lenses to reach down to the samples inserted from below; too large of a gap would cause sag in each arm, too small would impede access to the sample below.
+The objective lenses and detection objective actuator were mounted on rails at \SI{45}{\degree} to the top motherboard.
+These rails guided the objectives through the open hole until the focal points of each objective (detection and excitation) met.
+The filter wheel was placed on an optical rail before the camera and after a turning mirror so that vibrations of filter switching would be mostly decoupled from the detection optics.
+The camera was mounted at \SI{45}{\degree}, on a 3D printed mount to correct for the turning mirror, on the same optical rail.
+Rotated the camera was necessary as it allowed the shutter and illumination beam to propagate concomitantly, Chapter \ref{chapter:dualslit}.
+
+For the excitation path, a \SI{22.5}{\degree} mirror was used to to deliver the laser illumination from the scanning optics into objective.
+The additional mirror was needed so that the scanning optics could be mounted flat to the optical breadboard, making positioning and optical mounting simpler.
+Using two mirrors also provided the sufficient degrees of freedom to align the axis of the scanning optics to the optical axis along the excitation arm.
+Finally, the light-sheet generating mirror of the pair of was suspended off the edge of the breadboard so the the illumination from the bottom could be delivered.
+
+% Mechanical design changes for more stable an extensible system than previous work.
+% Large detection area for future upgrades on detection arm - Like my relaying
+% Space below for exotic excitation and large complex biological chambers, see Tweezers Chjapter.
+
+%The small reflection angles required by the SLM and long detection FLIM arm were incompatible with the LSFM system and a new mechanical design was necessary (Figure 7.2).
+
+
+%Instead of positioning all the optical components in the 45o frame, only the detection path, the excitation objective and the tube lens were mounted at this angle.
+%A mirror at 22.5o to horizontal reoriented excitation path vertically.
+%Hence, a simpler frame was sufficient, consisting of two optical breadboards – one above the other.
+%The dSLM optics and detection was mounted on the top level, while SLM and laser on the bottom level.
+%A hole was cut in top breadboard so that the ‘V’ shaped arrangement of objectives was suspended below it.
+%The sample translation stage was placed on the bottom breadboard and elevated to reach the imaging volume.
+%The detection cage system included a 450 mirror which ensured that the long FLIM arm could be mounted horizontally above the top breadboard.
+
+% Besides additional compatibility with upgrades, this design was more mechanically stable and had a large sample space for complex biological chambers.
+% Moreover the tuneable lenses were positioned horizontally in a vertical cage system avoiding gravitational deformations and hence aberrations.
 
 \subsubsection{Sample Mounting}
 
@@ -56,19 +94,19 @@ SPIM is notorious for sample mounting within the microscopy community, this is d
 The concept of the inverted SPIM \cite{Wu2011} allows more freedom in terms of sample mounting as more of the image volume is accessible.
 %This design point is one of the axioms of the new system, the focus of this report.
 
-The microscope system was designed using \SI{45}{\degree} \textbf{C}omputer \textbf{A}ided \textbf{D}esign so that two objectives would be mounted on \SI{45}{\degree} rails, allowing a detection and excitation objective to be lowered into a imaging space below.
-Each rail comprised of two \SI{16}{\milli\meter} to \SI{8}{\milli\meter} caging conversion mounts.
-The \SI{16}{\milli\meter} mounts were attached to the rail by two guides placed in parallel to ensure that the objectives were in the same plane and correct angle.
-The objectives were held on \SI{8}{\milli\meter} caging which attached to a thumb-screw mount holding each objective, so that they could both be very precisely lowered for fine adjustments.
-The \SI{8}{\milli\meter} caging also carried an aluminium cube suitable for dynamically lowering a beam splitter or mirror into the system so that issues on excitation could be diagnosed, as the diverted light would be the exact the image of the back aperture of the excitation objective.
-Each rail was then mounted on an optical breadboard, with a noise dampening core to limit vibrations.
+%The microscope system was designed using \SI{45}{\degree} \textbf{C}omputer \textbf{A}ided \textbf{D}esign so that two objectives would be mounted on \SI{45}{\degree} rails, allowing a detection and excitation objective to be lowered into a imaging space below.
+%Each rail comprised of two \SI{16}{\milli\meter} to \SI{8}{\milli\meter} caging conversion mounts.
+%The \SI{16}{\milli\meter} mounts were attached to the rail by two guides placed in parallel to ensure that the objectives were in the same plane and correct angle.
+%The objectives were held on \SI{8}{\milli\meter} caging which attached to a thumb-screw mount holding each objective, so that they could both be very precisely lowered for fine adjustments.
+%The \SI{8}{\milli\meter} caging also carried an aluminium cube suitable for dynamically lowering a beam splitter or mirror into the system so that issues on excitation could be diagnosed, as the diverted light would be the exact the image of the back aperture of the excitation objective.
+%Each rail was then mounted on an optical breadboard, with a noise dampening core to limit vibrations.
 
-To allow the inverted objectives access to the samples the optical breadboard was cut with sufficient tolerance to allow them through but maintaining their stability; too large of a gap would cause sag in each arm, too small would impede access to the sample below.
-The hole was calculated using precision Solidworks, see Figure \ref{fig:solidworks_design_front}.
-This breadboard was then elevated to a height of \SI{50}{\centi\meter}, using $25mm$ diameter aluminium posts for stability and vibrational dampening.
-The posts were mounted on a secondary optical breadboard which supported excitation optical components.
-The secondary breadboard was implemented with the ambition that the entire microscope could be ``portable" as it did not have a permanent residence where it was being built.
-Hardware as well as a digitally controlled XYZ stage was placed on the bottom breadboard.
+%To allow the inverted objectives access to the samples the optical breadboard was cut with sufficient tolerance to allow them through but maintaining their stability; too large of a gap would cause sag in each arm, too small would impede access to the sample below.
+%The hole was calculated using precision Solidworks, see Figure \ref{fig:solidworks_design_front}.
+%This breadboard was then elevated to a height of \SI{50}{\centi\meter}, using $25mm$ diameter aluminium posts for stability and vibrational dampening.
+%The posts were mounted on a secondary optical breadboard which supported excitation optical components.
+%The secondary breadboard was implemented with the ambition that the entire microscope could be ``portable" as it did not have a permanent residence where it was being built.
+%Hardware as well as a digitally controlled XYZ stage was placed on the bottom breadboard.
 
 \begin{figure}
 \centering
@@ -110,6 +148,13 @@ within the observation volume this acts to keep the sweeping beam parallel for a
 A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
 The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
 A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
+
+\subsection{Objectives}
+
+A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
+The water dipping objective used here has a 3.5 mm WD
+
+
 
 
 \subsection{Illumination}
@@ -153,9 +198,10 @@ b) Scan mirror in z, scanning volumes. c) Position of telecentric lens. d) Tube 
 
 \subsubsection{Scan Lens}
 %TODO something
+The scan lens was characterised (See appendix \ref{appendix:scanlens}) and placed at ... %TODO
+%See Appendix
 
-
-\subsubsection{Back Aperture Fill}
+\subsubsection{Back aperture fill}
 
 In the the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
 To recreate a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter}  the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
@@ -163,23 +209,57 @@ Therefore the excitation laser needs to be magnified \SI{1.7}{}$\times$.
 Standard optical lenses are heavily quantised in terms of their focal length, a viable magnification for instance would be a \SI{160}{\milli\meter} , \SI{30}{\milli\meter} pair placed just before the flip mirror.
 A very sensible use of lenses would involve exploiting the lens that conjugates the SLM to the image plane, provided the lens were placed after the flip mirror and not before, which is possible if the focal length of the SLM is set higher than \SI{330}{\milli\meter} and therefore placed after the flip mirror.
 
-The beam waist was only measured for one colour though each colour may require its own additional lenses as well as the overall demagnifying telescope.
-These additional lenses directly after the laser heads would compensate for any width and colour dependent variances in the field of view of the light sheet; the gratuitous additional optics (six lens for three uncorrected colours) may make this solution inviable as the only correction it will achieve is likely a small improvement in light sheet homogeneity.
+%The beam waist was measured for one colour though each colour may require its own additional lenses as well as the overall demagnifying telescope.
+%These additional lenses directly after the laser heads would compensate for any width and colour dependent variances in the field of view of the light sheet; the gratuitous additional optics (six lens for three uncorrected colours) may make this solution inviable as the only correction it will achieve is likely a small improvement in light sheet homogeneity.
 
 \subsection{Detection}
 
-The optics surrounding the detection arm are far simpler than the excitation arm.
-The objective used is a planachromat \SI{25}{}$\times$ high (\SI{1.1}{}) numerical aperture objective, to give good lateral resolution.
-This is coupled to another $ITL200$ tube lens which images infinity corrected emission light onto the Orca Flash 4.0v2 detector.
+%The optics surrounding the detection arm are far simpler than the excitation arm.
+The detection objective used was a planachromat \SI{25}{}$\times$ high (\SI{1.1}{}) numerical aperture objective, giving unparalleled lateral resolution for a water dipping lens.
+This was coupled to second $ITL200$ tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
 Before the detector there is a Prior Filter wheel housing two emission filters from Semrock the $442/647 nm$ Yokogawa emission filter and Chroma the $ET605/70m$.
 The emission filter is used to reject excitation light scattered from the sample, though this signal should be weak it is very difficult to correct for this digitally and so the filters are necessary.
 
-\section{Control}
-\subsection{Signalling}
+\subsubsection{Additional relay}
 
-All signals controlling and sychronising the mirrors were generated by a ... %TODO
+A further lens relay was added on a optical rail after the
+%\section{Control}
 
-\subsection{Software}
+%All signals controlling and sychronising the mirrors were generated by a ... %TODO
+
+\section{Software}
+
+\subsubsection{Control}
+
+%We controlled this like that and here is a schematic of how it all connects:
+
+\subsection{Signalling} %Edited slightly?
+
+%\subsection{Implementation}
+%Talk about synchornisaiton
+Precise synchronisation is needed for confocal slit-scanning (Chapter \ref{chapter:dualslit}) to be viable, as the time between the switching of active pixel rows at \SI{100}{\hertz} for the Orca Flash v4 is \SI{\sim 10}{\micro\second}. %TODO justify this better than surprise confocal?
+%In the light-sheet system used here, t
+This was achieved using fast electronics to send sets of packaged voltage waveforms through a National Instruments DAQ module.
+Once a TTL 5V signal is sent to the camera, there is a \SI{10}{\milli\second} delay for the electronics to initialise on the camera.
+During this window the $y$ mirror, which creates the light-sheet, is pre-driven so that thew mirror is travelling at a constant velocity during the exposure window.
+The point of the start of the exposure window is found empirically (\SI{9.8}{\milli\second} after camera triggering) by tuning this window until the illumination profile, under slit scanning, is uniform when visualised using fluorescent dye.
+During the exposure a TTL signal is sent to the requisite laser channel for illumination.
+Once the exposure window is finished, the $y$ mirror is sinusoidally returned to the start voltage for the next exposure (Fig. \ref{fig:slit_signals}).
+
+\begin{figure}
+  \centering
+  \includegraphics{slit_signals}
+  \caption{The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
+  A pre-drive phase for the $y$ mirror is needed to ensure the illumination profile of the light-sheet is uniform.
+  The cameras requires time to initialise the electronics and so a delay period is added within which the pre-drive of both mirrors is performed.
+  Both mirrors are sinusoidally returned to their start position ready for the next acquisition.
+  }
+  \label{fig:slit_signals}
+\end{figure}
+
+Control and synchronisation of the filter wheel and XYZ translation stage was achieved using RS232 as precise timing is not needed.
+As well, a direct feedback on the status of the stage and filter was desirable %from the controller on where the stage and Filter
+
 
 %TODO Basic overview.
 %Sample Area
@@ -190,22 +270,26 @@ All signals controlling and sychronising the mirrors were generated by a ... %TO
 %Image Acquisition
 %	Hardware interfacing, software control and end-user interface
 
-\subsection{Image Acquisition: Software Design}
+%\subsection{Image Acquisition: Software Design}
 
-A well planned, modular and user-friendly interface is very important whenever creating hardware-user interfaces.
-In the case of the new microscope this software needs three different components.
+%TODO discuss aims of software and version control
+
+A modular, extensible and simple software solution was needed to control the microscope.
+
+%A well planned, modular and user-friendly interface is very important whenever creating hardware-user interfaces.
+%In the case of the new microscope this software needs three different components.
 The first is the Camera control software which controls the detection arm of the microscope; this software needs to allow a user to save two and three dimensional stacks of images and still be accessible to change and upgrade as more and difficult biological questions are to be addressed.
 A controller for the stage that can interface with the camera software (to take images for large area scanning for instance) as well as being user friendly enough to accurately control the XYZ stage and finally, a waveform generator to control and synchronise the scanning mirrors, focus piezo and potentially tunable lenses.
 These software also needed to be designed as modules so that a user could use each independent of the others.
 To satisfy these criteria LabVIEW was chosen as the programming environment to be used.
 
-\subsubsection{LabVIEW Architecture}
+\subsection{LabVIEW Architecture}
 
 LabVIEW is a graphical programming software package designed to produce simple, modifiable, user-friendly software in science.
 LabVIEW provides a wide library of drivers and libraries for hardware interfacing in science.
 Due to LabVIEW's modularity and fast development environment it is ideal for producing software for a microscope under development as any new hardware can be quickly and easily implemented and not necessarily by the original software writer.
 
-\paragraph{Queuing}~
+\subsubsection{Queuing}
 
 When interfacing with hardware a key challenge programmers face is how to mitigate command flooding at the device.
 A user may for instance want to send several commands in a linear fashion, but the device may only be able to successfully implement one or none if it crashes with overload or misinterprets the command as it is processing another.
@@ -213,7 +297,7 @@ LabVIEW offers a queueing architecture where a programmer can send a command int
 This queueing opens a myriad of possibilities.
 The programmer can not only queue an infinite line of commands but also remove duplicate commands, truncate a command queue, change the routine of operation to a first in first out (FIFO) routine rather than first in last out (FILO) or even enforce that only one command can exist it the queue at any time.
 
-\paragraph{Simple State Machine}~
+\subsubsection{Simple State Machine}
 
 A state machine is a fundamental computing architecture which can contend with a great deal of complex programmatical challenges.
 A common example of a state machine is a vending machine: when left alone the vending machine keeps its state (usually an enumerated variable) as idle.
@@ -222,7 +306,7 @@ If a user presses dispense the next state will check the running total of curren
 It is a very simple method of keeping a clear routine within the program rather than any abstractions that would occur if programmed otherwise.
 
 
-\paragraph{Producer Consumer}~
+\subsubsection{Producer Consumer}
 
 In LabVIEW the combination of queueing and state machines facilitates the producer consumer concept, whereby the producer is an independent parallel routine which can queue commands for a consumer.
 The most simple template for this is an event driven producer recommended as the start of any LabVIEW routine, whereby the event loop collects commands from the Graphical User Interface (the front panel in LabVIEW).
@@ -240,12 +324,12 @@ The top loop is an event driven (user front panel input) producer loop, the bott
 \end{figure}
 
 
-\subsubsection{Camera.vi}
+\subsection{Camera module}
 
 Camera.vi was designed to be the main running loop of the software environment.
 That said, all of its functionality has been designed so that each function could be addressed by properly accessing the queue named \textbf{Camera}.
 
-\paragraph{Front Panel}~
+\subsubsection{Front Panel}~
 
 Care was taken to ensure that the user experience of the Camera.vi was well received and fundamentally simple.
 A simple user experience can both necessitate the microscope to be used by a lay individual for simple exercises as well as allow experienced users to access more advanced aspects of the microscope.
@@ -263,7 +347,7 @@ On the right an intensity histogram so the user can clearly see if the image bei
 \label{fig:camera_frontpanel}
 \end{figure}
 
-\paragraph{Back Panel}~
+\subsubsection{Back Panel}~
 
 The camera itself is split into three states: \textbf{init}alisation, \textbf{active} and \textbf{deinit}ialisation.
 This structure was used so that collaborators could easily contribute as required.
@@ -309,7 +393,7 @@ environment.
 Horses for courses.}
 
 
-\subparagraph{Virtual Slit}~
+\paragraph{Virtual Slit}
 
 The \textit{Orca 4v2} has this slit scanning mode embedded in its firmware and is accessible from the supplied software.
 Inducing this within LabVIEW requires sending values to specific hex addresses using \textit{advanced\_property} functions.
@@ -322,24 +406,29 @@ Two modes were implemented, a manual mode for debugging purposes, and an automat
 \label{fig:camera_virtual_slit_module}
 \end{figure}
 
-\subsubsection{XYZ\_Controller.vi}
+\subsection{XYZ stage and filter wheel module}
 
 The Prior controller interfaces with software via an RS232 protocol.
 Provided with the stage is a library of routines within LabVIEW that package the correct RS232 commands in a LabVIEW friendly format.
 These were then incorporated into $XYZ\_Controller.vi$ producer consumer loop.
 This time however the stage controlling consumer loop was a slave to the consumer that handled front panel inputs.
-This was because the controller is centered about the list of positions.
+This was because the controller is cantered about the list of positions.
 This list sends positional commands to the stage, but also requires functions such as: clearing the positional list; adding current position to the beginning or the end of the list; controlling the delay between positions and sending save image volume commands.
 
-\begin{figure}
-\centering
-\includegraphics[]{Figures/xyz_front}
-\caption[XYZ Controller front panel]{Front panel of the XYZ stage controller.
-The arbitrary \SI{10} value in the mathmodule is a \SI{10}{\milli\second} delay inherent to the electronics of the camera.}
-\label{fig:xyz_front}
-\end{figure}
+For filter wheel control, RS232 commands were synchronsied with the TTL triggers from the Waveforms module.
+A small listening routine was written to intercept triggers sent to a false channel, these triggers were then converted to filter wheel positions.
+The maximum settling time for non-adjacent filters is \SI{40}{\milli\second}, so a comparable delay was added into the imaging routine to compensate for filter switching.
+RS232 commands require a comparable amount of time in handshaking, so attempting to check if the filter wheel was in the correct place before continuing would not be faster.
+%
+% \begin{figure}
+% \centering
+% \includegraphics[]{Figures/xyz_front}
+% \caption[XYZ Controller front panel]{Front panel of the XYZ stage controller.
+% The arbitrary \SI{10} value in the mathmodule is a \SI{10}{\milli\second} delay inherent to the electronics of the camera.}
+% \label{fig:xyz_front}
+% \end{figure}
 
-\subsubsection{Waveform Controller}
+\subsubsection{Waveform module}
 
 This module of the LabVIEW controller is the most crucial as it is the driver and synchronisation of the signals controller the scanning mirrors, focus stepper and tunable lens system if it is implemented.
 This module will also serve as an advanced calibration routine for the microscope to control.

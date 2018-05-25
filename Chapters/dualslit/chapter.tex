@@ -10,7 +10,7 @@
     \graphicspath{{Chapters/dualslit/Figs/Vector/}{Chapters/dualslit/Figs/}}
 \fi
 
-\chapter{Developments in confocal virtual slit-scanning microscopy}
+\chapter{Developments in confocal virtual slit-scanning microscopy}\label{chapter:dualslit}
 
 %Confocal microscopy is a variant of a pointing scanning systems whereby a pin hole in a conjugate plane rejects out-of-focus light to enable volumetric imaging.
 %Similarly a slit may replace a pinhole greatly speeding up the acquisition process for the cost of resolution and %sectioning capabilities.
@@ -52,27 +52,6 @@ The width of the slit adjusts the contrast and resolution of the final image, wh
   An incident beam (green) approaches orthogonally to the direction of the rolling shutter, the shutter consists of a width of active pixels (yellow).
   The inactive pixels correspond to out-of-focus light and are rejected from the final image.}
   \label{fig:slit_scanning_alt}
-\end{figure}
-
-\subsection{Implementation}
-
-%Talk about synchornisaiton
-Precise synchronisation is needed for confocal slit-scanning to be viable, as the time between the switching of active pixel rows is \SI{\sim 10}{\micro\second}.
-In the light-sheet system used here, this was achieved using fast electronics to send sets of packaged waveforms.
-Once a TTL 5V signal is sent to the camera, there is a \SI{10}{\milli\second} delay for the electronics to initialise on the camera.
-During this window the $y$ mirror, which creates the light-sheet, is pre-driven so that thew mirror is travelling at a constant velocity during the exposure window.
-The point of the start of the exposure window is found empirically (\SI{9.8}{\milli\second} after camera triggering) by tuning this window until the illumination profile, under slit scanning, is uniform when visualised using fluorescent dye.
-Once the exposure window is finished, the $y$ mirror is sinusoidally returned to the start voltage for the next exposure (Fig. \ref{fig:slit_signals}).
-
-\begin{figure}
-  \centering
-  \includegraphics{slit_signals}
-  \caption{The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
-  A pre-drive phase for the $y$ mirror is needed to ensure the illumination profile of the light-sheet is uniform.
-  The cameras requires time to initialise the electronics and so a delay period is added within which the pre-drive of both mirrors is performed.
-  Both mirrors are sinusoidally returned to their start position ready for the next acquisition.
-  }
-  \label{fig:slit_signals}
 \end{figure}
 
 \subsection{Optimisation}
