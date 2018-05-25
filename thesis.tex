@@ -2,7 +2,8 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
+%\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,draft]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -126,6 +127,12 @@
 \listoffigures
 
 \listoftables
+
+\printglossary[type=\acronymtype]
+
+\printglossary
+
+%\newacronym{fov}{FOV}{Field of View}
 
 % \printnomenclature[space] space can be set as 2em between symbol and description
 %\printnomenclature[3em]

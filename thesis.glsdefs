@@ -1,0 +1,90 @@
+\ifglsentryexists{FOV}{}%
+{%
+\gls@defglossaryentry{FOV}%
+{%
+name={FOV},%
+sort={FOV},%
+type={acronym},%
+first={Field of View\glsspace (FOV)},%
+firstplural={Field of Views\glsspace (FOVs)},%
+text={FOV},%
+plural={FOVs},%
+description={Field of View},%
+descriptionplural={Field of View\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Field of View},%
+longplural={Field of Views},%
+short={FOV},%
+shortplural={FOVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{sCMOS}{}%
+{%
+\gls@defglossaryentry{sCMOS}%
+{%
+name={sCMOS},%
+sort={sCMOS},%
+type={acronym},%
+first={scientific Complementary Metal-Oxide-Semiconductor\glsspace (sCMOS)},%
+firstplural={scientific Complementary Metal-Oxide-Semiconductors\glsspace (sCMOSs)},%
+text={sCMOS},%
+plural={sCMOSs},%
+description={scientific Complementary Metal-Oxide-Semiconductor},%
+descriptionplural={scientific Complementary Metal-Oxide-Semiconductor\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={scientific Complementary Metal-Oxide-Semiconductor},%
+longplural={scientific Complementary Metal-Oxide-Semiconductors},%
+short={sCMOS},%
+shortplural={sCMOSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{NA}{}%
+{%
+\gls@defglossaryentry{NA}%
+{%
+name={NA},%
+sort={NA},%
+type={acronym},%
+first={Numerical Apeture\glsspace (NA)},%
+firstplural={Numerical Apetures\glsspace (NAs)},%
+text={NA},%
+plural={NAs},%
+description={Numerical Apeture},%
+descriptionplural={Numerical Apeture\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Numerical Apeture},%
+longplural={Numerical Apetures},%
+short={NA},%
+shortplural={NAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

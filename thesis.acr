@@ -1,0 +1,9 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{F}\relax \glsresetentrylist %
+\glossentry{FOV}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{36\delimN 37}}}\glsgroupskip
+\glsgroupheading{N}\relax \glsresetentrylist %
+\glossentry{NA}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{37}}}%
+\end{theglossary}\glossarypostamble
