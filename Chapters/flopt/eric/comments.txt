@@ -1,3 +1,17 @@
 I wrote these comments in two passes, and I think I misunderstood what you were doing the first time around, especially regarding how you simulated the data used for demonstrating the reconstruction. Some of my comments regarding how to explain this simulation are therefore not right. However, the need to explain the simulation before the analysis and reconstruction (not afterwards, as in the current order of figures) is very important. And I'd like to discuss the details of this method (next Friday?).
 
-Things I particularly want to discuss, because they are hard and I think they may currently not be consistent, are (1) the co-ordinate system, which I think needs to be labelled consistently on every figure for which it may be relevant (I'm not sure the terms 'xy' are used consistently between some all diagrams and algebra); and (2) nomenclature, which I think seems inconsistent for the transformation matrices (and it is unclear what some of them, like [T|R], actually are. They will need to be presented, because I don't think relying on the reader to understand a 'standard notation' for matrix maths is at all permissable (because most people don't). You will need a thesis nomenclature section, and if there are terms which are, of necessity, different in different chapters then I think the nomenclature will need to explain this. 
+Things I particularly want to discuss, because they are hard and I think they may currently not be consistent, are (1) the co-ordinate system, which I think needs to be labelled consistently on every figure for which it may be relevant (I'm not sure the terms 'xy' are used consistently between some all diagrams and algebra); and (2) nomenclature, which I think seems inconsistent for the transformation matrices (and it is unclear what some of them, like [T|R], actually are. They will need to be presented, because I don't think relying on the reader to understand a 'standard notation' for matrix maths is at all permissable (because most people don't). You will need a thesis nomenclature section, and if there are terms which are, of necessity, different in different chapters then I think the nomenclature will need to explain this.
+
+
+Dear Craig,
+
+Attached are my comments on your flopt chapter.
+
+I wrote these comments in two passes, and I think I misunderstood what you were doing the first time around, especially regarding how you simulated the data used for demonstrating the reconstruction. Some of my comments regarding how to explain this simulation are therefore not right. However, the need to explain the simulation before the analysis and reconstruction (not afterwards, as in the current order of figures) is very important. And I'd like to discuss the details of this method (next Friday?).
+
+Things I particularly want to discuss, because they are hard and I think they may currently not be consistent, are (1) the co-ordinate system, which I think needs to be labelled consistently on every figure for which it may be relevant (I'm not sure the terms 'xy' are used consistently between some all diagrams and algebra); and (2) nomenclature, which I think seems inconsistent for the transformation matrices (and it is unclear what some of them, like [T|R], actually are. They will need to be presented, because I don't think relying on the reader to understand a 'standard notation' for matrix maths is at all permissable (because most people don't). You will need a thesis nomenclature section, and if there are terms which are, of necessity, different in different chapters then I think the nomenclature will need to explain this.
+
+Cheers,
+Eric
+
+PS if you send other chapters now, I may have time next week. 
