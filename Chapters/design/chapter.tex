@@ -27,14 +27,31 @@
 
 
 \chapter{Design and Considerations of the Light-sheet Microscope}
+
+This chapter introduces the instrument which was built and used during this thesis.
+The system presented here was required to facilitate a wide range of imaging with two specific biological aims to be met.
+The first of which required the system to image Zebrafish embryos (\SI{\sim100}{\micro\meter}), surrounded by a magnetic tweezer system, during development (see Chapter \ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
+The second required the imaging of live cells for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.
+
 \section{Objectives}
 
+\begin{itemize}
+    \item Fast volumetric imaging
+    \item Multi-colour volumetric image
+    \item Capacity for multiple methods of sample mounting
+    \item Multiple magnifications
+    \item Options for exotic illumination development
+    \item User-friendly and extensible software scheme
+\end{itemize}
 
-\subsection{Embryonic imaging for Mechanobiology}
-\subsection{Cellular imaging for Viral Egress}
-
-To realise particle tracking within light sheet microscope improvements upon the previous system were considered and the entire microscope was to be rebuilt using a new design.
-Any optical development project comprises of a series of sub-systems, modules which can be built and designed so that the overall scale of the project is made more manageable.
+% \subsection{Embryonic imaging for Mechanobiology}
+%
+% For embryonic imaging using magnetic tweezers the system had to be designed with sufficient space
+%
+% \subsection{Cellular imaging for Viral Egress}
+%
+% To realise particle tracking within light sheet microscope improvements upon the previous system were considered and the entire microscope was to be rebuilt using a new design.
+% Any optical development project comprises of a series of sub-systems, modules which can be built and designed so that the overall scale of the project is made more manageable.
 % A microscope of this nature will have typically four aspects:
 %
 % \begin{itemize}
@@ -134,9 +151,10 @@ The set was chosen because of its suitable resolution due to the set having inte
 \begin{landscape}
   \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{Figures/opticaldesign}
-  \caption[Full optical design of new SPIM]{Optical design of the new SPIM microscope.
-  Straight black lines represent mirrors; arrowed lines represent lenses; coloured lines represent laser light.}
+  \includegraphics[width=\linewidth]{./optical_design_colour}
+  \caption[Full optical design of new SPIM]{%Optical design of the new SPIM microscope.
+  %Straight black lines represent mirrors; arrowed lines represent lenses; coloured lines represent laser light.
+  }
   \label{fig:opticaldesign}
   \end{figure}
 \end{landscape}
@@ -151,9 +169,9 @@ The set was chosen because of its suitable resolution due to the set having inte
 
 \subsection{Objectives}
 
-\nomenclature[z-WD]{WD}{WD of View}
+%\nomenclature[z-WD]{WD}{WD of View}
 
-A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
+A (\emph{10$\times$ 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25$\times$ 1.1 NA}) Nikon LWD water immersion objective.
 The water dipping objective used here has a \SI{3.5}{\milli\meter} WD and narrow physical profile; meaning that when matched with the bulky high NA detection objective there was mechanically interference, once their positioned with their foci were co-aligned.
 Very few objective pairs maximise detection and excitation NA whilst being water dipping and compatible, see Chapter \ref{chapter:chamber}.
 A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
@@ -220,12 +238,12 @@ b) Scan mirror in z, scanning volumes. c) Position of telecentric lens. d) Tube 
 \newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
 \newacronym{NA}{NA}{Numerical Aperture}
 
-Using the Orca Flash v4 camera (with a chip size of \SI{13}{\milli\meter}) and a detection objective magnification of \SI{25\times}{}, gave a required \acrshort{FOV} of \SI{520}{\micro\meter}.
+Using the Orca Flash v4 camera (with a chip size of \SI{13}{\milli\meter}) and a detection objective magnification of \SI{25}{\times}, gave a required \acrshort{FOV} of \SI{520}{\micro\meter}.
 To match this to the confocal width of a propagating beam required 0.15 \acrshort{NA} for \SI{561}{\nano\meter} light, providing a beam waist (light-sheet thickness) of \SI{1.3 \pm 1}{\micro\meter}, see equation \ref{eq:rayleigh}).
 To create a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter} the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
 Therefore the excitation beam needed to be magnified \SI{1.7}{} fold.
 
-Using an \emph{ITL200} tube lens with a \emph{Nikon A1} scan lens provided \SI{5.37\times} magnification (See appendix \ref{appendix:scanlens}), meaning the excitation objective back aperture would have been overfilled and the usable \acrshort{FOV} too small.
+Using an \emph{ITL200} tube lens with a \emph{Nikon A1} scan lens provided \SI{5.37}{\times} magnification (See appendix \ref{appendix:scanlens}), meaning the excitation objective back aperture would have been overfilled and the usable \acrshort{FOV} too small.
 To address this, an iris was placed at the back aperture of the objective to allow for manual tuning of the \acrshort{NA}.
 The downside of stopping down the back aperture, was that light was being discarded; as light-sheet systems do not require large doses of light to function (\SI{\sim1}{\milli\watt}), discarding the majority of the light from the \SI{100}{\milli\watt} sources did not impede imaging.
 
@@ -263,8 +281,11 @@ Using microscope objectives for the additional optical relay ensured that there 
 %\subsubsection{Control}
 
 \begin{figure}
-  \includegraphics{./control} %TODO my own.
-  \caption{Control schematic of digitally scanned light-sheet microscope. All control signals are generated within LabVIEW and distributed components. Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}
+    \centering
+  \includegraphics{./controller_scheme} %TODO my own.
+  \caption{Control schematic of the digitally scanned light-sheet microscope.
+  All control signals are generated within LabVIEW and distributed to the components.
+  Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}
   \label{fig:control}
 \end{figure}
 
@@ -317,8 +338,6 @@ A modular, extensible and simple software solution was needed to control the mic
 LabVIEW, a graphical programming language with an emphasis on electronic systems control, was used.
 LabVIEW provides a wide library of drivers and libraries for interfacing, in particular the Orca Flash v4 has LabVIEW drivers for deep and direct control over functionality, such as the requisite commands for confocal slit scanning.
 
-
-
 %A well planned, modular and user-friendly interface is very important whenever creating hardware-user interfaces.
 %In the case of the new microscope this software needs three different components.
 The first is the Camera control software which controls the detection arm of the microscope; this software needs to allow a user to save two and three dimensional stacks of images and still be accessible to change and upgrade as more and difficult biological questions are to be addressed.
@@ -326,7 +345,7 @@ A controller for the stage that can interface with the camera software (to take 
 These software also needed to be designed as modules so that a user could use each independent of the others.
 To satisfy these criteria LabVIEW was chosen as the programming environment to be used.
 
-\subsection{LabVIEW Architecture}
+\subsubsection{LabVIEW Architecture}
 
 % LabVIEW is a graphical programming software package designed to produce simple, modifiable, user-friendly software in science.
 % LabVIEW provides a wide library of drivers and libraries for hardware interfacing in science.
@@ -338,10 +357,13 @@ The producer will receive front panel inputs, then convert and pass those comman
 Using a queueing architecture ensured that command flooding and race conditions are avoided and the consumer loop can be self regulating.
 %This ensures that command flooding and race conditions are avoided and the consumer loop can be self regulating.
 
-The commands were packaged as a bundle, the first part being an enumerated type which changed the consumer \emph{state} of the consumer; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g. camera exposure).
+The commands were packaged as a bundle.
+The first part being an enumerated type which changed the consumer \emph{state} of the consumer; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g. camera exposure).
 By using this queuing architecture, consumers can then communicate with each other whilst functioning independently.
 
-%
+%\subsubsection{Camera module}
+
+
 % \subsubsection{Queuing}
 %
 % When interfacing with hardware a key challenge programmers face is how to mitigate command flooding at the device.
@@ -368,175 +390,281 @@ By using this queuing architecture, consumers can then communicate with each oth
 % Crucially, queued commands can come from more than one entity in this style of environment.
 % Not only can commands from the front panel control the consumer, but also commands (if correctly written) can arrive from sources such as the internet, other devices, or other front panels within LabVIEW.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.8\linewidth]{Figures/standard_pro_cons}
-\caption[LabVIEW Producer Consumer Template]{A producer consumer template provided by national instruments.
-The top loop is an event driven (user front panel input) producer loop, the bottom loop consumes these commands and acts accordingly.}
-\label{fig:standard_pro_cons}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\linewidth]{Figures/standard_pro_cons}
+% \caption[LabVIEW Producer Consumer Template]{A producer consumer template provided by national instruments.
+% The top loop is an event driven (user front panel input) producer loop, the bottom loop consumes these commands and acts accordingly.}
+% \label{fig:standard_pro_cons}
+% \end{figure}
 
 %%%%%%%%% Written OK until here:
 
-\subsection{Camera module}
-
-
-% Camera.vi was designed to be the main running loop of the software environment.
-% That said, all of its functionality has been designed so that each function could be addressed by properly accessing the queue named \textbf{Camera}.
-
-\subsubsection{Front Panel}~
-
-Care was taken to ensure that the user experience of the Camera.vi was well received and fundamentally simple.
-A simple user experience can both necessitate the microscope to be used by a lay individual for simple exercises as well as allow experienced users to access more advanced aspects of the microscope.
-% The imaging area of the Camera.vi was therefore set within a scalable box, so that setting on the left and image recording settings would shift away.
-The settings on the left were organised into categorised tabs and initialised with camera defaults so that a complicated set up procedure is unnecessary.
-See Figure \ref{fig:camera_frontpanel} for depiction.
-
 \begin{figure}
-\centering
-\includegraphics[width=\linewidth]{Figures/camera_frontpanel}
-\caption[Front Panel of Camera.vi]{Front panel interface of the Camera.vi routine.
-On the left is all the information and camera tools a user should need, tabbed into categories.
-At the bottom options to stop the program and open other supplementary programs.
-On the right an intensity histogram so the user can clearly see if the image being produced is making good use of the full dynamic range of the camera or to monitor if the camera is being saturated.}
-\label{fig:camera_frontpanel}
+    \centering
+    \includegraphics{/software_layout}
+    \caption{Schematic diagram of the dependancies of each routine in the LabVIEW software (\emph{SPIM}, the kernel) that runs the light-sheet microscope.
+    The \emph{Camera consumer} and \emph{XYZ consumer} package the Hamamatsu capture (grey) and Prior iScan libraries (\emph{Scan}) respectively.
+    The \emph{Waves consumer} packages the signal generating routines (red) and drives the resultant signals to the DAQ board using \emph{Run waves}.
+    Each of the waves routines (red) are concatenations of \emph{XY waveforms}, which itself relies on \emph{XY waves} (blue) generates signal trains from calibration coordinates and front panel data.
+    \emph{Homo-graphy} and \emph{Homo transform} (orange) take calibration coordinates to then inform \emph{XY Galvos}.
+    }
+    \label{fig:software_layout}
 \end{figure}
 
-\subsubsection{Back Panel}~
-
-The camera itself is split into three states: \textbf{init}alisation, \textbf{active} and \textbf{deinit}ialisation.
-This structure was used so that collaborators could easily contribute as required.
-Within \textit{active} the full producer consumer architecture runs.
-The top loop typically seen as the producer takes all the front panel commands possible, passing the commands with any relevant numbers or information) in a bundled structure) to the camera control consumer loop.
-This loop then updates the camera as required and passes any images it received to a third slave loop which displays images as well as saving them to disk.
-This secondary loop uses a limited queue so that is for any reason LabVIEW cannot handle the output of the camera then frames will drop when in preview mode to compensate.
-Two disk saving modes were implemented in case of extreme uses of the camera.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{Figures/camera_init}
-	\caption[Camera initialisation state]{Camera initialisation, standard settings to produce a default video output.}
-	\label{fig:camera_init}
-\end{figure}
-
-The first mode extracts camera data directly to a temporary file on the hard drive (a \SI{300}{\mega\byte\per\second}
-solid state drive \SI{1}{\tera\byte}
-raid, which is typically sufficiently quick for standard operations) in an proprietary format which is later decrypted by the slave loop in parallel to the camera loop producing the files.
-Each temporary file contains a simple stack of images, designed such that each stack would be a full three dimensional scan of a volume.
-To avoid overwriting, each temporary file was automatically named by a number with a six digit upper limit, far beyond the limitations of the hard drive capacity.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{Figures/camera_active}
-	\caption[Camera active state]{Camera active, a three stage consumer producer architecture which passes commands from top to bottom.
-The top loop sends user commands to the middle loop which controls the active status and frame collection, the bottom loop then saves and processes the image data produced in parallel.}
-	\label{fig:camera_active}
-\end{figure}
-
-The second mode records camera data directly to the computer's RAM which has much faster write speeds but is more limited in capacity to \SI{32}{\giga\byte}
-in the current machine.
-\footnote{For the camera to interface with the older software which controls the waveform generation it needs to have the same LabVIEW environment.
-Unfortunately the old code was written in \SI{32}{\bit}
-LabVIEW with a Mathscript module that has no \SI{64}{\bit}
- option as of yet.
-This means that the waveform generation software will need to be completely rewritten if the RAM writing record mode is ever fully needed; \SI{32}{\bit}
-systems are limited to \SI{2}{\giga\byte}
-RAM considering the camera can output \SI{600}{\mega\byte\per\second}
-this would overfill very quickly.
-That said, the record to harddrive function can run perfectly well in a \SI{32}{\bit}
-environment.
-Horses for courses.}
+\subsubsection{Kernel}
+Module initiates all the queues to be sent the the sub modules, Camera, Waveform Generator and XYZ Translator.
+All acquisition settings and properties are converted here into the enumerated state machine commands.
+Acquisition modes are organised into imaging orders, such as XYZ, XYZC, XYCZ, XYT; where XY is a single frame, Z is an iteration axially, C is the colour channels selected, and T is the time course selected.
+Each of the dimensions (XYZT) are governed by the parameters \emph{Start}, \emph{Step}, \emph{Range}; where start is the initial position or time; step is the step size, meaning spatial resolution or temporal resolution; and range is the range over which the dimension covers, spatially or temporally.
+For colour an array of enumerated typed is constructed.
+The kernel also stores the calibration coordinates (see Chapter \ref{chapter:homography}) sent from the Calibration module.
+All of these settings are then stored as XML files by the kernel and may be freely loaded in at any point.
+The kernel also manages the saving and loading of acquisition settings.
 
 
-\paragraph{Virtual Slit}
+\subsubsection{Camera module}
 
-The \textit{Orca 4v2} has this slit scanning mode embedded in its firmware and is accessible from the supplied software.
-Inducing this within LabVIEW requires sending values to specific hex addresses using \textit{advanced\_property} functions.
-Two modes were implemented, a manual mode for debugging purposes, and an automated mode which reads the current input to create a suitably synchronised rolling shutter, see Figure \ref{fig:camera_virtual_slit_module}.
+The camera module runs a consumer which initiates and destroys the camera communications.
+There are also hard and soft update states, for when an acquisition setting requires the camera to be unloaded, for instance FOV changes and not, such as with changing exposure.
+An additional consumer loop exists within the the camera module to handle saving and displaying of image data.
+This consumer has two settings: the first receives queued image arrays directly from the camera, this is used for live preview mode and small image sequences such as single volumes; the second reads and converts image files from the file-stream of the camera.
+The latter mode does not drop frames as the camera is streaming data directly to the hard drive, provided the read and write streams of the hard-drive are not overflowing.
+The single frame acquisition mode will also not drop frames due to their sequence being queued, but, there may be a delay between the presented image and the live view at high frame rates.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{Figures/camera_virtual_slit_module}
-\caption[LabVIEW virtual slit scanning module]{Module which prepares the sCMOS camera for virtual slit scanning.}
-\label{fig:camera_virtual_slit_module}
-\end{figure}
+\paragraph{Virtual slit}
+%{Virtual slit}
 
-\subsection{XYZ stage and filter wheel module}
+The virtual slit for confocal slit scanning was addressed in the camera's hardware directly using hex address 400210, mode 1 sets the camera to full frame and mode 12, slit scanning.
+Once the mode is set the line interval ($\times 403850$) and slit exposure ($\times \text{1F0110}$) set according to the equation:
 
-The Prior controller interfaces with software via an RS232 protocol.
-Provided with the stage is a library of routines within LabVIEW that package the correct RS232 commands in a LabVIEW friendly format.
-These were then incorporated into $XYZ\_Controller.vi$ producer consumer loop.
-This time however the stage controlling consumer loop was a slave to the consumer that handled front panel inputs.
-This was because the controller is cantered about the list of positions.
-This list sends positional commands to the stage, but also requires functions such as: clearing the positional list; adding current position to the beginning or the end of the list; controlling the delay between positions and sending save image volume commands.
-
-For filter wheel control, RS232 commands were synchronsied with the TTL triggers from the Waveforms module.
-A small listening routine was written to intercept triggers sent to a false channel, these triggers were then converted to filter wheel positions.
-The maximum settling time for non-adjacent filters is \SI{40}{\milli\second}, so a comparable delay was added into the imaging routine to compensate for filter switching.
-RS232 commands require a comparable amount of time in handshaking, so attempting to check if the filter wheel was in the correct place before continuing would not be faster.
-%
-% \begin{figure}
-% \centering
-% \includegraphics[]{Figures/xyz_front}
-% \caption[XYZ Controller front panel]{Front panel of the XYZ stage controller.
-% The arbitrary \SI{10} value in the mathmodule is a \SI{10}{\milli\second} delay inherent to the electronics of the camera.}
-% \label{fig:xyz_front}
-% \end{figure}
+\begin{align}
+    \text{Slit exposure} &= \frac{\text{Exposure} \times \text{Slit width}}{\SI{10}{\milli\second} + \text{FOV}_y + \text{Slit width}}\\
+    \text{Line interval} &= \frac{\text{Slit exposure}}{\text{Slit width}}
+\end{align}
 
 \subsubsection{Waveform module}
 
-This module of the LabVIEW controller is the most crucial as it is the driver and synchronisation of the signals controller the scanning mirrors, focus stepper and tunable lens system if it is implemented.
-This module will also serve as an advanced calibration routine for the microscope to control.
+The waveforms module handles all signalling from the DAQ board (four laser lines, piezo, Y mirror, Z mirror, camera trigger, filter wheel).
+The waveforms are constructed from the acquisition settings for digital and analogue signals, which are forced to using propagation error values.
 
-\paragraph{Signal Train}~
-
-When creating the virtual light sheet the most intuitive signal to send would be a high frequency triangular waveform with a peak-to-peak voltage equal proportionate to the field of view of the image; however, as a mirror on a galvanometer scanner is a relativity large inertia mass, the peaks and troughs of the waveform would not only over shoot but also cause excessive stress and potentially break the scanner.
-To circumvent this issue the mirror is returned to its base position sinusoidally, after each field of view scan, as the gradient of a sinusoid at its own peak is zero moving smoothly to zero again at its trough.
-
-It is unlikely that the virtual light sheet will be perfectly flat relative to detection, to this end the virtual light sheet can actually be twisted by synchronising the $z$ scanning mirror to the virtual sheet mirror tilting it by a gradient.
-To create a full three dimensional scan the $z$ scanning mirror is offset along with its gradient step wise as seen in Figure \ref{fig:Signals}.
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{Figures/Signals}
-\caption[Light Sheet Signal Trains]{Signal Trains for Light Sheet and z axis mirror scanning.
-Each mirror scans and relaxes sinusoidally to avoid damage in the interval period.
-The z mirror components for a tilted light sheet using a slight gradient, this gradient is then applied to each Light Sheet scan before the z mirror is offset to scan a different volume of the sample.
-Intensities are in arbitrary units but are calibrated for within the real system}
-\label{fig:Signals}
-\end{figure}
+The camera and lasers were addressed using digital (TTL) signals which are hardware limited to \SIrange{0}{5}{\volt}.
+Voltages to the objective actuator and scanning mirrors were software limited to \SIrange{0}{10}{\volt} and \SIrange{-10}{-10}{\volt} respectively, to prevent electronic damage.
+The objective actuator was positioned linearly by voltage using the conversation \SI{10}{\per\volt\micro\meter}; with \SI{16}{\bit} voltage resolution from the DAQ this gave an addressable axial resolution of \SI{1.52}{\nano\meter}, which was 4 times larger than the reported closed loop resolution (\SI{0.4}{\nano\meter}) of actuator.
+Achieving the full resolution would have required addressing the actuator using serial commands which would have too slow for particle tracking.
+As such the resolution trade-off was accepted.
 
 
-% \begin{table}
+%  with the digital.
+%To create the wavesforms, XY wavefroms are concantThe waveforms are generated by concatenating
+
+\subsubsection{XYZ stage and filter wheel module}
+
+The XYZ module reads and writes XYZ stage positions and filter wheel positions using RS232.
+For imaging, a list of locations to tour was added with the ability to the trigger current kernel acquisition mode in the kernel at each location visited.
+
+\section{Objectives review}
+
+\paragraph{Fast volumetric imaging}
+Fast volumetric imaging was achieved using a pair of optically relayed scanning mirrors to rapidly sweep a virtual light-sheet through volumes.
+A Piezo objective actuator was used to maximise the axial speed at which volumes could be acquired.
+
+\paragraph{Multi-colour volumetric imaging}
+Four laser lines were used with a 6-port fast filter wheel to image volumes rapidly, the illumination used was TTL trigged diode lasers to allow for fast colour switching.
+The limiting step for speed was the filter wheel, but multi-notch filters were available for bespoke cases needed maximal colour switching speed.% be used in bespoke cases
+
+\paragraph{Capacity for multiple methods of sample mounting}
+An XYZ translator was mounted well below two dipping objectives.
+This allowed for traditional mounting strategies, such as agarose filled FEP tubing, as well as bespoke solution for difficult samples, such as live cells.
+The translator enabled precision positioning as well as large FOV imaging through positional mosaicing.
+
+\paragraph{Multiple magnifications}
+A par-focal relay using microscope objective lenses was inserted in the detection path to allow for two FOVs to be chosen from. This allow for the imaging of a large gamut of biological samples, from the cell up to the organism.
+
+\paragraph{Options for exotic illumination development}
+A beam splitter was placed on the lower optical breadboard before reaching the scanning mirrors above. Using flip mirrors and beam dumps enabled the option of a dual-beam illumination or an exotic illumination from the SLM found on one of the arms.
+
+\paragraph{User-friendly and extensible software scheme}
+LabVIEW was used to create a modular system for the control software.
+By using an appropriate architecture, as detailed above, modules could interact freely and run in parallel.
+%The software was designed such that it could be ported to other systems with minimal re-programming
+
 %
-% 	\centering
+% % %The Prior controller interfaces with software via an RS232 protocol.
+% % %Provided with the stage is a library of routines within LabVIEW that package the correct RS232 commands in a LabVIEW friendly format.
+% % %These were then incorporated into $XYZ\_Controller.vi$ producer consumer loop.
+% % %This time however the stage controlling consumer loop was a slave to the consumer that handled front panel inputs.
+% % %This was because the controller is cantered about the list of positions.
+% % This list sends positional commands to the stage, but also requires functions such as: clearing the positional list; adding current position to the beginning or the end of the list; controlling the delay between positions and sending save image volume commands.
+% %
+% % For filter wheel control, RS232 commands were synchronsied with the TTL triggers from the Waveforms module.
+% % A small listening routine was written to intercept triggers sent to a false channel, these triggers were then converted to filter wheel positions.
+% % The maximum settling time for non-adjacent filters is \SI{40}{\milli\second}, so a comparable delay was added into the imaging routine to compensate for filter switching.
+% % RS232 commands require a comparable amount of time in handshaking, so attempting to check if the filter wheel was in the correct place before continuing would not be faster.
 %
-% 	\begin{tabular}{lrrrrl}
-% 		\toprule Wavelength & \textcolor{455nm}{455} & \textcolor{488nm}{488} & \textcolor{561nm}{561} & \textcolor{647nm}{647} & \SI{\pm2}{\nano\meter} \\
-% 		\midrule
-% 		Output Power &  \num{100}&  \num{150}&  \num{150}&  \num{120}&  \SI{}{\milli\watt}\\
-% 		$M^2$ (Beam Quality) &  \num{<1.2} &  \num{<1.2}& \num{<1.1}& \num{<1.2}& \SI{}{\AU} \\
-% 		Beam Diameter &  \num{0.6}& \num{0.8}&  \num{0.7}& \num{0.9}& \SI{\pm 0.1}{\milli\meter}\\
-% 		Beam Divergence &  \num{<1.2}&  \num{<1.2}& \num{<1.2}&  \num{<1.3}&  \SI{}{\milli\radian} \\
-% 		Long-term Power Stability &  \num{<2}&  \num{<2}&  \num{<2}&  \num{<2}& \SI{}{\percent} (\SI{8}{\hour} \SI{\pm 3}{\celsius})\\
-% 		Laser Drive Modes & \multicolumn{5}{>{\centering\arraybackslash}p{8cm}}{\small{Continuous Wave, Analogue Modulation, Digital Modulation and Computer Control.}} \\
-% 		\bottomrule
-% 	\end{tabular}
-% 	\caption[Excitation lasers]{Significant information regarding the excitation laser emission sources.}
-% 	\label{table:laser}
-% \end{table}
-
+% % drop frames, but has the potential to
+%
+% % Camera modules
+% % Saving to ram or harddisk. Involved another consumer slave to take queued images from the camera consumer-cum-producer.
+% % The camera required an idle state so as not to hang when no commands had been sent
+% % Hard and soft update states, for camera.
+% %% Virtual slit
+% % Hex values, 10 ms delay
+% % Waveform modules
+% % Synchronised waveform sending
+% %
+% % Image
+% % XYZ Module
+%
+% %\subsection{Camera module}
+%
+%
+%
+% % Camera.vi was designed to be the main running loop of the software environment.
+% % That said, all of its functionality has been designed so that each function could be addressed by properly accessing the queue named \textbf{Camera}.
+%
+% %\subsubsection{Front Panel}~
+%
+% % Care was taken to ensure that the user experience of the Camera.vi was well received and fundamentally simple.
+% % A simple user experience can both necessitate the microscope to be used by a lay individual for simple exercises as well as allow experienced users to access more advanced aspects of the microscope.
+% % % The imaging area of the Camera.vi was therefore set within a scalable box, so that setting on the left and image recording settings would shift away.
+% % The settings on the left were organised into categorised tabs and initialised with camera defaults so that a complicated set up procedure is unnecessary.
+% % See Figure \ref{fig:camera_frontpanel} for depiction.
+%
 % \begin{figure}
 % \centering
-% \includegraphics[width=0.7\linewidth]{Figures/Excitation}
-% \caption[Dichroic transmission profiles]{Transmission Profile for Dichroic mirrors used demonstrating that each mirror will reflect only the wavelength intended.}
-% \label{fig:Excitation}
+% \includegraphics[width=\linewidth]{Figures/camera_frontpanel}
+% \caption[Front Panel of Camera.vi]{Front panel interface of the Camera.vi routine.
+% On the left is all the information and camera tools a user should need, tabbed into categories.
+% At the bottom options to stop the program and open other supplementary programs.
+% On the right an intensity histogram so the user can clearly see if the image being produced is making good use of the full dynamic range of the camera or to monitor if the camera is being saturated.}
+% \label{fig:camera_frontpanel}
 % \end{figure}
-
-% \subsubsection{Structured Illumination}
 %
-% An SLM can be used in two modalities, either it can be imaged onto the back aperture of the objective or conjugated.
-% When imaged onto the back aperture it directly manipulates Fourier space.
-% The primary use of the SLM in this system was to create Bessel beam illumination, with that in mind it was decided that the SLM should be imaged  onto the sample \cite{Fahrbach2010e}.
-% As Bessel beam needs only an annual ring in the Fourier domain, the majority of the light incident on the SLM would therefore be lost.
-% For this reason the SLM will be imaging onto the sample directly using a minimum focal length of \SI{47}{\centi\meter}, see Appendix \ref{appen:optdes} for details.
+% % \subsubsection{Back Panel}~
+%
+% %The camera itself is split into three states: \textbf{init}alisation, \textbf{active} and \textbf{deinit}ialisation.
+% %This structure was used so that collaborators could easily contribute as required.
+% %Within \textit{active} the full producer consumer architecture runs.
+% %The top loop typically seen as the producer takes all the front panel commands possible, passing the commands with any relevant numbers or information) in a bundled structure) to the camera control consumer loop.
+% % %This loop then updates the camera as required and passes any images it received to a third slave loop which displays images as well as saving them to disk.
+% % This secondary loop uses a limited queue so that is for any reason LabVIEW cannot handle the output of the camera then frames will drop when in preview mode to compensate.
+% % Two disk saving modes were implemented in case of extreme uses of the camera.
+%
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\linewidth]{Figures/camera_init}
+% 	\caption[Camera initialisation state]{Camera initialisation, standard settings to produce a default video output.}
+% 	\label{fig:camera_init}
+% \end{figure}
+%
+% % The first mode extracts camera data directly to a temporary file on the hard drive (a \SI{300}{\mega\byte\per\second}
+% % solid state drive \SI{1}{\tera\byte}
+% % raid, which is typically sufficiently quick for standard operations) in an proprietary format which is later decrypted by the slave loop in parallel to the camera loop producing the files.
+% % Each temporary file contains a simple stack of images, designed such that each stack would be a full three dimensional scan of a volume.
+% % To avoid overwriting, each temporary file was automatically named by a number with a six digit upper limit, far beyond the limitations of the hard drive capacity.
+%
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\linewidth]{Figures/camera_active}
+% 	\caption[Camera active state]{Camera active, a three stage consumer producer architecture which passes commands from top to bottom.
+% The top loop sends user commands to the middle loop which controls the active status and frame collection, the bottom loop then saves and processes the image data produced in parallel.}
+% 	\label{fig:camera_active}
+% \end{figure}
+%
+% % The second mode records camera data directly to the computer's RAM which has much faster write speeds but is more limited in capacity to \SI{32}{\giga\byte}
+% % in the current machine.
+% % \footnote{For the camera to interface with the older software which controls the waveform generation it needs to have the same LabVIEW environment.
+% % Unfortunately the old code was written in \SI{32}{\bit}
+% % LabVIEW with a Mathscript module that has no \SI{64}{\bit}
+% %  option as of yet.
+% % This means that the waveform generation software will need to be completely rewritten if the RAM writing record mode is ever fully needed; \SI{32}{\bit}
+% % systems are limited to \SI{2}{\giga\byte}
+% % RAM considering the camera can output \SI{600}{\mega\byte\per\second}
+% % this would overfill very quickly.
+% % That said, the record to harddrive function can run perfectly well in a \SI{32}{\bit}
+% % environment.
+% % Horses for courses.}
+%
+%
+% % \paragraph{Virtual Slit}
+% %
+% % The \textit{Orca 4v2} has this slit scanning mode embedded in its firmware and is accessible from the supplied software.
+% % Inducing this within LabVIEW requires sending values to specific hex addresses using \textit{advanced\_property} functions.
+% % Two modes were implemented, a manual mode for debugging purposes, and an automated mode which reads the current input to create a suitably synchronised rolling shutter, see Figure \ref{fig:camera_virtual_slit_module}.
+%
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.7\linewidth]{Figures/camera_virtual_slit_module}
+% \caption[LabVIEW virtual slit scanning module]{Module which prepares the sCMOS camera for virtual slit scanning.}
+% \label{fig:camera_virtual_slit_module}
+% \end{figure}
+%
+% %
+% % \begin{figure}
+% % \centering
+% % \includegraphics[]{Figures/xyz_front}
+% % \caption[XYZ Controller front panel]{Front panel of the XYZ stage controller.
+% % The arbitrary \SI{10} value in the mathmodule is a \SI{10}{\milli\second} delay inherent to the electronics of the camera.}
+% % \label{fig:xyz_front}
+% % \end{figure}
+%
+% % \subsubsection{Waveform module}
+% %
+% % %
+% %
+% % This module of the LabVIEW controller is the most crucial as it is the driver and synchronisation of the signals controller the scanning mirrors, focus stepper and tunable lens system if it is implemented.
+% % This module will also serve as an advanced calibration routine for the microscope to control.
+% %
+% % \paragraph{Signal Train}~
+% %
+% % When creating the virtual light sheet the most intuitive signal to send would be a high frequency triangular waveform with a peak-to-peak voltage equal proportionate to the field of view of the image; however, as a mirror on a galvanometer scanner is a relativity large inertia mass, the peaks and troughs of the waveform would not only over shoot but also cause excessive stress and potentially break the scanner.
+% % To circumvent this issue the mirror is returned to its base position sinusoidally, after each field of view scan, as the gradient of a sinusoid at its own peak is zero moving smoothly to zero again at its trough.
+% %
+% % It is unlikely that the virtual light sheet will be perfectly flat relative to detection, to this end the virtual light sheet can actually be twisted by synchronising the $z$ scanning mirror to the virtual sheet mirror tilting it by a gradient.
+% % To create a full three dimensional scan the $z$ scanning mirror is offset along with its gradient step wise as seen in Figure \ref{fig:Signals}.
+%
+% \begin{figure}
+% \centering
+% \includegraphics[width=\linewidth]{Figures/Signals}
+% \caption[Light Sheet Signal Trains]{Signal Trains for Light Sheet and z axis mirror scanning.
+% Each mirror scans and relaxes sinusoidally to avoid damage in the interval period.
+% The z mirror components for a tilted light sheet using a slight gradient, this gradient is then applied to each Light Sheet scan before the z mirror is offset to scan a different volume of the sample.
+% Intensities are in arbitrary units but are calibrated for within the real system}
+% \label{fig:Signals}
+% \end{figure}
+%
+%
+% % \begin{table}
+% %
+% % 	\centering
+% %
+% % 	\begin{tabular}{lrrrrl}
+% % 		\toprule Wavelength & \textcolor{455nm}{455} & \textcolor{488nm}{488} & \textcolor{561nm}{561} & \textcolor{647nm}{647} & \SI{\pm2}{\nano\meter} \\
+% % 		\midrule
+% % 		Output Power &  \num{100}&  \num{150}&  \num{150}&  \num{120}&  \SI{}{\milli\watt}\\
+% % 		$M^2$ (Beam Quality) &  \num{<1.2} &  \num{<1.2}& \num{<1.1}& \num{<1.2}& \SI{}{\AU} \\
+% % 		Beam Diameter &  \num{0.6}& \num{0.8}&  \num{0.7}& \num{0.9}& \SI{\pm 0.1}{\milli\meter}\\
+% % 		Beam Divergence &  \num{<1.2}&  \num{<1.2}& \num{<1.2}&  \num{<1.3}&  \SI{}{\milli\radian} \\
+% % 		Long-term Power Stability &  \num{<2}&  \num{<2}&  \num{<2}&  \num{<2}& \SI{}{\percent} (\SI{8}{\hour} \SI{\pm 3}{\celsius})\\
+% % 		Laser Drive Modes & \multicolumn{5}{>{\centering\arraybackslash}p{8cm}}{\small{Continuous Wave, Analogue Modulation, Digital Modulation and Computer Control.}} \\
+% % 		\bottomrule
+% % 	\end{tabular}
+% % 	\caption[Excitation lasers]{Significant information regarding the excitation laser emission sources.}
+% % 	\label{table:laser}
+% % \end{table}
+%
+% % \begin{figure}
+% % \centering
+% % \includegraphics[width=0.7\linewidth]{Figures/Excitation}
+% % \caption[Dichroic transmission profiles]{Transmission Profile for Dichroic mirrors used demonstrating that each mirror will reflect only the wavelength intended.}
+% % \label{fig:Excitation}
+% % \end{figure}
+%
+% % \subsubsection{Structured Illumination}
+% %
+% % An SLM can be used in two modalities, either it can be imaged onto the back aperture of the objective or conjugated.
+% % When imaged onto the back aperture it directly manipulates Fourier space.
+% % The primary use of the SLM in this system was to create Bessel beam illumination, with that in mind it was decided that the SLM should be imaged  onto the sample \cite{Fahrbach2010e}.
+% % As Bessel beam needs only an annual ring in the Fourier domain, the majority of the light incident on the SLM would therefore be lost.
+% % For this reason the SLM will be imaging onto the sample directly using a minimum focal length of \SI{47}{\centi\meter}, see Appendix \ref{appen:optdes} for details.
