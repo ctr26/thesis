@@ -1,9 +1,9 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27679
-Words in headers: 491
+Words in text: 27750
+Words in headers: 493
 Words outside text (captions, etc.): 2797
-Number of headers: 174
+Number of headers: 175
 Number of floats/tables/figures: 65
 Number of math inlines: 371
 Number of math displayed: 62
@@ -14,20 +14,20 @@ Subcounts:
   818+4+0 (3/0/0/0) Section: Scientific Background
   1099+20+79 (10/4/11/4) Section: Optical Microscopic Imaging
   2360+29+102 (9/4/2/0) Section: Three Dimensional Imaging in Life Sciences
-  270+3+21 (1/0/0/0) Chapter: Contemporary light-sheet technology}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
+  270+3+21 (1/0/0/0) Chapter: Contemporary light-sheet technology}\label{chapter:literature
   702+18+55 (6/0/10/1) Section: Generating Light Sheets
   620+13+98 (7/2/2/0) Section: Objective Arrangements
   386+5+0 (1/0/2/0) Section: Single Objective Light Sheet Microscopy
   568+9+0 (5/1/3/0) Section: Illumination
-  84+7+0 (1/0/0/0) Chapter: Design and Considerations of the Light-sheet Microscope
+  87+7+0 (1/0/0/0) Chapter: Design and Considerations of the Light-sheet Microscope}\label{chapter:design
   25+1+0 (1/0/0/0) Section: Objectives
-  1393+18+74 (11/3/23/0) Section: Hardware
-  1129+20+206 (9/3/5/1) Section: Software
-  232+27+0 (7/0/0/0) Section: Objectives review
-  1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets
+  1394+18+74 (11/3/23/0) Section: Hardware
+  1180+22+206 (10/3/5/1) Section: Software
+  248+27+0 (7/0/0/0) Section: Objectives review
+  1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
   434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
-  85+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography
+  85+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography}\label{chapter:flopt
   554+3+22 (3/1/10/2) Section: Tomography
   605+6+12 (3/1/18/10) Section: Stereoscopic Imaging
   694+3+91 (1/3/14/1) Section: The proposed algorithm
@@ -42,20 +42,20 @@ Subcounts:
   669+2+0 (1/0/0/0) Section: The design
   447+3+0 (2/0/0/0) Section: Method
   157+1+0 (1/0/0/0) Section: Remarks
-  681+13+80 (4/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM
+  681+13+80 (4/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   523+14+32 (4/1/4/0) Section: Single Particle Tracking
   564+9+20 (5/1/10/3) Section: Astigmatic tracking
   369+14+107 (4/3/18/14) Section: Motion induced astigmatic axial localisation error
   130+3+17 (2/1/1/0) Section: Results
   246+3+38 (1/2/2/0) Section: SPT using SPIM
   444+5+0 (3/0/0/0) Section: Conclusions
-  494+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}%:\\ \Large Correlating real-time viscoelastic changes with embryonic development
+  494+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
   233+7+30 (2/2/0/0) Section: Tissue dynamics in developing organisms
   1314+18+98 (7/3/40/6) Section: Methods of measuring tissue dynamics
   915+10+48 (5/1/3/0) Section: Algorithmic bead tracking
   1668+67+452 (7/6/75/0) Section: Results
   547+2+0 (2/0/0/0) Section: Discussion
-  0+3+0 (1/0/0/0) Chapter: Discussion and Conclusions
+  0+3+0 (1/0/0/0) Chapter: Discussion and Conclusions}\label{chapter:conclusions
   262+1+0 (1/0/0/0) Chapter: Perspectives
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens

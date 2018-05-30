@@ -26,18 +26,18 @@
 % 3.8	Design summary	81
 
 
-\chapter{Design and Considerations of the Light-sheet Microscope}
+\chapter{Design and Considerations of the Light-sheet Microscope}\label{chapter:design}
 
 This chapter introduces the instrument which was built and used during this thesis.
 The system presented here was required to facilitate a wide range of imaging with two specific biological aims to be met.
-The first of which required the system to image Zebrafish embryos (\SI{\sim100}{\micro\meter}), surrounded by a magnetic tweezer system, during development (see Chapter \ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
+The first of which required the system to image Zebrafish embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during development (see Chapter \ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
 The second required the imaging of live cells for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.
 
 \section{Objectives}
 
 \begin{itemize}
     \item Fast volumetric imaging
-    \item Multi-colour volumetric image
+    \item Multi-colour volumetric imaging
     \item Capacity for multiple methods of sample mounting
     \item Multiple magnifications
     \item Options for exotic illumination development
@@ -80,7 +80,7 @@ The objective lenses and detection objective actuator were mounted on rails at \
 These rails guided the objectives through the open hole until the focal points of each objective (detection and excitation) met.
 The filter wheel was placed on an optical rail before the camera and after a turning mirror so that vibrations of filter switching would be mostly decoupled from the detection optics.
 The camera was mounted at \SI{45}{\degree}, on a 3D printed mount to correct for the turning mirror, on the same optical rail.
-Rotated the camera was necessary as it allowed the shutter and illumination beam to propagate concomitantly, Chapter \ref{chapter:dualslit}.
+Rotated the camera was necessary as it allowed the shutter and illumination beam to propagate concomitantly, see Chapter \ref{chapter:dualslit}.
 
 For the excitation path, a \SI{22.5}{\degree} mirror was used to to deliver the laser illumination from the scanning optics into objective.
 The additional mirror was needed so that the scanning optics could be mounted flat to the optical breadboard, making positioning and optical mounting simpler.
@@ -462,6 +462,11 @@ As such the resolution trade-off was accepted.
 
 The XYZ module reads and writes XYZ stage positions and filter wheel positions using RS232.
 For imaging, a list of locations to tour was added with the ability to the trigger current kernel acquisition mode in the kernel at each location visited.
+
+\subsubsection{Calibration module}
+
+This brief module sets the microscope to live image preview module with direct control over the objective acutator voltage and mirror voltages.
+The module was used to set the limits volumetric usable FOV of the volume and match the focus of the objective to mirror positions, discussed in detail in Chapter \ref{chapter:homography}.
 
 \section{Objectives review}
 
