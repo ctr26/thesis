@@ -1,10 +1,8 @@
-
-!!! Reached end of file while waiting for }. !!!
 File: thesis.tex
 Encoding: utf8
-Words in text: 25627
+Words in text: 27525
 Words in headers: 483
-Words outside text (captions, etc.): 4820
+Words outside text (captions, etc.): 2920
 Number of headers: 173
 Number of floats/tables/figures: 65
 Number of math inlines: 365
@@ -23,9 +21,9 @@ Subcounts:
   568+9+0 (5/1/3/0) Section: Illumination
   90+5+0 (1/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   41+1+0 (1/0/0/0) Section: Specification
-  680+16+803 (10/3/13/0) Section: Hardware
-  0+16+1249 (9/3/9/1) Section: Software
-  0+27+251 (7/0/0/0) Section: Objectives review
+  1284+16+197 (10/3/13/0) Section: Hardware
+  1043+16+206 (9/3/9/1) Section: Software
+  251+27+0 (7/0/0/0) Section: Objectives review
   1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
   434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
@@ -63,4 +61,3 @@ Subcounts:
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   193+5+0 (1/0/0/0) Chapter: Installing the CUED class file
 
-(errors:1)

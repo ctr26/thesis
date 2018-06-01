@@ -132,7 +132,7 @@ This allowed for multiple potential sample mounting strategies below.
 
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{"Figures/solidworks_design _front"}
+\includegraphics[width=1\linewidth]{./Raster/solidworks_design_front}
 \caption[CAD design of the $45^o$ detection and excitation]{Solidworks three dimensional representation of the $45^o$ inverted geometry allows sample access from beneath whilst still creating a fully orthogonal detection illumination system.
 Illumination comes from below on the right of the diagram, detection is normal to the page on the left.}
 \label{fig:solidworks_design_front}
@@ -169,7 +169,7 @@ large travel range ($\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} $ in $x
   %Optical design of the new SPIM microscope.
   %Straight black lines represent mirrors; arrowed lines represent lenses; coloured lines represent laser light.
   }
-  \label{fig:opticaldesign}
+  \label{fig:optical_design_colour}
   \end{figure}
 \end{landscape}
 
@@ -195,16 +195,14 @@ A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanne
 Four %typical
 laser sources were chosen to allow good specificity across the visible spectrum as well  as for multi-colour imaging.
 %, future-proofing and overall versatility in the microscope.
-Wavelengths \textcolor{405nm}{\SI{455}{\nano\meter}} , \textcolor{488nm}{\SI{488}{\nano\meter}} , \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
+Wavelengths \textcolor{455nm}{\SI{405}{\nano\meter}} , \textcolor{488nm}{\SI{488}{\nano\meter}} , \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
 The output power of the lasers (\SI{100}{\milli\watt}) was sufficient for good contrast images in SPIM.
-\footnote{SPIM is within the single sun power regime.) %TODO expand
+\footnote{SPIM is within the single sun power regime} %TODO expand
 %A beam quality $M^2$ nearing 1 is good, with $M^2 = 1$ being a theoretical ideal.
 %Over the range of a metre the lasers will diverge by \SI{1.2}{\milli\meter}, though this would double the beam diameter the sizes are appreciably small that it will have very little effect when corrected for through later optics.
 %See Table \ref{table:laser} for a detailed specification.
-
-They beams were combined %into an overlapping beam using a set of standard dielectric mirrors and dichroic mirrors.
+The beams were combined %into an overlapping beam using a set of standard dielectric mirrors and dichroic mirrors.
 %Using two mirrors per beam allowed the degrees of freedom to accurately combine the beams in free space.
-The
 using dichroic mirrors % were chosen to ensure the each laser line propagated freely when approaching from behind the mirror but the correct colour laser was reflected appropriately; they were placed in the order e02 (dielectric as the first laser does not combine with any others)
 (\emph{Chroma zt594rdc, zt514rdc and zt458rdc}) and broadband dielectric mirrors
 See Figure \ref{fig:optical_design_colour}.
@@ -237,7 +235,7 @@ See Figure \ref{fig:soldiworks_top} for a schematic of light sheet generation.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{Figures/soldiworks_top}
+	\includegraphics[width=\linewidth]{./soldiworks_top}
 	\caption[Top down schematic of SPIM]{a) Scan mirror which creates the light sheet.
 b) Scan mirror in z, scanning volumes. c) Position of telecentric lens. d) Tube lens $ITL200$ e) Objective lenses f) Emission filter wheel g) sCMOS camera}
 	\label{fig:soldiworks_top}
@@ -259,7 +257,9 @@ b) Scan mirror in z, scanning volumes. c) Position of telecentric lens. d) Tube 
 \newacronym{NA}{NA}{Numerical Aperture}
 
 Using the Orca Flash v4 camera (with a chip size of \SI{13}{\milli\meter}) and a detection objective magnification of \SI{25}{\times}, gave a required \acrshort{FOV} of \SI{520}{\micro\meter}.
-To match this to the confocal width of the propagating beam required \SI{0.15} \acrshort{NA} illumination for \SI{561}{\nano\meter} excitation, providing a beam waist (light-sheet thickness) of \SI{1.3 \pm 1}{\micro\meter}, see Equation \ref{eq:rayleigh}).
+To match this to the confocal width of the propagating beam required \SI{0.15} %\acrshort{NA}
+NA illumination for \SI{561}{\nano\meter} excitation, providing a beam waist (light-sheet thickness) of \SI{1.3 \pm 1}{\micro\meter}, see Equation \ref{eq:rayleigh}).
+%\acrshort{NA}
 To create a numerical aperture of \SI{0.15}, for an objective of focal length \SI{20}{\milli\meter} the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
 Therefore the excitation beam needed to be magnified \SI{1.7}{} fold.
 
@@ -293,7 +293,7 @@ This provided a par-focal solution for magnifying the imaging by \SI{2.5}{\times
 Using microscope objectives for the additional optical relay ensured that there were minimal optical losses as the lenses are designed for the weak fluorescent signal, as well as them having minimal distortion and chromatic aberrations.
 Using \SI{62.5}{\times} magnification gives \SI{99.2}{\nano\meter} lateral sampling at the image plane.
 The Raleigh condition of the system using \SI{561}{\nano\meter} light is \SI{311}{\nano\meter} resolution.
-Meaning that at \SI{62.5}{\times} magnification, the system is sampled sufficiently for Nyquist criterion (\SI{155.55 nm}{\nano\meter}) which states that the sampling of a system needs be twice the bandwidth of a band-limited signal.
+Meaning that at \SI{62.5}{\times} magnification, the system is sampled sufficiently for Nyquist criterion (\SI{155.55}{\nano\meter}) which states that the sampling of a system needs be twice the bandwidth of a band-limited signal.
 % under Nyquist sample criteon
 %\section{Control}
 \section{Software}
