@@ -13,7 +13,7 @@
 \chapter{Diffraction limited single virion tracking in SPIM}\label{chapter:spt}
 
 %Taken from Cat
-\subsection{Introduction}
+\section{Introduction}
 Herpesviruses are among the most complex and largest of the clinically relevant viruses and establish life-long infections in their hosts.
 They are widespread in vertebrates and humans with up to 85\% of the population worldwide being infected by herpes simplex virus 1 (HSV-1) and around 25\% by HSV-2.
 Herpes simplex virus type 1 (HSV-1) is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
@@ -176,7 +176,7 @@ Many studies exist on inter and intra cellular viral trafficking
 %virus trafficking between and inside cells
 using single particle tracking \cite{(reviewed in [43])}.
 %In general, more studies about the early stage of infection, virus entry and transport, exist than studies about the late stages of infection, virus assembly and egress.
-Only few and recent works exclusively probe the molecular egress pathway of herpesviruses.
+Only a few and recent works exclusively probe the molecular egress pathway of herpesviruses.
 Hogue \emph{et al.} \cite{[16]} used total internal reflection fluorescence (TIRF) microscopy to selectively visualise fluorescent Pseudorabies viruses near the plasma membrane and follow them during exocytosis.
 Sandbaumhüter \emph{et al.} showed, by a motility analysis of fluorescent HSV-1, that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 \cite{[44]}.
 Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using SPT \cite{Brandenburg2007}.
@@ -233,10 +233,10 @@ due to its ease of implementation, speed, precision and robustness.% is iterativ
 
 Temporal localisation refers to the assignment of linage to a particle.
 %The reliab With fast imaging the reliable of such an assignment
-Between frame 1 and 2, particulate identity is determined by how minimising the sum global distance between particles at each time point.
-By farame 3, momentum can be assigned the a particle as well to decrease the chance of two path identities being falsely merged or switched.
+Between frame 1 and 2, particulate identity is determined by minimising the sum global distance between particles at each time point.
+By frame 3, momentum can be assigned the a particle as well to decrease the chance of two path identities being falsely merged or switched.
 The same applies for acceleration and higher order speed derivatives, but with a lessening of overall significance.
-The overall chance of a lineage being correctly assigned largely relies on the sampling rate of the imaging, with higher rates being favourable.
+The chance of a lineage being correctly assigned largely relies on the sampling rate of the imaging, with higher rates being favourable.
 %particulate identify is determined from the closeness of
 
 %The planet Pluto was originally discovered by Tombaugh in 1930 by comparing two images of the night sky a few hours apart.
@@ -256,8 +256,7 @@ The overall chance of a lineage being correctly assigned largely relies on the s
 Spille \emph{et. al.} proposed using light-sheet microscopy for tracking particles over long periods.
 This was achieved by shifting their light-sheet and detection objective at each recorded frame such that the particle was repositioned to the centre of the sheet.
 Alternatively, the entire sample could be relative to a static sheet.
-Spille demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
-See Figure \ref{fig:SPIMSPT}.
+Spille demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a} (see Figure \ref{fig:SPIMSPT}).
 %
 % demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
 %
@@ -282,13 +281,14 @@ See Figure \ref{fig:SPIMSPT}.
 	\begin{subfigure}[b]{0.35\linewidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/1_piezo_track}
-		\caption{Static Particle localised in \(xy\)}
+		\caption{Static particle localised in \(xy\)}
 		\label{fig:SPIMSPT1}
 	\end{subfigure}
+        \hspace{0.05\linewidth}
 	\begin{subfigure}[b]{0.35\linewidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/2_piezo_track}
-		\caption{Particle diffuses out of light sheet}
+		\caption{Particle diffuses out of light-sheet}
 		\label{fig:SPIMSPT2}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.35\linewidth}
@@ -297,13 +297,14 @@ See Figure \ref{fig:SPIMSPT}.
 		\caption{\(z\) stage repositions so that particle is within light-sheet}
 		\label{fig:SPIMSPT3}
 	\end{subfigure}
+        \hspace{0.05\linewidth}
 	\begin{subfigure}[b]{0.35\linewidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/4_piezo_track}
-		\caption{Particle in light sheet, \(z\) position recorded}
+		\includegraphics[width=1\linewidth]{Chapters/spt/Figs/PDF/tracking/4_piezo_track}
+		\caption{Particle in light-sheet, \(z\) position recorded}
 		\label{fig:SPIMSPT4}
 	\end{subfigure}
-	\caption{Routine to track particles three dimensionally in SPIM}
+	\caption{Routine to track particles three dimensionally using light-sheet.}
 	\label{fig:SPIMSPT}
 \end{figure}
 
@@ -317,15 +318,15 @@ Adding a weakly cylindrical lens within the detection optics will add astigmatis
 The asymmetry in focal lengths in the imaging plane axes %of the imaging plane
 means that along one axis the focal point will be offset axially compared to the orthogonal axis.
 The result is that there in an overall axial asymmetry in the detection PSF, for point sources this allows axial position to be encoded in the recorded image.
-This technique was used to great effect in dSTORM and PALM systems, which rely on the localisation of point emitters, to create 3D volume super-resolution images \cite{}.
-The range over which a cylindrical lens can axial encode is at most \SI{\sim 1}{\micro\metre}, before the non-linearity in the astigmatism becomes too great and the PSF is too blurred to compute.
+This technique was used to great effect in dSTORM and PALM systems, which rely on the localisation of point emitters to create 3D volume super-resolution images \cite{}.
+The range over which a cylindrical lens can axial encode is at most \SI{\sim 1}{\micro\metre}, before the non-linearity in the astigmatism becomes too great and the PSF is too blurred to fit computationally.
 
 %Compare 2D guassian fitting ratio threatening
 %\subsection{Fitting} %Guassian fitting
 \subsection{Axial localisation}
 
 Assuming an accurate localisation in 2D, the image of the point emitter is then localised axially.
-With each of the methods presented here, a calibration volume of known distance is needed.
+With each of the methods presented here, a monotonic calibration volume of known distance is needed.
 
 % Assuming an accurate localisation in 2D of a point emitter, the image of the astigmatic point emitter needs to
 %
@@ -345,13 +346,15 @@ Attempting an iterative 2D Gaussian fitting in real-time is unrealistic with cur
 \subsubsection{Template matching}
 
 % Cros corelation
-Cross correlation requires no fitting step and scales in computational complexity with the image as $O(n^2)$. %TODO check this
-As such using as few pixels are feasible to recover axial position allows this technique to function in real-time.
+Cross-correlation requires no fitting step and scales in computational complexity with the image as $O(n^2)$. %TODO check this
+As such using fewer pixels% are feasible
+to recover axial position allows this technique to function in real-time.
 The cross correlation of two signals returns a single value representing an unnormalised similarity of the two signals.
 Provided the astigmatism is transitioning linearly, a cross-correlation for every image in the calibrated stack may not be needed.
 By using all the images in the calibration stack, the computational time increases by the half the number of axial images in that stack.
-The ratio of the the cross correlation of two images spaced axially and equally about the focal centre of the stack will give an estimate of where the point is.
+The ratio of the the cross correlation of two images spaced axially and equally about the focal centre of the stack will give an estimate of particle position
 This estimate is sufficient for real-time results; and provided the images of the point-emitter are recorded, a more accurate axial localisation step can be applied in post-analysis.
+The discrete cross-correlation function:
 \begin{align}
 (f \star g)[n]\ \stackrel{\mathrm{def}}{=} \sum_{m=-\infty}^{\infty} f^*[m]\ g[m+n]
   %I_{\text{Cross correlation} =
@@ -365,10 +368,10 @@ Similarly the covariance of the calibration an image or volume can be used, thou
 \end{align}
 
 \subsection{Simulations}
-To verify that single particle tracking in light-sheet microscopy was possible, the diffusion of a single diffraction limited particle was simulated \emph{in silico}, See Figure.
+To verify that single particle tracking in light-sheet microscopy was possible, the diffusion of a single diffraction limited particle was simulated \emph{in silico} (see Figure \ref{fig:diffusion}).
 To create the simulation, the particle was modelled to take a random walk of time steps $dt$ across a single imaging exposure of \SI{40}{\milli\second}.
 This simulated how the particle would appear to move within the light-sheet.
-The intensity of the final image of the particle was attenuated according to the Gaussian intensity of the light-sheet axially($z$) and laterally ($x,y$) as per:
+The intensity of the final image of a particle was attenuated according to the Gaussian intensity of the light-sheet axially($z$) and laterally ($x,y$) as per:
 
 \begin{align}
   w_0 &= 1.4 \lambda \frac{ \text{NA}}{n}\\
@@ -412,23 +415,23 @@ Where $w_0$ is the beam waist; NA is the numerical aperture of the excitation ob
     \caption{3D view}
     \label{fig:diffusion_3d}
   \end{subfigure}
-  \caption{Simulations of a single particle diffusing within a light-sheet with a viscosity of 25\% Glycerol in water}
+  \caption{Simulations of a single particle diffusing within a light-sheet with a viscosity of 25\% glycerol in water}
+  \label{fig:diffusion}
 \end{figure}
 
 \section{Motion induced astigmatic axial localisation error}
 
 It was demonstrated in the computational simulations that a particle moving in a real system will demonstrate a motion blur unique to having astigmatism.
 A single particle moving quickly in $xy$ will appear to stretch and the localised position of the particle will be the average of the start and end position.
-With astigmatism, the image of particle does not vary linearly with the distance the particle has travelled axially within that epoch.
+With astigmatism, the image of particle does not vary linearly with the distance the particle has travelled axially during that epoch.
 %\subsubsection{Astigmatism}
 This response was modelled % using a false
-
-A false astigmatism was used, %added to the simulation,
+using
+a false astigmatism %was used, %added to the simulation,
 to emulate an approximate response of the system.
-To do this a Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was longer than the width of the light-sheet and that intensity across the sheet was uniform;
-The latter assumption is false, but a varying intensity only controls the SNR across the sheet.
-A Gaussian function being used to model a particle is likely a valid assumption as Gaussian functions are in turn used in the fitting process for localisation of the pixel data
-
+A Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was longer than the width of the light-sheet and that intensity across the sheet was uniform;
+the latter assumption is invalid, but a varying intensity only controls the SNR across the sheet.
+A Gaussian function being used to model a particle is a valid assumption as Gaussian models are used in the fitting process for localisation from the pixel data.
 
 To astigmatically narrow the Gaussian as the particle moved through $z$ the standard Gaussian equation of:
 \begin{align}
@@ -446,6 +449,13 @@ k & = \frac{a c}{L_{\text{end}}}
 \intertext{The negative gradient relationship then holds for the orthogonal dimension to give a full 3D model:}
 f(x,y,z) &= e^{-\frac{x^2}{kz+c} +\frac{y^2}{-kz+c} }
 \end{align}
+\begin{figure}
+  \centering
+  \includegraphics{./mathematica/guassians}
+  \caption{a) Expected versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
+  b) Uses normalised area of the Expected and Reality PSFs for a more accurate model of astigmatism}
+  \label{}
+\end{figure}
 %By using a simple one dimensional model of astigmatism acting on Gaussian the motion blur due to astigmatism can be quantified analytically.
 %\subsection{Model}
 %\begin{align*}
@@ -468,24 +478,17 @@ By normalising the Gaussian model, we simulate that an equivalent number of phot
 &+ \frac{L_{\text{end}} x\sqrt{2 \pi }\text{Erf}\left(\frac{ (L_{\text{end}} x)}{\sqrt{2} (a c L+c L_{\text{end}})}\right)}{2 a c L} \\
 &+ \frac{L_{\text{end}} \left(2 c e^{-\frac{x^2}{2 c^2}}+\sqrt{2 \pi } x \text{Erf} \left(\frac{x}{\sqrt{2} c}\right)\right)}{2 a c L}
 \end{align*}
-\begin{figure}
-  \centering
-  \includegraphics{./mathematica/guassians}
-  \caption{a) Expected versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
-  b) Uses normalised area of the Expected and Reality PSFs for a more accurate model of astigmatism}
-  \label{}
-\end{figure}
 %Gaussian, approximation of a particle
 %PSF expected, width linearly depependent on z
 %PSF reality, integral between 0 and L, scaled by L
 \subsection{Cross correlation}
 \begin{align*}
-  \intertext{To analytically compare the expected and real results, the respective functions were cross-correlated using function:}
+  \intertext{To analytically compare the expected and real results, the respective functions were cross-correlated using the analytical function:}
 %\text{Cross correlation} =
 (f \star g)(t)\ \stackrel{\mathrm{def}}{=} \int_{-\infty}^{\infty} &f(x)^* g(x+t) \mathop{dx}
 \end{align*}
 \begin{align*}
-\intertext{The integral of the result across all space will give a single value signifying the quality of correlation between the two functions:}
+\intertext{The integral of the result across all space gives a single value signifying the quality of correlation between the two functions:}
 \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} &f(t)^* g(x+t) \mathop{dx}\mathop{dt}
 \intertext{This value will reach unity when $f(x) = g(x)$}
 \end{align*}
@@ -513,8 +516,9 @@ By normalising the Gaussian model, we simulate that an equivalent number of phot
 \end{figure}
 
 \subsection{Full width half maximum}
+
+The correlation of two signals is not an absolute error which can be used to make predictions about real-world systems. So, the Full Width at Half Maximum of each of the two signals was considered as this property, in Gaussian-like functions, should provide an analogue for $\sigma(z)$ which may be compared absolutely.
 \begin{align*}
-  \intertext{The correlation of two signals is not an absolute error which could be used to make predictions about real-world systems. So, the Full width at Half Maximum of each of the two signals was considered as this property, in Gaussian-like functions, should provide an analogue for $\sigma(z)$ which may be compared absolutely.}
 \text{PSF}(x,...) &- \lim_{x\to0} \frac{\text{PSF}(x,...)}{2} = 0 \\
 \implies \text{FWHM}_{\text{Expected}} &= 2x \\
 &= \left|-\frac{\sqrt{2} c \sqrt{\ln{2} +2 i \pi  n} (a L+L_{\text{end}})}{L_{\text{end}}}\right|,n\in \mathbb{Z}
@@ -527,17 +531,17 @@ By normalising the Gaussian model, we simulate that an equivalent number of phot
 \end{align*}
 \begin{align*}
 \implies \text{FWHM}_{\text{Reality}} &= \frac{2 \sqrt{3}}{\sqrt{\frac{a^2 L^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 a L_{\text{end}} L}{c^2 (a L+L_{\text{end}})^2}}}\\
-\text{Error} &= 2\frac{\text{PSF}_{\text{Expected}} - \text{PSF}_{\text{Reality}}}{\text{PSF}_{\text{Expected}} + \text{PSF}_{\text{Reality}}}\\
+\text{FWHM}_\text{Error} &= 2\frac{\text{PSF}_{\text{Expected}} - \text{PSF}_{\text{Reality}}}{\text{PSF}_{\text{Expected}} + \text{PSF}_{\text{Reality}}}\\
 & = 2\frac{\sqrt{\ln{2}} \sqrt{a^2 L^2+3 a L_{\text{end}} L+3 L_{\text{end}}^2}-\sqrt{3} L_{\text{end}}}{\sqrt{\ln{2}} \sqrt{a^2 L^2+3 a L_{\text{end}} L+3 L_{\text{end}}^2}+\sqrt{3} L_{\text{end}}}
 \end{align*}
 
 \subsection{Area analysis}
-When $L\to0$ this result of Error can actually go below zero, which would suggest that the result is not an accurate measure of error.
+When $L\to0$ this result of $\text{FWHM}_\text{Error}$ can be below zero, which would suggest that the result is not an accurate measure of the true error.
 This is likely due to the process requiring a series expansion, at $x=0$; as the series expansion is only an approximation of the target function.
 Since attaining error from the FWHM fails for small values of $L$ an analysis using area was considered.
 For Guassian-like functions the total area under the curve is proportional to $\sigma(z)$, so by comparing the area covered by the expected and real PSFs a valid measure of error could be obtained.
 This analysis does not work for normalised PSFs as the area is unity in each case, as such the unnormalised model was used.
-Using an unnormalised function is still valid as the area is only being used as a proxy for finding a measure of the width of the PSF being interrogated.
+Using an unnormalised function was still valid as the area was only being used as a proxy for finding a measure of the width of the PSF being interrogated.
 \begin{align*}
   \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Expected}} \mathop{dx} &= \frac{\sqrt{2 \pi }}{\sqrt{\frac{1}{\left(\frac{a c L}{L_{\text{end}}}+c\right)^2}}}\\
   \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Reality}} \mathop{dx} &=\sqrt{\frac{\pi }{2}} \left(\frac{2 (a L+L_{\text{end}})}{a L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}-\frac{2 L_{\text{end}}}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{L_{\text{end}}}-2\right)\right)
@@ -573,7 +577,8 @@ $\mu=\SI{0.002}{\newton\second\per\meter\square}$;
 $k = \SI{1.3806e-23}{\meter\square\kilo\gram\per\square\second\per\kelvin}$;
 $c = r = \SI{100}{\nano\meter}$;
 $a = \frac{1}{5}$;
-$L_{\text{end}} = \SI{1}{\micro\meter}$; an average axial position error of \textbf{25.7\%} is observed.
+$L_{\text{end}} = \SI{0.5}{\micro\meter}$;
+an average axial position error of \textbf{25.7\%} is observed.
 % The above expression only considers $x$ and $z$ for simplicity of calculation.
 % The ratio of the linear Gaussian-like function and the expected ($e^{-\frac{x}{2kL+c}^2}$) Gaussian is integrated over all space to provide an error value as a function of $L$ which is the distance the particle has traveled.
 % The model presented here also does not take into consideration the variation of illumination across the light-sheet %TODO DISUCSS.
@@ -638,9 +643,9 @@ As a proof of principle, virally infected HeLa cells were mounted and imaged usi
 %As seen in chapter X mounting on flat glass is difficult.
 %Cell culture requires a buffered medium, with most commercial solutions involving atmospheric control
 The cells were infected with HSV-1 expressing tegument proteins fused to fluorescent proteins (VP26-mTurquoise, VP1/2-dtTomato, VP16-cYFP).
-The infected cells were %infected with
+%The infected cells were %infected with
 %HeLa cells were
-mounted on clean \SI{25}{\milli\metre} $\times$ \SI{25}{\milli\metre} coverslips.
+%mounted on clean \SI{25}{\milli\metre} $\times$ \SI{25}{\milli\metre} coverslips.
 Trypsin was used to help lift cells in culture into solution and was left to act for \SI{3}{\minute}.
 10\% Foetal Bovine Serum (FBS) was added to deactivate the Trypsin as it is a protease enzyme and will further degrade the cells.
 Coverslips were submerged in the cellular solution and left to adhere and culture on the glass.
@@ -669,10 +674,14 @@ The glass coverslips were mounted in the custom imaging chamber discussed in Cha
 
 \section{SPT using SPIM}
 
-The secondary optical relay was set to 2x magnification, giving 50x at the sample plane, to unsure the camera was Nyquist limited so that there were sufficient pixels available to observe astigmatism on a single particle.
+The secondary optical relay was set to \SI{2.5}{\times} magnification, giving \SI{62.5}{\times} at the sample plane, to unsure the camera was Nyquist limited so that there were sufficient pixels available to observe astigmatism on a single particle.
 The weakly cylindrical lens ($f = \SI{1}{\metre}$) was inserted in between the secondary relay and the camera unit at \SI{40}{\milli\metre} away from the aperture of the camera.
 %This was found empirically to be sufficiently astigmatic by eye.
-When adding a cylindrical lens in an infinity space the astigmatic effect is amplified; for this system presented here, that would mean using a custom very long focal distance lens. %amplifies the effect and so a custom lens would have been needed.
+The cylindrical lens was inserted in between the camera and the tube lens as adding the cylindrical lens in an infinity space would have amplified the astigmatic effect (to beyond usable), and disabled any tuning of the astigmatism through positioning.
+
+% %Placing a very long focal length cylindrical length
+%
+% ; for this system presented here, that would mean using a custom very long focal distance lens. %amplifies the effect and so a custom lens would have been needed.
 
 \begin{figure}[h]
   \centering
@@ -693,9 +702,9 @@ As the neither of the calibration curves are obviously linear, a linear regressi
 Empirically, the calibration curve for correlation looks less variant than when using covariance, suggesting a linear fit is not sufficient.
 
 \begin{table}[h]
-  \label{tab:linear_calibration}
 \centering
 \caption{Table of regressional analysis for calibration curves in Figure \ref{fig:SPT_Calibration}.
+\label{tab:linear_calibration}
 RSS: Residual sum of squares; $R^2$: Coefficient of determination; RMS: Root mean square}
   \begin{tabular}{lccc}
     \toprule
@@ -724,13 +733,13 @@ RSS: Residual sum of squares; $R^2$: Coefficient of determination; RMS: Root mea
 
 It was shown that the inverted light-sheet system as described in this work is capable of axially localising diffraction limited particles.
 This was demonstrated experimentally using static sub-diffraction limit particles with a view to applying the same techniques to dynamic particles.
-It was also shown that dynamic particles within the system discussed here are susceptible to a localisation error on the order of 25 \% given quiescent (?) conditions.
+It was also shown that dynamic particles within when tracked astigmatically are susceptible to a localisation error on the order of 25 \% given standard imaging and biological conditions.
 This was demonstrated on a model system analytically and could be used in other systems for calculations.
 
-The system as discussed was victim to significant spherical aberration.
+The detection objective used in the light-sheet system was victim to significant spherical aberration.
 The spherical aberration was addressed using a bespoke tool to manually rotate the correction collar on the objective lens; this then lead to dramatic coma effects which had otherwise been masked by spherical aberration.
 The latter aberration could not be corrected for which made Gaussian fitting in feasible for axial localisation.
-However, template matching techniques did still produce a calibration curve that could be used, with cross-correlation being the more reliable reporter.
+However, template matching techniques did still produce a viable calibration curve that could be used, with cross-correlation being the more reliable reporter.
 
 %which is why the cross-correlation of the current signal to the top and bottom templates produced a less variant calibration curve.
 
@@ -745,15 +754,15 @@ Once both of these have been demonstrated, SPT of viral egress from a live cell 
 \subsubsection{Neural networks} %Need to try training using this using convolutional neural networks
 %Also possible to
 
-In this work, the techniques presented for localising particles in an astigmatic system, rely on a singular calibrated point emitter; the template.
+In this work, the techniques presented for localising particles, in an astigmatic system, rely on a singular calibrated point emitter, the template.
 A population of point-emitters with known axial positions would help mitigate potential axial localisation errors.
-It is possible to align multiple calibration volumes and create an averaged or model calibration volume to work with; but this method relies heavily on the sub-pixel alignment step to reduce error.
+It is possible to align multiple calibration volumes and create an averaged or model calibration volume to work with, though this method relies heavily on the sub-pixel alignment step to reduce error.
 
 Training a neural network could be a more robust approach.
 Neural networks take multiple inputs and produce a single output based on a back propagation step which helps determine the weightings on the \emph{neurons} in the hidden layer or layers.
 Convolutional neural networks work in a similar fashion except that the weightings are image convolution steps; by using convolution steps the overall size of the neural network needed reduces making image recognition possible.
 By training a neural network on a given input segmented input image, with the known output of axial position, a fast and accurate machine for producing axial localisations could be utilised.
-Neural networks are also computational inexpensive as most of the effort put in occurs during the training step.
+Neural networks are also computationally inexpensive as most of the effort put in occurs during the training step.
 
 %Cancer, \textit{in vivo studies} have "progress[ed] in monitoring neurodegenerative disease pathobiology"\cite{Hoffman2005}
 %3D imaging in \textit{in vivo} is desirable and currently use complimentary techniques (microCT) to create 3D.
