@@ -1134,7 +1134,7 @@ wish to left align your text}
 \newsavebox{\PHD@Title}
 \begin{lrbox}{\PHD@Title}
   \begin{minipage}[c]{0.98\textwidth}
-    \centering \Huge \bfseries{\@title}
+    \centering \sffamily \Huge \bfseries{\@title}
     \ifthenelse{\equal{\@subtitle}{}}{
       % subtitle is not defined
     }{
@@ -1163,7 +1163,7 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
-    \centering \Large \bfseries{\@author}
+    \centering \sffamily \Large \bfseries{\@author}
       \vspace{0.5em}
   \end{minipage}
 \end{lrbox}
