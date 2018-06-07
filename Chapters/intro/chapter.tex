@@ -31,7 +31,8 @@ By scanning this `light-sheet' through an organism we can image in 3D more quick
 %Light sheet Fluorescence Microscopy was Nature Method of the Year 2014 and promises to be the future standard, disrupting 400 years of established microscopy.
 %These advances have been so revolutionary that Light-sheet fluorescence microscopy was awarded Nature Method of the Year 2014.
 
-During the first year of my PhD I designed and built a custom light-sheet microscope which we have applied to studying the cell mechanics of developing embryos.
+%During the first year of my PhD
+A custom light-sheet microscope was designed and built  for the application of cell mechanics of developing embryos and the tracking of viral egress.
 %Cell mechanics plays a vital role in the development of organisms;
 Internal stresses within tissues induce cellular migrations that can govern the organism's resultant anatomy.
 We have developed a technique to mechanically probe deep tissue using magnetism.
@@ -45,7 +46,7 @@ The mechanical roles of key proteins in embryonic development can be inferred by
 Our investigations so far have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development. These results are currently being prepared for publication with our collaborators.
 
 % Looking ahead, I intend to  single magnetic bead tracking to that of single virus particle tracking, going from the microscopic to the nanoscopic.
-Looking ahead, I intend to move from tracking single magnetic beads to tracking single virus particles, going from the microscopic to nanoscopic scale.
+%Looking ahead, I intend to move from tracking single magnetic beads to tracking single virus particles, going from the microscopic to nanoscopic scale.
 Virus particles (virions) invade host cells and hijack their machinery to replicate and then spread. %their disease
 By visualising the journey of virions through the cell we may reveal weaknesses in infection pathways.
 %Light-sheet microscopy is the only technique capable of volumetrically tracking virions, which are both exceptionally small and fast.
@@ -82,24 +83,24 @@ Further development requires the marriage of physics, maths, statistics, compute
 
 %Section outlining everything
 
-\section{Scientific Background}
-This project aims to develop a light sheet microscope imaging system to permit the three dimensional tracking of particles through biological samples.
-This will be used to monitor how toxic proteins travel between cells and how virus particles infect their host organisms with minimal %With the ability to image very quickly and tracking three dimensionally particulate targets (such as virus particles) with minimal
-photo-damage to the sample, using animal models such as drosophila.
-This system will be based on the work of Ernst Stelzer who pioneered digital light sheet technology\cite{Huisken2004}.
 
+The aim of this work was to develop a light sheet microscope imaging system which permitted the three dimensional tracking of particles through biological samples.
+%his will be used to monitor how toxic proteins travel between cells and
+%how virus particles infect their host organisms with minimal %With the ability to image very quickly and tracking three dimensionally particulate targets (such as virus particles) with minimal
+%photo-damage to the sample, using animal models such as drosophila.
+This system was be based on the work of Ernst Stelzer who pioneered digital light sheet technology\cite{Huisken2004}.
 A light sheet microscope uses orthogonal illumination and detection to optically section biological samples.
 A previous system was built in order to study developmental biology.
-This project aims to improve upon this design so as to facilitate a novel particle tracking technique.
+This work intended to improve upon this design so as to facilitate fast 3D particle tracking.
 
-The new system will:
-\begin{itemize}
-	\item Be more vibrationally stable for low noise tracking
-	\item Accommodate a three dimensional stage for particle tracking and volume imaging with nanometre resolution
-	\item Use structured illumination modes that can provide higher resolution than standard illumination
-	\item Provide more excitation wavelengths to enable improved biological flexibility in terms of fluorescent dyes that can be used with better specificity
-	\item Feature a user-friendly software interface so that users can produce images independently with a strong programming architecture for future collaborative development.
-\end{itemize}
+% The new system will:
+% \begin{itemize}
+% 	\item Be more vibrationally stable for low noise tracking
+% 	\item Accommodate a three dimensional stage for particle tracking and volume imaging with nanometre resolution
+% 	\item Use structured illumination modes that can provide higher resolution than standard illumination
+% 	\item Provide more excitation wavelengths to enable improved biological flexibility in terms of fluorescent dyes that can be used with better specificity
+% 	\item Feature a user-friendly software interface so that users can produce images independently with a strong programming architecture for future collaborative development.
+% \end{itemize}
 %The new system will be designed to be: ; ; ;  and
 
 \subsection{Motivation}
@@ -114,19 +115,19 @@ Contemporary biological models of viral infectivity dynamics are based on \texti
 Studying these dynamics \textit{in vivo} and following a virus through its entire process in a living organism could provide new, useful insights and understanding which could be used to suppress or reverse viral infection in humans.
 Virus particles are smaller than the diffraction limit  (\SI{20}{\nano\meter}-\SI{200}{\nano\meter}); optical super resolution techniques can image sub-diffraction limit and have observed Human Immunodeficiency Virus 1\cite{Pereira2012}.
 Virus particles move tens of nanometres on the time scale of milliseconds\cite{Brandenburg2007}, these techniques currently do not produce the temporal resolution required to accurately track virus particles\cite{Brandenburg2007} in three dimensions and are limited to \textit{in vitro} studies.
-
-Dementia among the rapidly ageing first world population is becoming a heavy burden on healthcare; as of 2015 there are \SI{850000}{} people in the UK suffering with dementia\cite{Judd}.
-Alzheimer's disease (AD) is a neurodegenerative affliction accounting for 62\% of all dementia suffers.
-Amyloid fibril plaques and neurofibrillary tangles (NTF) are commonly found in post mortem AD sufferers' brains.
-It is believed that misfolded Amyloid plaques trigger the accumulation of neurofibrillary tangles and a toxic species of microtubule-associated protein, tau\cite{Ittner2011,King2002}.
-Within our group we have studied Amyloid fibril aggregation using super resolution techniques and the role of tau proteins in neuronal dysfunction.
-We have demonstrated that extracellular tau can initiate tau pathology in AD\cite{Michel2014a}, a complimentary \textit{in vivo} study on tau protein's\cite{DeCalignon2012} dynamic propagation in axons would serve to elucidate AD pathology.
-
-These issues can be addressed using light sheet technology.
-Light sheet microscopes use orthogonal plane illumination to optically section biological samples, allowing an \textit{in vivo} three dimensional study.
-Confocal microscopy also produces optical sectioning, however its raster scanning nature means it is a slow technique.
-Orthogonal illumination and detection allows detection rates comparable to wide-field.
-Light sheet technology is also a low photo-toxcity method compared to confocal and as such can image for extended periods of time at millisecond resolution.
+%
+% Dementia among the rapidly ageing first world population is becoming a heavy burden on healthcare; as of 2015 there are \SI{850000}{} people in the UK suffering with dementia\cite{Judd}.
+% Alzheimer's disease (AD) is a neurodegenerative affliction accounting for 62\% of all dementia suffers.
+% Amyloid fibril plaques and neurofibrillary tangles (NTF) are commonly found in post mortem AD sufferers' brains.
+% It is believed that misfolded Amyloid plaques trigger the accumulation of neurofibrillary tangles and a toxic species of microtubule-associated protein, tau\cite{Ittner2011,King2002}.
+% Within our group we have studied Amyloid fibril aggregation using super resolution techniques and the role of tau proteins in neuronal dysfunction.
+% We have demonstrated that extracellular tau can initiate tau pathology in AD\cite{Michel2014a}, a complimentary \textit{in vivo} study on tau protein's\cite{DeCalignon2012} dynamic propagation in axons would serve to elucidate AD pathology.
+%
+% These issues can be addressed using light sheet technology.
+% Light sheet microscopes use orthogonal plane illumination to optically section biological samples, allowing an \textit{in vivo} three dimensional study.
+% Confocal microscopy also produces optical sectioning, however its raster scanning nature means it is a slow technique.
+% Orthogonal illumination and detection allows detection rates comparable to wide-field.
+% Light sheet technology is also a low photo-toxcity method compared to confocal and as such can image for extended periods of time at millisecond resolution.
 
 Particle localisation techniques are compatible with light sheet microscopy and can be used to accurately localise particles to sub-pixel, sub-diffraction limited positions in two dimensions.
 In conjunction with a novel third dimensional tracking technique, exclusive to light sheet, full sub-diffraction limited tracking is viable\cite{Spille2015a}.
@@ -189,15 +190,23 @@ This will then enable the \textit{in vivo} study of virus trafficking through a 
 
 \subsection{Structure}
 
-Here, a light sheet microscope is developed to track particles in three dimensions with millisecond temporal resolution.
-Firstly the theory of fluorescence microscopy and light sheet microscopy is discussed with a comparison to other similar techniques followed by a review of particle tracking methods which are considered in the context of a light sheet microscope.
-The current biological model of virus pathology and tau protein propagation and their challenges is then presented.
-This report then discusses the methods and materials used to build a light sheet microscope up until its current state.
-Finally the progress of the microscope is summarised and the future work for the project is discussed in terms of experiments needed (once the system is operational) to determine its ability and limitations when applied to virus and tau protein tracking.
+% Here, a light sheet microscope is developed to track particles in three dimensions with millisecond temporal resolution.
+% Firstly the theory of fluorescence microscopy and light sheet microscopy is discussed with a comparison to other similar techniques followed by a review of particle tracking methods which are considered in the context of a light sheet microscope.
+% The current biological model of virus pathology and tau protein propagation and their challenges is then presented.
+% This report then discusses the methods and materials used to build a light sheet microscope up until its current state.
+% Finally the progress of the microscope is summarised and the future work for the project is discussed in terms of experiments needed (once the system is operational) to determine its ability and limitations when applied to virus and tau protein tracking.
 
-\section{Optical Microscopic Imaging}
+\section{Optical imaging of the microscopic}
 
-Biological processes occur at the sub micrometer-nanometre scale and thus can be studied using optical microscopes\cite{Murphy2012e}.
+% Microscopes can magnifiy images of samples
+% Use an objective lens and tube lens pair
+
+Optical microscopes use lenses to magnify the image of samples to enable the visualisation of sub-meso-scale processes and features.
+A simple microscope consists of an objective lens close to the sample with a tube lens (or eyepiece) following to relay the magnified image onto a detector (or retina).
+Additional lenses are used to focus light into the sample to give contrast.
+
+
+%Biological processes occur at the sub micrometer-nanometre scale and thus can be studied using optical microscopes\cite{Murphy2012e}.
 %Optical microscopy's % history is long and rich with %and the concepts behind the optical microscope have not changed since the times of Galileo's telescope .
 The essential components of an optical microscope have not changed in over 200 years\cite{Bradbury1998,Masters2001b}.
 These components are: a condenser lens, to concentrate illumination into the sample; an objective lens, to collect and magnify the emissions from the sample and a tube lens to focus the light from the objective onto the image plane and an eyepiece, now more commonly a digital camera for recording.
