@@ -1,19 +1,19 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 24555
-Words in headers: 522
+Words in text: 25514
+Words in headers: 513
 Words outside text (captions, etc.): 2762
-Number of headers: 191
+Number of headers: 187
 Number of floats/tables/figures: 58
-Number of math inlines: 379
+Number of math inlines: 384
 Number of math displayed: 65
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   605+7+0 (2/0/0/0) _top_
   415+3+0 (3/0/0/0) Chapter: Introduction
   0+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy
-  848+31+0 (13/0/25/7) Section: Light microscopy
-  0+30+18 (17/1/1/0) Section: Fluoresence microscopy
+  930+25+0 (11/0/27/7) Section: Light microscopy
+  877+27+18 (15/1/4/0) Section: Fluoresence microscopy
   0+25+0 (7/0/0/0) Section: Three dimensional fluorescence microscopy
   270+3+21 (1/0/0/0) Chapter: Contemporary light-sheet technology}\label{chapter:literature
   702+18+55 (6/0/10/1) Section: Generating Light Sheets

@@ -333,12 +333,12 @@ Once again, by comparing the the distance to the first zero in intensity along $
 \end{align}
 
 The achievable axial resolution is governed by axial extension of the PSF as is $2z_0,\text{objective}$ and commonly called the \emph{depth of field} ($D\text{objective}$).
-he depth of field is the distance a focussed object may be moved axially before losing image fidelity to defocus.
+The depth of field physically refers to the distance a focussed object may be moved axially before losing image fidelity to defocus.
 
-
-Depth of field
-
-\subsubsection{Depth of field}
+%
+% Depth of field
+%
+% \subsubsection{Depth of field}
 
 
 \subsubsection{Sampling}
@@ -356,12 +356,11 @@ Magnifications in excessive of this limit are deemed \emph{empty magnification} 
 
 Over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited may be used computationally to increase resolution.
 
-% 
+%
 % \subsubsection{Light collection efficiency}
 %
 % To calculate the the collecting efficiency of a lens, a single radiating source is considered, a Lambert radiator.
 % The flux collected is proportional to the spherical segment carved out by the lens.
-%
 
 
 \section{Fluoresence microscopy}
@@ -369,34 +368,150 @@ Over-sampling plays an important role in super-resolved systems where the additi
 % Phase contrast, dark field
 \subsection{Fluoresence}
 
+Fluorescent molecules absorb photons of a particular energy and a short time later remit them with lower energy, this energy difference gives rise to a red-shift of the light.
+This shift in colour allows for suitably coated glads to chromatically discriminate between the desired fluoresecent signal and the undesired scattered incident light.
+Upon being exciting by incident light an electron within a fluorescent molecule may excite to a higher energy level, provided it has sufficient energy to bridge the energy barrier.
+Once in the higher excited state ($S_1$), the electron will exist there for an average lifetime ($\tau$), slowly losing energy to the surroundings through vibrations and molecular collisions.
+Once the electron has ''trickled'' down the energy levels it will return to the ground state ($S_0$) emitting a photon with an energy less the amount of energy lost when in the excited state, the \emph{Stoke's shift}.
+Electrons may also return to the ground state through molecular collisions or even an \emph{intersystem} crossing where by the electron finds a path via transient state with lower energy requirements, the \emph{triplet state}.
+
+%\subsubsection{Fluoresence spectra}
+
+Multiple energy levels slightly above the ground state and the excited states then allow multiple different emission wavelengths.
+Fluorescent molecules therefore have excitation and emission spectra rather than discrete excitation and emission lines, see Figure \ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
+
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{jablonski_triplet}
     \caption[Standard jablonski diagram]{Jablonski diagram representing in colour the excitation of Alexa Fluor\(^{\copyright}\) 488 in a standard two level fluorescent system.}\label{fig:jablonski}
 \end{figure}
 
-\subsubsection{Spectra}
-\subsection{Benefits of fluorescence microscopy}
-\subsubsection{Image contrast}
-\subsubsection{Specificity}
-\subsubsection{Sensitivity}
+%\subsubsection{Specificity}
+
+\emph{Specificity} refers to the ability to accurately label markers, features or molecules within a biological entity and is an important advantage of fluorescence microscopy.
+Moreover multiple labels can further elucidate how labelled entities are interact within the the sample.
+
+\subsubsection{Labelling}
+
+
+Labelling of sites direct, primary and secondary.
+Resolution is lost the longer the ligand attaching to the target but for convenience of dyes with the suitable anti-group being available.
+The staining process is further inhibited by cellular mechanics; a cell may not endocytose the stain or be it may degraded through autophagy in the lysosome.
+For non-membrane permeable dyes transfection techniques, though invasive, do exist \cite{}.
+Staining can also lead to non-specific binding of fluorescent molecules reducing confidence in specificity and increasing the overall background fluorescent signal in-turn decreasing the image contrast.
+
+For live organism imaging, staining is impractical.
+Genetic manipulation causes fluorescent proteins to be expressed with high specificity as
+As the cells themselves are producing the desired fluorescence; with good spatial homogeneity when compared to soaking samples in dye; and low sample toxicity.
+
+%TODO Talk about auto Fluoresence
+
+%\subsubsection{Image contrast}
+%\subsubsection{Specificity}
+\subsection{Fluoresence microscopy}
+
 \subsubsection{Illumnination}
+
+%The Merucry Arc lamp is unibiqitous in lamp-based fluorsence mciroscopes.
+The mercury arc lamp became a ubiquitous excitation source due an visible emission spectrum and intensity being much greater than a standard halogen lamp.
+However, advances in LED and laser technology have caused a technological shift towards these alternative sources.
+Modern LEDs and Lasers are now at the stability and intensity to compete with lamp based sources, with more intensity ability and homogeneity.
+
+LED sources are currently behind Lasers in terms of the intensity required for certain imaging applications due to the \emph{etendue} of the emission.
+As etendue is preserved through any system of optics an LED source, having large etendue, will be very photon inefficient to the point of being infeasible for applications such as point-scanning.
+
+Lasers are limited to very specific excitation lines due to the materials used, particular in diode lasers.
+These sources are also coherent which can cause self-interference in the illumination profile (speckle) and the sample.
+%For wide-field imaging LED sources may be sufficient with an added benefit of being incoherent.
+
+%Emission wavelengths are selected from lamp and white LED sources using emission filters.
+A super-continuum laser sources uses non-linear effects, typically induced within a long optical fibre , to produce broad spectrum visible laser light.
+From this spectrum, wavelengths may then be selected using emission filters, as with lamp-based sources and white LED sources.
+To add additional emission lines into a system with monochromatic lasers requires adding more laser lines physically, this approach is desirable for making systems versatile.
+The downside being that the intensity of the of the pump laser source is spread into the entire spectrum causing narrow selected emission bands to have relatively low intensities.
+
+
 \subsection{Signal collection}
+
+Once created, the sample image is recorded for analysis and dissemination.
+%Modern camera technology
+For contemporary digital pixel (photosite) arrays are used in wide-field fluoresce microscope where as photo-multiplier tube (PMT) in \emph{most} laser scanning microscopy.
+
 \subsubsection{Detectors}
-%ICCD
-%sCMOS, CMOS
-%PMT, APD
-%EMCCD
+
+Wide-field detectors come in many flavours, all of which exploit semi-conductor physics to convert incident photons into electrons.
+Charge-couple device (CCD) based detectors collect electrons during an exposure and transfer in a serial manner through conversion electronics to create digital images.
+Intensified CDD (ICCD) follow the same protocol but use on-photo-site electron cascading to increase the signal and \emph{intensify} the read image.
+EMCCD detectors transfer their entire frame to a separate conjugate chip which digitises the image for computation.
+As the frame is being transferred the signal is amplified to multiply electrons collected in the conjugate digitisation site and intensify the image as in ICDD.
+Transferring the entire frame reduces the digitalisation time and increase the imaging frame-rate.
+
+CMOS chips directly output a digital value on a per pixel.
+The additional circuity found off-chip in CCD detectors is embedded in each pixel.
+Though this reduces the overall fill factor feasible in each chip, this is recovered using a micro-lens to focus directly onto the active read area of the photo-site.
+The per-photo-site architecture allows for a region-of-interest area to be addressed.
+CMOS detectors made specifically to address quantitative scientific (sCMOS) usage boast having: small pixel sizes; low read noise; large detection arrays; large dynamic range and no multiplicative noise.
+
+%sCMOS
+
+%\subsubsection{Single molecule detection}
+
+
 \subsubsection{Noise}
+
+Adverse noise arising in optical microscopes from several compounding effects.
+The larger the noise level the lower the signal to noise ratio and therefore the more degraded an image will be.
+
+Increasing the integration time of the detector will bring the desired signal out of random background noise.
+A detector with a large \emph{quantum efficiency}, (photon to electron conversion efficiency) will be able to overcome noise more quickly.
+The \emph{dynamic range} of the detector is the intensity range at which the weak fluorescent signal can be recorded above background noise.
+The \emph{bit depth} (8 or \SI{16}{\bit} typically) of the detector defines the detectable intensity resolution, which is particular use for very weak signals.
+
+The \emph{dark current} (noise) contribution occurs in the detectors themselves as the semiconductor material produces erroneous electrons from converting thermal phonons.
+Dark current increases linearly with integration time and so chip cooling is recommended.
+
+\emph{Photon noise} (shot) originates from corpuscular photons arriving at the detector following a temporal Poissonian distribution.
+An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded.
+
+\emph{Read noise} is rooted in the conversion process of the analogue voltage of electrons, at each pixel, to digital values.
+The intensity response across a detector may also be inhomogeneous, this may be flat-field corrected using a calibration uniform intensity source.
+\footnote{manufacturers for sCMOS cameras apply this correction as standard}
+
 \subsection{Limits of fluorescence microscopy}
+
+
+
 \subsubsection{Photobleaching}
-\paragraph{Reversible photobleaching}
+
+Fluorescently stained samples will slowly fade in intensity over time as the dye molecules are photochemically destroyed through photobleaching.
+The process occurs typically through photo-oxidation, once the fluorophore is in an excited state it may then energetically fall into a triplet state where it is more likely to permanently bond with oxygen radicals.
+Dye medium can be buffered with scavengers of Oxygen radicals to mitigate the process of bleaching.
+Genetically modified organisms suffer from the photobleaching less as molecules that have bleached are constantly being replaced by newly expressed fluorophore.
+
+Photobleaching can be exploited using FRAP whereby an imaging region is purposefully bleached so that dye molecules may diffuse into the field of view.
+The rate of return of intensity in the imaging region then gives a measure of diffusion.
+
+% FRET STORM PALM
+%Some molecules have the valuable property of being able to reverse
+
+
+%\paragraph{Reversible photobleaching}
 \subsubsection{Phototoxicity}
-\subsection{Resolution}
+
+Fluorescent dyes can act as photo-sensitizer during imaging, causing damage to functionality of the cell.
+Chromophores of fluorescent proteins are shielded by direct contact from molecular oxygen through protein moiety, making fluorescent proteins less photo-toxic.
+% It has beeen suggested that acceptable levels of light exposure will be on the order of a solar.
+%Direct and intense light exposure
+%TODO
+
+
+%Photodynamic effwect
+%Intensity induced
+%\subsection{Resolution}
 \section{Three dimensional fluorescence microscopy}
 \subsection{Confocal Microscopy}
-\subsubsection{Principles of confocal microscopy}
-\subsubsection{Spinning disk confocal microscopy}
+\subsubsection{Principles}
+\paragraph{Spinning disk confocal microscopy}
 \subsection{Two photon (2P) microscopy}
 \subsection{Structured illumination microscopy}
 %Fast widefield 3D technique.

@@ -2,8 +2,8 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{F}\relax \glsresetentrylist %
 \glossentry{FOV}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{28}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{30}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{NA}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{28\delimN 29}}}%
+		\setentrycounter[]{page}\glsnumberformat{30\delimN 31}}}%
 \end{theglossary}\glossarypostamble
