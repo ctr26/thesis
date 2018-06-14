@@ -219,7 +219,7 @@ Both of these rays propagate parallel in the \emph{infinity space} between the o
 
 \subsubsection{Magnification}
 
-Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrary though typically the back focal points are matched to create a \emph{4f system}.
+Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrary though typically the back focal points are matched to create a \emph{4f system}, see Figure \ref{fig:magnification}.
 
 The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}. %TODO not quite right
 $o_1'$
@@ -231,6 +231,12 @@ The image size ($I$) in the primary image plane is distance between the intersec
     \implies M &= \frac{I}{O} = \frac{f_{\text{objective}}}
 {f_{\text{tube lens}}}
 \end{align}
+
+\begin{figure}
+    \includegraphics{./magnification}
+    \caption{}
+    \label{fig:magnification}
+\end{figure}
 
 
 % Tube lens may also be used to correct for image abberations
@@ -382,8 +388,8 @@ Fluorescent molecules therefore have excitation and emission spectra rather than
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{jablonski_triplet}
-    \caption[Standard jablonski diagram]{Jablonski diagram representing in colour the excitation of Alexa Fluor\(^{\copyright}\) 488 in a standard two level fluorescent system.}\label{fig:jablonski}
+    \includegraphics[width=0.7\linewidth]{jablonski_triplet_new}
+    \caption[Standard jablonski diagram]{Jablonski diagram representing in colour the excitation of Alexa Fluor\(^{\copyright}\) 488 in a standard two level fluorescent system.}\label{fig:jablonski_triplet_new}
 \end{figure}
 
 %\subsubsection{Specificity}
@@ -468,12 +474,8 @@ The \emph{dynamic range} of the detector is the intensity range at which the wea
 The \emph{bit depth} (8 or \SI{16}{\bit} typically) of the detector defines the detectable intensity resolution, which is particular use for very weak signals.
 
 The \emph{dark current} (noise) contribution occurs in the detectors themselves as the semiconductor material produces erroneous electrons from converting thermal phonons.
-Dark current increases linearly with integration time and so chip cooling is recommended.
-
-\emph{Photon noise} (shot) originates from corpuscular photons arriving at the detector following a temporal Poissonian distribution.
-An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded.
-
-\emph{Read noise} is rooted in the conversion process of the analogue voltage of electrons, at each pixel, to digital values.
+Dark current increases linearly with integration time and so chip cooling is recommended. \emph{Photon noise} (shot) originates from corpuscular photons arriving at the detector following a temporal Poissonian distribution.
+An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded. \emph{Read noise} is rooted in the conversion process of the analogue voltage of electrons, at each pixel, to digital values.
 The intensity response across a detector may also be inhomogeneous, this may be flat-field corrected using a calibration uniform intensity source.
 \footnote{manufacturers for sCMOS cameras apply this correction as standard}
 
@@ -510,9 +512,79 @@ Chromophores of fluorescent proteins are shielded by direct contact from molecul
 %\subsection{Resolution}
 \section{Three dimensional fluorescence microscopy}
 \subsection{Confocal Microscopy}
-\subsubsection{Principles}
-\paragraph{Spinning disk confocal microscopy}
+
+The Marvin Minksy proposed the first confocal microscope in the late 1950s to image deep into brain tissue.
+A pinhole is placed in a conjugate image plane in the detection path which precludes out-of-focus light from being detected.
+The narrower the pinhole the better the optical sectioning, though sacrificing the received signal.
+
+In Minky's microscope the sample was then mechanically scanned to build a volumetric image.
+By mechanically scanning the imaging speed is greatly reduced but to the speed of responses of the stage, the maximum speed of travel of the stage and the relaxation time of the stage.
+Specimens are prone to spatial shifts during scanning as well which causes distortions in the final image.
+
+Modern confocal microscopes use galvanometric scanning mirrors to scan a laser beam through the sample to build an image.
+Though faster than mechanical scanning, video-rate scanning confocal microscopy is only viable when using resonant scanning mirrors and high laser power.
+
+% \subsubsection{Spinning disk confocal microscopy}
+%
+% The speed of Single point confocal microscopy can be greatly improved by producing multiple points.
+
+%\subsubsection{Principles}
+%\paragraph{Spinning disk confocal microscopy}
 \subsection{Two photon (2P) microscopy}
+
+% 2P microscopy is a part of a breed of techniques called non-linear microscopes which exploit the quantum nature of fluorophores.
+% 2P imaging provides the most efficient signal generation.
+
+The photon rejecting pin-hole of confocal microscopes can be entirely avoided by using infra-red laser sources.
+Exciting a fluorophore to an excited state requires a quantised amount of energy, which is typically supplied by a single photon.
+Two photons, each with double the desired wavelength, will contain the requisite amount of energy to cause the excitation.
+For this event to occur there need to be a high photon density surrounding the fluorophore.
+In a laser scanning system, this means that the beam focus of the objective lens is the most likely place for fluorescence to occur, with a sharp decline in axial intensity axially, providing optical sectioning.
+
+By using 2P excitation greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced photo-toxicity, making the technique very useful for non-invasive live imaging.
+
+\subsubsection{Drawbacks}
+
+Water, which is abundant in biological specimens, has large absorbance in the infrared spectrum; combined with the high energy needed to create the 2P effect at the focal point, this can cause localised heating which can in-turn be damaging to specimens and cause optical aberrations.
+Localised heating can be mitigated by moving the beam sufficiently quickly such that significant heating does not occur.
+Using infrared excitation also means that the 2PM has a much reduced theoretical lateral resolution when compared to visible confocal microscopy.
+Finally, infrared-red laser sources are prohibitively expensive and, until recently, reliable turn-key solutions were not viable.
+
 \subsection{Structured illumination microscopy}
-%Fast widefield 3D technique.
+
+In SIM, a specimen is illuminated with a sinusoidal periodic pattern using a fast widefield microscope.
+The mixing of this illumination frequency with the spatial frequency of the sample means that additional resolution can be extracted both in $xy$ and $z$.
+
+As discussed, an objective lens acts as a band pass filter for low-frequency information.
+From the \emph{Convolution Theorem} (see Appendix \ref{appendix:convolution_theorem}), the multiplication of two signals in real-space is the convolution of the two Fourier transformed signals in frequency space and, importantly, visa versa -
+the convolution of two signals in real space is the multiplication of the Fourier transformed signals in frequency space.
+Meaning that projecting a sinusoidal pattern in real space will convolve the Fourier transform of the sample signal in frequency space with the Fourier transform of the sinusoid signal.
+The Fourier transform of a sinusoid is three delta functions at -1 0 and +1 with a separation governed by the pattern frequency: $k_1 = {2\pi}{lambda}$.
+And so, before the imaging system can band-pass the signal, the illumination pattern has forced three copies of the original image into the pass band, shifted by the vectors $k_1$ and $k_{-1}$ such that high frequency information outside of the pass band has been cumulated.
+The overlaid information is then computational unmixed by imaging with three different sinusoid phases to delineate the \SI{-1}{} \SI{0}{} and \SI{+1}{} orders or reconstruction.
+
+\subsubsection{Optical sectioning SIM}
+
+Three dimensional information can be extracted by manipulating frequency space even further.
+For instance, the \emph{missing cone} (see Figure \ref{fig:OTF_support}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
+In frequency space this pushes the region of the missing cone into axial resolution maxima of the OTF support (toridal), giving three dimensional structure.
+By adding a third beam along the optical axis to interfere with the sinusoidal pattern, a further axial sinusoidal pattern can be created.
+
+\subsubsection{Drawbacks}
+
+
 \subsection{Selective plane illumination microscopy}
+
+The technqiues for volumetric imaging as introduced above
+
+Structured illumination techniques require computation reconstruction which is prone to artefacts.
+
+Light-sheet microscopy offers reconstruction free (SIM), fast, low photo-toxic volumetric imaging.
+
+
+are limited by speed and
+
+In light sheet microscopy, the sample is illuminated with a thin sheet of light to obtain optical sections.
+The microscope generally consists of two orthogonal optical axes: one for generating the light sheet for illumination, and the other for widefield detection of the emitted fluorescence.
+The two axes are aligned such that the illuminating light sheet is positioned in the focal plane of the detection unit.
+As the specimen is illuminated with a sheet of light, the entire focal plane of the detection arm is illuminated providing instant optical sectioning as opposed to the slow point scanning used in confocal microscopy (Chapter 5).

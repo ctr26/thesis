@@ -35,6 +35,14 @@ demonstrated the potential of LSFM for \emph{in-vivo} imaging with cellular reso
 Their Selective Plane Illumination Microscope (SPIM), seeded a rapid development in the LSFM field and is chosen here as an example to discuss the main concepts of LSFM.\@
 \footnote{Design choices made here have heavily influenced the openSPIM project, an information toolkit found on the internet for constructing a LSFM}
 
+
+\begin{figure}
+    \centering
+    \includegraphics{./epi_con_lsfm}
+    \caption{}
+    \label{fig:epi_con_lsfm}
+\end{figure}
+
 %High quality LSFM is dependent on how well the illumination is generated.
 %Huisken et al seminally used Gaussian laser emissions for the generation of their light sheets.
 %Gaussian beams have a distinct trade-off when used in LSFM applications in that the thinner the light sheet designed the narrower the field of view; this can be seen in equation \eqref{eq:Guassian}, as $x$ increases or decreases (a movement away from the focus of the beam) the wider the beam gets.
@@ -60,8 +68,8 @@ Their Selective Plane Illumination Microscope (SPIM), seeded a rapid development
 
 %High quality LSFM is dependent on how well the illumination is generated.
 Huisken~\emph{et~al} were seminal in their usage of Gaussian laser emissions for the generation of their light sheets despite Gaussian beams have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
-Equation~\eqref{eq:Guassian} models the Gaussian beam approximation where the full-width half-maximum ($\sqrt{\ln(2)}\omega(z)$) %\mynote[inline]{check maths}
-increases as a Lorentzian when a distance $z$ away from the focal plane (Equation~\eqref{eq:Lorrentzian}).
+Equation~\eqref{eq:GuasianBeam} models the Gaussian beam approximation where the full-width half-maximum ($\sqrt{\ln(2)}\omega(z)$) %\mynote[inline]{check maths}
+increases as a Lorentzian when a distance $z$ away from the focal plane (see Figure \ref{fig:GuasianBeam}.
 The rate at which this occurs is dependent on the Rayleigh length in Equation~\eqref{eq:Rayleigh} which quantifies the trade-off.
 The confocal parameter ($b=2z_R$) is a metric for the distance over which a Gaussian beam propagates as if it were parallel (neither converging nor diverging).
 For LSFM this is the distance over which the light sheet can be assumed to be of homogeneous thickness.
@@ -73,6 +81,12 @@ The procedure is optically lossy, but, laser intensity is typically in surplus f
 %Huisken's SPIM had two distinct parts.
 %The illumination path, which included a laser source beam expander to control the field of view of the light sheet and a  cylindrical lens to focus the beam into a thin sheet of light (Fig %FIGURE
 %); and the detection path, which was similar to a standard widefield microscope including an objective lens, a tube lens and a camera.
+\begin{figure}
+    \centering
+    \includegraphics{./GuasianBeam}
+    \caption{}
+    \label{fig:GuasianBeam}
+\end{figure}
 
 \begin{align}
 	I(r,z)    & = {I_0} {\left(\frac{\omega_0}{\omega{(z)}}\right)}^2 {e^{\frac{-2r^2}{\omega{(z)}^2}}\label{eq:Guassian}} \\
@@ -80,10 +94,7 @@ The procedure is optically lossy, but, laser intensity is typically in surplus f
 	z_R       & = \frac{\pi\omega_0^2}{\lambda} \label{eq:Rayleigh}
 \end{align}
 
-Where:\\
-$z_R$ is the Rayleigh Length\\
-$\omega_0$ is the spot of size of the beam.\\
-$\lambda$ is the wavelength of light.\\
+Where $z_R$ is the Rayleigh Length; $\omega_0$ is the spot of size of the beam and $\lambda$ is the wavelength of light.
 
 % Introduce Gaussian beam
 % In cylindrical lens case laser light needs to be over expanded and cut to ensure a FOV homo
