@@ -1,10 +1,10 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27120
+Words in text: 27114
 Words in headers: 512
 Words outside text (captions, etc.): 3087
 Number of headers: 189
-Number of floats/tables/figures: 68
+Number of floats/tables/figures: 67
 Number of math inlines: 418
 Number of math displayed: 76
 Subcounts:
@@ -17,7 +17,7 @@ Subcounts:
   827+22+0 (8/0/6/0) Section: Three dimensional fluorescence microscopy
   270+3+21 (1/1/0/0) Chapter: Contemporary light-sheet technology}\label{chapter:literature
   704+18+55 (6/1/10/1) Section: Generating Light Sheets
-  620+13+98 (7/2/2/0) Section: Objective Arrangements
+  614+13+98 (7/1/2/0) Section: Objective Arrangements
   386+5+0 (1/0/2/0) Section: Single Objective Light Sheet Microscopy
   568+9+0 (5/1/3/0) Section: Illumination
   90+5+0 (1/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
