@@ -419,7 +419,7 @@ Where $w_0$ is the beam waist; NA is the numerical aperture of the excitation ob
   \label{fig:diffusion}
 \end{figure}
 
-\section{Motion induced astigmatic axial localisation error}
+\section{Motion induced astigmatic axial localisation error}\label{sec:spt_maths}
 
 It was demonstrated in the computational simulations that a particle moving in a real system will demonstrate a motion blur unique to having astigmatism.
 A single particle moving quickly in $xy$ will appear to stretch and the localised position of the particle will be the average of the start and end position.
@@ -462,83 +462,29 @@ f(x,y,z) &= e^{-\frac{x^2}{kz+c} +\frac{y^2}{-kz+c} }
   %A Gaussian function being used to model a particle is likely a valid assumption as Gaussian functions are in turn used in the fitting process for localisation of the pixel data:}
   %&e^{-\frac{x^2}{2 \sigma^2}}
 %\end{align*}
-\begin{align*}
+\begin{align}
 \intertext{To make calculations tractable, all modelling was considered in $xz$ as the effect of astigmatism in $y$ is independent.
 %\intertext{
-By normalising the Gaussian model, we simulate that an equivalent number of photons are being emitted by the particle, this allows the expected and real PSFs to be compared.}
+By normalising the Gaussian model, we simulate that an equivalent number of photons are being emitted by the particle, this allows the Expected and Reality PSFs to be compared.
+The Expected PSF is defined such that no motion blur is considered:}
 \hat{\text{PSF}}_{\text{Expected}} &= \frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}}\\
 {\text{PSF}}_{\text{Expected}} &= e^{-\frac{x^2}{2 \sigma(z)^2}}
-\end{align*}
-\begin{align*}
- \intertext{Assuming that the particle moves a distance $L$ with uniform speed and uniform emission of photons en-route, integrating the function gives the real PSF.}
+\end{align}
+\begin{align}
+ \intertext{Assuming that the particle moves a distance $L$ with uniform speed and uniform emission of photons en-route, integrating the Expected PSF gives the Reality PSF as subject to motion blur:}
 \hat{\text{PSF}}_{\text{Reality}} &= \frac{1}{L}\int_{0}^{L}\frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}} \mathop{dz}\\
 &= \frac{{L_{\text{end}}} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{L_{\text{end}}}^2 x^2}{2 c^2 ({L_{\text{end}}}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
 \intertext{The integral has to be scaled by $\frac{1}{L}$ as integrating a function over $0 \to L$ will scale the total area by L. The resultant function is then by comparable with $\text{PSF}_{\text{Expected}}$.}
 {\text{PSF}}_{\text{Reality}} &= \frac{2 c (a L+L_{\text{end}}) e^{-\frac{L_{\text{end}}^2 x^2}{2 c^2 (a L+L_{\text{end}})^2}}}{2 a c L} \\
 &+ \frac{L_{\text{end}} x\sqrt{2 \pi }\text{Erf}\left(\frac{ (L_{\text{end}} x)}{\sqrt{2} (a c L+c L_{\text{end}})}\right)}{2 a c L} \\
 &+ \frac{L_{\text{end}} \left(2 c e^{-\frac{x^2}{2 c^2}}+\sqrt{2 \pi } x \text{Erf} \left(\frac{x}{\sqrt{2} c}\right)\right)}{2 a c L}
-\end{align*}
+\end{align}
 %Gaussian, approximation of a particle
 %PSF expected, width linearly depependent on z
 %PSF reality, integral between 0 and L, scaled by L
-\subsection{Cross correlation}
-\begin{align*}
-  \intertext{To analytically compare the expected and real results, the respective functions were cross-correlated using the analytical function:}
-%\text{Cross correlation} =
-(f \star g)(t)\ \stackrel{\mathrm{def}}{=} \int_{-\infty}^{\infty} &f(x)^* g(x+t) \mathop{dx}
-\end{align*}
-\begin{align*}
-\intertext{The integral of the result across all space gives a single value signifying the quality of correlation between the two functions:}
-\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} &f(t)^* g(x+t) \mathop{dx}\mathop{dt}
-\intertext{This value will reach unity when $f(x) = g(x)$}
-\end{align*}
-\begin{align*}
-\intertext{The expected PSF was given the additional $t$ parameter as it was more likely that this integral would solve, though, this only solves across all space for unnormalised PSFs:}
-\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} &\text{PSF}_{\text{Reality}} (x)^* \text{PSF}_{\text{Expected}} (x+t) \mathop{dx}\mathop{dt} \\
-=& \frac{\pi  c (a L+L_{\text{end}})^2}{a L_{\text{end}} L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}} +\frac{2 \pi  c^2 (a L+L_{\text{end}})^2}{L_{\text{end}}^2}\\
-+&\frac{\pi  c L_{\text{end}}}{a L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}-\frac{2 \pi  L_{\text{end}}}{a \sqrt{\frac{1}{c^2}} L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}\\
-+&\frac{2 \pi  c^2 (a L+L_{\text{end}})^2}{a L_{\text{end}} L}
-\end{align*}
-\begin{align*}
-  \intertext{By correlating the normalised functions across a small window $u$ an analytical solution was produced.}
-\int_{-u}^{ u}\int_{-\infty}^{\infty} \hat{\text{PSF}}_{\text{Reality}} (x)^* \hat{\text{PSF}}_{\text{Expected}} (x+t) \mathop{dx}\mathop{dt}
-\end{align*}
-\begin{align*}
-&=-\frac{(a L+L_{\text{end}})}{\sqrt{2 \pi } a L_{\text{end}} L}\sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}\left(L_{\text{end}} u \left(\text{Ei}\left(-\frac{L_{\text{end}}^2 u^2}{2 c^2 (L_{\text{end}}+a L)^2}\right)+\Gamma \left(0,\frac{u^2}{2 c^2}\right)\right)\right.\\
-&-\frac{\sqrt{2 \pi (-c)} (a L+L_{\text{end}}) \left(\text{Erf} \left(\frac{L_{\text{end}} u}{\sqrt{2} (a c L+c L_{\text{end}})}\right)\right)}{\sqrt{2 \pi } a L_{\text{end}} L}-\frac{\sqrt{2 \pi } L_{\text{end}} \left| c\right|  \text{Erf} \left(\frac{u}{\sqrt{2} \left| c\right| } \right)}{\sqrt{2 \pi } a L_{\text{end}} L}
-\end{align*}
-
-\begin{figure}
-  \centering
-  \includegraphics{./mathematica/correlation_analysis}
-  \caption{}
-  \label{fig:correlation_analysis}
-\end{figure}
-
-\subsection{Full width half maximum}
-
-The correlation of two signals is not an absolute error which can be used to make predictions about real-world systems. So, the Full Width at Half Maximum of each of the two signals was considered as this property, in Gaussian-like functions, should provide an analogue for $\sigma(z)$ which may be compared absolutely.
-\begin{align*}
-\text{PSF}(x,...) &- \lim_{x\to0} \frac{\text{PSF}(x,...)}{2} = 0 \\
-\implies \text{FWHM}_{\text{Expected}} &= 2x \\
-&= \left|-\frac{\sqrt{2} c \sqrt{\ln{2} +2 i \pi  n} (a L+L_{\text{end}})}{L_{\text{end}}}\right|,n\in \mathbb{Z}
-%\text{FWHM}_{\text{Expected}} &= \frac{2 \sqrt{3}}{\sqrt{\frac{a^2 L^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 a L_{\text{end}} L}{c^2 (a L+L_{\text{end}})^2}}}
-\end{align*}
-\begin{align*}
-\text{PSF}_{\text{Reality}}(x,...) - \lim_{x\to0} \frac{\text{PSF}_{\text{Reality}}(x,...)}{2} = 0 \\
-\intertext{This equation does not solve for $x$ so a Maclaurin expansion was used:}
-= -\frac{L_{\text{end}} x^2}{4 \left(c^2 (a L+L_{\text{end}})\right)}+\frac{x^4 \left(a^2 L_{\text{end}} L^2+3 a L_{\text{end}}^2 L+3 L_{\text{end}}^3\right)}{48 c^4 (a L+L_{\text{end}})^3}+O\left(x^5\right)
-\end{align*}
-\begin{align*}
-\implies \text{FWHM}_{\text{Reality}} &= \frac{2 \sqrt{3}}{\sqrt{\frac{a^2 L^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}+\frac{3 a L_{\text{end}} L}{c^2 (a L+L_{\text{end}})^2}}}\\
-\text{FWHM}_\text{Error} &= 2\frac{\text{PSF}_{\text{Expected}} - \text{PSF}_{\text{Reality}}}{\text{PSF}_{\text{Expected}} + \text{PSF}_{\text{Reality}}}\\
-& = 2\frac{\sqrt{\ln{2}} \sqrt{a^2 L^2+3 a L_{\text{end}} L+3 L_{\text{end}}^2}-\sqrt{3} L_{\text{end}}}{\sqrt{\ln{2}} \sqrt{a^2 L^2+3 a L_{\text{end}} L+3 L_{\text{end}}^2}+\sqrt{3} L_{\text{end}}}
-\end{align*}
 
 \subsection{Area analysis}
-When $L\to0$ this result of $\text{FWHM}_\text{Error}$ can be below zero, which would suggest that the result is not an accurate measure of the true error.
-This is likely due to the process requiring a series expansion, at $x=0$; as the series expansion is only an approximation of the target function.
-Since attaining error from the FWHM fails for small values of $L$ an analysis using area was considered.
+
 For Guassian-like functions the total area under the curve is proportional to $\sigma(z)$, so by comparing the area covered by the expected and real PSFs a valid measure of error could be obtained.
 This analysis does not work for normalised PSFs as the area is unity in each case, as such the unnormalised model was used.
 Using an unnormalised function was still valid as the area was only being used as a proxy for finding a measure of the width of the PSF being interrogated.
