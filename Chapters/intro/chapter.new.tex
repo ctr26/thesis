@@ -200,14 +200,25 @@ This will then enable the \textit{in vivo} study of virus trafficking through a 
 
 
 \chapter{Principles of fluorescence microscopy}
-
+\epigraph{\emph{3D Airy disk renderings: $E$ there or $E^2$}}{--- Roxine Staats}
 %Physical prciniples of the operation of a light-microscope.
 %Capabilities limtiations.
 
+This chapter will introduce the concept of the light microscope leading into contemporary fluorescence microscopy.
+Basic geometrical optics and properties of light waves will be presented to understand the construction and functioning of light microscopes.
+The concepts presented here will be elementary and recalled in later chapters.
+
 \section{Light microscopy}
+
+The fundamental concept of a light microscope requires a set of lenses to relay and magnify the image of a remote point using light as a measurand.
+% The simplest lens set of an objective collecting lens (close to the sample) and a tube lens (for relaying the image), drives the imaging of most modern microscopes.
+
 \subsection{Construction of light microscopes}
 
 %Consists of illumination elements and detection elements.
+The key driver of the imaging aspect of an optical microscope is a pair of lenses.
+The sample is located in the front focal plane of the \emph{objective} lens.
+The resultant image is focused onto the \emph{primary imaging plane}, see Figure \ref{fig:magnification}
 
 \subsubsection{Components of light microscopes}
 %Imaging part of microscope is formed of two leneses
@@ -238,7 +249,6 @@ The image size ($I$) in the primary image plane is distance between the intersec
     \label{fig:magnification}
 \end{figure}
 
-
 % Tube lens may also be used to correct for image abberations
 
 %Great advantage is that the lgiht path behind the objective only contains paralel light, means can add optical elements without distortions the beam path.
@@ -246,10 +256,6 @@ The image size ($I$) in the primary image plane is distance between the intersec
 % Other adsvantage is you can focus by moving the objective lens
 
 %and the overall magnification of the
-
-
-
-
 
 %\subsubsection{Magnification}
 
@@ -309,12 +315,48 @@ This leads to high frequency information being omitted during the imaging proces
 The electric field ($E(r)$) and resultant intensity ($I(r)$) distribution of a single point (delta function) at the image plane then becomes:
 
 \begin{align}
-    E(r) &\propto E_0 \frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\beta}{\lambda})}\\
+    E(r) &\propto E_0 \frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\beta}{\lambda})}\label{eq:E_airy}\\
     \implies
-    I(r) &= I_0 \left[\frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\right]^2
+    I(r) &= I_0 \left[\frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\right]^2\label{eq:I_airy}
 \end{align}
 
 Where $J_1$ is a Bessel function of the first kind and $\beta$ is the half opening angle of the tube lens.
+This function is more commonly known as as Airy disk \ref{fig:airy_disk}.
+
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}
+%         %\centering
+%         \includegraphics{airy_E_fill}
+%         \caption{}
+%     \end{subfigure}
+%     \begin{subfigure}
+%         %\centering
+%         \includegraphics{airy_I_fill}
+%         \caption{}
+%     \end{subfigure}
+%     \caption{}
+%     \label{fig:airy_disk}
+% \end{figure*}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_E_fill}
+        \caption{$E(r)$, equation \eqref{eq:E_airy}}
+        \label{fig:airy_E_fill}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_I_fill}
+        \caption{$I(r)$, equation \eqref{eq:I_airy}}
+        \label{fig:airy_I_fill}
+    \end{subfigure}
+    \caption{Electric and intensity amplitudes of a theoretical airy disk in radial units of $2\pi r \sin \frac{\alpha}{\lambda}$}
+    \label{fig:airy_disk}
+\end{figure}
 
 \subsubsection{Lateral resolution}
 
@@ -341,6 +383,35 @@ Once again, by comparing the the distance to the first zero in intensity along $
 The achievable axial resolution is governed by axial extension of the PSF as is $2z_0,\text{objective}$ and commonly called the \emph{depth of field} ($D\text{objective}$).
 The depth of field physically refers to the distance a focussed object may be moved axially before losing image fidelity to defocus.
 
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_rayleigh}
+        \caption{The Rayleigh criteon, whereby the centre of the second emitter sits at the first zero of the first emitter}
+        \label{fig:airy_rayleigh}
+    \end{subfigure}
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_sparrow}
+        \caption{The Sparrow criteon, whereby the centre of the second emitter is one FWHM of the function distant from the first emitter}
+        \label{fig:airy_sparrow}
+    \end{subfigure}
+    \end{figure}
+    \begin{figure}
+    \ContinuedFloat
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_too_close}
+        \caption{Unresolved, depicted here as being half the Sparrow limit}
+        \label{fig:airy_too_close}
+    \end{subfigure}
+    \caption{The resolution of a system is governed by the resolving capability of two nearby point emitters.
+    (\subref{fig:airy_rayleigh}) and (\subref{fig:airy_sparrow}) show the Rayleigh and Sparrow criterions respectively with (\subref{fig:airy_too_close}) showing point emitters too near to be resolved due to the lack of any intensity contrast between them}
+    \label{fig:airy_disk_resolution}
+\end{figure}
+
 %
 % Depth of field
 %
@@ -361,6 +432,50 @@ For a detector with \SI{6}{\micro\meter} pixels a magnification on the order of 
 Magnifications in excessive of this limit are deemed \emph{empty magnification} and decrease the overall SNR of the recorded image.
 
 Over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited may be used computationally to increase resolution.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics{./sampling/sample_master}
+        \caption{Intensity image of a pair of resolved point emitters separated by the Rayleigh distance $d_{r}$}
+        \label{fig:sample_master}
+    \end{subfigure}
+\end{figure}~
+\begin{figure}
+    \ContinuedFloat
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_3}
+        \caption{Sampled using 3 by 3 pixels\\$d_{\text{detector}} = 1.5 \times  d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_3}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_5}
+        \caption{Sampled using 5 by 5 pixels\\$d_{\text{detector}} = 0.9 \times  d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_5}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_9}
+        \caption{Sampled using 9 by 9 pixels\\$d_{\text{detector}} = 0.5 \times d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_9}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_23}
+        \caption{Sampled using 23 by 23 pixels\\$d_{\text{detector}} = 0.19 \times d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_23}
+    \end{subfigure}
+    \caption{Point emitters in \subref{fig:sample_master} are sampled by a detector varying pixel sizes, analogous to varying magnification.
+    (\subref{fig:digital_airy_sample_9}), shows Nyquist sampling;
+    (\subref{fig:digital_airy_sample_23}) is over sampled, giving super detector resolution
+    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and hence detect a single emitter.}
+    \label{fig:airy_disk_resolution}
+\end{figure}
+
 
 %
 % \subsubsection{Light collection efficiency}
@@ -410,6 +525,13 @@ For live organism imaging, staining is impractical.
 Genetic manipulation causes fluorescent proteins to be expressed with high specificity as
 As the cells themselves are producing the desired fluorescence; with good spatial homogeneity when compared to soaking samples in dye; and low sample toxicity.
 
+
+\begin{figure}
+    \centering
+    \includegraphics{./fluorphores/++multi_plot.pdf}
+    \caption{Fluorescence excitation (lines) and emission (filled curves) spectra of the compounds Fluorescein, Texas red, Cy5 and DAPI.}
+    \label{fig:fluo_spectra}
+\end{figure}
 %TODO Talk about auto Fluoresence
 
 %\subsubsection{Image contrast}
@@ -480,7 +602,6 @@ The intensity response across a detector may also be inhomogeneous, this may be 
 \footnote{manufacturers for sCMOS cameras apply this correction as standard}
 
 \subsection{Limits of fluorescence microscopy}
-
 
 
 \subsubsection{Photobleaching}
