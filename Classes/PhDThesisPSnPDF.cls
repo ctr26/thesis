@@ -1163,7 +1163,7 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
-    \centering \sffamily \Large \bfseries{\@author}
+    \centering\Large{\@author}
       \vspace{0.5em}
   \end{minipage}
 \end{lrbox}
