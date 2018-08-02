@@ -270,6 +270,8 @@ supported!}
   \temptableofcontents
 }
 
+
+
 % *************************** Graphics and Figures *****************************
 \RequirePackage[usenames, dvipsnames]{color}
 \ifpdf
@@ -1048,9 +1050,14 @@ wish to left align your text}
 
 
 % ******************************* Nomenclature *********************************
-\RequirePackage[acronym]{glossaries}
-\makeglossaries
-
+% \RequirePackage[nomain,acronym,xindy,toc]{glossaries}
+% \RequirePackage[acronym]{glossaries}
+\RequirePackage[acronym,toc,symbols]{glossaries-extra}              % use glossaries-package
+% \makeglossaries
+% \makeglossaries
+% \makeglossaries
+% \usepackage[xindy]{imakeidx}
+% \makeindex
 
 % ***************************** Create the index *******************************
 \ifPHD@index
@@ -1079,6 +1086,7 @@ wish to left align your text}
     \renewcommand{\listoftables}{}
     \renewcommand{\printnomencl}{}
     \renewcommand{\printthesisindex}{}
+    \renewcommand{\printglossaries}{}
 \else
     \defineChapterfalse
 \fi

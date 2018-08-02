@@ -1,38 +1,38 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27050
+Words in text: 27142
 Words in headers: 508
-Words outside text (captions, etc.): 3607
+Words outside text (captions, etc.): 3672
 Number of headers: 188
 Number of floats/tables/figures: 76
-Number of math inlines: 432
+Number of math inlines: 435
 Number of math displayed: 76
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   605+7+0 (2/0/0/0) _top_
   415+3+0 (3/0/0/0) Chapter: Introduction
   55+4+0 (1/0/2/0) Chapter: Principles of fluorescence microscopy
-  946+25+220 (11/6/35/6) Section: Light microscopy
-  1343+21+107 (12/3/6/0) Section: Fluoresence microscopy
+  938+25+220 (11/6/33/6) Section: Light microscopy
+  1465+21+172 (12/3/11/0) Section: Fluoresence microscopy
   755+21+221 (7/2/10/0) Section: Three dimensional fluorescence microscopy
-  970+18+76 (6/2/10/1) Chapter: Contemporary light-sheet technology}\label{chapter:literature
+  942+18+76 (6/2/10/1) Chapter: Contemporary light-sheet technology}\label{chapter:literature
   614+13+98 (7/1/2/0) Section: Objective Arrangements
   386+5+0 (1/0/2/0) Section: Single Objective Light Sheet Microscopy
   568+9+0 (5/1/3/0) Section: Illumination
-  131+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
-  1284+16+204 (10/3/13/0) Section: Hardware
+  144+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
+  1270+16+204 (10/3/13/0) Section: Hardware
   1043+16+206 (9/3/9/1) Section: Software
   251+27+0 (7/0/0/0) Section: Objectives review
-  1006+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
+  1009+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
   434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
-  85+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography}\label{chapter:flopt
-  554+3+22 (3/1/10/2) Section: Tomography
+  89+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography}\label{chapter:flopt
+  552+3+22 (3/1/10/2) Section: Tomography
   605+6+12 (3/1/18/10) Section: Stereoscopic Imaging
   694+3+91 (1/3/14/1) Section: The proposed algorithm
   511+9+367 (2/8/24/0) Section: Results
   464+8+48 (4/1/1/0) Section: Discussion
-  122+6+0 (1/0/0/0) Chapter: Developments in confocal virtual slit-scanning microscopy}\label{chapter:dualslit
+  124+6+0 (1/0/0/0) Chapter: Developments in confocal virtual slit-scanning microscopy}\label{chapter:dualslit
   503+5+61 (2/2/3/1) Section: Single beam confocal slit-scanning
   611+10+152 (6/3/1/0) Section: Double speed slit-scanning microscopy
   497+5+134 (4/3/3/0) Section: Structured illumination

@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,draft]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -83,7 +83,7 @@
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
 \input{Preamble/preamble}
-
+\input{Preamble/glossary}
 % ************************ Thesis Information & Meta-data **********************
 % Thesis title and author information, refernce file for biblatex
 \input{thesis-info}
@@ -105,7 +105,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapters/design/chapter}
+  \includeonly{Chapters/intro/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -123,24 +123,26 @@
 % *********************** Adding TOC and List of Figures ***********************
 
 \tableofcontents
-
 \listoffigures
-
 \listoftables
-
-\printglossary[type=\acronymtype]
-
-\printglossary
-
-%\newacronym{fov}{FOV}{Field of View}
-
-% \printnomenclature[space] space can be set as 2em between symbol and description
-%\printnomenclature[3em]
-
-\printnomenclature
+\printglossaries
+%\printnomenclature
 
 % ******************************** Main Matter *********************************
 \mainmatter
+
+
+%TECHNOLOGY FIRST
+\include{Chapters/intro/chapter} %1
+\include{Chapters/literature/chapter} %2
+\include{Chapters/design/chapter} %3
+\include{Chapters/homography/chapter} %4
+\include{Chapters/flopt/chapter} %5
+\include{Chapters/dualslit/chapter} %6
+\include{Chapters/chamber/chapter} %7
+\include{Chapters/spt/chapter} %8
+\include{Chapters/tweezers/chapter} %9
+\include{Chapters/conclusions/chapter} %10
 
 %\includefrom{Chapters/intro/}{chapter}
 %\includefrom{Chapters/literature/}{chapter}
@@ -151,17 +153,6 @@
 %\includefrom{Chapters/literature/}{chapter}
 %\includefrom{Chapters/dualslit/}{chapter}
 
-%TECHNOLOGY FIRST
-\include{Chapters/intro/chapter.new} %1
-\include{Chapters/literature/chapter} %2
-\include{Chapters/design/chapter} %3
-\include{Chapters/homography/chapter} %4
-\include{Chapters/flopt/chapter} %5
-\include{Chapters/dualslit/chapter} %6
-\include{Chapters/chamber/chapter} %7
-\include{Chapters/spt/chapter} %8
-\include{Chapters/tweezers/chapter} %9
-\include{Chapters/conclusions/chapter} %10
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References

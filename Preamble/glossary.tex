@@ -1,0 +1,30 @@
+%!TEX root = ../../thesis.tex
+%!TEX enableSynctex = true
+
+\makeglossaries                           % activate glossaries-package
+
+\setabbreviationstyle[acronym]{long-short}
+
+% Symbols
+
+\glsxtrnewsymbol[description={Field of View}]{FOV_math}{\ensuremath{FOV}}
+\glsxtrnewsymbol[description={Half angle of the entrance pupil of a lens}]{alpha}{\ensuremath{\alpha}}
+\glsxtrnewsymbol[description={Bessel function of the first kind}]{J_1}{\ensuremath{J_1}}
+% Glossary
+
+\newglossaryentry{4f}{
+    name={4f},
+    description={Two lens system with each plane separated by a focal length $f$}}
+\newglossaryentry{primary imaging plane}{
+    name={Primary imaging plane},
+    description={The first plane where a true image is relayed.}}
+\newglossaryentry{objective lens}{
+    name={Objective lens},
+    description={The collecting lens nearest the sample}}
+% \glsaddall
+
+% Acronyms
+
+\newacronym{FOV}{FOV}{Field of View}
+\newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
+\newacronym{NA}{NA}{Numerical Aperture}

@@ -1,1 +1,13 @@
-\null
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossentry{4f}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4\delimN 5}}}\glsgroupskip
+\glsgroupheading{O}\relax \glsresetentrylist %
+\glossentry{objective lens}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4\delimR 6}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{19\delimN 20}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glossentry{primary imaging plane}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}%
+\end{theglossary}\glossarypostamble

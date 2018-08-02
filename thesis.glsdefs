@@ -1,3 +1,33 @@
+\ifglsentryexists{4f}{}%
+{%
+\gls@defglossaryentry{4f}%
+{%
+name={4f},%
+sort={4f},%
+type={acronym},%
+first={Two lens system with each plane separated by a focal length $f$\glsspace (4f)},%
+firstplural={Two lens system with each plane separated by a focal length $f$s\glsspace (4fs)},%
+text={4f},%
+plural={4fs},%
+description={Two lens system with each plane separated by a focal length $f$},%
+descriptionplural={Two lens system with each plane separated by a focal length $f$\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Two lens system with each plane separated by a focal length $f$},%
+longplural={Two lens system with each plane separated by a focal length $f$s},%
+short={4f},%
+shortplural={4fs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{FOV}{}%
 {%
 \gls@defglossaryentry{FOV}%
