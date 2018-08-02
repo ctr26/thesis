@@ -216,3 +216,16 @@ The correlation of two signals is not an absolute error which can be used to mak
 When $L\to0$ this result of $\text{FWHM}_\text{Error}$ can be below zero, which would suggest that the result is not an accurate measure of the true error.
 This is likely due to the process requiring a series expansion, at $x=0$; as the series expansion is only an approximation of the target function.
 Since attaining error from the FWHM fails for small values of $L$ an analysis using area was considered.
+
+\section{Bragg conditons}
+
+%Bragg conditions
+Proof of abbe limit from diffraction theory:
+
+\begin{align}
+    d \sin \alpha_n = n \lambda \\
+    \sin\alpha_n = \frac{p_n}{f} \\
+    p_n = \frac{n\lambda f}{d} \\
+    d \le = \frac{\lambda}{\sin\alpha_{\text{max}}} \\
+    d \le = \frac{\lambda_0}{n\sin\alpha_{\text{max}}} = \frac{2\lambda_0}{NA}
+\end{align}

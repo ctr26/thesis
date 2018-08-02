@@ -1,27 +1,25 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27108
-Words in headers: 511
-Words outside text (captions, etc.): 3323
-Number of headers: 190
-Number of floats/tables/figures: 73
-Number of math inlines: 428
+Words in text: 27050
+Words in headers: 508
+Words outside text (captions, etc.): 3607
+Number of headers: 188
+Number of floats/tables/figures: 76
+Number of math inlines: 432
 Number of math displayed: 76
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   605+7+0 (2/0/0/0) _top_
   415+3+0 (3/0/0/0) Chapter: Introduction
   55+4+0 (1/0/2/0) Chapter: Principles of fluorescence microscopy
-  1010+25+220 (11/6/35/7) Section: Light microscopy
-  1268+21+44 (12/2/6/0) Section: Fluoresence microscopy
-  827+22+0 (8/0/6/0) Section: Three dimensional fluorescence microscopy
-  270+3+21 (1/1/0/0) Chapter: Contemporary light-sheet technology}\label{chapter:literature
-  704+18+55 (6/1/10/1) Section: Generating Light Sheets
+  946+25+220 (11/6/35/6) Section: Light microscopy
+  1343+21+107 (12/3/6/0) Section: Fluoresence microscopy
+  755+21+221 (7/2/10/0) Section: Three dimensional fluorescence microscopy
+  970+18+76 (6/2/10/1) Chapter: Contemporary light-sheet technology}\label{chapter:literature
   614+13+98 (7/1/2/0) Section: Objective Arrangements
   386+5+0 (1/0/2/0) Section: Single Objective Light Sheet Microscopy
   568+9+0 (5/1/3/0) Section: Illumination
-  90+5+0 (1/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
-  41+1+0 (1/0/0/0) Section: Specification
+  131+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1284+16+204 (10/3/13/0) Section: Hardware
   1043+16+206 (9/3/9/1) Section: Software
   251+27+0 (7/0/0/0) Section: Objectives review
@@ -43,8 +41,7 @@ Subcounts:
   663+2+248 (1/4/0/0) Section: The design
   451+3+48 (2/2/0/0) Section: Method
   163+1+0 (1/0/0/0) Section: Remarks
-  0+7+0 (1/0/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
-  698+6+80 (3/1/0/0) Section: Introduction
+  698+12+80 (3/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   522+14+30 (4/1/4/0) Section: Single Particle Tracking
   564+9+20 (5/1/10/3) Section: Astigmatic tracking
   298+8+107 (2/2/15/6) Section: Motion induced astigmatic axial localisation error}\label{sec:spt_maths
@@ -66,5 +63,6 @@ Subcounts:
   122+2+0 (1/0/6/3) Section: Fourier transform
   292+1+0 (1/0/15/6) Section: Huygens
   0+2+0 (1/0/0/0) Chapter: Particle tracking
-  137+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
+  130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
+  14+2+0 (1/0/0/1) Section: Bragg conditons
 
