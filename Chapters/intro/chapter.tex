@@ -12,67 +12,69 @@
 
 \chapter{Introduction}
 
-% \noindent Fluorescence microscopy has experienced a scientific renaissance over the last 20 years through advances in new fluorescent proteins and super-resolution optical microscopy, both of which were awarded with Nobel Prizes in Chemistry.
-Fluorescence microscopy is one of the cornerstones of modern biology, but has generally been limited to 2D culture dishes.
-Light-sheet microscopy, a recent advance which was awarded Nature Method of the Year 2014, allows fast, non-invasive 3D imaging across an entire organism.
-This works by decoupling illumination and detection such that the microscope only illuminates a thin section of tissue at a time.
-By scanning this `light-sheet' through an organism we can image in 3D more quickly and with less damage than other techniques such as confocal microscopy.
-%we can construct a detailed 3D image with sub-cellular resolution.
-
-%Traditional techniques are slow.
-% Super-resolution microscopy allows an improvement in optical imaging resolution previously thought to be physically impossible.
-% Super res great, but only good in 2D. %Confocal is 3D but is slow and "force entire" and isn't super res.
-% lightsheet is fast, 3D and can be supe res, by seperating objective
-%We can now visually inspect live biological specimens in real time and at protein length scales.
-%These imaging techniques do however require long acquisition and exposure times, and so force the entire biological sample to be flooded with light, which subjects delicate samples to harmful radiation.
-%Light sheet Fluorescence Microscopy is distinct from these techniques in that it introduces an additional excitation lens at right angles to the detection, confining the illumination to the plane of interest and minimising harm to the sample.
-%This decoupling then allows for fast, non-invasive 3D imaging across an entire organism.
-%This decoupling then allows for fast, deep and non-invasive volumetric imaging.
-%Light sheet Fluorescence Microscopy was Nature Method of the Year 2014 and promises to be the future standard, disrupting 400 years of established microscopy.
-%These advances have been so revolutionary that Light-sheet fluorescence microscopy was awarded Nature Method of the Year 2014.
-
-%During the first year of my PhD
-A custom light-sheet microscope was designed and built  for the application of cell mechanics of developing embryos and the tracking of viral egress.
-%Cell mechanics plays a vital role in the development of organisms;
-Internal stresses within tissues induce cellular migrations that can govern the organism's resultant anatomy.
-We have developed a technique to mechanically probe deep tissue using magnetism.
-By embedding a magnetic bead in an embryo we can use a controllable, non-invasive magnetic field to move the bead.
-By pushing a magnetic bead and allowing it to relax we can fit a model to its trajectory and so extract local mechanical properties.
-% Comparing results between embryos that are genetically modified to no longer produce different key proteins provides an understanding of their roles in embryonic development. %TODO Reword
-The mechanical roles of key proteins in embryonic development can be inferred by comparing results between genetically modified embryos.
-%Using light-sheet imaging we can rapidly visualise entire live cells, permitting an unprecedented opportunity to observe and induce cell migration and tissue formation.
-%Our investigations so far have demonstrated that rho-kinase, in embryonic development increases cell stiffness
-%is inaccurate. %and %TODO add something.+
-Our investigations so far have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development. These results are currently being prepared for publication with our collaborators.
-
-% Looking ahead, I intend to  single magnetic bead tracking to that of single virus particle tracking, going from the microscopic to the nanoscopic.
-%Looking ahead, I intend to move from tracking single magnetic beads to tracking single virus particles, going from the microscopic to nanoscopic scale.
-Virus particles (virions) invade host cells and hijack their machinery to replicate and then spread. %their disease
-By visualising the journey of virions through the cell we may reveal weaknesses in infection pathways.
-%Light-sheet microscopy is the only technique capable of volumetrically tracking virions, which are both exceptionally small and fast.
-Light-sheet microscopy is better suited than other techniques for tracking virus trafficking in 3D as virions are exceptionally small and fast.
-We intend to study Herpes Simplex Virus~1 which causes cold sores and genital herpes.
-Furthermore, it serves as a biological model for other Herpesviruses which are associated with many serious diseases including chickenpox and certain lymphomas.
-%and life-threatening conditions in immuno-compromised patients.
-%Herpesvirus pathogens are ubiquitous in vertebrates and establish life-long latent infections in their hosts.
-%Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immuno-compromised patients.
-
-In addition to designing and constructing a light-sheet fluorescence microscope I have made technological improvements which will be useful for other researchers.
-%In addition to design, construction and application, I am also contributing directly to the field of light-sheet microscopy itself.
-%So far I have proposed two improvements.
-The first is a three dimensional region-of-interest technique which promises to simultaneously simplify volumetric imaging calibration whilst also being more robust than current approaches.
-The second improvement builds upon confocal slit scanning, a technique used in our lab to increase image contrast but takes twice as long to acquire an image.
-This development now allows for full speed imaging with the same increased contrast.
-I am currently preparing two manuscripts detailing these improvements for submission to \emph{Optics Letters}.
-% Herpesviruses also cause a significant disease burden in animals that can lead to economic problems for livestock farmers.
-% In visualising HSV1 virions leaving a cell (a step which contributes directly to viral pathology but is lesser studied)
-% Specifically, we intend to track HSV1 as it exits a cell, after replication; the spreading stage
-% This aspect of viral infection is poorly understood but contributes directly to virus pathology
-% Medicines which could block a virion from exiting from a cell would inhibit the viral spread; this medical imprisonment of virions could then provide an effective, curative treatment.
-% Virions invade host cells and hijack their machinery to replicate and then spread their disease. By visualising the journey of virions through the cell we may reveal finding weaknesses in its infection pathology.
-% Specifically we intend to study Herpes Simplex Virus 1, as it begins to exit a cell and spread.
-% By understanding how virions interact with cellular machinery we can provide targeted medicine
-% By visualising the journey of virions we may reveal finding weaknesses in its infection pathology
+%
+% % \noindent
+% %Fluorescence microscopy has experienced a scientific renaissance over the last 20 years through advances in new fluorescent proteins and super-resolution optical microscopy, both of which were awarded with Nobel Prizes in Chemistry.
+% Fluorescence microscopy is one of the cornerstones of modern biology, but has generally been limited to 2D culture dishes.
+% Light-sheet microscopy, a recent advance which was awarded Nature Method of the Year 2014, allows fast, non-invasive 3D imaging across an entire organism.
+% This works by decoupling illumination and detection such that the microscope only illuminates a thin section of tissue at a time.
+% By scanning this `light-sheet' through an organism we can image in 3D more quickly and with less damage than other techniques such as confocal microscopy.
+% %we can construct a detailed 3D image with sub-cellular resolution.
+%
+% %Traditional techniques are slow.
+% % Super-resolution microscopy allows an improvement in optical imaging resolution previously thought to be physically impossible.
+% % Super res great, but only good in 2D. %Confocal is 3D but is slow and "force entire" and isn't super res.
+% % lightsheet is fast, 3D and can be supe res, by seperating objective
+% %We can now visually inspect live biological specimens in real time and at protein length scales.
+% %These imaging techniques do however require long acquisition and exposure times, and so force the entire biological sample to be flooded with light, which subjects delicate samples to harmful radiation.
+% %Light sheet Fluorescence Microscopy is distinct from these techniques in that it introduces an additional excitation lens at right angles to the detection, confining the illumination to the plane of interest and minimising harm to the sample.
+% %This decoupling then allows for fast, non-invasive 3D imaging across an entire organism.
+% %This decoupling then allows for fast, deep and non-invasive volumetric imaging.
+% %Light sheet Fluorescence Microscopy was Nature Method of the Year 2014 and promises to be the future standard, disrupting 400 years of established microscopy.
+% %These advances have been so revolutionary that Light-sheet fluorescence microscopy was awarded Nature Method of the Year 2014.
+%
+% %During the first year of my PhD
+% A custom light-sheet microscope was designed and built  for the application of cell mechanics of developing embryos and the tracking of viral egress.
+% %Cell mechanics plays a vital role in the development of organisms;
+% Internal stresses within tissues induce cellular migrations that can govern the organism's resultant anatomy.
+% We have developed a technique to mechanically probe deep tissue using magnetism.
+% By embedding a magnetic bead in an embryo we can use a controllable, non-invasive magnetic field to move the bead.
+% By pushing a magnetic bead and allowing it to relax we can fit a model to its trajectory and so extract local mechanical properties.
+% % Comparing results between embryos that are genetically modified to no longer produce different key proteins provides an understanding of their roles in embryonic development. %TODO Reword
+% The mechanical roles of key proteins in embryonic development can be inferred by comparing results between genetically modified embryos.
+% %Using light-sheet imaging we can rapidly visualise entire live cells, permitting an unprecedented opportunity to observe and induce cell migration and tissue formation.
+% %Our investigations so far have demonstrated that rho-kinase, in embryonic development increases cell stiffness
+% %is inaccurate. %and %TODO add something.+
+% Our investigations so far have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development. These results are currently being prepared for publication with our collaborators.
+%
+% % Looking ahead, I intend to  single magnetic bead tracking to that of single virus particle tracking, going from the microscopic to the nanoscopic.
+% %Looking ahead, I intend to move from tracking single magnetic beads to tracking single virus particles, going from the microscopic to nanoscopic scale.
+% Virus particles (virions) invade host cells and hijack their machinery to replicate and then spread. %their disease
+% By visualising the journey of virions through the cell we may reveal weaknesses in infection pathways.
+% %Light-sheet microscopy is the only technique capable of volumetrically tracking virions, which are both exceptionally small and fast.
+% Light-sheet microscopy is better suited than other techniques for tracking virus trafficking in 3D as virions are exceptionally small and fast.
+% We intend to study Herpes Simplex Virus~1 which causes cold sores and genital herpes.
+% Furthermore, it serves as a biological model for other Herpesviruses which are associated with many serious diseases including chickenpox and certain lymphomas.
+% %and life-threatening conditions in immuno-compromised patients.
+% %Herpesvirus pathogens are ubiquitous in vertebrates and establish life-long latent infections in their hosts.
+% %Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immuno-compromised patients.
+%
+% In addition to designing and constructing a light-sheet fluorescence microscope I have made technological improvements which will be useful for other researchers.
+% %In addition to design, construction and application, I am also contributing directly to the field of light-sheet microscopy itself.
+% %So far I have proposed two improvements.
+% The first is a three dimensional region-of-interest technique which promises to simultaneously simplify volumetric imaging calibration whilst also being more robust than current approaches.
+% The second improvement builds upon confocal slit scanning, a technique used in our lab to increase image contrast but takes twice as long to acquire an image.
+% This development now allows for full speed imaging with the same increased contrast.
+% I am currently preparing two manuscripts detailing these improvements for submission to \emph{Optics Letters}.
+% % Herpesviruses also cause a significant disease burden in animals that can lead to economic problems for livestock farmers.
+% % In visualising HSV1 virions leaving a cell (a step which contributes directly to viral pathology but is lesser studied)
+% % Specifically, we intend to track HSV1 as it exits a cell, after replication; the spreading stage
+% % This aspect of viral infection is poorly understood but contributes directly to virus pathology
+% % Medicines which could block a virion from exiting from a cell would inhibit the viral spread; this medical imprisonment of virions could then provide an effective, curative treatment.
+% % Virions invade host cells and hijack their machinery to replicate and then spread their disease. By visualising the journey of virions through the cell we may reveal finding weaknesses in its infection pathology.
+% % Specifically we intend to study Herpes Simplex Virus 1, as it begins to exit a cell and spread.
+% % By understanding how virions interact with cellular machinery we can provide targeted medicine
+% % By visualising the journey of virions we may reveal finding weaknesses in its infection pathology
 % Light sheet microscopy is the only technique capable of tracking virons which are both exceptionally small and fast
 
 Light-sheet microscopy is at the cutting edge of live-organism imaging.
@@ -102,7 +104,7 @@ This work intended to improve upon this design so as to facilitate fast 3D parti
 % 	\item Feature a user-friendly software interface so that users can produce images independently with a strong programming architecture for future collaborative development.
 % \end{itemize}
 %The new system will be designed to be: ; ; ;  and
-
+\pagebreak
 \subsection{Motivation}
  %Other viruses are more deadly such as HIV, by understanding viruses medicine may be better equipped to cure or prevent infection.
 %Viral infection and Alzheimer's are currently
@@ -196,339 +198,609 @@ This will then enable the \textit{in vivo} study of virus trafficking through a 
 % This report then discusses the methods and materials used to build a light sheet microscope up until its current state.
 % Finally the progress of the microscope is summarised and the future work for the project is discussed in terms of experiments needed (once the system is operational) to determine its ability and limitations when applied to virus and tau protein tracking.
 
-\section{Optical imaging of the microscopic}
 
-% Microscopes can magnifiy images of samples
-% Use an objective lens and tube lens pair
+\chapter{Principles of fluorescence microscopy}
+\epigraph{\emph{3D Airy disk renderings: $E$ there or $E^2$}}{--- Roxine Staats}
+%Physical prciniples of the operation of a light-microscope.
+%Capabilities limtiations.
 
-Optical microscopes use lenses to magnify the image of samples to enable the visualisation of sub-meso-scale processes and features.
-A simple microscope consists of an objective lens close to the sample with a tube lens (or eyepiece) following to relay the magnified image onto a detector (or retina).
-Additional lenses are used to focus light into the sample to give contrast.
+This chapter will introduce the concept of the light microscope leading into contemporary fluorescence microscopy.
+Basic geometrical optics and properties of light waves will be presented to understand the construction and functioning of light microscopes.
+The concepts presented here will be elementary and recalled in later chapters.
+\pagebreak
+\section{Light microscopy}
+% The simplest lens set of an objective collecting lens (close to the sample) and a tube lens (for relaying the image), drives the imaging of most modern microscopes.
 
+\subsection{Construction of light microscopes}
 
-%Biological processes occur at the sub micrometer-nanometre scale and thus can be studied using optical microscopes\cite{Murphy2012e}.
-%Optical microscopy's % history is long and rich with %and the concepts behind the optical microscope have not changed since the times of Galileo's telescope .
-The essential components of an optical microscope have not changed in over 200 years\cite{Bradbury1998,Masters2001b}.
-These components are: a condenser lens, to concentrate illumination into the sample; an objective lens, to collect and magnify the emissions from the sample and a tube lens to focus the light from the objective onto the image plane and an eyepiece, now more commonly a digital camera for recording.
-With the discovery of fluorescence and development of fluorescent proteins (labels), contrast and sensitivity improved dramatically.
-This section will briefly introduce the physical principles of fluorescence and its impact on optical microscopy.
+%Consists of illumination elements and detection elements.
 
-\subsection{Fluorescence}
+\subsubsection{Components of light microscopes}
+%Imaging part of microscope is formed of two leneses
+%Infinity corrected system.
+The fundamental concept of a light microscope requires a set of lenses to relay and magnify the image of a remote point using light as a measurand.
 
-Fluorescent molecules emit light at a longer wavelength than the incident photons.
-Fluorescence occurs when excited electrons (electrons not in the ground state) relax back to their ground state.
-This process is quantum mechanical whereby photons are emitted with energy equal to the energy of the difference of the ground and excited state\cite{Lakowicz2007}.
-%In a perfect system incident light would excite the electrons to the first excited state (see Equation\eqref{eq:excitation}) and during the electron's relaxation an identical photon would re-emit some time later.
-Fluorescently emitted photons will be of a lower energy and hence have a longer wavelength (\textbf{Stoke's Shift}).
-An excited electron will not typically excite to exactly the first excited state, but more likely a slightly higher degenerate energy state.
-From here the electrons will, over time ``trickle'' down to the lowest energy level available whilst emitting phonons (vibrational energy packets) until eventually they reach the first excited state (\(S_1\)), relax and emit a fluorescent photon (see Equation\eqref{eq:emission}).
-Figure\ref{fig:jablonski} demonstrates this excitation and emission process through the use of a \textbf{Jablonski diagram}.
+% The key driver of the imaging aspect of an optical microscope is a pair of lenses.
+The sample is located in the front focal plane of the \emph{\gls{objective lens}} and the resultant image is focused onto the \emph{\gls{primary imaging plane}}, see Figure \ref{fig:magnification}.
+Light emitted by a point $o_1$ at the sample plane is transformed into a parallel ray bundle by the \gls{objective lens}, which travel parallel to the optical axis.
+The tube lens then refracts the ray bundle back down onto its focus.
+The ray bundle for an a point away $o_2$ from the optical axis can be determined by the \emph{chief ray} ($r_c$) which passes through the optical centre of the objective unperturbed, and the \emph{marginal ray} ($r_m$) travelling parallel to the optical axis which crosses the back-focal point of the \gls{objective lens}.
+Both of these rays propagate in parallel within the \emph{infinity space} between the objective and tube lens, as do all sets of rays at any point $o_n$ at the focal plane of the \gls{objective lens}.
+
+\subsubsection{Magnification}
+
+Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrarily, though typically the back focal points are matched to create a \emph{\gls{4f} system}, see Figure \ref{fig:magnification}.
+
+The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}. %TODO not quite right
+$o_1'$
+The image size ($I$) in the primary image plane is set by the distance between the intersection of the primary image plane to the intersect of the the margin ($r_m'$) and chief rays ($r_m'$) at the tube lens.
+
+% \gls{alpha}
 
 \begin{align}
-&\text{Excitation}\nonumber \\
-S_0 &+ h \nu_{Ex} \rightarrow S_1 \label{eq:excitation}\\
-&\text{Emission}\nonumber \\
-S_1 &\rightarrow S_0 + \underbrace{h \nu_{Em}}_{\text{Photon}}  S_1 + \underbrace{\frac{1}{2} \hbar \omega}_{\text{Phonon}} \label{eq:emission}
+    \tan \gls{alpha} &= \frac{O}{f_{\text{objective}}} =  \frac{I}{f_{\text{tube lens}}} \\
+    \intertext{It follows that the magnification of the sample is:}
+    \implies M &= \frac{I}{O} = \frac{f_{\text{objective}}}
+{f_{\text{tube lens}}}
 \end{align}
 
 \begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{jablonski_triplet}
-\caption[Standard jablonski diagram]{Jablonski diagram representing in colour the excitation of Alexa Fluor\(^{\copyright}\) 488 in a standard two level fluorescent system.}\label{fig:jablonski}
+    \centering
+    \includegraphics{./magnification}
+    \caption{}
+    \label{fig:magnification}
 \end{figure}
 
+% Tube lens may also be used to correct for image abberations
 
-%\paragraph{Quantum Yield}~
+%Great advantage is that the lgiht path behind the objective only contains paralel light, means can add optical elements without distortions the beam path.
 
-%The quantum yield (\(Q_f\) of a fluorescent substance is a descriptor of how many photons are pumped in versus how many are then observed.
-%For instance, the likelihood of Alexa Fluor\copyright 488 (a standard Fluorescent dye) emitting a photons when in the first excited state is 91 \%.
-%A high quantum yield is a very favourable in fluorescent microscopy as it means the sample does not need to be bombarded over-zealously in an attempt to produce an observable fluorescent signal.
+% Other adsvantage is you can focus by moving the \gls{objective lens}
 
-\subsubsection{Fluorescence Lifetime}\label{sec:lifetime}
+%and the overall magnification of the
 
-Fluorescence lifetime is a valuable extra dimension of information exploited in biological imaging.
-The time an electron spends in the excited state will vary randomly but it will be governed by a probability; the longer the electron is in this high energy state the fewer electrons in a population will also be excited.
-If one were to excite a population of fluorescent molecules into an excited state the population would begin to decay with an associated time constant \(\tau\), see Equation\eqref{eq:rateeq}.
-\(Q_{21}\) is a non-radiative process that has a direct environmental dependence with an impact on \(\tau\), as a result the decay constant can be affected (and therefore measure) by a multitude of factors including photochemistry, local viscosity\cite{Suhling2012}, temperature\cite{Schaerli2009}, pH and more.
+%\subsubsection{Magnification}
+
+\subsubsection{Field of view}
+
+The observable objective field (field of view) is limited by the aperture stop of the system typified as the field number ($F_n $) and the \gls{objective lens} magnification $M_{\text{object}}$:
+%The maximum field of view ($F_{n}$)available is by :
 
 \begin{align}
-[S_1] (t) &= [S_1]_0 e^{-\frac{t}{\tau}}\label{eq:rateeq}\\
-&\text{where}\nonumber\\
-\tau = &\frac{1}{\underbrace{A_{21}}_{\text{Radiative}} + Q_{21}}
+\gls{FOV} = \frac{F_{n}}{M_{\text{object}}}
 \end{align}
 
-\subsubsection{Photo-bleaching} \label{sec:photobleaching}
+The field number of \gls{objective lens} design is limited by the image degradation caused through optical aberrations, with modern objective technology reaching up to \SI{28}{\milli\meter} from the previous standard of \SI{20}{\milli\meter}.
 
-%As an impulse of light causes a fluorescent decay so does a consistent exposure of light cause the decay of a population of a sample.
-%his process is called photo-bleaching and occurs when a sample is illuminated so much that the photochemistry of the molecules is altered.
-If a molecule for instance is excited to a singlet excited state \([S_1]\) but decays atypically to a triplet state \([T_1]\) photo-bleaching may occur, see Figure\ref{fig:jablonski}.
-In the triplet state the molecule is then susceptible to covalent reaction inhibiting the typical fluorescent reaction.
- Molecules in triplet states tend to also have longer lifetimes as the decay process from a triplet state is normally forbidden in terms of radiative decay.
-Explicitly for microscopy photo-bleaching is named fading as it literally means a sample that is imaged over an extended time will produce less fluorescent signal and fade.
+\subsubsection{Illumination}
 
-\subsubsection{Photo-toxicity}
+The illumination system defines the contrast mode, the resolution of the instrument, and the overall brightness.
+Two principally different optical setups are in use in optical microscopes.
+The optically simpler of the two is the source focus or critical illumination and the other, which is by far more prevalent, is called Köhler illumination.
 
-As well as fluorophores photo-bleaching due to exposure, biological specimens can be overly exposed to light.
-Most biologicals are exposed to solar EM radiation regularly and most of those utilise it in some manner, as a result overly exposing a sample to photons can be toxic to them causing experimental complications and oddities in observed reactions or even death.
-A reasonable standard to consider as a ``safe" exposure for a biological is that of the solar constant; it is a fair assumption that most biologicals are capable of surviving the Sun as they have evolved in that manner.
-The Sun has a solar constant of \(\sim\SI{1}{\kilo\watt\per\meter\squared}= \SI{1}{\nano\watt\per\micro\meter\squared}\), assuming \SI{10}{} minutes of exposure is also safe that would imply an energy density of  \(\sim \SI{0.6}{\micro\joule\per\meter\squared}\).
-A cell diameter is \(\sim\SI{100}{\micro\meter}\) and an embryo diameter is \(\sim \SI{900}{\micro\meter}\) meaning they should only be exposed to tens of millijoules and hundreds of millijoules respectively\cite{Stelzer2015}.
+Critical illumination uses a single \emph{condenser} lens whereas Kohler illumination uses an additional \emph{collector} lens.
+The use of two illumination lenses allows for a conjugate \gls{4f}  system of illumination to the detection optics, this ensures that all ray bundles passing through the sample are parallel and the illumination brightness is homogenous.
+Having a conjugated illumination also allows for alternative contrast methods to be implemented. %TODO sort
 
-\subsection{Widefield Fluorescent  Microscopy}
+In the illumination beam paths discussed earlier, the specimen is placed between the light source and the \gls{objective lens}.
+In many cases, however, it is advantageous to illuminate the specimen from the side of observation (\emph{epi-illumnination}).
+For instance, when looking at the reflection of opaque or fluorescent samples.
+Optically the illumination is the same or similar with the condenser lens then being the imaging \gls{objective lens} as well.
+% In that case, some optical components of illumination and imaging are identical, for example, the \gls{objective lens}. %TODO reword
 
-%The fluorescent microscope has impacted microscopy tremendously.
-The key concept behind the fluorescent microscope is the ability to separate excitation and emission.
-Classical optical microscopes as well as electron microscopes both had the %very real
-problem of separating these signals.
-Non-fluorescent optical microscopy employed many techniques including dark field and phase contrast microscopy to avoid this problem, however they could not address it so fundamentally\cite{Murphy2012e}.
-Through fluorescence the signal retrieved from the sample is chromatically labelled. %, meaning the wanted signal and the unwanted signal have different colours.
-The invention of the dichroic mirror allowed these signals to be physically redirected and therefore detected completely independently.
-Excitation and emission filters are used to improve light source spectra and limit scattered light emissions, see Figure\ref{fig:filtercube}.
+\subsection{Resolution}
+%Magification versus resolution
 
-%The notion is similar to that of the 3D glasses phase of the mid 80s.
-%A projector would project both images of left and right eye superimposed to the viewing audience; a viewer without glasses saw a mixed non-3D signal, with the glasses each eye saw the correct image as the glasses filtered the unnecessary and confusing information creating a 3D effect.
+Resolution refers to the level of detail that can be recognised in an image, such as small and intricate structures or the distance between closely placed small objects.
+The latter distance is used to define and quantify the optical resolution.
+% Using light microscopy
+% Using light microscopy, minute objects can be discriminated from each other when they are positioned at a minimum distance of -0.25 mum from each other and green light and a high-quality oil-immersion \gls{objective lens} are used.
+% This obviously means that proteins and supramolecular complexes occurring in living cells cannot be recognized in detail.
+% In later chapters, we discuss how the principal optical resolution limit can be overcome or circumvented by advanced optical techniques.
 
-%\subsubsection{Filter Cube}
+\subsubsection{Angular and numerical aperture}
 
-%The equivalent of the 80s 3D glasses in an epi-fluorescent microscopy is dichroic filter cube.
-%In signal processing unmixing two or more signals alone is a lax and poor mechanism, the unmixed signals need to be cleaned to ensure each are fully independent.
-%The dichroic filter cube is at the heart of the fluorescence microscope splitting and cleaning signals.
-%It uses: an excitation filter, to ensure the excitation light is of the correct colour (especially useful if the source is a broad spectral source); a dichroic mirror to redirect the emitted sample information and an emission filter to ensure that any partially reflected, unwanted light signal is fully omitted, see Figure
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.3\linewidth]{filtercube}
-	\caption[Fluorescent filter cube]{Standard fluorescent filter cube.
-	(1) Excitation filter (2) Dichroic mirror (3) Emission barrier}
-	\label{fig:filtercube}
-\end{figure}
-\subsubsection{Limitations}
-
-\paragraph{The Point Spread Function}~
-
-\textbf{Spatial resolution} is the ability of an observer to physically distinguish two close objects in an image\cite{Tsekenis2015}.
-Wide-field microscopes are classically limited to \SI{250}{\nano\meter} resolution as the wavelength of visible light is of this magnitude\cite{Bradbury1998}.
-Within a microscope the true limiter is the impulse response of a lens when passing light.
-A lens, when focussing and magnifying, can be thought of as a low pass filter; it permits low resolution information up until a cut-off frequency.
-In the Fourier plane this filtering is a circle of radius:
+%An \gls{objective lens}es is limited by
+The maximum half acceptance angle (\gls{alpha}) of an \gls{objective lens} limits the amount of light that can be collected from the sample.
+An \gls{objective lens} may be approximated to applying a Fourier transform of the imaging space, through an aperture with radius $a$ with an imaging plane at the far field.
+This leads to high frequency information being omitted during the imaging process and the lens behaving as a low-pass filter.
+The electric field ($E(r)$) and resultant intensity ($I(r)$) distribution of a single point (delta function) at the image plane then becomes:
 
 \begin{align}
-k_r = n\frac{2 NA}{\lambda}
+    E(r) &\propto E_0 \frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\label{eq:E_airy}\\
+    \implies
+    I(r) &= I_0 \left[\frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\right]^2\label{eq:I_airy}
 \end{align}
 
-The inverse transform of this frequency filtering produces the function convolved with the sample being imaged, the \textbf{P}oint \textbf{S}pread \textbf{F}unction.
-See Figure\ref{fig:Airy_Disc} for a graphical interpretation.
+Where \gls{J_1} is a Bessel function of the first kind and \gls{alpha} is the half opening angle of the tube lens.
+This function is more commonly known as an Airy disk \ref{fig:airy_disk}.
 
-\paragraph{The Rayleigh Limit}~
-
-Lord Rayleigh appraised a limit of resolution in an optical system in terms of the separation of two Airy disc point spread functions.
-Rayleigh defined the limit as the distance when the maximum of the PSF is positioned on top of the first minima of the other.
-This definition implies a contrast between the two functions of \SI{27}{\percent}; if the intensity trough seen from two airy discs in a microscope is lower than that, then by Rayleigh's criterion (see Equation\ref{eq:rayleigh}) the two objects cannot confidently be resolved, see Figure\ref{fig:rayleighlimit}.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{rayleighlimit}
-	\caption[Rayleigh Limit]{Two identical objects separated such that they are "barely resolved", the contrast (intensity difference) between their superposition being 73\% of the intensity maximum.}
-	\label{fig:rayleighlimit}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_E_fill}
+        \caption{$E(r)$, equation \eqref{eq:E_airy}}
+        \label{fig:airy_E_fill}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_I_fill}
+        \caption{$I(r)$, equation \eqref{eq:I_airy}}
+        \label{fig:airy_I_fill}
+    \end{subfigure}
+    \caption{Electric and intensity amplitudes of a theoretical airy disk in radial units of $2\pi r \sin \frac{\alpha}{\lambda}$}
+    \label{fig:airy_disk}
 \end{figure}
+
+\subsubsection{Lateral resolution}
+
+Point emitters are therefore imaged more faithfully with wider collecting angles and with higher frequency light.
+By placing two point emitters close such that the first zero crossing of the Bessel junction $J_1$ coincides with the centre of the second point emitter gives a distance of:
+
 \begin{align}
-r = \frac{\lambda}{2nNA}=\frac{1}{k_r}\label{eq:rayleigh}
+    r_{0,\text{objective}} &\approx \frac{0.61\lambda}{n\sin\alpha} = d_r \label{eq:lateral_res}\\
+    \implies d_r &= \frac{1.22 \lambda}{NA_{\text{objective}}}
 \end{align}
-%Optical magnification not directly improve the spatial resolution, it expands and stretches an image.
-Non-optical far field techniques can resolve much smaller than the diffraction limit.
- %These techniques are limited in resolution by the size of their \textit{probe};
-However, each is limited in its biological imaging capacity.
-%An electron microscope would not only kill any biological sample but to properly image the sample it needs to be coated in a conductive material to ensure charge does not accumulate.
-Electron microscopy uses electrons instead of photons to observe Angstrom sized particle\cite{Ruska1941}.
-An electron microscope is limited by its De Broglie wavelength, the effective size of an electron, on the pico meter scale\cite{Ahmed2011,Bradbury1998}.
-Electron microscopes are impractical for \textit{in vivo} biological studies, as high intensity electron beams require conductive dissipater coatings which impede and damage biological processes.
 
-Atomic force microscopes use sensitive piezo crystals to position and record surface information from samples using a cantilever at the nanometre scale\cite{Binnig1988}.
-The tip of an AFM is convolved with the profile of the surface and so is limited in resolution to the size of an atom.
-Atomic force microscopes are slow raster scanning imaging techniques but more crucially offer no sample specificity, which is requisite to biology as it involves querying how two biological agents interact or how an agent acts in environment: e.g  observing diseased cell interactions in a mouse brain model\cite{Misgeld2006}, monitoring cancerous tumours\cite{Hoffman2005} and understanding virus structure\cite{Pereira2012}.
+The resulting distance is Rayleigh's criterion for resolution which provides a limit to the resolution of a system based on a dip in intensity maxima, between two neighbouring emitters, of $\sim 75\%$.
+
+%Coherent and incoherent
+\subsubsection{Axial resolution}
+
+The Airy Disk describes the in-plane of lateral intensity distribution, with an analogous analytical function propagating axially.
+Once again, by comparing the the distance to the first zero in intensity along $z$ an analytical definition can be formed:
+
+\begin{align}
+    z_{0,\text{objective}} = \frac{2n\lambda}{{NA}^2} \label{eq:axial_res} = \frac{1}{2} D_{\text{objective}}
+\end{align}
+
+The achievable axial resolution is governed by axial extension of the PSF as is $2z_{0,\text{objective}}$ and commonly called the \emph{depth of field} ($D_{\text{objective}}$).
+The depth of field physically refers to the distance a focussed object may be moved axially before losing image fidelity to defocus.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.6\linewidth]{Airy_Disc}
-	\caption[Airy Disc]{Graphic representing the point spread function in arbitrary units of a lens.
-This function is convolved with any sample being imaged through its respective lens.}
-	\label{fig:Airy_Disc}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics{+airy_rayleigh}
+        \caption{The Rayleigh criteon, whereby the centre of the second emitter sits at the first zero of the first emitter}
+        \label{fig:airy_rayleigh}
+    \end{subfigure}
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_sparrow}
+        \caption{The Sparrow criteon, whereby the centre of the second emitter is one FWHM of the function distant from the first emitter}
+        \label{fig:airy_sparrow}
+    \end{subfigure}
+    \end{figure}
+    \begin{figure}
+    \ContinuedFloat
+    \begin{subfigure}[b]{\textwidth}
+        %\centering
+        \includegraphics{+airy_too_close}
+        \caption{Unresolved, depicted here as being half the Sparrow limit}
+        \label{fig:airy_too_close}
+    \end{subfigure}
+    \caption{The resolution of a system is governed by the resolving capability of two nearby point emitters.
+    (\subref{fig:airy_rayleigh}) and (\subref{fig:airy_sparrow}) show the Rayleigh and Sparrow criterions respectively with (\subref{fig:airy_too_close}) showing point emitters too near to be resolved due to the lack of any intensity contrast between them}
+    \label{fig:airy_disk_resolution}
 \end{figure}
 
-\subsection{Sampling}
-
-%TODO Nyquist, sampling, cameras
-
-%\subsection{Image Sensing}
+% Depth of field
 %
-%Dark Current
-%Flat field
-%Windowing and shutters
+% \subsubsection{Depth of field}
 
-\section{Three Dimensional Imaging in Life Sciences}
+\subsubsection{Sampling}
+
+Once transmitted, image information is typically recorded digitally using using a CCD camera or similar device.
+According to Nyquist sampling theory the resolution of the detector required to resample the image information faithfully is $d_\text{detector} = \frac{d_r}{2}$.
+To then choose the correct system magnification ($M_\text{system}$) it follows that:
+
+\begin{align}
+    M_\text{system} = \frac{2d_\text{detector}}{d_r}
+\end{align}
+
+For a detector with \SI{6}{\micro\meter} pixels a magnification on the order of $50\times$ is therefore sufficient for diffraction limited imaging using visible light.
+Magnifications in excess of this limit are deemed \emph{empty magnification} and decrease the overall SNR of the recorded image.
+Over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited, may be used to increase resolution computationally.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics{./sampling/sample_master}
+        \caption{Intensity image of a pair of resolved point emitters separated by the Rayleigh distance $d_{r}$}
+        \label{fig:sample_master}
+    \end{subfigure}
+\end{figure}~
+\begin{figure}
+    \ContinuedFloat
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_3}
+        \caption{Sampled using 3 by 3 pixels\\$d_{\text{detector}} = 1.5 \times  d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_3}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_5}
+        \caption{Sampled using 5 by 5 pixels\\$d_{\text{detector}} = 0.9 \times  d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_5}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_9}
+        \caption{Sampled using 9 by 9 pixels\\$d_{\text{detector}} = 0.5 \times d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_9}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_23}
+        \caption{Sampled using 23 by 23 pixels\\$d_{\text{detector}} = 0.19 \times d_{r}M_{\text{system}}$}
+        \label{fig:digital_airy_sample_23}
+    \end{subfigure}
+    \caption{Point emitters in \subref{fig:sample_master} are sampled by a detector varying pixel sizes, analogous to varying magnification.
+    (\subref{fig:digital_airy_sample_9}), shows Nyquist sampling;
+    (\subref{fig:digital_airy_sample_23}) is over sampled, giving super detector resolution.
+    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and hence detect a single emitter.}
+    \label{fig:airy_disk_resolution}
+\end{figure}
 
 
-  \begin{figure}
-  \centering
-  \def\svgwidth{0.6\textwidth}
-  \input{Chapters/intro/Figs/PDF/guassian_waist.pdf_tex}
-  \caption{You a consistent beaut \(\sqrt2 w_0\)}
-  \end{figure}
+%
+% \subsubsection{Light collection efficiency}
+%
+% To calculate the the collecting efficiency of a lens, a single radiating source is considered, a Lambert radiator.
+% The flux collected is proportional to the spherical segment carved out by the lens.
 
-%\subsection{Introduction}
 
-Thick biological samples cannot be imaged well in classical optical microscopes.
-The depth of field of the point spread function and general occlusion caused by imaging through material meant that biologists would historically mechanically section their samples in preparation.
-Mechanical sectioning is highly invasive which is why Zsigmondy originally suggested (1912) the ultra-microscope as a way optically sectioning\cite{Mappes2012}.
-This technique involved shining sunlight through a very narrow slit perpendicular to the optics of the microscope.
-Transmitted light microscopes relied on lighting beneath the sample and the eyepiece positioned above, this technique was proposed to alleviate out of focus light blurring the image of the sample.
-However, the difficulty and inherent mechanical issues of the technique meant that confocal microscopy by Marvin Minksy (1957)\cite{Minsky1957} became the standard tool of biological imaging.
+\section{Fluoresence microscopy}
+\subsection{Contrast in optical microscopy}
+% Phase contrast, dark field
+\subsection{Fluoresence}
 
+Fluorescent molecules absorb photons of a particular energy (wavelength) and a short time later re-emit with lower energy, this energy difference gives rise to a red-shift of the light.
+This shift in colour allows for suitably coated glass to chromatically discriminate between the desired fluoresecent signal and the undesired scattered incident light.
+Upon being exciting by incident light, an electron within a fluorescent molecule may excite to a higher energy level, provided it has sufficient potential energy to traverse the energy barrier.
+Once in the higher excited state ($S_1$), the electron will exist there for an average lifetime ($\tau$), slowly losing energy to the surroundings through vibrations and molecular collisions.
+Once the electron has ''trickled'' down the energy levels, it will return to the ground state ($S_0$) emitting a photon with an energy less the amount of energy lost when in the excited state, the \emph{Stoke's shift}.
+Electrons may also return to the ground state through molecular collisions or even an \emph{intersystem} crossing whereby the electron finds a path via transient states with lower energy requirements, the \emph{triplet state}.
+
+
+%\subsubsection{Fluoresence spectra}
+Multiple energy levels slightly above the ground and excited states then give a distribution of multiple different emission wavelengths.
+Fluorescent molecules therefore have excitation and emission spectra rather than discrete excitation and emission lines, see Figure \ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
+An important advantage of fluorescence microscopy is labelling \emph{specificity}, which refers to the ability to accurately label markers, features or molecules within a biological sample.
+Multiple labels in different spectral windows can further elucidate how labelled entities are interact within the the sample.
+
+\begin{figure}
+    \centering
+    \includegraphics{jablonski_triplet_newer}
+    \caption[Standard jablonski diagram]{
+    Jablonski diagram representing a green fluorescent molecule.
+    Transitions are represented by waving vectors.
+    Electrons in state $S_0$ receive energy from blue incident light,
+    this causes the electrons to transition to state $S_1$.
+    From $S_1$ electrons may lose energy no radiatively and re-emit a greener photon when relaxing back to $S_0$.
+    Once in $S_1$ electrons may transition to a triplet state, re-emitting a photon through phosphorescence.
+    A molecule in a triplet state will be for a longer time to $S_1$ and with an increased chance of oxidation which causes photobleaching.%risk photobleaching through oxidation
+        }
+    \label{fig:jablonski_triplet_new}
+\end{figure}
+%\subsubsection{Specificity}
+
+
+Radiative and nonradiative transitions are indicated by full and dashed lines, respectively. “Energy” refers to
+the total potential and kinetic energy of electrons and atomic nuclei. For a discussion of the
+scheme, see text. Fluorescence studies on single molecules have shown that sometimes there
+are further nonfluorescent molecular configurations with lifetimes in the range of milliseconds
+to seconds. After leaving these long-lived states, the molecules may return to the normal
+fluorescence process. This effect is called “reversible” photobleaching, and, if occurring
+repeatedly, may result in molecular “blinking” (see Chapter 8). A further pathway to leave S1 or
+T1 is by photobleaching. Photobleaching is the irreversible destruction of the molecule, which
+is often accompanied by the production of reactive and toxic molecular species.
+
+\subsubsection{Labelling}
+
+% Labelling of sites direct, primary and secondary.
+Fluorescent labels may be attached to a site on molecule directly, using primary antibodies or secondary.
+Primary antibody labelling involves an antibody attaching to the molecule directly and the dye molecule attaching to another site on the antibody.
+Secondary antibody labelling attaches a secondary antibody to the primary and a fluorescent dye to the secondary.
+Secondary antibody labelling has the advantage of the ease of labelling most target molecules with most dye molecules
+However, imaging resolution is lost the longer the ligand attaching to the target, but for convenience of dyes with the suitable anti-group being available.
+% Ligand length is also dependant of the type of staining, direct or secondary.
+% Direct labels refer to the dye directly binding to an active site on the molecule of interest,
+The staining process is further inhibited by cellular mechanics; a cell may not endocytose the stain or be it may degraded through autophagy in the lysosome.
+For non-membrane permeable dyes transfection techniques, though invasive, do exist \cite{}.
+Staining can also lead to non-specific binding of fluorescent molecules reducing confidence in specificity and increasing the overall background fluorescent signal in-turn decreasing the image contrast.
+
+For live organism imaging, staining is impractical.
+Genetic manipulation can allow for fluorescent proteins to be expressed with high specificity as the cells themselves are producing the desired fluorescence; with good spatial homogeneity when compared to soaking samples in dye; and low sample toxicity.
+
+%TODO Talk about auto Fluoresence
+
+%\subsubsection{Image contrast}
+%\subsubsection{Specificity}
+\subsection{Fluoresence microscopy}
+
+\subsubsection{Illumnination}
+
+%The Merucry Arc lamp is unibiqitous in lamp-based fluorsence mciroscopes.
+The mercury arc lamp became a ubiquitous excitation source through it emitting in visible emission spectrum and more intensely than a standard halogen lamp.
+However, advances in LED and laser technology have caused a technological shift towards these alternative sources.
+Modern LEDs and Lasers are now at the stability and intensity to compete with lamp based sources, with more available intensity and homogeneity.
+
+LED sources are currently behind Lasers in terms of the intensity required for certain imaging applications due to the \emph{etendue} of the emission.
+As etendue is preserved through any system of optics an LED source, having large etendue, will be very photon inefficient to the point of being infeasible for applications such as point-scanning.
+
+Lasers are limited to very specific excitation lines due to the materials used, particular in diode lasers.
+These sources are also optically coherent which causes self-interference in the illumination profile (speckle) and the sample.
+%For wide-field imaging LED sources may be sufficient with an added benefit of being incoherent.
+%Emission wavelengths are selected from lamp and white LED sources using emission filters.
+A super-continuum laser sources uses non-linear effects, typically induced within a long photonic crystal fibre, to produce broad spectrum visible laser light.
+From this spectrum, wavelengths may then be selected using emission filters, as with lamp-based sources and white LED sources.
+This is in contrast to systems with monochromatic lasers as adding more laser lines requires the physical addition of a new laser, making super-continuum versatile.
+% The downside being that t
+However, the intensity of the of the pump laser source is spread into the entire spectrum causing narrow selected emission bands to have relatively low intensities.
+% To add additional emission lines into a system with monochromatic lasers requires adding more laser lines physically, this approach is desirable for making systems versatile.
+% The downside being that the intensity of the of the pump laser source is spread into the entire spectrum causing narrow selected emission bands to have relatively low intensities.
+
+\begin{figure}
+    \centering
+    \includegraphics{./fluorphores/++multi_plot.pdf}
+    \caption{Fluorescence excitation (lines) and emission (filled curves) spectra of the compounds Fluorescein, Texas red, Cy5 (all homocyclic) and DAPI.}
+    \label{fig:fluo_spectra}
+\end{figure}
+
+\subsection{Signal collection}
+
+Once created, the sample image is recorded for analysis and dissemination.
+%Modern camera technology
+For contemporary digital pixel (photosite) arrays are used in wide-field fluoresce microscopes and photo-multiplier tubes (PMT) in \emph{most} laser scanning microscopy.
+
+\subsubsection{Detectors}
+
+Wide-field detectors come in many flavours, all of which exploit semi-conductor physics to convert incident photons into electrons.
+Charge-couple device (CCD) based detectors collect electrons during an exposure and transfer in a serial manner through conversion electronics to create digital images.
+Intensified CDD (ICCD) follow the same protocol but use on-photo-site electron cascading to increase the signal and \emph{intensify} the read image.
+EMCCD detectors transfer their entire frame to a separate conjugate chip which digitises the image for computation.
+As the frame is being transferred the signal is amplified to multiply electrons collected in the conjugate digitisation site and intensify the image as in ICDD.
+Transferring the entire frame reduces the digitalisation time and increase the imaging frame-rate.
+
+CMOS chips directly output a digital value on a per pixel.
+The additional circuity found off-chip in CCD detectors is embedded in each pixel.
+Though this reduces the overall fill factor feasible in each chip, this is recovered using a micro-lens to focus directly onto the active read area of the photo-site.
+The per-photo-site architecture allows for a region-of-interest area to be addressed.
+CMOS detectors made specifically to address quantitative scientific (sCMOS) usage boast having: small pixel sizes; low read noise; large detection arrays; large dynamic range and no multiplicative noise.
+
+%sCMOS
+
+%\subsubsection{Single molecule detection}
+
+
+\subsubsection{Noise}
+
+Adverse noise arises in optical microscopes from several compounding effects.
+The larger the noise level the lower the signal to noise ratio and therefore the more degraded an image will be.
+
+Increasing the integration (exposure) time of the detector will bring the desired signal out of random background noise.
+A detector with a large \emph{quantum efficiency}, (photon to electron conversion efficiency) will be able to overcome noise more quickly.
+The \emph{dynamic range} of the detector is the intensity range at which the weak fluorescent signal can be recorded above background noise.
+The \emph{bit depth} (8 or \SI{16}{\bit} typically) of the detector defines the detectable intensity resolution, which is of particular use for very weak signals.
+
+\begin{figure}
+    \centering
+    \includegraphics{./sensor_chips}
+    \caption{Schematic of how electronic charge is transferred from a CCD array through an amplifier.
+    \textbf{Charge readout per line:} charge is serially transferred along the line being read into a single amplifier.
+    \textbf{Line readout per frame:} once the line is read, the entire frame is shifted down to be read, acting as a shutter.
+    Serial reading through a single amplifier is slow.}
+    \label{fig:sensor_chips}
+\end{figure}
+
+The \emph{dark current} (noise) contribution occurs in the detectors themselves as the semiconductor material produces erroneous electrons from converting thermal phonons.
+Dark current increases linearly with integration time and so chip cooling is recommended.
+\emph{Photon noise} (shot) originates from corpuscular photons arriving at the detector following a temporal Poissonian distribution.
+An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded.
+\emph{Read noise} is rooted in the conversion process of the analogue voltage of electrons, at each pixel, to digital values.
+The intensity response across a detector may also be inhomogeneous, this may be flat-field corrected using a calibration uniform intensity source.
+\footnote{manufacturers for sCMOS cameras apply this correction as standard}
+
+% \begin{figure}
+%     \centering
+%     \includegraphics{./imaging_sensors.pdf}
+%     \caption{Imaging sensors}
+%     \label{fig:imaging_sensors}
+% \end{figure}
+
+\subsection{Limits of fluorescence microscopy}
+
+\subsubsection{Photobleaching}
+
+Fluorescently stained samples will slowly fade in intensity over time as the dye molecules are photochemically destroyed through photobleaching.
+The process occurs typically through photo-oxidation, once the fluorophore is in an excited state it may then energetically fall into a triplet state where it is more likely to permanently bond with oxygen radicals.
+Dye medium can be buffered with scavengers of Oxygen radicals to mitigate the process of bleaching.
+Genetically modified organisms suffer from the photobleaching less as molecules that have bleached are constantly being replaced by newly expressed fluorophore.
+
+Photobleaching can be exploited using FRAP wherein an imaging region is purposefully bleached so that unbleached dye molecules may diffuse into the field of view.
+The rate of return of intensity in the imaging region then gives a measure of diffusion.
+
+% FRET STORM PALM
+%Some molecules have the valuable property of being able to reverse
+
+
+%\paragraph{Reversible photobleaching}
+\subsubsection{Phototoxicity}
+
+Fluorescent dyes can act as photosensitizer during live imaging, causing damage to functionality of the cell.
+Chromophores of fluorescent proteins are shielded by direct contact from molecular oxygen through protein moiety, making fluorescent proteins less phototoxic.
+% It has beeen suggested that acceptable levels of light exposure will be on the order of a solar.
+%Direct and intense light exposure
+%TODO
+
+
+%Photodynamic effwect
+%Intensity induced
+%\subsection{Resolution}
+\section{Three dimensional fluorescence microscopy}
 \subsection{Confocal Microscopy}
 
-Confocal microscopy offers several advantages whilst also being entirely compatible with current fluorescent labelling techniques.
-By placing a small pin hole in the detector arm of a standard epi-fluorescent microscope, out of focus light from above and below the focal plane is rejected\cite{Minsky1957}, see Figure\ref{fig:confocal_optical}.
-This intrinsically allows microscopy in three dimensions, in thick biological samples with an improved axial and lateral resolution improvement over wide-field\cite{Claxton2006}, see Figure\ref{fig:confocal_otf}.
-Confocal microscopy does have its disadvantages too; the pin hole in the detection arm means that the image needs to be constructed by raster scanning a point of light through a sample, which is slow.
-This can be achieved using a Nipkow disc or a pair of conventional galvanometer mirrors whose angle is dependent on input voltage.
-The use of this pin-hole has severe consequences in terms of photon efficiency.
-Firstly, the majority of the photons emitting from the sample are discarded, meaning that to get a good, high contrast image in a wide-field microscope will require a less intense light source.
-Secondly, as mentioned in Section\ref{sec:photobleaching} most confocal microscopes use light intensities in the ``multiple-suns" regime\cite{Stelzer2015}, which as discussed, is likely to be an unnatural level of exposure.
+The Marvin Minksy proposed the first confocal microscope in the late 1950s to image deep into brain tissue.
+A pinhole is placed in a conjugate image plane in the detection path which precludes out-of-focus light from being detected.
+The narrower the pinhole the better the optical sectioning, though sacrificing the received signal.
 
-%%PEDRO
+In Minky's microscope the sample was mechanically scanned to build a volumetric image.
+By mechanically scanning the imaging speed is greatly reduced but to the speed of responses of the stage, the maximum speed of travel of the stage and the relaxation time of the stage.
+Specimens are prone to spatial shifts during scanning as well which causes distortions in the final image.
 
-Three-dimensional imaging of anatomy in thick biological samples provides valuable data for developmental biology studies.
-Tomographic techniques that generate 3D reconstructions from 2D images such as computed tomography (CT) and magnetic resonance imaging (MRI) are essential in medical applications to visualize morphology in large tissues and organs.
-CT and especially micro-CT can achieve micron-scale resolution using certain contrast agents, however the high doses of radiation used make this unsuitable for repeated experiments on a biological sample.
-Micro-MRI can also achieve resolution in the micron scale, however the cost and size of MRI instruments can be prohibitive for many applications[21].
+Modern confocal microscopes use galvanometric scanning mirrors to sweep a laser beam through the sample to build an image.
+Though faster than mechanical scanning, video-rate scanning confocal microscopy is only viable using resonant scanning mirrors and high power lasers.
 
-Furthermore, neither of these techniques can exploit the plethora of information that can be extracted through fluorescence microscopy.
-Several light microscopy techniques developed in the last few decades address the shortcomings of these tomographic techniques:
-High Resolution Episcopic Microscopy (HREM) [36] creates volume data sets of thick tissue samples at high resolution.
-The technique is based on histological imaging, as the specimen is embedded in a fluorescent resin block and is imaged as it is being sectioned (the word episcopic comes from images taken directly from the cutting surface of the resin
-block) [35].
-Images are taken from the block face so they are inherently digitally aligned, and the depth resolution is determined by the number of sections. HREM requires histological sample preparation and therefore cannot be used with live samples.
-%%PEDRO
+% \subsubsection{Spinning disk confocal microscopy}
+%
+% The speed of Single point confocal microscopy can be greatly improved by producing multiple points.
 
-\subsubsection{Two Photon Microscopy (2P)}
-%Typical epi-fluorescent microscopy lacks optical sectioning due to out of focus light mixing with in focus light.
-%This additional light is an effective noise which is ideally omitted.
-In confocal microscopy out of focus light is removed by using a pinhole in the focal plane; the fluorescent dye in the out of focus areas of the sample will still be exposed to this out of focus light and so photo bleaching still occurs but with there is better optical sectioning\cite{Helmchen2005}.
-Two photon microscopy optically sections by exploiting fluorophores which only emit when two photons are present for excitation, for this to occur the local photon density has to be high and so the focal point is the only place where fluorescent emission is likely to occur.
+%\subsubsection{Principles}
+%\paragraph{Spinning disk confocal microscopy}
+\subsection{Two photon (2P) microscopy}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.4\linewidth]{confocal_optical.pdf}
-\caption[Confocal microscope principle]{Confocal microscopes reject out of focus light in the detection path, improving axial and lateral resolution for the sake of speed of image acquisition and photo-toxicity.}
-\label{fig:confocal_optical}
-\end{figure}
+% 2P microscopy is a part of a breed of techniques called non-linear microscopes which exploit the quantum nature of fluorophores.
+% 2P imaging provides the most efficient signal generation.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{confocal_otf}
-	\caption[Confocal resolution improvement]{Widefield versus confocal point spread function demonstrating axial and lateral resolution improvements\cite{Claxton2006}}
-	\label{fig:confocal_otf}
-\end{figure}
+The photon rejecting pin-hole of confocal microscopes can be entirely avoided by using infra-red laser sources.
+Exciting a fluorophore to an excited state requires a quantised amount of energy, which is typically supplied by a single photon.
+Two photons, each with double the desired wavelength, will contain the requisite amount of energy to cause the same excitation.
+For this event to occur there need to be a high photon density surrounding the fluorophore.
+In a laser scanning system, this means that the beam focus of the \gls{objective lens} is the most likely place for fluorescence to occur, with a sharp decline in axial intensity axially, providing optical sectioning.
 
-%%PEDRO
-Confocal Fluorescence Microscopy [2] enables high resolution imaging by rejecting outof- focus light from the region of interest using a pinhole in a plane conjugate to the image plane.
-This technique is effective at generating volumetric data non-invasively with optical sectioning for fluorescently labelled specimens, however it is limited to thicknesses
-of up to a few hundred micrometers.
-Confocal microscopy works by exciting fluorescent molecules; therefore, it cannot detect signals from unlabeled tissue surrounding the fluorescent area.
-Selective Plane Illumination Microscopy (SPIM) [16] can generate 3D data from biological specimens (up to a few millimeters in size) non-invasively with optical sectioning at
-high resolution.
-This is achieved by illuminating the sample with a thin sheet of light in the focal plane of the detection objective (generated by a cylindrical lens or by a set of scanning mirrors [19, 18],and imaging the resulting fluorescence from the excited region in an orthogonal direction.
-The penetration depth of SPIM is fundamentally limited by tissue scattering, which can be partially overcome by introducing additional excitation and detection optics [32].
-This increases the complexity and cost of implementation to image thick samples.
+By using 2P excitation greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced photo-toxicity, making the technique very useful for non-invasive live imaging.
 
-Optical Coherence Tomography (OCT) [15] allows non-invasive cross-sectional imaging of in-vivo biological samples by using low-coherence interferometry.
-A fiber optic Michelson interferometer is used to illuminate the sample and collect the reflected light from tissue, which is then combined with the reflection from the reference mirror.
-An 3 interference signal is only detected when the group delay of the sample and the reference arm are almost matched (close to equal time-of-flight), and this signal falls off steeply with delay mismatch due to the low-coherence nature of the light source.
-This allows the longitudinal location of the reflected tissue signal to be detected with high resolution.
-OCT has a limited depth of penetration due to absorbing properties of tissue, therefore it is often not suitable for whole organism imaging except in early stages of embryonic development [31].
-Optical Projection Tomography was first proposed by Sharpe in 2002 [30]; it uses visible light to image and create volumetric data of transparent (naturally or artificially) mesoscopic objects (1 - 10 mm) at micron-level resolution.
-OPT is based on well-documented computerized tomography techniques [17] in which a set of images (we will refer to these as projections) of an object are acquired with a camera at discrete steps over a full rotation.
-A cross-sectional stack of slices from the original object is reconstructed using a back-projection algorithm from the projection images.
-OPT is non-invasive (although it may require fixed samples), and it can image in two different modalities: emission OPT (eOPT) and transmission OPT (tOPT).
-In eOPT, a fluorescent sample is excited using a wide-field illumination source.
-The photons emitted by a fluorophore of interest are collected by a detector with an appropriate filter to reject the incident illumination.
-In tOPT, a broadband source with a diffuser and a collimator lens located on the optical axis (as shown in figure 1) directs quasi-collimated, uniform illumination onto the sample.
-The intensity collected at the camera is a function the amount of light absorbed by the sample.
-In other words, the image recorded by the detector is a projection of the attenuated radiation that traverses the sample.
-These two modalities can work together to display fluorescent signals in the context of the whole organism anatomy.
-OPT attempts to address the scale gap between the tomographic techniques described above (samples larger than 10 mm), and light microscopy techniques (samples smaller than 1 mm) to image biological samples in the 1-10 mm regime.
-%%PEDRO
+\subsubsection{Drawbacks}
 
+Water, which is abundant in biological specimens, has a large absorbance in the infrared spectrum; combined with the high energy needed to create the 2P effect at the focal point, this can cause localised heating which can in-turn be damaging to specimens and cause optical aberrations.
+Localised heating can be mitigated by moving the beam sufficiently quickly such that significant heating does not occur.
+Using infrared excitation also means that the 2PM has a much reduced theoretical lateral resolution when compared to visible confocal microscopy.
+Finally, infrared-red laser sources are prohibitively expensive and, until recently, reliable turn-key solutions were not viable.
 
-\subsection{Selective Plane Illumination Microscopy Principles}
-By using orthogonal illumination and detection (as in Figure\ref{fig:huisken_spim_setup}) \textbf{S}elective \textbf{P}lane \textbf{I}llumination \textbf{M}icroscopy is fast and less photo-toxic than confocal microscopy and two photon with only slightly lower lateral and axial resolution.
-A typical diode laser in a SPIM will supply up to \SI{100}{\milli\watt} in a beam waist of \SI{3}{\micro\meter}  with an area of \SI{\sim7}{\micro\meter\squared}  which is \SI{\sim14}{\micro\watt\per\meter\squared} meaning its toxicity is in that of the ``single sun" regime.
-Depending on the field of view SPIM can be as little as 500 times faster than confocal as it does not need to acquire its signal by raster scanning, point-wise.
-SPIM has permitted the studies of \textit{in vivo} whole samples typically for developmental biology\cite{Huisken2004,Verveer2007a} with minimal photo-toxic repercussions.
-Its advantages have been successfully demonstrated where the several day development embryos of \textit{Drosophila} \cite{Huisken2004} and Zebrafish\cite{Mickoleit2014} have been observed.
+\subsection{Structured illumination microscopy}
+
+In SIM, the sample is illuminated with a periodic sinusoidal pattern using a fast widefield microscope.
+The mixing of this illumination frequency with the spatial frequency of the sample means that additional resolution can be extracted both in $xy$ and $z$.
 
 \begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{huisken_spim_setup}
-\caption[Single Plane Imaging Microscope principle]{Diagram demonstrating the geometrical configuration of illumination and objective\cite{Huisken2009}.}
-\label{fig:huisken_spim_setup}
+    \centering
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[height=3cm]{./sim/otf}
+        \caption{OTF}
+        \label{fig:sim_otf}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[height=3cm]{./sim/third_flower}
+        \caption{Third flower}
+        \label{fig:sim_third_flower}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.25\textwidth}
+        \centering
+        \includegraphics[height=3cm]{./sim/full_flower_alt}
+        \caption{Sim full flower}
+        \label{fig:sim_full_flower}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.15\textwidth}
+        \centering
+        \includegraphics{./sim/xy_coordinates}
+        % \caption{Sim full flower}
+        \label{fig:sim_full_flower}
+    \end{subfigure}
+    \caption{
+        In (\subref{fig:sim_otf}), the circular area corresponds to the passband of the \gls{objective lens}, the edge being the frequency cut-off.
+        The raw data in (\subref{fig:sim_otf}) consists of superposed original image information
+        positioned at three different origins.
+        Once delineated, the high-resolution information can be relocated to the correct position, resulting in a wider pass-band, (\subref{fig:sim_third_flower}).
+        The process is repeated three times to isotropically fill the available frequency space by rotating the illumination patterns, (\subref{fig:sim_full_flower}).
+        }
+    \label{fig:sim_flowers}
 \end{figure}
 
-\subsubsection{Modalities}
+As discussed, an \gls{objective lens} acts as a band pass filter for low-frequency information.
+From the \emph{Convolution Theorem} (see Appendix \ref{appendix:convolution_theorem}), the multiplication of two signals in real-space is the convolution of the two Fourier transformed signals in frequency space and, importantly, visa versa -
+the convolution of two signals in real space is the multiplication of the Fourier transformed signals in frequency space.
+Meaning that projecting a sinusoidal pattern in real space will convolve the Fourier transform of the sample signal in frequency space with the Fourier transform of the sinusoid signal.
+The Fourier transform of a sinusoid is three delta functions at -1 0 and +1 with a separation governed by the pattern frequency: $k_1 = {2\pi}{\lambda}$.
+And so, before the imaging system can band-pass the signal, the illumination pattern has forced three copies of the original image into the pass band, shifted by the vectors $k_1$ and $k_{-1}$ such that high frequency information outside of the pass band has been cumulated.
+The overlaid information is then computational unmixed by imaging with three different sinusoid phases to delineate the \SI{-1}{}, \SI{0}{} and \SI{+1}{} orders or reconstruction, see Figure \ref{fig:sim_flowers}.
 
-Orthogonal illumination can be created in two modalities.
-A cylindrical lens can be used to image a light source onto a sample as a thin sheet of light.
-\textbf{d}igitally \textbf{S}canned \textbf{L}ight sheet \textbf{M}icroscopy uses galvanometer mirrors to rapidly scan a thin light source through a sample\cite{Keller2008}.
-Using cylindrical lenses to create a light sheet is implicitly faster than digitally scanned light sheets, however the bottleneck with each is due to the exposure time of the camera. %High frame rates produce low contrast.
-A galvanometer mirror can oscillate at tens of kilohertz which is a hundred fold faster than typical sCMOS cameras can capture.
-The major advantage of a cylindrical lens is that it is cheaper and more easily aligned than its counterpart the galvanometer scan mirror, which is why projects like \textit{OpenSPIM}\footnote{\textit{OpenSPIM} is a project to bring affordable light sheet microscopy to scientists who have little or no experience with optics, engineering or hardware interfacing.
-Projects like this and \textit{OpenSIM} ensure that the technology is freely available to benefit everyone so that biological and medical understanding can be furthered efficiently and universally.}\cite{Gualda2013,Pitrone2013} make use of cylindrical lenses to ensure SPIM is more available and affordable to lay builders and users.
-For the expense and technical ability needed for dLSM it does offer advantages such as better optical sectioning, a more homogeneous field of view and crucially the ability to positively exploit effects of the system, such as confocal slit scanning.
+\subsubsection{Optical sectioning SIM}
 
-\subsubsection{Confocal Slit Scanning} %TODO remove
+Three dimensional information can be extracted by manipulating frequency space even further.
+For instance, the \emph{missing cone} (see Figure \ref{fig:sim_axial}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
+In frequency space this pushes the region of the missing cone into axial resolution maxima of the OTF support (toridal), giving three dimensional structure.
+By adding a third beam along the optical axis to interfere with the sinusoidal pattern, a further axial sinusoidal pattern can be created.
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics{./sim/axial_otf}
+        \caption{Widefield OTF support}
+        \label{fig:sim_axial_otf}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics{./sim/axial_2_beam_2d}
+        \caption{2-beam SIM at \SI{2}{\times}$k_0$\\2D reconstruction}
+        \label{fig:sim_axial_2_beam_2d}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics{./sim/axial_2_beam_3d}
+        \caption{2-beam SIM at \SI{1.5}{\times}$k_0$\\3D reconstruction}
+        \label{fig:sim_axial_2_beam_3d}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics{./sim/axial_3_beam}
+        \caption{3-beam SIM at \SI{2}{\times}$k_0$\\3D reconstruction}
+        \label{fig:sim_axial_3_beam}
+    \end{subfigure}
+    \caption{
+    Axial view of 2 and 3 beam illumination in SIM.
+    Black points in (\subref{fig:sim_axial_otf}) represent lateral frequency mixing from 2-beam illumination, the grey points represent axial frequency mixing from 3-beam illumination.
+    (\subref{fig:sim_axial_otf}) shows the lateral extent of 2-beam SIM at maximum (\SI{2}{\times}) excitation frequency, with no added axial resolution.
+    (\subref{fig:sim_axial_2_beam_3d}) shows the lateral extent of 2-beam SIM at (\SI{1.5}{\times}$k_0$), giving reduced resolution but providing increased axial resolution.
+     (\subref{fig:sim_axial_2_beam_3d}) shows the lateral and axial extent of 3-beam SIM, doubling in resolution axially and laterally \cite{gustasson}.
+     The thick black outlines show the original OTF support of the widefield image.    %
+    % Resulting OTF in (a, c) two- and (b, d) three-beam illumination. The black spots in
+    % the microscope’s widefield OTFs (a: two-beam and b: three-beam) show the origins of the
+    % shifted object information copies.When these copies are shifted back (c, d) to their correct
+    % positions, the effective OTF increases in size. The black outline shows the original widefield
+    % OTF cut-off border. The borders of the shifted OTFs are shown in gray. The corresponding
+    % illumination patterns are shown in Figure 9.2a,b
+    }
+    \label{fig:sim_axial}
+\end{figure}
 
-Confocal slit scanning is a technique which heavily exploits the scanning nature of dLSM.
-sCMOS cameras in SPIM systems expose all the pixels equally in a frame, a shutter then rolls exporting all the pixel values so that each pixel of the current frame is synchronised and the final image is not torn or sheared.
-Confocal slit scanning exposes several rows of camera pixels with roughly equal width to  the scanning laser beam.
-This area of active pixels is rolled synchronously with the movement of the laser scanning.
-The result is a virtual slit that confocally improves the resolution and contrast of a captured image though potentially needing more photons to create an image of the same overall intensity\cite{Baumgart2012}.
 
-\subsubsection{Exotic illumination}
+% After separation, the information can be shifted back to
+% its respective position, resulting in an expanded accessible frequency area (c). To expand
+% the resolution in the object plane not only along one direction but also isotropically,
+% the illumination pattern is subsequently rotated to carry out the image acquisition with
+% several illumination pattern orientations (d).}
 
-SPIM is fundamentally limited in terms of field of view and axial resolution when using classical illumination.
-A typical light sheet created using a cylindrical lens or virtually will have a beam waist, a section along the propogating wave where its thickness is its smallest.
-As such, light used to optically section a sample will not propagate uniformly and this thickness expands more steeply the narrower the beam waist is\cite{Silfvast2004}.
-Betzig et al demonstrated very successfully how Bessel beam illumination can be exploited.
-By creating an annular ring of light in the Fourier plane a narrow propagating and self reconstructing light sheet can be produced\cite{Chen2014}.
-Crucially the beam waist and extension of this type of illumination profile has no dependence, so the field of view homogeneity can be maintained whilst squeezing the light sheet to a diffraction limited thickness.
-Bessel beams can be created online using spatial light modulators, as well as offline using phase masks.
+% \subsubsection{Drawbacks}
 
-\paragraph{Spatial light modulators}~
+\subsection{Selective plane illumination microscopy}
 
-A \textbf{S}patial \textbf{L}ight \textbf{M}odulator is a digitally addressable two dimensional surface which can control either phase or intensity of incident light at any of its pixels.
-To this end one can create dynamic structure in illumination, which would be very difficult classically. %However, this bastion of optical manipulation is also limited.
-The pixel nature of an SLM means that the reflected light will suffer from artefactual noise.
-To correct for this, incident light impinges the SLM at a shallow angle (to ensure the image is not sheared, Hamamatsu recommends a maximum \(5^o\) angle)  where the exit light does not follow the optical path through the remainder of the system.
-Instead this ``zero order" light is absorbed by a beam block, and the desired modified wave front is steered using a projection on the SLM.
+The techniques as introduced above all provide volumetric imaging through reconstruction.
+Structured illumination techniques require computation reconstruction which is prone to artefacts.
+Confocal scanning is slow and generally lossy with signal.
+Light-sheet microscopy offers reconstruction free (SIM), fast, low photo-toxic volumetric imaging.
+The application of light-sheet microscopy is the focus of this thesis and will be covered in detail in the next following chapter.
 
-Not any phase or intensity pattern can be projected either, each pixel will have a limited pitch with quantised steps through its dynamic range.
-This means that if two neighbouring pixels need very large phase differences compared to the full dynamic range, sample issues may cause incident light to behave unpredictably.
-
-SLMs are typically made using liquid crystals, nematic or ferroelectric.
-Ferroelectric liquid crystals are very fast (\SI{\sim 500}{\hertz}\cite{Meadowlark2015}) but are limited to binary phase or intensity.
-Nematic liquid crystals can rotate proportionate to electric field voltage allowing continuous phase modulation but are slow in comparison (\SI{\sim 60}{\hertz}\cite{Hamamatsu2015}).
-Liquid crystals can also suffer photo damage, though advances in coating technology and liquid crystal chemistry have set the intensity damage threshold to limits outside of those used by visible light microscopy; liquid crystals however are still susceptible to light with wavelengths outside of typical operations.
-Wavelengths below \SI{400}{\nano\meter} being damaging for Hamamatsu's SLMs for instance\cite{Hamamatsu2015}.
-
-\subsubsection{Tunable Lens Scanning}\label{sec:tunable}
-
-A tunable lens is a device which can perturb the focus of a deformable lens, usually liquid (deformed by electro-wetting) or plastic (mechanical deformation).
-The change in lens curvature affects the focal length of the tunable lens.
-Using a pair of tunable lenses allows sufficient degrees of freedom to be able to control both the position and extension of the light sheet independently.
-Changing the focal length of the lenses so that the light is collimated but the magnification of the excitation beam at the back aperture (which controls the NA) of the objective is larger, this will extend the beam (increasing the beam waist), whilst changing the focal lengths (so that the excitation light at the back aperture is convergent or divergent) will reposition the beam waist of the light sheet further away or closer to the objective\cite{Chmielewski2015}.
-
-This level of fine control enables one to circumvent the typical trade off between light sheet extension and thickness.
-By stitching several thin light sheet images obtained at different depths in the sample, creates an overall higher resolution image for the sacrifice of speed and photo-toxicity.
-Changing the position of the light sheet (when its extension is short) as it is scanned through the sample means one can \textit{bend} the light sheet around an area of interest, increasing resolution of key components of a sample and greatly reducing overall photo-toxic effects.
-
-%TODO figure?
+% In light sheet microscopy, the sample is illuminated with a thin sheet of light to obtain optical sections.
+% The microscope generally consists of two orthogonal optical axes: one for generating the light sheet for illumination, and the other for widefield detection of the emitted fluorescence.
+% The two axes are aligned such that the illuminating light sheet is positioned in the focal plane of the detection unit.
+% As the specimen is illuminated with a sheet of light, the entire focal plane of the detection arm is illuminated providing instant optical sectioning as opposed to the slow point scanning used in confocal microscopy (Chapter 5).
