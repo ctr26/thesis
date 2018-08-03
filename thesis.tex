@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,withindex,chapter]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -105,7 +105,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapters/intro/chapter}
+  \includeonly{Chapters/principles/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -126,6 +126,7 @@
 \listoffigures
 \listoftables
 \printglossaries
+% \printindex
 %\printnomenclature
 
 % ******************************** Main Matter *********************************
@@ -133,7 +134,8 @@
 
 
 %TECHNOLOGY FIRST
-\include{Chapters/intro/chapter} %1
+\include{Chapters/intro/chapter} %0
+\include{Chapters/principles/chapter} %1
 \include{Chapters/literature/chapter} %2
 \include{Chapters/design/chapter} %3
 \include{Chapters/homography/chapter} %4
@@ -193,6 +195,10 @@
 \end{appendices}
 
 % *************************************** Index ********************************
-\printthesisindex % If index is present
+
+% \printthesisindex % If index is present
+% \printindex
+\printthesisindex
+
 \immediate\write18{texcount -merge -sub=section \jobname.tex > count.txt}
 \end{document}

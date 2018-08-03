@@ -1,5 +1,5 @@
 ;; xindy style file created by the glossaries package
-;; for document 'thesis' on 2018-8-2
+;; for document 'thesis' on 2018-8-3
 
 ; required styles
 
@@ -294,6 +294,9 @@
 (define-crossref-class "see" :unverified )
 (markup-crossref-list :class "see"
    :open "\glsseeformat" :close "{}")
+(define-crossref-class "seealso" :unverified )
+(markup-crossref-list :class "seealso"
+   :open "\glsxtruseseealsoformat{" :close "}")
 
 ; define the order of the location classes
 (define-location-class-order (
@@ -304,7 +307,7 @@
    "Roman-page-numbers"
    "Alpha-page-numbers"
    "Appendix-page-numbers" 
-   "see" ))
+   "see"  "seealso"))
 
 ; define the glossary markup
 

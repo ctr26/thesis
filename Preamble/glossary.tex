@@ -1,30 +1,181 @@
-%!TEX root = ../../thesis.tex
-%!TEX enableSynctex = true
+%!TEX root = ../thesis.tex
 
-\makeglossaries                           % activate glossaries-package
+% \usepackage{makeidx}
+
+\makeglossaries
+\makeindex
 
 \setabbreviationstyle[acronym]{long-short}
+\glssetcategoryattribute{acronym}{dualindex}{true}
+\glssetcategoryattribute{general}{dualindex}{true}
 
 % Symbols
 
 \glsxtrnewsymbol[description={Field of View}]{FOV_math}{\ensuremath{FOV}}
 \glsxtrnewsymbol[description={Half angle of the entrance pupil of a lens}]{alpha}{\ensuremath{\alpha}}
 \glsxtrnewsymbol[description={Bessel function of the first kind}]{J_1}{\ensuremath{J_1}}
+\glsxtrnewsymbol[description={Fluorescence molecule lifetime as a half life}]{tau}{\ensuremath{\tau}}
 % Glossary
 
 \newglossaryentry{4f}{
     name={4f},
-    description={Two lens system with each plane separated by a focal length $f$}}
+    description={Two lens system with each plane separated by a focal length $f$}
+}
 \newglossaryentry{primary imaging plane}{
-    name={Primary imaging plane},
-    description={The first plane where a true image is relayed.}}
+    name={primary imaging plane},
+    description={The first plane where a true image is relayed.}
+}
 \newglossaryentry{objective lens}{
-    name={Objective lens},
-    description={The collecting lens nearest the sample}}
-% \glsaddall
+    name={objective lens},
+    description={The collecting lens nearest the sample}
+}
+\newglossaryentry{specificity}{
+    name={specificity},
+    description={The ability of fluorescent imaging to label specific aspects of a sample}
+}
+\newglossaryentry{depth of field}{
+    name={depth of field},
+    description={The axial range about a lens' focal plane where an image sample will continued to keep focus.}
+}
+\newglossaryentry{airy disk}{
+    name={Airy disk},
+    description={Theoretical lateral intensity distribution of a point emitter}
+}
+\newglossaryentry{nyquist sampling theory}{
+    name={Nyquist sampling theory},
+    description={The resolution of the detector required to resample the image information faithfully is twice the..}
+}
+\newglossaryentry{stokes shift}{
+    name={stoke shift},
+    description={The red shift in colour of fluorescent molecules when emission light is compared to excitation light.}
+}
+\newglossaryentry{autophagy}{
+    name={autophagy},
+    description={The mechanism by which cells disassemble.}
+}
+\newglossaryentry{lysosome}{
+    name={lysosome},
+    description={Organelle within the cell where enzymes are kept for degrading molecules}
+}
+\newglossaryentry{transfection}{
+    name={transfection},
+    description={The process by which external matter is inserted into the cell}
+}
+\newglossaryentry{etendue}{
+    name={etendue},
+    description={A property of propagating light which is conversed and is defined as the product solid angle of of the system's entrance pupil and the area}
+}
+\newglossaryentry{coherent}{
+    name={coherent},
+    description={The distance over which a photons from the same source will stay in phase}
+}
+\newglossaryentry{super-continuum laser}{
+    name={super-continuum laser},
+    description={A source of white laser light, achieved using non-linear effects in a photonic crystal fibre and a pump laser.}
+}
+\newglossaryentry{pixel}{
+    name={pixel},
+    description={Picture element}
+}
+\newglossaryentry{photosite}{
+    name={photosite},
+    description={Single light recording element of an array forming an imaging detector}
+}
 
+\newglossaryentry{wide-field}{
+    name={wide-field},
+    description={The entire area of interest is exposed to light and recorded at once}
+}
+\newglossaryentry{quantum efficiency}{
+    name={quantum efficiency},
+    description={The photonic to electron conversion rates, the \emph{yield} of the detector}
+}
+\newglossaryentry{dynamic range}{
+    name={dynamic range},
+    description={TODO}
+}
+\newglossaryentry{bit depth}{
+    name={bit depth},
+    description={The resolution in bits of a digitally converted measurand}
+}
+\newglossaryentry{dark current}{
+    name={dark current},
+    description={....}
+}
+\newglossaryentry{read noise}{
+    name={read noise},
+    description={...}
+}
+\newglossaryentry{photon noise}{
+    name={photon noise},
+    description={...}
+}
+\newglossaryentry{poissonian distribution}{
+    name={poissonian distribution},
+    description={...}
+}
+\newglossaryentry{fluorophore}{
+    name={fluorophore},
+    description={Fluorescent molecule: chromophore, fluorochrome}
+}
+\newglossaryentry{photosensitier}{
+    name={photosensitier},
+    description={Molecules which produce chemical change is surrounding molecules using photon energy}
+}
+\newglossaryentry{confocal microscope}{
+    name={confocal microscope},
+    description={A laser scanning microscope wherein an adjustable pinhole is placed at a conjugate imaging plane to control axial and spatial resolution of the reconstructed image.}
+}
+\newglossaryentry{galvanometric scanning mirrors}{
+    name={galvanometric scanning mirrors},
+    description={Voltage controlled mirrors where voltage is proportional to angle.}
+}
+\newglossaryentry{resonant scanning mirrors}{
+    name={resonant scanning mirrors},
+    description={Voltage controlled mirrors driven at their resonant frequency to increase the maximum viable scanning speed.}
+}
+\newglossaryentry{photobleaching}{
+    name={photobleaching},
+    description={The ensemble reduction in fluorescent intensity as individual \gls{fluorophore}s lose the ability to fluoresce}
+}
+\newglossaryentry{photo-toxicity}{
+    name={photo-toxicity},
+    description={Damage caused to a biological sample due to light}
+}
+\newglossaryentry{aberration}{
+    name={aberration},
+    description={Distortions caused in an image by imperfect optics in the imaging system}
+}
+\newglossaryentry{Fourier transform}{
+    name={Fourier transform},
+    description={Coordinate transform to convert points in real space into points in frequency space}
+}
+\newglossaryentry{missing cone}{
+    name={missing cone},
+    description={The cone of space missing in the 3D \gls{OTF}}
+}
+\newglossaryentry{super-resolution}{
+    name={super-resolution},
+    description={Imaging at resolutions beyond the diffraction limit}
+}
+\newglossaryentry{light-sheet}{
+    name={light-sheet},
+    description={A thin plane of light}
+}
 % Acronyms
 
 \newacronym{FOV}{FOV}{Field of View}
 \newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
 \newacronym{NA}{NA}{Numerical Aperture}
+\newacronym{SNR}{SNR}{Signal to Noise ratio}
+\newacronym{CCD}{CCD}{Charge-coupled device}
+\newacronym{ICCD}{ICCD}{Intensified Charge-coupled device}
+\newacronym{Laser}{Laser}{Light Amplification by Stimulated Emission}
+\newacronym{LED}{LED}{light Emitting Diode}
+\newacronym{EMCCD}{EMCCD}{Electron-Multiplying Charge-Coupled Device}
+\newacronym{CMOS}{CMOS}{Complementary Metal-Oxide-Semiconductor}
+\newacronym{FRAP}{FRAP}{Fluorescence Recovery After Photobleaching}
+\newacronym{2P}{2P}{2-Photon}
+\newacronym{SIM}{SIM}{Structured Illumination Microscopey}
+\newacronym{OTF}{OTF}{Optical Transfer Function}
+% \newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}

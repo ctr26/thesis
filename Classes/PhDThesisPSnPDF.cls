@@ -29,7 +29,7 @@
 
 % ****************************** Define index **********************************
 \newif\ifPHD@index\PHD@indexfalse
-\DeclareOption{index}{\PHD@indextrue}
+\DeclareOption{withindex}{\PHD@indextrue}
 
 % ******************************* Font Option **********************************
 \newif\ifsetFont\setFontfalse                 % Font is not set
@@ -1048,11 +1048,17 @@ wish to left align your text}
 %\addcontentsline{toc}{chapter}{\nomname}
 }
 
+% ******************************* Egigraph *********************************
+
+\RequirePackage{epigraph}
+\setlength{\epigraphrule}{0pt}
 
 % ******************************* Nomenclature *********************************
 % \RequirePackage[nomain,acronym,xindy,toc]{glossaries}
 % \RequirePackage[acronym]{glossaries}
-\RequirePackage[acronym,toc,symbols]{glossaries-extra}              % use glossaries-package
+\RequirePackage[xindy,acronym,toc,symbols]{glossaries-extra}              % use glossaries-package
+% \RequirePackage{makeidx}
+% \usepackage[xindy,abbreviations,nomain,nonumberlist]{glossaries-extra}
 % \makeglossaries
 % \makeglossaries
 % \makeglossaries
@@ -1087,6 +1093,10 @@ wish to left align your text}
     \renewcommand{\printnomencl}{}
     \renewcommand{\printthesisindex}{}
     \renewcommand{\printglossaries}{}
+    % \renewcommand{\epigraph}{\iffalse [#1] \fi}{\iffalse [#1] \fi}
+    % \renewcommand{\epigraph}{\textcolor{white}{[#1]}}{\textcolor{white}{[#1]}}
+    % \renewcommand{\epigraph}{}
+
 \else
     \defineChapterfalse
 \fi

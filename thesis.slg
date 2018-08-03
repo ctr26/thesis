@@ -1,2 +1,22 @@
-Warning: File 'thesis.syg' is empty.
-Have you used any entries defined in glossary 'symbolslist'?
+;; This logfile was generated automatically by `xindy'
+;; at 02.08.2018  22:28:21
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/R4m00xlDy0", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/SDLLdcBCQo", Output: "thesis.sls"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+Letter-group: "€´È¤€" -> "A"
+Letter-group: "¬_1" -> "J"
+Letter-group: "Ú€à" -> "T"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "€´È¤€" -> "A"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "¬_1" -> "J"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "Ú€à" -> "T"
