@@ -31,7 +31,7 @@ The concepts presented here will be elementary and recalled in later chapters.
 %Infinity corrected system.
 The fundamental concept of a light microscope requires a set of lenses to relay and magnify the image of a remote point using light as a measurand.
 % The key driver of the imaging aspect of an optical microscope is a pair of lenses.
-The sample is located in the front focal plane of the \emph{\gls{objective lens}} and the resultant image is focused onto the \emph{\gls{primary imaging plane}}, see Figure \ref{fig:magnification}.
+The sample is located in the front focal plane of the \emph{\gls{objective lens}} and the resultant image is focused onto the \emph{\gls{primary imaging plane}}, see \figurename~\ref{fig:magnification}.
 Light emitted by a point $o_1$ at the sample plane is transformed into a parallel ray bundle by the \gls{objective lens}, which travel parallel to the optical axis.
 The tube lens then refracts the ray bundle back down onto its focus.
 The ray bundle for an a point away $o_2$ from the optical axis can be determined by the \emph{chief ray} ($r_c$) which passes through the optical centre of the objective unperturbed, and the \emph{marginal ray} ($r_m$) travelling parallel to the optical axis which crosses the back-focal point of the \gls{objective lens}.
@@ -41,7 +41,7 @@ Both of these rays propagate in parallel within the \emph{infinity space} betwee
 \index{magnification}
 \index{ray optics}
 
-Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrarily, though typically the back focal points are matched to create a \emph{\gls{4f} system}, see Figure \ref{fig:magnification}.
+Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrarily, though typically the back focal points are matched to create a \emph{\gls{4f} system}, see \figurename~\ref{fig:magnification}.
 
 The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}. %TODO not quite right
 $o_1'$
@@ -59,7 +59,7 @@ The image size ($I$) in the primary image plane is set by the distance between t
 \begin{figure}
     \centering
     \includegraphics{./magnification}
-    \caption{}
+    \caption{Ray diagram of a two lens magnification system.}
     \label{fig:magnification}
 \end{figure}
 
@@ -165,7 +165,7 @@ The resulting distance is Rayleigh's criterion for resolution which provides a l
 %Coherent and incoherent
 \subsubsection{Axial resolution}
 
-The \Gls{airy disk} describes the in-plane of lateral intensity distribution, with an analogous analytical function propagating axially.
+The \Gls{airy disk} describes the in-plane lateral intensity distribution, with an analogous analytical function propagating axially.
 Once again, by comparing the the distance to the first zero in intensity along $z$ an analytical definition can be formed:
 
 \begin{align}
@@ -286,11 +286,11 @@ Upon being exciting by incident light, an electron within a fluorescent molecule
 Once in the higher excited state ($S_1$), the electron will exist there for an average lifetime (\gls{tau}), slowly losing energy to the surroundings through vibrations and molecular collisions.
 Once the electron has \emph{trickled} down the energy levels, it will return to the ground state ($S_0$) emitting a photon with an energy less the amount of energy lost when in the excited state, the \emph{\Gls{stokes shift}}.
 Electrons may also return to the ground state through molecular collisions or an \emph{intersystem} crossing whereby the electron finds a path via transient states with lower energy requirements, the \emph{triplet state}.
-See Figure \ref{fig:jablonski_triplet_new}
+See \figurename~\ref{fig:jablonski_triplet_new}
 
 %\subsubsection{Fluoresence spectra}
 Multiple (split) energy levels slightly above the ground and excited states then give a distribution of multiple different emission wavelengths.
-Fluorescent molecules therefore have excitation and emission spectra rather than discrete excitation and emission lines, see Figure \ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
+Fluorescent molecules therefore have excitation and emission spectra rather than discrete excitation and emission lines, see \figurename~\ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
 An important advantage of fluorescence microscopy is labelling \emph{\gls{specificity}}, which refers to the ability to accurately label markers, features or molecules within a biological sample.
 Multiple labels in different spectral windows can further elucidate how labelled entities interact within the sample.
 
@@ -391,9 +391,9 @@ CMOS detectors made specifically to address quantitative scientific (\gls{sCMOS}
 
 Adverse noise arises in optical microscopes from several compounding effects.
 The larger the noise level the lower the \gls{SNR} and the more degraded the recorded image will be.
-
 Increasing the integration (exposure) time of the detector will bring the desired signal out of random background noise.
-A detector with a large \emph{\gls{quantum efficiency}}, (photon to electron conversion efficiency) will be able to overcome noise more quickly.
+A detector with a large \emph{\gls{quantum efficiency}},%(photon to electron conversion efficiency)
+will be able to overcome noise more quickly.
 The \emph{\gls{dynamic range}} of the detector is the intensity range at which the weak fluorescent signal can be recorded above background noise.
 The \emph{\gls{bit depth}} (8 or \SI{16}{\bit} typically) of the detector defines the detectable intensity resolution, which is of particular use for very weak signals.
 
@@ -470,7 +470,7 @@ Though faster than mechanical scanning, video-rate scanning confocal microscopy 
 
 %\subsubsection{Principles}
 %\paragraph{Spinning disk confocal microscopy}
-\subsection{Two photon (2P) microscopy}
+\subsection{Two photon (2P) microscopy}\label{sec:2p}
 
 % 2P microscopy is a part of a breed of techniques called non-linear microscopes which exploit the quantum nature of fluorophores.
 % 2P imaging provides the most efficient signal generation.
@@ -534,17 +534,17 @@ The mixing of this illumination frequency with the spatial frequency of the samp
 \end{figure}
 
 As discussed, an \gls{objective lens} acts as a band pass filter for low-frequency information.
-From the \emph{Convolution Theorem} (see Appendix \ref{appendix:convolution_theorem}), the multiplication of two signals in real-space is the convolution of the two \gls{Fourier transform}ed signals in frequency space and, importantly, visa versa -
+From the \emph{\Gls{convolution theorem}} (see Appendix \ref{appendix:convolution_theorem}), the multiplication of two signals in real-space is the convolution of the two \gls{Fourier transform}ed signals in frequency space and, importantly, visa versa -
 the convolution of two signals in real space is the multiplication of the Fourier transformed signals in frequency space.
 Meaning that projecting a sinusoidal pattern in real space will convolve the Fourier transform of the sample signal in frequency space with the Fourier transform of the sinusoid signal.
 The Fourier transform of a sinusoid is three delta functions at \SI{-1}, \SI{0} and \SI{+1} with a separation governed by the pattern frequency: $k_1 = {2\pi}{\lambda}$.
 And so, before the imaging system can band-pass the signal, the illumination pattern has forced three copies of the original image into the pass band, shifted by the vectors $k_1$ and $k_{-1}$ such that high frequency information outside of the pass band has been cumulated.
-The overlaid information is then computational unmixed by imaging with three different sinusoid phases to delineate the \SI{-1}{}, \SI{0}{} and \SI{+1}{} orders for reconstruction, see Figure \ref{fig:sim_flowers}.
+The overlaid information is then computational unmixed by imaging with three different sinusoid phases to delineate the \SI{-1}{}, \SI{0}{} and \SI{+1}{} orders for reconstruction, see \figurename~\ref{fig:sim_flowers}.
 
 \subsubsection{Optical sectioning \gls{SIM}}
 
 Three dimensional information can be extracted by manipulating frequency space even further.
-For instance, the \emph{\gls{missing cone}} (see Figure \ref{fig:sim_axial}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
+For instance, the \emph{\gls{missing cone}} (see \figurename~\ref{fig:sim_axial}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
 In frequency space this pushes the region of the missing cone into axial resolution maxima of the \gls{OTF} support (toroidal), giving three dimensional structure.
 By adding a third beam along the optical axis to interfere with the sinusoidal pattern, a further axial sinusoidal pattern can be created.
 

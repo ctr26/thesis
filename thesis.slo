@@ -1,7 +1,0 @@
-(indexentry :tkey (("alpha" "\\glossentry{alpha}") ) :locref "{}{2}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("FOV_math" "\\glossentry{FOV_math}") ) :locref "{}{3}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("alpha" "\\glossentry{alpha}") ) :locref "{}{4}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("J_1" "\\glossentry{J_1}") ) :locref "{}{4}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("alpha" "\\glossentry{alpha}") ) :locref "{}{4}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("J_1" "\\glossentry{J_1}") ) :locref "{}{6}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("tau" "\\glossentry{tau}") ) :locref "{}{11}" :attr "pageglsnumberformat" ) 

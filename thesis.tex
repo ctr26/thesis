@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,withindex,chapter]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,withindex,draft]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -105,7 +105,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapters/principles/chapter}
+  \includeonly{Chapters/literature/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -172,7 +172,7 @@
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
 
-\bibliography{References/references} % Path to your References.bib file
+\bibliography{References/references,References/_references} % Path to your References.bib file
 
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as
