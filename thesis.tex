@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,withindex,draft]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,withindex,chapter,custombib]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -168,11 +168,11 @@
 % Reference styles: http://sites.stat.psu.edu/~surajit/present/bib.htm
 
 %\bibliographystyle{apalike}
-\bibliographystyle{unsrt} % Use for unsorted references
+% \bibliographystyle{unsrt} % Use for unsorted references
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
 
-\bibliography{References/references,References/_references} % Path to your References.bib file
+% \bibliography{References/references,References/_references} % Path to your References.bib file
 
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as
@@ -180,7 +180,7 @@
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
 
 \end{spacing}

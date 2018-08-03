@@ -1,9 +1,9 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 26880
-Words in headers: 503
+Words in text: 27207
+Words in headers: 507
 Words outside text (captions, etc.): 3734
-Number of headers: 188
+Number of headers: 191
 Number of floats/tables/figures: 76
 Number of math inlines: 418
 Number of math displayed: 76
@@ -13,13 +13,14 @@ Subcounts:
   110+1+0 (1/0/0/0) Chapter: Introduction
   281+2+0 (2/0/0/0) Section: Motivation
   47+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy
-  952+21+228 (10/6/31/6) Section: Light microscopy
+  954+21+228 (10/6/31/6) Section: Light microscopy
   1343+21+172 (12/3/10/0) Section: Fluoresence microscopy
   756+21+239 (7/2/11/0) Section: Three dimensional fluorescence microscopy
   890+15+74 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
   556+14+97 (7/1/0/0) Section: Objective arrangements
-  368+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
+  370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
   573+11+0 (6/1/0/0) Section: Illumination
+  91+1+0 (1/0/0/0) Section: Summary
   144+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1270+16+204 (10/3/13/0) Section: Hardware
   1043+16+206 (9/3/9/1) Section: Software
@@ -56,7 +57,8 @@ Subcounts:
   1668+67+452 (7/6/75/0) Section: Results
   547+2+0 (2/0/0/0) Section: Discussion
   0+3+0 (1/0/0/0) Chapter: Discussion and Conclusions}\label{chapter:conclusions
-  262+1+0 (1/0/0/0) Chapter: Perspectives
+  262+3+0 (2/0/0/0) Chapter: Perspectives
+  232+1+0 (1/0/0/0) Section: Clearing
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   0+3+0 (1/0/0/0) Section: System alignments protocol

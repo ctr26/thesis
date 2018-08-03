@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 03.08.2018  16:28:15
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/g2ZKQIV1Rb", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/7iYwjq5EYH", Output: "thesis.gls"
+;; at 03.08.2018  17:07:09
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/4XUKJGwoRn", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/efswyupe9S", Output: "thesis.gls"
 
 
 Building indexentry-tree:
@@ -68,7 +68,10 @@ Forming letter-groups:
 Letter-group: "´¨¤ÚÐ¤——Ú" -> "L"
 Letter-group: "€¨Ëí ¨Ð®" -> "A"
 Letter-group: "Ã„¬—†Ú¨å— ´—¼Ð" -> "O"
+Letter-group: "´€Ð—Ë" -> "L"
 Letter-group: "œ´àÃËÃÈ¤ÃË—" -> "F"
+Letter-group: "ÐÈ€Ú¨€´ ´¨¤Ú »Ãà´€ÚÃË" -> "S"
+Letter-group: "€àÐÐ¨€¼ „—€»" -> "G"
 Letter-group: "ÈË¨»€Ëí ¨»€¨¼ È´€¼—" -> "P"
 Letter-group: "4œ" -> "glsnumbers"
 Letter-group: "—ÈÚ¤ Ãœ œ¨—´" -> "D"
@@ -78,7 +81,6 @@ Letter-group: "ÐÈ—†¨œ¨†¨Úí" -> "S"
 Letter-group: "€àÚÃÈ¤€í" -> "A"
 Letter-group: "´íÐÃÐÃ»—" -> "L"
 Letter-group: "ÚË€¼Ðœ—†Ú¨Ã¼" -> "T"
-Letter-group: "´€Ð—Ë" -> "L"
 Letter-group: "—Ú—¼à—" -> "E"
 Letter-group: "†Ã¤—Ë—¼Ú" -> "C"
 Letter-group: "ÐàÈ—Ë†Ã¼Ú¨¼àà» ´€Ð—Ë" -> "S"
@@ -106,7 +108,6 @@ Letter-group: "»¨ÐÐ¨¼ †Ã¼—" -> "M"
 Letter-group: "—È¨œ´àÃË—Ð†—¼†—" -> "E"
 Letter-group: "ÃÈÚ¨†€´ Ð—†Ú¨Ã¼¨¼" -> "O"
 Letter-group: "à´ÚË€»¨†ËÃÐ†ÃÈ—" -> "U"
-Letter-group: "€àÐÐ¨€¼ „—€»" -> "G"
 Letter-group: "´ÃË—¼Úð¨€¼" -> "L"
 Letter-group: "Ë€í´—¨¤ ´—¼Ú¤" -> "R"
 Letter-group: "ÃÈ—¼ÐÈ¨»" -> "O"
@@ -114,7 +115,6 @@ Letter-group: "å¨ËÚà€´ ´¨¤ÚÐ¤——Ú" -> "V"
 Letter-group: "Ú—´—†—¼ÚË¨†" -> "T"
 Letter-group: "æÃË®¨¼ ¨ÐÚ€¼†—" -> "W"
 Letter-group: "ÚÃ»ÃË€È¤í" -> "T"
-Letter-group: "ÐÈ€Ú¨€´ ´¨¤Ú »Ãà´€ÚÃË" -> "S"
 Letter-group: "—ëÃÚ¨† „—€»" -> "E"
 Letter-group: "„—ÐÐ—´ „—€»" -> "B"
 Letter-group: "€ë¨†Ã¼" -> "A"

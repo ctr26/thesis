@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 03.08.2018  16:28:16
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/f2jFz8pUlX", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/yIjg41J4mu", Output: "thesis.sls"
+;; at 03.08.2018  17:07:10
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/4mLHv2U7J1", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/xvqYv9JfSl", Output: "thesis.sls"
 
 
 Building indexentry-tree:
@@ -15,12 +15,16 @@ sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 
 Forming letter-groups:
 Letter-group: "€´È¤€" -> "A"
+Letter-group: "œÃå" -> "F"
+Letter-group: "—" -> "E"
+Letter-group: "¨" -> "I"
 Letter-group: "¬_1" -> "J"
 Letter-group: "Ú€à" -> "T"
-Letter-group: "œÃå" -> "F"
 Letter-group: "„" -> "B"
 Letter-group: "ð_Ë" -> "Z"
 Letter-group: "Ã»—€_0" -> "O"
@@ -31,7 +35,11 @@ Letter-group: "€´È¤€" -> "A"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "„" -> "B"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "—" -> "E"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "œÃå" -> "F"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "¨" -> "I"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "¬_1" -> "J"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
