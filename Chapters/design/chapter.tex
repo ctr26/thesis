@@ -28,27 +28,29 @@
 
 \chapter{Light-sheet microscope design and considerations }\label{chapter:design}
 
-\epigraph{\emph{It doesn't have to be good, it just has to look good.}}{--- Anonymous}
+\epigraph{\emph{It doesn't have to be good, it just has to look good.}}%{--- Anonymous}
 %Physical prciniples of the operation of a light-microscope.
 %Capabilities limtiations.
 
 This chapter introduces the instrument which was built and used during this thesis.
-It was required that the system presented here facilitated a wide range of imaging challenges, with two specific biological aims to be met.
-The first of which required the system to image Zebrafish embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during development (see Chapter \ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
-The second required the imaging of live cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.
-
+It was required that the system presented here facilitated a wide range of imaging challenges, with two specific %biological aims to be met.
+imaging tasks to be performed.
+The first %of which task required the system to
+task was to image Zebrafish embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during the \SI{1}{}k~cell stage of embryo development (see Chapter~\ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
+The second required the imaging of live (SHSY5Y) mammalian cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.\@
+\pagebreak
 \subsection*{Specification}
 
 To facilitate these biological aims the system has to address these specification key criteria:
 
-\begin{itemize}
-    \item Fast volumetric imaging
-    \item Multi-colour volumetric imaging
+\begin{enumerate}
+    \item Fast volumetric imaging, 1 volume per second for pixel range:~\(2048\times2048\times100\)
+    \item Multi-colour interlaced volumetric imaging
     \item Capacity for multiple methods of sample mounting
-    \item Multiple imaging length scale% magnifications
-    \item Options for exotic illumination development
-    \item User-friendly and extensible software scheme
-\end{itemize}
+    \item Multiple imaging length scales, \gls{FOV} range :~\SIrange{200}{700}{\micro\meter} % magnifications
+    \item Options for exotic illumination development through optional illumination paths to incorporate an \gls{SLM}
+    \item User-friendly and extensible software scheme in \gls{LabVIEW}
+\end{enumerate}
 
 % \subsection{Embryonic imaging for Mechanobiology}
 %
@@ -72,26 +74,44 @@ To facilitate these biological aims the system has to address these specificatio
 
 \section{Hardware}
 
-The design presented here is an adaptation of a previous light-sheet microscope, whose entire optical assembly was mounted on a set of rails rotated at \SI{45}{\degree}.
-The upgrade and redesign of the system was made such that the excitation and detection paths of the system could be extended so that liquid tuneable lenses could be mounted in the direction of gravity to reduce induced optical aberrations.
+The design presented here is an adaptation of a previous \gls{light-sheet} microscope, whose entire optical assembly was mounted on a set of rails rotated at \SI{45}{\degree}.
+The upgrade and redesign of the system was made such that the illumination and detection paths of the new system could be extended so that liquid tuneable lenses could be mounted in the vertically to reduce gravity induced optical aberrations.
 
-The previous design cantilevered the detection optics away from the frame, causing general instability.
-For precise tracking of single virions, a more stable suspension of objectives was needed.
+The new design presented in this thesis adapts a previous design.
+For precise tracking of single virions, a more stabilised method of suspending the microscope objectives was needed as this minimises vibrational blur.
+This was problematic in the previous design due to design using cantilevered detection optics away from the frame, causing general instability.
+% suspension of objectives was needed.
 
 \subsection{Mechanical Design}
 
-The mechanical design of the system consists of two optical breadboards mounted one above the other on \SI{50.8}{\milli\metre} stabilising metal posts.
-A large rectangle of material was removed from the upper board to allow the objective lenses to reach down to the samples inserted from below; too large of a gap would cause sag in each arm, too small would impede access to the sample below.
-The objective lenses and detection objective actuator were mounted on rails at \SI{45}{\degree} to the top motherboard.
-These rails guided the objectives through the open hole until the focal points of each objective (detection and excitation) met.
-The filter wheel was placed on an optical rail before the camera and after a turning mirror so that vibrations of filter switching would be mostly decoupled from the detection optics.
-The camera was mounted at \SI{45}{\degree}, on a 3D printed mount to correct for the turning mirror, on the same optical rail.
-Rotating the camera was necessary as it allowed the camera shutter and illumination beam to propagate concomitantly, see Chapter \ref{chapter:dualslit}.
+% \gls{illumination arm}
+% \gls{detection arm}
+% \gls{imaging board}
+% \gls{illumination board}
+% \gls{imaging optical rail}
+% \gls{illumination board}
+% \gls{imaging board}
 
-For the excitation path, a \SI{22.5}{\degree} mirror was used to to deliver the laser illumination from the scanning optics into the objective.
+The mechanical design of the \gls{light-sheet} microscope consists of two optical breadboards, mounted one above the other.
+One for mounting the light sources (\gls{illumination board}) and the second (\gls{imaging board}) for the \glslink{illumination arm}{illumination} and \glslink{detection arm}{detection} arms.
+The \gls{imaging board} was mounted vertically above the \gls{illumination board} on \SI{50.8}{\milli\metre} stabilising metal posts, which ensured the system was transportable as well as robust against vibrations.
+A large rectangular section of material was removed from the \gls{imaging board} to allow the objective lenses to reach down to the samples inserted from below; too large of a gap would lead to excessive sag and vibrations in each arm, too small would impede access to the sample below the imaging board.
+The objective lenses and detection objective actuator were mounted on rails at \SI{45}{\degree} to the \gls{imaging board}, the \glslink{illumination arm}{illumination} and \glslink{detection arm}{detection} arms.
+These rails guided the objectives through the open section until the focal points of each objective (detection and illumination) met.
+The filter wheel was placed on the \gls{imaging optical rail} before the camera and after a turning mirror on the \gls{detection arm}
+% and auxiliary supports
+so that the vibrations, due to
+ % so that vibrations of
+filter switching and the camera fan, would be mostly decoupled from the detection optics.
+The camera was mounted at \SI{45}{\degree} on a \gls{3D} printed mount that corrected for the turning mirror on the \gls{imaging optical rail}.
+Rotating the camera was necessary as it allowed the camera shutter and illumination beam to propagate concomitantly for slit-scanning, see later Chapter~\ref{chapter:dualslit}.
+
+For the illumination path, a \SI{22.5}{\degree} mirror
+(to the horizon, see \figurename~\ref{fig:soldiworks_top}~(d))
+was used to to deliver the laser illumination from the scanning optics into the illumination objective on the \gls{illumination arm}.
 The additional mirror was needed so that the scanning optics could be mounted flat to the optical breadboard, making positioning and optical mounting simpler.
-Using two mirrors also provided the sufficient degrees of freedom to align the axis of the scanning optics to the optical axis along the excitation arm.
-Finally, the light-sheet generating mirror of the scanning pair of was suspended off the edge of the breadboard for delivery of the  illumination from the bottom optical table.
+Using two mirrors also provided the sufficient degrees of freedom to align the axis of the scanning optics to the optical axis along the \gls{illumination arm}.
+Finally, the light-sheet generating mirror of the scanning pair of was suspended off the edge of the breadboard for delivery of the  illumination from the bottom optical table, see \figurename\ref{fig:soldiworks_top}~(a).
 
 % Mechanical design changes for more stable an extensible system than previous work.
 % Large detection area for future upgrades on detection arm - Like my relaying
@@ -114,9 +134,9 @@ Finally, the light-sheet generating mirror of the scanning pair of was suspended
 \subsubsection{Sample Mounting}
 
 %SPIM is notorious for sample mounting within the microscopy community, this is due to
-Sample mounting using light-sheet microscopes can be challenging due to having a secondary excitation objective within close proximity to the detection objective.
-The concept of the inverted SPIM \cite{Wu2011} allows more freedom in terms of sample mounting as more of the image volume is accessible.
-The upper optical table was mounted sufficiently high so that an XYZ translator with a large axial range could be mounted.
+Sample mounting using light-sheet microscopes can be challenging due to the need to place a secondary objective (for illumination) within close proximity to the detection objective.
+The concept of the \gls{iSPIM}~\cite{Wu2011} allows more freedom in terms of sample mounting as more of the image volume is accessible.
+The \gls{imaging board} was mounted \SI{500}{\milli\meter} above the \gls{illumination board} so that an XYZ translator, with a large axial range, could be mounted.
 This allowed for multiple potential sample mounting strategies below.
 %This design point is one of the axioms of the new system, the focus of this report.
 
@@ -137,17 +157,17 @@ This allowed for multiple potential sample mounting strategies below.
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{./Raster/solidworks_design_front}
-\caption[CAD design of the $45^o$ detection and excitation]{Solidworks three dimensional representation of the $45^o$ inverted geometry allows sample access from beneath whilst still creating a fully orthogonal detection illumination system.
-Illumination comes from below on the right of the diagram, detection is normal to the page on the left.}
-\label{fig:solidworks_design_front}
+\caption[CAD design of the \SI{45}{\degree} detection and illumination]{Solidworks three dimensional representation of the \SI{45}{\degree} inverted geometry allows sample access from beneath whilst still creating a fully orthogonal detection illumination system.
+Illumination comes from below on the right of the diagram, detection is normal to the page on the left.}\label{fig:solidworks_design_front}
 \end{figure}
 
-\paragraph{XYZ Stage}~
+\paragraph{XYZ Stage}
 
-A \emph{Prior} Pro Scan \textit{HLD117} XY stage was mounted on top of a Motorized Linear Axis \textit{FB204E}.
-The set was chosen as each components had integrated linear encoders giving a suitable positional resolution (\SI{20}{\nano\meter} in $xyz$);
-speed \SI{300}{\milli\meter\per\second} in $xy$ and \SI{15}{\milli\meter\per\second}) in $z$;
-large travel range ($\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} $ in $xy$ and \SI{38}{\milli\meter} in $z$) and versatility in terms of mounting onto the microscope and sample mountings and their ability for computer interfacing \cite{Hu2014}.
+A \emph{Prior} Pro Scan \textit{HLD117} XY stage was mounted on top of a Motorized Linear Axis \textit{FB204E} Z stage.
+The set was chosen as each component had integrated linear encoders, giving a suitable positional resolution (\SI{20}{\nano\meter} in \(xyz\));
+speed \SI{300}{\milli\meter\per\second} in \(xy\) and \SI{15}{\milli\meter\per\second} in \(z\);
+large travel range (\(\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} \) in \(xy\) and \SI{38}{\milli\meter} in \(z\))% and versatility in terms of mounting onto the microscope and sample mountings and their ability for computer interfacing~\cite{Hu2014}.
+Each component was also computer controllable, and an open-source LabVIEW routine was developed and made freely available for this purpose~\cite{russellSpimcontroller2017}.
 %
 % \subsubsection{Comparison with old SPIM}
 %
@@ -168,12 +188,11 @@ large travel range ($\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} $ in $x
   \textbf{Red:} a beam splitter is used to create two beam arms which can be used together to create two parallel beams; one beam for single beam light-sheet; or one beam structured using the SLM (blue).
   \textbf{Blue:} Expansion optics for the optional SLM arm of the illumination system.
   \textbf{Purple:} A pair of scanning galvanometric mirrors are relayed onto each other and passed through a scan lens.
-  \textbf{Green:} The excitation arm where the scanning beam is demagnified onto the sample.
+  \textbf{Green:} The illumination arm where the scanning beam is demagnified onto the sample.
   \textbf{Orange:} The high NA detection optics magnify the sample onto a second magnifying relay system and finally onto the camera.
   %Optical design of the new SPIM microscope.
   %Straight black lines represent mirrors; arrowed lines represent lenses; coloured lines represent laser light.
-  }
-  \label{fig:optical_design_colour}
+  }\label{fig:optical_design_colour}
   \end{figure}
 \end{landscape}
 
@@ -185,22 +204,26 @@ large travel range ($\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} $ in $x
 % The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
 % A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
 
-\subsection{Objectives}
+\subsection{Objective lenses}
 
 %\nomenclature[z-WD]{WD}{WD of View}
 
-A (\emph{10$\times$ 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25$\times$ 1.1 NA}) Nikon LWD water immersion objective.
-The water dipping objective used here has a \SI{3.5}{\milli\meter} WD and narrow physical profile; meaning that when matched with the bulky high NA detection objective there was a slight mechanically interference, which was corrected for using the tube lens to adjust the working distance.%, once their positioned with their foci were co-aligned.
-Very few objective pairs maximise detection and excitation NA whilst being water dipping and compatible, see Chapter \ref{chapter:chamber}.
-A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
+A (\emph{\(10\times 0.3 \gls{NA}\)}) Nikon water-dipping objective was used for illumination and mounted at right angles to a (\emph{\(25\times1.1 \gls{NA}\)}) Nikon LWD water immersion objective.
+The water dipping objective used here has a \SI{3.5}{\milli\meter} WD and narrow physical profile; meaning that when matched with the bulkier high NA detection objective
+there would be mechanical overlap if collimated light was coupled into the illumination lenses.
+Instead, the illumination tube lens supplied slightly diverging light to the back aperture of the illumination objective, which was found to efficiently resolve the challenge of separating the detection and illumination objective lenses.
+%there was a slight mechanically interference, which was corrected for using the tube lens to adjust the working distance.
+%, once their positioned with their foci were co-aligned.
+Very few objective pairs maximise detection and illumination \gls{NA} whilst being water dipping and compatible, and a solution the solution Chapter~\ref{chapter:chamber} was found to be effective for imaging.
+A piezo scanner (Physik Instrumente~\emph{P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the illumination plane.
 
-\subsection{Illumination}
+\subsection{illumination}
 
 Four %typical
 laser sources were chosen to allow good specificity across the visible spectrum as well  as for multi-colour imaging.
 %, future-proofing and overall versatility in the microscope.
-Wavelengths \textcolor{455nm}{\SI{405}{\nano\meter}} , \textcolor{488nm}{\SI{488}{\nano\meter}} , \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
-The output power of the lasers (\SI{100}{\milli\watt}) was sufficient for good contrast images in SPIM.
+Wavelengths \textcolor{455nm}{\SI{405}{\nano\meter}},  \textcolor{488nm}{\SI{488}{\nano\meter}},  \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
+The output power of the lasers (\SI{100}{\milli\watt}) was sufficient for good contrast images in SPIM.\@
 \footnote{SPIM is within the single sun power regime} %TODO expand
 %A beam quality $M^2$ nearing 1 is good, with $M^2 = 1$ being a theoretical ideal.
 %Over the range of a metre the lasers will diverge by \SI{1.2}{\milli\meter}, though this would double the beam diameter the sizes are appreciably small that it will have very little effect when corrected for through later optics.
@@ -208,26 +231,29 @@ The output power of the lasers (\SI{100}{\milli\watt}) was sufficient for good c
 The beams were combined %into an overlapping beam using a set of standard dielectric mirrors and dichroic mirrors.
 %Using two mirrors per beam allowed the degrees of freedom to accurately combine the beams in free space.
 using dichroic mirrors % were chosen to ensure the each laser line propagated freely when approaching from behind the mirror but the correct colour laser was reflected appropriately; they were placed in the order e02 (dielectric as the first laser does not combine with any others)
-(\emph{Chroma zt594rdc, zt514rdc and zt458rdc}) and broadband dielectric mirrors
-See Figure \ref{fig:optical_design_colour}.
+(Chroma~\emph{zt594rdc, zt514rdc}~and~\emph{zt458rdc}) and broadband dielectric mirrors,
+the illumination setup is illustrated in \figurename~\ref{fig:optical_design_colour}.
+%See \figurename~\ref{fig:optical_design_colour}.
 
-An alternative to using independent laser lines using a white light laser source with chromatic notch filters. %and using the dichroic mirrors as long pass filters whilst using other filters to create the short pass.
-To modulate the power for each channel would require fast intensity modulation potentially using an
+An alternative to using independent laser lines is using a white light laser source with chromatic notch filters. %and using the dichroic mirrors as long pass filters whilst using other filters to create the short pass.
+To modulate the power for each channel would require fast intensity modulation potentially using an \gls{AOTF}.
 %If this were the case then the power of each individual laser line would be dependent on the other laser lines.
 %To then circumvent this an intensity modulator such as an
-\textbf{A}cousto-\textbf{O}ptic \textbf{T}unable \textbf{F}ilter.% would be needed as well.
+% would be needed as well.
 %The former solution is more economical and more predictable.
-White light sources are expensive and do not produce homogeneous emissions as well as the overall solution being more costly.
+White light sources (e.g. Fianium \emph{SC390} supercontinuum lasers) are expensive; do not produce homogeneous emissions;
+%as well as the overall solution being more costly.
+are more costly as well as the class 4 laser beam being intrinsically more hazardous than the class 3b diode laser in this design.
 %, each colour may have been wholly variant in terms of quality for instance.
 
 \subsection{Light-sheet Generation}
 
-For generation of the light-sheet a galvanometric scanning mirror (\emph{Cambridge Technology}) was placed behind a telecentric  scan lens.
-The lens converts incident angle to emitted position such that a scanning mirrored placed on-axis a focal distance behind will produce a parallel sweeping beam.
-The light-sheet generating scanning mirror was conjugating using a pair of matched lenses, in a $4f$ configuration, on a second scanning mirror.
-The second mirror was mounted at \SI{90}{\degree} to the light-sheet generating mirror to allow the sheet to move axially in the volume.
-This allowed for fast volumetric imaging as well as correction for distortions caused by the scanning optics, see Chapter \ref{chapter:homography}.
-See Figure \ref{fig:soldiworks_top} for a schematic of light sheet generation.
+For generation of the \gls{light-sheet} a \glslink{galvanometric scanning mirrors}{galvanometric scanning mirror} (\emph{Cambridge Technology}) was placed behind a \gls{telecentric} scan lens.
+The \gls{telecentric} lens converts incident angle to emitted position such that a scanning mirror placed on-axis one focal distance behind the lens will produce a paraxial sweeping beam.
+The \gls{light-sheet} generating scanning mirror was conjugated using a pair of matched lenses, in a \gls{4f} configuration, on a second scanning mirror.
+The second mirror was mounted at \SI{90}{\degree} to the light-sheet generating mirror to allow the sheet be displaced move axially with respect to the imaging lens.
+This allowed for fast volumetric imaging as well as correction for distortions caused by the scanning optics, discussed further in Chapter~\ref{chapter:homography}.
+\figurename~\ref{fig:soldiworks_top} presents a schematic of light sheet generation.
 
 % To generate a virtual light sheet a telecentric (sometimes called an f theta lens) is used to translate scanning mirror angle into a laser position shift creating a light sheet from a static laser beam.
 % This lens couples with the tube lens to partially fill the back aperture of the objective so that a suitably thin light sheet is produced, with an ideal field of view tuned to compensate for the Gaussian profile of laser light.
@@ -240,9 +266,15 @@ See Figure \ref{fig:soldiworks_top} for a schematic of light sheet generation.
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{./soldiworks_top}
-	\caption[Top down schematic of SPIM]{a) Scan mirror which creates the light sheet.
-b) Scan mirror in z for scanning volumes. c) Position of telecentric lens. d) Tube lens $ITL200$ e) Objective lenses, with green having an objective actuator. f) Emission filter wheel g) sCMOS camera}
-	\label{fig:soldiworks_top}
+	\caption[Top down schematic of SPIM]{
+    (a) Scan mirror which creates the \gls{light-sheet}.
+    (b) Scan mirror in \(z\) for scanning volumes.
+    (c) Position of telecentric lens.
+    (d) Tube lens \emph{ITL200}
+    (e) Objective lenses, with green having an objective actuator.
+    (f) Emission filter wheel
+    (g) sCMOS camera
+    }\label{fig:soldiworks_top}
 \end{figure}
 
 % \subsubsection{Scan Lens}
@@ -256,22 +288,23 @@ b) Scan mirror in z for scanning volumes. c) Position of telecentric lens. d) Tu
 % \newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
 % \newacronym{NA}{NA}{Numerical Aperture}
 
-Using the Orca Flash v4 camera (with a chip size of \SI{13}{\milli\meter}) and a detection objective magnification of \SI{25}{\times}, gave a required \acrshort{FOV} of \SI{520}{\micro\meter}.
-To match this to the confocal width of the propagating beam required \SI{0.15} %\acrshort{NA}
-NA illumination for \SI{561}{\nano\meter} excitation, providing a beam waist (light-sheet thickness) of \SI{1.3 \pm 1}{\micro\meter}, see Equation \ref{eq:rayleigh}).
+Using the Orca Flash v4 camera (with a sensor size of \SI[product-units=repeat]{13x13}{\milli\meter}) and a detection objective magnification of \SI{25}{\times}, produced a \gls{FOV} with an extension of
+% a required \acrshort{FOV} of
+\SI{520}{\micro\meter} in the \(x\) and \(y\) directions.
+To match the confocal width of the illumination beam to the \gls{FOV} of camera sensor the illumination required \SI{0.15}{}~\gls{NA} at the back aperture of the illumination objective for \SI{561}{\nano\meter} light; providing a beam waist (\gls{light-sheet} thickness) of \SI{1.3(0.1)}{\micro\meter}, from Equation~\ref{eq:rayleigh}.
 %\acrshort{NA}
-To create a numerical aperture of \SI{0.15}, for an objective of focal length \SI{20}{\milli\meter} the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
-Therefore the excitation beam needed to be magnified \SI{1.7}{} fold.
+To create an \gls{NA} of \SI{0.15}, for an objective of focal length \SI{20}{\milli\meter}, the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
 
-Using an \emph{ITL200} tube lens with a \emph{Nikon A1} scan lens provided \SI{5.37}{\times} magnification (See Appendix \ref{appendix:scanlens}), meaning the excitation objective back aperture would have been overfilled and the usable \acrshort{FOV} too small.
-To address this, an iris was placed at the back aperture of the objective to allow for manual tuning of the \acrshort{NA}.
-The downside of stopping down the back aperture, was that light was being discarded; as light-sheet systems do not require large doses to function (\SI{\sim1}{\milli\watt}), so discarding the majority of the light from the \SI{100}{\milli\watt} sources did not impede imaging.
+Using an \emph{ITL200} tube lens with a \emph{Nikon A1} scan lens provided \SI{5.37}{\times} magnification (See Appendix~\ref{appendix:scanlens}), meaning the illumination objective back aperture would have been overfilled (\SI{7.52}{\milli\meter} beam diameter at the back aperture) and the usable \gls{FOV} too small.
+To address this, an iris was placed at the back aperture of the illumination objective to allow for manual tuning of the \gls{NA}.
+The downside of stopping down the back aperture, was that some light was discarded
+\Gls{light-sheet} systems do not require large doses to function (\SI{\sim1}{\milli\watt}) and discarding a fraction of the light from the \SI{100}{\milli\watt} sources was not found to impede imaging.
 
 %With a scan lens focal \SI{37.3\pm0.1}{\milli\meter}
 
 %In the the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
 %To recreate a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter}  the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
-%Therefore the excitation laser needs to be magnified \SI{1.7}{}$\times$.
+%Therefore the illumination laser needs to be magnified \SI{1.7}{}$\times$.
 %Standard optical lenses are heavily quantised in terms of their focal length, a viable magnification for instance would be a \SI{160}{\milli\meter} , \SI{30}{\milli\meter} pair placed just before the flip mirror.
 %A very sensible use of lenses would involve exploiting the lens that conjugates the SLM to the image plane, provided the lens were placed after the flip mirror and not before, which is possible if the focal length of the SLM is set higher than \SI{330}{\milli\meter} and therefore placed after the flip mirror.
 
@@ -281,16 +314,18 @@ The downside of stopping down the back aperture, was that light was being discar
 \subsection{Detection}
 
 %The optics surrounding the detection arm are far simpler than the excitation arm.
-The detection lens used, was a PlanAchromat \SI{25}{}$\times$ high (\SI{1.1}{}) \acrshort{NA} objective, giving unparalleled lateral resolution for a water dipping lens.
-This was coupled to second $ITL200$ tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
-Before the detector there was a Prior Filter wheel housing emission filters (Semrock the \emph{442/647}; Chroma the \emph{ET605/70m} and \emph{ZT405/488/561/647rpc}) used to reject scattered excitation light.
+The detection lens used was a PlanAchromat \SI{25}{\times} high (\SI{1.1}{}) \gls{NA} objective, select the unparalleled lateral resolution for a water dipping lens that could fit the mechanical constraints of the \gls{light-sheet} system.
+This was coupled to second \emph{ITL200} tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
+% Before the detector there was
+In the path between the detection objective a Prior Filter wheel housing emission filters (Semrock the \emph{442/647};
+Chroma the \emph{ET605/70m} and \emph{ZT405/488/561/647rpc}) was installed to reject scattered illumination light.
 %The emission filter is used to reject excitation light scattered from the sample, though this signal should be weak it is very difficult to correct for this digitally and so the filters are necessary.
 %\subsubsection{Parfocal relay}
 
-A further lens relay was added on a optical rail after the turning mirror.
+A further lens relay was added on \gls{imaging optical rail} after the \gls{detection arm} turning mirror.
 The relay comprised a tube lens and two objective lenses on a rotating turret.
 This provided a par-focal solution for magnifying the imaging by \SI{2.5}{\times} (\emph{Olympus MPLFLN1.25x}) and \SI{1.25}{\times} (\emph{Olympus MPLFLN2.5x}) for \SI{62.5}{\times} and \SI{31.25}{\times} total magnifications respectively.
-Using microscope objectives for the additional optical relay ensured that there were minimal optical losses as the lenses are designed for the weak fluorescent signal, as well as them having minimal distortion and chromatic aberrations.
+Using microscope objectives for the additional optical relay ensured that there were minimal optical losses as the lenses are designed for the weak fluorescent signal, as well as for minimal distortion and chromatic aberrations.
 Using \SI{62.5}{\times} magnification gives \SI{99.2}{\nano\meter} lateral sampling at the image plane.
 The Raleigh condition of the system using \SI{561}{\nano\meter} light is \SI{311}{\nano\meter} resolution.
 Meaning that at \SI{62.5}{\times} magnification, the system is sampled sufficiently for Nyquist criterion (\SI{155.55}{\nano\meter}) which states that the sampling of a system needs be twice the bandwidth of a band-limited signal.
@@ -306,8 +341,7 @@ To control the hardware, a software interface was needed which would send the ap
   \includegraphics{./controller_scheme} %TODO my own.
   \caption{Control schematic of the digitally scanned light-sheet microscope.
   All control signals are generated within LabVIEW and distributed to the components.
-  Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}
-  \label{fig:control}
+  Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}\label{fig:control}
 \end{figure}
 
 % Comntrol schematic illustrator.
@@ -318,24 +352,23 @@ To control the hardware, a software interface was needed which would send the ap
 
 %\subsection{Implementation}
 %Talk about synchornisaiton
-Precise synchronisation is needed for confocal slit-scanning (Chapter \ref{chapter:dualslit}) to be viable, as the time between the switching of active pixel rows at \SI{100}{\hertz} for the Orca Flash v4 is \SI{\sim 10}{\micro\second}. %TODO justify this better than surprise confocal?
+Precise synchronisation is needed for confocal slit-scanning (Chapter~\ref{chapter:dualslit}) to be viable, as the time between the switching of active pixel rows at \SI{100}{\hertz} for the Orca Flash v4 is \SI{\sim10}{\micro\second}. %TODO justify this better than surprise confocal?
 %In the light-sheet system used here, t
 This was achieved using fast electronics to send sets of packaged voltage waveforms through a National Instruments DAQ module.
 Once a TTL 5V signal is sent to the camera, there is a \SI{10}{\milli\second} delay for the electronics to initialise on the camera.
-During this window the $y$ mirror, which creates the light-sheet, and $z$ mirror are pre-driven so that the mirrors are travelling at a constant velocity during the exposure window, giving a uniform illumination.
+During this window the \(y\) mirror, which creates the light-sheet, and \(z\) mirror are pre-driven so that the mirrors are travelling at a constant velocity during the exposure window, giving a uniform illumination.
 The point of the start of the exposure window was found empirically (\SI{9.8}{\milli\second} after camera triggering) by tuning this window until the illumination profile, under slit scanning, was uniform when visualised using fluorescent dye (Rhodamine).
 During the exposure, a TTL signal is sent to the requisite laser channel for illumination.
-Once the exposure window is finished, the $y$ and $z$ mirror is sinusoidally returned to the start voltage for the next exposure (see Figure \ref{fig:slit_signals}); this helps protect the mirror against inertia induced damage.
+Once the exposure window is finished, the \(y\) and \(z\) mirror is sinusoidally returned to the start voltage for the next exposure (see Figure~\ref{fig:slit_signals}); this helps protect the mirror against inertia induced damage.
 
 \begin{figure}
   \centering
   \includegraphics{slit_signals}
   \caption{The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
-  A pre-drive phase for the $y$ mirror is needed to ensure the illumination profile of the light-sheet is uniform.
+  A pre-drive phase for the \(y\) mirror is needed to ensure the illumination profile of the light-sheet is uniform.
   The cameras requires time to initialise the electronics and so a delay period is added within which the pre-drive of both mirrors is performed.
   Both mirrors are sinusoidally returned to their start position ready for the next acquisition.
-  }
-  \label{fig:slit_signals}
+  }\label{fig:slit_signals}
 \end{figure}
 
 Control and synchronisation of the filter wheel and XYZ translation stage was achieved using RS232 serial commands, as precise timing was not needed and a direct feedback on the status of the stage and filter was desirable %from the controller on where the stage and Filter
@@ -372,7 +405,7 @@ Using a queueing architecture ensured that command flooding and race conditions 
 %This ensures that command flooding and race conditions are avoided and the consumer loop can be self regulating.
 
 The commands were packaged as a bundle.
-The first part being an enumerated type which changed the consumer \emph{state} of the consumer; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g. camera exposure).
+The first part being an enumerated type which changed the consumer \emph{state} of the consumer; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g.\ camera exposure).
 By using this queuing architecture, consumers can then communicate with each other whilst functioning independently.
 
 %
@@ -435,8 +468,7 @@ By using this queuing architecture, consumers can then communicate with each oth
     The \emph{Waves consumer} packages the signal generating routines (red) and drives the resultant signals to the DAQ board using \emph{Run waves}.
     Each of the waves routines (red) are concatenations of \emph{XY waveforms}, which itself relies on \emph{XY waves} (blue) generates signal trains from calibration coordinates and front panel data.
     \emph{Homo-graphy} and \emph{Homo transform} (orange) take calibration coordinates to then inform \emph{XY Galvos}.
-    }
-    \label{fig:software_layout}
+    }\label{fig:software_layout}
 \end{figure}
 
 \subsubsection{Kernel}
@@ -445,8 +477,8 @@ The kernel stores  the acquisition settings initiates all the queues to be sent 
 All acquisition settings and properties are converted into enumerated state machine commands.
 Acquisition modes are organised into imaging orders, such as \emph{XYZ}, \emph{XYZC}, \emph{XYCZ}, \emph{XYT}; where \emph{XY} is a single frame, \emph{Z} is an iteration axially, \emph{C} is the colour channels selected, and \emph{T} is the time course selected.
 Each of the dimensions (\emph{XYZT}) are governed by the parameters \emph{Start}, \emph{Step}, \emph{Range}; where start is the initial position or time; step is the step size, meaning spatial resolution or temporal resolution; and range is the range over which the dimension covers, spatially or temporally.
-For colour, a $2\times n$ array of enumerated typed is constructed for laser line and respective filter wheel position choice.
-The kernel also stores the calibration coordinates (see Chapter \ref{chapter:homography}) sent from the Calibration module.
+For colour, a \(2\times n\) array of enumerated typed is constructed for laser line and respective filter wheel position choice.
+The kernel also stores the calibration coordinates (see Chapter~\ref{chapter:homography}) sent from the Calibration module.
 All of the
 %these
 settings can then exported as XML files and may be reloaded later.
@@ -460,7 +492,7 @@ The first
 % module runs a
 consumer initiates and destroys the camera communications; as well as
 %There are also
-soft update states(for instance changes to exposure time), and hard update states, for when an acquisition setting requires the camera to be unloaded (such as changing exposure).
+soft update states (for instance changes to exposure time), and hard update states, for when an acquisition setting requires the camera to be unloaded (such as changing exposure).
 The additional consumer loop exists within the the camera module to handle saving and displaying of image data.
 This consumer has two settings: the first receives queued image arrays directly from the camera, this is used for live preview mode and small image sequences such as single volumes; the second reads and converts image files from the file-stream of the camera.
 The latter mode does not drop frames as the camera is streaming data directly to the hard drive, provided the read and write streams of the hard-drive are not overflowing.
@@ -469,11 +501,11 @@ The single frame acquisition mode will also not drop frames due to their sequenc
 \paragraph{Virtual slit}
 %{Virtual slit}
 
-The virtual slit for confocal slit scanning was addressed in the camera's hardware directly using hex address $\times 400210$, mode 1 sets the camera to full frame and mode 12, slit scanning.
-Once the mode is set the line interval ($\times 403850$) and slit exposure ($\times \text{1F0110}$) set according to the equation:
+The virtual slit for confocal slit scanning was addressed in the camera's hardware directly using hex address \(\times 400210\), mode 1 sets the camera to full frame and mode 12, slit scanning.
+Once the mode is set the line interval (\(\times 403850\)) and slit exposure (\(\times \text{1F0110}\)) set according to the equation:
 
 \begin{align}
-    \text{Slit exposure} &= \frac{\text{Exposure} \times \text{Slit width}}{\SI{10}{\milli\second} + \text{FOV}_y + \text{Slit width}}\nonumber\\
+    \text{Slit exposure} &= \frac{\text{Exposure} \times \text{Slit width}}{\SI{10}{\milli\second} + \text{FOV}_y + \text{Slit width}}\nonumber \\
     \text{Line interval} &= \frac{\text{Slit exposure}}{\text{Slit width}}\nonumber
 \end{align}
 
@@ -500,7 +532,7 @@ As such the resolution trade-off was accepted.
 \subsubsection{Calibration module}
 
 The Calibration module set the microscope to live image preview mode with direct user control over the objective actuator voltage and mirror voltages.
-The module was used to set the limits of the usable volumetric FOV and match the focus of the objective to mirror positions, discussed in detail in Chapter \ref{chapter:homography}.
+The module was used to set the limits of the usable volumetric FOV and match the focus of the objective to mirror positions, discussed in detail in Chapter~\ref{chapter:homography}.
 
 \section{Objectives review}
 
