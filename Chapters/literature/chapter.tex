@@ -194,17 +194,62 @@ samples prepared with standard mounting procedures may be imaged in a petri-dish
 
 %CITE 30 chick embryos
 
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\columnwidth]{spim_optimal_imaging.png}
+% 	\caption{
+% 	(a): The simple SPIM field of view – only a quarter of a sample has optimum illumination (green) and excitation (red).
+% 	(b): by rotating a sample field of view can be quadrupled but at a cost in acquisition time.
+% 	(c): By adding extra excitation and detection path the entire sample can be imaged without a rotation.
+% 	(d): by making optical paths of a LSFM dual purpose a quadrant of a sample can be imaged from two orthogonal perspective and with correct image fusion achieve isotropic resolution.
+% 	tod}
+% 	\label{spim_optimal_imaging}
+% \end{figure}
+%
+
 \begin{figure}
 	\centering
-	\includegraphics[width=\columnwidth]{spim_optimal_imaging.png}
-	\caption{
-	(a): The simple SPIM field of view – only a quarter of a sample has optimum illumination (green) and excitation (red).
-	(b): by rotating a sample field of view can be quadrupled but at a cost in acquisition time.
-	(c): By adding extra excitation and detection path the entire sample can be imaged without a rotation.
-	(d): by making optical paths of a LSFM dual purpose a quadrant of a sample can be imaged from two orthogonal perspective and with correct image fusion achieve isotropic resolution.
-	tod}
-	\label{spim_optimal_imaging}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/ispim}
+        \caption{Single detection, single illumination}
+        \label{fig:depth/ispim}
+    \end{subfigure}
+    \hspace{0.07\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/spin_spim}
+        \caption{Single detection, single illumination, with sample rotation}
+        \label{fig:depth/spin_spim}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/dual_illumination}
+        \caption{Single detection, dual illumination}
+        \label{fig:depth/multiview}
+    \end{subfigure}\hspace{0.07\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/multiview}
+        \caption{Dual detection, dual illumination}
+        \label{fig:depth/ispim}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/di_spim}
+        \caption{Single detection, single illumination, with alternate illumination and detection}
+        \label{fig:depth/di_spim}
+    \end{subfigure}\hspace{0.07\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics{depth/muvi}
+        \caption{Dual detection, dual illumination, with alternate illumination and detection}
+        \label{fig:depth/muvi}
+    \end{subfigure}
+    \caption{Explain this noise}
+    \label{fig:spim_optimal_imaging}
 \end{figure}
+
 
 \subsubsection{Optimal Orientation}
 
@@ -423,10 +468,14 @@ Vettenburg~\emph{et~al.} demonstrated a similar axial resolution improvement as 
     \end{subfigure}
     \caption{Shadowing artefacts in light-sheet(\subref{fig:exotic_beams_cartoon_para}) can be mitigated through different types of illumination.
     (\subref{fig:exotic_beams_cartoon_mspim}) uses \gls{light-sheet}s from multiple directions to illuminate behind an occlusion.
-    (\subref{fig:exotic_beams_cartoon_exotic}) uses Bessel sheets which have the property of self-healing behind occlusions; this happens as Bessel beams arise from constructive interference from angled plane waves, which then reach behind the occlusion.% from multiple directions to illuminate behind an occlusion.
+    (\subref{fig:exotic_beams_cartoon_exotic}) uses Bessel sheets which have the property of self-healing behind occlusions; this happens as Bessel beams arise from constructive interference from angled plane waves%, which then reach behind the occlusion.
+    % from multiple directions to illuminate behind an occlusion.
     }
     \label{fig:scatteringandshadowing}
 \end{figure}
+
+
+
 
 \subsection{Thinner sheets}
 
