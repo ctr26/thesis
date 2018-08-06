@@ -392,10 +392,39 @@ Vettenburg~\emph{et~al.} demonstrated a similar axial resolution improvement as 
 %This can produce better resolution images with larger field of view compared to similarly deconvolved images obtained using Gaussian and Bessel beams (Vettenburg et al. 2014).
 %However, this superiority over Bessel beams has only been demonstrated in comparison with the most basic Bessel beam setup, which does not compensate for higher orders of the Bessel beam distribution
 
+% \begin{figure}
+% 	\centering
+% 	\includegraphics{exotic_beams_cartoon}
+%     \caption{}
+%     \label{fig:scatteringandshadowing}
+% \end{figure}
+
 \begin{figure}
 	\centering
-	\includegraphics{exotic_beams_cartoon}
-    \caption{}
+    \begin{subfigure}[t]{0.25\textwidth}
+        \centering
+        \includegraphics{exotic_beams_cartoon_para}
+        \caption{Par-axial \gls{light-sheet} illumination}
+        \label{fig:exotic_beams_cartoon_para}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.25\textwidth}
+        \centering
+        \includegraphics{exotic_beams_cartoon_mspim}
+        \caption{\gls{mSPIM}, multidirectional \gls{light-sheet} illumination}
+        \label{fig:exotic_beams_cartoon_mspim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.25\textwidth}
+        \centering
+        \includegraphics{exotic_beams_cartoon_exotic}
+        \caption{Par-axial Bessel beam illumination.}
+        \label{fig:exotic_beams_cartoon_exotic}
+    \end{subfigure}
+    \caption{Shadowing artefacts in light-sheet(\subref{fig:exotic_beams_cartoon_para}) can be mitigated through different types of illumination.
+    (\subref{fig:exotic_beams_cartoon_mspim}) uses \gls{light-sheet}s from multiple directions to illuminate behind an occlusion.
+    (\subref{fig:exotic_beams_cartoon_exotic}) uses Bessel sheets which have the property of self-healing behind occlusions; this happens as Bessel beams arise from constructive interference from angled plane waves, which then reach behind the occlusion.% from multiple directions to illuminate behind an occlusion.
+    }
     \label{fig:scatteringandshadowing}
 \end{figure}
 

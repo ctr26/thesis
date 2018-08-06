@@ -1,10 +1,8 @@
-
-!!! Reached end of file while waiting for }. !!!
 File: thesis.tex
 Encoding: utf8
-Words in text: 27535
+Words in text: 27330
 Words in headers: 508
-Words outside text (captions, etc.): 3987
+Words outside text (captions, etc.): 4066
 Number of headers: 191
 Number of floats/tables/figures: 76
 Number of math inlines: 419
@@ -21,12 +19,12 @@ Subcounts:
   890+15+74 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
   556+14+97 (7/1/0/0) Section: Objective arrangements
   370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
-  573+11+0 (6/1/0/0) Section: Illumination
+  573+11+79 (6/1/0/0) Section: Illumination
   91+1+0 (1/0/0/0) Section: Summary
   173+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1492+17+364 (10/3/14/0) Section: Hardware
-  1085+16+299 (9/3/9/1) Section: Software
-  277+27+0 (7/0/0/0) Section: Specification review
+  1084+16+299 (9/3/9/1) Section: Software
+  304+27+0 (7/0/0/0) Section: Specification review
   1009+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
   434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
   94+1+0 (1/0/0/0) Section: Conclusions
@@ -45,7 +43,7 @@ Subcounts:
   663+2+248 (1/4/0/0) Section: The design
   451+3+48 (2/2/0/0) Section: Method
   163+1+0 (1/0/0/0) Section: Remarks
-  698+12+80 (3/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
+  709+12+80 (3/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   522+14+30 (4/1/4/0) Section: Single Particle Tracking
   564+9+20 (5/1/10/3) Section: Astigmatic tracking
   298+8+107 (2/2/15/6) Section: Motion induced astigmatic axial localisation error}\label{sec:spt_maths
@@ -58,9 +56,9 @@ Subcounts:
   915+10+48 (5/1/3/0) Section: Algorithmic bead tracking
   1668+67+452 (7/6/75/0) Section: Results
   547+2+0 (2/0/0/0) Section: Discussion
-  11+3+0 (1/0/0/0) Chapter: Discussion and Conclusions}\label{chapter:conclusions
+  0+3+0 (1/0/0/0) Chapter: Discussion and Conclusions}\label{chapter:conclusions
   262+3+0 (2/0/0/0) Chapter: Perspectives
-  232+1+0 (1/0/0/0) Section: Clearing
+  1+1+0 (1/0/0/0) Section: Clearing
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   0+3+0 (1/0/0/0) Section: System alignments protocol
@@ -71,4 +69,3 @@ Subcounts:
   130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
   14+2+0 (1/0/0/1) Section: Bragg conditons
 
-(errors:1)
