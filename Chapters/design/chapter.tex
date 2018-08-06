@@ -8,6 +8,8 @@
 \definecolor{488nm}{RGB}{0,247,255}
 \definecolor{561nm}{RGB}{198,255,0}
 \definecolor{647nm}{RGB}{255,0,0}
+\definecolor{illustrator_red}{RGB}{226,7,25}
+\definecolor{illustrator_green}{RGB}{0,150,64}
 
 \ifpdf
     \graphicspath{{Chapters/design/Figs/Raster/}{Chapters/design/Figs/PDF/}{Chapters/design/Figs/}}
@@ -170,8 +172,6 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
 % The old SPIM also lacked in that it did not have any motorised XYZ translation, this meant that is could not achieve large area imaging, high-throughput experiments nor could it facilitate single particle tracking in thick samples.
 %\subsection{iSPIM Design}
 %All demonstrations of the 4~pt correction were performed on an iSPIM (\emph{inverted Selective Plane Imaging Microscope}).
-\subsection{Optical Design}
-
 \begin{landscape}
   \begin{figure}
   \centering
@@ -196,6 +196,7 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
 % A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
 % The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
 % A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
+\subsection{Optical Design}
 
 \subsection{Objective lenses}
 
@@ -215,7 +216,7 @@ A piezo scanner (Physik Instrumente~\emph{P-726 PIFOC high-load objective scanne
 Four %typical
 laser sources were chosen to allow good specificity across the visible spectrum as well  as for multi-colour imaging.
 %, future-proofing and overall versatility in the microscope.
-Wavelengths \textcolor{455nm}{\SI{405}{\nano\meter}},  \textcolor{488nm}{\SI{488}{\nano\meter}},  \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
+Wavelengths \textcolor{455nm}{\SI{455}{\nano\meter}},  \textcolor{488nm}{\SI{488}{\nano\meter}},  \textcolor{561nm}{\SI{561}{\nano\meter}} and \textcolor{647nm}{\SI{647}{\nano\meter}} were chosen to excite typical fluorescent exciters of commercially available fluorophores in the visible range.
 The output power of the lasers (\SI{100}{\milli\watt}) was sufficient for good contrast images in SPIM.\@
 \footnote{SPIM is within the single sun power regime} %TODO expand
 %A beam quality $M^2$ nearing 1 is good, with $M^2 = 1$ being a theoretical ideal.
@@ -239,7 +240,7 @@ White light sources (e.g. Fianium \emph{SC390} supercontinuum lasers) are expens
 are more costly as well as the class 4 laser beam being intrinsically more hazardous than the class 3b diode laser in this design.
 %, each colour may have been wholly variant in terms of quality for instance.
 
-\subsection{Light-sheet Generation}
+\subsection{Light-sheet generation}
 
 For generation of the \gls{light-sheet} a \glslink{galvanometric scanning mirrors}{galvanometric scanning mirror} (\emph{Cambridge Technology}) was placed behind a \gls{telecentric} scan lens.
 The \gls{telecentric} lens converts incident angle to emitted position such that a scanning mirror placed on-axis one focal distance behind the lens will produce a paraxial sweeping beam.
@@ -256,8 +257,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 % The light sheet generation components were all housed in cage system optomechanics as opposed to the free space optics of the bottom breadboard.
 % The cage system was used as it projects the sensitive galvanometer mirrors as well as make lens alignment easier as the cage system \textit{should} remove off axis by virtue.
 
-\definecolor{illustrator_red}{RGB}{226,7,25}
-\definecolor{illustrator_green}{RGB}{0,150,64}
+
 % \clearpage
 \begin{figure}[p]
     \begin{leftfullpage}
@@ -279,7 +279,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 \begin{figure}
         \ContinuedFloat
     \begin{fullpage}
-    \caption{
+    \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
     \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
     Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
     The coordinate system was chosen with the imaging axis being coaxial with the the axially direction (\(z\)) in the imaging direction, and right-handed with the \(x\) direction into the page and \(y\) in the direction of propagation of the illumination.\\
@@ -419,7 +419,7 @@ Once a \gls{TTL} 5V signal is sent to the camera, there is a delay of approximat
 During this window the \(y\) mirror, which creates the \gls{light-sheet}, and \(z\) mirror are pre-driven so that the mirrors are travelling at a constant velocity during the exposure window, giving a uniform illumination.
 The time-point of the start of the exposure window was found empirically (\SI{9.8}{\milli\second} after camera triggering) by tuning this window until the illumination profile, under slit scanning, was uniform when visualised using fluorescent dye (Rhodamine).
 During the exposure, a \gls{TTL} signal is sent to the requisite laser channel for illumination.
-Once the exposure window is finished, the \(y\) and \(z\) mirror is sinusoidally returned to the start voltage for the next exposure (see Figure~\ref{fig:slit_signals}); sinusoidal ramping helps protect the mirror against inertia-induced damage.
+Once the exposure window is finished, the \(y\) and \(z\) mirror is sinusoidally returned to the start voltage for the next exposure (see \figurename~\ref{fig:slit_signals}); sinusoidal ramping helps protect the mirror against inertia-induced damage.
 
 \begin{figure}
   \centering
@@ -630,6 +630,9 @@ A beam splitter was placed on the lower optical breadboard before reaching the s
 \paragraph{\ref{item:software}. User-friendly and extensible software scheme}
 \gls{LabVIEW} was used to create a modular system for the control software.
 By using an appropriate architecture, as detailed above, modules could interact freely and run in parallel.
+
+The following chapter will expand on the signal generation presented in this chapter in an attempt to optimise and maximise co-planarity between the imaging and illumination planes.
+
 %The software was designed such that it could be ported to other systems with minimal re-programming
 
 %
