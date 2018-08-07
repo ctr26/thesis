@@ -211,7 +211,7 @@ Instead, the illumination tube lens supplied slightly diverging light to the bac
 Very few objective pairs maximise detection and illumination \gls{NA} whilst being water dipping and compatible, and a solution the solution Chapter~\ref{chapter:chamber} was found to be effective for imaging.
 A piezo scanner (Physik Instrumente~\emph{P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the illumination plane.
 
-\subsection{illumination}
+\subsection{Illumination}
 
 Four %typical
 laser sources were chosen to allow good specificity across the visible spectrum as well  as for multi-colour imaging.
@@ -256,11 +256,8 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 %
 % The light sheet generation components were all housed in cage system optomechanics as opposed to the free space optics of the bottom breadboard.
 % The cage system was used as it projects the sensitive galvanometer mirrors as well as make lens alignment easier as the cage system \textit{should} remove off axis by virtue.
-
-
-% \clearpage
-\begin{figure}[p]
-    \begin{leftfullpage}
+\clearpage
+\begin{figure}
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
@@ -268,17 +265,19 @@ This allowed for fast volumetric imaging as well as correction for distortions c
         \caption{\gls{CAD} model of \gls{light-sheet} microscope from the side, gravity is down}
         \label{fig:solidworks_design_front}
     \end{subfigure}
+\end{figure}
+\clearpage
+\begin{figure}
+    \ContinuedFloat
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_top}
         \caption{\gls{CAD} model of \gls{light-sheet} microscope from the top, gravity is going through the page}
         \label{fig:soldiworks_top}
     \end{subfigure}   % \ContinuedFloat
-\end{leftfullpage}
-\end{figure}[p]
+\end{figure}
 \begin{figure}
         \ContinuedFloat
-    \begin{fullpage}
     \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
     \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
     Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
@@ -290,7 +289,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     \textcolor{illustrator_green}{\textbf{SL}}: Scan lens, keeps the \gls{light-sheet} par-axial at the specimen plane.
     \textcolor{illustrator_green}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the \gls{light-sheet} into \gls{illumination arm}.
     \textcolor{illustrator_green}{\textbf{TL}}: Tube lens (\emph{ITL200}), focuses collimated illumination light into the back aperture of the illumination objective \textcolor{illustrator_green}{\textbf{OBJ}}. Objective lens, for illumination.\\
-    \textcolor{illustrator_red}{\textbf{OBJ}}: {OBJ}, Objective lens, for imaging.
+    \textcolor{illustrator_red}{\textbf{OBJ}}: Objective lens, for imaging.
     \textcolor{illustrator_red}{\textbf{TL}}: Tube lens (\emph{ITL200}), images specimen plane to an image plane
     \textcolor{illustrator_red}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
     \textcolor{illustrator_red}{\textbf{OBJ-R}}: Objective relay, on a turret for choosing multiple magnifications.
@@ -308,7 +307,6 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     % \textcolor{illustrator_red}{CAM}. Camera, for detection of fluorescent signal.
     % }
     \label{fig:spim_cad}
-\end{fullpage}
 \end{figure}
 \clearpage
 % \begin{figure}
