@@ -21,8 +21,9 @@ Volumetric imaging can also be achieved by rotating a sample and reconstructing 
 %As tomographic technology has been shrunk to the millimeter scale, errors induced by hardware become apparent.
 Accurate reconstructions of volumes rely on heavily on precision movement and rotation.
 %This chapter addresses a key downside in traditional approaches to performing full three dimensional reconstructions tomographically.
-Here an algorithm will be presented that relies exclusively on multiple (5>) tracked fiducial beads and reconstructs even with systematic mechanical drift.
-The algorithm presented will use an extension of the projective mathematics discussed in Chapter %TODO insert chapter.
+Here an algorithm will be presented that relies exclusively on multiple (5+) tracked fiducial beads and reconstructs even with systematic mechanical drift.
+The algorithm presented will use an extension of the projective mathematics discussed in Chapter \ref{chapter:homography}.%TODO insert chapter.
+The projective mathematics introduced in Chapter \ref{chapter:homography} can be used for %TODO THISISISI
 
 \pagebreak
 
@@ -35,16 +36,16 @@ The algorithm presented will use an extension of the projective mathematics disc
 %Micro-MRI can also achieve resolution in the micron scale, however the cost and size of MRI instruments can be prohibitive for many applications[21].
 %Furthermore, neither of these techniques can exploit the plethora of information that can be extracted through fluorescence microscopy.
 
-Sharpe \emph{et al} proposed Optical Projection Tomograpghy in 2002 \cite{sharpe_optical_2002}
-using visible light to image transparent or translucent mesoscopic samples, with micro resoltuion.
-OPT addresses the scale gap between the tomographic techniques (samples larger than 10 mm), and light microscopy techniques (samples smaller than 1 mm) to image biological samples in the 1-10 mm regime.
+Sharpe~\emph{et.al} proposed \gls{OPT} in 2002 \cite{sharpe_optical_2002}
+using visible light to image transparent or translucent mesoscopic samples, with micro resolution.
+\gls{OPT} addresses a scale gap between the photographic techniques (samples larger than 10 mm), and light microscopy techniques (samples smaller than 1 mm) to image biological samples in the \SIrange{1}{10}{\milli\meter} regime.
 %Optical Projection Tomography was first proposed by Sharpe in 2002 [30]; it uses visible light to image and create volumetric data of transparent (naturally or artificially) mesoscopic objects (1 - 10 mm) at micron-level resolution.
-OPT is based on computerised tomography techniques [17] where set of projections of a sample are imaged as it travels through a full rotation.
+\gls{OPT} is based on computerised tomography techniques [17] where set of projections of a sample are imaged as it travels through a full rotation.
 Algorithms exist to then transform this set of images into an $xyz$ image stack.
 %A cross-sectional stack of slices from the original object is reconstructed using a back-projection algorithm from the projection images.
-OPT is non-invasive optically but may reauire specialist invasive preparation for its samples.
-There are two imaging moadilities for OPT, emission OPT (eOPT) and transmission OPT (tOPT).
-In eOPT, a fluorescent sample is excited using an illuination source off axis to the detection, similiar to light-sheet but without the excitation being being being shaped into a sheet.
+OPT is non-invasive optically but may require specialist invasive preparation for its samples.
+There are two imaging modalities for OPT, emission \gls{OPT} (eOPT) and transmission OPT (tOPT).
+In eOPT, a fluorescent sample is excited using an illumination source off axis to the detection, similar to light-sheet but without the excitation being being being shaped into a sheet.
 Scattered illumination photons are rejected at the detector using an appropriate filter.
 In tOPT, a white-light source with a diffuser and a collimation is placed along the optical axis to provide near-collimated, uniform illumination onto the sample for transmission to a detector oppositem See Figure \ref{fig:OPT_digram}%TODO.
 Each pixel at the detector corresponds to a ray that has through the sample but whose intensity has been attenuated by the sample.

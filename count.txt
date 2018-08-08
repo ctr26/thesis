@@ -1,6 +1,6 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27302
+Words in text: 27299
 Words in headers: 510
 Words outside text (captions, etc.): 4469
 Number of headers: 192
@@ -30,7 +30,7 @@ Subcounts:
   414+10+289 (3/3/6/0) Section: Experimental implementation and verification
   122+1+0 (1/0/0/0) Section: Conclusions
   89+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography}\label{chapter:flopt
-  552+3+22 (3/1/10/2) Section: Tomography
+  549+3+22 (3/1/10/2) Section: Tomography
   605+6+12 (3/1/18/10) Section: Stereoscopic Imaging
   694+3+91 (1/3/14/1) Section: The proposed algorithm
   511+9+367 (2/8/24/0) Section: Results
