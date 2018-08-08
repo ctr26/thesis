@@ -1,6 +1,6 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27314
+Words in text: 27302
 Words in headers: 510
 Words outside text (captions, etc.): 4469
 Number of headers: 192
@@ -21,7 +21,7 @@ Subcounts:
   370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
   573+11+73 (6/1/0/0) Section: Illumination
   91+1+0 (1/0/0/0) Section: Summary
-  173+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
+  161+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1491+17+363 (10/4/14/0) Section: Hardware
   1084+16+299 (9/3/9/1) Section: Software
   304+27+0 (7/0/0/0) Section: Specification review
