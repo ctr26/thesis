@@ -1,11 +1,11 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27335
-Words in headers: 508
-Words outside text (captions, etc.): 4331
-Number of headers: 191
-Number of floats/tables/figures: 78
-Number of math inlines: 419
+Words in text: 27314
+Words in headers: 510
+Words outside text (captions, etc.): 4469
+Number of headers: 192
+Number of floats/tables/figures: 79
+Number of math inlines: 418
 Number of math displayed: 76
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -13,7 +13,7 @@ Subcounts:
   110+1+0 (1/0/0/0) Chapter: Introduction
   281+2+0 (2/0/0/0) Section: Motivation
   47+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy
-  954+21+228 (10/6/31/6) Section: Light microscopy
+  950+21+228 (10/6/31/6) Section: Light microscopy
   1343+21+172 (12/3/10/0) Section: Fluoresence microscopy
   756+21+239 (7/2/11/0) Section: Three dimensional fluorescence microscopy
   891+15+186 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
@@ -25,9 +25,10 @@ Subcounts:
   1491+17+363 (10/4/14/0) Section: Hardware
   1084+16+299 (9/3/9/1) Section: Software
   304+27+0 (7/0/0/0) Section: Specification review
-  1009+18+99 (5/1/67/17) Chapter: Homographically generated light-sheets}\label{chapter:homography
-  434+10+173 (3/2/7/0) Section: Experimental Implementation and Verification
-  94+1+0 (1/0/0/0) Section: Conclusions
+  122+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
+  862+17+121 (5/1/67/17) Section: Homographic theory
+  414+10+289 (3/3/6/0) Section: Experimental implementation and verification
+  122+1+0 (1/0/0/0) Section: Conclusions
   89+5+0 (1/0/0/0) Chapter: Frame Localisation Optical Projection Tomography}\label{chapter:flopt
   552+3+22 (3/1/10/2) Section: Tomography
   605+6+12 (3/1/18/10) Section: Stereoscopic Imaging
