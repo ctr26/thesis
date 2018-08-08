@@ -10,20 +10,27 @@
     \graphicspath{{Chapters/flopt/Figs/Vector/}{Chapters/flopt/Figs/}}
 \fi
 
-\chapter{Frame Localisation Optical Projection Tomography}\label{chapter:flopt}
+\chapter{Frame localisation optical projection tomography}\label{chapter:flopt}
 
 \epigraph{\emph{Pascale Sauvage}}{--- Pablo Vallejo}
 
-In the previous chapters volumetric imaging was achieved using widefield imaging and a relative scanning motion between the system's focal plane and the sample.
-Volumetric imaging can also be achieved by rotating a sample and reconstructing tomographically.
+In the previous chapters, volumetric imaging was achieved using \gls{wide-field} imaging and a relative scanning motion between the system's focal plane and the sample.
+Volumetric imaging can also be achieved by rotating a sample and %reconstructing tomographically.
+tomographically reconstructing the \gls{3D} distribution of bright signal (scattering, absorption of luminosity) within the specimen.
 %Orthogonal imaging schema can be replaced with pass through imaging provide samples are sufficiently transparent.
 %Instead of scanning these samples laterally one can rotate their sample and reconstruct a full three dimensional image.
 %As tomographic technology has been shrunk to the millimeter scale, errors induced by hardware become apparent.
-Accurate reconstructions of volumes rely on heavily on precision movement and rotation.
+Accurate %reconstructions of volumes rely on
+tomographic reconstruction relies
+heavily on precision movement and rotation.
 %This chapter addresses a key downside in traditional approaches to performing full three dimensional reconstructions tomographically.
 Here an algorithm will be presented that relies exclusively on multiple (5+) tracked fiducial beads and reconstructs even with systematic mechanical drift.
-The algorithm presented will use an extension of the projective mathematics discussed in Chapter \ref{chapter:homography}.%TODO insert chapter.
-The projective mathematics introduced in Chapter \ref{chapter:homography} can be used for %TODO THISISISI
+
+The projective mathematics introduced in Chapter~\ref{chapter:homography} is a small part of a field of mathematics used in computer vision to to localise (in \gls{3D}) points in space as projected onto multiple view points.
+The algorithm presented will use an extension of this projective mathematics to reconstruction \gls{OPT} volumes from each rotational projection.
+Considerations were made to combine \gls{OPT} and \gls{light-sheet} imaging within the system constructed in Chapter~\ref{chapter:design}, though this was never realised during this thesis.
+
+% discussed in Chapter \ref{chapter:homography}.%TODO insert chapter.
 
 \pagebreak
 
@@ -40,16 +47,19 @@ Sharpe~\emph{et.al} proposed \gls{OPT} in 2002 \cite{sharpe_optical_2002}
 using visible light to image transparent or translucent mesoscopic samples, with micro resolution.
 \gls{OPT} addresses a scale gap between the photographic techniques (samples larger than 10 mm), and light microscopy techniques (samples smaller than 1 mm) to image biological samples in the \SIrange{1}{10}{\milli\meter} regime.
 %Optical Projection Tomography was first proposed by Sharpe in 2002 [30]; it uses visible light to image and create volumetric data of transparent (naturally or artificially) mesoscopic objects (1 - 10 mm) at micron-level resolution.
-\gls{OPT} is based on computerised tomography techniques [17] where set of projections of a sample are imaged as it travels through a full rotation.
-Algorithms exist to then transform this set of images into an $xyz$ image stack.
+\gls{OPT} is based on computerised tomography techniques \cite{[17]} in which a set of projections of a specimen are imaged as the specimen travels through a full rotation.
+Algorithms exist to then transform this set of images into a
+%n $xyz$ image stack.
+\gls{3D} image stack in Cartesian \(xyz\) coordinates.
 %A cross-sectional stack of slices from the original object is reconstructed using a back-projection algorithm from the projection images.
-OPT is non-invasive optically but may require specialist invasive preparation for its samples.
-There are two imaging modalities for OPT, emission \gls{OPT} (eOPT) and transmission OPT (tOPT).
-In eOPT, a fluorescent sample is excited using an illumination source off axis to the detection, similar to light-sheet but without the excitation being being being shaped into a sheet.
+\gls{OPT} is non-invasive optically but may require specialist invasive preparation for its samples.
+There are two imaging modalities for \gls{OPT}, \gls{eOPT} and \gls{tOPT}.
+In \gls{eOPT}, a fluorescent sample is excited using an illumination source off axis to the detection, similar to \gls{light-sheet} but the entire \gls{depth of field} of the detection of objective is illuminated.
+% without the excitation being shaped into a sheet.
 Scattered illumination photons are rejected at the detector using an appropriate filter.
-In tOPT, a white-light source with a diffuser and a collimation is placed along the optical axis to provide near-collimated, uniform illumination onto the sample for transmission to a detector oppositem See Figure \ref{fig:OPT_digram}%TODO.
-Each pixel at the detector corresponds to a ray that has through the sample but whose intensity has been attenuated by the sample.
-The two modalities can work in unison to provide contextual information, the transmission images provide overall structure which can be supplemented by the fluorescent signal from a label of interest.
+In tOPT, a white-light source with a diffuser and a collimator is placed along the optical axis to provide near-collimated, uniform illumination onto the sample for transmission to a detector opposite (see \figurename~\ref{fig:OPT_digram}).
+Each \gls{photosite} at the detector corresponds to a ray that has passed through the sample and been attenuated by the sample.
+The \gls{eOPT} and \gls{tOPT} modes can work in unison to provide contextual information, with the transmission images indicating overall structure (optical density of absorption or scattering) which can be supplemented by the fluorescent signal from a label of interest.
 
 \begin{figure}
   \centering
@@ -60,36 +70,47 @@ The two modalities can work in unison to provide contextual information, the tra
 
 \subsection{Reconstruction}
 
-As the sample is rotated each pixel collects an an intensity $I = I_{\theta}e^{-k}$ at discrete angles $n$ through a full rotation of the sample; where $I_{\theta}$ is the unattenuated radiation intensity from the source to the detector, $k$ is the attenuation caused by the sample along a detected ray an $I(\theta)$ is the measured intensity, see Figure %TODO figure
+As the sample is rotated each pixel collects an an intensity $I(\theta) = I_{n}e^{-k}$ at discrete angles $n$ through a full rotation of the sample; where $I_{n}$ is the unattenuated radiation intensity from the source to the detector, $k$ is the attenuation caused by the sample along a detected ray an $I(n)$ is the measured intensity, see \figurename~\ref{fig:OPT_digram}.
 Rays from the sample to the detector approximate straight lines, and so the the rays reaching the detector with a line integrals.
-A projection is then the resulting intensity profile at the detector for a rotation angle, and the integral transform that results in $f(I_i,\theta_n)$ is the Radon transform.
-This is defined mathematically as:
+A projection is then the resulting intensity profile at the detector for a rotation angle, and the integral transform that results in \(P_\theta(v)\)
+%$f(I_i,\theta_n)$
+is the Radon transform.
+% This is defined mathematically as:
 
 \begin{align}
-    f(I,\theta) = \int \int R(x,y)\delta (x\cos(\theta)+y \sin(\theta)-I)dx dy
+    \intertext{The equation of a set of parallel rays from a source passing through the specimen to a point \(v\) along the detector is:}
+    &x\cos(\theta) + y\sin(\theta) - v = 0 \\
+    \intertext{Projecting many such rays through a sample with structure \(f(x,y)\) gives:}
+    P_\theta(v) = &\int \int f(x,y)\delta (x\cos(\theta)+y \sin(\theta)-v)dx dy
 \end{align}
 
-Where $f(I,\theta)$ is the Radon transform, and $R(x,y)$ represents a 2D slice of the sample.
-A parallel projection is then just the combination of line integrals $f(I)$ for a constant.% for a constant.
-An inverse Radon transform is used to recover the original object from the projection data.
-By taking the Fourier transform of each projection measurement and reorder the information from the sample into it's respective place in Fourier space.
-This is valid due to the Fourier Slice theorem (%TODO cite
-) which states that the Fourier transform of a parallel projection equivalent to a 2D slice of of the Fourier transform original sample.
-A spatial filtering step is applied during back-projection to avoid spatial frequency oversampling during the object’s rotation (see Figure %TODO figure 5);
-a high pass filter is commonly used to compensate for the percieved blurring.
+Where $P_\theta(t)$ is the Radon transform of $f(x,y)$ which represents the contrast image of \gls{2D} slice of the specimen.
+% A parallel projection is then just the combination of line integrals $f(I)$ for a constant. % for a constant.
+
+An inverse Radon transform is used to recover the original object from the projection data; which is achieved by by taking the Fourier transform of each projection measurement, then reordering the information from the sample into the respective position in Fourier space.
+This is valid due to the Fourier Slice theorem (see Appendix \ref{appendix:fourierslice} for a derivation)\cite{Fourier slice theorem}.%TODO cite
+which states that the \gls{Fourier transform} of a parallel projection equivalent to a 2D slice of the Fourier transform original sample.
+
 %A high pass filter such as a ramp filter is commonly used to counter the blurring caused by this oversampling.
-FBP be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
+% \gls{FBP} can be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
+
 \begin{align}
-R_{\text{fpb}}(x,y) = \int_{0}^{\pi} f'(x\cos(\theta)+y\sin(\theta),\theta)dxdy
-\intertext{where $f'$ is the filtered projection data, and $R_{fbp}$ is the back-projected image.}
+f_{\text{fpb}}(x,y) = \int_{0}^{\pi} Q_\theta (x\cos(\theta)+y\sin(\theta),\theta)dxdy
+\intertext{where $Q_\theta$ is the filtered projection data, and $f(x,y)$ is the back-projected image.}
 \end{align}
 %\todo{Verify this?!?!?!}
 
+A spatial filtering step is applied during back-projection to avoid spatial frequency oversampling during the object’s rotation (see Figure %TODO figure 5);
+a high pass filter is commonly used to compensate for the perceived blurring.
+The blurring arises as \(Q_\theta\) is back-projected (smeared) across the image plane for each angle of reconstruction; which means that not only does the back-projection contribute at the line it is intended to (line CD in \figurename~\ref{fig:TODO}), but all other points along the back-projecting ray.
+% The blurring occurs as \(Q_\theta\) makes the same contribution to the reconstruction for each angle
+% will make the same contribution to the reconstruction at all of these points. Therefore, one could say that in the reconstruction process each filtered projection, Qe, is smeared back, or backprojected, over the image plane.
+
 \subsubsection{Aim}
 
-The Radon transform relies heavily on the assumption of circular motion only.
-This chapter hopes to exploit some of the techniques seen in stereoscopic imaging to register back projections rather than relying on line integrals.
-The algorithm proposed here is therefore robust to mechanical drifts across acquisitions as well as inconsistent angular .steps
+The Radon transform relies heavily on the assumption of circular motion with constant angular steps about a vertical axis.
+This chapter presents and improved reconstruction method which explains, some of the techniques used in stereoscopic imaging to register back projections rather than relying on line integrals.
+The algorithm proposed here is therefore robust to mechanical drifts across acquisitions as well as inconsistent angular steps
 
 \section{Stereoscopic Imaging}
 
@@ -102,19 +123,28 @@ The algorithm proposed here is therefore robust to mechanical drifts across acqu
 
 %\todo{Camera projections \ lecture notes 3}
 
-Imaging scenes in stereo allows for the triangulation of individual points in 3D space, features or fiducials in one detector to another.
-Triangulation requires features in both images to be the same, this is known as the correspondence problem.
-Many methods exist to ensure that features are known and confidently the same between two cameras; properties of scale independent features and their surrounding pixel environment in one image can be matched to a similar feature in the second image.
+Imaging scenes in stereo allows for the triangulation of individual features in three dimensional space.
+features or fiducials in one detector to another (When the features are uniquely identifiable points, such as fluorescent beads).
+Triangulation requires each feature
+% in both images to be the same
+to be detected in both images of a stereo imaging system, and for these detections to be correctly associated with one another:
+this is known as the correspondence problem.
+Many methods exist to ensure that features are%
+% known and confidently the same
+detected and accurately associated
+image data from
+between two cameras. %TODO Say more?
+Properties of scale independent features and their surrounding pixel environment in one image can be matched to a similar feature in the second image.
 
-Now, suppose we know the relative positions of the two cameras and their intrinsic parameters.
-Given the CCD parameters, we can translate pixel coordinates (u, v) into image plane coordinates $(x, y)$:
+Now, suppose we know the relative positions of the two cameras and their intrinsic parameters, such as magnification and pixel offset.
+Given the \gls{CCD} parameters, we can translate pixel coordinates \((u, v(\) into \gls{sample plane} coordinates \((x, y)\):
 \begin{align}
     u = u_0 + k_u x \\
     v = v_0 + k_v y
 \end{align}
 
-And knowing the focal length of the imaging system, image plane coordinates may be translated into a ray in 3D.
-The ray can be defined by a point $\textbf{p}$ in camera-centred coordinates where it crosses the image plane as:
+Knowing the focal length of the imaging system, \gls{sample plane} coordinates may be translated into a ray in \gls{3D}.
+The ray can be defined by a point \(\textbf{p}\) in camera-centred coordinates, where it crosses the \gls{sample plane} as:
 
 \begin{align}
   \mathbf{p} = \begin{bmatrix}
@@ -122,8 +152,8 @@ The ray can be defined by a point $\textbf{p}$ in camera-centred coordinates whe
       \end{bmatrix}
 \end{align}
 
-From the definition of a point as observed through an image we can construct a dual-view model of points in space.
-Using a model of a system with two views allows for the triangulation of rays based on image correspondences, this is an important part of sterovision.
+From the definition of a point, as observed through an image, we can construct a dual-view model of points in space.
+Using a model of a system with two views allows for the triangulation of rays based on image correspondences, this is an important part of stereovision.
 The most important matching constraint which can be used the \emph{epipolar constraint}, and follows directly from the fact that the rays must intersect in 3D space.
 Epipolar constraints facilitate the search for correspondences, they constrain the search to a 1D line in each image.
 To derive general epipolar constraints, one should consider the epipolar geometry of two camera as seen in Figure \ref{fig:epi-polar-geom}
@@ -154,7 +184,7 @@ The two camera-centered coordinate systems are related by a rotation $R$ and tra
   \ref{fig:epi-polar-geom}
 \end{figure}
 
-\subsubsection{Essential Matrix}
+\subsubsection{The Essential matrix}
 
 Taking the scalar product with $\mathbf{X'_c}$, we obtain:
 \begin{align}
