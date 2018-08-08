@@ -10,6 +10,14 @@
     \graphicspath{{Chapters/flopt/Figs/Vector/}{Chapters/flopt/Figs/}}
 \fi
 
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+   \hskip -\arraycolsep
+   \let\@ifnextchar\new@ifnextchar
+   \array{#1}}
+\makeatother
+
 \chapter{Frame localisation optical projection tomography}\label{chapter:flopt}
 
 \epigraph{\emph{Pascale Sauvage}}{--- Pablo Vallejo}
@@ -29,12 +37,14 @@ Here an algorithm will be presented that relies exclusively on multiple (5+) tra
 The projective mathematics introduced in Chapter~\ref{chapter:homography} is a small part of a field of mathematics used in computer vision to to localise (in \gls{3D}) points in space as projected onto multiple view points.
 The algorithm presented will use an extension of this projective mathematics to reconstruction \gls{OPT} volumes from each rotational projection.
 Considerations were made to combine \gls{OPT} and \gls{light-sheet} imaging within the system constructed in Chapter~\ref{chapter:design}, though this was never realised during this thesis.
+\\\\
+\emph{It should be noted that, due to conventions within the field of computer vision, all lab frame or \glslink{world point}{world coordinates} will be represented as capital letters (ex.~\gls{X}, \gls{X_c}) in this chapter.}
 
 % discussed in Chapter \ref{chapter:homography}.%TODO insert chapter.
 
 \pagebreak
 
-\section{Tomography}
+\section{Rotational computer tomography in microscopy}
 
 %Well establishjed
 %Three-dimensional imaging of anatomy in thick biological samples provides valuable data for developmental biology studies.
@@ -64,7 +74,7 @@ The \gls{eOPT} and \gls{tOPT} modes can work in unison to provide contextual inf
 \begin{figure}
   \centering
   \includegraphics{Chapters/flopt/Figs/PDF/OPT_digram}
-  \caption{Principle of OPT, a respective rotation between the sample and the detector illumination pair is iterated, the volumetric image is later reconstructed.}
+  \caption[Principle of OPT]{Principle of OPT, a respective rotation between the sample and the detector illumination pair is iterated, the volumetric image is later reconstructed.}
   \label{fig:OPT_digram}
 \end{figure}
 
@@ -79,12 +89,12 @@ is the Radon transform.
 
 \begin{align}
     \intertext{The equation of a set of parallel rays from a source passing through the specimen to a point \(v\) along the detector is:}
-    &x\cos(\theta) + y\sin(\theta) - v = 0 \\
-    \intertext{Projecting many such rays through a sample with structure \(f(x,y)\) gives:}
-    P_\theta(v) = &\int \int f(x,y)\delta (x\cos(\theta)+y \sin(\theta)-v)dx dy
+    &X\cos(\theta) + Y\sin(\theta) - v = 0 \\
+    \intertext{Projecting many such rays through a sample with structure \(f(X,Y)\) gives:}
+    P_\theta(v) = &\int_{\infty}^{\infty} \int_{\infty}^{\infty} f(X,Y)\delta (x\cos(\theta)+y \sin(\theta)-v)dX dY
 \end{align}
 
-Where $P_\theta(t)$ is the Radon transform of $f(x,y)$ which represents the contrast image of \gls{2D} slice of the specimen.
+Where $P_\theta(v)$ is the Radon transform of $f(X,Y)$ which represents the contrast image of \gls{2D} slice of the specimen.
 % A parallel projection is then just the combination of line integrals $f(I)$ for a constant. % for a constant.
 
 An inverse Radon transform is used to recover the original object from the projection data; which is achieved by by taking the Fourier transform of each projection measurement, then reordering the information from the sample into the respective position in Fourier space.
@@ -95,14 +105,14 @@ which states that the \gls{Fourier transform} of a parallel projection equivalen
 % \gls{FBP} can be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
 
 \begin{align}
-f_{\text{fpb}}(x,y) = \int_{0}^{\pi} Q_\theta (x\cos(\theta)+y\sin(\theta),\theta)dxdy
-\intertext{where $Q_\theta$ is the filtered projection data, and $f(x,y)$ is the back-projected image.}
+f_{\text{fpb}}(X,Y) = \int_{0}^{\pi} Q_\theta (X\cos(\theta)+Y\sin(\theta),\theta)dXdY
 \end{align}
-%\todo{Verify this?!?!?!}
 
+%\todo{Verify this?!?!?!}
+Where $Q_\theta$ is the filtered projection data, and $f(X,Y)$ is the back-projected image.
 A spatial filtering step is applied during back-projection to avoid spatial frequency oversampling during the object’s rotation (see Figure %TODO figure 5);
 a high pass filter is commonly used to compensate for the perceived blurring.
-The blurring arises as \(Q_\theta\) is back-projected (smeared) across the image plane for each angle of reconstruction; which means that not only does the back-projection contribute at the line it is intended to (line CD in \figurename~\ref{fig:TODO}), but all other points along the back-projecting ray.
+The blurring arises as \(Q_\theta\) is back-projected (smeared) across the \gls{image plane} for each angle of reconstruction; which means that not only does the back-projection contribute at the line it is intended to (line CD in \figurename~\ref{fig:TODO}), but all other points along the back-projecting ray.
 % The blurring occurs as \(Q_\theta\) makes the same contribution to the reconstruction for each angle
 % will make the same contribution to the reconstruction at all of these points. Therefore, one could say that in the reconstruction process each filtered projection, Qe, is smeared back, or backprojected, over the image plane.
 
@@ -123,8 +133,7 @@ The algorithm proposed here is therefore robust to mechanical drifts across acqu
 
 %\todo{Camera projections \ lecture notes 3}
 
-Imaging scenes in stereo allows for the triangulation of individual features in three dimensional space.
-features or fiducials in one detector to another (When the features are uniquely identifiable points, such as fluorescent beads).
+Imaging scenes in stereo allows for the triangulation of individual features in three dimensional space (know as \gls{world point}s) when the features or fiducials in one detector are uniquely identifiable (such as fluorescent beads).
 Triangulation requires each feature
 % in both images to be the same
 to be detected in both images of a stereo imaging system, and for these detections to be correctly associated with one another:
@@ -137,14 +146,14 @@ between two cameras. %TODO Say more?
 Properties of scale independent features and their surrounding pixel environment in one image can be matched to a similar feature in the second image.
 
 Now, suppose we know the relative positions of the two cameras and their intrinsic parameters, such as magnification and pixel offset.
-Given the \gls{CCD} parameters, we can translate pixel coordinates \((u, v(\) into \gls{sample plane} coordinates \((x, y)\):
+Given the \gls{CCD} parameters, we can translate pixel coordinates \(\gls{w} = (u, v)\) into \gls{image plane} coordinates \(\gls{x}=(x, y)\):
 \begin{align}
     u = u_0 + k_u x \\
     v = v_0 + k_v y
 \end{align}
 
-Knowing the focal length of the imaging system, \gls{sample plane} coordinates may be translated into a ray in \gls{3D}.
-The ray can be defined by a point \(\textbf{p}\) in camera-centred coordinates, where it crosses the \gls{sample plane} as:
+Knowing the focal length (\(f\)) of the imaging system, \gls{image plane} coordinates may be translated into a ray in \gls{3D}.
+The ray can be defined by a point \gls{p} in camera-centred coordinates, where it crosses the \gls{image plane} as:
 
 \begin{align}
   \mathbf{p} = \begin{bmatrix}
@@ -152,74 +161,72 @@ The ray can be defined by a point \(\textbf{p}\) in camera-centred coordinates, 
       \end{bmatrix}
 \end{align}
 
-From the definition of a point, as observed through an image, we can construct a dual-view model of points in space.
-Using a model of a system with two views allows for the triangulation of rays based on image correspondences, this is an important part of stereovision.
+From the definition of a \gls{world point}, as observed through an image, we can construct a dual-view model of \gls{world point}s in space as in \figurename~\ref{polar}.
+Using a model of a system with two views allows for the triangulation of rays based on image correspondences, this is an important part of stereo-vision.
 The most important matching constraint which can be used the \emph{epipolar constraint}, and follows directly from the fact that the rays must intersect in 3D space.
 Epipolar constraints facilitate the search for correspondences, they constrain the search to a 1D line in each image.
-To derive general epipolar constraints, one should consider the epipolar geometry of two camera as seen in Figure \ref{fig:epi-polar-geom}
+To derive general epipolar constraints, one should consider the epipolar geometry of two cameras as seen in \figurename~\ref{fig:epi-polar-geom}
+
 
 The \textbf{baseline} is defined as the line joining the optical centres.
-An \textbf{epipole} is the point of intersection of the baseline with the image plan and there are two epipoles, one for each image.
+An \textbf{epipole} is the point of intersection of the baseline with the image plan and there are two epipoles per feature, one for each camera.
 An \textbf{epipolar line} is a line of intersection of the epipolar plane with an image plane.
-It is the image in one camera of the ray from the other camera’s optical centre to the point $X$.
-For different world points $X$, the epipolar plane rotates about the baseline.
-All epipolar lines intersectat the epipole.
+It is the image in one camera of the ray from the other camera’s optical centre to the \gls{world point} (\gls{X}).
+For different \gls{world point}s, the epipolar plane rotates about the baseline.
+All epipolar lines intersect the epipole.
 
 The epipolar line constrains the search for correspondence from a region to a line.
-If a point feature $\textbf{x}$ is observed in one image, then its location $\textbf{x'}$ in the other image must lie on the epipolar line.
+If a point feature is observed at \gls{x} in one image frame, then its location \gls{x'} in the other image frame must lie on the epipolar line.
 We can derive an expression for the epipolar line.
-The two camera-centered coordinate systems are related by a rotation $R$ and translation $\textbf{T}$:
+The two camera-centered coordinate systems \gls{X_c'} and \gls{X_c} are related by a rotation, \gls{R} and translation, \gls{T} (see in \figurename~\ref{fig:epi-polar-geom}) as follows:
 
 \begin{align}
-    \mathbf{X'}_c &= R\mathbf{X'}_c + \mathbf{T} \nonumber \\
-    \intertext{Taking the vector product with T, we obtain} \nonumber \\
-    T \times \mathbf{X'}_c &= T \times R\mathbf{X'}_c + \mathbf{T} \times \mathbf{T} \nonumber \\
-    T \times \mathbf{X'}_c &= T \times R\mathbf{X'}_c \label{Xprime = RTX}
+    \gls{X_c'} &= R\gls{X_c'} + \gls{T}  \\
+    \intertext{Taking the vector product with \(\gls{T}\), we obtain}
+    \gls{T} \times \gls{X_c'} &= \gls{T} \times R\gls{X_c}+ \gls{T} \times \gls{T}  \\
+    \gls{T} \times \gls{X_c'} &= \gls{T} \times R\gls{X_c}\label{eq:Xprime = RTX}
 \end{align}
 
 \begin{figure}
   \centering
   \includegraphics{Chapters/flopt/Figs/PDF/epi-polar-geom}
-  \caption{Epi-polar geometry described for two adjacent views (or cameras of a scene).}
-  \ref{fig:epi-polar-geom}
+  \caption{Epi-polar geometry described for two adjacent views (or cameras of a scene).
+  }\label{fig:epi-polar-geom}
 \end{figure}
 
-\subsubsection{The Essential matrix}
+\subsection{The Essential matrix}
 
-Taking the scalar product with $\mathbf{X'_c}$, we obtain:
+Taking the scalar product with \gls{X_c'}, we obtain:
 \begin{align}
-    \mathbf{X'}_c \cdot (\mathbf{T} \times \mathbf{X'}_c) &= \mathbf{X'}_c\cdot (\mathbf{T} \times R\mathbf{X'}_c)\nonumber \\
-    \mathbf{X'}_c \cdot (\mathbf{T} \times R\mathbf{X'}_c) &= 0 \nonumber
-\end{align}
-A vector product can be expressed as a matrix multiplication:
-\begin{align}
-T \times \mathbf{X}_c &= T_\times \mathbf{X}_c \\
-\intertext{where}
-T_\times &=\begin{bmatrix}
-0    & -T_z  & T_y\\
-T_z  & 0     & -T_x\\
--T_y  & T_x   & 0
-\end{bmatrix}
+    \gls{X_c'} \cdot (\gls{T} \times \gls{X_c}) &= \gls{X_c'}\cdot (\gls{T} \times \gls{R} \gls{X_c'}) \\
+    \gls{X_c'} \cdot (\gls{T} \times \gls{R} \gls{X_c}) &= 0
+    \intertext{A vector product can be expressed as a matrix multiplication:}
+    \gls{T} \times \gls{X_c} &= \gls{T_times} \gls{X_c}
+    \intertext{where}
+    \gls{T_times} &=\begin{bmatrix}
+    0    & -T_z  & T_y\\
+    T_z  & 0     & -T_x\\
+    -T_y  & T_x   & 0
+    \end{bmatrix}
 \end{align}
 So equation \eqref{eq:Xprime = RTX} can be rewritten as:
 
 \begin{align}
-\mathbf{X'}_c \cdot (T_\times R\mathbf{X}_c) = 0 \nonumber\\
-\mathbf{X'}_c T E \mathbf{X}_c = 0  \nonumber\\
-\intertext{where}  \nonumber\\
-E = T_\times R \nonumber
+\gls{X_c'} \cdot (\gls{T_times} \gls{R}\gls{X_c}) = 0 \\
+\gls{X_c'} \gls{T} \gls{Essential} \gls{X_c}= 0 \\
+\intertext{where}
+\gls{Essential} = \gls{T_times} \gls{R}
 \end{align}
 
-E is a $3 \times 3$ matrix known as the \emph{essential matrix}.
-The constraint also holds for rays $\mathbf{p}$, which are parallel to the camera-centered position vectors $\mathbf{X}_c$:
+\gls{Essential} is a $3 \times 3$ matrix known as the \emph{\gls{essential matrix}}.
+The constraint also holds for rays \gls{p}, which are parallel to the camera-centered position vectors \gls{X_c}:
 
 \begin{align}
-\mathbf{p}'^T E \mathbf{p} = 0 \label{eq:pEp}
+\gls{p'}^T \gls{Essential} \gls{p} = 0 \label{eq:pEp}
 \end{align}
 This is the epipolar constraint.
-If we observe a point $\mathbf{p}$ in one image, then its position $\mathbf{p'}$ in the other image must lie on the line defined by \eqref{eq:pEp}.
-The essential matrix can convert from pixels on the detector to rays $\mathbf{p}$, assuming a calibrated camera.
-And pixel coordinates can then be converted to image plane coordinates using:
+If a point \gls{p} is observed in one image, then its position \gls{p'} in the other image must lie on the line defined by Equation~\eqref{eq:pEp}.
+The \gls{essential matrix} can convert from pixels on the detector to rays \gls{p} in the world, assuming a calibrated camera (intrinsic properties are known), and pixel coordinates can then be converted to \gls{image plane} coordinates using:
 \begin{align}
 \begin{bmatrix}
 u\\
@@ -254,63 +261,62 @@ x\\
 y\\
 f
 \end{bmatrix}
-\intertext{If we define the matrix $K$ as follows:}
-K &= \begin{bmatrix}
+\intertext{\(\gls{K}\) is defined as follows:}
+\gls{K} &= \begin{bmatrix}
 f k_u & 0 & u_0 \\
 0 & f k_v & v_0 \\
 0 & 0 & 1
 \end{bmatrix}
 \intertext{then we can write}
-\mathbf{\widetilde{w}} &= K\mathbf{p}
+\gls{w} &= \gls{K} \gls{p}
 \end{align}
 
-\subsubsection{Fundamental Matrix}
+\subsection{The Fundamental matrix}
 
 \begin{align}
-    \intertext{The epipolar constraint becomes}\\
-    \mathbf{p'}^T E \mathbf{p} &= 0 \\
-    \mathbf{\widetilde{w'}}^T K^{-T} E K^{-1} \mathbf{\widetilde{w}} &= 0 \\
-    \mathbf{\widetilde{w'}}^T F \mathbf{\widetilde{w}} &= 0
+    \intertext{From \eqref{eq:pEp} the epipolar constraint becomes}
+    % \mathbf{p'}^T E \mathbf{p} &= 0 \\
+    \gls{w'}^T \gls{K}^{-T} E \gls{K}^{-1} \gls{w} &= 0 \\
+    \gls{w'}^T F \gls{w} &= 0
 \end{align}
-
-F is the $3\times3$ \emph{fundamental matrix}.
-
 %\subsubsection{Two views}
 %\paragraph{Mapping from one camera to another}
 %\subsubsection{Three and more views}
-
+The (\(3\times3)\) matrix \gls{F}, is the called the \emph{\gls{fundamental matrix}}.
 With intrinsically calibrated cameras, structure can be recovered by triangulation.
-Firstly the two projection matrices are obtained via a singular value decomposition of the essential matrix.
-The SVD of the essential matrix is given by:
+Firstly the two projection matrices are obtained via a \gls{SVD} of the essential matrix.
+The \gls{SVD} of the essential matrix is given by:
 
 \begin{align}
-    \hat{T}_{\times} = U \begin{bmatrix}
+    \gls{Essential} &= \gls{K'}^T \gls{F} \gls{K} = \gls{T_times} \gls{R} = U\Lambda V^T\\%\gls{R} = U\LambdaV^T\\
+    \intertext{It can be shown that}
+    \hat{\gls{T_times}} &= U \begin{bmatrix}
     0 & 1 & 0 \\
     -1 & 0 & 0 \\
     0 & 0 & 0
     \end{bmatrix} U^T
-    &\text{ and }
-    R = U \begin{bmatrix}
+    \intertext{ and }
+    \gls{R} &= U \begin{bmatrix}
     0 & -1 & 0 \\
     1 & 0 & 0 \\
     0 & 0 & 1
     \end{bmatrix} V^T
-    \intertext{Then, aligning the left camera and world coordinate
-    systems:}
-    P = K [I | \mathbf{0}]
-    &\text{ and }
-    P' = ' [R | \mathbf{T}]
+    \intertext{Then, aligning the left camera and world coordinate systems gives the projection matrices:}
+    \mathbf{P} &= \gls{K}    \begin{bmatrix}[c|c]       \mathbf{I} & \mathbf{0}   \end{bmatrix}
+    \intertext{ and }
+    \mathbf{P}' &= \gls{K'} \begin{bmatrix}[c|c]       \gls{R} & \gls{T}   \end{bmatrix}
 \end{align}
-
-Given the two projection matrices, we can recover structure (only up to scale, since $|\mathbf{T}|$ is unknown) using least squares.
-Ambiguities in $\mathbf{T}$ and R are resolved by ensuring that visible points lie in front of the two cameras.
-As with the essential matrix, the fundamental matrix can be factorised into a skew-symmetric matrix corresponding
+Where \( \begin{bmatrix}[c|c] \mathbf{I} & \mathbf{0} \end{bmatrix}\) is the identity matrix augmented column-wise with a zero matrix.
+The two projection matrices (\(\mathbf{P}\) and \(\mathbf{P}'\)) project from camera pixel coordinates to world coordinates.
+Given these projection matrices, scene structure can be recovered (only up to scale, since only magnitude of \gls{T} (|\gls{T}|) is unknown) using least squares fitting.
+Ambiguities in \gls{T} and \gls{R} are resolved by ensuring that visible points lie in front of the two cameras.
+As with the \gls{essential matrix}, the \gls{fundamental matrix} can be factorised into a skew-symmetric matrix corresponding
 to translation and a 3 × 3 non-singular matrix corresponding to rotation.
 
 \section{The proposed algorithm}
 
 %The rotation may also not be orthogonal to the plane of detection.
-During a typical OPT acquisition, a fiducial will appear to follow an elliptical path in $xy$.
+During a typical \gls{OPT} acquisition, a marker will appear to follow an elliptical path in the \(XY\) plane.
 In the following volume reconstruction there will then be a fitting step to recover the path of the fiducial, to then apply a correction before applying a radon transform.
 This type of reconstruction not only ignores any mechanical jitter of the sample but also any systematic drift.
 
@@ -322,24 +328,25 @@ The shift of a camera or a camera pair around a scene separated by a translation
 
 Once a sufficient amount of fidicuials are reliably tracked from the first to the second image, the Fundamental, Essential or Homography can be computed.
 Using the factorisation one of these matrixes between each adjacent view of a rotating scene the translation and rotational matrices may be recovered.
-Here we will discuss a reconstruction using $F$ but the same principle applies for $E$ and $H$.
+Here we will discuss a reconstruction using \gls{F} but the same principle applies for \gls{Essential} and \gls{H}.
 
 \begin{figure}
   \centering
   \includegraphics{Chapters/flopt/Figs/PDF/flOPT_principle}
-  \caption{Each iteration during an OPT acquisition will have an associate $R$ and $\mathbf{T}$, these matrices can be recovered from comparing the current iteration to the previously iteration.}
+  \caption{Each iteration during an OPT acquisition will have an associate \gls{R} and \gls{T}, these matrices can be recovered from comparing the current iteration to the previously iteration.}
 \end{figure}
 
-Here are two ways of reconstructing using the Fundamental matrix as described above.
-The first method involves computing F for two neighbouring images with 5 or more fiducials, having more beads helps to remove ambiguity and increase confidence in F.
-Once F is calculated F is then decomposed into $R_n$ and $T_n$ between each view $n$ and $n+1$.
-The image at view $n+1$ is then back projected along the virtual optical axis within a virtual volume where the sample will be reconstructed.
+Here are two ways of reconstructing using the \Gls{fundamental matrix} as described above.
+The first method involves computing \gls{F} for two neighbouring images with 5 or more fiducials, having more beads helps to remove ambiguity and increase confidence in \gls{F}.
+Once \gls{F} is calculated \gls{F} is then decomposed into \(\gls{R}_n\) and \(\gls{T}_n\) between each view \(n\) and \(n+1\).
+The image at view \(n+1\) is then back projected along the virtual optical axis within a virtual volume where the sample will be reconstructed.
 The size of this back projection and virtual volume is chosen to be suitably large (so that important data is not lost).
-Then, all the prior rotation and translation matrices are serially multiplied from $[R_0|T_0]$ until $[R_n|T_n]$, this final matrix is inverted and applied to the back projected volume.
+Then, all the prior rotation and translation matrices are serially multiplied from \(\begin{bmatrix}[c|c] \gls{R}_0&\gls{T}_0 \end{bmatrix}\) until \(\begin{bmatrix}[c|c] \gls{R}_n&\gls{T}_n \end{bmatrix}\) %$[R_n|T_n]$
+, this final matrix is inverted and applied to the back projected volume.
 The matrix inversion step is important as it realigns the back projection in the volume to where it originally was compared respective of the first projection.
 This process is repeated for every angle and the back projected volume from each step is summed with every other step.
 Finally the remaining volume is filtered using a high-pas filter, here a Ram-Lak filter is used.
-\footnote{Linear ramp filter in Fourier space: $|v|$},
+\footnote{Linear ramp filter in Fourier space: \(|v|\)},
 By producing a series of transformation matrices from adjacent acquisitions, errors compound and the reconstruction of volumes degrades with more projections, see Figure \ref{fig:irandons}.
 
 \begin{figure}

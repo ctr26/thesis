@@ -1,1 +1,298 @@
-\null
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\providecommand*\glsXpageXglsnumberformat[2]{\setentrycounter[#1]{page}\glsnumberformat{#2}}
+\providecommand*\glsXpageXtextrm[2]{\setentrycounter[#1]{page}\textrm{#2}}
+\providecommand*\glsXpageXtextsf[2]{\setentrycounter[#1]{page}\textsf{#2}}
+\providecommand*\glsXpageXtexttt[2]{\setentrycounter[#1]{page}\texttt{#2}}
+\providecommand*\glsXpageXtextbf[2]{\setentrycounter[#1]{page}\textbf{#2}}
+\providecommand*\glsXpageXtextmd[2]{\setentrycounter[#1]{page}\textmd{#2}}
+\providecommand*\glsXpageXtextit[2]{\setentrycounter[#1]{page}\textit{#2}}
+\providecommand*\glsXpageXtextup[2]{\setentrycounter[#1]{page}\textup{#2}}
+\providecommand*\glsXpageXtextsl[2]{\setentrycounter[#1]{page}\textsl{#2}}
+\providecommand*\glsXpageXtextsc[2]{\setentrycounter[#1]{page}\textsc{#2}}
+\providecommand*\glsXpageXemph[2]{\setentrycounter[#1]{page}\emph{#2}}
+\providecommand*\glsXpageXglshypernumber[2]{\setentrycounter[#1]{page}\glshypernumber{#2}}
+\providecommand*\glsXpageXhyperrm[2]{\setentrycounter[#1]{page}\hyperrm{#2}}
+\providecommand*\glsXpageXhypersf[2]{\setentrycounter[#1]{page}\hypersf{#2}}
+\providecommand*\glsXpageXhypertt[2]{\setentrycounter[#1]{page}\hypertt{#2}}
+\providecommand*\glsXpageXhyperbf[2]{\setentrycounter[#1]{page}\hyperbf{#2}}
+\providecommand*\glsXpageXhypermd[2]{\setentrycounter[#1]{page}\hypermd{#2}}
+\providecommand*\glsXpageXhyperit[2]{\setentrycounter[#1]{page}\hyperit{#2}}
+\providecommand*\glsXpageXhyperup[2]{\setentrycounter[#1]{page}\hyperup{#2}}
+\providecommand*\glsXpageXhypersl[2]{\setentrycounter[#1]{page}\hypersl{#2}}
+\providecommand*\glsXpageXhypersc[2]{\setentrycounter[#1]{page}\hypersc{#2}}
+\providecommand*\glsXpageXhyperemph[2]{\setentrycounter[#1]{page}\hyperemph{#2}}
+\providecommand*\glsXpageXglsignore[2]{\setentrycounter[#1]{page}\glsignore{#2}}
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glsnumbers}\relax\glsresetentrylist
+\glossentry{4f}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{4}\delimN 
+\glsXpageXglsnumberformat{}{5}\delimN 
+\glsXpageXglsnumberformat{}{41}}}\glsgroupskip
+\glsgroupheading{A}\relax\glsresetentrylist
+\glossentry{aberration}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{19}}}\relax\glsresetentrylist
+\glossentry{Airy beam}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{airy disk}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xvii}, 
+\glsXpageXglsnumberformat{}{6}\delimR 
+\glsXpageXglsnumberformat{}{8}}}\relax\glsresetentrylist
+\glossentry{autophagy}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{14}}}\relax\glsresetentrylist
+\glossentry{axicon}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{32}}}\glsgroupskip
+\glsgroupheading{B}\relax\glsresetentrylist
+\glossentry{background signal}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{54}}}\relax\glsresetentrylist
+\glossentry{Bessel beam}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{32}\delimN 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{bit depth}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{17}}}\glsgroupskip
+\glsgroupheading{C}\relax\glsresetentrylist
+\glossentry{coherent}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{15}}}\relax\glsresetentrylist
+\glossentry{comatic aberration}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{confocal}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xviii}}}\relax\glsresetentrylist
+\glossentry{confocal microscope}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{18}\delimN 
+\glsXpageXglsnumberformat{}{19}\delimN 
+\glsXpageXglsnumberformat{}{23}\delimN 
+\glsXpageXglsnumberformat{}{24}}}\relax\glsresetentrylist
+\glossentry{convolution theorem}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{20}}}\glsgroupskip
+\glsgroupheading{D}\relax\glsresetentrylist
+\glossentry{dark current}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
+\glossentry{deconvolution}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{depth of field}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{8}\delimN 
+\glsXpageXglsnumberformat{}{64}}}\relax\glsresetentrylist
+\glossentry{detection arm}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{37}\delimN 
+\glsXpageXglsnumberformat{}{44}}}\relax\glsresetentrylist
+\glossentry{dynamic range}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}}}\glsgroupskip
+\glsgroupheading{E}\relax\glsresetentrylist
+\glossentry{enumerated type}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xix}, 
+\glsXpageXglsnumberformat{}{48}\delimN 
+\glsXpageXglsnumberformat{}{49}}}\relax\glsresetentrylist
+\glossentry{epi-fluorescence}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{23}\delimN 
+\glsXpageXglsnumberformat{}{27}}}\relax\glsresetentrylist
+\glossentry{essential matrix}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{69}\delimN 
+\glsXpageXglsnumberformat{}{71}}}\relax\glsresetentrylist
+\glossentry{etendue}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{15}}}\relax\glsresetentrylist
+\glossentry{exotic beam}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{31}\delimN 
+\glsXpageXglsnumberformat{}{32}}}\relax\glsresetentrylist
+\glossentry{exposure time}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{48}}}\glsgroupskip
+\glsgroupheading{F}\relax\glsresetentrylist
+\glossentry{fluorophore}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xxxii}, 
+\glsXpageXglsnumberformat{}{18}\delimN 
+\glsXpageXglsnumberformat{}{19}\delimN 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{Fourier transform}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{20}\delimN 
+\glsXpageXglsnumberformat{}{65}}}\relax\glsresetentrylist
+\glossentry{fundamental matrix}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{70}\delimR 
+\glsXpageXglsnumberformat{}{72}}}\glsgroupskip
+\glsgroupheading{G}\relax\glsresetentrylist
+\glossentry{galvanometric scanning mirrors}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{19}\delimN 
+\glsXpageXglsnumberformat{}{41}}}\relax\glsresetentrylist
+\glossentry{Gaussian beam}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{24}\delimN 
+\glsXpageXglsnumberformat{}{25}\delimN 
+\glsXpageXglsnumberformat{}{32}}}\glsgroupskip
+\glsgroupheading{H}\relax\glsresetentrylist
+\glossentry{homogeneous coordinates}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{57}}}\relax\glsresetentrylist
+\glossentry{homography}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{57}}}\glsgroupskip
+\glsgroupheading{I}\relax\glsresetentrylist
+\glossentry{illumination arm}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{37}\delimN 
+\glsXpageXglsnumberformat{}{43}}}\relax\glsresetentrylist
+\glossentry{illumination board}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{37}}}\relax\glsresetentrylist
+\glossentry{image plane}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{66}\delimN 
+\glsXpageXglsnumberformat{}{67}\delimN 
+\glsXpageXglsnumberformat{}{69}}}\relax\glsresetentrylist
+\glossentry{imaging board}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{37}}}\relax\glsresetentrylist
+\glossentry{imaging optical rail}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{37}\delimN 
+\glsXpageXglsnumberformat{}{43}\delimN 
+\glsXpageXglsnumberformat{}{44}\delimN 
+\glsXpageXglsnumberformat{}{51}}}\glsgroupskip
+\glsgroupheading{L}\relax\glsresetentrylist
+\glossentry{LabVIEW}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xii}\delimN 
+\glsXpageXglsnumberformat{}{xviii}\delimN 
+\glsXpageXglsnumberformat{}{xix}, 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{38}\delimN 
+\glsXpageXglsnumberformat{}{45}\delimR 
+\glsXpageXglsnumberformat{}{47}\delimN 
+\glsXpageXglsnumberformat{}{49}\delimN 
+\glsXpageXglsnumberformat{}{50}\delimN 
+\glsXpageXglsnumberformat{}{52}}}\relax\glsresetentrylist
+\glossentry{Laser}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xxxi}, 
+\glsXpageXglsnumberformat{}{14}\delimN 
+\glsXpageXglsnumberformat{}{15}\delimN 
+\glsXpageXglsnumberformat{}{24}\delimR 
+\glsXpageXglsnumberformat{}{26}\delimN 
+\glsXpageXglsnumberformat{}{33}\delimN 
+\glsXpageXglsnumberformat{}{51}}}\relax\glsresetentrylist
+\glossentry{lattice light-sheet}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{33}}}\relax\glsresetentrylist
+\glossentry{light-sheet}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xii}\delimN 
+\glsXpageXglsnumberformat{}{xviii}\delimN 
+\glsXpageXglsnumberformat{}{xix}\delimN 
+\glsXpageXglsnumberformat{}{xxxiii}\delimN 
+\glsXpageXglsnumberformat{}{xxxv}\delimN 
+\glsXpageXglsnumberformat{}{xxxvi}, 
+\glsXpageXglsnumberformat{}{1}\delimN 
+\glsXpageXglsnumberformat{}{23}\delimR 
+\glsXpageXglsnumberformat{}{28}\delimN 
+\glsXpageXglsnumberformat{}{30}\delimR 
+\glsXpageXglsnumberformat{}{34}\delimN 
+\glsXpageXglsnumberformat{}{36}\delimN 
+\glsXpageXglsnumberformat{}{41}\delimR 
+\glsXpageXglsnumberformat{}{45}\delimN 
+\glsXpageXglsnumberformat{}{47}\delimN 
+\glsXpageXglsnumberformat{}{53}\delimN 
+\glsXpageXglsnumberformat{}{55}\delimN 
+\glsXpageXglsnumberformat{}{58}\delimN 
+\glsXpageXglsnumberformat{}{63}\delimN 
+\glsXpageXglsnumberformat{}{64}}}\relax\glsresetentrylist
+\glossentry{Lorentzian}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{25}}}\relax\glsresetentrylist
+\glossentry{lysosome}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{14}}}\glsgroupskip
+\glsgroupheading{M}\relax\glsresetentrylist
+\glossentry{missing cone}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{21}}}\glsgroupskip
+\glsgroupheading{N}\relax\glsresetentrylist
+\glossentry{nyquist sampling theory}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{8}\delimN 
+\glsXpageXglsnumberformat{}{45}}}\glsgroupskip
+\glsgroupheading{O}\relax\glsresetentrylist
+\glossentry{objective lens}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xviii}, 
+\glsXpageXglsnumberformat{}{4}\delimR 
+\glsXpageXglsnumberformat{}{6}\delimN 
+\glsXpageXglsnumberformat{}{19}\delimN 
+\glsXpageXglsnumberformat{}{20}}}\relax\glsresetentrylist
+\glossentry{openSPIM}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{24}}}\relax\glsresetentrylist
+\glossentry{optical sectioning}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{23}\delimN 
+\glsXpageXglsnumberformat{}{24}}}\glsgroupskip
+\glsgroupheading{P}\relax\glsresetentrylist
+\glossentry{photobleaching}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{18}}}\relax\glsresetentrylist
+\glossentry{photon noise}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
+\glossentry{photosensitier}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{18}}}\relax\glsresetentrylist
+\glossentry{photosite}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{11}\delimN 
+\glsXpageXglsnumberformat{}{16}\delimN 
+\glsXpageXglsnumberformat{}{45}\delimN 
+\glsXpageXglsnumberformat{}{64}}}\relax\glsresetentrylist
+\glossentry{photo-toxicity}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{19}}}\relax\glsresetentrylist
+\glossentry{pixel}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}\delimN 
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
+\glossentry{poissonian distribution}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
+\glossentry{primary imaging plane}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{4}}}\relax\glsresetentrylist
+\glossentry{producer-consumer architecture}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{47}}}\glsgroupskip
+\glsgroupheading{Q}\relax\glsresetentrylist
+\glossentry{quantum efficiency}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
+\glossentry{queueing architecture}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{47}}}\glsgroupskip
+\glsgroupheading{R}\relax\glsresetentrylist
+\glossentry{race conditions}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
+\glossentry{Rayleigh length}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{25}\delimN 
+\glsXpageXglsnumberformat{}{45}}}\relax\glsresetentrylist
+\glossentry{read noise}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
+\glossentry{resonant scanning mirrors}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{19}}}\glsgroupskip
+\glsgroupheading{S}\relax\glsresetentrylist
+\glossentry{Spatial Light Modulator}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xxxvi}, 
+\glsXpageXglsnumberformat{}{31}}}\relax\glsresetentrylist
+\glossentry{specificity}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{13}}}\relax\glsresetentrylist
+\glossentry{state machine}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
+\glossentry{stokes shift}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{13}}}\relax\glsresetentrylist
+\glossentry{super-continuum laser}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{15}}}\relax\glsresetentrylist
+\glossentry{super-resolution}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{20}\delimN 
+\glsXpageXglsnumberformat{}{26}}}\glsgroupskip
+\glsgroupheading{T}\relax\glsresetentrylist
+\glossentry{telecentric}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{41}}}\relax\glsresetentrylist
+\glossentry{tele-centric}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{26}}}\relax\glsresetentrylist
+\glossentry{tomography}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{27}\delimN 
+\glsXpageXglsnumberformat{}{30}}}\relax\glsresetentrylist
+\glossentry{transfection}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{14}}}\glsgroupskip
+\glsgroupheading{U}\relax\glsresetentrylist
+\glossentry{ultra-microscope}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{24}}}\glsgroupskip
+\glsgroupheading{V}\relax\glsresetentrylist
+\glossentry{virtual light-sheet}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xix}, 
+\glsXpageXglsnumberformat{}{26}\delimN 
+\glsXpageXglsnumberformat{}{55}}}\glsgroupskip
+\glsgroupheading{W}\relax\glsresetentrylist
+\glossentry{wide-field}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xviii}, 
+\glsXpageXglsnumberformat{}{16}\delimN 
+\glsXpageXglsnumberformat{}{19}\delimN 
+\glsXpageXglsnumberformat{}{20}\delimN 
+\glsXpageXglsnumberformat{}{23}\delimN 
+\glsXpageXglsnumberformat{}{24}\delimN 
+\glsXpageXglsnumberformat{}{63}}}\relax\glsresetentrylist
+\glossentry{working distance}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{26}\delimN 
+\glsXpageXglsnumberformat{}{28}}}\relax\glsresetentrylist
+\glossentry{world point}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{66}\delimN 
+\glsXpageXglsnumberformat{}{67}}}\glsgroupskip
+\glsgroupheading{Z}\relax\glsresetentrylist
+\glossentry{Zebrafish}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{61}}}%
+\end{theglossary}\glossarypostamble
