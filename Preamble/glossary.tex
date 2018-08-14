@@ -42,7 +42,9 @@
 \glsxtrnewsymbol[description={The Essential matrix}]{Essential}{\ensuremath{\mathbf{E}}}
 \glsxtrnewsymbol[description={The Homography matrix}]{H}{\ensuremath{\mathbf{H}}}
 \glsxtrnewsymbol[description={\(3\times\3\) matrix containing coordinates from \gls{T} }]{T_times}{\ensuremath{\mathbf{T_\times}}}
+\glsxtrnewsymbol[description={Mean square error: \(\operatorname{MSE}=\frac{1}{n}\sum_{i=1}^n(Y_i-\hat{Y_i})^2\)}]{MSE}{\ensuremath{MSE}}
 
+% Mean Square Error
 % Glossary
 
 \newglossaryentry{4f}{
@@ -344,6 +346,18 @@
     name={homography},
     description={DEFINE}
 }
+\newglossaryentry{Ram-Lak filter}{
+    name={Ram-Lak filter},
+    description={Linear real (amplitude) ramp filter in Fourier space}
+}
+\newglossaryentry{sinugram}{
+    name={sinugram},
+    description={DEFINE}
+}
+% \newglossaryentry{homography matrix}{
+%     name={homography matrix},
+%     description={DEFINE}
+% }
 \newglossaryentry{homogeneous coordinates}{
     name={homogeneous coordinates},
     description={DEFINE}
@@ -372,6 +386,12 @@
     name={image plane},
     description={Image one focal distance away from the camera-centered coordinates along the optical axis}
 }
+\newglossaryentry{Radon transform}{
+    name={Radon transform},
+    description={DEFINE}
+}
+
+
 %\gls{background fluorescence}
 % Acronyms
 
@@ -416,8 +436,4 @@
 \newacronym{OPT}{OPT}{Optical Projection Tomography}
 \newacronym{eOPT}{eOPT}{emission Optical Projection Tomography}
 \newacronym{tOPT}{tOPT}{transmission Optical Projection Tomography}
-\newacronym{SVD}{SVD}{singular value decomposition }
-
-
-
-% \newacronym{sCMOS}{sCMOS}{scientific Complementary Metal-Oxide-Semiconductor}
+\newacronym{SVD}{SVD}{Singular Value Decomposition}
