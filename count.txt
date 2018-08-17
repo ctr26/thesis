@@ -1,8 +1,8 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27920
-Words in headers: 535
-Words outside text (captions, etc.): 4743
+Words in text: 27942
+Words in headers: 540
+Words outside text (captions, etc.): 4879
 Number of headers: 187
 Number of floats/tables/figures: 81
 Number of math inlines: 466
@@ -41,10 +41,10 @@ Subcounts:
   708+21+182 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
   699+10+233 (4/4/17/7) Section: Structured illumination enhanced with \gls{slit-scanning}
   467+9+0 (3/0/1/0) Section: Discussion and future work
-  321+8+19 (1/1/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
-  663+2+248 (1/4/0/0) Section: The design
-  451+3+48 (2/2/0/0) Section: Method
-  163+1+0 (1/0/0/0) Section: Remarks
+  325+8+19 (1/1/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
+  647+4+384 (1/4/0/0) Section: The design and construction
+  465+6+48 (2/2/0/0) Section: Sample preparation
+  183+1+0 (1/0/0/0) Section: Summary
   709+12+80 (3/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   522+14+30 (4/1/4/0) Section: Single Particle Tracking
   564+9+20 (5/1/10/3) Section: Astigmatic tracking
