@@ -1,12 +1,12 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 27917
-Words in headers: 539
-Words outside text (captions, etc.): 4667
-Number of headers: 189
+Words in text: 27920
+Words in headers: 535
+Words outside text (captions, etc.): 4743
+Number of headers: 187
 Number of floats/tables/figures: 81
-Number of math inlines: 465
-Number of math displayed: 82
+Number of math inlines: 466
+Number of math displayed: 83
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   605+7+0 (2/0/0/0) _top_
@@ -37,10 +37,10 @@ Subcounts:
   168+1+0 (1/0/1/0) Section: Discussion
   404+10+48 (4/1/5/0) Section: Future work
   172+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
-  510+5+60 (2/2/3/1) Section: Single beam confocal \gls{slit-scanning}
-  704+22+174 (5/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
-  705+13+165 (5/4/17/6) Section: Structured illumination enhanced with \gls{slit-scanning}
-  466+9+0 (3/0/1/0) Section: Discussion and future work
+  514+5+60 (2/2/4/1) Section: Single beam confocal \gls{slit-scanning}
+  708+21+182 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
+  699+10+233 (4/4/17/7) Section: Structured illumination enhanced with \gls{slit-scanning}
+  467+9+0 (3/0/1/0) Section: Discussion and future work
   321+8+19 (1/1/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
   663+2+248 (1/4/0/0) Section: The design
   451+3+48 (2/2/0/0) Section: Method

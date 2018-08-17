@@ -33,7 +33,7 @@ Methods will be introduced to improve the speed of acquisition and simulations i
 
 \begin{figure}
   \centering
-  \includegraphics{slit_scanning_alt}
+  \includegraphics[width=0.4\linewidth]{slit_scanning_alt}
   \caption[The principle of confocal \gls{slit-scanning} using digital light-sheet microscopy]{The principle of confocal \gls{slit-scanning} using digital light-sheet microscopy.
   An incident beam (green) approaches orthogonally to the direction of the rolling shutter, the shutter consists of a width of active pixels (yellow).
   The inactive pixels correspond to out-of-focus light and are rejected from the final image.}
@@ -56,7 +56,7 @@ The remaining pixel rows of the detector were filled with spectral information b
 %Physical slits may be substituted for virtual slits when exploiting the nature of sCMOS cameras.
 By selectively activating pixels on an \gls{sCMOS} detector for reading-off, out-of-focus light may be rejected in a similar fashion to a physical slit.
 %The process of rolling a shutter occurs within the electronics of the camera for pixel read off by design.
-The rolling of the shutter with a concomitant sweeping of the beam of light allows for live confocal imaging, depicted in \figurename~\ref{fig:slit_scanning_alt}.
+The rolling of the shutter with a concomitant sweeping of a beam of light allows for live confocal imaging, depicted in \figurename~\ref{fig:slit_scanning_alt}.
 The width of the slit adjusts the contrast and resolution of the final image.
 % An optimal will then be
 % should be
@@ -71,8 +71,8 @@ A characterisation of the optimal slit width of the virtual slit was needed to p
 To measure this, \SI{200}{\nano\metre} fluorescent beads were suspended in \SI{1}{\percent} \gls{agarose VII} gel at a concentration of \SI{2.3e3}{\text{parts} \per\milli\litre}.
 % [insert concentration]. %%~2.3 × 10^10 particles/mL  10^-6
 The agarose was mounted by pipetting warm on to an lightly scratched PDMS bar, which helped adherence.
-Entire volumes (2048 $\times$ 2048 $\times$ \SI{100}{\micro\metre}) were imaged per each slit width varied.
-Beads were then localised manually through a axially projected image (see Chapter \ref{sec:} %TODO insert chapter
+Entire volumes (2048 $\times$ 2048 $\times$ \SI{100}{\micro\metre}) were imaged per each varying each slit width.
+Beads were then localised manually through a axially projected image (see Chapter \ref{sec:spt} %TODO insert chapter
 ).
 
 Of the \SI{31} beads that were localised a single candidate bead was chosen that
@@ -83,7 +83,7 @@ sufficiently bright and unobscured.
 By analysing both the \gls{SNR} and the contrast of each cropped window around the candidate bead, it was shown that the ideal slit width was \SI{2.51(5)}{\micro\metre} which is on the order of the width of the incident laser beam, \SI{2.3(2)}{\micro\metre} (\figurename~\ref{fig:optimal_slit_snr_contrast}).
 %Beam width 18 pixels. 2048 pixels, 25x mag each pixel 502 um
 The \gls{SNR} was computed by taking the ratio of its summed squared magnitude of to that of the noise at varying slit widths.
-The contrast was calculated by fitting a \gls{2D} Gaussian to each image, with varying slit width, and plotting the fitted amplitude \(A\), from the \gls{2D} Gaussian model:
+The contrast was calculated by fitting a \gls{2D} Gaussian to each image, with varying slit width, and plotting the fitted amplitude \(A\) with an offset \(B\), from the \gls{2D} Gaussian model:
 \begin{align}
   A e^{-\left(\frac{(x-x_0)^2-(y-y_0)^2}{2\sigma^2}\right)}-B
 \end{align}
@@ -101,18 +101,44 @@ The contrast was calculated by fitting a \gls{2D} Gaussian to each image, with v
 % Each beam could be independently positioned such that they were separated by a half a sensor area, at the camera plane.
 The sensor used in the Orca Flash v4 (as well as other \gls{sCMOS} cameras including the Pco.Edge and Andor Zyla) consists of two adjacent Fairchild \gls{sCMOS} sensors.
 In global shutter mode the shutter propagates outward (middle to top and middle to bottom) from the centre of the sensor simultaneously.
-The fastest exposure possible for each chip (10ms) provides the maximum \SI{100}{\hertz} imaging.
+The fastest exposure possible for each chip (10ms) provides the maximum \SI{100}{\hertz} imaging for the full \gls{FOV}.
 For confocal \gls{slit-scanning}, the two sensors are addressed with a single thin shutter propagating from one side of one sensor (ex. bottom to middle) and across the next sensor (ex. middle to top), in series.
 In this mode the maximum frame rate achievable is \SI{50}{\hertz} as illustrated in \figurename~\ref{fig:dual_slit_scanning}.
 %when scanning confocally.
 
 In this work, a custom camera firmware was used to enable a pair of confocal slits, on each sensor half, to scan in the same direction simultaneously, providing the \SI{100}{\hertz} imaging that was ordinarily only available in global shutter mode.
 
+% \begin{figure}
+%   \centering
+%   \includegraphics{dual_slit_scanning}
+%   \caption{
+%   The orinciple behind doubling the frame rate of the Orca Flash v4 when using \gls{slit-scanning} mode.
+%   Standard exposure: In global shutter mode \SI{100}{\hertz} imaging may be achieved as each side of the sensor rolls an independent shutter.
+%   \Gls{slit-scanning}: In normal \gls{slit-scanning} mode the shutter moves from one half of the chip to the other serially, halving available frame-rate.
+%   Dual \gls{slit-scanning}:
+%   The full frame-rate of the sensor is achievable when using two rolling shutters
+%   %Having two shutters roll in \gls{slit-scanning}
+%   %Having two shutters roll in \gls{slit-scanning} mode would make available the full of frame rate
+%   }
+%   \label{fig:dual_slit_scanning}
+% \end{figure}
+
 \begin{figure}
   \centering
-  \includegraphics{dual_slit_scanning}
+  \begin{subfigure}[t]{0.3\linewidth}
+        \includegraphics{dual_slit_scanning/standard}
+        \caption{Standard exposure}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.3\linewidth}
+        \includegraphics{dual_slit_scanning/single_slit}
+        \caption{Slit scanning}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.3\linewidth}
+        \includegraphics{dual_slit_scanning/dual_slit}
+        \caption{Dual slit scanning}
+  \end{subfigure}
   \caption{
-  Principle behind doubling the frame rate of the Orca Flash v4 when using \gls{slit-scanning} mode.
+  The principle behind doubling the frame rate of the Orca Flash v4 when using \gls{slit-scanning} mode.
   Standard exposure: In global shutter mode \SI{100}{\hertz} imaging may be achieved as each side of the sensor rolls an independent shutter.
   \Gls{slit-scanning}: In normal \gls{slit-scanning} mode the shutter moves from one half of the chip to the other serially, halving available frame-rate.
   Dual \gls{slit-scanning}:
@@ -122,18 +148,19 @@ In this work, a custom camera firmware was used to enable a pair of confocal sli
   }
   \label{fig:dual_slit_scanning}
 \end{figure}
+
 % \subsection{Proposed implementations}
 \subsection{Dual slits using an \gls{SLM}}
 
 To exploit the new functionality of the two propagating shutters, two paraxial beams were needed for illumination at the sample plane.
-Initially, an \gls{SLM} was optically relayed directly onto the first scanning mirror using a pair of relay lenses (\figurename~\ref{fig:dual_beam_layouts} (a).
+Initially, an \gls{SLM} was optically relayed directly onto the first scanning mirror using a pair of relay lenses (\figurename~\ref{fig:dual_beam_layouts}~(a)).
 % The relay at
 Optically relaying allowed access to the image plane of the scan mirror, whilst the second relay controlled the magnification of pixel size of the \gls{SLM} at the imaging plane of the excitation objective.
 The energy in each resultant beam, when a diffractive pattern was displayed on the \gls{SLM}, was not equal due to the implementation being polarisation sensitive.
 % This implementation was polarisation sensitive in that each beam's energy was not equal
 % and caused difficult for distributing an equal amount of power into each beam.
 This was compensated for by controlling the voltage of each pixel (which controlled the phase of the reflected photons) on the \gls{SLM} but due to the discrete nature of the voltage being applied to each \gls{SLM} pixel, the energies of each beam could not be sufficiently well matched.
-As well, due to the pixel nature of the \gls{SLM}, the separation of the two beams (governed by the \gls{SLM} pattern frequency could only be discrete distances, with the step size being larger than a single pixel at the camera.
+As well, due to the pixel nature of the \gls{SLM}, the separation of the two beams (governed by the \gls{SLM} pattern frequency) could only be discrete distances, with the step size being larger than a single pixel at the camera.
 Using an \gls{SLM} also limited the potential for creating exotic illumination superimposed on the both beams.
 Though solutions do exist (using super-pixels\cite{puttenSpatialAmplitudePhase2008}, or dual SLMs\cite{fuImagingMulticellularSpecimens2016a}) the methods are limited and heavily optically involved.
 % \begin{figure}
@@ -176,10 +203,10 @@ This solution would require no additional optics.
 To realised this, the round trip time of the scanning mirror, would in the best case, have to match the time it takes for the shutter to move up one row of pixels, $\frac{\SI{10}{\milli\second}}{1024}=\SI{9.8}{\micro\second}$.
 Therefore, the drive frequency would then exceed \SI{100}{\kilo\hertz}, which is currently infeasible with most commercial scanning mirror technology and most affordable visible lasers.
 
-\subsubsection{An all optical dual-slit implementation}
+\subsection{An all optical dual-slit implementation}
 
-An alternative implementation was employed whereby, immediately after all four colours were spatially co-aligned, a beam splitter was added with two returning mirrors (similar to Michelson interferometer).
-The beam arms were not optically interfered, instead they were purposely aimed-off to create a small angle in their propagation before reaching the scanning mirror (\figurename~\ref{fig:dual_beam_layouts} b).
+An alternative implementation was employed whereby, immediately follow the four spatially co-aligned colours, a beam splitter was added with two returning mirrors (similar to Michelson interferometer).
+The beam arms were not optically interfered, instead they were purposely aimed-off to create a small angle in their propagation before reaching the scanning mirror (\figurename~\ref{fig:dual_beam_layouts} (b)).
 This slight angular difference, once imaged through the telecentric scan lens, then became a spatial separation at the imaging plane of the system and was easily tuned using the kinematic mirrors flanking the beam splitter.
 
 The all optical approach offered many key advantages: the system was polarisation insensitive and suffered minimal optical losses, especially when compared to using an \gls{SLM}; as the duplication of the beams was now independent of any beam shaping, actual beam shaping optics could be readily implemented, this had the potential for optics such as cubic phase masks and axicon lenses or even an \gls{SLM} being inserted to structure the beams.
@@ -191,12 +218,10 @@ The all optical approach offered many key advantages: the system was polarisatio
   \caption{Fluoresence image of two beams at image plane as profiled by a solution of Rhodamine.}
   \label{fig:real_dual_beams}
 \end{figure}
-
-\subsubsection{Implementation}
-
+% \subsection{Implementation}
 Two laser beams were created at the image plane that could be manually separated as imaged in \figurename~\ref{fig:real_dual_beams}.
 To position the beams the correct distance apart, the bottom most beam was aligned to middle of the \gls{FOV} by reducing the \gls{FOV} of the camera by half digitally and aligning the \emph{primary} beam with the bottom of the image using the galvanometric mirror.
-The \emph{secondary} beam was pushed to the top of the image using appropriate the kinematic mirror flanking the beam splitter.
+The \emph{secondary} beam was pushed to the top of the image using an appropriate the kinematic mirror flanking the beam splitter.
 %\subsection{Implementation} % Talk about SLM options
 %\subsubsection{Spatial light modulator} %Image of two beams with optimisation of intensity
 %\subsubsection{All optical solution} %Polarisation insensitive better etc, option to make bessel.
@@ -221,11 +246,11 @@ The \emph{secondary} beam was pushed to the top of the image using appropriate t
 A similar effect to a swept beam in a \gls{light-sheet} system can be realised in a \gls{wide-field} system using an \gls{SLM}.
 By conjugating an \gls{SLM} to the image plane of the objective, with suitable polarisers, activate pixels on the \gls{SLM} will exclusively illuminate the corresponding region in the image plane.
 To then mimic a scanning \gls{light-sheet}, as above, a row of \gls{SLM} pixels are activated and the line synchronously swept with the confocal virtual shutter on the camera.
-With this, the contrast and resolution of the output image increase in the direction of propagation of the shutter as simulated in \figurename~\ref{fig:widefield_slit} using equation.
+With this, the contrast and resolution of the output image increases in the direction of propagation of the shutter as simulated in \figurename~\ref{fig:widefield_slit} using the equation:
 \begin{align}
     I_{\text{em}}(x,y,n) = \sum_{n=0}^{n=h-1}
     \Biggl(\begin{split}
-                &\left[ (s(x,y) (I_{\text{ill}}(x,y,n) * \text{PSF}(x,y))) * \text{PSF}(x,y) \right] \\ &\cdot  H(y-n)*H(-(y-n)+w_{\text{slit}})
+                &\left[ (s(x,y) \cdot (I_{\text{ill}}(x,y,n) * \text{PSF}(x,y))) * \text{PSF}(x,y) \right] \\ &\cdot  H(y-n) \cdot H(-(y-n)+w_{\text{slit}})
     \end{split}\Biggr)
 \end{align}
 \begin{align}
@@ -233,23 +258,26 @@ With this, the contrast and resolution of the output image increase in the direc
      H(y) = \int_{-\infty}^y \delta(s) d(s)
 \end{align}
 The sample \(s(x,y)\) is illuminated with a spatial pattern of \(I_{\text{Ill}}(x,y,n)\) (which may vary during an exposure, as in \gls{light-sheet} microscopy) and imaged onto a detector with width \(w\) and height \(h\).
-\(n\) pixel number of the active row as the shutter rolls; \(H(y-n)*H(-(y-n)+w_{\text{slit}})\) represents the active region on the detector as the shutter rolls with a width of \(w_{\text{slit}}\) and \(\text{PSF}(x,y)\) is the point-spread function.
+\(n\) is the pixel number of the active row as the shutter rolls; \(H(y-n) \cdot H(-(y-n)+w_{\text{slit}})\) represents the active region on the detector as the shutter rolls with a width of \(w_{\text{slit}}\) and \(\text{PSF}(x,y)\) is the point-spread function.
 \begin{align}
     \intertext{For flat wide-field illumination}
-    I_{\text{ill}}(x,y,n) &= {I_0}
+    I_{\text{ill}}(x,y,n) = {I_0}
+\end{align}
+\begin{align}
+    \intertext{and for slit-scanning flat wide-field illumination}
+    I_{\text{ill}}(x,y,n) = {I_0} \cdot  H(y-n) \cdot H(-(y-n)+w_{\text{slit}})
 \end{align}
 \begin{align}
     \intertext{For \gls{DSLM} illumination}
     I_{\text{ill}}(x,y,n) &= {I_0} {\left(\frac{w_0}{w{(y+n)}}\right)}^2 {e^{\frac{-2x}{w{(y+n)}^2}}}
 \end{align}
 \begin{align}
-  \intertext{and}
+  \intertext{As the imaging and illumination objective lens are not the same, \(I_{\text{em}}(x,y,n)\) is now}
     I_{\text{em}}(x,y,n) = \sum_{n=0}^{n=h-1}
     \Biggl(\begin{split}
-                &\left[ (s(x,y) I_{\text{ill}}(x,y,n)) * \text{PSF}(x,y) \right] \\ &\cdot  H(y-n)*H(-(y-n)+w_{\text{slit}})
+                &\left[ (s(x,y) \cdot I_{\text{ill}}(x,y,n)) * \text{PSF}(x,y) \right] \\ &\cdot  H(y-n) \cdot H(-(y-n)+w_{\text{slit}})
     \end{split}\Biggr)
 \end{align}
-As the imaging and illumination objective lens are not the same.
 The application of confocal \gls{slit-scanning} was also considered for structured illumination sources.
 % For flat wide-field illumination \(I_{Illumination}(x,y,n) = 1\).
 %
@@ -271,44 +299,44 @@ The application of confocal \gls{slit-scanning} was also considered for structur
 %   }
 %   \label{fig:widefield_slit}
 % \end{figure}
-\clearpage
+% \clearpage
 \begin{figure}[h]
   \centering
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/widefield}
       \caption{Widefield}
   \end{subfigure}~
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/widefield_fft}
-      \caption{Widefield FFT}
+      \caption{Widefield \gls{FFT}}
   \end{subfigure}\\
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/slitscanned_partial}
       \caption{Partially scanned slit}
   \end{subfigure}~
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/illiumination_partial}
       \caption{Illumination pattern}
   \end{subfigure}\\
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/slitscanned}
       \caption{Slit-scanned image}
   \end{subfigure}~
-  \begin{subfigure}[t]{0.25\textwidth}
+  \begin{subfigure}[t]{0.23\textwidth}
       \centering
       \includegraphics[width=\textwidth]{widefield_slit/slitscanning_fft}
-      \caption{Slit-scanning FFT}
+      \caption{Slit-scanning \gls{FFT}}
   \end{subfigure}
   % \includegraphics{widefield_slit}
   \caption{Simulation of a confocal slit-scanned wide-field or swept light-sheet system.
-  (a) Is the raw, image with b) showing Fourier space and the frequency passband.
+  (a) is the raw, image with (b) showing Fourier space and the frequency passband.
   (c) Shows the confocal \gls{slit-scanning} in progress and (d) shows what the \gls{SLM} will be displaying.
-  (d) is the final image as it would appear after an acquisition and e) is the the new \gls{OTF} with a wider support in \(y\).
+  (d) is the final image as it would appear after an acquisition and (e) is the the new \gls{OTF} with a larger support in \(y\).
   }
   \label{fig:widefield_slit}
 \end{figure}
@@ -327,12 +355,12 @@ If the localisation of these points is inaccurate, computationally inverting the
 As discussed, \gls{slit-scanning} has the potential to increase image contrast without sacrificing on speed of acquisition; to achieve this in \gls{SIM} requires a fast ferroelectric \gls{SLM}, with a refresh rate better than the imaging camera.
 For slit-scanning \gls{SIM} as in slit-scanning \gls{wide-field}, a row of active pixels is swept during an exposure but now this pattern is the product of a standard set of \gls{SIM} patterns as shown in \figurename~\ref{fig:sim_slit}.
 For these simulations 9 unique patterns were used, 3 oriented patterns with each 3 phases; though fewer can be used\cite{strohlSpeedLimitsStructured2017}.
-Slit-scanned \gls{SIM} simulations of a test image were successfully reconstructed as seen in \figurename~\ref{fig:sim_slit_reconstructed} with the patial illumination as:
+Slit-scanned \gls{SIM} simulations of a test image were successfully reconstructed, as seen in \figurename~\ref{fig:sim_slit_reconstructed}, with the spatial illumination as:
 \begin{align}
     % \intertext{For \gls{SIM} illumination:}
-    I_{\text{ill}}(x,y,n) &= {I_0} [1 + \cos(k_x x + k_y y + \phi]
+    I_{\text{ill}}(x,y,n) &= {I_0} [1 + \cos(k_x x + k_y y + \phi] \cdot  H(y-n) \cdot H(-(y-n)+w_{\text{slit}})
 \end{align}
-At an angle \(\theta = \frac{k_x}{k_y}\) of 3 and a phase (\(\phi\)) of 3.
+At one of 3 angles \(\theta = \frac{k_x}{k_y}\) and one of 3 phases (\(\phi\)).
 % \begin{figure}
 %   \centering
 %   \includegraphics{sim_slit}
@@ -358,14 +386,14 @@ At an angle \(\theta = \frac{k_x}{k_y}\) of 3 and a phase (\(\phi\)) of 3.
   \begin{subfigure}[t]{0.23\textwidth}
       \centering
       % \includegraphics[width=\textwidth]{sim_slit/1/sim_slit_pattern}
-      % \caption{Widefield FFT}
+      % \caption{Widefield \gls{FFT}}
       Single SLM frame
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.23\textwidth}
       \centering
       % \includegraphics[width=\textwidth]{sim_slit/1/fft}
       % \caption{Partially scanned slit}
-      FFT of image
+      \gls{FFT} of image
   \end{subfigure}\\
   \begin{subfigure}[t]{0.23\textwidth}
       \centering
@@ -428,57 +456,128 @@ At an angle \(\theta = \frac{k_x}{k_y}\) of 3 and a phase (\(\phi\)) of 3.
         \caption{}
     \end{subfigure}
   % \includegraphics{widefield_slit}
-  \caption{}\label{fig:sim_slit}
+  \caption{
+  (a),(e) and (i) are the three \gls{SIM} angles traditionally used for reconstruction.
+  (b),(f) and (j) are these illuminations during a partial single frame exposure and
+  (c),(g) and (k) are the respective patterns as displayed on an \gls{SLM};
+  giving the final images (d),(h) and (l) as seen in frequency space with the larger \gls{OTF} support.
+  }\label{fig:sim_slit}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{sim_slit/recon/input}
+      \caption{Projected}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{sim_slit/recon/FFT_input}
+      \caption{\gls{FFT}}
+  \end{subfigure}\\
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{sim_slit/recon/reconstruction_no_attenuation-1}
+      \caption{Reconstructed}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{sim_slit/recon/FFT_reconstruction_no_attenuation}
+      \caption{\gls{FFT}}
+  \end{subfigure}
+  % \includegraphics{widefield_slit}
+  \caption{slit-SIM images as reconstructed using fairSIM.
+  (a) The projected sum of the 9 raw \gls{SIM} images with (b), the complimentary Fourier space image which shows the diffraction limited information along the horizontal.
+  (c) The slit-SIM reconstruction with (d), the Fourier space image showing the OTF support being extended along the horizontal.
+  }\label{fig:sim_slit_reconstructed}
 \end{figure}
 
 \subsection{Slit-scanning \gls{mSIM}}
 
 The same principle for \gls{slit-scanning} \gls{SIM} can be also be applied to \gls{mSIM}.
-\gls{mSIM} uses a square lattice of points raster scanned across the sample to provide a fast parallelised confocal-like image.
+\gls{mSIM} uses a square lattice of points, raster scanned across the sample to provide a fast, parallelised, confocal-like image.
 Each spot is computationally pin-holed, and the resulting images are summated to produce a final, super-resolved image.
 
-In \gls{slit-scanning} \gls{mSIM}, each exposure the \gls{SLM} will display a single row of illumination spots from the full lattice with a standard \gls{mSIM} pattern.
-This row is then swept synchronously with the virtual slit as before.
+In \gls{slit-scanning} \gls{mSIM}, during each exposure, the \gls{SLM} will display a single row of illumination spots from the full lattice with a standard \gls{mSIM} pattern.
+This row is then swept synchronously with the virtual slit as with slit-\gls{SIM}.
 For the proceeding exposure, the line of point illuminators is iterated in the orthogonal direction to the propagating shutter.
 
 The act of using a virtual slit on the camera reduces the dimensionality of the reconstruction of an \gls{mSIM} image, drastically increasing the speed of an acquisition without the need for additional optics.
-Ordinarily, the virtual pin-holing step is achieved computational by reconstructing from an \(n\times n\) (\(O(n^2\)) set of images; using \gls{slit-scanning} the reconstruction reduces from to $n$ (\(O(n)\)) operations.
+Ordinarily, the virtual pin-holing step is achieved computational by reconstructing from an \(n\times n\) (\(O(n^2)\)) set of images; using \gls{slit-scanning} the reconstruction reduces to $n$ (\(O(n)\)) operations.
 Schroff~\emph{et. al.}, for instance, require \SI{200 x 200}{} images for a single \gls{mSIM} reconstruction.
-The method proposed here, would therefore increase the speed of this process by \SI{200}{} fold.
+The method proposed here, would potentially increase the speed of this process by \SI{200}{} fold.
 This is however dwarfed by \gls{iSIM}, which gives instantaneous super-resolved images at the cost of requiring extensive additional optics\cite{yorkInstantSuperresolutionImaging2013}.
-%TODO %%%%%
 %\Gls{slit-scanning} mSIm was considered whereby the number of images to be reconstructed in the final image was square-rooted.
 % In \gls{mSIM}, ordinarily, the virtual pin-holing step is achieved computational by reconstructing from an \(n\times n\) (\(O(n^2\)) set of images; using \gls{slit-scanning} the reconstruction reduces from to $n$ (\(O(n)\)) operations.
 Through computer simulation it was shown, in \figurename~\ref{fig:msim_slit}, that the \gls{OTF} support of the reconstructed \gls{mSIM} image increases in one direction up to \SI{2}{} fold in ideal conditions and a slit width (\(w_{\text{slit}}\)) of one pixel.
 Using fewer images can reduce the amount of acquisition time needed, but as \gls{slit-scanning} does reject photons there may be a trade-off in real samples when acquiring a sufficient number of photons to reconstruct an image, potentially increasing exposure times.
-
-\begin{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics{msim_slit}
+%   \caption{
+%   a) The capturing of a single \gls{mSIM} frame;
+%   b) \gls{mSIM} illumination pattern as it rolls;
+%   c) reconstructed slit-\gls{mSIM} image;
+%   d) \gls{OTF} of a single \gls{mSIM} frame;
+%   e) \gls{OTF} of reconstructed slit-gls{mSIM} frame
+%   }
+%   \label{fig:msim_slit}
+% \end{figure}
+\begin{figure}[h]
   \centering
-  \includegraphics{msim_slit}
-  \caption{
-  a) The capturing of a single \gls{mSIM} frame;
-  b) \gls{mSIM} illumination pattern as it rolls;
-  c) reconstructed slit-\gls{mSIM} image;
-  d) \gls{OTF} of a single \gls{mSIM} frame;
-  e) \gls{OTF} of reconstructed slit-gls{mSIM} frame
-  }
-  \label{fig:msim_slit}
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{msim_slit/single_progress}
+      \caption{}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{msim_slit/single_illumination_contrast}
+      \caption{}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{msim_slit/fft_single}
+      \caption{}
+  \end{subfigure}\\
+  \begin{subfigure}[t]{0.23\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{msim_slit/msim_recon}
+      \caption{}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.23\textwidth}
+        \centering
+        \hspace{\textwidth}
+        % \includegraphics[width=\textwidth]{}
+        % \caption{}
+    \end{subfigure}~
+    \begin{subfigure}[t]{0.23\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{msim_slit/msim_recon_fft}
+        \caption{}
+    \end{subfigure}
+  % \includegraphics{widefield_slit}
+      \caption{
+      (a): The capturing of a single \gls{mSIM} frame;
+      (b): \gls{mSIM} illumination pattern as it rolls;
+      (c): The \gls{OTF} of a single \gls{mSIM} frame;
+      (d): The reconstructed slit-\gls{mSIM} image;
+      (e): The \gls{FFT} of a reconstructed slit-\gls{mSIM} frame, now with a wider \gls{OTF} support.
+      }
+      \label{fig:msim_slit}
 \end{figure}
-
-\subsection{\Gls{slit-scanning} simulated computationally}
-
-\begin{figure}
-  \centering
-  \includegraphics{sim_slit_reconstructed}
-  \caption{slit-SIM images as reconstructed using fairSIM.
-  a) The sum projected image of the 9 raw SIM images;
-  b) with the complimentary Fourier space image, showing diffraction limited information in the horizontal.
-  c) The slit-SIM reconstruction;
-  d) with the Fourier space image showing how the OTF support, along the horizontal, has been extended beyond the diffraction limit.}
-  \label{fig:sim_slit_reconstructed}
-\end{figure}
-
-
+% \subsection{\Gls{slit-scanning} simulated computationally}
+%
+% \begin{figure}
+%   \centering
+%   \includegraphics{sim_slit_reconstructed}
+%   \caption{slit-SIM images as reconstructed using fairSIM.
+%   a) The sum projected image of the 9 raw SIM images;
+%   b) with the complimentary Fourier space image, showing diffraction limited information in the horizontal.
+%   c) The slit-SIM reconstruction;
+%   d) with the Fourier space image showing how the OTF support, along the horizontal, has been extended beyond the diffraction limit.}
+%   \label{fig:sim_slit_reconstructed}
+% \end{figure}
 \section{Discussion and future work}
 
 \subsection{Dual \gls{slit-scanning}}
@@ -489,7 +588,7 @@ The intent with this work was to apply the improvement provided by \gls{slit-sca
 % An alternative techniques
 In having two independently addressable sensors another technique which can be implemented is chromatically separating the two channels on to each of the sensors, providing simultaneous two colour \SI{100}{\hertz} imaging.
 % is to chromatically separate channels onto each of the chips, for simultaneous two colour \SI{100}{\hertz} imaging.
-Such image splitting devices are commercially available, with the trade-off of \gls{FOV} for time-resolution.
+Such image splitting devices are commercially available\cite{EmissionImageSplitter}, with the trade-off of \gls{FOV} for time-resolution.
 Due to the additional optics added to the light-sheet system for the astigmatic tracking module, there was not sufficient space to investigate this technique further.
 
 \subsection{Structured illumination \gls{slit-scanning}}
@@ -498,7 +597,7 @@ The effect of confocal \gls{slit-scanning} was explored \emph{in silico}, to ver
 This was considered for systems imaging orthogonally, such as is light-sheet microscopy, as well for epi-illumination systems with control over the the illumination structure.
 % This would be realised by running an SLM at \SI{}{\kilo\hertz} rates, which is feasible for ferroelectric devices.
 
-The simulations presented here can be immediately adapted onto microscope systems with \gls{SLM}s already embedded, provided there is intensity (rather then phase) control at the sample plane.
+The techniques simulations presented here can be immediately adapted onto microscope systems with \gls{SLM}s already embedded, provided there is intensity (rather then phase) control at the sample plane.
 For a \SI{512x512}{\text{px}} \gls{FOV}, at \SI{40}{\milli\second} exposure, the \gls{SLM} would need to be run at \SI{12.8}{\kilo\hertz} which is only viable for ferroelectric liquid crystal SLMs.
 % For \gls{slit-scanning}-SIM to become valuable, a full rotational asymmetric reconstruction algorithm will need to be written which incorporates the potential one-directional resolution increase seen in the OTFs.
 
