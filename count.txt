@@ -1,6 +1,6 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 28075
+Words in text: 28076
 Words in headers: 539
 Words outside text (captions, etc.): 5039
 Number of headers: 187
@@ -44,7 +44,7 @@ Subcounts:
   330+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
   688+4+336 (1/3/0/0) Section: The design and construction
   467+6+48 (2/2/0/0) Section: Sample preparation
-  188+1+0 (1/0/0/0) Section: Summary
+  189+1+0 (1/0/0/0) Section: Summary
   699+12+81 (3/1/0/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   612+13+85 (4/2/9/0) Section: Single Particle Tracking microscopy
   563+9+20 (5/1/10/3) Section: Astigmatic tracking
