@@ -12,15 +12,15 @@
 
 \chapter{Diffraction limited single virion tracking in SPIM}\label{chapter:spt}
 
-\epigraph{\emph{You do the light-sheet, we do the heavy sheet}}{--- Romane Lane}
+\epigraph{\emph{You do the light-sheet, we do the heavy-sheet}}{--- Romane Lane}
 %Taken from Cat
 
 Herpesviruses are among the most complex and largest of the clinically relevant viruses and establish life-long infections in their hosts.
-They are widespread in vertebrates and humans, with up to 85\% of the population worldwide being infected by herpes simplex virus 1 (HSV-1) and around 25\% by HSV-2.
-Herpes simplex virus type 1 (HSV-1) is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
-Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immuno-compromised patients \cite{[1]}.
+They are widespread in vertebrates and humans, with up to \SI{85}{\percent} of the population worldwide being infected by \gls{HSV}-1 and around 25\% by \gls{HSV}-2.
+\gls{HSV}-1 is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
+Infections by the nine known human herpesviruses are associated with many serious diseases including certain lymphomas and life-threatening conditions in immune-compromised patients \cite{[1]}.
 %Herpesviruses also cause a significant disease burden in animals that can lead to economic problems for livestock farmers.
-Viral infections begin when infectious virus particles (virions) invade the organism by attaching to and entering susceptible cells.
+Viral infections begin when infectious virus particles (\gls{virion}s) invade the organism by attaching to, and entering, susceptible cells.
 %After this initial event t
 The virus hijacks the cellular machinery to replicate and produce progeny virus particles which then spread further infection.
 Herpesviruses pass through two distinct stages in their life cycle: lytic replication and latency.
@@ -39,7 +39,7 @@ Imaging these processes, in particular, is an important goal of biomedical resea
 In herpesviruses, the DNA genome is packaged in a nucleocapsid which is enveloped by a lipid membrane containing many viral membrane proteins.
 Nucleocapsid and envelope are separated by a complex, proteinacious matrix called the tegument.
 %Herpes simplex virus type 1 (HSV-1) is the most extensively studied herpesvirus, and is a general model for other alphaherpesviruses.
-The capsid is built up by the capsomers (capsid proteins) and possesses an icosahedral symmetry \cite{[4]}).
+The \gls{capsid} is built up by the capsomers (capsid proteins) and possesses an icosahedral symmetry \cite{[4]}).
 The tegument is a densely packed protein layer around the nucleocapsid, and essential for structural integrity and functionality of the virion.
 While the nucleocapsid structure and protein composition is well understood, much less is known about the structure and assembly of the tegument.
 The tegument can be divided into inner tegument (capsid-associated part) and outer tegument (envelope-proximal part).
@@ -49,18 +49,17 @@ Most of these tegument proteins possess multiple functions aiding in the entry o
 Contained in the viral envelope of HSV-1 are at least 11 glycoproteins as well as several membrane-associated proteins which play important roles in viral entry and egress as well as virus-induced cell fusion \cite{[2, 7]}.
 
 \subsection{Herpesvirus infection cycle}
-To initiate infection, herpesviruses first bind to cellular surface proteins which act as virus receptors.
-Due to direct fusion to the plasma membrane or endocytosis \cite{[8]}, the viral capsid is delivered into the cytosol.
-Incoming capsids move towards the nuclear pore complexes by exploiting microtubules within the cell\cite{[9, 10]}.
-There, they release the viral DNA through the nuclear pores into the nucleus \cite{[11]}.
+To initiate infection, herpesviruses first bind to cellular surface proteins which act as virus receptors as in \figurename~\ref{fig:viral_egress}.
+Then, by direct fusion to the plasma membrane or by endocytosis~\cite{[8]}, the viral \gls{capsid} is delivered into the cytosol.
+Incoming capsids are actively transported towards the nuclear pore complexes by exploiting microtubules within the cell\cite{[9, 10]}.
+The capsid then releases the viral DNA through the nuclear pores into the nucleus~\cite{[11]}.
 Virion proteins drive the initial transcription to produce %immediate early
 mRNAs.
 Translation of these early mRNAs promotes further phases of viral gene transcription and replication of the viral DNA.
 %In ongoing, efficient infection, r
 Replication of the viral DNA is achieved through actions of viral polymerases and other viral replicative machinery.
-These replicated DNAs are used as templates for late mRNAs, which produce viral structural proteins, and are also packaged into capsids late in infection \cite{[4]}.
-The egress pathway follows four steps (%schematically shown in
-Figure \ref{fig:viral_egress}):
+These replicated DNAs are used as templates for mRNAs, which produce viral structural proteins, and are also packaged into capsids~\cite{[4]}.
+The egress pathway follows four steps (\figurename~\ref{fig:viral_egress}):
 
 \begin{samepage}
   \begin{enumerate}
@@ -71,30 +70,43 @@ Figure \ref{fig:viral_egress}):
   \end{enumerate}
 \end{samepage}
 
-In the nucleus, the capsid proteins coassemble autocatalytically with and around the \emph{portal complex} in late infection \cite{[4]}.
+In the nucleus, the \gls{capsid} proteins coassemble autocatalytically with and around the \emph{portal complex} in late infection \cite{[4]}.
 %Nucleocapsid assembly is a very dynamic process.
-%The viral proteins have to recognize and cleave packaging signals at genomic termini, dock at the portal complex and pump the DNA inside the capsid [4].
+%The viral proteins have to recognize and cleave packaging signals at genomic termini, dock at the portal complex and pump the DNA inside the \gls{capsid} [4].
 After capsids are formed and packaged in the nucleus, the capsids %have to
 traverse the nuclear envelope.
 %The nowadays largely accepted model proposes a process designated as nuclear egress.
 %THIS PARAGRAPH IS SHIT
-The nuclear envelope consists of a double membrane, the inner and outer nuclear membranes (INM, ONM).
+The nuclear envelope consists of a double membrane, the \gls{INM} and \gls{ONM}.
 % - and therefore presents a strong physical barrier.
 %Mediated by several viral tegument and membrane proteins,
-The capsids bud into the INM (primary envelopment) to form an enveloped particle in the perinuclear space, fuse with the outer nuclear membrane (de-envelopment) and are released into the cytoplasm \cite{[12]}. %Could word better
+The \gls{capsid}s bud into the INM (primary envelopment) to form an enveloped particle in the perinuclear space, fuse with the outer nuclear membrane (de-envelopment) and are released into the cytoplasm \cite{[12]}. %Could word better
 In the cytosol, the capsids associate with more tegument proteins and bind onto and bud into cytoplasmic membranes derived from endosomes and/or the trans-Golgi network (secondary envelopment) \cite{[13, 14]}.
 Although details of the mechanisms are not well understood, tegument maturation is likely directly connected to secondary envelopment via direct protein-protein interactions.
 Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
+%
+% \begin{figure}
+%   \includegraphics[width=\textwidth]{./viral_egress}
+%   \caption{Scheme of assembly and egress pathway of virus particles.
+%   After capsids are formed in the nucleus, they bud into the inner nuclear membrane (INM) (primary envelopment) to form an enveloped particle in the perinuclear space.
+%   These particles fuse with the outer nuclear membrane (ONM) (de-envelopment) and are released into the cytoplasm, leaving the envelope in the ONM.
+%   In the cytosol, capsids bind onto and bud into cytoplasmic membranes (secondary envelopment), and enveloped virions are secreted from cells (release).
+%   \figurename~from \cite{[2]}.}
+%   \label{fig:viral_egress}
+% \end{figure}
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{./viral_egress}
-  \caption{Scheme of assembly and egress pathway of virus particles.
+\begin{landscape}
+  \begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{./virus_trafficking}
+  \caption[Scheme of assembly and egress pathway of virus particles.]{Scheme of assembly and egress pathway of virus particles.
   After capsids are formed in the nucleus, they bud into the inner nuclear membrane (INM) (primary envelopment) to form an enveloped particle in the perinuclear space.
   These particles fuse with the outer nuclear membrane (ONM) (de-envelopment) and are released into the cytoplasm, leaving the envelope in the ONM.
   In the cytosol, capsids bind onto and bud into cytoplasmic membranes (secondary envelopment), and enveloped virions are secreted from cells (release).
-  Figure from \cite{[2]}.}
+  Figure inspired by \cite{[2]}.}
   \label{fig:viral_egress}
-\end{figure}
+  \end{figure}
+\end{landscape}
 
 % \subsection{Early tegumentation assembly}
 %
@@ -109,7 +121,7 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
 % %for directed transportation to the inner nuclear membrane, primary envelopment, de-envelopment and/or further unknown functions.
 % %A recent study, using 3D single particle tracking, has shown that nuclear herpesvirus capsids do not use directed motility to reach the nuclear envelope.
 % Using 3D single particle tracking, it was shown that nuclear herpesvirus capsids do not use directed motility to reach the nuclear envelope.
-% Viral proteins work by changing the nuclear architecture to create space for capsid free diffusion rather than activating capsids for transport \cite{[19]}.
+% Viral proteins work by changing the nuclear architecture to create space for \gls{capsid} free diffusion rather than activating capsids for transport \cite{[19]}.
 % After reaching the INM, budding occurs in order to transfer the capsids from the nucleus in the perinuclear space.
 % The viral proteins pUL31 and pUL34 form the nuclear egress complex \cite{[20, 21]}, whose formation is crucial for budding \cite{[17, 22]}.
 % pUL34 is a membrane protein attached to nuclear membranes, and upon complex formation also pUL31 accumulates at the nuclear rim \cite{[20]}.
@@ -126,7 +138,7 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
 
 % \subsection{Aims}
 % Until now, no quantitative and systematic approach exists that makes use of fluorescence microscopy with all its capacity in single molecule imaging to investigate herpesvirus tegument assembly inside infected cells.
-% Generally, it is assumed that tegumentation starts directly after capsid formation, but direct evidence from live-cell data is missing.
+% Generally, it is assumed that tegumentation starts directly after \gls{capsid} formation, but direct evidence from live-cell data is missing.
 % In the current project, we aim to prove that the first steps of tegumentation take place inside the nucleus.
 % Several viral proteins have been identified as possible candidates for early tegumentation.
 % We plan to investigate their cellular location, attachment to nuclear capsids and functional roles.
@@ -138,10 +150,10 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
 % Several proteins of the mature tegument of HSV-1 have been suspected to assemble at capsids within the nucleus.
 % We intend to investigate the presence of the following candidates inside the nucleus of infected cells and upon nuclear capsids:
 % 1)	pUL36 and pUL37:
-% pUL36 (>330 kDa) is most probably required for stabilisation of the capsid vertex-specific component (CVSC, a complex of capsid proteins pUL17 and pUL25) of nuclear and cytoplasmic capsids [51].
+% pUL36 (>330 kDa) is most probably required for stabilisation of the \gls{capsid} vertex-specific component (CVSC, a complex of \gls{capsid} proteins pUL17 and pUL25) of nuclear and cytoplasmic capsids [51].
 % The CVSC promotes nuclear egress of DNA-filled capsids by direct interaction of pUL25 with pUL31 [52].
 % pUL36 mediates binding of pUL37, the second-largest tegument protein [53].
-% Both proteins appear to link capsid and tegument [2].
+% Both proteins appear to link \gls{capsid} and tegument [2].
 % 2)	pUL47, pUL48, and pUL49:
 % These are the most abundant tegument proteins in the mature virion, and act as central organizers of the tegument [54].
 % pUL48 is recruited to capsids mainly by interaction with pUL36 [55].
@@ -153,11 +165,11 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
 % 4)	ICP0 and pUL41: The proteins are regulators of viral transcription, and host/viral translation and immune response, respectively [5].
 % ICP0 is probably recruited onto the capsids by pUL49 [38].
 % Incorporation of pUL41 may be facilitated by interaction with pUL48, pUL49 and possibly pUL47 [54].
-% First, we will systematically image the cellular distribution of the mentioned tegument proteins, especially during the phase of capsid assembly and egress.
-% Hence, we will use dual fluorescent viruses with capsid (pUL35 or pUL25) and tegument proteins of interest tagged with auto-fluorescent proteins (mTurquoise, EGFP and mCherry), and perform live-cell time-lapse imaging.
+% First, we will systematically image the cellular distribution of the mentioned tegument proteins, especially during the phase of \gls{capsid} assembly and egress.
+% Hence, we will use dual fluorescent viruses with \gls{capsid} (pUL35 or pUL25) and tegument proteins of interest tagged with auto-fluorescent proteins (mTurquoise, EGFP and mCherry), and perform live-cell time-lapse imaging.
 % In order to obtain image sequences with high quality and detail, we plan to apply a resolution- and contrast-enhancing imaging technique such as structured illumination microscopy (SIM).
 % We will further investigate the attachment of the tegument to single capsids.
-% We intend to analyze co-localization of capsid and tegument proteins using two approaches: (a) single particle tracking in combination with image correlation [60], and (b) correlation between dual-colour motion trajectories [61].
+% We intend to analyze co-localization of \gls{capsid} and tegument proteins using two approaches: (a) single particle tracking in combination with image correlation [60], and (b) correlation between dual-colour motion trajectories [61].
 %
 % What are the functional roles of early tegument proteins?
 %
@@ -165,40 +177,52 @@ Enveloped virions are finally secreted from cells by exocytosis \cite{[15, 16]}.
 % Hence, we assume that the most probable functions of early tegument proteins consist in organization and promotion of nuclear egress and availability as binding partners for other tegument or viral membrane proteins.
 % After screening which of the investigated proteins attach to capsids, we will determine the location of the tegumented capsids with regard to the nucleus structure.
 % We assume that the location of attachment is connected to the functional role.
-% E.g. pUL36 is supposed to stabilize the complex of the capsid-associated proteins pUL17 and pUL25, hence very early attachment of this protein near the sites of capsid assembly would be expected.
+% E.g. pUL36 is supposed to stabilize the complex of the capsid-associated proteins pUL17 and pUL25, hence very early attachment of this protein near the sites of \gls{capsid} assembly would be expected.
 % pUS3, ICP0 and pUL13 have been described to be involved in primary envelopment, thus we would suspect that assembly of these proteins would occur near the nuclear membrane.
-% In order to analyze if putative early tegument proteins play a role in primary envelopment, we will examine if binding of tegument proteins provokes changes in capsid mobility due to membrane interaction.
+% In order to analyze if putative early tegument proteins play a role in primary envelopment, we will examine if binding of tegument proteins provokes changes in \gls{capsid} mobility due to membrane interaction.
 % Co-localization with the nuclear egress complex (labelled pUL31 or pUL34 proteins) will provide further evidence about participation in primary envelopment.
 % In a final step, we will investigate in which order tegument proteins bind to capsids what will give evidence about in vivo protein-protein interactions.
 
-\section{Single Particle Tracking}
+\section{Single Particle Tracking microscopy}
 
-While optical imaging is generally limited to a resolution of \SI{\sim 250}{\nano\metre} nm by diffraction, sparse emitters can be localised with much higher precision by fitting a model function to their intensity distribution.
+While optical imaging is generally limited to a lateral resolution of \SI{\sim 250}{\nano\metre} by diffraction, sparse emitters can be localised with much higher precision by mathematical image analysis methods; such as fitting a parametric equation to their image data.
+% fitting a model function to their image data.
 Tracking individual particles is an important tool for modern biology.
-It has been used to study intracellular transport such as the movement of mRNA\cite{Spille2015a}; cell membrane dynamics\cite{Cognet2014} and more.
+It has been used to study intracellular transport of mRNA~\cite{Spille2015a} and by observing cell membrane dynamics~\cite{Cognet2014}.
 % Beneath the methods of super-resolution imaging, awarded by the Nobel Prize in chemistry in 2014, the principles of localisation microscopy are also applied in single particle tracking (SPT) as was shown already in early single molecule studies [41, 42].
 %SPT is a real-time imaging technique that monitors the movement of individual particles and can provide information about dynamic behaviour within a biological system. %in a cellular context.
-Many studies exist on inter and intra cellular viral trafficking
+Many studies exist on intercellular and intracellular viral trafficking
 %virus trafficking between and inside cells
 using single particle tracking \cite{(reviewed in [43])}.
 %In general, more studies about the early stage of infection, virus entry and transport, exist than studies about the late stages of infection, virus assembly and egress.
 Only a few and recent works exclusively probe the molecular egress pathway of herpesviruses.
-Hogue \emph{et al.} \cite{[16]} used total internal reflection fluorescence (TIRF) microscopy to selectively visualise fluorescent Pseudorabies viruses near the plasma membrane and follow them during exocytosis.
-Sandbaumhüter \emph{et al.} showed, by a motility analysis of fluorescent HSV-1, that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 \cite{[44]}.
-Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using SPT \cite{Brandenburg2007}.
+Hogue~\emph{et~al.}~\cite{[16]} used \gls{TIRF} microscopy to selectively visualise fluorescent Pseudorabies viruses near the plasma membrane and follow them during exocytosis.
+Sandbaumhüter~\emph{et~al.} showed, by a motility analysis of fluorescent \gls{HSV}-1, that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 \cite{[44]}.
+Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using \gls{SPT}~\cite{Brandenburg2007}.
 %The mentioned examples show that single-virus tracking can reveal detailed information about the dynamics of single viruses inside cells with high spatial and temporal resolution.
-
-Due to a limited depth of field, particles tracked in a 3D volume tend leave the axial detection range.
+Due to a limited depth of field, particles tracked in a \gls{3D} volume tend leave the axial detection range.
 %Data analysis then often relies on two dimensional projections of short trajectory fragments and might not accurately represent three-dimensional (3D) particle motion if the specimen structure is not isotropic \cite{[45]}.
-Several technical approaches already exist to perform SPT in three dimensions \cite{[46-49]}.
+Several technical approaches already exist to perform \gls{SPT} in three dimensions \cite{[46-49]}.
 %In the field of virology, very few studies have made use of the available 3D SPT techniques.% to date.
-Orbital tracking in two planes was applied to track prototype foamy virus (PFV) in real-time inside cells \cite{[50]}, and a rotating, oblique light sheet and astigmatic detection were used to image and track viral capsids with high temporal and spatial resolution inside the cell nucleus \cite{[19]}.
+% Orbital tracking, whereby a laterally rotating spot is used to detect and correct
+
+In orbital tracking microscopy~\cite{dupontNanoscaleThreedimensionalSingle2011}, a laterally rotating spot orbits a target particle, any decline in the signal as measured at an angle then corresponds to a correction of the centre of the orbit.
+By splitting the image across two planes a further axial correction can be made by adjusting the detecting objective lens position such that the orbiting intensity is equal in both plane image planes.
+This technique was applied to track \gls{PFV} in real-time inside cells.
+
+In this work \gls{HSV}-1 virions will be observed using \gls{light-sheet} microscopy.
+The \gls{light-sheet} microscope will use an astigmatic lens in the detection path to modify the detection \gls{PSF} so that it may track single particles laterally and axially.
+
+% Particle tracking using light-sheet microscopy and potentially viable when applied to viral tracking.
+
+% is very relevant due to the high imaging speeds required to study particles that are both small and fast.
+% Confocal microscopes suffer because they cannot temporally resolve particles; widefield microscopes suffer because they cannot provide three dimensional data; SPIM can offer both.
+
+% As a wide-field approach to \gls{SPT}, \gls{HILO} was used by to create optical sectioning by illuminating a cell at an oblique angle which was coupled with astigmatic detection.
+% This provided axial and lateral \gls{SPT} capabilities needed to then track viral capsids with high temporal and spatial resolution inside the cell nucleus~\cite{[19]}.
 %The new technical development opens up existing perspectives in studying herpesvirus assembly and egress in vivo.
-
 %\section{Particle Tracking In Life Science}
-
 %\subsection{Particle Tracking}
-
 % Particle tracking is a relatively young but vital tool in modern quantitative biology and the field of bio-informatics.
 % A particle can refer to anything that is particulate and is not exclusively large or small, circular or spherical etc.
 % These techniques are very useful at numerically quantifying and detecting large population movements to discern general trends.
@@ -208,34 +232,34 @@ Orbital tracking in two planes was applied to track prototype foamy virus (PFV) 
 % Particle tracking using light sheet microscopy is very relevant due to the high imaging speeds required to study particles that are both small and fast.
 % Confocal microscopes suffer because they cannot temporally resolve particles; widefield microscopes suffer because they cannot provide three dimensional data; SPIM can offer both.
 
-\subsection{Particle spatial localisation}
 
-Particle tracking can be broadly described as a two stage process, spatial localisation then temporal localisation.
+\subsection{Particle detection}
+
+Particle tracking can be broadly described as a two stage process, spatial detection then temporal tracking.
 %The spatial localisation of a particle involves accurately marking where one or many particles are within an image.
 %Humans are naturally able to do this as they have evolved to notice patterns and anomalies.
 %Programming a computer to undertake this exercise was an early feat in the field of computer vision\cite{Crocker1996}.
-Crocker \emph{et al.} deconstructed the problem into logical computable steps.
+Crocker~\emph{et~al.} define a particle tracking method as consisting of the following computable steps.
 %Volumetric data is considered as singular images in two dimensions.
-Each image is %then
-corrected for any distortion or error from the digitation process as well a de-noising step. %as digitised video is inherently imperfect and may not be truly representative.
+Each image is first
+corrected for any distortion or error from the digitation process, followed by bandpass filtering to suppress image noise. %as digitised video is inherently imperfect and may not be truly representative.
 %Each image has a threshold found from an estimate of the background value of the image.
 %This threshold removes substantial noise that would otherwise contribute to the final result.
-Pixels with local maximum brightness are identified as \emph{candidate} particles and compete with other candidates within a pre-defined radius slightly larger than the expected size of the particle.
+Second, local pixel value maxima (or minima depending on the nature of the particle problem) pixels with local maximum brightness are identified as \emph{candidate} particles.
+% and compete with other candidates within a pre-defined radius slightly larger than the expected size of the particle.
 %\footnote{Methods since Crocker for a truly blind particle recognition have since been proposed but Crocker serves as a poignant historical but still relevant method of particle tracking using Computer Vision}
-A centroid (centre of mass) fitting procedure is employed under the assumption that, %to a first order approximation,
-spherical emitters can be well-defined by a Gaussian profile.
-By fitting a Gaussian profile %and using tens of pixels to minimise error,
-particulate positioning can be recorded with sub-pixel accuracy.
+A centroid (centre of mass) fitting procedure is employed to infer particle location under the assumption that, %to a first order approximation,
+% spherical emitters can be well-defined by a Gaussian profile.
+point-like particles with symmetric images are being observed.
+By fitting a Gaussian profile, or even the particle image's centre of mass in simple cases, %and using tens of pixels to minimise error,
+particle position can be estimated with sub-pixel accuracy.
 %The most common method of
-Typically iterative least squares fitting is used %Gaussian fitting
+Typically, iterative least squares fitting is used %Gaussian fitting
 due to its ease of implementation, speed, precision and robustness.% is iterative least squares fitting.
-
 % \paragraph{Overlap}
 %
 % Crocker's method does not account for overlapping particle systems; experimental and computational methods are addressing this\cite{Serge2008}, but for the most part these cases are marked as rare outliers and typically rejected in particle tracking routines as samples are usually constructed with a sensible sparsity.
-
-
-\subsection{Particle temporal localisation}
+\subsection{Particle tracking}
 
 Temporal localisation refers to the assignment of linage to a particle.
 %The reliab With fast imaging the reliable of such an assignment
@@ -257,12 +281,64 @@ The chance of a lineage being correctly assigned largely relies on the sampling 
 
 %\subsection{Single Particle Tracking}
 
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+            \centering
+            \includegraphics{/spt/image}
+            \caption{Example image for \gls{SPT}}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.45\linewidth}
+            \centering
+            \includegraphics{/spt/detection}
+            \caption{
+                Detect coordinate positions (\(xy\)) of each particle at each frame (\(t\), coloured)
+            }
+    \end{subfigure}~~
+    \begin{subfigure}[t]{0.45\linewidth}
+            \centering
+            \includegraphics{/spt/tracking}
+            \caption{
+                Track particles (\(n\), coloured) with coordinates (\(xy\)) at each frame (\(t\))
+            }
+    \end{subfigure}
+    \caption{Routine for detecting and tracking particles.}\label{fig:particle_track}
+    \begin{subfigure}[t]{0.45\linewidth}
+        \centering
+        \begin{equation}
+            \begin{pmatrix}
+              x_0 & y_0 & t_0 \\
+              x_1 & y_1 & t_0 \\
+              \cdots & \cdots & \cdots \\
+              x_0 & y_0 & t_1 \\
+              x_1 & y_1 & t_1 \\
+              \cdots & \cdots & \cdots \\
+              x & y & t \\
+            \end{pmatrix}
+        \end{equation}
+    \end{subfigure}~~
+    \begin{subfigure}[t]{0.45\linewidth}
+            \centering
+            \begin{equation}
+                \begin{pmatrix}
+              x & y & t_0 & n_0\\
+              x & y & t_1 & n_0 \\
+              \cdots & \cdots & \cdots & \cdots \\
+              x & y & t_0 & n_1 \\
+              x & y & t_1 & n_1 \\
+              \cdots & \cdots & \cdots & \cdots \\
+              x & y & t & n \\
+            \end{pmatrix}
+        \end{equation}
+    \end{subfigure}
+\end{figure}
+
 \subsection{Light sheet single particle tracking}
 
 Spille \emph{et. al.} proposed using light-sheet microscopy for tracking particles over long periods.
 This was achieved by shifting their light-sheet and detection objective at each recorded frame such that the particle was repositioned to the centre of the sheet.
 Alternatively, the entire sample could be relative to a static sheet.
-Spille demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a} (see Figure \ref{fig:SPIMSPT}).
+Spille demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a} (see \figurename~\ref{fig:SPIMSPT}).
 %
 % demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
 %
@@ -284,33 +360,35 @@ Spille demonstrated this technique very successfully on a single molecule of mRN
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.35\linewidth}
+	\begin{subfigure}[t]{0.4\linewidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/1_piezo_track}
-		\caption{Static particle localised in \(xy\)}
+		\includegraphics{Chapters/spt/Figs/PDF/tracking/1_piezo_track}
+		\caption{Sample particles in chamber mounted on a fast axial translator. A static particle is localised in \(xy\)}
 		\label{fig:SPIMSPT1}
-	\end{subfigure}
-        \hspace{0.05\linewidth}
-	\begin{subfigure}[b]{0.35\linewidth}
+	\end{subfigure}~~
+	\begin{subfigure}[t]{0.4\linewidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/2_piezo_track}
-		\caption{Particle diffuses out of light-sheet}
+		\includegraphics{Chapters/spt/Figs/PDF/tracking/2_piezo_track}
+		\caption{The particle moves out of the light-sheet e.g. due to diffusion or flow}
 		\label{fig:SPIMSPT2}
 	\end{subfigure}
-	\begin{subfigure}[b]{0.35\linewidth}
+    \\\vspace{\abovecaptionskip}
+    % \begin{subfigure}[t]{0.1\linewidth}
+    %     \includegraphics{Chapters/spt/Figs/PDF/tracking/coordinates}
+    % \end{subfigure}
+	\begin{subfigure}[t]{0.4\linewidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{Chapters/spt/Figs/PDF/tracking/3_piezo_track}
-		\caption{\(z\) stage repositions so that particle is within light-sheet}
+		\includegraphics{Chapters/spt/Figs/PDF/tracking/3_piezo_track}
+		\caption{The \(z\) stage repositions so that particle is within light-sheet}
 		\label{fig:SPIMSPT3}
-	\end{subfigure}
-        \hspace{0.05\linewidth}
-	\begin{subfigure}[b]{0.35\linewidth}
+	\end{subfigure}~~
+	\begin{subfigure}[t]{0.4\linewidth}
 		\centering
-		\includegraphics[width=1\linewidth]{Chapters/spt/Figs/PDF/tracking/4_piezo_track}
-		\caption{Particle in light-sheet, \(z\) position recorded}
+		\includegraphics{Chapters/spt/Figs/PDF/tracking/4_piezo_track}
+		\caption{Particle is now back in light-sheet and \(z\) position is recorded}
 		\label{fig:SPIMSPT4}
 	\end{subfigure}
-	\caption{Routine to track particles three dimensionally using light-sheet.}
+	\caption{Routine to track particles three dimensionally using light-sheet imaging.}
 	\label{fig:SPIMSPT}
 \end{figure}
 
@@ -374,7 +452,7 @@ Similarly the covariance of the calibration an image or volume can be used, thou
 \end{align}
 
 \subsection{Simulations}
-To verify that single particle tracking in light-sheet microscopy was possible, the diffusion of a single diffraction limited particle was simulated \emph{in silico} (see Figure \ref{fig:diffusion}).
+To verify that single particle tracking in light-sheet microscopy was possible, the diffusion of a single diffraction limited particle was simulated \emph{in silico} (see \figurename~\ref{fig:diffusion}).
 To create the simulation, the particle was modelled to take a random walk of time steps $dt$ across a single imaging exposure of \SI{40}{\milli\second}.
 This simulated how the particle would appear to move within the light-sheet.
 The intensity of the final image of a particle was attenuated according to the Gaussian intensity of the light-sheet axially($z$) and laterally ($x,y$) as per:
@@ -407,17 +485,17 @@ Where $w_0$ is the beam waist; NA is the numerical aperture of the excitation ob
 
 \begin{figure}
   \centering
-  \begin{subfigure}[b]{0.8\linewidth}
+  \begin{subfigure}[t]{0.8\linewidth}
     \centering
     \includegraphics{./simulation/size_view_diffusion}
     \caption{Side-view}
     \label{fig:size_view_diffusion}
   \end{subfigure}
-  \begin{subfigure}[b]{0.8\linewidth}
+  \begin{subfigure}[t]{0.8\linewidth}
     \centering
     %\input{./Chapters/spt/Figs/PDF/simulation/diffusion_3d.tex}
     %\includegraphics{./simulation/diffusion_3d}
-    %\includegraphics{./simulation/diffusion_3d.pdf}
+    % \includegraphics{./simulation/diffusion_3d.pdf}
     \caption{3D view}
     \label{fig:diffusion_3d}
   \end{subfigure}
@@ -435,7 +513,7 @@ This response was modelled % using a false
 using
 a false astigmatism %was used, %added to the simulation,
 to emulate an approximate response of the system.
-A Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was longer than the width of the light-sheet and that intensity across the sheet was uniform;
+A Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was the same as the width of the light-sheet (\(D_{\text{objective}}=2w_0\)) and that intensity across the sheet was uniform;
 the latter assumption is invalid, but a varying intensity only controls the SNR across the sheet.
 A Gaussian function being used to model a particle is a valid assumption as Gaussian models are used in the fitting process for localisation from the pixel data.
 
@@ -448,19 +526,34 @@ To astigmatically narrow the Gaussian as the particle moved through $z$ the stan
 %\intertext{%To create a simple model of astigmatism we
 by assuming assume that $\sigma$ depends on $z$ such that:}
 \sigma(z) &= kz + c
-\intertext{Where $k$ is an arbitrary degree of astigmatism and $c$ is the particle size when there is no astigmatism.
-We can then redefine $k$ in terms $a$, where $a$ is a function of $c$ and $L_{\text{end}}$, with $L_{\text{end}}$ being the distance the particle will be when
-the Gaussian is $\frac{1}{a}$ narrower:}
-k & = \frac{a c}{L_{\text{end}}}
+\intertext{Where \(k\) is an arbitrary degree of astigmatism and \(c\) is the particle size when there is no astigmatism.
+We can then redefine \(k\) in terms \(a\), where \(a\) is a function of \(c\) and \(w_0\) such that the Gaussian is $\frac{1}{a}$ narrower when at \(w_0\).}
+k & = \frac{a c}{D}
 \intertext{The negative gradient relationship then holds for the orthogonal dimension to give a full 3D model:}
 f(x,y,z) &= e^{-\frac{x^2}{kz+c} +\frac{y^2}{-kz+c} }
 \end{align}
+% \begin{figure}
+%   \centering
+%   \includegraphics{./mathematica/guassians}
+%   \caption{a) Expected versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
+%   b) Uses normalised area of the Expected and Reality PSFs for a more accurate model of astigmatism}
+%   \label{}
+% \end{figure}
 \begin{figure}
-  \centering
-  \includegraphics{./mathematica/guassians}
-  \caption{a) Expected versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
-  b) Uses normalised area of the Expected and Reality PSFs for a more accurate model of astigmatism}
-  \label{}
+    \centering
+    \begin{subfigure}[t]{\linewidth}
+        \centering
+        \includegraphics{./mathematica/guassian_peak}
+        \caption{Normalised peak intensity}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{\linewidth}
+        \centering
+        \includegraphics{./mathematica/guassian_area}
+        \caption{Normalised total area intensity}
+    \end{subfigure}
+  \caption{
+  (a) Expected versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
+  (b) Uses normalised area of the Expected and Reality PSFs for a more accurate model of astigmatism}\label{}
 \end{figure}
 %By using a simple one dimensional model of astigmatism acting on Gaussian the motion blur due to astigmatism can be quantified analytically.
 %\subsection{Model}
@@ -479,11 +572,11 @@ The Expected PSF is defined such that no motion blur is considered:}
 \begin{align}
  \intertext{Assuming that the particle moves a distance $L$ with uniform speed and uniform emission of photons en-route, integrating the Expected PSF gives the Reality PSF as subject to motion blur:}
 \hat{\text{PSF}}_{\text{Reality}} &= \frac{1}{L}\int_{0}^{L}\frac{1}{\sigma(z) \sqrt{2\pi}}e^{-\frac{x^2}{2 \sigma(z)^2}} \mathop{dz}\\
-&= \frac{{L_{\text{end}}} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{L_{\text{end}}}^2 x^2}{2 c^2 ({L_{\text{end}}}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
+&= \frac{{w_0} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{w_0}^2 x^2}{2 c^2 ({w_0}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
 \intertext{The integral has to be scaled by $\frac{1}{L}$ as integrating a function over $0 \to L$ will scale the total area by L. The resultant function is then by comparable with $\text{PSF}_{\text{Expected}}$.}
-{\text{PSF}}_{\text{Reality}} &= \frac{2 c (a L+L_{\text{end}}) e^{-\frac{L_{\text{end}}^2 x^2}{2 c^2 (a L+L_{\text{end}})^2}}}{2 a c L} \\
-&+ \frac{L_{\text{end}} x\sqrt{2 \pi }\text{Erf}\left(\frac{ (L_{\text{end}} x)}{\sqrt{2} (a c L+c L_{\text{end}})}\right)}{2 a c L} \\
-&+ \frac{L_{\text{end}} \left(2 c e^{-\frac{x^2}{2 c^2}}+\sqrt{2 \pi } x \text{Erf} \left(\frac{x}{\sqrt{2} c}\right)\right)}{2 a c L}
+{\text{PSF}}_{\text{Reality}} &= \frac{2 c (a L+w_0) e^{-\frac{w_0^2 x^2}{2 c^2 (a L+w_0)^2}}}{2 a c L} \\
+&+ \frac{w_0 x\sqrt{2 \pi }\text{Erf}\left(\frac{ (w_0 x)}{\sqrt{2} (a c L+c w_0)}\right)}{2 a c L} \\
+&+ \frac{w_0 \left(2 c e^{-\frac{x^2}{2 c^2}}+\sqrt{2 \pi } x \text{Erf} \left(\frac{x}{\sqrt{2} c}\right)\right)}{2 a c L}
 \end{align}
 %Gaussian, approximation of a particle
 %PSF expected, width linearly depependent on z
@@ -495,13 +588,13 @@ For Guassian-like functions the total area under the curve is proportional to $\
 This analysis does not work for normalised PSFs as the area is unity in each case, as such the unnormalised model was used.
 Using an unnormalised function was still valid as the area was only being used as a proxy for finding a measure of the width of the PSF being interrogated.
 \begin{align*}
-  \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Expected}} \mathop{dx} &= \frac{\sqrt{2 \pi }}{\sqrt{\frac{1}{\left(\frac{a c L}{L_{\text{end}}}+c\right)^2}}}\\
-  \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Reality}} \mathop{dx} &=\sqrt{\frac{\pi }{2}} \left(\frac{2 (a L+L_{\text{end}})}{a L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}-\frac{2 L_{\text{end}}}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{L_{\text{end}}}-2\right)\right)
+  \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Expected}} \mathop{dx} &= \frac{\sqrt{2 \pi }}{\sqrt{\frac{1}{\left(\frac{a c L}{w_0}+c\right)^2}}}\\
+  \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Reality}} \mathop{dx} &=\sqrt{\frac{\pi }{2}} \left(\frac{2 (a L+w_0)}{a L \sqrt{\frac{w_0^2}{c^2 (a L+w_0)^2}}}-\frac{2 w_0}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{w_0}-2\right)\right)
 \end{align*}
 \begin{align*}
   \text{Error} &= \frac{\int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Expected}} \mathop{dx} - \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Reality}}\mathop{dx}}
   {\int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Expected}} \mathop{dx} + \int_{-\infty}^{\infty} \text{PSF}(x,...)_{\text{Reality}}\mathop{dx}} \\
-  &= \frac{2. \left(-\frac{2 L_{\text{end}}}{a L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}+\frac{2 L_{\text{end}}}{a \sqrt{\frac{1}{c^2}} L}+c \left(\frac{a L}{L_{\text{end}}}+2\right)\right)}{\frac{2 (2 a L+L_{\text{end}})}{a L \sqrt{\frac{L_{\text{end}}^2}{c^2 (a L+L_{\text{end}})^2}}}-\frac{2 L_{\text{end}}}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{L_{\text{end}}}-2\right)}
+  &= \frac{2. \left(-\frac{2 w_0}{a L \sqrt{\frac{w_0^2}{c^2 (a L+w_0)^2}}}+\frac{2 w_0}{a \sqrt{\frac{1}{c^2}} L}+c \left(\frac{a L}{w_0}+2\right)\right)}{\frac{2 (2 a L+w_0)}{a L \sqrt{\frac{w_0^2}{c^2 (a L+w_0)^2}}}-\frac{2 w_0}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{w_0}-2\right)}
 \end{align*}
 
 \begin{figure}
@@ -529,7 +622,7 @@ $\mu=\SI{0.002}{\newton\second\per\meter\square}$;
 $k = \SI{1.3806e-23}{\meter\square\kilo\gram\per\square\second\per\kelvin}$;
 $c = r = \SI{100}{\nano\meter}$;
 $a = \frac{1}{5}$;
-$L_{\text{end}} = \SI{0.5}{\micro\meter}$;
+$w_0 = \SI{0.5}{\micro\meter}$;
 an average axial position error of \textbf{25.7\%} is observed.
 % The above expression only considers $x$ and $z$ for simplicity of calculation.
 % The ratio of the linear Gaussian-like function and the expected ($e^{-\frac{x}{2kL+c}^2}$) Gaussian is integrated over all space to provide an error value as a function of $L$ which is the distance the particle has traveled.
@@ -541,7 +634,7 @@ an average axial position error of \textbf{25.7\%} is observed.
 %
 % It is assumed that a particle will not diffuse sufficiently quickly as to cause a deviance to the PSF then used to characterise the location of the particle.
 % However, assuming the worst case of a particle diffusing in a straight trajectory (in the 2D case) the localised position of the particle will be the average of the start and end positions of the particle.
-% This smearing leads to very non-Gaussian PSFs when diffusivity is high (Figure \ref{fig:})
+% This smearing leads to very non-Gaussian PSFs when diffusivity is high (\figurename~\ref{fig:})
 % Worse still, the PSF response of the particle is also axially dependent when using an astigmatic lens.
 % using the linear approximation of a linear astigmatic-like Gaussian and assuming the worst case of a particle diffusing directly up, an analytical solution for the error incurred may be imputed:
 %
@@ -655,7 +748,7 @@ Empirically, the calibration curve for correlation looks less variant than when 
 
 \begin{table}[h]
 \centering
-\caption{Table of regressional analysis for calibration curves in Figure \ref{fig:SPT_Calibration}.
+\caption{Table of regressional analysis for calibration curves in \figurename~\ref{fig:SPT_Calibration}.
 \label{tab:linear_calibration}
 RSS: Residual sum of squares; $R^2$: Coefficient of determination; RMS: Root mean square}
   \begin{tabular}{lccc}
