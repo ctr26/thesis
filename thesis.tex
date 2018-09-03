@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,withindex,chapter,custombib]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,withindex,print,custombib]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -105,7 +105,7 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
-  \includeonly{Chapters/tweezers/chapter}
+  \includeonly{Chapters/intro/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -134,15 +134,15 @@
 
 
 %TECHNOLOGY FIRST
-\include{Chapters/intro/chapter} %0
+\include{Chapters/intro/chapter} %0         %DONE
 \include{Chapters/principles/chapter} %1    %DONE
 \include{Chapters/literature/chapter} %2    %DONE
 \include{Chapters/design/chapter} %3        %DONE
 \include{Chapters/homography/chapter} %4    %DONE
-\include{Chapters/flopt/chapter} %5         %DONE
+\include{Chapters/flopt/chapter} %5         %DONE %THIS HAS A DODGY GLS
 \include{Chapters/dualslit/chapter} %6      %DONE
 \include{Chapters/chamber/chapter} %7       %DONE
-\include{Chapters/spt/chapter} %8
+\include{Chapters/spt/chapter} %8           %DONE
 \include{Chapters/tweezers/chapter} %9
 \include{Chapters/conclusions/chapter} %10
 

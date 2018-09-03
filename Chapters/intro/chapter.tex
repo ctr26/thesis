@@ -77,53 +77,67 @@
 % % By visualising the journey of virions we may reveal finding weaknesses in its infection pathology
 % Light sheet microscopy is the only technique capable of tracking virons which are both exceptionally small and fast
 
+% Fluorescence microscopy has experienced a scientific renaissance over the last 20 years through advances in new fluorescent proteins and super-resolution optical microscopy, both of which were awarded with Nobel Prizes in Chemistry.
+% Fluorescence microscopy is one of the cornerstones of modern biology, but has generally been limited to 2D culture dishes.
+% Light-sheet microscopy allows fast, non-invasive 3D imaging across an entire organism.
+% This works by decoupling illumination and detection such that the microscope only illuminates a thin section of tissue at a time.
+% By scanning this `light-sheet' through an organism we can image in 3D more quickly and with less damage than other techniques such as confocal microscopy.
+%we can construct a detailed 3D image with sub-cellular resolution.
+
 Light-sheet microscopy is at the cutting edge of live-organism imaging.
 %In the coming years it will be adopted as the standard of biological imaging and transform modern biology into a highly quantitative, multidisciplinary and exciting field.
+It uses decoupled and orthogonal optical illumination and detection to image volumes of biological samples.
+The technique is fast and minimally invasive enabling the imaging of live model organisms and earning it the Nature Method of the Year in 2014.
 In the coming years it will help move biology out of the petri dish and back into the animal.
-% Further development requires the marriage of physics, maths, statistics, computer science, chemistry and biology, in laboratories such as the Laser Analytics Group.
-% I am privileged to apart of, what I believe to be, a paradigm shift in fluorescence microscopy; a field which is also highly rewarding as it marries physics, maths, statistics, computer science, chemistry and biology, a fusion I find fascinating given my physical sciences background.
 
-%Section outlining everything
+The aim of this work was to develop a \gls{light-sheet} microscope imaging system which permitted the three dimensional dynamic tracking of particles in live biological samples.
+This system was based on the seminal work of Ernst Stelzer~\emph{et. al}, who pioneered digital \gls{light-sheet} technology~\cite{huisken_optical_2004}.
+% A previous system was built in order to study developmental biology.
+% This work intended to improve upon this design so as to facilitate fast 3D particle tracking.
 
-
-The aim of this work was to develop a \gls{light-sheet} microscope imaging system which permitted the three dimensional tracking of particles through biological samples.
-%his will be used to monitor how toxic proteins travel between cells and
-%how virus particles infect their host organisms with minimal %With the ability to image very quickly and tracking three dimensionally particulate targets (such as virus particles) with minimal
-%photo-damage to the sample, using animal models such as drosophila.
-This system was based on the work of Ernst Stelzer who pioneered digital light sheet technology\cite{Huisken2004}.
-A light sheet microscope uses orthogonal illumination and detection to optically section biological samples.
-A previous system was built in order to study developmental biology.
-This work intended to improve upon this design so as to facilitate fast 3D particle tracking.
-
-% The new system will:
-% \begin{itemize}
-% 	\item Be more vibrationally stable for low noise tracking
-% 	\item Accommodate a three dimensional stage for particle tracking and volume imaging with nanometre resolution
-% 	\item Use structured illumination modes that can provide higher resolution than standard illumination
-% 	\item Provide more excitation wavelengths to enable improved biological flexibility in terms of fluorescent dyes that can be used with better specificity
-% 	\item Feature a user-friendly software interface so that users can produce images independently with a strong programming architecture for future collaborative development.
-% \end{itemize}
-%The new system will be designed to be: ; ; ;  and
 \pagebreak
+
 \section{Motivation}
  %Other viruses are more deadly such as HIV, by understanding viruses medicine may be better equipped to cure or prevent infection.
 %Viral infection and Alzheimer's are currently
-Viruses are carriers of infectious disease in humans, by hijacking the internal working of the cell the virus replicates using the machinery of the cell.
-\SI{80}{\percent} of adults in the UK are thought to be infected with Herpes Simplex Virus 1 (cold sores) which is currently medically incurable\cite{Herpes}; only the symptoms can be suppressed.
-Understanding virus pathology is a requirement for assisting in therapeutic intervention.
-The virus structure is well understood through high resolution techniques such as Atomic Force Microscopy and Electron Microscopy.
-In this group we have used super resolution techniques to study the Herpes Simplex Virus 1 structure \textit{in vitro}\cite{Laine2015}.
-Contemporary biological models of viral infectivity dynamics are based on \textit{in vitro} studies %; by tracking a single virus particle through its entire infection process \textit{in vivo}.
-Studying these dynamics \textit{in vivo} and following a virus through its entire process in a living organism could provide new, useful insights and understanding which could be used to suppress or reverse viral infection in humans.
-Virus particles are smaller than the diffraction limit  (\SI{20}{\nano\meter}-\SI{200}{\nano\meter}); optical super resolution techniques can image sub-diffraction limit and have observed Human Immunodeficiency Virus 1\cite{Pereira2012}.
-Virus particles move tens of nanometres on the time scale of milliseconds\cite{Brandenburg2007}, these techniques currently do not produce the temporal resolution required to accurately track virus particles\cite{Brandenburg2007} in three dimensions and are limited to \textit{in vitro} studies.
+The technology developed during this work was applied in two biological investigations which required the tracking of particles in live biological systems: the egress of viral particles in live cells, and the mechano-biology of live and developing model organisms.
+
+\subsection{Mechano-biology of developing organisms}
+
+Cell mechanics plays a vital role in the development of organisms;
+internal stresses within tissues induce cellular migrations that can govern the organism's resultant anatomy~\cite{gilbertDevelopmentalBiology2000}.
+Despite genetics screens providing the essential structural, patterning and signalling pathways the process of morphogenesis remains a mystery~\cite{mammotoMechanicalControlTissue2010,mammotoMechanobiologyDevelopmentalControl2013}.
+Live imaging of organism development can reveal patterns in cell behaviour, but it has not yet provided a quantitive description of force generation.
+Only with an understanding of how forces propagate within tissues can morphogenesis be fully elucidated.
+% To elucidate how organisms form live imaging is required.
 %
-% Dementia among the rapidly ageing first world population is becoming a heavy burden on healthcare; as of 2015 there are \SI{850000}{} people in the UK suffering with dementia\cite{Judd}.
+% These are indicative of active force generation but are
+% insufficient to construct a quantitative explanation of where forces are generated and
+% how forces propagate within and between tissues
+In this work a technique was developed to mechanically probe deep tissue using the presented light-sheet microscope.
+A non-invasive magnetic field was used to to move a magnetic bead embedded in a live embryo.
+The light-sheet microscope was used to image the cells and the bead in real-time and three dimensions.
+
+\subsection{The live tracking of viral egress}
+
+Viruses are carriers of infectious disease in humans, by hijacking the internal working of the cell the virus replicates using the machinery of the cell.
+\SI{80}{\percent} of adults in the UK are thought to be infected with \gls{HSV}-1 (cold sores) which is currently medically incurable~\cite{_herpes_????}; only the symptoms can be suppressed.
+Understanding virus pathology is a requirement for assisting in therapeutic intervention.
+
+Currently, the virus structure is well understood through high resolution techniques such as \gls{AFM} and \gls{EM}.
+% In this group we have used super resolution techniques to study the \gls{HSV}-11 structure \textit{in vitro}~\cite{laine_structural_2015}.
+Contemporary biological models of viral infectivity dynamics are based on \textit{in vitro} studies. %; by tracking a single virus particle through its entire infection process \textit{in vivo}.
+% Studying these dynamics \textit{in vivo} and following a virus through its entire process, in a living organism, could provide new and useful insights into viral pathology in humans. %and understanding which could be used to suppress or reverse viral infection in humans.
+Virus particles are smaller than the optical diffraction limit (\SI{20}{\nano\meter}-\SI{200}{\nano\meter}) and have been observed using optical super-resolution techniques~\cite{pereira_hiv_2012}.
+The structure of \gls{HSV}-1, for instance, has also been eluclidated \textit{in vitro} using super-resolution techniques~\cite{laine_structural_2015}.
+However, virus particles move tens of nanometres on the time scale of milliseconds~\cite{brandenburg_virus_2007} meaning these slow super-resolution do not provide the temporal resolution needed to accurately track virus particles in three dimensions, nor \textit{in vivo}.
+
+% Dementia among the rapidly ageing first world population is becoming a heavy burden on healthcare; as of 2015 there are \SI{850000}{} people in the UK suffering with dementia~\cite{Judd}.
 % Alzheimer's disease (AD) is a neurodegenerative affliction accounting for 62\% of all dementia suffers.
 % Amyloid fibril plaques and neurofibrillary tangles (NTF) are commonly found in post mortem AD sufferers' brains.
-% It is believed that misfolded Amyloid plaques trigger the accumulation of neurofibrillary tangles and a toxic species of microtubule-associated protein, tau\cite{Ittner2011,King2002}.
+% It is believed that misfolded Amyloid plaques trigger the accumulation of neurofibrillary tangles and a toxic species of microtubule-associated protein, tau~\cite{Ittner2011,King2002}.
 % Within our group we have studied Amyloid fibril aggregation using super resolution techniques and the role of tau proteins in neuronal dysfunction.
-% We have demonstrated that extracellular tau can initiate tau pathology in AD\cite{Michel2014a}, a complimentary \textit{in vivo} study on tau protein's\cite{DeCalignon2012} dynamic propagation in axons would serve to elucidate AD pathology.
+% We have demonstrated that extracellular tau can initiate tau pathology in AD~\cite{Michel2014a}, a complimentary \textit{in vivo} study on tau protein's~\cite{DeCalignon2012} dynamic propagation in axons would serve to elucidate AD pathology.
 %
 % These issues can be addressed using light sheet technology.
 % Light sheet microscopes use orthogonal plane illumination to optically section biological samples, allowing an \textit{in vivo} three dimensional study.
@@ -131,33 +145,35 @@ Virus particles move tens of nanometres on the time scale of milliseconds\cite{B
 % Orthogonal illumination and detection allows detection rates comparable to wide-field.
 % Light sheet technology is also a low photo-toxcity method compared to confocal and as such can image for extended periods of time at millisecond resolution.
 
-Particle localisation techniques are compatible with light sheet microscopy and can be used to accurately localise particles to sub-pixel, sub-diffraction limited positions in two dimensions.
-In conjunction with a novel third dimensional tracking technique, exclusive to light sheet, full sub-diffraction limited tracking is viable\cite{Spille2015a}.
-This will then enable the \textit{in vivo} study of virus trafficking through a host cell and protein propagation in neurons with unparalleled temporal resolution.
+Wide-field particle localisation techniques are compatible with fast \gls{light-sheet} microscopy and can be used to accurately localise particles to sub-diffraction limited positions in two dimensions.
+% In conjunction with a technique for tracking third dimensional
+Full three dimensional sub-diffraction limited tracking is viable using a \gls{light-sheet} microscope when adding an axially encoding optical element in the detection optical path~\cite{spille_direct_2015}; with a greatly extended three dimensional field of view.
+This work intended to implement such a technique to
+% If fully realised this technique can
+enable the \textit{in vivo} study of virus trafficking through a host cell with unparalleled temporal resolution.
 
+
+% we can use a controllable, non-invasive magnetic field to move the bead.
+% By pushing a magnetic bead and allowing it to relax we can fit a model to its trajectory and so extract local mechanical properties.
+% Comparing results between embryos that are genetically modified to no longer produce different key proteins provides an understanding of their roles in embryonic development. %TODO Reword
+% The mechanical roles of key proteins in embryonic development can be inferred by comparing results between genetically modified embryos.
+%Using light-sheet imaging we can rapidly visualise entire live cells, permitting an unprecedented opportunity to observe and induce cell migration and tissue formation.
+%Our investigations so far have demonstrated that rho-kinase, in embryonic development increases cell stiffness
+%is inaccurate. %and %TODO add something.+
+% Our investigations so far have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development. These results are currently being prepared for publication with our collaborators.
 %needed to track
 %To localise sub-diffraction limited particles in a light sheet system in
-
 %A new technique exclusive to light sheet technology will allow the tracking of sparse sub-diffraction limited particle
-
-
 %Virus particles are carriers of infectious disease within humans.
 %Virus structure sub-diffraction limit in size, the smallest being \SI{20}{\nano\meter} and \textit{human immunodeficiency virus type 1} being \SI{125\pm14}{\nano\meter}
-
 %\textit{Herpes Simplex Virus 1}  being is well known from AFM and Electron microscopy.
 %Recently super resolution techniques verified this structure aswell.
 %A virus is composed
-
 %Monitoring virus motion within a cell gives insights to the pathology and understanding of infectivity of the virus.
-
 %TODO Motivations
-
 %The motivation of this project is to aid the endeavours of biology through advanced imaging capability to tackle important biological questions.
 %Questions involving diseases such as Alzheimer's and cancer so they can be better understood and thus curable
-
-
 %Similiarly the
-
 % is \SI{20}{\nano\meter}
 %\begin{itemize}
 %
@@ -186,12 +202,21 @@ This will then enable the \textit{in vivo} study of virus trafficking through a 
 %\item It is expected that this system will be able to accurately track virus and spore pathology \textit{in vivo} , a feat which has not yet been realised.
 %
 %\end{itemize}
-
 %\subsection{Aims}
-
-
 \subsection{Structure}
 
+Initially, the fundamental physics of light microscopy will be presented, leading into a discussion on techniques which can provide full volumetric fluorescence imaging.
+From there, contemporary light-sheet microscope technology from the literature will be presented and discussed.
+Using this, a design for a custom and purpose-built light-sheet microscope (which will be used in this work) will be presented.
+Following on, the methods for the generation of waveforms, for digital light-sheet microscopes, will be critically consideration.
+The projective mathematics from the generation of these waveforms will then be applied (in more detail) to the projective tomographic reconstructions in volumetric light microscopy.
+In preparation for the chapters requiring the mounting of biological samples, a custom, open-hardware, live imaging, sample chamber will be presented.
+This will enable the mounting of live cells with the intent for single particle tracking of virus particles, in cells, as discussed in the motivation section.
+Single particle tracking will then be characterised in the system presented here, alongside an analysis of the localisation errors associated with dynamic particle tracking.
+% Another biological application of
+The light-sheet microscope, built for this work, will then be used for the fast imaging of a model organism the Zebrafish.
+Embedded magnetic beads will then be shown to mechanically perturb live Zebrafish in order to extract viscoelastic properties of the organism as it develops.
+In the final two chapters, the results of the preceding chapters will be summarised and reviewed; followed by a discussion on how the contributions from this body of work should be developed in the future.
 % Here, a light sheet microscope is developed to track particles in three dimensions with millisecond temporal resolution.
 % Firstly the theory of fluorescence microscopy and light sheet microscopy is discussed with a comparison to other similar techniques followed by a review of particle tracking methods which are considered in the context of a light sheet microscope.
 % The current biological model of virus pathology and tau protein propagation and their challenges is then presented.

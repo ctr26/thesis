@@ -254,14 +254,14 @@ The two camera-centered coordinate systems \gls{X_c'} and \gls{X_c} are related 
 
 \subsection{The Essential matrix}
 
-Taking the scalar product with \gls{X_c'}, we obtain:
+Taking the scalar product with \(\gls{X_c'}\), we obtain:
 \begin{align}
     \gls{X_c'} \cdot (\gls{T} \times \gls{X_c}) &= \gls{X_c'}\cdot (\gls{T} \times \gls{R} \gls{X_c'}) \\
     \gls{X_c'} \cdot (\gls{T} \times \gls{R} \gls{X_c}) &= 0
     \intertext{A vector product can be expressed as a matrix multiplication:}
-    \gls{T} \times \gls{X_c} &= \gls{T_times} \gls{X_c}
+    \gls{T} \times \gls{X_c} &= \gls{T_x} \gls{X_c}
     \intertext{where}
-    \gls{T_times} &=\begin{bmatrix}
+    \gls{T_x} &=\begin{bmatrix}
     0    & -T_z  & T_y\\
     T_z  & 0     & -T_x\\
     -T_y  & T_x   & 0
@@ -270,10 +270,10 @@ Taking the scalar product with \gls{X_c'}, we obtain:
 So equation \eqref{eq:Xprime = RTX} can be rewritten as:
 
 \begin{align}
-\gls{X_c'} \cdot (\gls{T_times} \gls{R}\gls{X_c}) = 0 \\
+\gls{X_c'} \cdot (\gls{T_x} \gls{R}\gls{X_c}) = 0 \\
 \gls{X_c'} \gls{T} \gls{Essential} \gls{X_c}= 0 \\
 \intertext{where}
-\gls{Essential} = \gls{T_times} \gls{R}
+\gls{Essential} = \gls{T_x} \gls{R}
 \end{align}
 
 \gls{Essential} is a $3 \times 3$ matrix known as the \emph{\gls{essential matrix}}.
@@ -346,9 +346,9 @@ First, the two projection matrices are obtained via a \gls{SVD} of the essential
 The \gls{SVD} of the \gls{essential matrix} is given by:
 
 \begin{align}
-    \gls{Essential} &= \gls{K'}^T \gls{F} \gls{K} = \gls{T_times} \gls{R} = \mathbf{U}\Lambda \mathbf{V}^T\\%\gls{R} = U\LambdaV^T\\
+    \gls{Essential} &= \gls{K'}^T \gls{F} \gls{K} = \gls{T_x} \gls{R} = \mathbf{U}\Lambda \mathbf{V}^T\\%\gls{R} = U\LambdaV^T\\
     \intertext{It can be shown that}
-    \hat{\gls{T_times}} &= U \begin{bmatrix}
+    \hat{\gls{T_x}} &= U \begin{bmatrix}
     0 & 1 & 0 \\
     -1 & 0 & 0 \\
     0 & 0 & 0
@@ -368,7 +368,7 @@ Where \( \begin{bmatrix}[c|c] \mathbf{I} & \mathbf{0} \end{bmatrix}\) is the ide
 Given these projection matrices, scene structure can be recovered (only up to scale, since only magnitude of \gls{T} (|\gls{T}|) is unknown) using least squares fitting.
 Ambiguities in \gls{T} and \gls{R} are resolved by ensuring that visible points lie in front of the two cameras.
 As with the \gls{essential matrix}, the \gls{fundamental matrix} can be factorised into a skew-symmetric matrix corresponding
-to translation and a 3 × 3 non-singular matrix corresponding to rotation.
+to translation and a 3 x 3 non-singular matrix corresponding to rotation.
 
 \section{The proposed algorithm}
 

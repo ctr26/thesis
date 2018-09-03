@@ -229,7 +229,7 @@ Enveloped virions are finally secreted from cells by exocytosis~\cite{[15, 16]}.
 While optical imaging is generally limited to a lateral resolution of \SI{\sim250}{\nano\metre} by diffraction, sparse emitters can be localised with much higher precision by mathematical image analysis methods; such as fitting a parametric equation to their image data.
 % fitting a model function to their image data.
 Tracking individual particles is an important tool for modern biology.
-It has been used to study intracellular transport of mRNA~\cite{Spille2015a} and by observing cell membrane dynamics~\cite{Cognet2014}.
+It has been used to study intracellular transport of mRNA~\cite{spille_direct_2015} and by observing cell membrane dynamics~\cite{cognet_advances_2014}.
 % Beneath the methods of super-resolution imaging, awarded by the Nobel Prize in chemistry in 2014, the principles of localisation microscopy are also applied in single particle tracking (SPT) as was shown already in early single molecule studies [41, 42].
 %SPT is a real-time imaging technique that monitors the movement of individual particles and can provide information about dynamic behaviour within a biological system. %in a cellular context.
 Many studies exist on intercellular and intracellular viral trafficking
@@ -239,7 +239,7 @@ using single particle tracking~\cite{(reviewed in [43])}.
 Only a few and recent works exclusively probe the molecular egress pathway of herpesviruses.
 Hogue~\emph{et~al.}~\cite{[16]} used \gls{TIRF} microscopy to selectively visualise fluorescent Pseudorabies viruses near the plasma membrane and follow them during exocytosis.
 Sandbaumhüter~\emph{et~al.} showed, by a motility analysis of fluorescent \gls{HSV}-1, that directed transport of cytosolic capsids was dependent on both tegument proteins pUL36 and pUL37 \cite{[44]}.
-Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using \gls{SPT}~\cite{Brandenburg2007}.
+Virus trafficking and how viruses penetrate the nucleus of a cell have also been studied using \gls{SPT}~\cite{brandenburg_virus_2007}.
 %The mentioned examples show that single-virus tracking can reveal detailed information about the dynamics of single viruses inside cells with high spatial and temporal resolution.
 Due to a limited depth of field, particles tracked in a \gls{3D} volume tend leave the axial detection range.
 %Data analysis then often relies on two dimensional projections of short trajectory fragments and might not accurately represent three-dimensional (3D) particle motion if the specimen structure is not isotropic \cite{[45]}.
@@ -302,8 +302,8 @@ due to its ease of implementation, speed, precision and robustness.% is iterativ
 % Crocker's method does not account for overlapping particle systems; experimental and computational methods are addressing this\cite{Serge2008}, but for the most part these cases are marked as rare outliers and typically rejected in particle tracking routines as samples are usually constructed with a sensible sparsity.
 \subsection{Particle tracking or linking}
 
-Approaches to the linking of detected particles include simple nearest-neighbour\cite{MethodsDigitalVideo1996} which assigns lineage to the nearest detected particle in the following frame, making it susceptible to misassignment in the case of occlusions.
-Multi-frame associations use the the additional available frames to increase the confidence in an assignment, these techniques include multiple hypothesis tracking\cite{coraluppiRecursiveTrackFusion2004}, dynamic programming~\cite{rinkRabConversionMechanism2005} and combinatorial schemes~\cite{sbalzariniFeaturePointTracking2005a}, with or without explicit use of motion models and state estimation (such as Kalman filtering~\cite{kuAutomatedTrackingSystem2007}).
+Approaches to the linking of detected particles include simple nearest-neighbour\cite{crocker_methods_1996} which assigns lineage to the nearest detected particle in the following frame, making it susceptible to misassignment in the case of occlusions.
+Multi-frame associations use the the additional available frames to increase the confidence in an assignment, these techniques include multiple hypothesis tracking\cite{coraluppiRecursiveTrackFusion2004}, dynamic programming~\cite{rinkRabConversionMechanism2005} and combinatorial schemes~\cite{sbalzariniFeaturePointTracking2005}, with or without explicit use of motion models and state estimation (such as Kalman filtering~\cite{kuAutomatedTrackingSystem2007}).
 % Narest-neighbour linking
 %
 % Temporal localisation refers to the assignment of linage to a particle.
@@ -385,7 +385,7 @@ An essential aspect of the method was to shift their \gls{light-sheet}
 % This was achieved by shifting their light-sheet
 and detection objective at each recorded frame so that the particle was repositioned to the centre of the sheet and did not drift outside of the illumination volume.
 Alternatively, the entire sample could be moved relative to a static sheet.
-Spille demonstrated this technique very successfully on a single molecule of mRNA (diameter \SI{~50}{\nano\metre}~\cite{Spille2015a}) moving on the membrane of a nucleus(see \figurename~\ref{fig:SPIMSPT}).
+Spille demonstrated this technique very successfully on a single molecule of mRNA (diameter \SI{~50}{\nano\metre}~\cite{spille_direct_2015}) moving on the membrane of a nucleus(see \figurename~\ref{fig:SPIMSPT}).
 Particle tracking results within the image data stack were then combined with information about the movement of the imaging volume to return estimates of particle movement within the specimen.
 
 % demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
@@ -453,7 +453,7 @@ in the imaging plane axes %of the imaging plane
 % means that along one axis the focal point will be offset axially compared to the orthogonal axis.
 % The result is that there
 results in an overall axial asymmetry in the detection \gls{PSF}, for point sources this allows axial position to be encoded in the recorded image.
-This technique was used to great effect in \gls{dSTORM} and PALM systems, which rely on the localisation of point emitters to create \gls{3D} \gls{super-resolution} volumes~\cite{huangThreedimensionalSuperresolutionImaging2008}.
+This technique was used to great effect in \gls{dSTORM} and PALM systems, which rely on the localisation of point emitters to create \gls{3D} \gls{super-resolution} volumes~\cite{huangThreeDimensionalSuperResolutionImaging2008}.
 The range over which a cylindrical lens can axially encode is, at most, \SI{\sim 1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
 
 %Compare 2D guassian fitting ratio threatening
