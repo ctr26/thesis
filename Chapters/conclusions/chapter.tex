@@ -13,10 +13,18 @@
 \chapter{Conclusions}\label{chapter:conclusions}
 
 %INTO LIT AND DESIGN
+In this work an \gls{light-sheet} fluorescence microscope was designed built and optimised for organismal and cellular imaging.
 
 \section{Microscope design and construction}
-In this work an \gls{light-sheet} fluorescence microscope was designed built and optimised for organismal and cellular imaging.
-The microscope was able to record imaging volumes at a rate \SI{512x512x100}{\micro\meter} per second at maximum running speed.
+
+The microscope presented in \ref{chapter:design} was able to record imaging volumes at a rate of \SI{512x512x100}{\micro\meter} volumes per second, at maximum running speed.
+It featured four laser channels spanning the visible spectrum and suitable for standard fluorescent dyes.
+The microscope generated light-sheets digitally by sweeping a galvanometric mirror converting a standard Gaussian beam into a Gaussian sheet.
+The optical elements on the \gls{illumination board} consisted of a beam splitter for creating two beams and an optical \gls{SLM} path for generating exotic illumination or two beams directly, steering mirrors and relay lenses.
+A XYZ stage was used to mount and position samples with sub-\SI{}{\micro\meter} precision.
+The imaging plane of the  detection objective was matched to the scanning light-sheet by using a fast piezo electric objective actuator.
+An additional objective lens relay was positioned in front of the detection camera to increase the total magnification from \SI{25}{\times} to \SI{31.25}{\times} or \SI{62.5}{\times} when using the \SI{1.25}{\times} and \SI{2.5}{\times} objective lenses respectively.
+This provided a variable field of view for imaging organisms and single cells, with the largest magnification being oversampled compared to Nyquist's limit.
 
 %TODO desgin description
 %Homography
@@ -61,7 +69,7 @@ Enabling the use of these two objectives allowed for the imaging of organisms as
 The chamber include addition design features such as: chamfered edges in the medium containing section to act as hard stops if protecting the objective lenses and minimise the use of media; a positing camera and window from with a couple infrared and white light source for transmitted light imaging; a side window for positing samples by eye; a drip-tray for instrument safety against spillages; module for inserting heating elements and magnets to be used for securing samples and cleared through-holes for bolting the chamber to a metric breadboard.
 
 \section{Particle tracking for viral egress}
-With such a chamber now available, imaging \emph{in vivo} sub-cellular processes was now possible.
+With such a chamber now available, imaging \emph{in vivo} sub-cellular processes was now possible, see Chapter~\ref{chapter:spt}.
 To then monitor viral egress, the light-sheet microscope required modifying such that it could axially localise single particles within the light-sheet.
 From there the light-sheet would be repositioned and the process iterated for each recorded frame giving a sub-diffraction limited axial position over the viable \SI{100}{\micro\meter}.
 As such, a weakly cylindrical lens was inserted into the imaging path and positioned to provide a suitable amount of astigmatism for the available pixels per (\SI{4x4}{}) \gls{PSF} at 62.5 (\(25\times2.5\) magnification.
@@ -107,51 +115,195 @@ Interestingly, the viscoelastic timescale parameter, \(\tau\), remained constant
 %Epithelial cells represent relatively static configurations, based upon adhesion and contraction, while mesenchymal cells are adhesive and stiff, but dependent upon dynamic protrusion-based motility.
 %We speculate that the stiffening blastula, composed of radially anisotropic cells, is thus poised to drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
 
-\chapter{Perspectives}
+\chapter{Perspectives}\label{chapter:perspectives}
 
-%DESIGN
+Looking forward there are several key areas with which this body of work could be extended and improved upon.
 
-Exotic Illumination
-Mention Daisy's work, show design?
+\section{Light-sheet microscope developments}
+\subsection{Illumination}
 
-Confocal slit scanning was found to complement Bessel beams by rejecting light generated from higher orders of the beam (Florian O Fahrbach et al. 2013b).
+% Currently the system features a good range of visible spectrum wavelengths for excitation; however t
+The system would benefit from having thinner light-sheets, particularly for single cellular imaging where axial resolution is more important when compared with larger organism imaging.
+Exotic illumination modes were explored briefly during this work and a Bessel beam was constructed using the \gls{SLM} as featured in Chapter~\ref{chapter:dualslit}.
+As discussed Bessel beams can be used to create thinner light-sheets over a range of \SI{\sim40}{\micro\meter}.
+Similarly, Airy beam light-sheets could be created using a cubic phase mask on the \gls{SLM}.
+% are also feasible in this system which
+Airy Beams behave over a longer range (\SI{500}{\micro\meter}) compared to Bessel beams though they require deconvolution in the final step which can take a long time with large data sets.
+Alternatively a \gls{2P} beam could also be used to create a light-sheet thinner than single photon illumination, though infrared lasers are expensive and would require new optics.
 
-They were combined using dichroic mirrors and then expanded twice to match the size of a liquid crystal SLM (Hamamatsu).
-When inactive, the SLM reflected the beam into a beam dump.
-In normal operation a phase gradient was applied on the SLM to reflect the beam into the microscope.
-This arrangement ensured that the higher orders of the beam generated by SLM pixilation were directed to the beam dump.
-The SLM was positioned such that it was in a back focal plane of a long focal length (400 mm) lens, while its focus coincided with the first galvanometric scanner.
-A flip mirror was positioned between first lens in the first beam expander and the 400 mm lens.
-Thus it was possible to bypass the SLM if necessary (e.g. during assembly and testing and when SLM was not operational).
-Another flip mirror was added after the 400 mm lens to couple in the original laser sources through tuneable lenses.
- The excitation path after the galvanometric scanner remained unchanged.
+\subsection{Imaging}
 
-A time-gated FLIM detection system is available in the Chemical Engineering Department and could be added to the LSFM system.
-The FLIM detection was a single unit containing a low NA beam expander, a time gated image intensifier (LAVision) and a high NA beam expander relaying the intensifier on a camera.
-In the new design it replaced the camera for FLIM imaging.
+During this work a plug-and-play \gls{FLIM} enabled camera became commercially available for wide-field microscopes, combined with the presented light-sheet microscope this could provide a fast volumetric fluorescence lifetime readout from cells to organisms.
+Stelzer~\emph{et. al} showed that volumetric light-sheet combined with FLIM can be useful in organismal imaging~\cite{gregerThreedimensionalFluorescenceLifetime2011a}.
+FLIM combined with the viscoelastic measurements seen in the Chapter~\ref{chapter:tweezers} could further elucidate tensions occurring locally to the bead under motion, with a suitable fluorescent reporter~\cite{colomFluorescentMembraneTension2018}.
+Fluorescence lifetime could also be used for indicating if a virion has moved between boundaries within a cell or collected tegument proteins, though the \gls{SNR} of single particle lifetime measurement may be too low.
+
+\section{Waveform generation}
+
+For waveform generation a 4~pt calibration was presented which gave a \SI{42}{\percent} improvement in signal collecting efficiency, by matching the illumination and imaging volumes better than a 3~pt calibration.
+It is possible to create a 5 pt calibration using elastic transforms (elastic transforms are needed as the projective mathematics in Chapter~\ref{chapter:homography} breaks down beyond 4~pts), which could further increase the collection efficiency.
+With calibrations beyond 4~pts it becomes difficult to find the corresponding point between the beam and the image.
+The most obvious next point to choose beyond the 4 available corners of the illumination volume, would be the centre point of the those corners at \(z:\SI{100}{\micro\meter},x:\SI{1024}{\text{px}}\).
+Finding the focus at this \(z\) position would involve maximising the image maximum when imaging in dye (as in Chapter~\ref{chapter:homography}), matching the \nth{1024} pixel with the middle of the beam would be more difficult, particularly by eye.
+As a result, it would best to position the 5th point calibration automatically by using a peak finding algorithm for the axial (\(z\)) focus matching, using image maxima; and in (\(x\)), by maximising the summed intensity along the requisite pixel row.
+In doing so, all other available pixel rows in \(x\) would be trivial to calibrate to, as would all axial positions.
+From this, a complete look-up table of positions could be created for the scanning beam.
+Such an approach would mean each imaging session would require a potentially lengthy calibration, but for the benefit of not needing to generate waveforms during imaging and having very precisely focused light-sheets.
+
+\section{Slit-scanning}
+
+\subsection{Light-sheet slit scanning}
+
+Confocal slit-scanning was found to complement Bessel beam illumination by rejecting light generated from the higher orders of the beam~\cite{fahrbach_rapid_2013}.
+By using the dual-beam optics as presented in Chapter~\ref{chapter:dualslit}, two Bessel beams could be created to provide \SI{100}{\hertz} Bessel sheet imaging for high axial resolution sub-cellular imaging.
+
+\subsection{Wide-field slit-scanning}
+
+The slit-scanning theory presented in Chapter~\ref{chapter:dualslit} for non-light-sheet microscopes will need to be implemented on a real system to validate the simulations presented in Chapter~\ref{chapter:dualslit}.
+The National Physical Laboratory has such a \gls{SIM} available for use, with a sufficiently fast \gls{SLM} to match the speed of the rolling shutter with a scanning illumination line.
+
+\subsection{Slit-scanning fusion imaging}
+A further extension of this work could involve using two cameras and an image splitter.
+By rotating the additional camera at the second port of the image splitter and superimposing two orthogonal sweeping lines on the \gls{SLM}, two images of the same sample would be produced with increased contrast and resolution in orthogonal directions.
+A joint Richardson-Lucy deconvolution~\cite{ingaramoRichardsonLucyDeconvolution2014} could then be used to fuse the to images into a homogenous high resolution and high contrast image.
+As an image splitter would be used, a brighter image would be needed to maintain the \gls{SNR}, this could be achieved using more illumination light or increasing the overall exposure time.
+The method proposed would be able to achieve potential super-resolution at video rates.
+
+\section{Frame localisation optial projection tomography}
+% flopt - attempt reconsutrction with real data
+% Fiducial free provided there is sufficient texture
+
+Chapter~\ref{chapter:flopt} presented a theoretical framework for the reconstruction of \gls{OPT} data sets that was robust to systematic mechanical drift and noise.
+To verify that the reconstruction works beyond simulated data, an \gls{OPT} image set with 5 or more fidicual beads will need to be reconstructed.
+Watson~\emph{et al.}~\cite{watsonOPTiMOpticalProjection2017}, have published a set of mechanical adaptors and softwares so that such a data set could be made using a standard inverted fluorescence microscope.
+Given an appropriate dataset, a particle tracking algorithm for the labelling trajectories that is robust to occlusions will also be needed.
+
+\subsection{Fiducial-free optical projection tomography}
+
+In terms of developments to the theory presented in Chapter~\ref{chapter:flopt}, it may be possible to produce a fiducial-free reconstruction provided the sample has sufficient visual texture.
+Texture here refers to variance of contrast within the image, an example would be the transmitted white light image of a developed Zebrafish.
+In computer vision, the fundamental, essential and homography matrices are found from image pairs with no placed fiducial markers.
+Instead, features that are common to the each view are used as points for triangulation.
+The confidence in such points is much lower than the defined manually placed fiducial marks, but, many more can be used, increasing the overall confidence in the recovered matrices.
+From here, the recovered matrices can be deconstructed and deployed as described in Chapter~\ref{chapter:flopt}.
+This could be implemented provided a \gls{tOPT} dataset were available.
+
+\section{The sample chamber}
+
+The current sample chamber design as shown in Chapter~\ref{chapter:chamber} does not provide atmospheric control beyond closed-loop temperature control, which is needed for some organisms and \ce{CO_2} buffered media.
+To make the chamber viable for long-term live cellular imaging, a suitable lid would need to be designed and added to the chamber.
+The top of the sample chamber was purposefully designed flat so that such a lid could be created and attached.
+The intention was to use the standard chamber to position a sample and then attach the appropriate lid for long term imaging.
+The lid would need an entry point for gas flow and the lid would be supported by the walls of the chamber below.
+Gaskets would be fitted around the objectives to reduce gas loss and an O-ring would couple the lid and sample chamber to a mostly air-tight fit, though some flow would be needed to not pressurise the vessel.
+
+\subsection{User construction}
+
+Ideally the chamber would be printed with the option to have clear windows without the need for user intervention i.e.\ glueing perspex windows in manually.
+However, advances in the \gls{3D} printing technology would be needed before the chamber could be printed from a single piece.
+This would require optically clear printing which, using extrusions techniques currently, is impossible.
+It may be possible to \gls{3D} a design for casting a sample chamber in one piece from a curable plastic, however this method would be much more involved than the method proposed.
+
+\section{Viral imaging using single particle tracking}
+
+It was shown in Chapter~\ref{chapter:spt} that the light-sheet microscope was capable of localising a static single particle.
+However, efforts are needed to demonstrate this in dynamic systems.
+One approach would be tracking a single particle in a known viscosity liquid as discussed in Chapter~\ref{chapter:spt}.
+Another approach could involve keeping the light-sheet static and measuring the ensemble statistics of many particles being tracked.
+The latter approach would, however, lead to a bias towards short tracks of particle trajectories.
+
+\subsection{Viral imaging in live cells}
+
+Virion movement would need to be demonstrated in live cells to show that cells survive and behave as expected in the light-sheet microscope; and that virions can be tracked when moving within a cell, at speed.
+
+\section{Magnetic tweezers and light-sheet microscopy}
+
+The combined technique of remote force measurement using magnets and light-sheet microscopy is now being developed into a stand-alone device in the Cambridge University Engineering Department by Fergus Riche.
+The device will continue to be applied to observing the mechano-biology of zebrafish as well as the characteristics of tissues. %bio-films and cells.
+The new device is based around a flat light-sheet design, with a chamber constructed around the objectives permanently embedded with quadrupole magnetic tweezers.
+
+\section{Additional samples}
+
+Mammalian cells and Zebrafish were the specimens of choice for this work as they are both optically clear and biological relevant models.
+Human and mouse embryos were also considered as they are more biologically relevant for the study of humans and mammals.
+Issues with mouse embryos are that of collection yield, with the required sacrifice of a mouse to produce a mouse embryo, as well as the atmospheric conditions required to image the embryo.
+Human embryos are also much less abundant than Zebrafish embryos as well as requiring a very specific environment to survive.
+That said, given the capabilities of the chamber developed in Chapter~\ref{chapter:chamber}, both options could be explored as both embryo types would benefit from the fast and gentle volumetric imaging provided by light-sheet microscopes.
+
+Organoids, which are miniaturised forms of organs built or grown from organ samples, would also benefit from light-sheet imaging.
+The issue for imaging organoids lies with them being often very opaque to visible light.
+Recent advances in clearing techniques and expansion microscopy would make the imaging of large fixed organoids (including brain organoids) viable for light-sheet microscopy.
+Clearing techniques use chemical regents to wash away scattering material from samples, particularly highly scattering lipids, to reduce the opacity of the sample~\cite{_clearing_2016}. %TODO Check
+Similarly expansion microscopy washes away all but the fluorophores and a gel scaffold leaving a fluorescent ghost of a sample.
+Water is then added to linearly swell the sample to many times its original size for super-resolved imaging for diffraction limited microscopes~\cite{chen_expansion_2015}.
+Light-sheet microscopy would be particularly valuable for expanded samples as the amount of time required to image an expanded Drosophila brain, for example, can be on the order of months using laser scanning techniques.
+Both clearing and expansion techniques suffer from sample fragility and collection yield due to the harshness of their respective processes.
+
+%
+% % samples - expansion microscopy, clearing, mouse/human embryos
+%
+% TODO \subsection{Expansion Microscopy}
+%
+% \section{Clearing}
+% %
+% % Optical-clearing optimization of LSFM
+% % Though not specific to LSFM, refractive-index matching by chemical clearing of tissue finds a natural home in this context, which allows for exceptionally large, fixed samples to be imaged with microscopic resolution and in a reasonable period of time.
+% % Nevertheless, the transition to larger sample sizes does provide some unique optical challenges, and although clearing makes even deep tissues accessible, without corresponding changes to the optical components they remain tantalizingly out of reach.
+% % % Dodt et al. reported an ultramicroscope that uses low magnification and NA optics to image cleared mouse brains over centimeter-sized FOVs63 naturally, with some sacrifice to spatial resolution.
+% % The generation of thinner, less-divergent light sheets benefits sub-cellular and macroscopic LSFM imaging alike.
+% % Saghafi et al. were able to shape the illuminating light sheet using several aspheric and cylindrical lenses in series to produce light sheets with a 4-um thickness at the beam waist and with little divergence over several millimeters64.
+% % Others have used binary-pupil phase masks to achieve similar results65,66.
+% % Tomer et al. adopted a different approach to imaging optically cleared tissues in the CLARITY optimized light-sheet microscope (COLM)67, which tiles the acquisition process to cover large FOVs.
+% % The superior collection efficiency afforded by high-NA optics compensates somewhat for the additional exposures by making better use of the available light, whereas the relatively high magnification and NA affords submicron resolution.
+% % To compensate for misalignment caused by residual refractive index inhomogeneities deep inside tissue, an autocalibration routine adjusts the light-sheet position such that the two planes maintain co-alignment throughout the volume.
 
 
-%spt
-
-Move into live cells.
-Neural nets
-
-%homography
-
-A 5 or more point elastic transform could be used.
-issue is that finding 5 exact points is hard. 1024,1024 pixel on camera is center.
-
-\subsection{Expansion Microscopy}
-
-\section{Clearing}
-  %
-  % Optical-clearing optimization of LSFM
-  % Though not specific to LSFM, refractive-index matching by chemical clearing of tissue finds a natural home in this context, which allows for exceptionally large, fixed samples to be imaged with microscopic resolution and in a reasonable period of time.
-  % Nevertheless, the transition to larger sample sizes does provide some unique optical challenges, and although clearing makes even deep tissues accessible, without corresponding changes to the optical components they remain tantalizingly out of reach.
-  % % Dodt et al. reported an ultramicroscope that uses low magnification and NA optics to image cleared mouse brains over centimeter-sized FOVs63 naturally, with some sacrifice to spatial resolution.
-  % The generation of thinner, less-divergent light sheets benefits sub-cellular and macroscopic LSFM imaging alike.
-  % Saghafi et al. were able to shape the illuminating light sheet using several aspheric and cylindrical lenses in series to produce light sheets with a 4-um thickness at the beam waist and with little divergence over several millimeters64.
-  % Others have used binary-pupil phase masks to achieve similar results65,66.
-  % Tomer et al. adopted a different approach to imaging optically cleared tissues in the CLARITY optimized light-sheet microscope (COLM)67, which tiles the acquisition process to cover large FOVs.
-  % The superior collection efficiency afforded by high-NA optics compensates somewhat for the additional exposures by making better use of the available light, whereas the relatively high magnification and NA affords submicron resolution.
-  % To compensate for misalignment caused by residual refractive index inhomogeneities deep inside tissue, an autocalibration routine adjusts the light-sheet position such that the two planes maintain co-alignment throughout the volume.
+%
+% \chapter{Perspectives}
+%
+% %DESIGN
+%
+% Exotic Illumination
+% Mention Daisy's work, show design?
+%
+% Confocal slit scanning was found to complement Bessel beams by rejecting light generated from higher orders of the beam (Florian O Fahrbach et al. 2013b).
+%
+% They were combined using dichroic mirrors and then expanded twice to match the size of a liquid crystal SLM (Hamamatsu).
+% When inactive, the SLM reflected the beam into a beam dump.
+% In normal operation a phase gradient was applied on the SLM to reflect the beam into the microscope.
+% This arrangement ensured that the higher orders of the beam generated by SLM pixilation were directed to the beam dump.
+% The SLM was positioned such that it was in a back focal plane of a long focal length (400 mm) lens, while its focus coincided with the first galvanometric scanner.
+% A flip mirror was positioned between first lens in the first beam expander and the 400 mm lens.
+% Thus it was possible to bypass the SLM if necessary (e.g. during assembly and testing and when SLM was not operational).
+% Another flip mirror was added after the 400 mm lens to couple in the original laser sources through tuneable lenses.
+%  The excitation path after the galvanometric scanner remained unchanged.
+%
+% A time-gated FLIM detection system is available in the Chemical Engineering Department and could be added to the LSFM system.
+% The FLIM detection was a single unit containing a low NA beam expander, a time gated image intensifier (LAVision) and a high NA beam expander relaying the intensifier on a camera.
+% In the new design it replaced the camera for FLIM imaging.
+%
+%
+% %spt
+%
+% Move into live cells.
+% Neural nets
+%
+% %homography
+%
+% A 5 or more point elastic transform could be used.
+% issue is that finding 5 exact points is hard. 1024,1024 pixel on camera is center.
+%
+% \subsection{Expansion Microscopy}
+%
+% \section{Clearing}
+%   %
+%   % Optical-clearing optimization of LSFM
+%   % Though not specific to LSFM, refractive-index matching by chemical clearing of tissue finds a natural home in this context, which allows for exceptionally large, fixed samples to be imaged with microscopic resolution and in a reasonable period of time.
+%   % Nevertheless, the transition to larger sample sizes does provide some unique optical challenges, and although clearing makes even deep tissues accessible, without corresponding changes to the optical components they remain tantalizingly out of reach.
+%   % % Dodt et al. reported an ultramicroscope that uses low magnification and NA optics to image cleared mouse brains over centimeter-sized FOVs63 naturally, with some sacrifice to spatial resolution.
+%   % The generation of thinner, less-divergent light sheets benefits sub-cellular and macroscopic LSFM imaging alike.
+%   % Saghafi et al. were able to shape the illuminating light sheet using several aspheric and cylindrical lenses in series to produce light sheets with a 4-um thickness at the beam waist and with little divergence over several millimeters64.
+%   % Others have used binary-pupil phase masks to achieve similar results65,66.
+%   % Tomer et al. adopted a different approach to imaging optically cleared tissues in the CLARITY optimized light-sheet microscope (COLM)67, which tiles the acquisition process to cover large FOVs.
+%   % The superior collection efficiency afforded by high-NA optics compensates somewhat for the additional exposures by making better use of the available light, whereas the relatively high magnification and NA affords submicron resolution.
+%   % To compensate for misalignment caused by residual refractive index inhomogeneities deep inside tissue, an autocalibration routine adjusts the light-sheet position such that the two planes maintain co-alignment throughout the volume.

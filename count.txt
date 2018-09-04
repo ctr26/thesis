@@ -1,11 +1,11 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 29651
-Words in headers: 589
+Words in text: 31326
+Words in headers: 634
 Words outside text (captions, etc.): 5284
-Number of headers: 196
+Number of headers: 210
 Number of floats/tables/figures: 86
-Number of math inlines: 477
+Number of math inlines: 482
 Number of math displayed: 82
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -59,16 +59,23 @@ Subcounts:
   915+10+48 (5/1/3/0) Section: Algorithmic bead tracking
   1668+67+452 (7/6/75/0) Section: Results
   547+2+0 (2/0/0/0) Section: Discussion
-  0+1+0 (1/0/0/0) Chapter: Conclusions}\label{chapter:conclusions
-  35+4+0 (1/0/0/0) Section: Microscope design and construction
+  17+1+0 (1/0/0/0) Chapter: Conclusions}\label{chapter:conclusions
+  180+4+0 (1/0/0/0) Section: Microscope design and construction
   110+3+0 (1/0/0/0) Section: Homographically generated light-sheets
   163+5+0 (1/0/0/0) Section: Frame localisation optical projection tomography
   196+3+0 (1/0/0/0) Section: Confocal \gls{slit-scanning} microscopy
   253+3+0 (1/0/0/0) Section: Open-hardware sample mounting
-  215+5+0 (1/0/1/0) Section: Particle tracking for viral egress
+  217+5+0 (1/0/1/0) Section: Particle tracking for viral egress
   135+5+0 (1/0/1/0) Section: Light-sheet microscopy and magnetic tweezers
-  262+3+0 (2/0/0/0) Chapter: Perspectives
-  1+1+0 (1/0/0/0) Section: Clearing
+  19+1+0 (1/0/0/0) Chapter: Perspectives}\label{chapter:perspectives
+  244+5+0 (3/0/0/0) Section: Light-sheet microscope developments
+  252+2+0 (1/0/5/0) Section: Waveform generation
+  221+9+0 (4/0/0/0) Section: Slit-scanning
+  229+9+0 (2/0/0/0) Section: Frame localisation optial projection tomography
+  244+5+0 (2/0/0/0) Section: The sample chamber
+  113+11+0 (2/0/0/0) Section: Viral imaging using single particle tracking
+  72+5+0 (1/0/0/0) Section: Magnetic tweezers and light-sheet microscopy
+  377+2+0 (1/0/0/0) Section: Additional samples
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   0+3+0 (1/0/0/0) Section: System alignments protocol
@@ -77,5 +84,5 @@ Subcounts:
   292+1+0 (1/0/15/6) Section: Huygens
   0+2+0 (1/0/0/0) Chapter: Particle tracking
   130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
-  14+2+0 (1/0/0/1) Section: Bragg conditons
+  17+2+0 (1/0/0/1) Section: Bragg conditons
 

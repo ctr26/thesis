@@ -134,18 +134,18 @@
 
 
 %TECHNOLOGY FIRST
-\include{Chapters/intro/chapter} %0         %DONE
+\include{Chapters/intro/chapter} %0
 \include{Chapters/principles/chapter} %1    %DONE
 \include{Chapters/literature/chapter} %2    %DONE
 \include{Chapters/design/chapter} %3        %DONE
 \include{Chapters/homography/chapter} %4    %DONE
-\include{Chapters/flopt/chapter} %5         %DONE %THIS HAS A DODGY GLS
+\include{Chapters/flopt/chapter} %5         %DONE
 \include{Chapters/dualslit/chapter} %6      %DONE
 \include{Chapters/chamber/chapter} %7       %DONE
 \include{Chapters/spt/chapter} %8           %DONE
 \include{Chapters/tweezers/chapter} %9
 \include{Chapters/conclusions/chapter} %10
-
+\include{Chapters/afterword/chapter}
 %\includefrom{Chapters/intro/}{chapter}
 %\includefrom{Chapters/literature/}{chapter}
 %\includefrom{Chapters/homography/}{chapter}
@@ -199,6 +199,15 @@
 % \printthesisindex % If index is present
 % \printindex
 \printthesisindex
+\clearpage
+\nosection{That's all folks!}
+
+% TODO hard copy
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.4\linewidth]{modified_folks}
+% \end{figure}
+%
 
 \immediate\write18{texcount -merge -sub=section \jobname.tex > count.txt}
 \end{document}

@@ -98,7 +98,7 @@
 
 
 % *********************************** SI Units *********************************
-\usepackage[separate-uncertainty=true,multi-part-units=single,binary-units=true]{siunitx} % use this package module for SI units
+\usepackage[allow-number-unit-breaks=true,separate-uncertainty=true,multi-part-units=single,binary-units=true]{siunitx} % use this package module for SI units
 
 % ******************************* Line Spacing *********************************
 
@@ -241,3 +241,10 @@
 
 \usepackage{mhchem}
 \usepackage{wrapfig}
+\usepackage[super]{nth}
+
+
+\newcommand{\nosection}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{#1}}
