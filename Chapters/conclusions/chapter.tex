@@ -10,32 +10,140 @@
     \graphicspath{{Chapters/conclusions/Figs/Vector/}{Chapters/conclusions/Figs/}}
 \fi
 
-\chapter{Discussion and Conclusions}\label{chapter:conclusions}
+\chapter{Conclusions}\label{chapter:conclusions}
+
+%INTO LIT AND DESIGN
+
+\section{Microscope design and construction}
+In this work an \gls{light-sheet} fluorescence microscope was designed built and optimised for organismal and cellular imaging.
+The microscope was able to record imaging volumes at a rate \SI{512x512x100}{\micro\meter} per second at maximum running speed.
+
+%TODO desgin description
+%Homography
+\section{Homographically generated light-sheets}
+In Chapter~\ref{chapter:homography} the method by which the generation of voltage waveforms was improved upon.
+Standard methods of generation rely on three positional coordinates being record for registering the illumination volume to the imaging volume.
+To use the four available coordinates additional non-linear mathematics is needed to project affine input coordinates onto the resultant non-affine illumination space.
+The non-linearity observed (figure) arises from imperfections in the scanning optics, this was characterised for the scan lens which converts beam angle into beam position at the sample volume.
+When comparing the 3~point and 4~point correction it was found that there was an average \SI{42}{\percent} increase in recovered signal from fluorescent beads.
+
+%Flopt
+\section{Frame localisation optical projection tomography}
+Chapter~\ref{chapter:flopt} then used the mathematics presented in Chapter~\ref{chapter:homography} to address the issue of computer-tomography reconstructions in systems prone to mechanical error; in this case for optical projection tomography.
+The ubiquitous Radon transform is typically used to reconstruct projected data sets but take no account of motions beyond rotation about the axis normal to the plane projected.
+This assumption is valid for stable systems, but leads to reconstruction error for systems with limited available angles as well as systems with mechanical jitter and systematic drift.
+Provided there are 6 or more fiducial markers common to each adjacent image pair from an \gls{OPT} image set, each point can be triangulated and the resultant rotation and translation matrices between each image pair can be computed.
+Each image from the set can then be computational back-projected and aligned using the recovered matrices.
+The resultant volume is then filtered to provide a faithful reconstruction of the volume that is robust to systematic mechanical errors as well as jitter.
+
+%DUAL SLIT
+\section{Confocal \gls{slit-scanning} microscopy}
+The illumination and imaging volume registration was also critical for Chapter~\ref{chapter:dualslit} where synchronisation of the rolling shutter on the camera and the sweeping of the beam had to be well matched.
+By synchronising the rolling shutter and the beam sweeping images can be recorded with better optical sectioning and higher contrast as out-of-focus light is rejected by the virtual pinhole in the direction of the rolling shutter.
+This was implemented on the light-sheet microscope and was characterised to show the maximal \gls{SNR} was when the shutter width and the beam waist were comparable in size.
+The firmware on the camera was then upgraded along with the beam creation optics such that two shutters would roll synchronously and two beams would be generated to match them.
+This then increased the achievable frame-rate of the slit-scanning camera from \SI{50}{\hertz} to \SI{100}{\hertz}, the maximum of the camera.
+This was in preparation for the imaging capabilities needed for tracking virus particles as in Chapter~\ref{chapter:spt}.
+The effect of slit-scanning was also simulated for light-sheet systems as well as wide-field systems.
+This included structured illumination systems where it was shown that a marked rate of imaging and contrast improvement could be obtained.
+
+%Chamber
+\section{Open-hardware sample mounting}
+In preparation for the two chapters addressing biological questions a sample chamber was designed and presented in Chapter~\ref{chapter:chamber}.
+The chamber was a \gls{3D} printed design capable of mounting cells  and organisms, with fixed cells and live organisms being shown in this work.
+\gls{3D} printed materials were used for the rapid prototyping capability as well as the advantage of producing multiple copies quickly when compared to metal.
+It is possible to sterilise \gls{3D} though the more aggressive methods were damaging to the printed chambers.
+
+The key novelty of the chamber was the use a shelf for sample mounting.
+This allowed for the mounting of flat glass coverslips, which are viable for use in common cell and organism mounting procedures.
+It also allowed for the use of a large opening angle detection objective lens mounted at \SI{45}{\degree} in conjunction with a high NA illumination objective lens.
+Enabling the use of these two objectives allowed for the imaging of organisms as well as sub-cellular activities in cell culture.
+The chamber include addition design features such as: chamfered edges in the medium containing section to act as hard stops if protecting the objective lenses and minimise the use of media; a positing camera and window from with a couple infrared and white light source for transmitted light imaging; a side window for positing samples by eye; a drip-tray for instrument safety against spillages; module for inserting heating elements and magnets to be used for securing samples and cleared through-holes for bolting the chamber to a metric breadboard.
+
+\section{Particle tracking for viral egress}
+With such a chamber now available, imaging \emph{in vivo} sub-cellular processes was now possible.
+To then monitor viral egress, the light-sheet microscope required modifying such that it could axially localise single particles within the light-sheet.
+From there the light-sheet would be repositioned and the process iterated for each recorded frame giving a sub-diffraction limited axial position over the viable \SI{100}{\micro\meter}.
+As such, a weakly cylindrical lens was inserted into the imaging path and positioned to provide a suitable amount of astigmatism for the available pixels per (\SI{4x4}{}) \gls{PSF} at 62.5 (\(25\times2.5\) magnification.
+It was shown that the calibration for a recorded astigmatic \gls{PSF} was suitably linear for the purposes of calibrated tracking when using template correlation or template covariance.
+
+Dynamic blur for an astigmatic \gls{PSF} was then considered.
+By using a Gaussian model of an astigmatic \gls{PSF} it was shown that, using typical parameters as found for the light-sheet microscope here, there is an average \SI{25}{\percent} error axial localisation.
+The magnitude of this error could potentially explain why single particles do escape tracking before they bleach as demonstrated by Spille~\emph{et.~al}~\cite{spilleDirectObservationMobility2015}.
+
+Cells infected with \gls{HSV}-1 were then fixed and mounted on glass cover slips for imaging.
+Three viral proteins were labelled to demonstrate the feasible of tracking single virus particles in a live cell.
+
+\section{Light-sheet microscopy and magnetic tweezers}
+Finally, in Chapter~\ref{chapter:tweezers} a magnetic tweezer system was developed and used to remotely measure the viscoelastic properties of a developing zebrafish embryo.
+A simple mechanical model of the response of the embryo was made, consisting of dash-pots and springs, and was fitted to the trajectory of a tracked bead from push-pull experiments.
+Viscoelastic properties were then extracted from the model fitting and then monitored over \SIrange{1}{2}{\hour}.
+This was the first demonstration of a direct link between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
+The blastula tissue was shown to have an intrinsic viscoelastic response.
+The stiffening blastula, composed of radially anisotropic cells, may drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
+Interestingly, the viscoelastic timescale parameter, \(\tau\), remained constant across both time and embryonic mutations.
+%TODO cleanup
+%%
+% The study presented here is the first demonstration of a direct link  between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
+%By applying a directed local force to a developing embryo, through an embedded magnetic bead, local and ensemble mechanical properties of tissue were characterised.
+%The blastula tissue was shown to have an intrinsic viscoelastic response; the data showed that tissues exhibit fluid-like behaviours, as observed in previous studies using optical tweezers in mature epithelia, [?] and magnetic droplets injected into much older fish than considered here [?].
+%The viscoelastic timescale parameter, t, remained constant across both time and embryonic mutations.
+%The results of this study elucidate the biological meaning of the rheological parameters of viscosity and elasticity in terms of cellular morphology changes and rearrangement.
+%
+% The viscous and elastic components are involved in cell shape, intercalation and deformation. Increased stiffness is related to less deformable cells, and increased viscosity to diffusivity of cells during rearrangement. In developing wildtype embryos, prior to bulging, the blastula becomes 3-fold more viscous and stiff.
+% Tissue viscosity, in the form of cell rearrangement, is a measure of the friction imposed by cell-cell connections, which may be mediated by cell protrusions and
+% E-cadherin adhesion. Rac1 activity would then follow to promote viscosity and cell stiffness by increasing the polymerisation of actin and encouraging cell-cell adhesions via E-cadherin connections.
+%Yet, the decrease in cell stiffness with MoECad treatment suggests a more complicated coupling [of what and what? Ecad and Rac1?].
+%We propose that a cellular mechanotransduction mechanism assays the compliance of the environment between sites of adhesion.
+% It is well understood that cells grown on a surface adjust their mechanical stiffness in proportion to substrate stiffness [? ? ].
+%In the case of early mesenchymal tissues, we suggest that the cells themselves collectively constitute their own local mechanical environment, coupled via protrusion-promoted cell-cell adhesion.
+%Numerous examples exist of mesenchymal cells interacting via protrusions [ref].
+%During collective migration, cadherin-mediated cell-cell connections are able to promote cell polarisation and cytoskeletal rearrangements, acting through Rac1 activation [? ].
+%Given the role of protrusions in both motility and transduction, this relationship explains the close correlation between viscosity and stiffness.
+% The emergence of cohesive mesenchymal tissue mechanical properties may be linked with the motility of its cells and, in particular, the formation of protrusions that facilitate the establishment of cadherin-based cell-cell adhesions.
+%Connectivity could result in an actin superstructure networked between cells, through cell adhesion proteins.
+%Tissue stiffness and viscosity are well-correlated with the number of protrusions present and it is possible that these mechanisms might be found in other mesenchymal tissues during development [can you back this up w/ref?].
+%These findings highlight a potentially fundamental difference in the determination of mechanical properties between epithelial and mesenchymal tissues.
+%Epithelial cells represent relatively static configurations, based upon adhesion and contraction, while mesenchymal cells are adhesive and stiff, but dependent upon dynamic protrusion-based motility.
+%We speculate that the stiffening blastula, composed of radially anisotropic cells, is thus poised to drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
 
 \chapter{Perspectives}
+
+%DESIGN
+
 Exotic Illumination
-  Mention Daisy's work, show design?
+Mention Daisy's work, show design?
 
-  Confocal slit scanning was found to complement Bessel beams by rejecting light generated from higher orders of the beam (Florian O Fahrbach et al. 2013b).
+Confocal slit scanning was found to complement Bessel beams by rejecting light generated from higher orders of the beam (Florian O Fahrbach et al. 2013b).
 
-    They were combined using dichroic mirrors and then expanded twice to match the size of a liquid crystal SLM (Hamamatsu).
-    When inactive, the SLM reflected the beam into a beam dump.
-    In normal operation a phase gradient was applied on the SLM to reflect the beam into the microscope.
-    This arrangement ensured that the higher orders of the beam generated by SLM pixilation were directed to the beam dump.
-    The SLM was positioned such that it was in a back focal plane of a long focal length (400 mm) lens, while its focus coincided with the first galvanometric scanner.
-    A flip mirror was positioned between first lens in the first beam expander and the 400 mm lens.
-    Thus it was possible to bypass the SLM if necessary (e.g. during assembly and testing and when SLM was not operational).
-    Another flip mirror was added after the 400 mm lens to couple in the original laser sources through tuneable lenses.
-     The excitation path after the galvanometric scanner remained unchanged.
+They were combined using dichroic mirrors and then expanded twice to match the size of a liquid crystal SLM (Hamamatsu).
+When inactive, the SLM reflected the beam into a beam dump.
+In normal operation a phase gradient was applied on the SLM to reflect the beam into the microscope.
+This arrangement ensured that the higher orders of the beam generated by SLM pixilation were directed to the beam dump.
+The SLM was positioned such that it was in a back focal plane of a long focal length (400 mm) lens, while its focus coincided with the first galvanometric scanner.
+A flip mirror was positioned between first lens in the first beam expander and the 400 mm lens.
+Thus it was possible to bypass the SLM if necessary (e.g. during assembly and testing and when SLM was not operational).
+Another flip mirror was added after the 400 mm lens to couple in the original laser sources through tuneable lenses.
+ The excitation path after the galvanometric scanner remained unchanged.
 
-  A time-gated FLIM detection system is available in the Chemical Engineering Department and could be added to the LSFM system.
-  The FLIM detection was a single unit containing a low NA beam expander, a time gated image intensifier (LAVision) and a high NA beam expander relaying the intensifier on a camera.
-  In the new design it replaced the camera for FLIM imaging.
+A time-gated FLIM detection system is available in the Chemical Engineering Department and could be added to the LSFM system.
+The FLIM detection was a single unit containing a low NA beam expander, a time gated image intensifier (LAVision) and a high NA beam expander relaying the intensifier on a camera.
+In the new design it replaced the camera for FLIM imaging.
 
 
-  TODO \subsection{Expansion Microscopy}
+%spt
 
-  \section{Clearing}
+Move into live cells.
+Neural nets
+
+%homography
+
+A 5 or more point elastic transform could be used.
+issue is that finding 5 exact points is hard. 1024,1024 pixel on camera is center.
+
+\subsection{Expansion Microscopy}
+
+\section{Clearing}
   %
   % Optical-clearing optimization of LSFM
   % Though not specific to LSFM, refractive-index matching by chemical clearing of tissue finds a natural home in this context, which allows for exceptionally large, fixed samples to be imaged with microscopic resolution and in a reasonable period of time.
