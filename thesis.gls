@@ -23,8 +23,17 @@
 \providecommand*\glsXpageXhyperemph[2]{\setentrycounter[#1]{page}\hyperemph{#2}}
 \providecommand*\glsXpageXglsignore[2]{\setentrycounter[#1]{page}\glsignore{#2}}
 \begin{theglossary}\glossaryheader
+\glsgroupheading{I}\relax\glsresetentrylist
+\glossentry{illumination board}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{1}}}\glsgroupskip
 \glsgroupheading{L}\relax\glsresetentrylist
 \glossentry{light-sheet}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{1}\delimN 
-\glsXpageXglsnumberformat{}{3}}}%
+\glsXpageXglsnumberformat{}{1}}}\glsgroupskip
+\glsgroupheading{S}\relax\glsresetentrylist
+\glossentry{slit-scanning}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xiii}, 
+\glsXpageXglsnumberformat{}{2}}}\relax\glsresetentrylist
+\glossentry{Spatial Light Modulator}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{xxi}, 
+\glsXpageXglsnumberformat{}{1}}}%
 \end{theglossary}\glossarypostamble

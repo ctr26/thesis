@@ -1,64 +1,15 @@
 File: thesis.tex
-Encoding: utf8
-Words in text: 31326
-Words in headers: 634
-Words outside text (captions, etc.): 5284
-Number of headers: 210
-Number of floats/tables/figures: 86
-Number of math inlines: 482
-Number of math displayed: 82
+Encoding: ascii
+Words in text: 4572
+Words in headers: 117
+Words outside text (captions, etc.): 25
+Number of headers: 38
+Number of floats/tables/figures: 3
+Number of math inlines: 46
+Number of math displayed: 22
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  516+7+0 (2/1/0/0) _top_
-  113+1+0 (1/0/0/0) Chapter: Introduction
-  667+12+0 (4/0/0/0) Section: Motivation
-  47+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy
-  950+21+228 (10/6/31/6) Section: Light microscopy
-  1343+21+172 (12/3/10/0) Section: Fluoresence microscopy
-  756+21+239 (7/2/11/0) Section: Three dimensional fluorescence microscopy
-  891+15+186 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
-  561+14+257 (7/2/0/0) Section: Objective arrangements
-  370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
-  573+11+73 (6/1/0/0) Section: Illumination
-  91+1+0 (1/0/0/0) Section: Summary
-  161+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
-  1491+17+363 (10/4/14/0) Section: Hardware
-  1084+16+299 (9/3/9/1) Section: Software
-  304+27+0 (7/0/0/0) Section: Specification review
-  122+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
-  862+17+121 (5/1/67/17) Section: Homographic theory
-  414+10+289 (3/3/6/0) Section: Experimental implementation and verification
-  122+1+0 (1/0/0/0) Section: Conclusions
-  198+5+0 (1/0/0/0) Chapter: Frame localisation optical projection tomography}\label{chapter:flopt
-  605+7+101 (3/2/26/2) Section: Rotational computer tomography in microscopy
-  706+8+45 (3/1/10/9) Section: Stereoscopic Imaging
-  746+3+156 (1/3/19/1) Section: The proposed algorithm
-  529+13+392 (2/9/43/1) Section: Verification of the proposed algorithm
-  168+1+0 (1/0/1/0) Section: Discussion
-  404+10+48 (4/1/5/0) Section: Future work
-  172+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
-  514+5+60 (2/2/4/1) Section: Single beam confocal \gls{slit-scanning}
-  708+21+182 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
-  699+10+233 (4/4/17/7) Section: Structured illumination enhanced with \gls{slit-scanning}
-  467+9+0 (3/0/1/0) Section: Discussion and future work
-  330+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
-  688+4+336 (1/3/0/0) Section: The design and construction
-  467+6+48 (2/2/0/0) Section: Sample preparation
-  189+1+0 (1/0/0/0) Section: Summary
-  745+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
-  635+15+87 (4/2/8/0) Section: Single particle tracking microscopy
-  609+17+49 (5/1/11/2) Section: Astigmatic tracking
-  292+7+116 (2/2/10/6) Section: Motion-induced astigmatic axial localisation error}\label{sec:spt_maths
-  121+3+68 (2/1/0/0) Section: Results
-  230+8+62 (1/2/3/0) Section: Observations and tracking of virions using \gls{light-sheet} microscopy
-  166+1+0 (1/0/0/0) Section: Conclusions
-  371+4+101 (2/2/6/0) Section: Future work
-  492+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
-  233+7+30 (2/2/0/0) Section: Tissue dynamics in developing organisms
-  1314+18+98 (7/3/40/6) Section: Methods of measuring tissue dynamics
-  915+10+48 (5/1/3/0) Section: Algorithmic bead tracking
-  1668+67+452 (7/6/75/0) Section: Results
-  547+2+0 (2/0/0/0) Section: Discussion
+  685+7+0 (2/1/0/0) _top_
   17+1+0 (1/0/0/0) Chapter: Conclusions}\label{chapter:conclusions
   180+4+0 (1/0/0/0) Section: Microscope design and construction
   110+3+0 (1/0/0/0) Section: Homographically generated light-sheets
@@ -75,7 +26,7 @@ Subcounts:
   244+5+0 (2/0/0/0) Section: The sample chamber
   113+11+0 (2/0/0/0) Section: Viral imaging using single particle tracking
   72+5+0 (1/0/0/0) Section: Magnetic tweezers and light-sheet microscopy
-  377+2+0 (1/0/0/0) Section: Additional samples
+  304+2+0 (1/0/0/0) Section: Additional samples
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   0+3+0 (1/0/0/0) Section: System alignments protocol
