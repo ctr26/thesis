@@ -1,6 +1,6 @@
 File: thesis.tex
 Encoding: ascii
-Words in text: 4572
+Words in text: 4602
 Words in headers: 117
 Words outside text (captions, etc.): 25
 Number of headers: 38
@@ -9,7 +9,7 @@ Number of math inlines: 46
 Number of math displayed: 22
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  685+7+0 (2/1/0/0) _top_
+  715+7+0 (2/1/0/0) _top_
   17+1+0 (1/0/0/0) Chapter: Conclusions}\label{chapter:conclusions
   180+4+0 (1/0/0/0) Section: Microscope design and construction
   110+3+0 (1/0/0/0) Section: Homographically generated light-sheets

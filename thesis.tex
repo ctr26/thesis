@@ -3,7 +3,7 @@
 % Please have a look at the README.md file for info on how to use the template
 
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
-\documentclass[a4paper,12pt,customfont,numbered,print,withindex,print,custombib]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,customfont,numbered,print,withindex,chapter,custombib]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -115,9 +115,9 @@
 
 \maketitle
 
-\include{Dedication/dedication}
-\include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
+\include{Dedication/dedication}             %DONE
+\include{Declaration/declaration}           %DONE
+\include{Acknowledgement/acknowledgement}   %DONE
 \include{Abstract/abstract}
 
 % *********************** Adding TOC and List of Figures ***********************
@@ -132,7 +132,6 @@
 % ******************************** Main Matter *********************************
 \mainmatter
 
-
 %TECHNOLOGY FIRST
 % \include{Chapters/intro/chapter} %0
 % \include{Chapters/principles/chapter} %1    %DONE
@@ -146,6 +145,7 @@
 % \include{Chapters/tweezers/chapter} %9
 \include{Chapters/conclusions/chapter} %10
 % \include{Chapters/afterword/chapter}
+
 %\includefrom{Chapters/intro/}{chapter}
 %\includefrom{Chapters/literature/}{chapter}
 %\includefrom{Chapters/homography/}{chapter}
