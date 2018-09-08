@@ -1,21 +1,21 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 31541
-Words in headers: 637
-Words outside text (captions, etc.): 5284
-Number of headers: 210
+Words in text: 31875
+Words in headers: 640
+Words outside text (captions, etc.): 5323
+Number of headers: 211
 Number of floats/tables/figures: 86
-Number of math inlines: 482
-Number of math displayed: 82
+Number of math inlines: 490
+Number of math displayed: 84
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   715+7+0 (2/1/0/0) _top_
   113+1+0 (1/0/0/0) Chapter: Introduction
   755+15+0 (4/0/0/0) Section: Motivation
-  47+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
-  950+21+228 (10/6/31/6) Section: Light microscopy
-  1343+21+172 (12/3/10/0) Section: Fluoresence microscopy
-  756+21+239 (7/2/11/0) Section: Three dimensional fluorescence microscopy
+  49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
+  1059+22+265 (10/6/32/6) Section: Light microscopy
+  1542+23+174 (13/3/19/1) Section: Fluorescence microscopy
+  780+21+239 (7/2/9/1) Section: Three dimensional fluorescence microscopy
   891+15+186 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
   561+14+257 (7/2/0/0) Section: Objective arrangements
   370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy

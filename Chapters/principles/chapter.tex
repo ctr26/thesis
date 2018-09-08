@@ -15,9 +15,14 @@
 %Physical prciniples of the operation of a light-microscope.
 %Capabilities limtiations.
 
-This chapter will introduce the concept of the light microscope leading into contemporary fluorescence microscopy.
-Basic geometrical optics and properties of light waves will be presented to understand the construction and functioning of light microscopes.
+This chapter introduces the concept of the light microscope in contemporary fluorescence microscopy.
+Basic geometrical optics and properties of light waves are presented to understand the construction and functioning of light microscopes and light-sheet microscopes in particular.
 The concepts presented here will be elementary and recalled in later chapters.
+
+% Light sources and detectors are discussed focusing on read-out methods from detectors which has become important in many types of microscopy but notably light sheet microscopy due to the high frame rates required and the contrast enhancement from confocal slit scanning.
+%
+% Finally an overview of 3D microscopy methods is provided including detailed discussion of 3D SIm the principle of which can be applied in light sheet microscopy as discussed in chapter <xx>
+
 \pagebreak
 \section{Light microscopy}
 % The simplest lens set of an objective collecting lens (close to the sample) and a tube lens (for relaying the image), drives the imaging of most modern microscopes.
@@ -29,37 +34,39 @@ The concepts presented here will be elementary and recalled in later chapters.
 % \subsubsection{Components of light microscopes}
 %Imaging part of microscope is formed of two leneses
 %Infinity corrected system.
-The fundamental concept of a light microscope requires a set of lenses to relay and magnify the image of a remote point using light as a measurand.
+The fundamental concept of a light microscope requires a set of lenses to relay and magnify the image of a remote object or specimen using light as a measurand.
 % The key driver of the imaging aspect of an optical microscope is a pair of lenses.
 The sample is located in the front focal plane of the \emph{\gls{objective lens}} and the resultant image is focused onto the \emph{\gls{primary imaging plane}}, see \figurename~\ref{fig:magnification}.
-Light emitted by a point $o_1$ at the sample plane is transformed into a parallel ray bundle by the \gls{objective lens}, which travel parallel to the optical axis.
+Light emitted by a point $o_1$ at the sample plane is transformed into a parallel ray bundle by the \gls{objective lens}, which travels parallel to the optical axis.
 The tube lens then refracts the ray bundle back down onto its focus.
-The ray bundle for an a point away $o_2$ from the optical axis can be determined by the \emph{chief ray} ($r_c$) which passes through the optical centre of the objective unperturbed, and the \emph{marginal ray} ($r_m$) travelling parallel to the optical axis which crosses the back-focal point of the \gls{objective lens}.
+The ray bundle for a point away $o_2$ from the optical axis can be determined by the \emph{chief ray} ($r_c$) which passes through the optical centre of the objective unperturbed, and the \emph{marginal ray} ($r_m$) travelling parallel to the optical axis which crosses the back-focal point of the \gls{objective lens}.
 Both of these rays propagate in parallel within the \emph{infinity space} between the objective and tube lens, as do all sets of rays at any point $o_n$ at the focal plane of the \gls{objective lens}.
 
 \subsubsection{Magnification}
 \index{magnification}
 \index{ray optics}
 
-Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be spaced arbitrarily, though typically the back focal points are matched to create a \emph{\gls{4f} system}, see \figurename~\ref{fig:magnification}.
+Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be selected arbitrarily.
+Typically the back focal points are matched to create a \emph{\gls{4f} system}, as shown in \figurename~\ref{fig:magnification}, as this configuration improves imaging quality by reducing optical aberrations.
 
 The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}. %TODO not quite right
 $o_1'$
-The image size ($I$) in the primary image plane is set by the distance between the intersection of the primary image plane to the intersect of the the margin ($r_m'$) and chief rays ($r_m'$) at the tube lens.
+The image size ($O'$) in the primary image plane is set by the distance between the intersection of the primary image plane to the intersect of the the margin ($r_m'$) and chief rays ($r_c'$) at the tube lens.
+% The marginal rays for each lens in a \gls{4f} system will
 
 % \gls{alpha}
 
 \begin{align}
-    \tan \gls{alpha} &= \frac{O}{f_{\text{objective}}} =  \frac{I}{f_{\text{tube lens}}} \\
-    \intertext{It follows that the magnification of the sample is:}
-    \implies M &= \frac{I}{O} = \frac{f_{\text{objective}}}
-{f_{\text{tube lens}}}
+    \tan \gls{alpha} &= \frac{O}{f_{\text{objective}}} =  \frac{O'}{f_{\text{tube lens}}} \\
+    \intertext{It follows that the lateral magnification of the sample is:}
+    \implies M &= \frac{O'}{O} = \frac{f_{\text{tube lens}}}
+{f_{\text{objective}}}
 \end{align}
 
 \begin{figure}
     \centering
     \includegraphics{./magnification}
-    \caption{Ray diagram of a two lens magnification system.}
+    \caption{Ray diagram of a two lens magnification system, with a \gls{4f} configuration.}
     \label{fig:magnification}
 \end{figure}
 
@@ -77,14 +84,15 @@ The image size ($I$) in the primary image plane is set by the distance between t
 
 \index{field of view}
 
-The observable objective field (field of view) is limited by the aperture stop of the system typified as the field number ($F_n $) and the \gls{objective lens} magnification $M_{\text{object}}$:
+The observable objective \gls{FOV} is limited by the aperture stop of the system typified as the field number ($F_\text{n} $) and the \gls{objective lens} magnification $M_{\text{objective}}$:
 %The maximum field of view ($F_{n}$)available is by :
 
 \begin{align}
-    \gls{FOV} = \frac{F_{n}}{M_{\text{object}}}
+    \gls{FOV} = \frac{F_{n}}{M_{\text{objective}}}
 \end{align}
 
-The field number of \gls{objective lens} design is limited by the image degradation caused through optical aberrations, with modern objective technology reaching up to \SI{28}{\milli\meter} from the previous standard of \SI{20}{\milli\meter}.
+The field number achievable in a real \gls{objective lens} design is limited by the image degradation caused through optical aberrations.
+Modern objective technology can reach up to \SI{28}{\milli\meter} from the previous standard of \SI{20}{\milli\meter}.
 
 \subsubsection{Illumination}
 
@@ -98,69 +106,70 @@ Having a conjugated illumination also allows for alternative contrast methods to
 
 In the illumination beam paths discussed earlier, the specimen is placed between the light source and the \gls{objective lens}.
 In many cases, however, it is advantageous to illuminate the specimen from the side of observation (\emph{epi-illumnination}).
-For instance, when looking at the reflection of opaque or fluorescent samples.
+For instance, when looking at the reflection of opaque samples, or the emission of fluorescent samples.
 Optically the illumination is the same or similar with the condenser lens then being the imaging \gls{objective lens} as well.
 % In that case, some optical components of illumination and imaging are identical, for example, the \gls{objective lens}. %TODO reword
 
-\subsection{Resolution}
+\subsection{Resolution}\label{sec:resolution}
 %Magification versus resolution
 \index{resolution}
 
-Resolution refers to the level of detail that can be recognised in an image, such as small and intricate structures or the distance between closely placed small objects.
-The latter distance is used to define and quantify the optical resolution.
+Resolution refers to the fineness of detail that can be recognised in an image, such as small and intricate structures or the distance between closely placed small objects.
+The latter case, specifically the smallest separation at which two point-like emitters produce an image that can be distinguished as coming from two sources, is used to define and quantify the optical resolution.
 % Using light microscopy
 % Using light microscopy, minute objects can be discriminated from each other when they are positioned at a minimum distance of -0.25 mum from each other and green light and a high-quality oil-immersion \gls{objective lens} are used.
 % This obviously means that proteins and supramolecular complexes occurring in living cells cannot be recognized in detail.
 % In later chapters, we discuss how the principal optical resolution limit can be overcome or circumvented by advanced optical techniques.
 
-\subsubsection{Angular and numerical aperture}
+\subsubsection{Angular aperture and numerical aperture}
 
 \index{numerical aperture}
 %An \gls{objective lens}es is limited by
 The maximum half acceptance angle (\gls{alpha}) of an \gls{objective lens} limits the amount of light that can be collected from the sample.
+It is the half angle of the cone at the optical centre of the objective lens, outside of which light is not collected for imaging.
 An \gls{objective lens} may be approximated to applying a Fourier transform of the imaging space, through an aperture with radius $a$ with an imaging plane at the far field.
-This leads to high frequency information being omitted during the imaging process and the lens behaving as a low-pass filter.
-The electric field (\gls{E}$(r)$) and resultant intensity (\gls{I}$(r)$) distribution of a single point (delta function) at the image plane then becomes:
+This leads to high frequency information being omitted during the imaging process and the lens behaving as a low-pass filter for optical frequencies.
+The electric field (\gls{E}$(r)$) and resultant intensity (\gls{I}$(r)$) distribution of a single point (delta function) at the primary image plane then becomes:
 
 \begin{align}
-    E(r) &\propto E_0 \frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\label{eq:E_airy}\\
+    E(r) &\propto E_0 \frac{J_1 \left( \frac{2\pi r}{\lambda}\sin \alpha \right)}{ \frac{2\pi r}{\lambda} \sin {\alpha})}\label{eq:E_airy}\\
     \implies
-    I(r) &= I_0 \left[\frac{J_1 \left(2\pi r \sin \frac{\alpha}{\lambda}\right)}{2\pi r \sin \frac{\alpha}{\lambda})}\right]^2\label{eq:I_airy}
+    I(r) &= I_0 \left[\frac{J_1 \left( \frac{2\pi r}{\lambda} \sin \alpha \right)}{ \frac{2\pi r}{\lambda} \sin {\alpha})}\right]^2\label{eq:I_airy}
 \end{align}
 
-Where \gls{J_1} is a Bessel function of the first kind and \gls{alpha} is the half opening angle of the tube lens.
-This function is more commonly known as an \Gls{airy disk} \ref{fig:airy_disk}.
+Where \gls{J_1} is a Bessel function of the first kind and \gls{alpha} is the half opening angle of the objective lens.
+This function is more commonly known as an \Gls{airy disk} as shown in \figurename~\ref{fig:airy_disk}.
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{\textwidth}
         %\centering
         \includegraphics{+airy_E_fill}
-        \caption{$E(r)$, equation \eqref{eq:E_airy}}
+        \caption{\(E(r)\), equation \eqref{eq:E_airy}}
         \label{fig:airy_E_fill}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{\textwidth}
         %\centering
         \includegraphics{+airy_I_fill}
-        \caption{$I(r)$, equation \eqref{eq:I_airy}}
+        \caption{\(I(r)\), equation \eqref{eq:I_airy}}
         \label{fig:airy_I_fill}
     \end{subfigure}
-    \caption{Electric and intensity amplitudes of a theoretical \gls{airy disk} in radial units of $2\pi r \sin \frac{\alpha}{\lambda}$}
+    \caption{Electric and intensity amplitudes of a theoretical \gls{airy disk} lateral distances \(x\) and \(y\) are given in units of \(\frac{2\pi r }{\lambda}\sin {\alpha}\)}
     \label{fig:airy_disk}
 \end{figure}
 
 \subsubsection{Lateral resolution}
 
-Point emitters are therefore imaged more faithfully with wider collecting angles and with higher frequency light.
-By placing two point emitters close such that the first zero crossing of the Bessel junction \gls{J_1} coincides with the centre of the second point emitter gives a distance of:
+Point emitters are therefore imaged more faithfully with wider collecting angles and with shorter wavelength light.
+By placing two point emitters close such that the first zero crossing of the Bessel function \gls{J_1} coincides with the centre of the second point emitter gives a distance of:
 
 \begin{align}
     r_{0,\text{objective}} &\approx \frac{0.61\lambda}{n\sin\alpha} = d_r \label{eq:lateral_res}\\
     \implies d_r &= \frac{1.22 \lambda}{NA_{\text{objective}}}
 \end{align}
 
-The resulting distance is Rayleigh's criterion for resolution which provides a limit to the resolution of a system based on a dip in intensity maxima, between two neighbouring emitters, of $\sim 75\%$.
+The resulting distance is Rayleigh's criterion for resolution which provides a limit to the resolution of a system based on a dip in intensity maxima, between two neighbouring emitters, of \SI{75}{\percent} as shown in \figurename~\ref{fig:airy_rayeligh}.
 
 %Coherent and incoherent
 \subsubsection{Axial resolution}
@@ -172,7 +181,7 @@ Once again, by comparing the the distance to the first zero in intensity along $
     z_{0,\text{objective}} = \frac{2n\lambda}{{NA}^2} \label{eq:axial_res} = \frac{1}{2} D_{\text{objective}}
 \end{align}
 
-The achievable axial resolution is governed by axial extension of the PSF as is $2z_{0,\text{objective}}$ and commonly called the \emph{\gls{depth of field}} ($D_{\text{objective}}$).
+The achievable axial resolution is governed by axial extension of the \gls{PSF} which is $2z_{0,\text{objective}}$ and is commonly called the \emph{\gls{depth of field}} ($D_{\text{objective}}$).
 The \gls{depth of field} physically refers to the distance a focussed object may be moved axially before losing image fidelity to defocus.
 
 \begin{figure}
@@ -211,86 +220,104 @@ The \gls{depth of field} physically refers to the distance a focussed object may
 
 % \index{Nyquist sampling}
 
-Once transmitted, the formed image information is typically recorded digitally using using a \gls{CCD} array camera or similar device.
-According to \Gls{nyquist sampling theory} the resolution of the detector required to resample the image information faithfully is $d_\text{detector} = \frac{d_r}{2}$.
-To then choose the correct system magnification ($M_\text{system}$) it follows that:
+Once transmitted, the irradiance image produced in the primary image plane is typically recorded digitally, using using a \gls{CCD} array sensor or similar device (e.g. an \gls{sCMOS} array).
+According to \Gls{nyquist sampling theory}, the resolution of the detector (i.e. the pitch separating the adjacent rows of sensor elements, photosites) required to resample the image information faithfully is \(d_\text{detector} = \frac{d_r}{2}\).
+To then choose the correct system magnification (\(M_\text{system}\)) it follows that:
 
 \begin{align}
     M_\text{system} = \frac{2d_\text{detector}}{d_r}
 \end{align}
 
-For a detector with \SI{6}{\micro\meter} \gls{photosite}s, a magnification on the order of $50\times$ is sufficient for diffraction limited imaging using visible light.\index{magnification}
-Magnifications in excess of this limit are deemed \emph{empty magnification} and decrease the overall \gls{SNR} of the recorded image.
-Over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited, may be used to increase resolution computationally.
-
+For a detector with \gls{photosite}s (detector pixels) in a square array with a pitch of \SI{6}{\micro\meter}, a magnification on the order of \(50\times\) is sufficient for diffraction limited imaging using visible light.\index{magnification}
+Magnification in excess of this limit is deemed \emph{empty magnification} and decreases the overall \gls{SNR} of the recorded image.
+However, such over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited, may be used to increase resolution computationally[imaging intracellular betzig].%TODO
+\pagebreak
 \begin{figure}
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{./sampling/sample_master}
-        \caption{Intensity image of a pair of resolved point emitters separated by the Rayleigh distance $d_{r}$}
+        \caption{Intensity image of a pair of resolved point emitters separated by the Rayleigh distance $d_{r}$}, where \(x\) is lateral distance in units of \(\frac{2\pi r }{\lambda}\sin {\alpha}\) and intensity quantifies irradiance (\SI{}{\watt\per\meter\square} in the primary image plane.)
         \label{fig:sample_master}
     \end{subfigure}
-\end{figure}~
+\end{figure}
 \begin{figure}
     \ContinuedFloat
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+      \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_3}
-        \caption{Sampled using 3 by 3 pixels\\$d_{\text{detector}} = 1.5 \times  d_{r}M_{\text{system}}$}
+        \caption{Sampled using 3 by 3 pixels\\\(d_{\text{detector}} = 1.5 \times  d_{r}M_{\text{system}}\)}
         \label{fig:digital_airy_sample_3}
     \end{subfigure}~
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_5}
-        \caption{Sampled using 5 by 5 pixels\\$d_{\text{detector}} = 0.9 \times  d_{r}M_{\text{system}}$}
+        \caption{Sampled using 5 by 5 pixels\\\(d_{\text{detector}} = 0.9 \times  d_{r}M_{\text{system}}\)}
         \label{fig:digital_airy_sample_5}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \\
+    \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_9}
-        \caption{Sampled using 9 by 9 pixels\\$d_{\text{detector}} = 0.5 \times d_{r}M_{\text{system}}$}
+        \caption{Sampled using 9 by 9 pixels\\\(d_{\text{detector}} = 0.5 \times d_{r}M_{\text{system}}\)}
         \label{fig:digital_airy_sample_9}
     \end{subfigure}~
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{./sampling/digital_airy_sample_23}
-        \caption{Sampled using 23 by 23 pixels\\$d_{\text{detector}} = 0.19 \times d_{r}M_{\text{system}}$}
+        \caption{Sampled using 23 by 23 pixels\\\(d_{\text{detector}} = 0.19 \times d_{r}M_{\text{system}}\)}
         \label{fig:digital_airy_sample_23}
     \end{subfigure}
-    \caption{Point emitters in \subref{fig:sample_master} are sampled by a detector varying pixel sizes, analogous to varying magnification.
+    \\
+    \begin{subfigure}[t]{\textwidth}
+      \vspace{\abovecaptionskip}
+      \centering
+      \includegraphics{./sampling/colourbar}\\
+      Irradiance in primary image plane
+    \end{subfigure}
+    % \begin{subfigure}[t]{0.1\textwidth}
+    %     \centering
+    %     \includegraphics{./sampling/colourbar}
+    %     % \caption{Sampled using 23 by 23 pixels\\\(d_{\text{detector}} = 0.19 \times d_{r}M_{\text{system}}\)}
+    %     % \label{fig:digital_airy_sample_23}
+    % \end{subfigure}
+    \caption{Point emitters in (\subref{fig:sample_master}) are sampled by a detector with varying detector pixel widths relative to the optical resolution of the system.
+    % analogous to varying magnification.
     (\subref{fig:digital_airy_sample_9}), shows Nyquist sampling;
     (\subref{fig:digital_airy_sample_23}) is over sampled, giving super detector resolution.
-    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and hence detect a single emitter.}
+    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and the images may be mis-interpretted as being produced by a single emitter or by a continuous feature, instead of two distinct point emitters.
+    hence detect a single emitter.}
     \label{fig:airy_disk_resolution}
 \end{figure}
+\pagebreak
 
-
-%
 % \subsubsection{Light collection efficiency}
 %
 % To calculate the the collecting efficiency of a lens, a single radiating source is considered, a Lambert radiator.
 % The flux collected is proportional to the spherical segment carved out by the lens.
 
 
-\section{Fluoresence microscopy}
+\section{Fluorescence microscopy}
 \subsection{Contrast in optical microscopy}
 % Phase contrast, dark field
-\subsection{Fluoresence}\index{fluoresence}
+\subsection{Fluorescence}\index{fluorescence}
 
-Fluorescent molecules absorb photons of a particular energy (wavelength) and a short time later re-emit a photon with lower energy, this energy difference gives rise to a red-shift of the emitted photon.
-This shift in colour allows for suitably coated glass to chromatically discriminate between the desired fluorescent signal and the undesired scattered incident light.
-Upon being exciting by incident light, an electron within a fluorescent molecule may excite to a higher energy level, provided it has sufficient potential energy to traverse the energy barrier.
-Once in the higher excited state ($S_1$), the electron will exist there for an average lifetime (\gls{tau}), slowly losing energy to the surroundings through vibrations and molecular collisions.
+Fluorescent molecules absorb photons of a particular energy with an excitation wavelength (\(\lambda\)) (where energy \(= h \nu = h \frac{c}{\lambda}\)), a short time later the molecules re-emit a photon with lower energy, this energy difference gives rise to a red-shift of the emitted photon.
+This shift in colour allows for suitably coated glass to chromatically separate the desired fluorescent signal and the undesired scattered incident light.
+% Upon being exciting by incident light, an electron within a fluorescent molecule may excite to a higher energy level, provided it has sufficient potential energy to traverse the energy barrier.
+Upon being exciting by incident light, a fluorescent species may be transformed to a higher level state.
+The occurs when an electron in the ground state energy level absorbs an incident photon with an energy greater than the difference of the exited state ($S_1$) and the ground state ($S_0$)
+Once in the higher excited state ($S_1$), fluorophores will exist there for an average lifetime (\gls{tau}), slowly losing energy to the surroundings through vibrations and molecular collisions.
 Once the electron has \emph{trickled} down the energy levels, it will return to the ground state ($S_0$) emitting a photon with an energy less the amount of energy lost when in the excited state, the \emph{\Gls{stokes shift}}.
-Electrons may also return to the ground state through molecular collisions or an \emph{intersystem} crossing whereby the electron finds a path via transient states with lower energy requirements, the \emph{triplet state}.
+Electrons may also return to the ground state through molecular collisions or an \emph{intersystem} crossing whereby the electron finds a path via transient states with lower energy requirements, such as the \emph{triplet state}.
 See \figurename~\ref{fig:jablonski_triplet_new}
 
 %\subsubsection{Fluoresence spectra}
-Multiple (split) energy levels slightly above the ground and excited states then give a distribution of multiple different emission wavelengths.
-Fluorescent molecules therefore have excitation and emission spectra rather than discrete excitation and emission lines, see \figurename~\ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
-An important advantage of fluorescence microscopy is labelling \emph{\gls{specificity}}, which refers to the ability to accurately label markers, features or molecules within a biological sample.
+In practice, multiple (split) energy levels slightly above the ground and excited states tend to promote a distribution of multiple different emission wavelengths.
+Fluorescent molecules therefore have broad excitation and emission spectra rather than discrete excitation and emission lines, see \figurename~\ref{fig:fluo_spectra} for typical fluorescent molecules used in microscopy.
+
+An important advantage of fluorescence microscopy is labelling \emph{\gls{specificity}}, which refers to the ability to accurately label markers, features or molecules within a specimen.
 Multiple labels in different spectral windows can further elucidate how labelled entities interact within the sample.
 
 \begin{figure}
@@ -298,10 +325,10 @@ Multiple labels in different spectral windows can further elucidate how labelled
     \includegraphics{jablonski_triplet_newer}
     \caption[Standard jablonski diagram]{
     Jablonski diagram representing a green fluorescent molecule.
-    Transitions are represented by waving vectors.
-    Electrons in state $S_0$ receive energy from blue incident light,
+    Transitions are indicated as excitation (\emph{ex}) or emission (\emph{em}). %represented by waving vectors.
+    Species in state $S_0$ receive energy from blue incident light,
     this causes the electrons to transition to state $S_1$.
-    From $S_1$ electrons may lose energy no radiatively and re-emit a greener photon when relaxing back to $S_0$.
+    From $S_1$ species may lose energy non-radiatively and re-emit a greener photon when relaxing back to $S_0$.
     Once in $S_1$ electrons may transition to a triplet state, re-emitting a photon through phosphorescence.
     A molecule in a triplet state will be for a longer time to $S_1$ and with an increased chance of oxidation which causes photobleaching.%risk photobleaching through oxidation
         }
@@ -313,21 +340,30 @@ Multiple labels in different spectral windows can further elucidate how labelled
 \subsubsection{Labelling}\index{labelling}
 
 % Labelling of sites direct, primary and secondary.
-Fluorescent labels may be attached to a site on molecule directly, using primary antibodies or secondary antibodies.
-Primary antibody labelling involves attaching an antibody to the target molecule directly and the dye molecule attaching to another site on the antibody.
-Secondary antibody labelling attaches a secondary antibody to the primary antibody and a fluorescent dye to the secondary.
-Secondary antibody labelling has the advantage of the ease of labelling most target molecules with most dye molecules
-However, imaging resolution is lost the longer the ligand attaching to the target, but for convenience of dyes with the suitable anti-group being available.
+Fluorescent labels may be attached to a site on a molecule directly, using primary antibodies or secondary antibodies.
+Direct immunolabeling involves attaching an antibody to the target molecule directly and having the dye molecule attach to another site on the antibody.
+Indirect immunolabeling labelling attaches a secondary antibody to the primary antibody and attaches a fluorescent dye to the secondary.
+Indirect immunolabeling labelling has the advantage of ease of labelling for most target molecules with most dye molecules.
+However, effective resolution (which is distinct from imaging resolution in that effective resolution refers to locating target species) is lost due to the longer ligand attaching to the target.%, but for convenience of dyes with the suitable anti-group being available.
 % Ligand length is also dependant of the type of staining, direct or secondary.
 % Direct labels refer to the dye directly binding to an active site on the molecule of interest,
-The staining process is further inhibited by cellular mechanics; a cell may not endocytose the stain or be it may degraded through \gls{autophagy} in the \gls{lysosome}.
-For non-membrane permeable dyes \gls{transfection} techniques, though invasive, do exist \cite{}.
+The staining process is further inhibited by cellular mechanics; a cell may not take up (endocytose) the stain or be it may degraded by the cell (through \gls{autophagy} in the \gls{lysosome}).
+
+For non-membrane permeable dyes, \gls{transfection} techniques, though invasive, do exist~\cite{kimMammalianCellTransfection2010}.
 Staining can also lead to non-specific binding of fluorescent molecules reducing confidence in specificity and increasing the overall background fluorescent signal in-turn decreasing the image contrast.
 
 For live organism imaging, staining is impractical.
-Genetic manipulation can allow for fluorescent proteins to be expressed with high specificity as the cells themselves are producing the desired fluorescence; with good spatial homogeneity when compared to soaking samples in dye; and low sample toxicity.
+Genetic manipulation can allow for fluorescent proteins to be expressed with high specificity as the cells themselves are producing the desired fluorophore, covalently bonded to the target molecule; with good spatial homogeneity when compared to soaking samples in dye; and low sample toxicity.
 
 %TODO Talk about auto Fluoresence
+
+%NC :
+
+% Can you put a brief section here on filter sets? This wopuld make your jump from talking about lasers to detectors less jarring.
+%
+% I think you also need a short paragraph summarising what people usually do (most people use lasers for point scanning and super res due to the high intensity for multiple colour microscopy people usually combine lasers these wavelength are most comon. NThen talk about spectral selection.
+%
+% Lasers are combined using dichroic mirrors then snt to the sample a dichroic seperates the excitation and emission into different paths and emission filters further suppres out of band signal. An example excitation laser and filter set for 3 colour imaging is shown in figure..
 
 %\subsubsection{Image contrast}
 %\subsubsection{Specificity}
@@ -336,18 +372,18 @@ Genetic manipulation can allow for fluorescent proteins to be expressed with hig
 \subsubsection{Illumnination}
 
 %The Merucry Arc lamp is unibiqitous in lamp-based fluorsence mciroscopes.
-The mercury arc lamp became the ubiquitous excitation source through it emitting in visible emission spectrum and more intensely than a standard halogen lamp.
-However, advances in \gls{LED} and \gls{Laser} technology have caused a technological shift towards these alternative sources.
-Modern \gls{LED}s and \gls{Laser}s are now at the stability and intensity to compete with lamp based sources, with more available intensity and homogeneity.
+The mercury arc lamp became the ubiquitous excitation source for fluorescence microscopy because it emits a broad visible emission spectrum at a higher intensity than a standard halogen lamp.
+However, advances in \gls{LED} and \gls{Laser} technology have caused a technological shift towards these alternative sources especially in fluroesence microscopy where narrow spectrum excitation light sources are desirable.
+Modern \gls{LED}s and \gls{Laser}s are now have the the stability and intensity to compete with lamp based sources, with more available intensity and homogeneity.
 
-\gls{LED} sources are currently behind Lasers in terms of the intensity required for certain imaging applications due to the \emph{\gls{etendue}} of the emission.
+\gls{LED} sources are currently behind Lasers in terms of the intensity required for certain imaging applications due to the \emph{\gls{etendue}} (or geometric extent defined as the product solid angle of of the system's entrance pupil and the area which is conserved through optical systems) of the emission.
 As \gls{etendue} is preserved through any system of optics an \gls{LED} source, having large \gls{etendue}, will be very photon inefficient, to the point of being infeasible for applications such as point-scanning.
 
-\gls{Laser}s are limited to very specific excitation lines due to the materials used, particular in diode lasers.
-These sources are also optically \gls{coherent} which causes self-interference in the illumination profile (speckle) and the sample.
+\Gls{Laser}s are generally limited to very specific excitation lines due to the materials used, particularly in the case of diode lasers.
+\Gls{Laser} light sources are also optically \gls{coherent} which causes self-interference in the illumination profile (speckle) and the sample.
 %For wide-field imaging LED sources may be sufficient with an added benefit of being incoherent.
 %Emission wavelengths are selected from lamp and white LED sources using emission filters.
-A \gls{super-continuum laser} sources uses non-linear effects, typically induced within a long photonic crystal fibre, to produce broad spectrum visible laser light.
+A \gls{super-continuum laser} sources uses non-linear optical effects, typically induced within a long photonic crystal fibre, to produce broad-spectrum visible \gls{Laser} light.
 From this spectrum, wavelengths may then be selected using emission filters, as with lamp-based sources and white LED sources.
 This is in contrast to systems with monochromatic lasers as adding more laser lines requires the physical addition of a new laser, making \gls{super-continuum laser}s versatile.
 % The downside being that t
@@ -364,37 +400,60 @@ However, the intensity of the of the pump laser source is spread into the entire
 
 \subsection{Signal collection}
 
-Once created, the sample image is recorded for analysis and dissemination.
+Once created, the detected image is recorded for analysis and dissemination.
 %Modern camera technology
-For contemporary digital \gls{pixel} (\gls{photosite}) arrays are used in \gls{wide-field} fluoresce microscopes and photo-multiplier tubes (PMT) in \emph{most} laser scanning microscopy.
+Sensors made up of digital \gls{pixel} (\gls{photosite}) arrays are used in \gls{wide-field} fluoresce microscopes (e.g. \gls{CMOS} and \gls{CCD}) and photo-multiplier tubes (PMT) are used in most laser scanning microscopy.
 
 \subsubsection{Detectors}\index{detectors}
 
-\Gls{wide-field} detectors come in many flavours, all of which exploit semi-conductor physics to convert incident photons into electrons.
-\Gls{CCD} based detectors collect electrons during an exposure and transfer in a serial manner through conversion electronics to create digital images.
+Modern \gls{wide-field} detectors come in many types, all of which exploit semi-conductor physics to convert incident photons into electrons.
+\Gls{CCD} based detectors collect electrons during an exposure and transfer in a serial manner through conversion electronics to create digital images, as depicted in \figurename~\ref{fig:sensor_chips}.
 \Gls{ICCD} detectors follow the same protocol but use on-photo-site electron cascading to increase the signal and \emph{intensify} the read image.
 \gls{EMCCD} detectors transfer their entire frame to a separate conjugate chip which digitises the image for computation.
 As the frame is being transferred the signal is amplified to multiply electrons collected in the conjugate digitisation site and intensify the image as in \gls{ICCD}.
 Transferring the entire frame reduces the digitalisation time and increase the imaging frame-rate.
 
-\gls{CMOS} chips directly output a digital value on a per pixel.
+\gls{CMOS} chips directly convert radiant exposure to a digital value on a per pixel basis.
 The additional circuity found off-chip in \gls{CCD} detectors is embedded in each pixel.
-Though this reduces the overall fill factor feasible in each chip, this is recovered using a micro-lens to focus directly onto the active read area of the \gls{photosite}.
+Though this reduces the overall fill factor feasible in each chip, this can be recovered using a micro-lens array to focus directly onto the active read area of the \gls{photosite}.
 The per-photo-site architecture allows for a region-of-interest area to be addressed.
-CMOS detectors made specifically to address quantitative scientific (\gls{sCMOS}) usage boast having: small pixel sizes; low read noise; large detection arrays; large dynamic range and no multiplicative noise.
+\gls{CMOS} detectors made specifically to address quantitative scientific (\gls{sCMOS}) usage tend to have: small pixel sizes; low read noise; large detection arrays; large dynamic range and no multiplicative noise~\cite{verveerAdvancedFluorescenceMicroscopy2015}.
 
 %\subsubsection{Single molecule detection}
 
+\subsubsection{Sensor model}
+
+Each measured pixel value in the digital image, \(y_i\), is therefore modelled as follows, where \(t_\text{exp}\) is the exposure time, \(g\) is the gain, \(a_i\) a per-pixel factor to allow for non-uniform response to illumination (often assumed constant is unity) and \(f_i\) the incident radiant flux on the photo-site. The numbers of the photo-electronics collected at the photo-site is Poisson-distributed, with expected value:
+\begin{align}
+  E(e_i) = t_\text{exp} a_i f_i
+  \intertext{The recorded pixel value is affect by sensor gain and fixed readout noise:}
+  y_i = g(a_i) + r_i(g)
+  \intertext{\(f_i\) (irradiance) can be quantified from \(\mathbf{y}\) by taking a bias frame \(\mathbf{b}\) and estimate:}
+  \hat{f_i} = \frac{y_i-b_i}{g t_\text{exp} a_i}
+\end{align}
 
 \subsubsection{Noise}\index{detector noise}
 
 Adverse noise arises in optical microscopes from several compounding effects.
 The larger the noise level the lower the \gls{SNR} and the more degraded the recorded image will be.
-Increasing the integration (exposure) time of the detector will bring the desired signal out of random background noise.
-A detector with a large \emph{\gls{quantum efficiency}},%(photon to electron conversion efficiency)
+
+The \emph{\gls{dark current}} (noise) contribution occurs in the detectors themselves as the semiconductor material produces erroneous electrons from converting thermal phonons.
+\Gls{dark current} increases linearly with integration time and so chip cooling is recommended.
+\emph{\Gls{photon noise}} (shot) originates from corpuscular photons arriving at the detector following a temporal \Gls{poissonian distribution}.
+An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded.
+\emph{\Gls{read noise}} is rooted in the conversion process of the analogue voltage of electrons, at each \gls{pixel}, to digital values.
+The intensity response across a detector may also be inhomogeneous, this may be flat-field corrected using a calibration from a uniform intensity source.
+\footnote{manufacturers for \gls{sCMOS} cameras apply this correction as standard}
+
+A detector with a large \emph{\gls{quantum efficiency}} (photon to electron conversion efficiency),%
 will be able to overcome noise more quickly.
 The \emph{\gls{dynamic range}} of the detector is the intensity range at which the weak fluorescent signal can be recorded above background noise.
 The \emph{\gls{bit depth}} (8 or \SI{16}{\bit} typically) of the detector defines the detectable intensity resolution, which is of particular use for very weak signals.
+Increasing the integration (exposure) time of the detector will bring the desired signal out of random background noise.
+However this can be limited by other effects such as sample movement on the timescale of imaging or photobleaching.
+%NC
+%Close with noise is one factor which limits fluorescence microscopy.
+% One way of reduceing the effects of noise is to increase exposure time or excitation intensitty. However this can be limited by other effects such as sample movement on the timescale of imaging or photobleaching (start next section0
 
 \begin{figure}
     \centering
@@ -406,13 +465,6 @@ The \emph{\gls{bit depth}} (8 or \SI{16}{\bit} typically) of the detector define
     \label{fig:sensor_chips}
 \end{figure}
 
-The \emph{\gls{dark current}} (noise) contribution occurs in the detectors themselves as the semiconductor material produces erroneous electrons from converting thermal phonons.
-\Gls{dark current} increases linearly with integration time and so chip cooling is recommended.
-\emph{\Gls{photon noise}} (shot) originates from corpuscular photons arriving at the detector following a temporal \Gls{poissonian distribution}.
-An image containing $n$ photons will suffer a variation of $\sqrt{n}$ in photons being emitted, this can appear as valid structure once recorded.
-\emph{\Gls{read noise}} is rooted in the conversion process of the analogue voltage of electrons, at each \gls{pixel}, to digital values.
-The intensity response across a detector may also be inhomogeneous, this may be flat-field corrected using a calibration from a uniform intensity source.
-\footnote{manufacturers for \gls{sCMOS} cameras apply this correction as standard}
 
 % \begin{figure}
 %     \centering
@@ -425,12 +477,15 @@ The intensity response across a detector may also be inhomogeneous, this may be 
 
 \subsubsection{Photobleaching}
 
-Fluorescently stained samples will slowly fade in intensity over time as the dye molecules are photochemically destroyed through photobleaching.
+Fluorescently stained samples will slowly fade in radiance (under fixed illumination) over time as the dye molecules are photochemically destroyed through photobleaching.
 The process occurs typically through photo-oxidation, once the \gls{fluorophore} is in an excited state it may then energetically fall into a triplet state where it is more likely to permanently bond with oxygen radicals.
-Dye medium can be buffered with scavengers of Oxygen radicals to mitigate the process of bleaching.
-Genetically modified organisms suffer less from photobleaching as molecules that have bleached are continually being replaced by newly expressed \gls{fluorophore}s.
+Dye medium can be buffered with scavengers of oxygen radicals to mitigate the process of bleaching.
+In some \emph{in vivo} experiments, genetically modified organisms suffer less from photobleaching as molecules that have photo-bleached are continually replaced by newly expressed (transcribed) \gls{fluorophore}s.
 
-\Gls{photobleaching} can be exploited using \gls{FRAP} wherein an imaging region is purposefully bleached so that unbleached dye molecules may diffuse into the \gls{FOV}.
+%Whilst this is true I feel like the firsat half of the sentence is jarring.
+% When imaging live samples expressing fluorescent proteins photobleached molecules can be replaced by newly transcribed(?) fluorescent proteins
+
+\Gls{photobleaching} can be exploited to learn about a specimen, using \gls{FRAP}; wherein an imaging region is purposefully bleached, so that the rate of diffusion of unbleached dye molecules into the \gls{FOV} can be estimate.
 The rate of return of intensity in the imaging region then gives a measure of diffusion.
 
 % FRET STORM PALM
@@ -439,8 +494,9 @@ The rate of return of intensity in the imaging region then gives a measure of di
 %\paragraph{Reversible photobleaching}
 \subsubsection{Phototoxicity}
 
-Fluorescent dyes can act as \gls{photosensitier} during live imaging, causing damage to functionality of the cell.
-Chromophores of fluorescent proteins are shielded by direct contact from molecular oxygen through protein moiety, making fluorescent proteins less phototoxic.
+Fluorescent dyes can act as \gls{photosensitier} during live imaging, resulting in damage to functionality of the cell.
+%What about other autofluorescent molecules in the sample and other absorbances? I think you need to mention this as one of the niches of light sheet is that it reduces light does, so make it clear just how bad too much light is
+Chromophores of fluorescent proteins are shielded by direct contact from molecular oxygen through protein moiety, and so fluorescent proteins may be less phototoxic to living specimens~\cite{pawleyHandbookBiologicalConfocal2006}.
 % It has beeen suggested that acceptable levels of light exposure will be on the order of a solar.
 %Direct and intense light exposure
 %TODO
@@ -450,6 +506,9 @@ Chromophores of fluorescent proteins are shielded by direct contact from molecul
 %Intensity induced
 %\subsection{Resolution}
 \section{Three dimensional fluorescence microscopy}
+
+The light microscope as discussed is inadequate for imaging thick three dimensional samples as light from the sample, above and below the focal plane, contributes to the detected light.
+
 \subsection{Confocal Microscopy}
 
 Marvin Minksy proposed the first \gls{confocal microscope} in the late 1950s to image deep into brain tissue.
@@ -457,11 +516,11 @@ A pinhole is placed in a conjugate image plane in the detection path which precl
 The narrower the pinhole the better the optical sectioning, though sacrificing the received signal.
 
 In Minky's microscope the sample was mechanically scanned to build a volumetric image.
-By mechanically scanning the imaging speed is greatly reduced but to the speed of responses of the stage, the maximum speed of travel of the stage and the relaxation time of the stage.
-Specimens are prone to spatial shifts during scanning as well which causes distortions in the final image.
+By mechanical scanning, the imaging speed is greatly reduced due to the speed of responses of the stage, the maximum speed of travel of the stage and the relaxation time of the stage.
+Specimens are prone to spatial shifts during scanning as well, which causes distortions in the final image.
 
-Modern \gls{confocal microscope}s use \gls{galvanometric scanning mirrors} to sweep a laser beam through the sample to build an image.
-Though faster than mechanical scanning, video-rate scanning confocal microscopy is only viable using \gls{resonant scanning mirrors} and high power lasers.
+Modern \gls{confocal microscope}s use often \gls{galvanometric scanning mirrors} to sweep a laser beam through the sample to build an image.
+Though faster than mechanical scanning, video-rate scanning confocal microscopy is only viable using \gls{resonant scanning mirrors} and high power lasers (due to the photon rejecitng nature of the confocal pinhole).
 
 % \subsubsection{Spinning disk confocal microscopy}
 %
@@ -476,23 +535,27 @@ Though faster than mechanical scanning, video-rate scanning confocal microscopy 
 
 The photon rejecting pin-hole of \gls{confocal microscope}s can be entirely avoided by using infra-red laser sources.
 Exciting a \gls{fluorophore} to an excited state requires a quantised amount of energy, which is typically supplied by a single photon.
-Two photons, each with double the desired wavelength, will contain the requisite amount of energy to cause the same excitation.
-For this event to occur there need to be a high photon density surrounding the \gls{fluorophore}.
-In a laser scanning system, this means that the beam focus of the \gls{objective lens} is the most likely place for fluorescence to occur, with a sharp decline in axial intensity axially, providing optical sectioning.
+However, two photons, each with double the desired wavelength, also contain the requisite amount of energy to cause the same excitation.
+For this event to occur, there needs to be a high photon density surrounding the \gls{fluorophore}.
+In a laser scanning system, this means that the beam focus of the \gls{objective lens} is the most likely place for fluorescence to occur, with a sharp decline in intensity axially, providing optical sectioning.
 
-By using \gls{2P} excitation greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced \gls{photo-toxicity}, making the technique very useful for non-invasive live imaging.
+By using \gls{2P} excitation, greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced \gls{photo-toxicity}, making the technique very useful for non-invasive live imaging.
 
-\subsubsection{Drawbacks}
+\subsubsection{Drawbacks} %500nm -> 10^-01.4 10^+1.8
 
-Water, which is abundant in biological specimens, has a large absorbance in the infrared spectrum; combined with the high energy needed to create the \gls{2P} effect at the focal point, this can cause localised heating which can in-turn be damaging to specimens and cause optical \gls{aberration}s.
+Water, which is abundant in biological specimens, has a large absorbance in the infrared spectrum, 3 orders of magnitude larger than in the visible spectrum (e.g. \SI{532}{\nano\meter} versus \SI{1064}{\nano\meter});
+combined with the high energy needed to create the \gls{2P} effect at the focal point, this can cause localised heating which can in-turn be damaging to specimens and cause optical \gls{aberration}s.
 Localised heating can be mitigated by moving the beam sufficiently quickly such that significant heating does not occur.
-Using infrared excitation also means that the \gls{2P} imaging has a much reduced theoretical lateral resolution when compared to visible confocal microscopy.
-Finally, infrared-red laser sources are prohibitively expensive and, until recently, reliable turn-key solutions were not viable.
+Using infrared excitation also means that the \gls{2P} imaging has a coarser lateral resolution when compared to visible confocal microscopy due to their wavelength (Equation~\eqref{eq:lateral_res}).
+Finally, infrared-red laser sources are more difficult to work with for alignment than visible \gls{Laser}s
+% prohibitively expensive and, until recently, reliable turn-key solutions were not viable.
 
 \subsection{Structured illumination microscopy}
 
-In \gls{SIM}, the sample is illuminated with a periodic sinusoidal pattern using a fast \gls{wide-field} microscope.
-The mixing of this illumination frequency with the spatial frequency of the sample means that additional resolution can be extracted both in $xy$ and $z$.
+In \gls{SIM}, the sample is sequentially illuminated with several periodic patterns using a fast \gls{wide-field} microscope.
+The mixing of each illumination pattern with the structure of the fluorescent sample results in several diffraction limited images from which a high-resolution image of the original sample can be computationally reconstructed.
+Furthmore optical sectioning can also be achieved using specific illumination.
+% means that additional resolution can be extracted both in $xy$ and $z$.
 
 \begin{figure}
     \centering
@@ -532,18 +595,23 @@ The mixing of this illumination frequency with the spatial frequency of the samp
     \label{fig:sim_flowers}
 \end{figure}
 
-As discussed, an \gls{objective lens} acts as a band pass filter for low-frequency information.
-From the \emph{\Gls{convolution theorem}} (see Appendix \ref{appendix:convolution_theorem}), the multiplication of two signals in real-space is the convolution of the two \gls{Fourier transform}ed signals in frequency space and, importantly, visa versa -
-the convolution of two signals in real space is the multiplication of the Fourier transformed signals in frequency space.
-Meaning that projecting a sinusoidal pattern in real space will convolve the Fourier transform of the sample signal in frequency space with the Fourier transform of the sinusoid signal.
+As discussed in section~\ref{sec:resolution}, an \gls{objective lens} acts as a band pass filter for low-frequency information.
+From the \emph{\Gls{convolution theorem}} (see Appendix \ref{appendix:convolution_theorem}):
+\begin{align}
+  \mathcal{F} (f(\mathbf{r}) \cdot g(\mathbf{r})) = \mathcal{F}(f(\mathbf{r})) * \mathcal{F}(g(\mathbf{r}))
+\end{align}
+% the multiplication of two signals in real-space is the convolution of the two \gls{Fourier transform}ed signals in frequency space and,
+Furthermore, the convolution of two signals in real space is the multiplication of the Fourier transformed signals in frequency space.
+This indicates that projecting a sinusoidal pattern in real space will convolve the Fourier transform of the sample signal in frequency space with the Fourier transform of the sinusoid signal.
 The Fourier transform of a sinusoid is three delta functions at \SI{-1}, \SI{0} and \SI{+1} with a separation governed by the pattern frequency: $k_1 = {2\pi}{\lambda}$.
-And so, before the imaging system can band-pass the signal, the illumination pattern has forced three copies of the original image into the pass band, shifted by the vectors $k_1$ and $k_{-1}$ such that high frequency information outside of the pass band has been cumulated.
-The overlaid information is then computational unmixed by imaging with three different sinusoid phases to delineate the \SI{-1}{}, \SI{0}{} and \SI{+1}{} orders for reconstruction, see \figurename~\ref{fig:sim_flowers}.
+And so, before the imaging system can band-pass the signal, the illumination pattern has forced three copies of the Fourier transform of the original structure into the pass band.
+These copies are shifted by the vectors $k_1$ and $k_{-1}$ such that high frequency information outside of the pass band of a uniformly illuminated system is now captured. %has been cumulated.
+The overlaid information can then be computationally unmixed by imaging with three different sinusoidal illumination phases to delineate the \SI{-1}{}, \SI{0}{} and \SI{+1}{} orders for reconstruction, see \figurename~\ref{fig:sim_flowers}.
 
 \subsubsection{Optical sectioning \gls{SIM}}
 
 Three dimensional information can be extracted by manipulating frequency space even further.
-For instance, the \emph{\gls{missing cone}} (see \figurename~\ref{fig:sim_axial}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
+For instance, the \emph{\gls{missing cone}} of axial spatial frequencies for the structures's Fourier transform (see \figurename~\ref{fig:sim_axial}) can be filled in by using an illumination pattern with $k$-vectors half the maximum available.
 In frequency space this pushes the region of the missing cone into axial resolution maxima of the \gls{OTF} support (toroidal), giving three dimensional structure.
 By adding a third beam along the optical axis to interfere with the sinusoidal pattern, a further axial sinusoidal pattern can be created.
 
@@ -604,8 +672,8 @@ By adding a third beam along the optical axis to interfere with the sinusoidal p
 The techniques as introduced above all provide volumetric imaging through reconstruction.
 Structured illumination techniques require computation reconstruction which is prone to artefacts.
 Confocal scanning is slow and generally lossy with signal.
-Light-sheet microscopy offers reconstruction free (\gls{SIM}), fast, low photo-toxic volumetric imaging.
-The application of light-sheet microscopy is the focus of this thesis and will be covered in detail in the next following chapter.
+Light-sheet microscopy offers reconstruction-free, fast, low photo-toxicity volumetric imaging.
+The application of light-sheet microscopy is the focus of this thesis and will be introduced in detail in the following chapter.
 
 % In light sheet microscopy, the sample is illuminated with a thin sheet of light to obtain optical sections.
 % The microscope generally consists of two orthogonal optical axes: one for generating the light sheet for illumination, and the other for widefield detection of the emitted fluorescence.
