@@ -1,10 +1,10 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 31875
-Words in headers: 640
-Words outside text (captions, etc.): 5323
+Words in text: 32119
+Words in headers: 641
+Words outside text (captions, etc.): 5492
 Number of headers: 211
-Number of floats/tables/figures: 86
+Number of floats/tables/figures: 88
 Number of math inlines: 490
 Number of math displayed: 84
 Subcounts:
@@ -14,13 +14,13 @@ Subcounts:
   755+15+0 (4/0/0/0) Section: Motivation
   49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
   1059+22+265 (10/6/32/6) Section: Light microscopy
-  1542+23+174 (13/3/19/1) Section: Fluorescence microscopy
-  780+21+239 (7/2/9/1) Section: Three dimensional fluorescence microscopy
-  891+15+186 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} technology}\label{chapter:literature
-  561+14+257 (7/2/0/0) Section: Objective arrangements
-  370+4+39 (1/0/0/0) Section: Single objective \gls{light-sheet} microscopy
-  573+11+73 (6/1/0/0) Section: Illumination
-  91+1+0 (1/0/0/0) Section: Summary
+  1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
+  831+21+239 (7/2/9/1) Section: Three dimensional fluorescence microscopy
+  1005+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
+  566+14+258 (7/2/0/0) Section: Objective arrangements
+  379+4+192 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
+  618+11+73 (6/1/0/0) Section: Illumination
+  92+1+0 (1/0/0/0) Section: Summary
   161+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1491+17+363 (10/4/14/0) Section: Hardware
   1084+16+299 (9/3/9/1) Section: Software
