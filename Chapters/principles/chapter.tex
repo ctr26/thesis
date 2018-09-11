@@ -49,7 +49,7 @@ Both of these rays propagate in parallel within the \emph{infinity space} betwee
 Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be selected arbitrarily.
 Typically the back focal points are matched to create a \emph{\gls{4f} system}, as shown in \figurename~\ref{fig:magnification}, as this configuration improves imaging quality by reducing optical aberrations.
 
-The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}. %TODO not quite right
+The marginal ($r_m'$) and chief ($r_c'$) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}.
 $o_1'$
 The image size ($O'$) in the primary image plane is set by the distance between the intersection of the primary image plane to the intersect of the the margin ($r_m'$) and chief rays ($r_c'$) at the tube lens.
 % The marginal rays for each lens in a \gls{4f} system will
@@ -102,13 +102,13 @@ The optically simpler of the two is the source focus or critical illumination an
 
 Critical illumination uses a single \emph{condenser} lens whereas Kohler illumination uses an additional \emph{collector} lens.
 The use of two illumination lenses allows for a conjugate \gls{4f}  system of illumination to the detection optics, this ensures that all ray bundles passing through the sample are parallel and the illumination brightness is homogenous.
-Having a conjugated illumination also allows for alternative contrast methods to be implemented. %TODO sort
+Having a conjugated illumination also allows for alternative contrast methods to be implemented.
 
 In the illumination beam paths discussed earlier, the specimen is placed between the light source and the \gls{objective lens}.
 In many cases, however, it is advantageous to illuminate the specimen from the side of observation (\emph{epi-illumnination}).
 For instance, when looking at the reflection of opaque samples, or the emission of fluorescent samples.
 Optically the illumination is the same or similar with the condenser lens then being the imaging \gls{objective lens} as well.
-% In that case, some optical components of illumination and imaging are identical, for example, the \gls{objective lens}. %TODO reword
+% In that case, some optical components of illumination and imaging are identical, for example, the \gls{objective lens}.
 
 \subsection{Resolution}\label{sec:resolution}
 %Magification versus resolution
@@ -229,7 +229,7 @@ To then choose the correct system magnification (\(M_\text{system}\)) it follows
 
 For a detector with \gls{photosite}s (detector pixels) in a square array with a pitch of \SI{6}{\micro\meter}, a magnification on the order of \(50\times\) is sufficient for diffraction limited imaging using visible light.\index{magnification}
 Magnification in excess of this limit is deemed \emph{empty magnification} and decreases the overall \gls{SNR} of the recorded image.
-However, such over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited, may be used to increase resolution computationally[imaging intracellular betzig].%TODO
+However, such over-sampling plays an important role in super-resolved systems where the additional pixel information, though diffraction limited, may be used to increase resolution computationally~\cite{betzigImagingIntracellularFluorescent2006}.
 \pagebreak
 \begin{figure}
     \centering
@@ -286,8 +286,7 @@ However, such over-sampling plays an important role in super-resolved systems wh
     (\subref{fig:digital_airy_sample_9}), shows Nyquist sampling;
     (\subref{fig:digital_airy_sample_23}) is over sampled, giving super detector resolution.
     (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and the images may be mis-interpretted as being produced by a single emitter or by a continuous feature, instead of two distinct point emitters.
-    hence detect a single emitter.}
-    \label{fig:airy_disk_resolution}
+    hence detect a single emitter.}\label{fig:digital_airy}
 \end{figure}
 \pagebreak
 
@@ -498,7 +497,6 @@ Fluorescent dyes can act as \gls{photosensitier} during live imaging, resulting 
 Chromophores of fluorescent proteins are shielded by direct contact from molecular oxygen through protein moiety, and so fluorescent proteins may be less phototoxic to living specimens~\cite{pawleyHandbookBiologicalConfocal2006}.
 % It has beeen suggested that acceptable levels of light exposure will be on the order of a solar.
 %Direct and intense light exposure
-%TODO
 
 
 %Photodynamic effwect
