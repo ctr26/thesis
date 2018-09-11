@@ -557,17 +557,14 @@ Slit-scanned \gls{SIM} simulations of a test image were successfully reconstruct
 
 \subsection{Slit-scanning \gls{mSIM}}
 
-The same principle for \gls{slit-scanning} \gls{SIM} can be also be applied to \gls{mSIM}.
-\gls{mSIM} uses a square lattice of illumination points, raster scanned across the sample to provide a fast, parallelised, confocal-like image.
-Each spot is computationally pin-holed, and the resulting images are summed to produce a final, super-resolved image.
-
+The same principle for \gls{slit-scanning} \gls{SIM} can be also be applied to \gls{mSIM}, which was presented in Section~\ref{sec:msim}.
 In \gls{slit-scanning} \gls{mSIM}, during each exposure, the \gls{SLM} will display a single row of illumination spots from the full lattice with a standard \gls{mSIM} pattern.
 This row is then swept synchronously with the virtual slit as with slit-\gls{SIM}.
 For the proceeding exposure, the line of point illuminators is iterated in the orthogonal direction to the propagating shutter.
 
 The act of using a virtual slit on the camera reduces the dimensionality of the reconstruction of an \gls{mSIM} image, drastically increasing the speed of an acquisition without the need for additional optics.
 Ordinarily, the virtual pin-holing step is achieved computational by reconstructing from an \(n\times n\) (\(O(n^2)\)) set of images; using \gls{slit-scanning} the reconstruction reduces to $n$ (\(O(n)\)) operations.
-Schroff~\emph{et. al.}, for instance, require \SI{200 x 200}{} images for a single \gls{mSIM} reconstruction.
+Schroff~\emph{et. al.}, for instance, require \SI{200 x 200}{} images for a single \gls{mSIM} reconstruction~\cite{yorkResolutionDoublingLive2012}.
 The method proposed here, would potentially increase the speed of this process by \SI{200}{} fold.
 % This is however dwarfed by \gls{iSIM}, which gives instantaneous super-resolved images at the cost of requiring extensive additional optics\cite{yorkInstantSuperresolutionImaging2013}.
 %\Gls{slit-scanning} mSIm was considered whereby the number of images to be reconstructed in the final image was square-rooted.

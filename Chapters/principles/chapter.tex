@@ -169,7 +169,7 @@ By placing two point emitters close such that the first zero crossing of the Bes
     \implies d_r &= \frac{1.22 \lambda}{NA_{\text{objective}}}
 \end{align}
 
-The resulting distance is Rayleigh's criterion for resolution which provides a limit to the resolution of a system based on a dip in intensity maxima, between two neighbouring emitters, of \SI{75}{\percent} as shown in \figurename~\ref{fig:airy_rayeligh}.
+The resulting distance is Rayleigh's criterion for resolution which provides a limit to the resolution of a system based on a dip in intensity maxima, between two neighbouring emitters, of \SI{75}{\percent} as shown in \figurename~\ref{fig:airy_rayleigh}.
 
 %Coherent and incoherent
 \subsubsection{Axial resolution}
@@ -189,8 +189,7 @@ The \gls{depth of field} physically refers to the distance a focussed object may
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{+airy_rayleigh}
-        \caption{The Rayleigh criteon, whereby the centre of the second emitter sits at the first zero of the first emitter}
-        \label{fig:airy_rayleigh}
+        \caption{The Rayleigh criteon, whereby the centre of the second emitter sits at the first zero of the first emitter}\label{fig:airy_rayleigh}
     \end{subfigure}
     \begin{subfigure}[b]{\textwidth}
         %\centering
@@ -658,6 +657,41 @@ By adding a third beam along the optical axis to interfere with the sinusoidal p
     \label{fig:sim_axial}
 \end{figure}
 
+\subsubsection{\gls{mSIM}}\label{sec:msim}
+
+Schroff~\emph{et. al.} showed that three dimensional, super-resolved, information can be also be extracted by \gls{mSIM}~\cite{yorkResolutionDoublingLive2012}.
+\gls{mSIM} uses a square lattice of illumination points which raster scan across the sample to provide a fast, parallelised, confocal-like image.
+Each spot is computationally pin-holed, and the resulting images are summed to produce a final, super-resolved image, as in \figurename~\ref{fig:mSIM}.
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[t]{0.185\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{msim/raw_excited}
+    \caption{A lattice of illumination points}\label{fig:msim/raw_excited}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.185\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{msim/recorded_excited}
+    \caption{The image as recorded by the detector}\label{fig:msim/recorded_excited}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.185\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{msim/digital_pinholing}
+    \caption{Digital pin-holing}\label{fig:msim/digital_pinholing}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.185\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{msim/column}
+    \caption{Reconstructing}\label{fig:msim/column}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.185\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{msim/reconstructed}
+    \caption{Full mSIM reconstruction}\label{fig:msim/reconstructed}
+  \end{subfigure} % \includegraphics{/path/to/figure}
+  \caption{\gls{mSIM} uses a square lattice of illumination spots in (a) and (b); which are digitally pin-holed in (c); and raster scanned in (d); to build a super-resolved image in (e)}\label{fig:mSIM}
+\end{figure}
 
 % After separation, the information can be shifted back to
 % its respective position, resulting in an expanded accessible frequency area (c). To expand

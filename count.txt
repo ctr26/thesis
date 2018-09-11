@@ -1,10 +1,10 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 32287
-Words in headers: 640
-Words outside text (captions, etc.): 5621
-Number of headers: 211
-Number of floats/tables/figures: 88
+Words in text: 32311
+Words in headers: 641
+Words outside text (captions, etc.): 5669
+Number of headers: 212
+Number of floats/tables/figures: 89
 Number of math inlines: 493
 Number of math displayed: 84
 Subcounts:
@@ -15,7 +15,7 @@ Subcounts:
   49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
   1059+22+265 (10/6/32/6) Section: Light microscopy
   1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
-  831+21+239 (7/2/9/1) Section: Three dimensional fluorescence microscopy
+  887+22+287 (8/3/9/1) Section: Three dimensional fluorescence microscopy
   1005+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
   566+14+258 (7/2/0/0) Section: Objective arrangements
   379+4+192 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
@@ -39,7 +39,7 @@ Subcounts:
   175+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
   546+5+99 (2/2/5/1) Section: Single beam confocal \gls{slit-scanning}
   742+20+206 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
-  705+10+299 (4/4/19/7) Section: Structured illumination enhanced with \gls{slit-scanning}
+  673+10+299 (4/4/19/7) Section: Structured illumination enhanced with \gls{slit-scanning}
   560+9+0 (3/0/1/0) Section: Discussion and future work
   330+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
   688+4+336 (1/3/0/0) Section: The design and construction
