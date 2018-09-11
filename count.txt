@@ -1,10 +1,10 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 32311
+Words in text: 32430
 Words in headers: 641
-Words outside text (captions, etc.): 5669
+Words outside text (captions, etc.): 5735
 Number of headers: 212
-Number of floats/tables/figures: 89
+Number of floats/tables/figures: 90
 Number of math inlines: 493
 Number of math displayed: 84
 Subcounts:
@@ -13,7 +13,7 @@ Subcounts:
   113+1+0 (1/0/0/0) Chapter: Introduction
   755+15+0 (4/0/0/0) Section: Motivation
   49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
-  1059+22+265 (10/6/32/6) Section: Light microscopy
+  1056+22+265 (10/6/32/6) Section: Light microscopy
   1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
   887+22+287 (8/3/9/1) Section: Three dimensional fluorescence microscopy
   1005+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
@@ -41,10 +41,10 @@ Subcounts:
   742+20+206 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
   673+10+299 (4/4/19/7) Section: Structured illumination enhanced with \gls{slit-scanning}
   560+9+0 (3/0/1/0) Section: Discussion and future work
-  330+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
-  688+4+336 (1/3/0/0) Section: The design and construction
-  467+6+48 (2/2/0/0) Section: Sample preparation
-  189+1+0 (1/0/0/0) Section: Summary
+  345+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
+  714+4+390 (1/4/0/0) Section: The design and construction
+  479+6+60 (2/2/0/0) Section: Sample preparation
+  185+1+0 (1/0/0/0) Section: Summary
   745+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   635+15+87 (4/2/8/0) Section: Single particle tracking microscopy
   609+17+49 (5/1/11/2) Section: Astigmatic tracking
@@ -75,7 +75,7 @@ Subcounts:
   244+5+0 (2/0/0/0) Section: The sample chamber
   113+11+0 (2/0/0/0) Section: Viral imaging using single particle tracking
   72+5+0 (1/0/0/0) Section: Magnetic tweezers and light-sheet microscopy
-  304+2+0 (1/0/0/0) Section: Additional samples
+  377+2+0 (1/0/0/0) Section: Additional samples
   0+2+0 (1/0/0/0) Chapter: Appendixed Methods
   295+6+25 (1/1/8/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
   0+3+0 (1/0/0/0) Section: System alignments protocol

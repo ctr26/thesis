@@ -16,10 +16,10 @@
  %Implementations of light-sheet microscopes are typically incompatible with traditional standard conventions.
 
 Implementations of light-sheet microscopes are often incompatible with standard methods of sample mounting.
-Light-sheet microscopy uses orthogonal illumination and detection to create a thin sheet of light which does not illuminate outside of the depth of field of the detection axis.
+Light-sheet microscopy uses orthogonal illumination and detection to create a thin sheet of light which does not illuminate the sample outside of the depth of field of the detection axis.
 Typically, this configuration involves a pair of orthogonal objectives which constrains the positioning of a length of coverslips or microscopes in range of the detection objective.
-In this chapter An Open-Hardware sample mounting system for light-sheet microscopes using large detection objectives is presented.
-The design will be submitted for publication by the submission of this thesis.
+In this chapter an \gls{open-hardware} sample mounting system for light-sheet microscopes using large detection objectives is presented.
+The design will be submitted for publication by the submission of this thesis~\cite{russellOpenhardwareSampleMounting}.
 
 \pagebreak
 
@@ -28,15 +28,15 @@ The design will be submitted for publication by the submission of this thesis.
 %A significant drawback of LSFMs is that sample mounting can be cumbersome.
 There have been several attempts at imaging on flat glass in order for light-sheet microscopes to be compatible with favoured sample mounting techniques.
 The simplest method involves using a pair of objectives with an aperture angle of less than \SI{90}{\degree} and mounting those above a sample holder.
-\figurename~\ref{fig:matched_objectives} shows how the di-SPIM\cite{1} uses a pair of \SI{40}{\times} 0.8 \gls{NA} objectives to allow a glass slip to be inserted, whilst sacrificing \gls{NA}.
-The \gls{NA} is then reclaimed through image fusion, albeit after two volumes are acquired from two cameras at half temporal resolution.
-The lattice light sheet\cite{2}, for instance, chooses a special objective pair such that the sum of its solid angles, seen in \figurename~\ref{fig:solid_angles}, of its numerical apertures does not interfere with the glass raised from below.
+\figurename~\ref{fig:matched_objectives} shows how the di-SPIM~\cite{kumar_using_2016} uses a pair of \SI{40}{\times} 0.8 \gls{NA} objectives to allow a glass slip to be inserted, whilst sacrificing \gls{NA} when compared to larger detection objective lenses.
+The \gls{NA} is then reclaimed through image fusion, albeit after image data for two volumes are acquired from two cameras at a cost of halving temporal resolution.
+The lattice light sheet\cite{chen_lattice_2014}, for instance, chooses a special objective pair such that the sum of its solid angles, seen in \figurename~\ref{fig:solid_angles}, of its numerical apertures does not interfere with the glass raised from below.
 To do so, a special (expensive) excitation objective is mounted along a with Nikon 1.1 NA \SI{25}{\times} objective at angles to the sample mounting section to allow a sample chamber to be inserted, as shown in \figurename~\ref{fig:asymmetric_special}.
 
 As depicted in \figurename~\ref{fig:mounting_strategies_cells} and \figurename~\ref{fig:mounting_strategies_fish_cartoon}, other techniques for light-sheet imaging require specialist sample mounting and preparation to be employed.
 These methods present a barrier that can discourage new users of light-sheet microscopy.
 %; this paper presents protocols and open-source designs, using 3D printing technology, to help dispel this barrier.
-3D printing allows the home user to print structurally integral and disposal structures with the ability to reconfigure the shape to their needs.
+\gls{3D printing} allows the home user to print structurally robust and disposal structures with the ability to reconfigure the shape to their needs.
 %Here we present an open source CAD files for a design we have optimised for a sample chamber that is compatible with an inverted Single Plane Illumination Microscope.
 %Our design allows the imaging of cell culture and embryos in their native conditions for long term microscopy.
 % Light-sheet microscopy uses orthogonal illumination and detection to create a thin sheet which does not illuminate outside of the depth of field of the detection axis.
@@ -87,16 +87,18 @@ These methods present a barrier that can discourage new users of light-sheet mic
 
 \section{The design and construction}
 
-The sample chamber presented here is designed around a pair of 1.1 \gls{NA} \SI{25}{\times} \gls{LWD} and 0.3 \gls{NA} LWD \SI{10}{\times} water-dipping Nikon objectives, both of which are used for physiological imaging and are prolific in the field of light-sheet microscopy.
-\figurename~\ref{fig:assymetric_nikon} shows how this objective pair, if mounted at \SI{45}{\degree} to a flat sample will impede sample positioning.
+The sample chamber presented here is designed around a pair of objective lenses, a1.1 \gls{NA} \SI{25}{\times} \gls{LWD} and a 0.3 \gls{NA} LWD \SI{10}{\times} water-dipping Nikon objective.
+Both are used for physiological imaging, and are widely used in the field of light-sheet microscopy.
+\figurename~\ref{fig:assymetric_nikon} shows how this objective pair, if mounted at \SI{45}{\degree} to a flat sample will intrude on the imaging volume.
 Similarly the sample plane of the detection objective cannot be reached at any angle for the pair of objectives.
 
-At the core of the design is a right-angle shelf for cover-glass to be mounted on, this gives access to \SI{2x20}{\milli\metre} area of accessible cover-glass at the edge of a its edge.
-Beneath the shelf is a recess which allows for sample positioning from below using a Raspberry Pi-Cam, as well as mitigating any reflection or scattering from the laser illumination source, see \figurename~\ref{fig:chamber_side} for an illustration.
+At the core of the design is a right-angle shelf on which a cover-glass bearing the specimen is mounted on
+This gives access to \SI{2x20}{\milli\metre} area of accessible cover-glass at of one of its edges.
+Beneath the shelf is a recess which allows for sample positioning from below using a Raspberry Pi-Cam, as well as mitigating any reflection or scattering from the laser illumination source, \figurename~\ref{fig:chamber_side} presents an an illustration of the recess.
 The sample is held down firmly by a \glslink{3D printing}{3D printed} brace with embedded magnets.
 The brace is coupled to magnets inserted below mounted in a printed tray, which inserts into a slot.
 The slot also allows for heating module, making it suitable for cell culture, embryos, microbes and more.
-The temperatures used will not damage the printed chamber material (\gls{ABS} printed using a MakerBot Replicator 2x) begins to deform at \SI{140}{\degree}.
+The temperatures used will not damage the printed chamber material (\gls{ABS} plastic printed using a MakerBot Replicator 2x) begins to deform at \SI{140}{\degree}.
 
 \begin{figure}
     \centering
@@ -128,19 +130,19 @@ The temperatures used will not damage the printed chamber material (\gls{ABS} pr
 \end{figure}
 
 Perspex windows are laser cut and inserted in the side of the chamber (for user viewing) and below the sample (for additional illumination and camera viewing).
-Cyanoacrylate (Super-Glue) is used to adhere the window, which ensure a liquid-tight seal.
-The adhesive is applied whilst the surface's protective film is attached to the Perspex and removed only when the cyanoacrylate is fully set, as cyanoacrylate vapour settles on surfaces and causes opacity.
+Cyanoacrylate (Super-Glue) is used to secure the windows to the sample chamber, which ensure a liquid-tight seal.
+The adhesive is applied whilst the surface's protective film is attached to the Perspex and the film is removed only when the cyanoacrylate is fully set, as cyanoacrylate vapour settles on surfaces and causes opacity.
 % A secondary window is cut and inserted facing the user for sample positioning, in the same manner.
 This allows both objectives to be accurately positioned, with respect to the mounted sample, by eye, fine correction can then be achieved using texture in the sample either from bright-field or fluorescence modes.
 
-The sample window below not only allows for a small camera module (Pi-cam, Raspberry Pi\cite{BrightPiBright}) to be positioned
+The transparent sample window below not only allows for a small camera module (Pi-cam, Raspberry Pi~\cite{BrightPiBright}) to be positioned
 % The camera chosen here allows
-but also for the attachment of a supplemental light source (Bright-PI\cite{CameraModuleV2}) which offers sufficient bright-field illumination as well as an infrared modality.
+but also for the attachment of a supplemental light source (Bright-PI~\cite{CameraModuleV2}) which offers sufficient bright-field illumination as well as an infrared modality.
 The under-sample illumination is useful for the positioning of samples without laser illumination, minimising overall photon dose to the sample.
 Users may also find the additional illumination modes valuable when coarse positioning using a camera on the low magnification illumination arm.
-For this system, the illumination arm is a \SI{10}{\times} objective versus the detection magnification of \SI{25}{\times}\SI{1.25}{\times}, and so coarse positioning is made along the illumination objective.
+(In the present system, the illumination arm is a \SI{10}{\times} objective versus the detection magnification of \SI{25}{\times}\SI{1.25}{\times}, and so coarse positioning is performed along the illumination objective.)
 
-The camera model chosen here (\SI{4}{\centi\metre}), uses a very short focal length lens, which is matched to the height of void below the sample-mounting in the sample chamber.
+The camera model chosen here, uses a very short focal length lens (\SI{4}{\centi\metre}), which is matched to the height of void below the sample-mounting in the sample chamber.
 % It is also compatible with the \emph{Bright-PI} which offers sufficiently bright field illumination as well as an IR modality which could be used provided the user insert the correction filters in their detection paths.
 To protect the delicate objectives from touching the sharp edge of the cover-glass, the sample chamber is chamfered along it edges parallel to the objectives, restricting their lateral movement.
 The chamfers also serve to minimise immersion liquid within the sample chamber, decreasing the cost per experiment as well as mitigating deleterious spillage.
@@ -150,8 +152,9 @@ For cellular imaging, the entire assembly may be cleaned by immersing in Isoprop
 
 Chambers were printed from ABS and PLA which are ubiquitous, and biologically inert, plastics used in \gls{3D printing}.
 It should be noted that ABS and PLA 3D printed chambers do not survive autoclaving, nor overnight washes with Vircon or IPA.
-If the chamber is exposed to severe imaging conditions that require containment, multiple chambers may be printed and disposed of; allowing for high-throughput imaging when compared to a machined chamber which would require sterilisation after each use.
-The design features cleared M6 holes to mount the chamber to a breadboard below, in this case the chamber is attached to a breadboard insert on the translation stage.
+If the chamber is exposed to severe imaging conditions (contagions, prions, toxic chemicals) that require containment, multiple chambers may be printed and disposed of; allowing for high-throughput imaging when compared to a machined chamber which would require sterilisation after each use.
+The design features cleared M6 holes to mount the chamber to a breadboard below.
+In the present design the chamber is attached to a breadboard insert on an XYZ translation stage.
 Other spacings and sizings of mounting holes may be easily added to the chamber ad-hoc, using standard \gls{3D} \gls{CAD} packages (ex. Autodesk Inventor, SolidWorks, OpenScad).
 % The adhesive is applied whilst the surface protective film is on the Perspex and removed only when the cyanoacrylate is fully set as vapour cyanoacrylate settles on surfaces and is causes opacity.
 % A secondary window should be cut and inserted facing the user for sample positioning, in the same manner.
@@ -257,33 +260,60 @@ Other spacings and sizings of mounting holes may be easily added to the chamber 
     \label{fig:mounting_strategies_fish_cartoon}
 \end{figure}
 
-
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.4\linewidth}
+         \centering
+        \includegraphics{edge_mount/cells}
+         \caption{Cell mounting}\label{fig:edge_mount/cells}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\linewidth}
+             \centering
+        \includegraphics{edge_mount/fish}
+         \caption{Organism mounting}\label{fig:edge_mount/fish}
+    \end{subfigure}
+    % \begin{subfigure}[b]{0.4\linewidth}
+    %          \centering
+    %     \includegraphics{mounting_strategies_fish_cartoon/mirrored}
+    %      \caption{Reflective cuvette}
+    % \end{subfigure}
+    % \begin{subfigure}[b]{0.4\linewidth}
+    %          \centering
+    %     \includegraphics{mounting_strategies_fish_cartoon/pedestal}
+    %      \caption{Agarose on pedestal}
+    % \end{subfigure}
+    \caption[Strategies for mounting using the edge of a coverslip]{Strategies for mounting using the edge of a coverslip as proposed in this work.
+    In (a), cells are cultured on cover glass for which protocols for sterile cell mounting are widespread.
+    In (b), organisms are mounted in \gls{FEP} tubing containing agarose and are adhered to cover glass using nail varnish.
+    }
+    \label{fig:edge_mount}
+\end{figure}
 
 \section{Sample preparation}
 
-In \figurename~\ref{fig:fish_image} \gls{Zebrafish} were manually \glslink{Chorion}{dechorionated}, with tweezers, on a bed of solid agarose, immersed in embryo medium, using a stereo-microscope.
-The dechorionated Zebrafish were then transferred into molten agarose and gently drawn into a length of \gls{FEP} tubing, attached to a pipette tip.
+In \figurename~\ref{fig:fish_image} \gls{Zebrafish} were manually \glslink{Chorion}{dechorionated}, with tweezers, on a bed of solid agarose immersed in embryo medium, using a seperate stereo-microscope for dissection.
+The dechorionated Zebrafish were then transferred into molten agarose and gently drawn into a length of \gls{FEP} tubing attached to a pipette tip.
 Organisms are mounted in agarose within in \gls{FEP} tubing to help match refractive indices between immersion medium and the agarose.
-\SI{0.8}{\percent} \gls{agarose VII} was used as higher percentage agarose may restrict the growth of a developing embryo as well as cause more scattering and refractive index mismatch; \gls{agarose VII} produces the best imaging conditions of the agarose\cite{4}.
-Once the embryo was embedded in its agarose tubing it was transported (made safe an convenient in the \gls{FEP}) for imaging.
-It was then be adhered to a \SI{25}{\milli\metre\square} coverslip using colourless nail varnish at each end of the tubing, whilst avoiding the active imaging area along the \gls{FEP} tubing.
+\SI{0.8}{\percent} \gls{agarose VII} was used as higher percentage agarose may restrict the growth of a developing embryo as well as cause more scattering and refractive index mismatch; \gls{agarose VII} produces the best imaging conditions of the agarose~\cite{floodUsingHydrogelsMicroscopy2016}.
+Once the embryo was embedded in its agarose tubing it was transported (made safe and convenient in the \gls{FEP}) for imaging.
+It was then be adhered to a \SI{25}{\milli\metre\square} coverslip using colourless nail varnish at each end of the tubing as in \figurename~\ref{fig:edge_mount/fish}, whilst avoiding the active imaging area along the \gls{FEP} tubing.
 
-For cell culture imaging, SHSY5Y neuronal cells were cultured of on coverglass that had been functionalised with poly-l-lysene (which is positively charged and glass adherent) to encourage cell adhesion.
+For cell culture imaging, \gls{SH-SY5Y} neuronal cells were cultured of on coverglass, as in \figurename~\ref{fig:edge_mount/cells} that had been functionalised with poly-l-lysene (which is positively charged and glass adherent) to encourage cell adhesion.
 In \figurename~\ref{fig:cell_image} cells were fixed using Formaldehyde and imaged in \gls{PBS}.
-For live cell studies a medium without phenol red, and that does not require atmospheric control, should be used (ex. HEPES).
+For live cell studies a medium without phenol red (fluorescent), and that does not require atmospheric control, should be used (ex. HEPES).
 % Zebrafish (see Figure 2) were dechorionated manually with tweezers using a stereo-microscope on a bed of agarose, immersed in embryo medium.
 % The dechorionated Zebrafish were then transferred into molten agarose and gently drawn into a length of FEP attached to a pipette tip.
 % Organisms may be mounted agarose within in FEP tubing to help match refractive indices between water immersion medium and the agarose.
 % 0.8% agarose VII was used, higher percentage agarose may restrict the growth of a developing embryo as well as cause more scattering and RI mismatch; agarose VII produces the best imaging conditions of the agarose3.
 % Once an embryo is embedded in its agarose tubing it may be transported conveniently, for imaging; it should then be adhered to a 25 mm2 coverslip using nail varnish at each end of the tubing whilst avoiding the activate imaging area along the FEP tubing.
-% For cell culture imaging SHSY5Y neuronal cells were cultured of on coverglass that had been functionalised with Poly-L-lysene to help cell adhesion.
+% For cell culture imaging \gls{SH-SY5Y} neuronal cells were cultured of on coverglass that had been functionalised with Poly-L-lysene to help cell adhesion.
 % For the image in Figure 3 cells were fixed using Formaldehyde and imaged in Phosphate-buffered saline (PBS).
 % For live cell studies a medium without Phenol red and that does not require atmospheric control should be used (ex.
 % HEPES).
 
 \subsection{Sample mounting and positioning}
 
-Samples mounted on coverslips are held in the chamber using a magnetically positioned bar.
+Samples mounted on coverslips are held in the chamber using the magnetically positioned bar to grip the coverslip.
 Pre-warmed immersion medium is added slowly and filled to \SI{3}{\milli\meter} below the top of the chamber.
 The entire chamber is then driven below the objective pair by eye and carefully raised.
 Lateral positioning is best achieved by matching eye-level with the sample and adjusting the stage as required.
@@ -315,7 +345,7 @@ Both approaches are available for the design presented here, provided care is ta
     \centering
     \includegraphics[width=0.8\linewidth]{./fish_image}
     \caption{Two colour imaging of a transgenic Zebrafish 24 h.p.f.
-    The left hand image shows a membrane-local  Beta-actin: mcherryCAAX probe;
+    The left hand image shows a membrane-local Beta-actin: mcherryCAAX probe;
     the right image shows fluorescent histones within the nucleus using a h2b:gfp probe.}
     \label{fig:fish_image}
 \end{figure}
@@ -323,7 +353,8 @@ Both approaches are available for the design presented here, provided care is ta
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{./cell_image}
-    \caption{A three-colour composite 3D image, as rendered in Imaris, of a pair of SHSY5Y cells.}
+    \caption{A three-colour composite 3D image, as rendered in Imaris, of a pair of \gls{SH-SY5Y} cells.
+    The fluorescent stains used were m-Turqoise (blue), cYFP (yellow) and td-Tomato (red)}
     \label{fig:cell_image}
 \end{figure}
 
@@ -338,7 +369,7 @@ The device features many useful features such as a sample mounting camera below,
 Future models of this design could also include atmospheric control for long time-lapse imaging of cell cultures.
 Such a sample chamber may also be used for other biological samples at the same scale of cells to embryos, potentially including the imaging of \gls{organoid}s.
 
-For the following chapter a suitable sample chamber, as presented here, was needed to studying the viral trafficking of \gls{HSV}-1 in live cells.
+In the following chapter, this sample chamber was required to study the viral trafficking of \gls{HSV}-1 in live cells.
 % The following chapter
 % will discuss single particle tracking for the application of studying viral trafficking in live cells, for which a suitable sample chamber was needed.
 % We have presented an open hardware solution to address the challenge of mounting a breadth of biological samples in a high NA inverted light-sheet system.
