@@ -10,34 +10,33 @@
     \graphicspath{{Chapters/conclusions/Figs/Vector/}{Chapters/conclusions/Figs/}}
 \fi
 
-\chapter{Conclusions}\label{chapter:conclusions}
+\chapter{Conclusions}\label{chapter:conclusions} %TODO OK RELATE DIRECTLY TO MOTIVATIONS IN INTRO CHAPTER, EXPLICITLY.
 
 %INTO LIT AND DESIGN
-In this work an \gls{light-sheet} fluorescence microscope was designed built and optimised for organismal and cellular imaging.
+In this work a \gls{light-sheet} fluorescence microscope was designed built and optimised for organismal and cellular imaging.
 
 \section{Microscope design and construction}
 
-The microscope presented in Chapter~\ref{chapter:design} was able to record imaging volumes at a rate of \SI{512x512x100}{\micro\meter} volumes per second, at maximum running speed.
+The microscope presented in Chapter~\ref{chapter:design} was able to record imaging volumes at a rate of \SI{512x512x100}{\micro\meter} single volumes per second, at maximum running speed.
 It featured four laser channels spanning the visible spectrum and suitable for standard fluorescent dyes.
-The microscope generated light-sheets digitally by sweeping a galvanometric mirror converting a standard Gaussian beam into a Gaussian sheet.
+The microscope generated light-sheets virtually by sweeping a galvanometric mirror converting a standard Gaussian beam into a Gaussian sheet.
 The optical elements on the \gls{illumination board} consisted of a beam splitter for creating two beams and an optical \gls{SLM} path for generating exotic illumination or two beams directly, steering mirrors and relay lenses.
 An XYZ stage was used to mount and position samples with sub-\SI{}{\micro\meter} precision.
 The imaging plane of the  detection objective was matched to the scanning light-sheet by using a fast piezo electric objective actuator.
 An additional objective lens relay was positioned in front of the detection camera to increase the total magnification from \SI{25}{\times} to \SI{31.25}{\times} or \SI{62.5}{\times} when using the \SI{1.25}{\times} and \SI{2.5}{\times} objective lenses respectively.
 This provided a variable field of view for imaging organisms and single cells, with the largest magnification being oversampled compared to Nyquist's limit.
 
-%TODO desgin description
 %Homography
 \section{Homographically generated light-sheets}
-In Chapter~\ref{chapter:homography} the method by which the generation of voltage waveforms was improved upon.
+In Chapter~\ref{chapter:homography} the method for generation of control signal voltage waveforms for registerring the light-sheet to the imaging plane was improved upon.
 Standard methods of generation rely on three positional coordinates being record for registering the illumination volume to the imaging volume.
-To use the four available coordinates additional non-linear mathematics is needed to project affine input coordinates onto the resultant non-affine illumination space.
-The non-linearity observed (figure) arises from imperfections in the scanning optics, this was characterised for the scan lens which converts beam angle into beam position at the sample volume.
-When comparing the 3~point and 4~point correction it was found that there was an average \SI{42}{\percent} increase in recovered signal from fluorescent beads.
+To use four available coordinates and achieve greater registration accuracy, additional non-linear mathematics is needed to project affine input coordinates onto the resultant non-affine illumination space.
+The non-linearity observed arises from imperfections in the scanning optics, this was characterised for the scan lens which converts beam angle into beam position at the sample volume.
+When comparing the 3~point and 4~point correction it was found that there was an average \SI{42}{\percent} increase in the observed fluorescence signal from in-focus fluorescent beads.
 
 %Flopt
 \section{Frame localisation optical projection tomography}
-Chapter~\ref{chapter:flopt} then used the mathematics presented in Chapter~\ref{chapter:homography} to address the issue of computer-tomography reconstructions in systems prone to mechanical error; in this case for optical projection tomography.
+Chapter~\ref{chapter:flopt} then used the mathematics presented in Chapter~\ref{chapter:homography} to address the related issue of computer-tomography reconstructions in systems prone to mechanical error; in this case for optical projection tomography.
 The ubiquitous Radon transform is typically used to reconstruct projected data sets but take no account of motions beyond rotation about the axis normal to the plane projected.
 This assumption is valid for stable systems, but leads to reconstruction error for systems with limited available angles as well as systems with mechanical jitter and systematic drift.
 Provided there are 6 or more fiducial markers common to each adjacent image pair from an \gls{OPT} image set, each point can be triangulated and the resultant rotation and translation matrices between each image pair can be computed.
@@ -48,49 +47,58 @@ The resultant volume is then filtered to provide a faithful reconstruction of th
 \section{Confocal \gls{slit-scanning} microscopy}
 The illumination and imaging volume registration was also critical for Chapter~\ref{chapter:dualslit} where synchronisation of the rolling shutter on the camera and the sweeping of the beam had to be well matched.
 By synchronising the rolling shutter and the beam sweeping images can be recorded with better optical sectioning and higher contrast as out-of-focus light is rejected by the virtual pinhole in the direction of the rolling shutter.
-This was implemented on the light-sheet microscope and was characterised to show the maximal \gls{SNR} was when the shutter width and the beam waist were comparable in size.
+This was implemented on the light-sheet microscope and it was found that
+% was characterised to show
+the maximal \gls{SNR} was when the shutter width and the beam waist were comparable in size.
 The firmware on the camera was then upgraded along with the beam creation optics such that two shutters would roll synchronously and two beams would be generated to match them.
 This then increased the achievable frame-rate of the slit-scanning camera from \SI{50}{\hertz} to \SI{100}{\hertz}, the maximum of the camera.
-This was in preparation for the imaging capabilities needed for tracking virus particles as in Chapter~\ref{chapter:spt}.
+This was done in preparation for the imaging capabilities needed for tracking virus particles as in Chapter~\ref{chapter:spt}.
 The effect of slit-scanning was also simulated for light-sheet systems as well as wide-field systems.
-This included structured illumination systems where it was shown that a marked rate of imaging and contrast improvement could be obtained.
+These simulations indicated that, in structured illumination systems, that a marked rate of imaging and contrast improvement could be obtained.
 
 %Chamber
 \section{Open-hardware sample mounting}
 In preparation for the two chapters addressing biological questions a sample chamber was designed and presented in Chapter~\ref{chapter:chamber}.
 The chamber was a \gls{3D} printed design capable of mounting cells  and organisms, with fixed cells and live organisms being shown in this work.
-\gls{3D} printed materials were used for the rapid prototyping capability as well as the advantage of producing multiple copies quickly when compared to metal.
-It is possible to sterilise \gls{3D} though the more aggressive methods were damaging to the printed chambers.
+\gls{3D} printed materials (\gls{ABS} and \gls{PLA}) were used for the rapid prototyping capability as well as the advantage of producing multiple copies quickly when compared to metal.
+It is possible to sterilise \gls{3D}-printed \gls{ABS}, though the more aggressive methods were damaging to the printed chambers.
 
-The key novelty of the chamber was the use a shelf for sample mounting.
+The key original element of the chamber was the use a shelf for sample mounting.
 This allowed for the mounting of flat glass coverslips, which are viable for use in common cell and organism mounting procedures.
 It also allowed for the use of a large opening angle detection objective lens mounted at \SI{45}{\degree} in conjunction with a high NA illumination objective lens.
 Enabling the use of these two objectives allowed for the imaging of organisms as well as sub-cellular activities in cell culture.
-The chamber include addition design features such as: chamfered edges in the medium containing section to act as hard stops if protecting the objective lenses and minimise the use of media; a positing camera and window from with a couple infrared and white light source for transmitted light imaging; a side window for positing samples by eye; a drip-tray for instrument safety against spillages; module for inserting heating elements and magnets to be used for securing samples and cleared through-holes for bolting the chamber to a metric breadboard.
+The chamber includes addition design features including: chamfered edges in the medium containing section to act as hard stops if protecting the objective lenses and minimise the use of media; a positioning camera and window with a coupled infrared and white light source for transmitted light imaging; a side window for positioning samples by eye; a drip-tray for instrument protection safety against spillages; a module for inserting heating elements, and magnets to be used for securing samples; and cleared through-holes for bolting the chamber to a metric breadboard.
 
-\section{Particle tracking for viral egress}
-With such a chamber now available, imaging \emph{in vivo} sub-cellular processes was now possible, see Chapter~\ref{chapter:spt}.
-To then monitor viral egress, the light-sheet microscope required modifying such that it could axially localise single particles within the light-sheet.
-From there the light-sheet would be repositioned and the process iterated for each recorded frame giving a sub-diffraction limited axial position over the viable \SI{100}{\micro\meter}.
+\section{Particle tracking for viral egress} %\ref{sec:motivation/spt}
+Full, three-dimensional, sub-diffraction limited particle tracking, in live cells, was needed; as motivated in Section~\ref{sec:motivation/spt}.
+With the chamber from Chapter~\ref{chapter:chamber} now available, imaging \emph{in vivo} sub-cellular processes (as described in Chapter~\ref{chapter:spt})
+%, needed for the intention of Section~\ref{sec:motivation/spt},
+was now possible.
+To monitor viral egress in \gls{SH-SY5Y} cells, the light-sheet microscope required modification such that it could axially localise single particles within the light-sheet.
+From there the light-sheet would be repositioned and the process iterated for each recorded frame, giving a sub-diffraction limited axial position over the viable \SI{100}{\micro\meter}.
 As such, a weakly cylindrical lens was inserted into the imaging path and positioned to provide a suitable amount of astigmatism for the available pixels per (\SI{4x4}{}) \gls{PSF} at \SI{62.5}{\times} (\(25\times2.5\)) magnification.
 It was shown that the calibration for a recorded astigmatic \gls{PSF} was suitably linear for the purposes of calibrated tracking when using template correlation or template covariance.
 
 Dynamic blur for an astigmatic \gls{PSF} was then considered.
-By using a Gaussian model of an astigmatic \gls{PSF} it was shown that, using typical parameters as found for the light-sheet microscope here, there is an average \SI{25}{\percent} error axial localisation.
-The magnitude of this error could potentially explain why single particles do escape tracking before they bleach as demonstrated by Spille~\emph{et.~al}~\cite{spilleDirectObservationMobility2015}.
+By using a Gaussian model of an astigmatic \gls{PSF} it was shown that, using typical parameters as found for the light-sheet microscope here, there is an average \SI{25}{\percent} error axial localisation when using the parameters of the light-sheet microscope in this work.
+The magnitude of this error could potentially explain why single particles do escape tracking before they bleach, as demonstrated by Spille~\emph{et.~al}~\cite{spilleDirectObservationMobility2015}.
 
-Cells infected with \gls{HSV}-1 were then fixed and mounted on glass cover slips for imaging.
+SHSY5Y mammalian cells infected with \gls{HSV}-1 were then fixed and mounted on glass cover slips for imaging.
 Three viral proteins were labelled to demonstrate the feasible of tracking single virus particles in a live cell.
 
-\section{Light-sheet microscopy and magnetic tweezers}
-Finally, in Chapter~\ref{chapter:tweezers} a magnetic tweezer system was developed and used to remotely measure the viscoelastic properties of a developing zebrafish embryo.
+\section{Light-sheet microscopy and magnetic tweezers} %\ref{sec:motivation/tweezers}
+
+Finally, as motivated in Section~\ref{sec:motivation/spt}, a system was needed which could provide an understanding of how forces propagate within tissue during organism morphogenesis.
+In Chapter~\ref{chapter:tweezers}, a magnetic tweezer system was developed and used to remotely measure the viscoelastic properties of a developing zebrafish embryo.
+
 A simple mechanical model of the response of the embryo was made, consisting of dash-pots and springs, and was fitted to the trajectory of a tracked bead from push-pull experiments.
 Viscoelastic properties were then extracted from the model fitting and then monitored over \SIrange{1}{2}{\hour}.
 This was the first demonstration of a direct link between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
 The blastula tissue was shown to have an intrinsic viscoelastic response.
 The stiffening blastula, composed of radially anisotropic cells, may drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
-Interestingly, the viscoelastic timescale parameter, \(\tau\), remained constant across both time and embryonic mutations.
-%TODO cleanup
+The viscoelastic timescale parameter, \(\tau\), was found to remain constant across both time and embryonic mutations.
+
+%Only with an understanding of how forces propagate within tissues can morphogenesis be fully elucidated. In this work a technique was developed to mechanically probe deep tissue using the presented light-sheet microscope. A non-invasive magnetic  eld was used to to move a magnetic bead embedded in a live embryo. The light-sheet microscope was used to image the cells and the bead in real-time and three dimensions.
 %%
 % The study presented here is the first demonstration of a direct link  between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
 %By applying a directed local force to a developing embryo, through an embedded magnetic bead, local and ensemble mechanical properties of tissue were characterised.
@@ -123,9 +131,9 @@ Looking forward there are several key areas with which this body of work could b
 \subsection{Illumination}
 
 % Currently the system features a good range of visible spectrum wavelengths for excitation; however t
-The system would benefit from having thinner light-sheets, particularly for single cellular imaging where axial resolution is more important when compared with larger organism imaging.
+The axial sectioning resolution of the system would benefit from having thinner light-sheets, particularly for single cellular imaging where axial resolution is more important when compared with larger organism imaging.
 Exotic illumination modes were explored briefly during this work and a Bessel beam was constructed using the \gls{SLM} as featured in Chapter~\ref{chapter:dualslit}.
-As discussed Bessel beams can be used to create thinner light-sheets over a range of \SI{\sim40}{\micro\meter}.
+As discussed, Bessel beams can be used to create thinner light-sheets over a range of \SI{\sim40}{\micro\meter}.
 Similarly, Airy beam light-sheets could be created using a cubic phase mask on the \gls{SLM}.
 % are also feasible in this system which
 Airy Beams behave over a longer range (\SI{500}{\micro\meter}) compared to Bessel beams though they require deconvolution in the final step which can take a long time with large data sets.
@@ -133,7 +141,7 @@ Alternatively a \gls{2P} beam could also be used to create a light-sheet thinner
 
 \subsection{Imaging}
 
-During this work a plug-and-play \gls{FLIM} enabled camera became commercially available for wide-field microscopes, combined with the presented light-sheet microscope this could provide a fast volumetric fluorescence lifetime readout from cells to organisms.
+During this work, a plug-and-play \gls{FLIM} enabled camera became commercially available for wide-field microscopes, combined with the presented light-sheet microscope this could provide a fast volumetric fluorescence lifetime readout from cells to organisms.
 Stelzer~\emph{et. al} showed that volumetric light-sheet combined with FLIM can be useful in organismal imaging~\cite{gregerThreedimensionalFluorescenceLifetime2011a}.
 FLIM combined with the viscoelastic measurements seen in the Chapter~\ref{chapter:tweezers} could further elucidate tensions occurring locally to the bead under motion, with a suitable fluorescent reporter~\cite{colomFluorescentMembraneTension2018}.
 Fluorescence lifetime could also be used for indicating if a virion has moved between boundaries within a cell or collected tegument proteins, though the \gls{SNR} of single particle lifetime measurement may be too low.
@@ -141,13 +149,13 @@ Fluorescence lifetime could also be used for indicating if a virion has moved be
 \section{Waveform generation}
 
 For waveform generation a 4~pt calibration was presented which gave a \SI{42}{\percent} improvement in signal collecting efficiency, by matching the illumination and imaging volumes better than a 3~pt calibration.
-It is possible to create a 5 pt calibration using elastic transforms (elastic transforms are needed as the projective mathematics in Chapter~\ref{chapter:homography} breaks down beyond 4~pts), which could further increase the collection efficiency.
-With calibrations beyond 4~pts it becomes difficult to find the corresponding point between the beam and the image.
+It is possible to create an \(n\)~pt calibration using elastic transforms (elastic transforms are needed as the projective mathematics in Chapter~\ref{chapter:homography} breaks down beyond 4~pts), which could further increase the registration efficiency.
+With calibrations beyond 4~pts, it can become difficult to find enough points that can be accurately registered between the beam and the image.
 The most obvious next point to choose beyond the 4 available corners of the illumination volume, would be the centre point of the those corners at \(z:\SI{100}{\micro\meter},x:\SI{1024}{\text{px}}\).
-Finding the focus at this \(z\) position would involve maximising the image maximum when imaging in dye (as in Chapter~\ref{chapter:homography}), matching the \nth{1024} pixel with the middle of the beam would be more difficult, particularly by eye.
+Finding the focus at this \(z\) position would involve maximising the fluorescence image intensity maximum when imaging in dye (as in Chapter~\ref{chapter:homography})% matching the \nth{1024} pixel with the middle of the beam would be more difficult, particularly by eye.
 As a result, it would best to position the 5th point calibration automatically by using a peak finding algorithm for the axial (\(z\)) focus matching, using image maxima; and in (\(x\)), by maximising the summed intensity along the requisite pixel row.
-In doing so, all other available pixel rows in \(x\) would be trivial to calibrate to, as would all axial positions.
-From this, a complete look-up table of positions could be created for the scanning beam.
+In doing so, all other available pixel rows in \(x\) would be trivial to calibrate to, as would all axial positions in \(z\).
+From this, a complete look-up table of \(xz\) positions could be created for the scanning beam.
 Such an approach would mean each imaging session would require a potentially lengthy calibration, but for the benefit of not needing to generate waveforms during imaging and having very precisely focused light-sheets.
 
 \section{Slit-scanning}
@@ -186,7 +194,7 @@ In computer vision, the fundamental, essential and homography matrices are found
 Instead, features that are common to the each view are used as points for triangulation.
 The confidence in such points is much lower than the defined manually placed fiducial marks, but, many more can be used, increasing the overall confidence in the recovered matrices.
 From here, the recovered matrices can be deconstructed and deployed as described in Chapter~\ref{chapter:flopt}.
-This could be implemented provided a \gls{tOPT} dataset were available.
+This could be implemented, provided a \gls{tOPT} dataset were available.
 
 \section{The sample chamber}
 
@@ -202,13 +210,13 @@ Gaskets would be fitted around the objectives to reduce gas loss and an O-ring w
 Ideally the chamber would be printed with the option to have clear windows without the need for user intervention i.e.\ glueing perspex windows in manually.
 However, advances in the \gls{3D} printing technology would be needed before the chamber could be printed from a single piece.
 This would require optically clear printing which, using extrusions techniques currently, is impossible.
-It may be possible to \gls{3D} a design for casting a sample chamber in one piece from a curable plastic, however this method would be much more involved than the method proposed.
+It may be possible to \gls{3D} a design for casting a sample chamber in one piece from a curable plastic, however this method would be much more involved than the current additive printing process.
 
 \section{Viral imaging using single particle tracking}
 
 It was shown in Chapter~\ref{chapter:spt} that the light-sheet microscope was capable of localising a static single particle.
 However, efforts are needed to demonstrate this in dynamic systems.
-One approach would be tracking a single particle in a known viscosity liquid as discussed in Chapter~\ref{chapter:spt}.
+One approach would be tracking particles in a known viscosity liquid, as discussed in Chapter~\ref{chapter:spt}.
 Another approach could involve keeping the light-sheet static and measuring the ensemble statistics of many particles being tracked.
 The latter approach would, however, lead to a bias towards short tracks of particle trajectories.
 
@@ -224,11 +232,13 @@ The new device is based around a flat light-sheet design, with a chamber constru
 
 \section{Additional samples}
 
-Mammalian cells and Zebrafish were the specimens of choice for this work as they are both optically clear and biological relevant models.
+Mammalian cells and Zebrafish were the specimens of choice for this work as they are optically clear, biological relevant models and a size suitable for \gls{LSFM} to be useful.
 Human and mouse embryos were also considered as they are more biologically relevant for the study of humans and mammals.
 Issues with mouse embryos are that of collection yield, with the required sacrifice of a mouse to produce a mouse embryo, as well as the atmospheric conditions required to image the embryo.
-Human embryos are also much less abundant than Zebrafish embryos as well as requiring a very specific environment to survive.
-That said, given the capabilities of the chamber developed in Chapter~\ref{chapter:chamber}, both options could be explored as both embryo types would benefit from the fast and gentle volumetric imaging provided by light-sheet microscopes.
+Human embryos currently not amendable for technology demonstration, as requiring a very specific environment to survive.
+That said, given the capabilities of the chamber developed in Chapter~\ref{chapter:chamber}, studies of both of these complex specimens
+% both options could be explored as both embryo types
+would benefit from the fast and gentle volumetric imaging provided by light-sheet microscopes.
 
 Organoids, which are miniaturised forms of organs built or grown from organ samples, would also benefit from light-sheet imaging.
 The issue for imaging organoids lies with them being often very opaque to visible light.
@@ -236,10 +246,12 @@ Recent advances in clearing techniques and expansion microscopy would make the i
 Clearing techniques use chemical regents to wash away scattering material from samples, particularly highly scattering lipids, to reduce the opacity of the sample~\cite{_clearing_2016}. %TODO Check
 Similarly expansion microscopy washes away all but the fluorophores and a gel scaffold leaving a fluorescent ghost of a sample.
 Water is then added to linearly swell the sample to many times its original size for super-resolved imaging for diffraction limited microscopes~\cite{chen_expansion_2015}.
-Light-sheet microscopy would be particularly valuable for expanded samples as the amount of time required to image an expanded Drosophila brain, for example, can be on the order of months using laser scanning techniques.
+Light-sheet microscopy would be particularly valuable for expanded samples as the amount of time required to image an expanded Drosophila brain, for example, can be on the order of months using laser scanning techniques:
+\begin{align}
+  \frac{\overbrace{\SI{8e7}{\micro\meter\cubed}}^\text{Volume} \cdot \overbrace{4^3}^\text{Expansion}}{\underbrace{{\SI{0.25}{\micro\meter}}^3}_{\text{Voxel}}}\cdot \overbrace{\SI{10}{\micro\second}}^{\text{Dwell time}} = \SI{37.9}{\day}
+\end{align}
 Both clearing and expansion techniques suffer from sample fragility and collection yield due to the harshness of their respective processes.
 
-%
 % % samples - expansion microscopy, clearing, mouse/human embryos
 %
 % TODO \subsection{Expansion Microscopy}
