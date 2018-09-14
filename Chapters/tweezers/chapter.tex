@@ -26,16 +26,16 @@ Genetic screens have yielded an array of essential structural, patterning and si
 \emph{In vivo} imaging of morphogenesis allows measurements to be made that reveal stereotypical patterns in the cellular behaviour of individual, and groups of, cells.
 These are indicative of active force generation, but are insufficient to construct a quantitative explanation of where forces are generated and how forces propagate within and between tissues.
 To overcome these limitations, we require a quantitative characterisation of the physical properties of the tissues involved in order to understand how forces propagate within tissues to bring about morphogenesis.
-Measurements of the properties of individual cells,~\cite{1} and of bulk tissues,~\cite{2} have revealed properties typical of both viscoelastic and visco-elasto-plastic solids~\cite{3}.
+Measurements of the properties of individual cells,~\cite{mammotoMechanicalControlTissue2010} and of bulk tissues,~\cite{mammotoMechanobiologyDevelopmentalControl2013} have revealed properties typical of both viscoelastic and visco-elasto-plastic solids~\cite{heisenbergForcesTissueMorphogenesis2013}.
 Bulk tissue properties can be estimated using atomic force microscopy to investigate a tissue surface~\cite{18}.
-Alternatively, micropipette aspiration can probe dissociated cells or explants, however, this method cannot assess deep tissue directly~[ref].
-More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation [ref], oil droplets [ref], or embedding tissue explants in matrix gel [ref].
-Most recently, ferrofluid droplets have shown that local tissue properties[, in terms of rheological parameters of elasticity and viscosity? Elaborate on these changes.] change with respect to the tissue localisation.
-[ref] There is still a need for methods that can provide a repeated, real-time readout of physical properties and relate those measurements to the underlying morphogenetic behaviour.
+Alternatively, micropipette aspiration can probe dissociated cells or explants, however, this method cannot assess deep tissue directly~\cite{14,15}.
+More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation~\cite{17}, oil droplets~\cite{18}, or embedding tissue explants in matrix gel~\cite{16}.
+Most recently, ferrofluid droplets have shown that local tissue properties change with respect to the tissue localisation~\cite{18}. %ROX [, in terms of rheological parameters of elasticity and viscosity? Elaborate on these changes.]
+There is still a need for methods that can provide a repeated, real-time readout of physical properties and relate those measurements to the underlying morphogenetic behaviour.
 
 A method was developed that can give non-destructive, quantitative measurements of local tissue physical properties at the length scale of a few cells, completed within seconds to minutes, and repeatable over developmentally-significant periods.
 To achieve this, biologically-compatible superparamagnetic beads were implanted into developing \gls{zebrafish} embryos and built a four-pole electromagnetic device that produces a controlled magnetic field gradient in 3D, such that a bead can be moved with known force.
-Tracking the bead movement gives the dynamic material properties of the surrounding tissue [in terms of elasticity and viscosity? Elaborate on what the system allows you to evaluate.].
+Tracking the bead movement gives the dynamic material properties of the surrounding tissue. %ROX  [in terms of elasticity and viscosity? Elaborate on what the system allows you to evaluate.].
 This technique was used to study the emergence of the first cohesive tissue of the \gls{zebrafish} blastula, between the “high” to “sphere” stages of development.
 
 It was found that mesenchymal blastomeres become first motile, and then adherent, to form the tissue that will go on to contribute to the first morphogenetic movement of the embryo.
@@ -60,10 +60,9 @@ Of the vertebrate model organisms, the \gls{zebrafish} is best suited for whole 
 The embryo is transparent and small, but can still be physically manipulated, and develops externally from the mother, allowing for imaging uninhibited by surrounding tissue from the parent organism; as a result, \gls{zebrafish} require no atmospheric control to enable growth, unlike cell cultures and other higher order models such as mice.
 Moreover, \gls{zebrafish} growth is rapid; a single cell, with a \SI{0.7}{\milli\meter} diameter, becomes a \SI{3.5}{\milli\meter} long larva within three days (see Table~\ref{tab:zfish_dev}).
 \gls{zebrafish} are also suitable for genetic studies as the genome is fully sequenced and tools for genetic manipulation are readily available.
-Breeding the fish is simple, as sexual maturity occurs at three months after fertilisation, facilitating easy cross-breeding [? ].
+Breeding the fish is simple, as sexual maturity occurs at three months after fertilisation, facilitating easy cross-breeding~\cite{}.
 Finally, the costs of keeping \gls{zebrafish} are lower than that of other vertebrates due to their low space requirements and minimal handler time~\cite{AnimalModelsHuman}.
 
-%
 % The \gls{zebrafish} (\emph{Danio rerio}) is a key model organism for vertebrate development.
 % It shares features of its body plan and developmental stages with Xenopus, the chicken, and the mouse \cite{?} (Wolpert et al, 2007)
 % , indicating existence of conserved developmental mechanisms of interest.
@@ -147,13 +146,13 @@ However, to characterise the force generation in cellular rearrangement fully, i
 \subsection{Magnetic tweezers}
 %% Fix
 
-The design of the magnetic tweezers was based on a previously published design \cite{(Vicci 2003)}, which is compatible with large samples, such as the \gls{zebrafish} embryo employed in this work; and was shown to generate sufficient forces using COMSOL simulations.
+The design of the magnetic tweezers was based on a previously published design~\cite{(Vicci 2003)}, which is compatible with large samples, such as the \gls{zebrafish} embryo employed in this work; and was shown to generate sufficient forces using COMSOL simulations.
 This section presents the development of the magnetic tweezers including the imaging chamber required by the \gls{LSFM}.
 The mechanical design of the magnetic tweezers was based on a monopole model.
 In this simplification the magnetic field is assumed to be generated by point sources (monopoles) around a sample containing a magnetic bead.
 The sum of the aggregated monopole strengths must equal zero because, in nature, there are no actual sources or sinks of magnetic flux (i.e.~solenoids generate dipole magnetisation).
 In this model, a force acting on the bead in the direction of a monopole can be approximated by~\cite{?}. %(Jackson 1962)(Amblard et al. 1996):
-The magnetic dipole moment, \(\mathbf{m}\), induced in the bead by a magnetic field, \(B\), is given by:
+The magnetic dipole moment, \(\mathbf{m}\), induced in the bead by a magnetic field, \(B\), is given by:
 
 \begin{align}
 \textbf{m} = \frac{\pi d^3 }{2 \mu_0} \frac{\mu_r -1}{\mu_r +2} \mathbf{B}
@@ -161,15 +160,15 @@ The magnetic dipole moment, \(\mathbf{m}\), induced in the bead by a magnetic fi
 \mathbf{F} = \frac{\pi d^3 }{2 \mu_0} \frac{\mu_r -1}{\mu_r +2} \mathbf{\nabla} \mathbf{B}^2
 \end{align}
 
-where \(d\) is the diameter of the bead, \(\mu_0\) is the magnetic permeability of free space, \(\mu_r\) is the relative magnetic permeability of the bead and \(\mathbf{B}\) is the magnitude of the field generated by a magnetic monopole.
+Where \(d\) is the diameter of the bead, \(\mu_0\) is the magnetic permeability of free space, \(\mu_r\) is the relative magnetic permeability of the bead and \(\mathbf{B}\) is the magnitude of the field generated by a magnetic monopole.
 \(\mathbf{B}\) is in the form of \(\frac{B_p}{r^2}\) where \(B_p\) is the monopole strength and \(r\) is the distance from the monopole.
-Hence the gradient \(\nabla \mathbf{B}\) of the field is \(2 \frac{B_p}{r^3}\), and the force on the bead proportional to \(2\frac{B_{p}^2}{r^5}\) \cite{(Vicci 2003)}.
+Hence the gradient \(\nabla \mathbf{B}\) of the field is \(2 \frac{B_p}{r^3}\), and the force on the bead proportional to \(2\frac{B_{p}^2}{r^5}\) \cite{(Vicci 2003)}. %Vicci, L., 2003. A 3D Magnetic Force Manipulator DC Prototype. , 031.
 In the mechanical design of the magnetic tweezers, it was thus desirable to position magnetic poles as close as possible to a sample.
 
 A minimum of four monopoles is required to achieve effective 3D specification of the force acting on the bead.
 The optimal configuration is a tetrahedral geometry, where monopoles are distributed on the vertices of a tetrahedron.
 Deviation from this geometry limits the range and directionality of achievable forces.
-Finally, only a single bead should be used at a time, as agglomeration of beads influences the magnetic field distribution due to the interactions between the beads, and thus disturbs the monopole model~\cite{Möller et al. 2003}.
+Finally, only a single bead should be used at a time, as agglomeration of beads influences the magnetic field distribution due to the interactions between the beads, and thus disturbs the monopole model~\cite{Möller et al. 2003}. %Bausch,  a R., Möller, W. & Sackmann, E., 1999a. Measurement of local viscoelasticity and forces in living cells by magnetic tweezers. Biophysical journal, 76(1 Pt 1), pp.573–9
 The magnitudes and gradients of the magneticfield in the space between the poles is controlled by four solenoid coils; by varying the currents in these coils independently, one may control the the magnitude and direction and magnitude of the force acting on the bead.
 
 \subsubsection{Model Theory}
@@ -193,7 +192,7 @@ More precisely, the model assumes a parallel spring and dash‐pot \cite{(Kelvin
 The model is described by the following parameters: dynamic viscosities, \gls{eta_1_visc} and \gls{eta_2_visc}, and elastic stiffness, \gls{E_visc}.
 When a strain \(\sigma\) is applied, the spherical rigid object, in this case a magnetic bead made of superparamagnetic nanoparticles embedded into a polyester matrix, moves and the displacement is quantified by the strain \(\epsilon \).
 The same parameter is used to evaluate the recovery phase, when \(\epsilon = 0\).
-The experimental protocol used here consists of two phases: the creep phase, where from equilibrium the state at \(t=0\) an instaenous and constant force is applied on the bead and kept for a given time \(t_1 \)(\SI{60}{\second}); and the recovery phase where the force is removed at \(t_1\) and the bead displacement is monitored for a suitable time period (\SI{120}{\second}).
+The experimental protocol used here consists of two phases: the creep phase, where from equilibrium the state at \(t=0\) an instantaneous and constant force is applied on the bead and kept for a given time, \(t_1 \) (\SI{60}{\second}); and the recovery phase where the force is removed at \(t_1\) where the bead displacement is monitored for a suitable time period (\SI{120}{\second}).
 To model the equations of motion the a linear spring is described by:
 %to derive the model's equations, we recall the viscoelasticity’s fundamental equations. A linear spring is described by:
 
@@ -244,7 +243,7 @@ Stokes' law may be written as:
 \end{align}
 
 To model the elastic spring, the elastic response of the tissue due to the bead displacement is approximated by the Thomson's solution of a point force in an infinite isotropic medium~\cite{l.d.landaue.m.lifshitzTheoryElasticity}.
-The displacement (\(\mathbf{u}\)) in cylindrical coordinates (\((p,z)\)) for a point force (\(F_z\)) located at the origin and directed along (\(z\)) axis is given by:
+The displacement (\(\mathbf{u}\)) in cylindrical coordinates (\((p,z)\)) for a point force (\(F_z\)) located at the origin and directed along the (\(z\)) axis is given by:
 
 \begin{align}
  \mathbf{u} = \frac{F_z}{4 \pi \mu r }\left[ \frac{pz}{4(1-v)r^2} \mathbf{\hat{p}}+\left(1- \frac{p^2}{4(1-v)r^2}\right)\mathbf{\hat{z}}\right]\label{eq:thomsons}
@@ -336,7 +335,8 @@ These commands were then sent from the \gls{LabVIEW} controller of the \gls{ligh
 
 Zebrafish embryos were harvested immediately after fertilisation and incubated at \SI{28.5}{\celsius}.
 Embryo lines that were used were: wild-type (WT), Tg(beta-actin:mCherry-CAAX) (labelling membranes), Tg(beta-actin:Lifeact-eGFP) (labelling F-actin) and Tg(beta-actin:Myosin2- mCherry) (labelling myosin).
-Transplantations were performed at 1k-cell stage using a tip broken elongated capillary \cite{} mounted on an oil-filled pressurised system controlled by a syringe []. Beads, or cells, were transplanted at 1k-cell stage.
+Transplantations were performed at 1k-cell stage using a tip broken elongated capillary mounted on an oil-filled pressurised system controlled by a syringe.
+Beads, or cells, were transplanted at 1k-cell stage.
 Beads were incubated in \SI{4}{\percent} BSA for \SI{10}{\minute} at \SI{28.5}{\celsius} before injecting to reduce the chances of bead rejection from the embryo.
 % Transplantations were at 1k-cell stage using a tip broken elongated capillary~\cite{} mounted on an oil filled pressurised system controlled by a syringe \cite{}.
 % Beads were incubated in 4\% BSA before grafting to reduce chances of bead rejection when injected and were transplanted at 1k-cell stage.
@@ -351,7 +351,7 @@ The dechorionated embryos were pipetted into warm low melting point agarose and 
 All tests were performed with R software.
 A linear mixed effect model was performed to compare rheological parameter trends in different loss-of-function assays.
 Anova tests compared linear fits on developmental trends of the rheological parameters between \gls{WT} and loss-of-function conditions (mutants).
-The percentage bend correlation method was used for correlation between cell and rheological parameters to take outliers into account \cite{wilcoxPercentageBendCorrelation1994}. %ROX [can you reference these methods?]
+The percentage bend correlation method was used for correlation between cell and rheological parameters to take outliers into account~\cite{wilcoxPercentageBendCorrelation1994}. %ROX [can you reference these methods?]
 
 % \subsection{Biological methodology}
 % Embryos were harvested just after fertilisation and incubated at \SI{28.5}{\celsius}.
@@ -523,7 +523,7 @@ And so, imaging the membranes exclusively provided sufficient information to elu
 
 Even though it has been speculated that morphogenetic change must depend upon changes in the physical properties of tissues, there is little direct evidence to support this idea.
 This study intended to verify whether the changes that are observed in cell movements and protrusive activity during the high- to sphere-stage transition were accompanied by a modulation of physical properties of the blastoderm.
-To address this question, magnetic tweezers were used to apply a direct a known force to a \SI{40}{\micro\meter} diameter superparamagnetic bead implanted into the blastoderm~\cite{}. %, and push-pull experiments were performed to extract viscoelastic properties of the developing \gls{zebrafish}.
+To address this question, magnetic tweezers were used to apply a direct a known force to a \SI{40}{\micro\meter} diameter superparamagnetic bead implanted into the blastoderm~\cite{20}. %, and push-pull experiments were performed to extract viscoelastic properties of the developing \gls{zebrafish}.
 Beads were implanted in blastula-stage embryos and the cells surrounding them were imaged for up to 8 hours.
 No changes were detected in local cell arrangement, actin-cytoskeleton organisation or myosin localisation around the beads.
 Embryos containing a bead developed unperturbed by its presence.
@@ -757,14 +757,14 @@ In conclusion, the cellular signature of the elastic periods were largely accoun
 % \begin{figure}\ContinuedFloat
  \caption[Sketch of the dynamics in a typical rheological experiment]{\footnotemark
  Sketch of the dynamics in a typical rheological experiment (a) in \gls{WT} embryo under \gls{LSFM} (b), where blue represents cell extension and red represents compression.
- The labels 1, 2 and 3 follow respective cells over time.
+ In (a) the labels 1, 2 and 3 follow respective cells over time.
  The yellow dot in the \gls{LSFM} images marks the original position  of the bead centre.
  (c)-(d): Analysis of the coefficient of deformations \(C_t\) and \(C_C\) showed that tissue (c) and cells (d) were compressed at the front  of the bead while they were stretched at the rear during bead  pulling (n = 14 pulls, 3 embryos).
  (e)-(h): Analysis of cell area  and cell aspect ratio revealed that cells disappear from the imaging plane, suggesting that cells at the front rearranged in 3D, while at the rear, cells were stretched (e).
  Along developmental time, tissue deformation (\(C_t\)), cell deformation \(C_C\) and cell intercalation (\(C_t\)-\(C_s\) during elastic phase (in \SI{}{\micro\metre\squared\per\minute})), at the front of the bead, show that tissue compression could be accounted for mainly by cell shape changes (f), while, during creep phase, strain rates showed that this accountancy is lost, suggesting cell rearrangement is a major event (g).
  When force was released, cells at the front relaxed to their original shape (h).
  (i)-(k): Correlation analysis of cell parameters and rheological parameters.
- This is supported by correlations between elastic modulus, \gls{E_visc}, and cell shape change coefficient during elastic phase, at the front of the bead (i), between viscosity coefficient, \gls{eta_1_visc}, and cell rearrangement rate during creep phase (j), and between elastic modulus,  \gls{E_visc}, and cell shape change  coefficient during recoil phase (k).
+ This is supported by correlations between elastic modulus, \gls{E_visc}, and cell shape change coefficient during elastic phase, at the front of the bead (i), between viscosity coefficient, \gls{eta_1_visc}, and cell rearrangement rate during creep phase (j), and between elastic modulus, \gls{E_visc}, and cell shape change coefficient during recoil phase (k).
  Lines represent linear regressions.
  % A-B: Sketch of typical rheological experiment (A) in \gls{WT} embryo under SPIM (B) where blue represents cell extension and red is compression. 1-2-3 label regarding cells over time-lapse.
  % Yellow dot marks the original position of the bead centre.
@@ -779,7 +779,7 @@ In conclusion, the cellular signature of the elastic periods were largely accoun
 \end{figure}
 \footnotetext{Figure currently being prepared for publication, reproduced with permission from Dr.~Julien Dumortier}
 To investigate how tissue deforms during the creep phase, which is defined by \gls{eta_1_visc} in the mechanical model, the behaviour of cells in the tissue at the front and rear of the bead were visually inspected.
-Cells became more compressed and moved out of the imaging plane (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}~(a), (b)).
+Cells became more compressed and moved out of the imaging plane (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}~(a) and (b)).
 This behaviour may be quantified by comparing changes in cell aspect ratio and area through both the elastic and creep periods (\figurename~\ref{fig:cell_tracking}~(e)).
 Early cell shape changes gave way to area changes during the creep period; this may be interpreted as the result of cells rearranging in the tissue in front of and behind the bead.
 
@@ -812,16 +812,16 @@ Cell rearrangements appeared to be the major determinants of tissue viscosity in
 The results of analysing movement during bead displacement were consistent with our simple hypothesis of a two-component model in which the viscoelastic component of tissue perturbation is derived from the mechanics of individual cells, while the component designating only viscosity is a measure of cell-cell interaction.
 To study how changes in these parameters affect embryo development, and the mechanical properties of the blastoderm, we employed a genetically altered line of zebrafish deficient in E-Cadherin (CDH1) expression.
 E-Cadherin is an essential transmembrane protein which mediates cellular adhesion, a fundamental requirement for building a cohesive tissue.
-To achieve this, we employed a knockdown Morpholino approach (MoECad) [ref] for cell adhesion, which lead to defects in the high-to-sphere transformation;
-these embryos failed to achieve a spherical shape (Figure 5.8 A).
+To achieve this, we employed a knockdown Morpholino approach (MoECad)~\cite{22} for cell adhesion, which lead to defects in the high-to-sphere transformation;
+these embryos failed to achieve a spherical shape (\figurename~\ref{fig:cell_tracking}~(a)).
 Rheological measurements showed that MoECad-treated embryos remained less stiff and less viscous than their wildtype counterparts.
-Furthermore, they were reduced in their ability to elevate these properties over developmental time (Figure 5.7), resulting in developmental trends that were significantly different to the \gls{WT} genotype.
+Furthermore, they were reduced in their ability to elevate these properties over developmental time (\figurename~\cite{fig:visco_time}), resulting in developmental trends that were significantly different to the \gls{WT} genotype.
 Cell migration and cell protrusive activity are two important cell behaviours in the blastoderm.
-Small enzymes able to hydrolyse the nucleotide guanosine triphosphate (termed GTPase enzymes) have been identified as central orchestrators of cell polarity and motility [ref].
+Small enzymes able to hydrolyse the nucleotide guanosine triphosphate (termed GTPase enzymes) have been identified as central orchestrators of cell polarity and motility~\cite{23}.
 Thus, we manipulated two complementary GTPase components of cell protrusion and migration.
-The signalling of the GTPase \gls{Rac1} was inactivated by using a \gls{DNRAC},[].
-The same approach was employed to inactivate the signalling of the GTPase \gls{RhoA} by introducing a \gls{DNROCK}~\cite{}.
-\gls{DNRAC} has been shown to eliminate protrusive activity mediated by \gls{Rac1}~\cite{}, while \gls{DNROCK} has been shown to reduce the activation of the molecular motor, myosin II, which mediates cellular migration [references]. %ROX Need references for DNRAC function, DNROCK function, and the fact that  myosin II is involved in cellular migration (recommend vincente-manzanares 2009, nat rev mol cell boil.)
+The signalling of the GTPase \gls{Rac1} was inactivated by using a \gls{DNRAC}~\cite{24}.
+The same approach was employed to inactivate the signalling of the GTPase \gls{RhoA} by introducing a \gls{DNROCK}~\cite{25}.
+\gls{DNRAC} has been shown to eliminate protrusive activity mediated by \gls{Rac1}~\cite{24}, while \gls{DNROCK} has been shown to reduce the activation of the molecular motor, myosin II, which mediates cellular migration~\cite{26, 27}. %ROX Need references for DNRAC function, DNROCK function, and the fact that  myosin II is involved in cellular migration (recommend vincente-manzanares 2009, nat rev mol cell boil.)
 The injection of these dominant negative constructs affected early morphogenesis; \gls{DNRAC}-injected embryos failed to progress to a spherical shape, while \gls{DNROCK} injection caused an accelerated high-to-sphere transition.
 As expected, our measurement of these rheological parameters by magnetic bead displacement confirmed these predictions: \gls{DNRAC} embryos failed to increase in stiffness and viscosities \gls{eta_1_visc} and \gls{eta_2_visc}
 (\( p_{\gls{E_visc}} = \SI{1.016e9}{} \),
@@ -907,7 +907,7 @@ This suggests that there may be a relatively simple cellular interpretation of t
 The study presented here is the first demonstration of a direct link between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
 By applying a directed local force to a developing embryo, through an embedded magnetic bead, local and ensemble mechanical properties of tissue were characterised.
 The blastula tissue was shown to have an intrinsic viscoelastic response;
-the data showed that tissues exhibit fluid-like behaviours, as observed in previous studies using optical tweezers in mature epithelia,~\cite{} and magnetic droplets injected into much older fish than considered here~\cite{}.
+the data showed that tissues exhibit fluid-like behaviours, as observed in previous studies using optical tweezers in mature epithelia,~\cite{19} and magnetic droplets injected into much older fish than considered here~\cite{18}.
 The viscoelastic timescale parameter, \gls{tau_visc}, remained constant across both time and embryonic mutations.
 The results of this study elucidate the biological meaning of the rheological parameters of viscosity and elasticity in terms of cellular morphology changes and rearrangement.
 
@@ -921,13 +921,13 @@ Yet, the decrease in cell stiffness with MoECad treatment suggests a more compli
 We propose that a cellular mechanotransduction mechanism assays the compliance of the environment between sites of adhesion.
 It is well understood that cells grown on a surface adjust their mechanical stiffness in proportion to substrate stiffness. %ROX  [? ? ]
 In the case of early mesenchymal tissues, we suggest that the cells themselves collectively constitute their own local mechanical environment, coupled via protrusion-promoted cell-cell adhesion.
-Numerous examples exist of mesenchymal cells interacting via protrusions~\cite{}.
-During collective migration, cadherin-mediated cell-cell connections are able to promote cell polarisation and cytoskeletal rearrangements, acting through \gls{Rac1} activation~\cite{}.
+Numerous examples exist of mesenchymal cells interacting via protrusions.
+During collective migration, cadherin-mediated cell-cell connections are able to promote cell polarisation and cytoskeletal rearrangements, acting through \gls{Rac1} activation~\cite{34}.
 Given the role of protrusions in both motility and transduction, this relationship explains the close correlation between viscosity and stiffness.
 
 The emergence of cohesive mesenchymal tissue mechanical properties may be linked with the motility of its cells and, in particular, the formation of protrusions that facilitate the establishment of cadherin-based cell-cell adhesions.
 Connectivity could result in an actin superstructure networked between cells, through cell adhesion proteins.
-Tissue stiffness and viscosity are well-correlated with the number of protrusions present and it is possible that these mechanisms might be found in other mesenchymal tissues during development~\cite{}. %ROX [can you back this up w/ref?]
+Tissue stiffness and viscosity are well-correlated with the number of protrusions present and it is possible that these mechanisms might be found in other mesenchymal tissues during development. %ROX [can you back this up w/ref?]
 These findings highlight a potentially fundamental difference in the determination of mechanical properties between epithelial and mesenchymal tissues.
 Epithelial cells represent relatively static configurations, based upon adhesion and contraction, while mesenchymal cells are adhesive and stiff, but dependent upon dynamic protrusion-based motility.
 The stiffening blastula, composed of radially anisotropic cells, is thus poised to drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
