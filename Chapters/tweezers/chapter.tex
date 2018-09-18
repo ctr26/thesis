@@ -18,7 +18,7 @@
 
 \chapter[Light-sheet microscopy combined with remote force measurements]{Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers}
 %:\\ \Large Correlating real-time viscoelastic changes with embryonic development}
-\epigraph{\emph{Show me a fish}}{--- Anonymous}
+% \epigraph{\emph{Show me a fish}}{--- Anonymous}
 % Section on what we're trying to achieve
 %From Julien:
 How multicellular organisms enact the morphogenetic programmes that ensure their characteristic forms remains an enigma.
@@ -27,10 +27,10 @@ Genetic screens have yielded an array of essential structural, patterning and si
 These are indicative of active force generation, but are insufficient to construct a quantitative explanation of where forces are generated and how forces propagate within and between tissues.
 To overcome these limitations, we require a quantitative characterisation of the physical properties of the tissues involved in order to understand how forces propagate within tissues to bring about morphogenesis.
 Measurements of the properties of individual cells,~\cite{mammotoMechanicalControlTissue2010} and of bulk tissues,~\cite{mammotoMechanobiologyDevelopmentalControl2013} have revealed properties typical of both viscoelastic and visco-elasto-plastic solids~\cite{heisenbergForcesTissueMorphogenesis2013}.
-Bulk tissue properties can be estimated using atomic force microscopy to investigate a tissue surface~\cite{18}.
+Bulk tissue properties can be estimated using atomic force microscopy to investigate a tissue surface~\cite{serwane2016invivo}.
 Alternatively, micropipette aspiration can probe dissociated cells or explants, however, this method cannot assess deep tissue directly~\cite{14,15}.
-More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation~\cite{17}, oil droplets~\cite{18}, or embedding tissue explants in matrix gel~\cite{16}.
-Most recently, ferrofluid droplets have shown that local tissue properties change with respect to the tissue localisation~\cite{18}. %ROX [, in terms of rheological parameters of elasticity and viscosity? Elaborate on these changes.]
+More recently, techniques have been developed to measure tissue stress and viscoelastic properties, utilising laser ablation~\cite{17}, oil droplets~\cite{serwane2016invivo}, or embedding tissue explants in matrix gel~\cite{16}.
+Most recently, ferrofluid droplets have shown that local tissue properties change with respect to the tissue localisation~\cite{serwane2016invivo}. %ROX [, in terms of rheological parameters of elasticity and viscosity? Elaborate on these changes.]
 There is still a need for methods that can provide a repeated, real-time readout of physical properties and relate those measurements to the underlying morphogenetic behaviour.
 
 A method was developed that can give non-destructive, quantitative measurements of local tissue physical properties at the length scale of a few cells, completed within seconds to minutes, and repeatable over developmentally-significant periods.
@@ -45,6 +45,9 @@ Interestingly, reducing Rho-kinase-dependent cell contractility increased both t
 
 By using light-sheet microscopy, in conjunction with magnetic tweezers, the fast image of tissue were acquires on a scale large enough to track the topological changes and rearrangement of cells.
 The magnitude of change in both of these attributes reduces as tissue elasticity and viscosity increase, and it is evident that the viscoelastic component correlates predominantly to changes in cell morphology, while viscosity dictates the rearrangement of cells.
+\\
+The work done in this section is currently under review with \emph{Nature Materials}
+\clearpage
 
 % done
 
@@ -60,7 +63,7 @@ Of the vertebrate model organisms, the \gls{zebrafish} is best suited for whole 
 The embryo is transparent and small, but can still be physically manipulated, and develops externally from the mother, allowing for imaging uninhibited by surrounding tissue from the parent organism; as a result, \gls{zebrafish} require no atmospheric control to enable growth, unlike cell cultures and other higher order models such as mice.
 Moreover, \gls{zebrafish} growth is rapid; a single cell, with a \SI{0.7}{\milli\meter} diameter, becomes a \SI{3.5}{\milli\meter} long larva within three days (see Table~\ref{tab:zfish_dev}).
 \gls{zebrafish} are also suitable for genetic studies as the genome is fully sequenced and tools for genetic manipulation are readily available.
-Breeding the fish is simple, as sexual maturity occurs at three months after fertilisation, facilitating easy cross-breeding~\cite{}.
+Breeding the fish is simple, as sexual maturity occurs at three months after fertilisation, facilitating easy cross-breeding~\cite{kimmelStagesEmbryonicDevelopment1995}.
 Finally, the costs of keeping \gls{zebrafish} are lower than that of other vertebrates due to their low space requirements and minimal handler time~\cite{AnimalModelsHuman}.
 
 % The \gls{zebrafish} (\emph{Danio rerio}) is a key model organism for vertebrate development.
@@ -117,13 +120,13 @@ See Table ~\ref{tab:zfish_dev}.
 %Bit on remote force stuff
 
 The force generation requirements for the investigation of cellular morphogenesis greatly limits which techniques would be suitable for force application and its measurement, as the forces must be applied in the \SIrange{10}{100}{\micro\metre} length scale, of a similar length to the size of a cell.
-Furthermore, the magnitude of these forces should be in the \SIrange{10}{100}{\micro\newton} range, of a similar magnitude to the forces that cells are able to generate~\cite{}.
+Furthermore, the magnitude of these forces should be in the \SIrange{10}{100}{\micro\newton} range, of a similar magnitude to the forces that cells are able to generate. %~\cite{}.
 It is also desirable for the process to result in minimal heat and light exposure to the organism, as well as to be minimally invasive.
 Immediately, common techniques such as mechanical probing, atomic force microscopy, and optical tweezers prove intractable.
 Thus, magnetic tweezers were employed in this work as a method of force application and measurement.
 
 Magnetic tweezers operate under the principle of applying a force to a magnetic bead through a magnetic field gradient and are able to apply this force at a distance, without perturbing biological materials, making the technique minimally invasive.
-Single-pole tweezer systems, where a single electromagnetic solenoid is able to apply a variable force on a bead in one direction, have been used in a number of experiments to understand the dynamics of cellular force responses~\cite{}.
+Single-pole tweezer systems, where a single electromagnetic solenoid is able to apply a variable force on a bead in one direction, have been used in a number of experiments to understand the dynamics of cellular force responses~\cite{overbyNovelDynamicRheological2005}.
 However, to characterise the force generation in cellular rearrangement fully, it is necessary to generate a magnetic force in an arbitrary direction in three dimensions, as this work demonstrates.
 %% Done
 %
@@ -146,7 +149,7 @@ However, to characterise the force generation in cellular rearrangement fully, i
 \subsection{Magnetic tweezers}
 %% Fix
 
-The design of the magnetic tweezers was based on a previously published design~\cite{(Vicci 2003)}, which is compatible with large samples, such as the \gls{zebrafish} embryo employed in this work; and was shown to generate sufficient forces using COMSOL simulations.
+The design of the magnetic tweezers was based on a previously published design~\cite{vicci3DMagneticForce}, which is compatible with large samples, such as the \gls{zebrafish} embryo employed in this work; and was shown to generate sufficient forces using COMSOL simulations.
 This section presents the development of the magnetic tweezers including the imaging chamber required by the \gls{LSFM}.
 The mechanical design of the magnetic tweezers was based on a monopole model.
 In this simplification the magnetic field is assumed to be generated by point sources (monopoles) around a sample containing a magnetic bead.
@@ -162,13 +165,13 @@ The magnetic dipole moment, \(\mathbf{m}\), induced in the bead by a magnetic fi
 
 Where \(d\) is the diameter of the bead, \(\mu_0\) is the magnetic permeability of free space, \(\mu_r\) is the relative magnetic permeability of the bead and \(\mathbf{B}\) is the magnitude of the field generated by a magnetic monopole.
 \(\mathbf{B}\) is in the form of \(\frac{B_p}{r^2}\) where \(B_p\) is the monopole strength and \(r\) is the distance from the monopole.
-Hence the gradient \(\nabla \mathbf{B}\) of the field is \(2 \frac{B_p}{r^3}\), and the force on the bead proportional to \(2\frac{B_{p}^2}{r^5}\) \cite{(Vicci 2003)}. %Vicci, L., 2003. A 3D Magnetic Force Manipulator DC Prototype. , 031.
+Hence the gradient \(\nabla \mathbf{B}\) of the field is \(2 \frac{B_p}{r^3}\), and the force on the bead proportional to \(2\frac{B_{p}^2}{r^5}\)~\cite{vicci3DMagneticForce}.
 In the mechanical design of the magnetic tweezers, it was thus desirable to position magnetic poles as close as possible to a sample.
 
 A minimum of four monopoles is required to achieve effective 3D specification of the force acting on the bead.
 The optimal configuration is a tetrahedral geometry, where monopoles are distributed on the vertices of a tetrahedron.
 Deviation from this geometry limits the range and directionality of achievable forces.
-Finally, only a single bead should be used at a time, as agglomeration of beads influences the magnetic field distribution due to the interactions between the beads, and thus disturbs the monopole model~\cite{Möller et al. 2003}. %Bausch,  a R., Möller, W. & Sackmann, E., 1999a. Measurement of local viscoelasticity and forces in living cells by magnetic tweezers. Biophysical journal, 76(1 Pt 1), pp.573–9
+Finally, only a single bead should be used at a time, as agglomeration of beads influences the magnetic field distribution due to the interactions between the beads, and thus disturbs the monopole model~\cite{bauschMeasurementLocalViscoelasticity1999}.
 The magnitudes and gradients of the magneticfield in the space between the poles is controlled by four solenoid coils; by varying the currents in these coils independently, one may control the the magnitude and direction and magnitude of the force acting on the bead.
 
 \subsubsection{Model Theory}
@@ -187,7 +190,7 @@ The magnitudes and gradients of the magneticfield in the space between the pole
 \end{figure}
 
 The simplest phenomenological model capable of mimicking the viscoelastic response of a developmentally early \gls{zebrafish} embryo, subject to strain generated by a moving, spherical, rigid object, is a one‐dimensional linear combination of an elastic spring and viscous dash‐pots.
-More precisely, the model assumes a parallel spring and dash‐pot \cite{(Kelvin‐Voigt model)} in series with a second dash‐pot, see \figurename~\ref{fig:viscoelastic_model}.
+More precisely, the model assumes a parallel spring and dash‐pot~\cite{meyersMechanicalBehaviorMaterials2008} in series with a second dash‐pot, see \figurename~\ref{fig:viscoelastic_model}.
 
 The model is described by the following parameters: dynamic viscosities, \gls{eta_1_visc} and \gls{eta_2_visc}, and elastic stiffness, \gls{E_visc}.
 When a strain \(\sigma\) is applied, the spherical rigid object, in this case a magnetic bead made of superparamagnetic nanoparticles embedded into a polyester matrix, moves and the displacement is quantified by the strain \(\epsilon \).
@@ -203,7 +206,7 @@ To model the equations of motion the a linear spring is described by:
  \intertext{The equation for a spring and a dash-pot connected in parallel follows as:}
  \sigma = \sigma_E + \sigma_{\eta_{2}} &= E \epsilon_p + \eta_{2} \dot{\epsilon_p}\\
  \ln\left(\frac{\sigma}{\eta_{2}}-\frac{E}{\eta_2} \epsilon_p \right) &= -\frac{E}{\eta_{2}}t+\ln C_1
- \intertext{Setting the initial conditions of $\epsilon_p = 0$ at $t = 0$:}
+ \intertext{Setting the initial conditions of \(\epsilon_p = 0\) at \(t = 0\):}
  \epsilon_p &= \frac{\sigma}{E}\left(1-\exp(-\frac{E}{\eta_2}t)\right)
  \intertext{The temporal variation of the dash-pot is ruled by:}
  \sigma = \eta_1 \dot{\epsilon_s} &\implies \epsilon_s = \frac{\sigma}{\eta_1}t
@@ -258,7 +261,7 @@ As only forces in the \(\mathbf{\hat{z}}\) direction are being considering, Equa
  \nabla z &= \frac{F_z}{4\pi \mu r}
  \intertext{In the close proximity to the bead of radius \(r_{\text{bead}} \), the displacement is given by:}
  \frac{\nabla z}{r_{\text{bead}}} = \frac{1}{4 \mu} \frac{F_z}{\pi r_{\text{bead}}^2} & \implies \epsilon = \frac{1}{4\mu} \sigma
- \intertext{Which is equivalent to \eqref{eq:linearspring} when substituting \(E \) with \(4\mu \).}
+ \intertext{Which is equivalent to~\eqref{eq:linearspring} when substituting \(E \) with \(4\mu \).}
 \end{align}
 
 \subsection{Magnetic tweezer design}
@@ -289,7 +292,7 @@ Orienting the poles at the optimal angle to the azimuth (\SI{45}{\degree}) would
 \subsubsection{Imaging Chamber Design}
 
 The imaging chamber presented in \figurename~\ref{fig:fep_chamber} was 3D printed with \gls{ABS} to allow for modular and rapid re-design.
-Clear acrylic windows were added to allow for a positioning camera (PiCam) to be placed below the tweezer system, as seen in \figurename~\ref{fig:tweezer_spim}~(b), which aided with the positioning of the \gls{zebrafish}.
+Clear acrylic windows were added to allow for a positioning camera (PiCam) to be placed below the tweezer system, as seen in \figurename~\ref{fig:tweezer_spim}b, which aided with the positioning of the \gls{zebrafish}.
 The chamber was watertight and featured heating pads to maintain the embryo medium and zebrafish at \SI{28.5}{\celsius} during imaging.
 
 % The imaging chamber presented was 3D printed in ABS (Acrylonitrile butadiene styrene) to allow for modular and rapid re-design.
@@ -717,7 +720,7 @@ Cell shape changes and cell displacements were measured along the axis of force 
 % Cell outlines and positions were automatically tracked and manually omitted and corrected.
 % Cell shape changes and cell displacements are measured along the axis of force application to the bead.
 
-Four sectors were defined around the bead relative to this axis (\figurename~\ref{fig:cell_tracking}~(a)); here, only the front and rear sectors were considered.
+Four sectors were defined around the bead relative to this axis (\figurename~\ref{fig:cell_tracking}a); here, only the front and rear sectors were considered.
 In front of the bead, during the elastic period, cells were both compressed and displaced forward by its movement (\figurename~\ref{fig:cell_tracking}~(c),~(d)).
 This tendency of cells to deform diminished over development time (\figurename~\ref{fig:cell_tracking}~(f), \(p_\text{linear-regression} = 0.016\)). %ROX r^2
 In fact, cell shape strain rates were highly correlated with, and largely account for, tissue deformation strain rate (\figurename~\ref{fig:cell_tracking}~(f),	\(p\text{correlation} = 0.0001757\), \(R^2 = 0.743\)).
@@ -779,8 +782,8 @@ In conclusion, the cellular signature of the elastic periods were largely accoun
 \end{figure}
 \footnotetext{Figure currently being prepared for publication, reproduced with permission from Dr.~Julien Dumortier}
 To investigate how tissue deforms during the creep phase, which is defined by \gls{eta_1_visc} in the mechanical model, the behaviour of cells in the tissue at the front and rear of the bead were visually inspected.
-Cells became more compressed and moved out of the imaging plane (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}~(a) and (b)).
-This behaviour may be quantified by comparing changes in cell aspect ratio and area through both the elastic and creep periods (\figurename~\ref{fig:cell_tracking}~(e)).
+Cells became more compressed and moved out of the imaging plane (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}a and \figurename~\ref{fig:cell_tracking}b).
+This behaviour may be quantified by comparing changes in cell aspect ratio and area through both the elastic and creep periods (\figurename~\ref{fig:cell_tracking}e.
 Early cell shape changes gave way to area changes during the creep period; this may be interpreted as the result of cells rearranging in the tissue in front of and behind the bead.
 
 % To investigate how tissue deforms during the creep phase, which in the mechanical model is defined by $\eta_1$, the behaviour of cells in the tissue at the front and rear of the bead were visually inspected.
@@ -790,10 +793,10 @@ Early cell shape changes gave way to area changes during the creep period; this 
 %%%%
 
 While the elastic periods were dominated by changes in cell shape, the creep period was characterised by cell rearrangements.
-Cell shape strain accounted for a small fraction of tissue strain rate (\figurename~\ref{fig:cell_tracking}~(g)), and did not correlate with \gls{eta_1_visc}
+Cell shape strain accounted for a small fraction of tissue strain rate (\figurename~\ref{fig:cell_tracking}g), and did not correlate with \gls{eta_1_visc}
 (\(R_\text{front}^2 = 0.345\), \(p = 0.21\); \(R^2 =	0.052\), \(p = 0.85\)).
 Nonetheless, measurable cell shape strain rates indicated that some contribution persisted through the creep period.
-However, cell intercalation strain rate correlated with \gls{eta_1_visc}, both in front of (\figurename~\ref{fig:cell_tracking}~(j))
+However, cell intercalation strain rate correlated with \gls{eta_1_visc}, both in front of (\figurename~\ref{fig:cell_tracking}j)
 (\(p_\text{correlation} = 0.0638\), \(R^2 = 0.49\)) and behind the bead (\(p = 0.035\), \(R^2 =	0.546\)).
 Cell rearrangements appeared to be the major determinants of tissue viscosity in the creep period.
 
@@ -813,7 +816,7 @@ The results of analysing movement during bead displacement were consistent with 
 To study how changes in these parameters affect embryo development, and the mechanical properties of the blastoderm, we employed a genetically altered line of zebrafish deficient in E-Cadherin (CDH1) expression.
 E-Cadherin is an essential transmembrane protein which mediates cellular adhesion, a fundamental requirement for building a cohesive tissue.
 To achieve this, we employed a knockdown Morpholino approach (MoECad)~\cite{22} for cell adhesion, which lead to defects in the high-to-sphere transformation;
-these embryos failed to achieve a spherical shape (\figurename~\ref{fig:cell_tracking}~(a)).
+these embryos failed to achieve a spherical shape (\figurename~\ref{fig:cell_tracking}a).
 Rheological measurements showed that MoECad-treated embryos remained less stiff and less viscous than their wildtype counterparts.
 Furthermore, they were reduced in their ability to elevate these properties over developmental time (\figurename~\cite{fig:visco_time}), resulting in developmental trends that were significantly different to the \gls{WT} genotype.
 Cell migration and cell protrusive activity are two important cell behaviours in the blastoderm.
@@ -829,14 +832,14 @@ As expected, our measurement of these rheological parameters by magnetic bead di
 \( p_{\gls{eta_2_visc}} = \SI{0.0028}{} \)), while \gls{DNROCK} embryos became stiffer and more viscous
 (\(p_E = 7.59e-25\),
 \(p_{\gls{eta_1_visc}} = \SI{6.74e-15}{}\),
-\(p_{\gls{eta_2_visc}} = \SI{3.65e-12}{}\)) than their \gls{WT} counterparts (\figurename~\ref{fig:cell_tracking}~(f)-(h)) %ROX which?
+\(p_{\gls{eta_2_visc}} = \SI{3.65e-12}{}\)) than their \gls{WT} counterparts (\figurename~\ref{fig:cell_tracking}f-\ref{fig:cell_tracking}h) %ROX which?
 \gls{tau_visc} was affected by these knockdowns, as stiffer embryo showed a shorter \gls{tau_visc} than softer ones (\(p \ll 1e-5\)).
 
 \subsection{Changes in rheological properties for \gls{DNRAC} and \gls{DNROCK} treatments are reflected in the rates of cell and tissue deformation}
 
 Fast \gls{light-sheet} imaging analyses were repeated with each knockdown treatment to follow cell behaviours during force application.
 The resultant parameters segregated according to their mechanical properties: softer \gls{DNRAC} embryos presented more cell deformation during the elastic period (\(p_\text{\gls{WT}-\gls{DNRAC}} = 0.0013\)) and more cell rearrangement during the creep period (\(p\text{\gls{WT}-\gls{DNRAC}} = 0.0025\)), compared to \gls{WT}.
-Cells in the stiffer \gls{DNROCK}-injected embryos deformed less in the elastic period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0017\)) and exhibited fewer cell rearrangements in the creep period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0013\)) (\ref{fig:cell_tracking}~(j)).
+Cells in the stiffer \gls{DNROCK}-injected embryos deformed less in the elastic period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0017\)) and exhibited fewer cell rearrangements in the creep period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0013\)) (\ref{fig:cell_tracking}j).
 These results confirm that the previously-observed correlations between cellular and rheological parameters hold true under this expanded range;
 stiffness, \gls{E_visc}, is strongly correlated with initial cell shape deformation, while \gls{eta_1_visc} is strongly correlated with cell rearrangements.
 This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology.

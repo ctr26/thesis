@@ -12,7 +12,7 @@
 
 \chapter{Diffraction limited single virion tracking in SPIM}\label{chapter:spt}
 
-\epigraph{\emph{You do the light-sheet, we do the heavy-sheet}}{--- Romane Lane}
+% \epigraph{\emph{You do the light-sheet, we do the heavy-sheet}}{--- Romane Lane}
 %Taken from Cat
 
 Herpesviruses are among the most complex and largest of the clinically relevant viruses and establish life-long infections in their hosts.
@@ -457,7 +457,7 @@ This technique was used to great effect in \gls{dSTORM} and PALM systems, which 
 The range over which a cylindrical lens can axially encode is, at most, \SI{\sim 1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
 
 %Compare 2D guassian fitting ratio threatening
-%\subsection{Fitting} %Guassian fitting
+%\subsection{Fitting} %Gaussian fitting
 \subsection{Axial localisation}
 
 In a typical \gls{3D} localisation workflow, the position of the emitter is first localised laterally in \gls{2D}, and then axially.
@@ -590,7 +590,7 @@ the standard Gaussian equation of:
 %\intertext{%To create a simple model of astigmatism we
 by assuming that \(\sigma\) depends on \(z\) such that:}
 \sigma \rightarrow \sigma(z) &= |kz + c|
-\intertext{Where \(k\) is how quickly the Guassian narrows, which is an analogue of using a more astigmatic imaging system.
+\intertext{Where \(k\) is how quickly the Gaussian narrows, which is an analogue of using a more astigmatic imaging system.
 \(c\) describes the radius of the \gls{PSF} when there is no astigmatism, which is when the particle is in focus at \(z=0\).
 It useful to express \(k\) in terms \(a\), where \(a\) is a function of \(c\) and \(w_0\) such that the Gaussian is $\frac{1}{a}$ narrower when at the extrma of the depth of field, \(z=w_0\).}
 \implies k & = \frac{a c}{w_0}
@@ -668,8 +668,8 @@ The approximate PSF is defined such that no motion blur is considered:}
 
 \subsection{Area analysis}
 
-For Guassian-like functions the total area under the curve is proportional to $\sigma(z)$, so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of error may be obtained.
-This analysis does not work for normalised Guassians functions as the area is unity in each case. %, as such the unnormalised model was used.
+For Gaussian-like functions the total area under the curve is proportional to $\sigma(z)$, so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of error may be obtained.
+This analysis does not work for normalised Gaussians functions as the area is unity in each case. %, as such the unnormalised model was used.
 % Using an unnormalised function was still valid as the area was being used as a proxy for finding a measure of the width of the PSF being interrogated.
 To retrieve the areas of each modelled \gls{PSF}, they were integrated across all space:
 \begin{align}

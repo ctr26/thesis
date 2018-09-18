@@ -10,7 +10,7 @@
 
 \chapter{Homographically generated light-sheets}\label{chapter:homography}
 
-\epigraph{\emph{No}}{--- James Manton}
+% \epigraph{\emph{No}}{--- James Manton}
 
 % Light-sheet fluorescence microscopy is fast becoming the method of choice for imaging large volumetric samples.
 % %Whilst confocal techniques achieve optical sectioning by omitting out-of-focus light, light-sheet technology exclusively illuminates a section optically %the focal plane
@@ -52,7 +52,7 @@ The work presented in this chapter, was submitted and accepted for publication i
 Aligning a digitally scanned light-sheet to a detection plane requires generating %a signal waveform
 a control signal ($V_x$, $V_z$) for the scanning mirrors.
 %Creating a signal train to produce a virtual light-sheet requires a mirror voltage calibration;
-In two dimensions the \(x\) mirror extrema map to the edges of the imaging-\gls{FOV} and a linear ramp between these coordinates produces a virtual light-sheet.
+In two dimensions the \(x\) mirror extrema map to the edges of the imaging \gls{FOV} and a linear ramp between these coordinates produces a virtual light-sheet.
 The \(z\)-mirror extrema correspond to the top and bottom observed image planes.
 %Three dimensionally, t
 %The the axial extrema are defined by %moving the %
@@ -160,7 +160,7 @@ As illustrated in \figurename~\ref{fig:homography/geometry}, this assumption the
 \subsection{Projective region of interest}
 
 %A more coplanar illumination
-The stack of illumination planes used in a \gls{3D} observation can be better matched to the detection planes by registering four corners of the available excitation \gls{3D}-\gls{FOV}, using a projective transform.%TODO SHITE SENTENCE
+The stack of illumination planes used in a \gls{3D} observation can be better matched to the detection planes by registering four corners of the available excitation \gls{3D}-\gls{FOV}, using a projective transform. %TODO SHITE SENTENCE
 %can therefore be achieved by registering the illumination to four corners of the available FOV, through the projective transform.
 %A projective transform can consider four coordinates meaning it an
 Projective transforms can map any quadrilateral onto any other, versus an affine transformation which is limited to three points.
@@ -181,7 +181,7 @@ Moreover, such fiducial marks are difficult to localise, within a single \gls{2D
 A calibration experiment provides the control signals ($V_{x_i}$,$V_{z_i}$) for $i$ = 1 to 4, needed to register the illumination to the four extrema of the imaging volume, ($x_i$, $z_i$).
 %We require a method to computer the control signal ($V_{x}$',$V_{z}$') which registers the illumination to a position ($x$,$z$), assuming that this is (well\mdashapproximated by) a projective transform of ($x$,$z$).
 %% read erics comment (This allows for the substantial distortion encountered in practice.)
-In a projective transform of $\textbf{r}$, the augmented vector $\widetilde{\textbf{r}} = (x, z, 1)$ is generated% =(\widetilde{r_1},\widetilde{r_2},\widetilde{r_3})$
+In a projective transform of $\textbf{r}$, the augmented vector $\widetilde{\textbf{r}} = (x, z, 1)$ is generated % =(\widetilde{r_1},\widetilde{r_2},\widetilde{r_3})$
 and then apply a linear transform to obtain $\widetilde{\textbf{r}}' = \textbf{H} \widetilde{\textbf{r}}$, followed by descaling to obtain the transformed vector
 \begin{align}
 {\textbf{r}}' = \left(\frac{{\widetilde{r_1}}'}{{\widetilde{r_3}}'},\frac{{\widetilde{r_2}}'}{{\widetilde{r_3}}'}\right)^T %= [x,z]% = \textbf{r} \label{eq:homo2cart} %\footnotemark

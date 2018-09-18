@@ -1,16 +1,11 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 14.09.2018  23:16:17
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/qOJQaAG5gM", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/eWtBvmRQYt", Output: "thesis.sls"
+;; at 18.09.2018  23:51:24
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/UsyJeHoQ1Z", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/IdSXgTT8GL", Output: "thesis.sls"
 
 
 Building indexentry-tree:
 Hierdepth of index is :TREE
 
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
@@ -49,19 +44,14 @@ Letter-group: "Ú" -> "T"
 Letter-group: "—_å¨Ð†" -> "E"
 Letter-group: "—Ú€_1_å¨Ð†" -> "E"
 Letter-group: "—Ú€_2_å¨Ð†" -> "E"
-Letter-group: "—" -> "E"
-Letter-group: "€´È¤€" -> "A"
-Letter-group: "œÃå" -> "F"
-Letter-group: "¨" -> "I"
-Letter-group: "¬_1" -> "J"
-Letter-group: "Ú€à" -> "T"
 Letter-group: "„" -> "B"
 Letter-group: "æ_0" -> "W"
 Letter-group: "ð_Ë" -> "Z"
 Letter-group: "´€»„€" -> "L"
+Letter-group: "œÃå" -> "F"
+Letter-group: "ë" -> "X"
 Letter-group: "ë" -> "X"
 Letter-group: "È" -> "P"
-Letter-group: "ë" -> "X"
 Letter-group: "æ" -> "W"
 Letter-group: "ë" -> "X"
 Letter-group: "Ú_ë" -> "T"
@@ -75,19 +65,13 @@ Letter-group: "¤" -> "H"
 Letter-group: "»Ð—" -> "M"
 Letter-group: "Ú€à_å¨Ð†" -> "T"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "€´È¤€" -> "A"
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "„" -> "B"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "—" -> "E"
+Letter-group: "—_å¨Ð†" -> "E"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "œ" -> "F"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "¤" -> "H"
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "¨" -> "I"
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "¬_1" -> "J"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-other-runs: ("K") ("K'") (BACKWARD FORWARD FORWARD) 1.
 sort-other-runs: ("K") ("K'") (FORWARD FORWARD) 2.

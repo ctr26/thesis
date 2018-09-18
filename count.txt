@@ -1,21 +1,19 @@
+
+!!! File ./Chapters/principles/chapter.tex not readable. !!!
 File: thesis.tex
 Encoding: utf8
-Words in text: 32856
-Words in headers: 647
-Words outside text (captions, etc.): 5854
-Number of headers: 211
-Number of floats/tables/figures: 89
-Number of math inlines: 457
-Number of math displayed: 85
+Words in text: 29332
+Words in headers: 576
+Words outside text (captions, etc.): 5257
+Number of headers: 179
+Number of floats/tables/figures: 76
+Number of math inlines: 406
+Number of math displayed: 77
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  715+7+0 (2/1/0/0) _top_
+  720+7+0 (2/1/0/0) _top_
   113+1+0 (1/0/0/0) Chapter: Introduction
   754+15+0 (4/0/0/0) Section: Motivation
-  49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
-  1056+22+265 (10/6/32/6) Section: Light microscopy
-  1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
-  887+22+287 (8/3/9/1) Section: Three dimensional fluorescence microscopy
   1005+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
   566+14+258 (7/2/0/0) Section: Objective arrangements
   379+4+192 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
@@ -25,27 +23,27 @@ Subcounts:
   1490+17+363 (10/4/14/0) Section: Hardware
   1084+16+299 (9/3/9/1) Section: Software
   304+27+0 (7/0/0/0) Section: Specification review
-  122+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
+  119+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
   862+17+121 (5/1/67/17) Section: Homographic theory
   414+10+289 (3/3/6/0) Section: Experimental implementation and verification
   122+1+0 (1/0/0/0) Section: Conclusions
-  198+5+0 (1/0/0/0) Chapter: Frame localisation optical projection tomography}\label{chapter:flopt
-  605+7+101 (3/2/26/2) Section: Rotational computer tomography in microscopy
-  706+8+45 (3/1/10/9) Section: Stereoscopic Imaging
-  746+3+156 (1/3/19/1) Section: The proposed algorithm
-  529+13+392 (2/9/43/1) Section: Verification of the proposed algorithm
-  168+1+0 (1/0/1/0) Section: Discussion
-  404+10+48 (4/1/5/0) Section: Future work
-  175+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
+  249+5+0 (1/0/0/0) Chapter: Frame localisation optical projection tomography}\label{chapter:flopt
+  604+7+118 (3/2/28/2) Section: Rotational computer tomography in microscopy
+  715+8+45 (3/1/10/9) Section: Stereoscopic imaging
+  750+3+230 (1/3/26/1) Section: The proposed algorithm
+  529+13+478 (2/9/43/1) Section: Verification of the proposed algorithm
+  169+1+0 (1/0/1/0) Section: Discussion
+  390+10+0 (4/0/5/0) Section: Future work
+  173+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
   546+5+99 (2/2/5/1) Section: Single beam confocal \gls{slit-scanning}
   742+20+206 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
   673+10+299 (4/4/19/7) Section: Structured illumination enhanced with \gls{slit-scanning}
   560+9+0 (3/0/1/0) Section: Discussion and future work
-  345+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
+  327+8+165 (1/2/0/0) Chapter: An open-hardware sample mounting solution for light-sheet microscopes}\label{chapter:chamber
   714+4+390 (1/4/0/0) Section: The design and construction
-  479+6+60 (2/2/0/0) Section: Sample preparation
+  478+6+60 (2/2/0/0) Section: Sample preparation
   185+1+0 (1/0/0/0) Section: Summary
-  745+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
+  735+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   635+15+87 (4/2/8/0) Section: Single particle tracking microscopy
   609+17+49 (5/1/11/2) Section: Astigmatic tracking
   292+7+116 (2/2/10/6) Section: Motion-induced astigmatic axial localisation error}\label{sec:spt_maths
@@ -53,7 +51,7 @@ Subcounts:
   230+8+62 (1/2/3/0) Section: Observations and tracking of virions using \gls{light-sheet} microscopy
   166+1+0 (1/0/0/0) Section: Conclusions
   371+4+101 (2/2/6/0) Section: Future work
-  519+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
+  527+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
   235+12+30 (2/2/0/0) Section: Tissue dynamics in developing organisms
   1567+21+108 (9/3/31/6) Section: Methods of measuring tissue dynamics
   958+12+49 (5/1/3/0) Section: Algorithmic bead tracking
@@ -86,3 +84,4 @@ Subcounts:
   130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
   17+2+0 (1/0/0/1) Section: Bragg conditons
 
+(errors:1)

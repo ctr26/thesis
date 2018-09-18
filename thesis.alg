@@ -1,17 +1,11 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 14.09.2018  23:16:16
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/_ZOD9Oek4U", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/ze6F_k6h3A", Output: "thesis.acr"
+;; at 18.09.2018  23:51:23
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/rTkN0cNINs", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/xpCiWu3_6v", Output: "thesis.acr"
 
 
 Building indexentry-tree:
 Hierdepth of index is :TREE
 
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
@@ -73,7 +67,6 @@ Letter-group: "Ð¨»" -> "S"
 Letter-group: "»Ð¨»" -> "M"
 Letter-group: "¼Ë€†" -> "D"
 Letter-group: "¼ËÃ†®" -> "D"
-Letter-group: "††" -> "C"
 Letter-group: "ÃÈ»" -> "O"
 Letter-group: "†€" -> "C"
 Letter-group: "ÃÈÚ" -> "O"
@@ -90,15 +83,8 @@ Letter-group: "Ð¼Ë" -> "S"
 Letter-group: "ÐÈ¨»" -> "S"
 Letter-group: "€œ»" -> "A"
 Letter-group: "—»" -> "E"
-Letter-group: "œæ¤»" -> "F"
-Letter-group: "Ð†»ÃÐ" -> "S"
-Letter-group: "´—" -> "L"
-Letter-group: "†»ÃÐ" -> "C"
-Letter-group: "¨††" -> "I"
-Letter-group: "—»††" -> "E"
-Letter-group: "œË€È" -> "F"
-Letter-group: "2È" -> "glsnumbers"
 Letter-group: "´Ðœ»" -> "L"
+Letter-group: "œæ¤»" -> "F"
 Letter-group: "Ð´»" -> "D"
 Letter-group: "—Ú´" -> "E"
 Letter-group: "¨ÐÈ¨»" -> "I"
@@ -107,6 +93,7 @@ Letter-group: "»àå¨ÐÈ¨»" -> "M"
 Letter-group: "Ð†€È—" -> "S"
 Letter-group: "»ÐÈ¨»" -> "M"
 Letter-group: "ÐÚ—" -> "S"
+Letter-group: "2È" -> "glsnumbers"
 Letter-group: "€ÃÚœ" -> "A"
 Letter-group: "€Ê" -> "D"
 Letter-group: "ÚÚ´" -> "T"
@@ -116,6 +103,7 @@ Letter-group: "2" -> "glsnumbers"
 Letter-group: "—ÃÈÚ" -> "E"
 Letter-group: "ÚÃÈÚ" -> "T"
 Letter-group: "Ðå" -> "S"
+Letter-group: "Ð†»ÃÐ" -> "S"
 Letter-group: "ÐÈÚ" -> "S"
 Letter-group: "€„Ð" -> "A"
 Letter-group: "È„Ð" -> "P"
@@ -143,9 +131,9 @@ Letter-group: "œ—È" -> "F"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "¤Ðå" -> "H"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "¨††" -> "I"
+Letter-group: "¨¼»" -> "I"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "´—" -> "L"
+Letter-group: "´Ðœ»" -> "L"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "»Ð¨»" -> "M"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)

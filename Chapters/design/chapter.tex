@@ -84,7 +84,7 @@ For precise tracking of single virions, a more stabilised method of suspending t
 This was problematic in the previous design due to design using cantilevered detection optics away from the frame, causing general instability.
 % suspension of objectives was needed.
 
-\subsection{Mechanical Design}
+\subsection{Mechanical design}
 
 % \gls{illumination arm}
 % \gls{detection arm}
@@ -133,11 +133,11 @@ Finally, the light-sheet generating mirror of the scanning pair of was suspended
 % Besides additional compatibility with upgrades, this design was more mechanically stable and had a large sample space for complex biological chambers.
 % Moreover the tuneable lenses were positioned horizontally in a vertical cage system avoiding gravitational deformations and hence aberrations.
 
-\subsubsection{Sample Mounting}
+\subsubsection{Sample mounting}
 
 %SPIM is notorious for sample mounting within the microscopy community, this is due to
 Sample mounting using light-sheet microscopes can be challenging due to the need to place a secondary objective (for illumination) within close proximity to the detection objective.
-The concept of the \gls{iSPIM}~\cite{Wu2011} allows more freedom in terms of sample mounting as more of the image volume is accessible.
+The concept of the \gls{iSPIM}~\cite{wuInvertedSelectivePlane2011a} allows more freedom in terms of sample mounting as more of the image volume is accessible.
 The \gls{imaging board} was mounted \SI{500}{\milli\meter} above the \gls{illumination board} so that an XYZ translator, with a large axial range, could be mounted.
 This allowed for multiple potential sample mounting strategies below.
 %This design point is one of the axioms of the new system, the focus of this report.
@@ -156,7 +156,7 @@ This allowed for multiple potential sample mounting strategies below.
 %The secondary breadboard was implemented with the ambition that the entire microscope could be ``portable" as it did not have a permanent residence where it was being built.
 %Hardware as well as a digitally controlled XYZ stage was placed on the bottom breadboard.
 
-\paragraph{XYZ Stage}
+\paragraph{XYZ stage}
 
 A \emph{Prior} Pro Scan \textit{HLD117} XY stage was mounted on top of a Motorized Linear Axis \textit{FB204E} Z stage.
 The set was chosen as each component had integrated linear encoders, giving a suitable positional resolution (\SI{20}{\nano\meter} in \(xyz\));
@@ -176,7 +176,7 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
   \begin{figure}
   \centering
   \includegraphics[width=\linewidth]{./optical_design_colour}
-  \caption[Full optical design of new SPIM]{
+  \caption[Full optical design of new \gls{light-sheet} microscope]{
   Optical design of the light-sheet microscope. \textbf{Yellow:} Beam comination of the four laser lines using dichroic mirrors.
   \textbf{Red:} a beam splitter is used to create two beam arms which can be used together to create two parallel beams; one beam for single beam light-sheet; or one beam structured using the SLM (blue).
   \textbf{Blue:} Expansion optics for the optional SLM arm of the illumination system.
@@ -196,7 +196,7 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
 % A (\emph{10x 0.3 NA Nikon}) water dipping objective was used for excitation and mounted at right angles to a (\emph{25x 1.1 NA}) Nikon LWD water immersion objective.
 % The fluorescence collected by the detection objective is then imaged onto a Hamamatsu sCMOS Orca Flash 4.
 % A piezo scanner (\emph{Physik Instrumente P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the excitation plane.
-\subsection{Optical Design}
+\subsection{Optical design}
 
 \subsection{Objective lenses}
 
@@ -450,7 +450,7 @@ A modular, extensible and easy-to-use software solution was needed to control th
 \gls{LabVIEW}, a graphical programming language with an emphasis on electronic systems control, was used.
 \gls{LabVIEW} provides a wide library of drivers and libraries for interfacing; in particular the Orca Flash v4 has \gls{LabVIEW} drivers for direct control of its reader functionality, including the requisite commands for confocal slit scanning.
 
-\subsubsection{\gls{LabVIEW} Architecture}
+\subsubsection{\gls{LabVIEW} architecture}
 
 % LabVIEW is a graphical programming software package designed to produce simple, modifiable, user-friendly software in science.
 % LabVIEW provides a wide library of drivers and libraries for hardware interfacing in science.
