@@ -1,11 +1,11 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 33000
+Words in text: 32999
 Words in headers: 650
-Words outside text (captions, etc.): 5988
+Words outside text (captions, etc.): 5943
 Number of headers: 212
 Number of floats/tables/figures: 88
-Number of math inlines: 468
+Number of math inlines: 467
 Number of math displayed: 87
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
@@ -16,18 +16,18 @@ Subcounts:
   1056+22+265 (10/6/32/6) Section: Light microscopy
   1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
   887+22+287 (8/3/9/1) Section: Three dimensional fluorescence microscopy
-  1005+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
+  1004+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
   566+14+258 (7/2/0/0) Section: Objective arrangements
-  379+4+192 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
+  379+4+165 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
   618+11+73 (6/1/0/0) Section: Illumination
   92+1+0 (1/0/0/0) Section: Summary
   161+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
   1490+17+363 (10/4/14/0) Section: Hardware
   1084+16+299 (9/3/9/1) Section: Software
-  316+27+21 (7/1/0/0) Section: Specification review
+  316+27+24 (7/1/0/0) Section: Specification review
   119+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
   862+17+121 (5/1/67/17) Section: Homographic theory
-  414+10+289 (3/3/6/0) Section: Experimental implementation and verification
+  414+10+289 (3/3/5/0) Section: Experimental implementation and verification
   122+1+0 (1/0/0/0) Section: Conclusions
   249+5+0 (1/0/0/0) Chapter: Frame localisation optical projection tomography}\label{chapter:flopt
   606+7+115 (3/2/26/2) Section: Rotational computer tomography in microscopy
@@ -37,7 +37,7 @@ Subcounts:
   169+1+0 (1/0/1/0) Section: Discussion
   390+10+0 (4/0/5/0) Section: Future work
   173+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
-  546+5+99 (2/2/5/1) Section: Single beam confocal \gls{slit-scanning}
+  544+5+99 (2/2/5/1) Section: Single beam confocal \gls{slit-scanning}
   742+20+206 (4/3/1/0) Section: Double speed \gls{slit-scanning} microscopy
   673+10+299 (4/4/19/7) Section: Structured illumination enhanced with \gls{slit-scanning}
   560+9+0 (3/0/1/0) Section: Discussion and future work
@@ -48,11 +48,11 @@ Subcounts:
   736+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   635+15+87 (4/2/8/0) Section: Single particle tracking microscopy
   609+17+49 (5/1/11/2) Section: Astigmatic tracking
-  292+7+116 (2/2/10/6) Section: Motion-induced astigmatic axial localisation error}\label{sec:spt_maths
+  292+7+95 (2/2/10/6) Section: Motion-induced astigmatic axial localisation error}\label{sec:spt_maths
   121+3+68 (2/1/0/0) Section: Results
   230+8+62 (1/2/3/0) Section: Observations and tracking of virions using \gls{light-sheet} microscopy
   166+1+0 (1/0/0/0) Section: Conclusions
-  371+4+101 (2/2/6/0) Section: Future work
+  373+4+101 (2/2/6/0) Section: Future work
   527+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
   235+12+30 (2/2/0/0) Section: Tissue dynamics in developing organisms
   1574+21+108 (9/3/33/6) Section: Methods of measuring tissue dynamics
@@ -85,5 +85,5 @@ Subcounts:
   0+2+0 (1/0/0/0) Chapter: Particle tracking
   130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
   7+2+0 (1/0/0/1) Section: Bragg conditons
-  108+3+0 (1/0/5/2) Section: Fourier slice theorem
+  108+3+0 (1/0/5/2) Section: Fourier slice theorem}\label{appendix:fourierslice
 

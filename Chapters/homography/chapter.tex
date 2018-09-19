@@ -21,10 +21,10 @@
 % %Being a wide-field technique
 % As light-sheet imaging is a wide-field technique, the temporal resolution is much higher than achievable via confocal scanning and the photon-dosage for generating an equally bright image is $\sim 2$ orders of magnitude lower.
 % This makes light-sheet microscopy ideal for imaging live biological specimens\cite{huisken_optical_2004-1}.
-Commercial and home-built\cite{pitrone_openspim:_2013} light-sheet systems typically use a cylindrical lens to convert a circular Gaussian laser beam into a thin sheet, as discussed in Chapter \ref{chapter:literature}.
+Commercial and home-built~\cite{pitrone_openspim:_2013} light-sheet systems typically use a cylindrical lens to convert a circular Gaussian laser beam into a thin sheet, as discussed in Chapter~\ref{chapter:literature}.
 %The sample is then dragged through the sheet to generate a full image.
 Alternatively, \gls{DSLM} uses galvanometric mirrors can mimic this effect mechanically by rapidly dithering a laser beam. % and provide a more uniform illumination profile
-\cite{keller_fast_2010-1}.
+~\cite{keller_fast_2010-1}.
 %galvanometric mirror behind a telecentric lens then scanned at rates beyond the samples of the detector can create the same effect mechanically rather an optically, this provides a more uniform illumination profile.
 Using galvanometric mirror pairs enables fast sweeping of the \gls{light-sheet} through a static specimen.
 However, the use of a scan lens can lead to registration errors of the sheet with respect to the imaging plane, leading to an excess background fluorescence in large volumes.
@@ -50,7 +50,7 @@ The work presented in this chapter, was submitted and accepted for publication i
 %Optical axis
 %While a three dimensional hexahedral observation volume (for instance a skewed cuboid) can defined by eight points, the propagation of the lightsheet limits the degrees of freedom such that any volume illuminated in SPIM can be defined by just four.
 Aligning a digitally scanned light-sheet to a detection plane requires generating %a signal waveform
-a control signal ($V_x$, $V_z$) for the scanning mirrors.
+a control signal (\(V_x\), \(V_z\)) for the scanning mirrors.
 %Creating a signal train to produce a virtual light-sheet requires a mirror voltage calibration;
 In two dimensions the \(x\) mirror extrema map to the edges of the imaging \gls{FOV} and a linear ramp between these coordinates produces a virtual light-sheet.
 The \(z\)-mirror extrema correspond to the top and bottom observed image planes.
@@ -63,11 +63,11 @@ The \(z\)-mirror extrema correspond to the top and bottom observed image planes.
 %In 3D, the FOV for the axial ($z$) extrema can also be defined for the other scan mirror. %Introduce 2pt/3~pt/4~pt
 %The 3D-FOV axial ($z$) extrema can also be defined for axial scanning mirror.
 However, using linear ramping from a starting point%operations
-, only three of the four $x$ $z$ extrema %possible points
+, only three of the four \(x\) \(z\) extrema %possible points
 can be registered
 %used to describe this calibration
 %the voltage calibration quadrilateral
-\cite{zitova_image_2003-1}.
+~\cite{zitova_image_2003-1}.
 The fourth point is either discarded, or more typically, only the centre of the one of the axial planes is considered, essentially averaging the third and forth available vertices. %coordinates.
 %In the latter case, the edges of the top 3D-FOV are neglected and only a correspondence between the bottom and the top is established%, creating a rhomboidal region of interest.
 %For most applications this is a suitable valid assumption% producing a small computational benefit.
@@ -84,34 +84,29 @@ As illustrated in \figurename~\ref{fig:homography/geometry}, this assumption the
     \begin{subfigure}[t]{\textwidth}
         \centering
         \includegraphics{geometry/Schematic_thesis}
-        \caption{}
-        \label{fig:geometry/Schematic_thesis}
+        \caption{}\label{fig:geometry/Schematic_thesis}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.2\textwidth}
         \centering
-        \includegraphics{geometry/no_correction}
-        \caption{No correction}
-        \label{fig:geometry/no_correction}
+        \includegraphics[width=\textwidth]{geometry/no_correction}
+        \caption{No correction}\label{fig:geometry/no_correction}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.2\textwidth}
         \centering
-        \includegraphics{geometry/linear}
-        \caption{Linear}
-        \label{fig:geometry/linear}
+        \includegraphics[width=\textwidth]{geometry/linear}
+        \caption{Linear}\label{fig:geometry/linear}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.2\textwidth}
         \centering
-        \includegraphics{geometry/affine}
-        \caption{Affine}
-        \label{fig:geometry/affine}
+        \includegraphics[width=\textwidth]{geometry/affine}
+        \caption{Affine}\label{fig:geometry/affine}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.2\textwidth}
         \centering
-        \includegraphics{geometry/projective}
-        \caption{Projective}
-        \label{fig:geometry/projective}
+        \includegraphics[width=\textwidth]{geometry/projective}
+        \caption{Projective}\label{fig:geometry/projective}
     \end{subfigure}
-    \begin{subfigure}[t]{0.05\textwidth}
+    \begin{subfigure}[t]{0.1\textwidth}
         \centering
         \includegraphics{geometry/coordinates}
         %\caption{projective}
@@ -122,11 +117,10 @@ As illustrated in \figurename~\ref{fig:homography/geometry}, this assumption the
     \caption{
     (\subref{fig:geometry/Schematic_thesis}) Schematic of %iSPIM using
     \gls{light-sheet} optics using a large \gls{NA} imaging objective, the incident beam is scanned in \(x\) to create a \gls{virtual light-sheet}.
-    In \subref{fig:geometry/no_correction}-(\subref{fig:geometry/projective}) and for best image quality, the illumination planes (shown as red when not perfectly registered to the illumination planes) must be registered to the detections planes (green).
+    In (\subref{fig:geometry/no_correction})~-~(\subref{fig:geometry/projective}) and for best image quality, the illumination planes (shown as red when not perfectly registered to the illumination planes) must be registered to the detections planes (green).
     The linear registration (\subref{fig:geometry/linear}) tends to produce non-uniform out of focus illumination across the image.
     The affine registration (\subref{fig:geometry/affine}) is commonly used to match the image centres between the top and bottom planes however the projective registration (\subref{fig:geometry/projective}), for four control points, provides superior performance due to decreased out-of-focus fluorescence.
-    }
-    \label{fig:homography/geometry}
+    }\label{fig:homography/geometry}
 \end{figure}
 
 %
@@ -165,11 +159,11 @@ The stack of illumination planes used in a \gls{3D} observation can be better ma
 %A projective transform can consider four coordinates meaning it an
 Projective transforms can map any quadrilateral onto any other, versus an affine transformation which is limited to three points.
 %in a Euclidean geometry which will apply only scaling, translation, rotation and shearing.
-Higher order corrections could also be used, with an $n$-point correction using b-splines being one, computationally expensive option.
+Higher order corrections could also be used, with an \(n\)-point correction using b-splines being one, computationally expensive option.
 %being a look-up table.
 %when very high order correction).
 However, such elastic transforms require more correspondences and are likely to incur additional errors through correspondence localisation precision.
-Moreover, such fiducial marks are difficult to localise, within a single \gls{2D}-\gls{FOV} there are only four sufficiently valid points i.e. the four corners of the image.%, especially for quadrilaterals which only have four identifiable correspondences.
+Moreover, such fiducial marks are difficult to localise, within a single \gls{2D}-\gls{FOV} there are only four sufficiently valid points i.e.~the four corners of the image.%, especially for quadrilaterals which only have four identifiable correspondences.
 %TODO Add in higher order corrections and elastic transform.
 
 %The additional 3DOF of freedom by considering
@@ -178,13 +172,13 @@ Moreover, such fiducial marks are difficult to localise, within a single \gls{2D
 
 \subsection{Homography and homogenous coordinates}
 
-A calibration experiment provides the control signals ($V_{x_i}$,$V_{z_i}$) for $i$ = 1 to 4, needed to register the illumination to the four extrema of the imaging volume, ($x_i$, $z_i$).
+A calibration experiment provides the control signals (\(V_{x_i}\),\(V_{z_i}\)) for \(i\) = 1 to 4, needed to register the illumination to the four extrema of the imaging volume, (\(x_i\), \(z_i\)).
 %We require a method to computer the control signal ($V_{x}$',$V_{z}$') which registers the illumination to a position ($x$,$z$), assuming that this is (well\mdashapproximated by) a projective transform of ($x$,$z$).
 %% read erics comment (This allows for the substantial distortion encountered in practice.)
-In a projective transform of $\textbf{r}$, the augmented vector $\widetilde{\textbf{r}} = (x, z, 1)$ is generated % =(\widetilde{r_1},\widetilde{r_2},\widetilde{r_3})$
-and then apply a linear transform to obtain $\widetilde{\textbf{r}}' = \textbf{H} \widetilde{\textbf{r}}$, followed by descaling to obtain the transformed vector
+In a projective transform of \(\textbf{r}\), the augmented vector \(\widetilde{\textbf{r}} = (x, z, 1)\) is generated % =(\widetilde{r_1},\widetilde{r_2},\widetilde{r_3})$
+and then apply a linear transform to obtain \(\widetilde{\textbf{r}}' = \textbf{H} \widetilde{\textbf{r}}\), followed by descaling to obtain the transformed vector
 \begin{align}
-{\textbf{r}}' = \left(\frac{{\widetilde{r_1}}'}{{\widetilde{r_3}}'},\frac{{\widetilde{r_2}}'}{{\widetilde{r_3}}'}\right)^T %= [x,z]% = \textbf{r} \label{eq:homo2cart} %\footnotemark
+{\textbf{r}}' = {\left(\frac{{\widetilde{r_1}}'}{{\widetilde{r_3}}'},\frac{{\widetilde{r_2}}'}{{\widetilde{r_3}}'}\right)}^T %= [x,z]% = \textbf{r} \label{eq:homo2cart} %\footnotemark
 \end{align}
 A projective transform of a plane can be exactly defined by four projected points, unless any three are collinear.
 The calibration experiment identifies four (non-collinear) extrema of the imaging volume, and so it is possible to combine the augmented form of three of the positions to produce the fourth, such that
@@ -213,7 +207,7 @@ x_4 \\
 z_4 \\
 1
 \end{pmatrix}
-\intertext{Where $\lambda, \mu$ and $\nu$ are constants.
+\intertext{Where \(\lambda, \mu \) and \(\nu \) are constants.
 This relation can be expressed as}
 \begin{pmatrix}
 x_1 & x_2 & x_3 \\
@@ -231,7 +225,7 @@ z_4 \\
 1
 \end{pmatrix} \label{eq:lambdamutau}
 \end{align}
-After solving for $\lambda,\mu$ and $\nu$ the matrix $\textbf{M}$ can be constructed
+After solving for \(\lambda,\mu \) and \(\nu \) the matrix \(\textbf{M}\) can be constructed
 \begin{align}
 \textbf{M} =
 \begin{pmatrix}
@@ -240,17 +234,16 @@ After solving for $\lambda,\mu$ and $\nu$ the matrix $\textbf{M}$ can be constru
 \lambda & \mu & \nu
 \end{pmatrix}
 \end{align}
-The matrix $\textbf{M}$ maps basis vectors to specific points, so that:
+The matrix \(\textbf{M}\) maps basis vectors to specific points, so that:
 \begin{align}
-\textbf{M}(100)^T &\mapsto k_1(x_1,z_1,1)^T\\
-\textbf{M}(010)^T &\mapsto k_2(x_2,z_2,1)^T\\
-\textbf{M}(001)^T &\mapsto k_3(x_3,z_3,1)^T\\
-\textbf{M}(111)^T &\mapsto \phantom{k_4}(x_4,z_4,1)^T\nonumber\\\nonumber
+\textbf{M}{(100)}^T &\mapsto k_1{(x_1,z_1,1)}^T\\
+\textbf{M}{(010)}^T &\mapsto k_2{(x_2,z_2,1)}^T\\
+\textbf{M}{(001)}^T &\mapsto k_3{(x_3,z_3,1)}^T\\
+\textbf{M}{(111)}^T &\mapsto \phantom{k_4}{(x_4,z_4,1)}^T\nonumber
 \end{align}
-
-Since $\textbf{M}$ maps basis vectors to augmented positions, $\textbf{M}^{-1}$ decomposes an augmented position into basis vectors.
-The calibration experiment provides control signals ($V_{x_i}$,$V_{z_i}$) which can be transformed to augmented vectors and treated in the same way.
-Specifically, ${\lambda'(V_{x_1},V_{z_1},1) + \mu'(V_{x_2},V_{z_2},1)+ \nu'(V_{x_3},V_{z_3},1) = (V_{x_4},V_{z_4},1)}$ for constants $ \lambda' , \mu' $ and $ \nu' $ so:
+Since \(\textbf{M}\) maps basis vectors to augmented positions, \(\textbf{M}^{-1}\) decomposes an augmented position into basis vectors.
+The calibration experiment provides control signals (\(V_{x_i}\),\(V_{z_i}\)) which can be transformed to augmented vectors and treated in the same way.
+Specifically, \({\lambda'(V_{x_1},V_{z_1},1) + \mu'(V_{x_2},V_{z_2},1)+ \nu'(V_{x_3},V_{z_3},1) = (V_{x_4},V_{z_4},1)}\) for constants \(\lambda' , \mu'\) and \(\nu' \) so:
 \begin{align}
   \begin{pmatrix}
       \lambda'  \\
@@ -270,7 +263,7 @@ Specifically, ${\lambda'(V_{x_1},V_{z_1},1) + \mu'(V_{x_2},V_{z_2},1)+ \nu'(V_{x
   \end{pmatrix}
 \end{align}
 \begin{align}
-  \intertext{The matrix $\textbf{N}$ can be created, in the same way that $\textbf{M}$ was}
+  \intertext{The matrix \(\textbf{N}\) can be created, in the same way that \(\textbf{M}\) was}
 \textbf{N} =
     \begin{pmatrix}
     \lambda' x_1 & \mu' x_2 & \nu' x_3 \\
@@ -279,9 +272,9 @@ Specifically, ${\lambda'(V_{x_1},V_{z_1},1) + \mu'(V_{x_2},V_{z_2},1)+ \nu'(V_{x
     \end{pmatrix}
 \end{align}
 
-\textbf{N} maps from basis vectors to augmented signals, so that $\textbf{N}(111)^T=\left( V_{x_4},V_{z_4}, 1 \right)^T$.
-To compute the projective transform of an illumination position $\textbf{r}=(x,z)^T$ to the required control signal $\textbf{V} = (V_x,V_z)^T$, we simply need to convert the augmented position to basis vectors using ${\textbf{M}}^{-1}\widetilde{\textbf{r}}$, and the basis vectors to control signals using $\textbf{N}$ with \glslink{homogeneous coordinates}{dehomogenisation}.
-It is useful to use the \gls{homography} matrix $\textbf{H} = \textbf{N}\textbf{M}^{-1}$, so that $\widetilde{\textbf{V}} = \textbf{H} \widetilde{\textbf{r}}$, or
+\textbf{N} maps from basis vectors to augmented signals, so that \(\textbf{N}{(111)}^T={\left( V_{x_4},V_{z_4}, 1 \right)}^T\).
+To compute the projective transform of an illumination position \(\textbf{r}={(x,z)}^T\) to the required control signal \(\textbf{V} = {(V_x,V_z)}^T\), we simply need to convert the augmented position to basis vectors using \({\textbf{M}}^{-1}\widetilde{\textbf{r}}\), and the basis vectors to control signals using \(\textbf{N}\) with \glslink{homogeneous coordinates}{dehomogenisation}.
+It is useful to use the \gls{homography} matrix \(\textbf{H} = \textbf{N}\textbf{M}^{-1}\), so that \(\widetilde{\textbf{V}} = \textbf{H} \widetilde{\textbf{r}}\), or
 
 \begin{align}
 \begin{pmatrix}
@@ -304,7 +297,7 @@ z \\
 1
 \end{pmatrix}
 \end{align}
-where the $x$ range is normalised to run from $x_1 = x_3 = 0$ to $x_2 =x_4=1$, and $\textbf{M}^{-1}$ is heavily simplified by solving for $ \lambda, \mu$ and $\nu$.
+where the \(x\) range is normalised to run from \(x_1 = x_3 = 0\) to \(x_2 =x_4=1\), and \(\textbf{M}^{-1}\) is heavily simplified by solving for \(\lambda, \mu \) and \(\nu \).
 Finally,
 \begin{align}
 \begin{pmatrix}
@@ -339,7 +332,7 @@ non-linear transformations using linear operations.
 %We propose a technique whereby all four corners of the region of interest are considered, allowing for corrections to imperfect optics and
 %Affine transforms between image space and galvanometric mirror voltages only require three corners of the region of interest to be defined. This imposed a rigid square transform which, under a system with ideal and well aligned optics is a valid assumption.
 %3D computer vision applications are required to perform unit square non-euclidian transforms in real time and do so by performing affine transforms in a homogeneous coordinate system.
-To transform from Cartesian coordinates to \gls{homogenous coordinates} an additional degree of freedom is augmented to a vector and the augmented vector is scaled by a constant, $\lambda$:
+To transform from Cartesian coordinates to \gls{homogenous coordinates} an additional degree of freedom is augmented to a vector and the augmented vector is scaled by a constant, \(\lambda \):
 
 \begin{align}
 \textbf{r} = [x,z] \mapsto  [\lambda x, \lambda z, \lambda] = \widetilde{\textbf{r}} \label{eq:cart2homo}
@@ -352,9 +345,8 @@ Once the required (linear) transforms are completed in \gls{homogenous coordinat
 \end{align}
 %\footnotetext{One should note the special cases: when $\lambda = 0$ each coordinate tends to infinity, emulating a perspective horizon and when $\lambda = 1$ there is no perspective distortion.}
 
-The linear distortion of a unit square to an affine quadrilateral would be defined by the matrix of the coordinate sets of point 1 and point 2 and their respective scaling $\lambda$ and $\mu$ for point 3:
+The linear distortion of a unit square to an affine quadrilateral would be defined by the matrix of the coordinate sets of point 1 and point 2 and their respective scaling \(\lambda \) and \(\mu \) for point 3:
 %\footnote{Note the special case when $\lambda = \mu$ the transform becomes a linear scaling}:
-
 \begin{align}
 \begin{pmatrix}
 x_1 & x_2 \\
@@ -371,7 +363,7 @@ z_3
 \end{pmatrix}
 \end{align}
 
-The equivalent projective transform utilising four points versus three requires augmentation of the \gls{homogenous coordinates}{homogenous coordinate} $\nu$:
+The equivalent projective transform utilising four points versus three requires augmentation of the \gls{homogenous coordinates}{homogenous coordinate} \(\nu \):
 
 \begin{align}
 \begin{pmatrix}
@@ -392,8 +384,8 @@ z_4 \\
 \end{pmatrix} \label{eq:lambdamutau}
 \end{align}
 
-The matrix $\textbf{M}$ can then be constructed by solving \eqref{eq:lambdamutau} for the values of $\lambda, \mu $ and $\nu$.
-$\textbf{M}$ is then the transform from basis vectors to the input coordinates, conversely ${\textbf{M}}^{-1}$ is the transform from input coordinates to basis vectors.
+The matrix \(\textbf{M} \) can then be constructed by solving~\eqref{eq:lambdamutau} for the values of \(\lambda, \mu \) and \(\nu \).
+\(\textbf{M} \) is then the transform from basis vectors to the input coordinates, conversely \({\textbf{M}}^{-1}\) is the transform from input coordinates to basis vectors.
 %The process is repeated for the matrix N for the desired output square.
 
 \begin{align}
@@ -405,10 +397,10 @@ $\textbf{M}$ is then the transform from basis vectors to the input coordinates, 
 \end{pmatrix}
 \end{align}
 
-Repeating the process for the desired coordinates gives matrix $\textbf{M}'$.
-$\textbf{H} = \textbf{M} {\textbf{M}'}^{-1}$ then provides the matrix conversion from input to output coordinates, also known as the \textbf{homography matrix}.
-To complete the transform from an input ($\widetilde{\textbf{r}}$) to an output ($\widetilde{\textbf{r}}'$) coordinate one operates the \gls{homography} matrix $\textbf{H}$ %(\eqref{eq:r=hr})
-then \gls{homogenous coordinates}{dehomogenises} $\widetilde{\textbf{r}}$ into Cartesian coordinates (\eqref{eq:homo2cart}).
+Repeating the process for the desired coordinates gives matrix \(\textbf{M}'\).
+\(\textbf{H} = \textbf{M} {\textbf{M}'}^{-1}\) then provides the matrix conversion from input to output coordinates, also known as the \textbf{homography matrix}.
+To complete the transform from an input (\(\widetilde{\textbf{r}}\)) to an output (\(\widetilde{\textbf{r}}'\)) coordinate one operates the \gls{homography} matrix \(\textbf{H}\) %(\eqref{eq:r=hr})
+then \gls{homogenous coordinates}{dehomogenises} \(\widetilde{\textbf{r}}\) into Cartesian coordinates (\eqref{eq:homo2cart}).
 A projective transform in \gls{homogenous coordinates} (which corresponds to registering 4 calibration points) will have all available 9 degrees of freedom.
 An affine transform in \gls{homogenous coordinates} (which corresponds to registering 3 calibration points) is written as follows:
 \begin{align}
@@ -442,7 +434,7 @@ r_{21} & r_{22} & t_z \\
 
 \subsection{Homographically generated waveforms}
 
-The projective transform is used to generate light-sheet waveforms by defining FOV extrema in the image space in terms of calibration $V_x$ and $V_z$ input calibration voltages, giving $\lambda$, $\mu$ and $\nu$:
+The projective transform is used to generate light-sheet waveforms by defining FOV extrema in the image space in terms of calibration \(V_x\) and \(V_z\) input calibration voltages, giving \(\lambda \), \(\mu \) and \(\nu \):
 
 \begin{align}
 \begin{pmatrix}
@@ -458,7 +450,7 @@ V_{x_4}  \\
 V_{z_4} \\
 1
 \end{pmatrix}
-\intertext{$\lambda'$ $\mu'$ and $\nu'$ are found from basis vectors using \eqref{eq:lambdamutau}:}
+\intertext{\(\lambda', \mu'\) and \(\nu'\) are found from basis vectors using~\eqref{eq:lambdamutau}:}
 \begin{pmatrix}
 \lambda'  \\
 \mu' \\
@@ -479,7 +471,7 @@ V_{z_4} \\
 \end{pmatrix}
 \end{align}
 
-Normalised FOV are inserted into $\textbf{M}'$, producing the heavily simplified:
+Normalised FOV are inserted into \(\textbf{M}'\), producing the heavily simplified:
 %When creating waveforms for light-sheet illumination $M'$ can be heavily simplified by normalising the FOV extrema:
 
 \begin{align}
@@ -522,8 +514,8 @@ Normalised FOV are inserted into $\textbf{M}'$, producing the heavily simplified
   \end{pmatrix}
 \end{align}
 
-$z_i$ represents top and bottom axial extrema where \(i\) is the codified vertices of the \gls{3D}-\gls{FOV}, as in \figurename~\ref{fig:homography/geometry}.
-$V$ refers to the input calibration voltages of the galvanic mirrors for the \gls{FOV} and $V'$ is the resultant voltage for a given $x$ (normalised) and $z$ which are the desired voltages for creating the \glslink{homography}{homographic} \gls{light-sheet}.
+\(z_i\) represents top and bottom axial extrema where \(i\) is the codified vertices of the \gls{3D}-\gls{FOV}, as in \figurename~\ref{fig:homography/geometry}.
+\(V\) refers to the input calibration voltages of the galvanic mirrors for the \gls{FOV} and \(V' \) is the resultant voltage for a given \(x \) (normalised) and \(z\) which are the desired voltages for creating the \glslink{homography}{homographic} \gls{light-sheet}.
 To further save computation time,
 %generating waveforms
 non-extrema points can be interpolated to create signal trains rather than point-wise; for higher-order corrections point-wise generation would be necessary.
@@ -576,14 +568,14 @@ non-extrema points can be interpolated to create signal trains rather than point
 \subsection{Scan lens characterisation}
 
 To accurately measure the deviation solely caused by the scanning system, a camera (Thorlabs DCC1545M) was mounted directly after the scan lens and an attenuated beam was imaged directly onto the sensor.
-The full range of the scanning unit was considered by incrementing mirror control voltages ($V_x$, $V_z$) linearly in input space.
+The full range of the scanning unit was considered by incrementing mirror control voltages \((V_x, V_z)\) linearly in input space.
 %through discrete $xz$ postions%mirror voltages
-and imaging the illumination beam in $xz$ for each step,
+and imaging the illumination beam in \(xz\) for each step,
 %capturing an image of the beam for each
 as shown in \figurename~\ref{fig:scan_lens/telecentric_colour/telecentric_induced_distortion_scale}.
-Each beam profile was fit with a 2D Gaussian to create a map of $xz$ illumination positions corresponding to constant steps in scan lens.
+Each beam profile was fit with a 2D Gaussian to create a map of \(xz\) illumination positions corresponding to constant steps in scan lens.
 %voltage to position calibration map.
-\figurename~\ref{fig:scan_lens/discrepancyHeatMap3pt_v2} and \ref{fig:scan_lens/discrepancyHeatMap4pt_v2} show the residual deviation from desired positions when using a 3~pt and 4~pt registration respectively.
+\figurename~\ref{fig:scan_lens/discrepancyHeatMap3pt_v2} and~\ref{fig:scan_lens/discrepancyHeatMap4pt_v2} show the residual deviation from desired positions when using a 3~pt and 4~pt registration respectively.
 The 4~pt correction is more faithful to experimental values.
 %\figurename~\ref{fig:scan_lens}c computes the average discrepancy incrementing through the observation volume, using more of the area of the scan lens and the regions where the scan lens' telecentricty breaks down.
 The figure verifies that a 4~pt correction %will always
@@ -613,21 +605,18 @@ will produce a more valid fitting for a beam scanned across a telecentric lens, 
     \begin{subfigure}[t]{\textwidth}
         \centering
         \includegraphics{scan_lens/telecentric_colour/telecentric_induced_distortion_scale}
-        \caption{Raw data of a point scanning across a scan lens. Scale bar is \SI{1}{\milli\meter}}
-        \label{fig:scan_lens/telecentric_colour/telecentric_induced_distortion_scale}
+        \caption{Raw data of a point scanning across a scan lens. Scale bar is \SI{1}{\milli\meter}}\label{fig:scan_lens/telecentric_colour/telecentric_induced_distortion_scale}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{scan_lens/discrepancyHeatMap3pt_v2}
-        \caption{3~pt correction discrepancy map}
-        \label{fig:scan_lens/discrepancyHeatMap3pt_v2}
+        \caption{3~pt correction discrepancy map}\label{fig:scan_lens/discrepancyHeatMap3pt_v2}
     \end{subfigure}\hspace{0.05\textwidth}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{scan_lens/discrepancyHeatMap4pt_v2}
-        \caption{4~pt correction discrepancy map}
-        \label{fig:scan_lens/discrepancyHeatMap4pt_v2}
+        \caption{4~pt correction discrepancy map}\label{fig:scan_lens/discrepancyHeatMap4pt_v2}
     \end{subfigure}
     \hfill
     % \hspace{0.01\textwidth}
@@ -643,8 +632,7 @@ will produce a more valid fitting for a beam scanned across a telecentric lens, 
     %the positional discrepancy from ground truth data using their respective corrections.
     % (c) increments the windows in (a) and (b) to retrieve an average correction discrepancy as a function of distance from the centre of the scan lens, measured in image space.
     %(c) shows a 3~pt correction progressively worsening.
-    }
-    \label{fig:scan_lens}
+    }\label{fig:scan_lens}
 \end{figure}
 
 \subsection{\emph{in situ} characterisation}
@@ -669,21 +657,18 @@ mismatch for real samples including fluorescent beads, dyes and a model organism
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics{in_situ/histogramofIntensityRatios_thesis}
-        \caption{Distribution of intensity the ratios for 3~pt vs. 4~pt corrections, with a modal peak at 1.42}
-        \label{fig:in_situ/histogramofIntensityRatios_thesis}
+        \caption{Distribution of intensity the ratios for 3~pt vs. 4~pt corrections, with a modal peak at 1.42}\label{fig:in_situ/histogramofIntensityRatios_thesis}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics{in_situ/beadComparisonAxial_thesis}
-        \caption{Axial point wise comparison of 3pt and 4pt corrections}
-        \label{fig:in_situ/beadComparisonAxial_thesis}
+        \caption{Axial point wise comparison of 3pt and 4pt corrections}\label{fig:in_situ/beadComparisonAxial_thesis}
     \end{subfigure}\vspace{0.05\textheight}
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \includegraphics{in_situ/axial_travel_thesis}
-        \caption{Fluorescence collection efficiency quantified by a focus measure (image maximum)}
-        \label{fig:in_situ/axial_travel_thesis}
+        \caption{Fluorescence collection efficiency quantified by a focus measure (image maximum)}\label{fig:in_situ/axial_travel_thesis}
     \end{subfigure}
     % \begin{subfigure}[t]{0.4\textwidth}
     %     % \centering
@@ -700,23 +685,21 @@ mismatch for real samples including fluorescent beads, dyes and a model organism
     were compared in \gls{3D} observation volumes %recorded
     using 3~pt and 4~pt corrections.
     The ratios in (\subref{fig:in_situ/histogramofIntensityRatios_thesis}) show an %peak
-    average 42\% increase in contrast using a 4~pt. correction, %peak intensity
+    average 42\% increase in contrast using a 4~pt.~correction, %peak intensity
     with an increasing effect when traveling axially (\subref{fig:in_situ/beadComparisonAxial_thesis}).
     (\subref{fig:in_situ/axial_travel_thesis}) is the corresponding graph for a beam scanned through dye solution also demonstrates greater light capture efficiency which becomes more significant with depth.
     The image maxima was taken as a good measure of beam to image plane focus.
-    }
-    \label{fig:in_situ}
+    }\label{fig:in_situ}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
   \includegraphics{in_situ/fish}
   \caption[Correction demonstrated in model organism]{Correction demonstrated in model organism:
   Presented is a transgenic \gls{zebrafish} expressing mCherry:beta-actinCAAX, in which the membrane contrast is substantially improved by the 4~pt registration.% and is used to visually compare the 4~pt and the 3~pt correction.}
-  }
-  \label{fig:homofish}
+  }\label{fig:homofish}
 \end{figure}
 
-% \begin{figure*}[h]
+% \begin{figure*}
 %   \includegraphics[width=\textwidth]{figure32}
 %   \caption[\emph{in situ} characterisation]{\emph{in situ} characterisation:
 %   (a-b) Ratios of intensity maxima of localised fluorescent bead images

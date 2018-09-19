@@ -52,7 +52,7 @@ The proteins considered in this work are \gls{VP26}, \gls{VP1/2} and \gls{VP16}.
 \gls{VP26}\cite{tangCrystalStructuresMajor2007} and \gls{VP1/2} are structural proteins found in the capsid.
 \gls{VP16} is a tegument protein which complexes with host DNA to induce gene transcription, the initiation of gene expression.
 
-\begin{table}[]
+\begin{table}
     \centering
     \caption[\gls{HSV}-1 virion components]{
     \gls{HSV}-1 virion components with alternative names in brackets.
@@ -390,7 +390,7 @@ An essential aspect of the method was to shift their \gls{light-sheet}
 % This was achieved by shifting their light-sheet
 and detection objective at each recorded frame so that the particle was repositioned to the centre of the sheet and did not drift outside of the illumination volume.
 Alternatively, the entire sample could be moved relative to a static sheet.
-Spille demonstrated this technique very successfully on a single molecule of mRNA (diameter \SI{~50}{\nano\metre}~\cite{spille_direct_2015}) moving on the membrane of a nucleus(see \figurename~\ref{fig:SPIMSPT}).
+Spille demonstrated this technique very successfully on a single molecule of mRNA (diameter \SI{~50}{\nano\metre}~\cite{spille_direct_2015}) moving on the membrane of a nucleus (see \figurename~\ref{fig:SPIMSPT}).
 Particle tracking results within the image data stack were then combined with information about the movement of the imaging volume to return estimates of particle movement within the specimen.
 
 % demonstrated this technique very successfully on a single molecule of mRNA (\(50 nm\)\cite{Spille2015a}) moving on the membrane of a nucleus\cite{Spille2015a}.
@@ -454,7 +454,7 @@ in the imaging plane axes %of the imaging plane
 % The result is that there
 results in an overall axial asymmetry in the detection \gls{PSF}, for point sources this allows axial position to be encoded in the recorded image.
 This technique was used to great effect in \gls{dSTORM} and PALM systems, which rely on the localisation of point emitters to create \gls{3D} \gls{super-resolution} volumes~\cite{huangThreeDimensionalSuperResolutionImaging2008}.
-The range over which a cylindrical lens can axially encode is, at most, \SI{\sim 1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
+The range over which a cylindrical lens can axially encode is, at most, \SI{\sim1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
 
 %Compare 2D guassian fitting ratio threatening
 %\subsection{Fitting} %Gaussian fitting
@@ -646,11 +646,11 @@ The approximate PSF is defined such that no motion blur is considered:}
 %PSF reality, integral between 0 and L, scaled by L
 \begin{figure}
     \centering
-    \begin{subfigure}[t]{\linewidth}
-        \centering
+    % \begin{subfigure}[t]{\linewidth}
+        % \centering
         \includegraphics{./mathematica/guassian_peak}
-        \caption{Normalised peak intensity}\label{fig:guassian_peak}
-    \end{subfigure}
+        % \caption{Normalised peak intensity}\label{fig:guassian_peak}
+    % \end{subfigure}
     % \\
     % \begin{subfigure}[t]{\linewidth}
     %     \centering
@@ -658,14 +658,15 @@ The approximate PSF is defined such that no motion blur is considered:}
     %     \caption{Normalised total area intensity}
     % \end{subfigure}
   \caption{
-  (a) Approximate versus numerical \gls{PSF} profile of a particle using normalised peak intensity, a weaker model for astigmatism
-  (b) Uses normalised area of the approximate and numerical PSFs for a more accurate model of astigmatism
-  }\label{}
+  %(a) 
+  Approximate versus numerical \gls{PSF} profile of a particle using normalised peak intensity, a weaker model for astigmatism.
+  % (b) Uses normalised area of the approximate and numerical PSFs for a more accurate model of astigmatism
+  }\label{fig:guassian_peak}
 \end{figure}
 
 \subsection{Area analysis}
 
-For Gaussian-like functions the total area under the curve is proportional to $\sigma(z)$, so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of error may be obtained.
+For Gaussian-like functions the total area under the curve is proportional to \(\sigma(z)\), so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of error may be obtained.
 This analysis does not work for normalised Gaussians functions as the area is unity in each case. %, as such the unnormalised model was used.
 % Using an unnormalised function was still valid as the area was being used as a proxy for finding a measure of the width of the PSF being interrogated.
 To retrieve the areas of each modelled \gls{PSF}, they were integrated across all space:
@@ -927,11 +928,11 @@ It is possible to align multiple calibration volumes and create an averaged or m
     the weighted outputs of these neurons are fed into the next layer;
     then those outputs are weighted and fed into a final output node with the range \SIrange{0}{1}{}.
     (b), (c) and (d) are example simulated images showing astigmatism at their respective normalised axial position \(z\).
-    }\label{}
+    }\label{fig:nn_astig_scheme}
 \end{figure}
 
 Training a \gls{NN} could be a more robust approach.
-\gls{NN}s take multiple inputs and produce a single output based on a back propagation step which helps determine the weightings on the \emph{neurons} in the hidden layer or layers.
+\gls{NN}s take multiple inputs and produce a single output based on a back propagation step which helps determine the weightings on the \emph{neurons} in the hidden layer or layers, shown in \figurename~\ref{fig:nn_astig_scheme}.
 Convolutional neural networks work in a similar fashion except that the weightings are image convolution steps; by using convolution steps the overall size of the neural network needed reduces making image recognition possible.
 By training a neural network on a given input segmented input image, with the known output of axial position, a fast and accurate machine for producing axial localisations could be utilised.
 \gls{NN}s are also computationally inexpensive as most of the effort put in occurs during the training step.

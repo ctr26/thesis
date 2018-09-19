@@ -47,11 +47,11 @@ To facilitate these biological aims the system has to address these specificatio
 
 \begin{enumerate}
     \item Fast volumetric imaging, 1 volume per second for the pixel range:\\\SI{2048x2048x100}{}\label{item:volumes}
-    \item Multi-colour interlaced volumetric imaging  \label{item:colour}
-    \item Capacity for multiple methods of sample mounting \label{item:mounting}
-    \item Multiple imaging length scales, \gls{FOV} range :~\SIrange{200}{700}{\micro\meter} \label{item:scales}% magnifications
-    \item Options for exotic illumination development through optional illumination paths to incorporate an \gls{SLM} \label{item:illumination}
-    \item User-friendly and extensible software scheme in \gls{LabVIEW} \label{item:software}
+    \item Multi-colour interlaced volumetric imaging\label{item:colour}
+    \item Capacity for multiple methods of sample mounting\label{item:mounting}
+    \item Multiple imaging length scales, \gls{FOV} range:~\SIrange{200}{700}{\micro\meter}\label{item:scales}% magnifications
+    \item Options for exotic illumination development through optional illumination paths to incorporate an \gls{SLM}\label{item:illumination}
+    \item User-friendly and extensible software scheme in \gls{LabVIEW}\label{item:software}
 \end{enumerate}
 
 % \subsection{Embryonic imaging for Mechanobiology}
@@ -109,11 +109,11 @@ The camera was mounted at \SI{45}{\degree} on a \gls{3D} printed mount that corr
 Rotating the camera was necessary as it allowed the camera shutter and illumination beam to propagate concomitantly for slit-scanning, see later Chapter~\ref{chapter:dualslit}.
 
 For the illumination path, a \SI{22.5}{\degree} mirror
-(to the horizon, see \figurename~\ref{fig:soldiworks_top}~(d))
+(to the horizon, see \figurename~\ref{fig:soldiworks_top}d)
 was used to deliver the laser illumination from the scanning optics into the illumination objective on the \gls{illumination arm}.
 The additional mirror was needed so that the scanning optics could be mounted flat to the optical breadboard, making positioning and optical mounting simpler.
 Using two mirrors also provided the sufficient degrees of freedom to align the axis of the scanning optics to the optical axis along the \gls{illumination arm}.
-Finally, the light-sheet generating mirror of the scanning pair of was suspended off the edge of the breadboard for delivery of the  illumination from the bottom optical table, see \figurename\ref{fig:soldiworks_top}~(a).
+Finally, the light-sheet generating mirror of the scanning pair of was suspended off the edge of the breadboard for delivery of the  illumination from the bottom optical table, see \figurename\ref{fig:soldiworks_top}a.
 
 % Mechanical design changes for more stable an extensible system than previous work.
 % Large detection area for future upgrades on detection arm - Like my relaying
@@ -161,7 +161,7 @@ This allowed for multiple potential sample mounting strategies below.
 A \emph{Prior} Pro Scan \textit{HLD117} XY stage was mounted on top of a Motorized Linear Axis \textit{FB204E} Z stage.
 The set was chosen as each component had integrated linear encoders, giving a suitable positional resolution (\SI{20}{\nano\meter} in \(xyz\));
 speed \SI{300}{\milli\meter\per\second} in \(xy\) and \SI{15}{\milli\meter\per\second} in \(z\);
-large travel range (\(\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} \) in \(xy\) and \SI{38}{\milli\meter} in \(z\))% and versatility in terms of mounting onto the microscope and sample mountings and their ability for computer interfacing~\cite{Hu2014}.
+large travel range (\(\SI{120}{\milli\meter} \times \SI{72}{\milli\meter} \) in \(xy\) and \SI{38}{\milli\meter} in \(z\)). % and versatility in terms of mounting onto the microscope and sample mountings and their ability for computer interfacing~\cite{Hu2014}.
 Each component was also computer controllable, and an open-source \gls{LabVIEW} routine was developed and made freely available for this purpose~\cite{russellSpimcontroller2017}.
 %
 % \subsubsection{Comparison with old SPIM}
@@ -262,8 +262,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_side}
-        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the side, gravity is down}
-        \label{fig:solidworks_design_front}
+        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the side, gravity is down}\label{fig:solidworks_design_front}
     \end{subfigure}
 \end{figure}
 \clearpage
@@ -272,8 +271,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_top}
-        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the top, gravity is going through the page}
-        % \label{fig:soldiworks_top}
+        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the top, gravity is going through the page}\label{fig:soldiworks_top}
     \end{subfigure}   % \ContinuedFloat
 \end{figure}
 \begin{figure}
@@ -296,8 +294,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     \textcolor{illustrator_red}{\textbf{FW}}: Filter wheel, for rejecting the non-fluorescent signal.
     \textcolor{illustrator_red}{\textbf{TL-R}}: Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
     \textcolor{illustrator_red}{\textbf{CAM}}: Camera (sCMOS, Hamamatsu Orca Flash 4 v2.0), for detection of the fluorescent signal.
-    }\label{fig:soldiworks_top}
-
+    }\label{fig:spim_cad}
     % \textcolor{illustrator_red}{OBJ}. {OBJ}. Objective lens, for imaging.
     % \textcolor{illustrator_red}{TL}. Tube lens, images specimen plane to an image plane
     % \textcolor{illustrator_red}{TM}. Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
@@ -306,7 +303,6 @@ This allowed for fast volumetric imaging as well as correction for distortions c
     % \textcolor{illustrator_red}{TL-R}. Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
     % \textcolor{illustrator_red}{CAM}. Camera, for detection of fluorescent signal.
     % }
-    \label{fig:spim_cad}
 \end{figure}
 \clearpage
 % \begin{figure}
@@ -343,7 +339,7 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 Using the Orca Flash v4 camera (with a sensor size of \SI[product-units=repeat]{13x13}{\milli\meter}) and a detection objective magnification of \SI{25}{\times}, produced a \gls{FOV} with an extension of
 % a required \acrshort{FOV} of
 \SI{520}{\micro\meter} in the \(x\) and \(y\) directions.
-To match the confocal width of the illumination beam to the \gls{FOV} of camera sensor the illumination required \SI{0.15}{}~\gls{NA} at the back aperture of the illumination objective for \SI{561}{\nano\meter} light; providing a beam waist (\gls{light-sheet} thickness) of \SI{1.3(1)}{\micro\meter}, from Equation~\ref{eq:rayleigh}.
+To match the confocal width of the illumination beam to the \gls{FOV} of camera sensor the illumination required \SI{0.15}{}~\gls{NA} at the back aperture of the illumination objective for \SI{561}{\nano\meter} light; providing a beam waist (\gls{light-sheet} thickness) of \SI{1.3(1)}{\micro\meter}, from Equation~\ref{eq:Rayleigh}.
 %\acrshort{NA}
 To create an \gls{NA} of \SI{0.15}, for an objective of focal length \SI{20}{\milli\meter}, the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
 
@@ -456,7 +452,7 @@ A modular, extensible and easy-to-use software solution was needed to control th
 % LabVIEW provides a wide library of drivers and libraries for hardware interfacing in science.
 % Due to LabVIEW's modularity and fast development environment it is ideal for producing software for a microscope under development as any new hardware can be quickly and easily implemented and not necessarily by the original software writer.
 
-It was required that the components within the microscope were interfaced in a parallel manner as well as controlling and interfacing with each other (e.g. the XYZ controller triggering the capturing of a image volume).
+It was required that the components within the microscope were interfaced in a parallel manner as well as controlling and interfacing with each other (e.g.~the XYZ controller triggering the capturing of a image volume).
 The software controller was engineered using a \glslink{producer-consumer architecture}{producer} where each \glslink{producer-consumer architecture}{consumer} was a parallel \gls{state machine}.
 The \glslink{producer-consumer architecture}{producer} will receive front panel inputs, then convert and pass those commands on to the \glslink{producer-consumer architecture}{consumer}s.
 Using a \gls{queueing architecture} ensured that command flooding and \gls{race conditions} are avoided, and the consumer loop can be self regulating.
@@ -603,16 +599,18 @@ The module was used to set the limits of the usable volumetric FOV and match the
 \section{Specification review}
 
 \begin{figure}
-  \begin{subfigure}
-    \includegraphics{zfish_48hr_eye_magneta}[t]{0.4\linewidth}
+  \centering
+  \begin{subfigure}[t]{0.4\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{zfish_48hr_eye_magneta}
     \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
-  \end{subfigure}~
-  \begin{subfigure}
-    \includegraphics{zfish_48hr_noto_magenta}[t]{0.4\linewidth}
+  \end{subfigure}\quad
+  \begin{subfigure}[t]{0.4\linewidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{zfish_48hr_noto_magenta}
     \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
   \end{subfigure}
-  \includegraphics{/path/to/figure}
-  \caption{Preliminary images of zebrafish produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+  \caption{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
 \end{figure}
 
 A \gls{light-sheet} microscope was built to the design specification in Section~\ref{sec:specification}.
@@ -632,7 +630,7 @@ The limiting step for speed was the filter wheel, though multi-notch filters wer
 An XYZ translator was mounted well below the two dipping objectives.
 This allowed for traditional mounting strategies, such as agarose filled \gls{FEP} tubing, as well as bespoke solutions for difficult samples, such as live cells.
 The translator enabled precision positioning as well as large FOV imaging through positional mosaicing.
-Chapter \ref{chapter:chamber} discusses, in detail, the sample mounting procedures used.
+Chapter~\ref{chapter:chamber} discusses, in detail, the sample mounting procedures used.
 
 \paragraph{\ref{item:scales}. Multiple magnifications}
 A par-focal relay using microscope objective lenses was inserted in the detection path to allow for two FOVs to be chosen from. This allow for the imaging of a large gamut of biological samples, from the cell up to the organism.

@@ -127,9 +127,9 @@ The latter case, specifically the smallest separation at which two point-like em
 %An \gls{objective lens}es is limited by
 The maximum half acceptance angle (\gls{alpha}) of an \gls{objective lens} limits the amount of light that can be collected from the sample.
 It is the half angle of the cone at the optical centre of the objective lens, outside of which light is not collected for imaging.
-An \gls{objective lens} may be approximated to applying a Fourier transform of the imaging space, through an aperture with radius $a$ with an imaging plane at the far field.
+An \gls{objective lens} may be approximated to applying a Fourier transform of the imaging space, through an aperture with radius \(a\) with an imaging plane at the far field.
 This leads to high frequency information being omitted during the imaging process and the lens behaving as a low-pass filter for optical frequencies.
-The electric field (\gls{E}$(r)$) and resultant intensity (\gls{I}$(r)$) distribution of a single point (delta function) at the primary image plane then becomes:
+The electric field (\gls{E}\((r)\)) and resultant intensity (\gls{I}\((r)\)) distribution of a single point (delta function) at the primary image plane then becomes:
 
 \begin{align}
     E(r) &\propto E_0 \frac{J_1 \left( \frac{2\pi r}{\lambda}\sin \alpha \right)}{ \frac{2\pi r}{\lambda} \sin {\alpha})}\label{eq:E_airy}\\
@@ -145,18 +145,14 @@ This function is more commonly known as an \Gls{airy disk} as shown in \figurena
     \begin{subfigure}[b]{\textwidth}
         %\centering
         \includegraphics{+airy_E_fill}
-        \caption{\(E(r)\), equation \eqref{eq:E_airy}}
-        \label{fig:airy_E_fill}
-    \end{subfigure}
-    ~
+        \caption{\(E(r)\), equation~\eqref{eq:E_airy}}\label{fig:airy_E_fill}
+    \end{subfigure}\quad
     \begin{subfigure}[b]{\textwidth}
         %\centering
         \includegraphics{+airy_I_fill}
-        \caption{\(I(r)\), equation \eqref{eq:I_airy}}
-        \label{fig:airy_I_fill}
+        \caption{\(I(r)\), equation~\eqref{eq:I_airy}}\label{fig:airy_I_fill}
     \end{subfigure}
-    \caption{Electric and intensity amplitudes of a theoretical \gls{airy disk} lateral distances \(x\) and \(y\) are given in units of \(\frac{2\pi r }{\lambda}\sin {\alpha}\)}
-    \label{fig:airy_disk}
+    \caption[Electric and intensity amplitudes of a theoretical \gls{airy disk}]{Electric and intensity amplitudes of a theoretical \gls{airy disk}, lateral distances \(x\) and \(y\) are given in units of \(\frac{2\pi r }{\lambda}\sin {\alpha}\)}\label{fig:airy_disk}
 \end{figure}
 
 \subsubsection{Lateral resolution}
@@ -617,47 +613,42 @@ By adding a third beam along the optical axis to interfere with the sinusoidal p
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=1\linewidth]{./sim/axial_otf}
-        \caption{Widefield OTF support}
-        \label{fig:sim_axial_otf}
+        \caption{Widefield OTF support}\label{fig:sim_axial_otf}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=1\linewidth]{./sim/axial_2_beam_2d}
-        \caption{2-beam SIM at \SI{2}{\times}$k_0$\\2D reconstruction}
-        \label{fig:sim_axial_2_beam_2d}
+        \caption{2-beam SIM at \SI{2}{\times}\(k_0\)\newline3D2D reconstruction}\label{fig:sim_axial_2_beam_2d} %TODO CHECK THIS DIDNT FUCK THIS
     \end{subfigure}
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]{./sim/axial_2_beam_3d}
-        \caption{2-beam SIM at \SI{1.5}{\times}$k_0$\\3D reconstruction}
-        \label{fig:sim_axial_2_beam_3d}
+        \caption{2-beam SIM at \SI{1.5}{\times}\(k_0\)\newline3D3D reconstruction}\label{fig:sim_axial_2_beam_3d}
     \end{subfigure}
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=1\linewidth]{./sim/axial_3_beam}
-        \caption{3-beam SIM at \SI{2}{\times}$k_0$\\3D reconstruction}
-        \label{fig:sim_axial_3_beam}
+        \caption{3-beam SIM at \SI{2}{\times}\(k_0\)\newline3D reconstruction}\label{fig:sim_axial_3_beam}
     \end{subfigure}\hfill
     \caption{
     Axial view of 2 and 3 beam illumination in \gls{SIM}.
     Black points in (\subref{fig:sim_axial_otf}) represent lateral frequency mixing from 2-beam illumination, the grey points represent axial frequency mixing from 3-beam illumination.
     (\subref{fig:sim_axial_otf}) shows the lateral extent of 2-beam \gls{SIM} at maximum (\SI{2}{\times}) excitation frequency, with no added axial resolution.
-    (\subref{fig:sim_axial_2_beam_3d}) shows the lateral extent of 2-beam \gls{SIM} at (\SI{1.5}{\times}$k_0$), giving reduced resolution but providing increased axial resolution.
-     (\subref{fig:sim_axial_2_beam_3d}) shows the lateral and axial extent of 3-beam \gls{SIM}, doubling in resolution axially and laterally \cite{gustasson}.
-     The thick black outlines show the original OTF support of the widefield image.    %
+    (\subref{fig:sim_axial_2_beam_3d}) shows the lateral extent of 2-beam \gls{SIM} at (\SI{1.5}{\times}\(k_0\)), giving reduced resolution but providing increased axial resolution.
+     (\subref{fig:sim_axial_2_beam_3d}) shows the lateral and axial extent of 3-beam \gls{SIM}, doubling in resolution axially and laterally~\cite{gustafssonSurpassingLateralResolution2000}.
+     The thick black outlines show the original OTF support of the widefield image.
     % Resulting OTF in (a, c) two- and (b, d) three-beam illumination. The black spots in
     % the microscope’s widefield OTFs (a: two-beam and b: three-beam) show the origins of the
     % shifted object information copies.When these copies are shifted back (c, d) to their correct
     % positions, the effective OTF increases in size. The black outline shows the original widefield
     % OTF cut-off border. The borders of the shifted OTFs are shown in gray. The corresponding
     % illumination patterns are shown in Figure 9.2a,b
-    }
-    \label{fig:sim_axial}
+    }\label{fig:sim_axial}
 \end{figure}
 
 \subsubsection{\gls{mSIM}}\label{sec:msim}
 
-Schroff~\emph{et. al.} showed that three dimensional, super-resolved, information can be also be extracted by \gls{mSIM}~\cite{yorkResolutionDoublingLive2012}.
+Schroff~\emph{et.~al.} showed that three dimensional, super-resolved, information can be also be extracted by \gls{mSIM}~\cite{yorkResolutionDoublingLive2012}.
 \gls{mSIM} uses a square lattice of illumination points which raster scan across the sample to provide a fast, parallelised, confocal-like image.
 Each spot is computationally pin-holed, and the resulting images are summed to produce a final, super-resolved image, as in \figurename~\ref{fig:mSIM}.
 

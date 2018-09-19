@@ -33,9 +33,9 @@ Mathematically this is described by equation \eqref{eq:knife}.
 	& = \frac{P_{TOT}}{2} \left[1 - erf\left(\frac{\sqrt{2}X}{\omega_x}\right) \right] \label{eq:knife}
 \end{align}
 
-Fitting of this curve was implemented using MatLAB's curve fitting package which utilises the method of least squares fitting, see Figure \ref{eq:emission}.
+Fitting of this curve was implemented using MatLAB's curve fitting package which utilises the method of least squares fitting, see Figure \ref{eq:laser_width}.
 The fit result produced values of laser beam width as $w_{before} = \SI{3.76\pm0.04}{\milli\meter}$ and $w_{after} = \SI{0.71\pm0.1}{\milli\meter}$.
-The value of $w_{after}$ was supplied in Table \ref{table:laser} however, for posterity is was remeasured locally in case the value had changed or was incorrect.
+% The value of $w_{after}$ was supplied in Table \ref{table:laser} however, for posterity is was remeasured locally in case the value had changed or was incorrect.
 This gives a magnification $M$ of \SI{5.37 \pm 0.1}{} therefore the focal length of the scan lens is \SI{37.3\pm0.1}{\milli\meter}.
 This also showed that the fill of the \SI{12}{\milli\meter} back aperture was \SI{3.76\pm0.04}{\milli\meter} hence the NA of the \num{0.3} objective used would be \SI{\approx 0.094}{}.
 
@@ -100,7 +100,7 @@ Hence the additional real space shift only adds a multiplicative factor to the f
 Diffraction is the spreading of light rays after an interaction with an object. Coincident light waves may interfere when diffracted such that the superposition of their resultant waves is constructive or destructive dependent on their relative phase difference. Light incident on an aperture $A(x,y)$ in the plane $S$ can be assumed to be of a plane wave nature. When passing through the aperture, light can then be modelled as being a series of $dS$ spaced point sources that radiate spherical wavefronts under Huygens' principle:
 
 \begin{quote}
-``Every point on a propagating wavefront serves as the source of secondary spherical wavelets, such that the wavefront at some later time is the envelope of these wavelets.'' \cite{Goodman2005}
+``Every point on a propagating wavefront serves as the source of secondary spherical wavelets, such that the wavefront at some later time is the envelope of these wavelets.''~\cite{goodmanIntroductionFourierOptics1996}
 \end{quote}
 
 %
@@ -149,12 +149,12 @@ u &= \frac{k \alpha}{2 \pi R}  \text{ and }   v = \frac{k \beta}{2 \pi R}
 \\ E(u,v)&=\frac{e^{i \omega t - kr}}{R} \int\int_{A}^{} A(x,y) e^{i2 \pi k \left(ux + vy\right)} dxdy
 \end{align}
 
-This form is well known and defined as a Fourier transform (with a weighting term) and hence the far field diffraction pattern of an aperture is the Fourier transform of that aperture \cite{Goodman2005}.
+This form is well known and defined as a Fourier transform (with a weighting term) and hence the far field diffraction pattern of an aperture is the Fourier transform of that aperture~\cite{goodmanIntroductionFourierOptics1996}.
 
 \chapter{Particle tracking}
 \section{Failed quantifications of motion induced error}
 
-Introduced in section \ref{sec:spt_maths}, attempts at quantify the error seen due to motion blur that failed.
+Introduced in Section~\ref{sec:spt_maths}, attempts at quantify the error seen due to motion blur that failed.
 
 \subsection{Cross correlation}
 \begin{align*}
@@ -228,21 +228,22 @@ Proof of abbe limit from diffraction theory:
 \end{align}
 
 
-\section{Fourier slice theorem}
-From \cite{kakPrinciplesComputerizedTomographic2001}:
+\section{Fourier slice theorem}\label{appendix:fourierslice}
+From~\cite{kakPrinciplesComputerizedTomographic2001}:
 
 \begin{quotation}
-We derive the Fourier Slice Theorem by taking the one-dimensional Fourier transform of a parallel projection and noting that it is equal to a slice of the two-dimensional Fourier transform of the original object.
+``We derive the Fourier Slice Theorem by taking the one-dimensional Fourier transform of a parallel projection and noting that it is equal to a slice of the two-dimensional Fourier transform of the original object.
 It follows that given the projection data, it should then be possible to estimate the object by simply performing a two-dimensional inverse Fourier transform.
 We start by defining the two-dimensional Fourier transform of the object function as
 
 \begin{align}
   F(u,v) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y)e^{-i2\pi(ux+uy)}dx dy.
-  \intertext{ Likewise define a projection at an angle 8, PO(t),  and its Fourier transform by}
+  \intertext{ Likewise define a projection at an angle  \(\theta \), \(P_{\theta}(t)\), and its Fourier transform by}
 S_{\theta}(w) =  \int_{-\infty}^{\infty} P_\theta9t) e^{-i2\pi w t} dt
 \end{align}
 \begin{align}
-\intertext{The simplest example of the Fourier Slice Theorem is given for a projection at \(\theta = 0\). First, consider the Fourier transform of the object along
+\intertext{The simplest example of the Fourier Slice Theorem is given for a projection at \(\theta = 0\).
+First, consider the Fourier transform of the object along
 the line in the frequency domain given by u = 0.
 The Fourier transform integral now simplifies to}
 F(u,0) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y)e^{-i2\pi(ux)}dx dy.
@@ -251,14 +252,14 @@ F(u,0) =  \int_{-\infty}^{\infty} \left[  \int_{-\infty}^{\infty} f(x,y,) dy \ri
 \intertext{ From the definition of a parallel projection, the reader will recognise the term in brackets as the equation for a projection along lines of constant \(x\) or}
 P_{\theta = 0} (x) = \int_{-\infty}^{\infty} f(x,y) dy
 \intertext{Substituting this in \eqref{eq:f(u,0)} we find:}
-F(u,0) =  \int_{-\infty}^{\infty} P_{\theta = 0} (x) e^{-i2\pi(ux)} dx \label{eq:f(u,0)}
+F(u,0) =  \int_{-\infty}^{\infty} P_{\theta = 0} (x) e^{-i2\pi(ux)} dx
 \intertext{ The right-hand side of this equation represents the one-dimensional Fourier transform of the projection \(P_{\theta = 0}\);
 thus we have the following relationship between the vertical projection and the 2-D transform of the object function:}
 F(u,0) = S_{\theta=0}(u)
 \end{align}
 
 \begin{quotation}
-  The Fourier transform of a parallel projection of an image \(f(x, y)\) taken at angle \(\theta\) gives a slice of the two-dimensional transform, \(F(u, v)\), subtending an angle \(\theta\) with the \(u\)-axis.
+  ``The Fourier transform of a parallel projection of an image \(f(x, y)\) taken at angle \(\theta \) gives a slice of the two-dimensional transform, \(F(u, v)\), subtending an angle \(\theta \) with the \(u\)-axis.''
 \end{quotation}
-
+''
 \end{quotation}

@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 19.09.2018  00:22:21
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/wCnsqlGCih", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/fcRkEC4Pgb", Output: "thesis.sls"
+;; at 20.09.2018  00:22:27
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/8WsmCVEyek", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/_RSj3zg1rd", Output: "thesis.sls"
 
 
 Building indexentry-tree:
@@ -49,9 +49,9 @@ Letter-group: "Ú" -> "T"
 Letter-group: "—_å¨Ð†" -> "E"
 Letter-group: "—Ú€_1_å¨Ð†" -> "E"
 Letter-group: "—Ú€_2_å¨Ð†" -> "E"
+Letter-group: "—" -> "E"
 Letter-group: "€´È¤€" -> "A"
 Letter-group: "œÃå" -> "F"
-Letter-group: "—" -> "E"
 Letter-group: "¨" -> "I"
 Letter-group: "¬_1" -> "J"
 Letter-group: "Ú€à" -> "T"

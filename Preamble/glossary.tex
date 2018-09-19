@@ -20,7 +20,7 @@
 \glsxtrnewsymbol[description={Wavelength}]{lambda}{\ensuremath{\lambda}}
 \glsxtrnewsymbol[description={Numerical aperture}]{NA}{NA}
 \glsxtrnewsymbol[description={Electric field}]{E}{\ensuremath{E}}
-\glsxtrnewsymbol[description={Intensity,$\gls{E}^2$}]{I}{\ensuremath{I}}
+\glsxtrnewsymbol[description={Intensity,\(\gls{E}^2\)}]{I}{\ensuremath{I}}
 \glsxtrnewsymbol[description={Spot size of a Gaussian beam}]{w_0}{\ensuremath{w_0}}
 
 %Computer vision
@@ -42,7 +42,7 @@
 \glsxtrnewsymbol[description={The Essential matrix}]{Essential}{\ensuremath{\mathbf{E}}}
 \glsxtrnewsymbol[description={The Homography matrix}]{H}{\ensuremath{\mathbf{H}}}
 \glsxtrnewsymbol[description={\(3\times3\) matrix containing coordinates from \gls{T}}]{T_x}{\ensuremath{\mathbf{T_\times}}}
-\glsxtrnewsymbol[description={Mean square error: \(\operatorname{MSE}=\frac{1}{n}\sum_{i=1}^n(Y_i-\hat{Y_i})^2\)}]{MSE}{\ensuremath{MSE}}
+\glsxtrnewsymbol[description={Mean square error: \(\operatorname{MSE}=\frac{1}{n}\sum_{i=1}^n{(Y_i-\hat{Y_i})}^2\)}]{MSE}{\ensuremath{MSE}}
 
 \glsxtrnewsymbol[description={tissue viscosity}]{eta_1_visc}{\ensuremath{\eta_1}}
 \glsxtrnewsymbol[description={cellular viscosity}]{eta_2_visc}{\ensuremath{\eta_2}}
@@ -54,7 +54,7 @@
 
 \newglossaryentry{4f}{
     name={4f},
-    description={Two lens system with each plane separated by a focal length $f$}
+    description={Two lens system with each plane separated by a focal length \(f \)}
 }
 \newglossaryentry{primary imaging plane}{
     name={primary imaging plane},
@@ -127,7 +127,7 @@
 }
 \newglossaryentry{dynamic range}{
     name={dynamic range},
-    description={TODO}
+    description={The ratio between the largest and smallest intensity values that a photo-site can assume}
 }
 \newglossaryentry{bit depth}{
     name={bit depth},
@@ -135,19 +135,19 @@
 }
 \newglossaryentry{dark current}{
     name={dark current},
-    description={....}
+    description={The residual electric current flowing in each photo-site when there is no incident illumination}
 }
 \newglossaryentry{read noise}{
     name={read noise},
-    description={...}
+    description={Noise contribution from the electronics within the camera}
 }
 \newglossaryentry{photon noise}{
     name={photon noise},
-    description={...}
+    description={The intrinsic variation of the incident photon flux}
 }
 \newglossaryentry{poissonian distribution}{
     name={poissonian distribution},
-    description={...}
+    description={Discrete probability distribution in a fixed epoch}
 }
 \newglossaryentry{fluorophore}{
     name={fluorophore},
@@ -159,19 +159,19 @@
 }
 \newglossaryentry{confocal microscope}{
     name={confocal microscope},
-    description={A laser scanning microscope wherein an adjustable pinhole is placed at a conjugate imaging plane to control axial and spatial resolution of the reconstructed image.}
+    description={A laser scanning microscope wherein an adjustable pinhole is placed at a conjugate imaging plane to control axial and spatial resolution of the reconstructed image}
 }
 \newglossaryentry{confocal}{
     name={confocal},
-    description={DEFINE}
+    description={Common focal point between lenses, similiar to conjugate planes}
 }
 \newglossaryentry{galvanometric scanning mirrors}{
     name={galvanometric scanning mirrors},
-    description={Voltage controlled mirrors where voltage is proportional to angle.}
+    description={Voltage controlled mirrors where voltage is proportional to angle}
 }
 \newglossaryentry{resonant scanning mirrors}{
     name={resonant scanning mirrors},
-    description={Voltage controlled mirrors driven at their resonant frequency to increase the maximum viable scanning speed.}
+    description={Voltage controlled mirrors driven at their resonant frequency to increase the maximum viable scanning speed}
 }
 \newglossaryentry{photobleaching}{
     name={photobleaching},
@@ -203,7 +203,7 @@
 }
 \newglossaryentry{convolution theorem}{
     name={convolution theorem},
-    description={The relation between convolution in Cartesian space versus multiplication in frequency space, see Appendix \ref{appendix:convolution_theorem}}
+    description={The relation between convolution in Cartesian space versus multiplication in frequency space, see Appendix~\ref{appendix:convolution_theorem}}
 }
 \newglossaryentry{epi-fluorescence}{
     name={epi-fluorescence},
@@ -215,7 +215,7 @@
 }
 \newglossaryentry{ultra-microscope}{
     name={ultra-microscope},
-    description={...}
+    description={A light-sheet microscope for observing small particles or colloids using scattered light, developed by R. A. Zsigmondy 1902}
 }
 \newglossaryentry{openSPIM}{
     name={openSPIM},
@@ -227,25 +227,25 @@
 }
 \newglossaryentry{Lorentzian}{
     name={Lorentzian},
-    description={$put maths here$ %TODO
+    description={\(f(x) = \frac{1}{x^2+1}\)
     }
 }
 \newglossaryentry{Rayleigh length}{
     name={Rayleigh length},
-    description={ %TODO Define
+    description={The distance along the propagation direction of a Gaussian beam where the beam is percieved to be still collimated.
     }
 }
 \newglossaryentry{virtual light-sheet}{
     name={virtual light-sheet},
     description={\Gls{light-sheet} generated by spatially sweeping a beam}
 }
-\newglossaryentry{tele-centric}{
-    name={tele-centric},
-    description={DEFINE}
-}
+% \newglossaryentry{tele-centric}{
+%     name={tele-centric},
+%     description={A lens property where all the chief rays are collimated and parallel to the optical axis}
+% }
 \newglossaryentry{working distance}{
     name={working distance},
-    description={The distance an objective needs to be away from a sample to keep focus, distance to the focal plane.}
+    description={The distance an objective needs to be away from a sample to keep focus, distance to the focal plane}
 }
 \newglossaryentry{tomography}{
     name={tomography},
@@ -265,11 +265,11 @@
 }
 \newglossaryentry{Bessel beam}{
     name={Bessel beam},
-    description={Non-diffraction, self-healing beam. Narrow central lobe with multiple outer orders.}
+    description={Non-diffraction, self-healing beam. Narrow central lobe with multiple outer orders}
 }
 \newglossaryentry{Airy beam}{
     name={Airy beam},
-    description={Non-diffraction, self-healing beam. Appears to bend.}
+    description={Non-diffraction, self-healing beam. Appears to bend}
 }
 \newglossaryentry{comatic aberration}{
     name={comatic aberration},
@@ -313,27 +313,27 @@
 }
 \newglossaryentry{telecentric}{
     name={telecentric},
-    description={...}
-}
-\newglossaryentry{producer-consumer architecture}{
-    name={producer-consumer architecture},
-    description={Producer, programming DEFINE}
+    description={A lens property where all the chief rays are collimated and parallel to the optical axis}
 }
 \newglossaryentry{state machine}{
     name={state machine},
     description={A model of computation containing a finite number of possible states of which it may only exist in one at any time.}
 }
+\newglossaryentry{producer-consumer architecture}{
+    name={producer-consumer architecture},
+    description={Parallel running \gls{state machine}s, where the producer machine sends commands and data to the consumer machine}
+}
 \newglossaryentry{queueing architecture}{
     name={queueing architecture},
-    description={queueing architecture DEFINE}
+    description={Operations and data are queued into a register for action upon from a state machine. Queues may be first in first out, first in last out etc.}
 }
 \newglossaryentry{race conditions}{
     name={race conditions},
-    description={race conditions DEFINE}
+    description={When system attempts to perform two or more operations at the same time}
 }
 \newglossaryentry{enumerated type}{
     name={enumerated type},
-    description={DEFINES}
+    description={A variable which acts as an identifer and acts as a constant value}
 }
 \newglossaryentry{exposure time}{
     name={exposure time},
@@ -341,23 +341,23 @@
 }
 \newglossaryentry{exposure}{
     name={exposure},
-    description={exposure time $\time$ gain}
+    description={Exposure time \(\times \) gain}
 }
 \newglossaryentry{background signal}{
-    name={background singal},
+    name={background signal},
     description={Additional signal from the environment, specimen or system which contributes to lowering the \gls{SNR}}
 }
 \newglossaryentry{homography}{
     name={homography},
-    description={DEFINE}
+    description={A projective transform}
 }
 \newglossaryentry{Ram-Lak filter}{
     name={Ram-Lak filter},
     description={Linear real (amplitude) ramp filter in Fourier space}
 }
 \newglossaryentry{sinugram}{
-    name={sinugram},
-    description={DEFINE}
+    name={sinogram},
+    description={The image of Cartesian as transformed into angular space}
 }
 % \newglossaryentry{homography matrix}{
 %     name={homography matrix},
@@ -365,7 +365,7 @@
 % }
 \newglossaryentry{homogeneous coordinates}{
     name={homogeneous coordinates},
-    description={DEFINE}
+    description={A higher dimensional representation of lower dimensional coordinates to facilitate non-linear operations}
 }
 \newglossaryentry{zebrafish}{
     name={zebrafish},
@@ -373,7 +373,7 @@
 }
 \newglossaryentry{Chorion}{
     name={Chorion},
-    description={DEFINE}
+    description={The soft membrane surrounding embryos}
 }
 \newglossaryentry{sample plane}{
     name={sample plane},
@@ -385,11 +385,11 @@
 }
 \newglossaryentry{essential matrix}{
     name={essential matrix},
-    description={\(3\times3\) matrix which relates corresponding points in stereo image pairs in calibrated cameras}
+    description={\(3\times 3\) matrix which relates corresponding points in stereo image pairs in calibrated cameras}
 }
 \newglossaryentry{fundamental matrix}{
     name={fundamental matrix},
-    description={\(3\times3\) matrix which relates corresponding points in stereo image pairs}
+    description={\(3\times 3\) matrix which relates corresponding points in stereo image pairs}
 }
 \newglossaryentry{image plane}{
     name={image plane},
@@ -397,15 +397,15 @@
 }
 \newglossaryentry{Radon transform}{
     name={Radon transform},
-    description={DEFINE}
+    description={Integral transform converting Cartesian space into angular space along one axis}
 }
 \newglossaryentry{agarose VII}{
     name={agarose VII},
-    description={Optical clear hydrated gel. This type of agarose is the closest matching refractive index to that of water.}
+    description={Optical clear hydrated gel. This type of agarose is the closest matching refractive index to that of water}
 }
 \newglossaryentry{slit-scanning}{
     name={slit-scanning},
-    description={DEFINE}
+    description={The scanning of a narrow slit to increase contrast and resolution along the direction orthogonal to the slit direction}
 }
 \newglossaryentry{3D printing}{
     name={3D printing},
@@ -421,11 +421,11 @@
 % }
 \newglossaryentry{organoid}{
     name={organoid},
-    description={DEFINE}
+    description={A miniature and simplified organ}
 }
 \newglossaryentry{SH-SY5Y}{
     name={SH-SY5Y},
-    description={DEFINE}
+    description={Human derived neuronal cell line}
 }
 \newglossaryentry{open-hardware}{
     name={open-hardware},
@@ -433,11 +433,11 @@
 }
 \newglossaryentry{virion}{
     name={virion},
-    description={DEFINE}
+    description={A single virus particle}
 }
 \newglossaryentry{capsid}{
     name={capsid},
-    description={DEFINE}
+    description={Protein shell of a virus}
 }
 \newglossaryentry{VP26}{
     name={VP26},
@@ -521,6 +521,7 @@
 \newacronym{DNROCK}{DNROCK}{dominant-negative Rho-kinase construct}
 \newacronym{MoECad}{MoECad}{Ras-related C3 botulinum toxin substrate 1}
 \newacronym{RhoA}{RhoA}{Ras homolog gene family, member A}
-\newacronym{WT}{WT}{Wild type}
+\newacronym{WT}{WT}{wild type}
+\newacronym{GFP}{GFP}{Green Fluorescent Protein}
 % \newacronym{MoECad}{MoECad}{}
 % \newacronym{LWD}{LWD}{Long Working Distance}

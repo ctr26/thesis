@@ -52,29 +52,25 @@ demonstrated the potential of \gls{LSFM} for \emph{in-vivo} imaging with cellula
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics{epi_con_lsfm/widefield}
-        \caption{Widefield imaging, epi-fluorescence; without \glslink{optical sectioning}{optical~sectioning}}
-        \label{fig:epi_con_lsfm/widefield}
+        \caption{Widefield imaging, epi-fluorescence; without \glslink{optical sectioning}{optical~sectioning}}\label{fig:epi_con_lsfm/widefield}
     \end{subfigure}
     \hfill%\hspace{0.01\textwidth}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics{epi_con_lsfm/confocal}
-        \caption{Confocal imaging using a pin-hole at the imaging plane; epi-fluorescence, \glslink{optical sectioning}{optical~sectioning}}
-        \label{fig:epi_con_lsfm/confocal}
+        \caption{Confocal imaging using a pin-hole at the imaging plane; epi-fluorescence, \glslink{optical sectioning}{optical~sectioning}}\label{fig:epi_con_lsfm/confocal}
     \end{subfigure}
         \hfill%\hspace{0.01\textwidth}
-    \begin{subfigure}[t]{0.3\textwidth}
+    \begin{subfigure}[t]{0.34\textwidth}
         \centering
         \includegraphics{epi_con_lsfm/spim}
-        \caption{Widefield imaging with orthogonal illumination using a \gls{light-sheet}; \glslink{optical sectioning}{optical~sectioning}}
-        \label{fig:epi_con_lsfm/spim}
+        \caption{Widefield imaging with orthogonal illumination using a \gls{light-sheet}; \glslink{optical sectioning}{optical~sectioning}}\label{fig:epi_con_lsfm/spim}
     \end{subfigure}
-    \hspace{0.01\textwidth}
+    % \hspace{0.01\textwidth}
     %\hspace{0.07\textwidth}
     \caption[Comparison of \gls{wide-field}, \gls{confocal} and \gls{light-sheet} microscopy imaging modalities]
     {\Gls{light-sheet} microscopy (\subref{fig:epi_con_lsfm/spim}) combines the fast \gls{wide-field} imaging capabilities of epi-fluorescence microscopy (\subref{fig:epi_con_lsfm/widefield}) with the optical sectioning capabilities of \glslink{confocal microscope}{confocal microscopy} (\subref{fig:epi_con_lsfm/confocal}) which uses a narrow pinhole (blue) in a conjugate image plane to reject out-of-focus signal.
-    }
-    \label{fig:epi_con_lsfm}
+    }\label{fig:epi_con_lsfm}
 \end{figure}
 
 
@@ -107,11 +103,11 @@ High quality \gls{LSFM} is dependent on how well the illumination is generated, 
 Huisken~\emph{et~al.} were seminal in their usage of Gaussian \gls{Laser} emissions for the generation of their light sheets.
 \gls{Gaussian beam}s, however, have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
 
-Equations~\eqref{eq:GuasianBeam} to \eqref{eq:Rayleigh} are the Gaussian beam approximation, which describes the propogation of a coherent Gaussian beam in free space.
-The \gls{FWHM} ($\sqrt{2\ln(2)}w(z)$) %\mynote[inline]{check maths}
-increases as a \gls{Lorentzian} (Equation~\eqref{eq:Lorrentzian}) when a distance $z$ away from the focal plane depicted in \figurename~\ref{fig:GuasianBeam}.
+Equations~\eqref{eq:GuasianBeam} to~\eqref{eq:Rayleigh} are the Gaussian beam approximation, which describes the propogation of a coherent Gaussian beam in free space.
+The \gls{FWHM} (\(\sqrt{2\ln(2)}w(z)\)) %\mynote[inline]{check maths}
+increases as a \gls{Lorentzian} (Equation~\eqref{eq:Lorrentzian}) when a distance \(z\) away from the focal plane depicted in \figurename~\ref{fig:GuasianBeam}.
 The rate at which this occurs is dependent on the \gls{Rayleigh length} (\gls{z_R}) in Equation~\eqref{eq:Rayleigh} which quantifies the trade-off.
-The confocal parameter (\gls{b}~$=2z_R$) is a metric used to characterise the distance, centered on the beam waist, over which the Gaussian beam be approximately treated as a collimated beam (neither converging nor diverging).
+The confocal parameter (\(\gls{b}=2z_R\)) is a metric used to characterise the distance, centered on the beam waist, over which the Gaussian beam be approximately treated as a collimated beam (neither converging nor diverging).
 % for the distance over which a Gaussian beam propagates as if it were parallel (neither converging nor diverging).
 For \gls{LSFM} this is the distance over which the \gls{light-sheet} can be assumed to be of homogeneous thickness.
 
@@ -134,8 +130,7 @@ diode \gls{Laser} emits
     \includegraphics{./GuasianBeam}
     \caption[Schematic of the propagation of a Gaussian beam]{Schematic of the propagation of a Gaussian beam.
     The beam is assumed to be collimated (par-axial) within the length \gls{b} (the confocal parameter) for a given spot size \gls{w_0}.
-    The spreading of the beam obeys a Lorentzian hyperbole as in Equation~\eqref{eq:Lorrentzian}}
-    \label{fig:GuasianBeam}
+    The spreading of the beam obeys a Lorentzian hyperbole as in Equation~\eqref{eq:Lorrentzian}}\label{fig:GuasianBeam}
 \end{figure}
 
 \begin{align}
@@ -156,7 +151,7 @@ Where \gls{z_R} is the \gls{Rayleigh length}; \gls{w_0} is the spot of size of t
 %Keller et al addressed
 Keller~\emph{et~al.}~\cite{keller_quantitative_2008} proposed sweeping a narrow collimated \gls{Laser} beam through the sample to create a \gls{virtual light-sheet}.
 This was achieved by oscillating galvanic mirrors at \SI{}{\kilo\hertz} frequencies, well over the Nyquist limit in comparison to the imaging acquisition rate of \SI{<100}{\hertz}~\cite{keller_quantitative_2008}.
-To ensure a homogeneous illumination and distributed photon dosage a \gls{tele-centric} f$\theta$ lens was used to convert beam angle optically from the scanning mirrors in to a linear position~\footnote{A practice borrowed from \gls{Laser} scanning microscopy.}.
+To ensure a homogeneous illumination and distributed photon dosage a \gls{telecentric} f\(\theta \) lens was used to convert beam angle optically from the scanning mirrors in to a linear position~\footnote{A practice borrowed from \gls{Laser} scanning microscopy.}.
 
 Using \gls{DSLM} instead of a cylindrical lens based system offers some key advantages.
 Firstly, as the beam is scanned rather than optically stretched there can be no optical interference of coherent photons between neighbouring regions in the sample, this reduces speckles and shadows.
@@ -176,7 +171,7 @@ With \gls{DSLM}, instead of the stage motion causing possible disturbance of the
 This mechanical motion can be eliminated by placing an
 % This was matched optically through the use of an electrically
 \gls{ETL} in the detection path.
-In Fahrbach~\emph{et. al} ~\cite{fahrbachRapid3DLightsheet2013} system, the \gls{ETL} was used to shift the \gls{working distance} of the detection objective to match the scanning \gls{light-sheet}.
+In Fahrbach~\emph{et~al.}~\cite{fahrbachRapid3DLightsheet2013} system, the \gls{ETL} was used to shift the \gls{working distance} of the detection objective to match the scanning \gls{light-sheet}.
 %As such a new method was developed to achieve this optically, by using an electrically tunable lens to adjust the working distance of the detection objective.
 The technique suffers from fluorescent signal losses in the further four lenses and two mirror surfaces required (\SI{\sim80}{\%} signal retrieved).
 \footnote{The mirrors are used to ensure the \gls{ETL} is horizontal to gravity as further aberrations occur if the tunable surface is not entirely flat.
@@ -234,7 +229,7 @@ By offsetting the foci of the illumination objectives along the axis of propagat
 
 \subsubsection{\SI{45}{\degree} orientation}
 
-Shroff~\emph{et~al.} then pioneered use of two objectives in a 'V' configuration above the sample through \gls{iSPIM}.
+Shroff~\emph{et~al.} then pioneered use of two objectives in a `V' configuration above the sample through \gls{iSPIM}.
 With carefully chosen objectives, whereby the sum of the opening angles of both objectives does not exceed \SI{180}{\degree},
 samples prepared with standard mounting procedures may be imaged in a petri-dish or glass~slides~\cite{kumarDualViewPlaneIllumination2014}.
 %Other group then did the 45 degree inverted iSPIM.
@@ -261,46 +256,39 @@ samples prepared with standard mounting procedures may be imaged in a petri-dish
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/ispim}
-        \caption{Single detection, single illumination~\cite{wuInvertedSelectivePlane2011a}}
-        \label{fig:depth/ispim}
+        \caption{Single detection, single illumination~\cite{wuInvertedSelectivePlane2011a}}\label{fig:depth/ispim}
     \end{subfigure}
     \hspace{0.07\textwidth}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/spin_spim}
-        \caption{Single detection, single illumination, with sample rotation~\cite{huisken_optical_2004}}
-        \label{fig:depth/spin_spim}
+        \caption{Single detection, single illumination, with sample rotation~\cite{huisken_optical_2004}}\label{fig:depth/spin_spim}
     \end{subfigure}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/dual_illumination}
-        \caption{Single detection, dual illumination~}
-        \label{fig:depth/dual_illumination}
+        \caption{Single detection, dual illumination~}\label{fig:depth/dual_illumination}
     \end{subfigure}\hspace{0.07\textwidth}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/multiview}
-        \caption{Dual detection, dual illumination~\cite{krzicMultiviewLightsheetMicroscope2012}}
-        \label{fig:depth/multiview}
+        \caption{Dual detection, dual illumination~\cite{krzicMultiviewLightsheetMicroscope2012}}\label{fig:depth/multiview}
     \end{subfigure}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/di_spim}
-        \caption{Single detection, single illumination, with alternate illumination and detection~\cite{kumar_dual-view_2014}}
-        \label{fig:depth/di_spim}
+        \caption{Single detection, single illumination, with alternate illumination and detection~\cite{kumar_dual-view_2014}}\label{fig:depth/di_spim}
     \end{subfigure}\hspace{0.07\textwidth}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics{depth/muvi}
-        \caption{Dual detection, dual illumination, with alternate illumination and detection}
-        \label{fig:depth/muvi}
+        \caption{Dual detection, dual illumination, with alternate illumination and detection}\label{fig:depth/muvi}
     \end{subfigure}
         \caption[Schematic of objective lens arrangements for optical \gls{light-sheet} imaging]{Schematic of objective lens arrangements for optical \gls{light-sheet} imaging.
         p.t.o}
 \end{figure}
 \begin{figure}
-    \ContinuedFloat
-      \caption{
+\ContinuedFloat\caption{
         (\subref{fig:depth/ispim}) and (\subref{fig:depth/spin_spim}) both use a single objective lens for imaging and illumination, with (\subref{fig:depth/spin_spim}) rotating the sample so that optimal imaging is not limit to the \emph{optical quarter} (yellow).
         (\subref{fig:depth/dual_illumination}) adds an additional illumination objective to mitigate illumination light lost through sample penetration.
         (\subref{fig:depth/multiview}) adds a further imaging objective lens to mitigate detected light being lost to sample penetration; the images of each detecting objective are later computationally fused.
@@ -310,10 +298,8 @@ samples prepared with standard mounting procedures may be imaged in a petri-dish
         % (\subref{fig:depth/spin_spim}) is the same as (\subref{fig:depth/ispim}).
         (\subref{fig:depth/spin_spim}), (\subref{fig:depth/dual_illumination}) and (\subref{fig:depth/multiview}) are the same speed as (\subref{fig:depth/ispim}) but (\subref{fig:depth/multiview}) requires a computational reconstruction in post-processing.
         (\subref{fig:depth/di_spim}) is half the speed of (\subref{fig:depth/ispim}) and (\subref{fig:depth/muvi}) is a quarter the speed of (\subref{fig:depth/ispim}), both requiring extensive post-processing computation.
-      }
-    \label{fig:spim_optimal_imaging}
+      }\label{fig:spim_optimal_imaging}
 \end{figure}
-
 
 \subsubsection{Optimal orientation}
 
@@ -410,32 +396,31 @@ By assuming that a multi-mode fibre operates deterministically on an input light
 They then demonstrated the \gls{exotic beam} profiles using the same \gls{SLM}.
 
 % \clearpage
-\begin{figure}\centering
+\begin{figure}
+  \centering
   \begin{subfigure}[t]{\textwidth}
     \centering
     \includegraphics{single_objectives/opm}
     \caption{\gls{OPM}~\cite{dunsby_optically_2008}}\label{fig:single_objectives/opm}
   \end{subfigure}
-  \centering
   \begin{subfigure}[t]{0.475\textwidth}
     \centering
     \includegraphics{single_objectives/atomic_mirror}
     \caption{Atomically flat mirror to rotate virtual image~\cite{li_axial_2014}}\label{fig:single_objectives/atomic_mirror}
-  \end{subfigure}~
-  \begin{subfigure}[t]{0.48\textwidth}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.5\textwidth}
     \centering
     \includegraphics{single_objectives/scape}
     \caption{\gls{SCAPE}~\cite{bouchardSweptConfocallyalignedPlanar2015}}\label{fig:single_objectives/scape}
   \end{subfigure}
-  % \includegraphics{/path/to/figure}
-  \caption{Depiction of three choice methods for light-sheet microscopy using a single objective lens at sample.
-  Input sheet illumination is at ILL and the detection or imaging plane is at DET.
-  Samples in orange are real objects, samples in grey are virtual objects.
+  % % \includegraphics{/path/to/figure}
+  \caption{
+  % % Input sheet illumination is at ILL and the detection or imaging plane is at DET.~Samples in orange are real objects, samples in grey are virtual objects.
   p.t.o}
   \end{figure}
   \begin{figure}
-    \ContinuedFloat
-  \caption{
+    \ContinuedFloat\caption{
+  Depiction of three choice methods for light-sheet microscopy using a single objective lens at sample.
   All the methods presented are therefore compatible with standard mounting techniques and standard microscope frames.
   In (a), a light-sheet is introduced into the sample at, and imaged at, an oblique angle to the primary objective lens.
   The sample image is relayed and it's virtual image is then relayed by a separate imaging path onto a detector.
@@ -546,29 +531,28 @@ Vettenburg~\emph{et~al.} demonstrated a similar axial resolution improvement as 
 
 \begin{figure}
 	\centering
-    \begin{subfigure}[t]{0.25\textwidth}
+    \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics{exotic_beams_cartoon_para}
         \caption{Par-axial \gls{light-sheet} illumination}\label{fig:exotic_beams_cartoon_para}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.25\textwidth}
+    \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics{exotic_beams_cartoon_mspim}
-        \caption{\gls{mSPIM}, multidirectional \gls{light-sheet} illumination}\label{fig:exotic_beams_cartoon_mspim}
+        \caption{\gls{mSPIM}, multi-directional \gls{light-sheet} illumination}\label{fig:exotic_beams_cartoon_mspim}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{0.25\textwidth}
+    \begin{subfigure}[t]{0.3\textwidth}
         \centering
         \includegraphics{exotic_beams_cartoon_exotic}
         \caption{Par-axial Bessel beam illumination.}\label{fig:exotic_beams_cartoon_exotic}
     \end{subfigure}
-    \caption{Shadowing artefacts in light-sheet(\subref{fig:exotic_beams_cartoon_para}) can be mitigated through different types of illumination.
+    \caption{Shadowing artefacts in light-sheet (\subref{fig:exotic_beams_cartoon_para}) can be mitigated through different types of illumination.
     (\subref{fig:exotic_beams_cartoon_mspim}) uses \gls{light-sheet}s from multiple directions to illuminate behind an occlusion.
-    (\subref{fig:exotic_beams_cartoon_exotic}) uses Bessel sheets which have the property of self-healing behind occlusions; this happens as Bessel beams arise from constructive interference from angled plane waves%, which then reach behind the occlusion.
+    (\subref{fig:exotic_beams_cartoon_exotic}) uses Bessel sheets which have the property of self-healing behind occlusions; this happens as Bessel beams arise from constructive interference from angled plane waves.%, which then reach behind the occlusion.
     % from multiple directions to illuminate behind an occlusion.
-    }
-    \label{fig:scatteringandshadowing}
+    }\label{fig:scatteringandshadowing}
 \end{figure}
 
 \subsection{Thinner sheets}
