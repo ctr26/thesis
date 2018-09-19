@@ -41,7 +41,7 @@ The first %of which task required the system to
 task was to image Zebrafish embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during the \SI{1}{}k~cell stage of embryo development (see Chapter~\ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
 The second required the imaging of live (SHSY5Y) mammalian cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.\@
 \pagebreak
-\subsection*{Specification}
+\subsection*{Specification}\label{sec:specification}
 
 To facilitate these biological aims the system has to address these specification key criteria:
 
@@ -602,8 +602,23 @@ The module was used to set the limits of the usable volumetric FOV and match the
 
 \section{Specification review}
 
+\begin{figure}
+  \begin{subfigure}
+    \includegraphics{zfish_48hr_eye_magneta}[t]{0.4\linewidth}
+    \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
+  \end{subfigure}~
+  \begin{subfigure}
+    \includegraphics{zfish_48hr_noto_magenta}[t]{0.4\linewidth}
+    \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
+  \end{subfigure}
+  \includegraphics{/path/to/figure}
+  \caption{Preliminary images of zebrafish produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+\end{figure}
+
+A \gls{light-sheet} microscope was built to the design specification in Section~\ref{sec:specification}.
+
 \paragraph{\ref{item:volumes}. Fast volumetric imaging}
-Fast volumetric imaging was achieved using a pair of optically relayed scanning mirrors to rapidly sweep a virtual light-sheet through volumes.
+Fast volumetric imaging (see \figurename~\ref{fig:zfish_pretty}) was achieved using a pair of optically relayed scanning mirrors to rapidly sweep a virtual light-sheet through volumes.
 A Piezo objective actuator was used to maximise the axial speed at which volumes could be acquired.
 
 \paragraph{\ref{item:colour}. Multi-colour volumetric imaging}

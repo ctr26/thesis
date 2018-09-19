@@ -131,17 +131,23 @@ The \gls{Radon transform} of an image produces a sinugram as in \figurename~\ref
 
 \begin{figure}
   \centering
-  \hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/rawinput_colour}
-    \caption{Ground truth for OPT simulations, Lena (\(f(X,Y)\)). Axes: \(XY\).}
-    \label{fig:raw_input}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/sinugram_stretch}
-    \caption{Image of Lena (\figurename~\ref{fig:raw_input}) after rotation and projection in 2D, giving the sinugram (\(P_{\theta}(v)\)). Axes: \(v\theta\).
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/rawinput_colour}};
+       \node[below=of img] {\(X\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption{Ground truth for OPT simulations, Lena (\(f(X,Y)\)).}\label{fig:raw_input}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/sinugram_stretch}};
+       \node[below=of img] {\(v\)\vphantom{\(X\)}};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(\theta\)};
+    \end{tikzpicture}
+    \caption{Image of Lena (\figurename~\ref{fig:raw_input}) after rotation and projection in 2D, giving the sinugram (\(P_{\theta}(v)\)).
     }\label{fig:sinugram_stretch}
-  \end{subfigure}\hfill
+  \end{subfigure}
   \caption{Reference images for OPT reconstruction.}\label{fig:rawinputs}
 \end{figure}
 
@@ -578,15 +584,23 @@ This is repeated for each angle with each line projection stacked to create a si
 
 \begin{figure}
   \centering
-  \begin{subfigure}[t]{0.3\linewidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_camerman}
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_camerman}};
+       \node[below=of img] {\(Z\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption{}
   \end{subfigure}~
-  \begin{subfigure}[t]{0.3\linewidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_filter}
-  \end{subfigure}
-  \caption{
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_filter}};
+       \node[below=of img] {\(X\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption{}
+  \end{subfigure}\caption{
   Filtered reconstruction of the ground truth reference image from \figurename~\ref{fig:recon_iterative} using the new proposed algorithm.
-  Axes: (\(X,Y\))
   }\label{fig:flopt_filter}
 \end{figure}
 
@@ -633,38 +647,46 @@ As expected, the \gls{Radon transform} rapidly deteriorates once a systematic dr
 
 \begin{figure}
   \centering
-  \hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/topdown_bead_paths}
-    \caption{Top down views (\(X,Y\)) of the source image with the fiducial paths marked.}
-    \label{fig:topdown_bead_paths}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}
-    \caption{Sinugram (\(v,n\)) of a sample whose axis of rotation has a systematic drift}
-    \label{fig:flopt_helix_sinugram}
-  \end{subfigure}
-    \hfill
-    \label{fig:flopts}
-  \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/topdown_bead_paths}};
+       \node[below=of img] {\(X\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption{Top down views (\(X,Y\)) of the source image with the fiducial paths marked.}\label{fig:topdown_bead_paths}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}};
+       \node[below=of img] {\(v\)\vphantom{\(X\)}};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(n\)};
+    \end{tikzpicture}
+    \caption{Sinugram (\(v,n\)) of a sample whose axis of rotation has a systematic drift}\label{fig:flopt_helix_sinugram}
+  \end{subfigure}\caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}\label{fig:flopts}
 \end{figure}
+
 \begin{figure}
   \centering
-  \hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/unfilttered_reconstruction_helix_iradon}
-    \caption{Unfiltered reconstruction using a \gls{Radon transform}. Axes: (\(X,Y\))} %TODO bring up contrast
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/unfilttered_reconstruction_helix_iradon}};
+       \node[below=of img] {\(X\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption{Unfiltered reconstruction using a \gls{Radon transform}.} %TODO bring up contrast
     \label{fig:unfilttered_reconstruction_helix_iradon}
-  \end{subfigure}\hfill
-  \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/helix/filtered_recon_helix}
-    \caption{Filtered reconstruction using the new algorithm. Axes: (\(X,Y\))}
-    \label{fig:filtered_recon_helix}
+  \end{subfigure}~
+  \begin{subfigure}[t]{0.4\textwidth}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img1) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/filtered_recon_helix}};
+       \node[below=of img1] {\(v\)\vphantom{\(X\)}};
+       \node[left=of img1,rotate=90,yshift=0.2cm] {\(n\)};
+    \end{tikzpicture}
+    \caption{Filtered reconstruction using the new algorithm.}\label{fig:filtered_recon_helix}
   \end{subfigure}
-    \hfill
-    \label{fig:flopts}
-  \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}
+  \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}\label{fig:flopts}
 \end{figure}
+
 \begin{figure}
   \centering
   \includegraphics{Chapters/flopt/Figs/PDF/results/correlation_helicity}
