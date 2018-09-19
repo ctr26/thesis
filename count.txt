@@ -1,12 +1,12 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 32897
-Words in headers: 647
-Words outside text (captions, etc.): 5999
-Number of headers: 211
-Number of floats/tables/figures: 89
-Number of math inlines: 461
-Number of math displayed: 85
+Words in text: 33000
+Words in headers: 650
+Words outside text (captions, etc.): 5988
+Number of headers: 212
+Number of floats/tables/figures: 88
+Number of math inlines: 468
+Number of math displayed: 87
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   720+7+0 (2/1/0/0) _top_
@@ -30,10 +30,10 @@ Subcounts:
   414+10+289 (3/3/6/0) Section: Experimental implementation and verification
   122+1+0 (1/0/0/0) Section: Conclusions
   249+5+0 (1/0/0/0) Chapter: Frame localisation optical projection tomography}\label{chapter:flopt
-  604+7+116 (3/2/26/2) Section: Rotational computer tomography in microscopy
+  606+7+115 (3/2/26/2) Section: Rotational computer tomography in microscopy
   715+8+45 (3/1/10/9) Section: Stereoscopic imaging
   750+3+230 (1/3/26/1) Section: The proposed algorithm
-  529+13+475 (2/9/40/1) Section: Verification of the proposed algorithm
+  529+13+465 (2/8/40/1) Section: Verification of the proposed algorithm
   169+1+0 (1/0/1/0) Section: Discussion
   390+10+0 (4/0/5/0) Section: Future work
   173+6+0 (1/0/0/0) Chapter: Developments in confocal virtual \gls{slit-scanning} microscopy}\label{chapter:dualslit
@@ -45,7 +45,7 @@ Subcounts:
   714+4+390 (1/4/0/0) Section: The design and construction
   478+6+60 (2/2/0/0) Section: Sample preparation
   185+1+0 (1/0/0/0) Section: Summary
-  735+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
+  736+12+116 (3/2/1/0) Chapter: Diffraction limited single virion tracking in SPIM}\label{chapter:spt
   635+15+87 (4/2/8/0) Section: Single particle tracking microscopy
   609+17+49 (5/1/11/2) Section: Astigmatic tracking
   292+7+116 (2/2/10/6) Section: Motion-induced astigmatic axial localisation error}\label{sec:spt_maths
@@ -55,9 +55,9 @@ Subcounts:
   371+4+101 (2/2/6/0) Section: Future work
   527+7+0 (1/0/0/0) Chapter: Light-sheet microscopy combined with remote force measurements}\label{chapter:tweezers
   235+12+30 (2/2/0/0) Section: Tissue dynamics in developing organisms
-  1567+21+108 (9/3/31/6) Section: Methods of measuring tissue dynamics
+  1574+21+108 (9/3/33/6) Section: Methods of measuring tissue dynamics
   958+12+49 (5/1/3/0) Section: Algorithmic bead tracking
-  1753+64+560 (5/5/45/0) Section: Results
+  1748+64+560 (5/5/45/0) Section: Results
   490+1+0 (1/0/0/0) Section: Discussion
   17+1+0 (1/0/0/0) Chapter: Conclusions}\label{chapter:conclusions
   182+4+0 (1/0/0/0) Section: Microscope design and construction
@@ -84,5 +84,6 @@ Subcounts:
   292+1+0 (1/0/15/6) Section: Huygens
   0+2+0 (1/0/0/0) Chapter: Particle tracking
   130+12+0 (3/1/5/8) Section: Failed quantifications of motion induced error
-  17+2+0 (1/0/0/1) Section: Bragg conditons
+  7+2+0 (1/0/0/1) Section: Bragg conditons
+  108+3+0 (1/0/5/2) Section: Fourier slice theorem
 

@@ -39,25 +39,23 @@ These errors will include systematic mechanical drift, giving a spiral path; and
 The projective mathematics introduced in Chapter~\ref{chapter:homography} is a small part of a field of mathematics used in computer vision to to localise (in \gls{3D}) points in space as projected onto multiple view points.
 The algorithm presented in this chapter will use an extension of this projective mathematics to reconstruct \gls{OPT} volumes from the set of rotational projections.
 Considerations were made to combine \gls{OPT} and \gls{light-sheet} imaging within the system constructed in Chapter~\ref{chapter:design}, though this was never realised during this thesis.
-\\\\
+
 \emph{It should be noted that, due to conventions within the field of computer vision, all lab frame or \glslink{world point}{world coordinates} will be represented as capital letters (ex.~\gls{X}, \gls{X_c}) and image frame coordinates will be represented in image plane coordinates (ex.~\gls{x}) in this chapter, shown in \figurename~\ref{fig:coordinate_system_flopt}.}
-
 \pagebreak
-
 \section{Rotational computer tomography in microscopy}
 
 \begin{figure}
     \centering
-    \begin{subfigure}[t]{0.475\textwidth}
+    \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics{coordinate_system}
         \caption[Coordinate system]{Coordinate system used in this chapter describing a camera with an associated \gls{image plane} one focal distance \(f\) away, imaging an object at point \(\gls{X}\).
         }\label{fig:coordinate_system_flopt}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.475\textwidth}
+    \begin{subfigure}[t]{0.48\textwidth}
       \centering
       \includegraphics{Chapters/flopt/Figs/PDF/OPT_digram}
-      \caption[Principle of OPT]{From an angle \(\theta\), an object \(f(X,Y)\) and its projection \(P_\theta(t)\) are known.}\label{fig:OPT_digram}
+      \caption[Principle of OPT]{From an angle \(\theta \), an object \(f(X,Y)\) and its projection \(P_\theta(t)\) are known.}\label{fig:OPT_digram}
       %{Principle of \gls{OPT}, a respective rotation between the sample and the detector illumination pair is iterated.
       % The volumetric image is later reconstructed from the set of detections (1/2D).}
     \end{subfigure}
@@ -65,7 +63,7 @@ Considerations were made to combine \gls{OPT} and \gls{light-sheet} imaging with
             \gls{X} = \((X,Y,Z)\) is the world coordinate point in \gls{3D} space.
             \gls{p} = \((x,y,f)\) is the ray vector to point of \gls{image plane}.
             \gls{x} = \((x,y)\) is the \gls{image plane} coordinates.
-            \gls{w} = \((u,v)\) is the pixel coordinates (not shown).corresponding to the point \gls{x}.(not shown).
+            \gls{w} = \((u,v)\) is the pixel coordinates (not shown) corresponding to the point \gls{x}.
             The optical axis travels along the \(Z_c\) axis through the \gls{image plane}.}
     % \label{fig:aa}
 \end{figure}
@@ -81,7 +79,7 @@ Sharpe~\emph{et.al} proposed \gls{OPT} in 2002~\cite{sharpeOpticalProjectionTomo
 using visible light to image transparent or translucent mesoscopic samples, with micrometer resolution.
 \gls{OPT} addresses a scale gap between the photographic techniques (samples larger than \SI{10}{\milli\meter}), and light microscopy techniques (samples smaller than \SI{1}{\milli\meter}) to image biological samples in the \SIrange{1}{10}{\milli\meter} regime.
 %Optical Projection Tomography was first proposed by Sharpe in 2002 [30]; it uses visible light to image and create volumetric data of transparent (naturally or artificially) mesoscopic objects (1 - 10 mm) at micron-level resolution.
-\gls{OPT} is based on computerised tomography techniques~\cite{[17]} in which a set of projections of a specimen are imaged as the specimen travels through a full rotation.
+\gls{OPT} is based on computerised tomography techniques~\cite{kakPrinciplesComputerizedTomographic2001} in which a set of projections of a specimen are imaged as the specimen travels through a full rotation.
 Algorithms exist to then transform this set of images into a
 %n $xyz$ image stack.
 \gls{3D} image stack in Cartesian (\(X,Y,Z\)) coordinates.
@@ -131,30 +129,32 @@ The \gls{Radon transform} of an image produces a sinugram as in \figurename~\ref
 
 \begin{figure}
   \centering
-  \begin{subfigure}[t]{0.4\textwidth}
+   \hspace*{\fill}
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/rawinput_colour}};
+      \node (img) {\includegraphics[width=0.75\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/rawinput_colour}};
        \node[below=of img] {\(X\)};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{Ground truth for OPT simulations, Lena (\(f(X,Y)\)).}\label{fig:raw_input}
-  \end{subfigure}~
-  \begin{subfigure}[t]{0.4\textwidth}
+    \caption{Ground truth image for \gls{OPT} simulations, Lena (\(f(X, Y)\)).}\label{fig:raw_input}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/sinugram_stretch}};
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/sinugram_stretch}};
        \node[below=of img] {\(v\)\vphantom{\(X\)}};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(\theta\)};
     \end{tikzpicture}
     \caption{Image of Lena (\figurename~\ref{fig:raw_input}) after rotation and projection in 2D, giving the sinugram (\(P_{\theta}(v)\)).
     }\label{fig:sinugram_stretch}
   \end{subfigure}
-  \caption{Reference images for OPT reconstruction.}\label{fig:rawinputs}
+   \hspace*{\fill}
+  \caption{Reference images for \gls{OPT} reconstruction.}\label{fig:rawinputs}
 \end{figure}
 
 % A parallel projection is then just the combination of line integrals $f(I)$ for a constant. % for a constant.
 
 An inverse \gls{Radon transform} is used to recover the original object from the projection data; which is achieved by taking the \gls{Fourier transform} of each projection measurement, then reordering the information from the sample into the respective position in Fourier space.
-This is valid due to the Fourier Slice theorem (see Appendix~\ref{appendix:fourierslice} for a derivation)~\cite{bracewellStripIntegrationRadio1956}, which states that the \gls{Fourier transform} of a parallel projection is equivalent to a 2D slice of the Fourier transform original sample.
+This is valid due to the Fourier Slice theorem~\cite{bracewellStripIntegrationRadio1956} (see Appendix~\ref{appendix:fourierslice} for a derivation), which states that the \gls{Fourier transform} of a parallel projection is equivalent to a 2D slice of the Fourier transform of the original sample.
 %A high pass filter such as a ramp filter is commonly used to counter the blurring caused by this oversampling.
 % \gls{FBP} can be thought of as smearing the projection data across the image plane, and is expressed in equation form as:
 \begin{align}
@@ -402,26 +402,52 @@ Then, all the prior rotation and translation matrices are serially multiplied fr
 The matrix inversion step is important as it realigns the back projection in the volume to where it originally was compared respective of the first projection.
 This process is repeated for every angle and the back projected volume from each step is summed with every other step.
 Finally the remaining volume is filtered using a high-pass filter; here a \gls{Ram-Lak filter} is used
-\footnote{Linear real (amplitude) ramp filter in Fourier space}.%: \(|v|\)}
+\footnote{Linear real (amplitude) ramp filter in Fourier space}. %: \(|v|\)}
 By producing a series of transformation matrices from adjacent acquisitions, errors compound and the reconstruction of volumes degrades with more projections, see \figurename~\ref{fig:irandons}.
+
 
 \begin{figure}
   \centering
-  \hfill
+   \hspace*{\fill}
   \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_nofilter}
-    \caption[Unfiltered iRadon]{This is the unfiltered reconstruction of the object using the \gls{Radon transform}}%TODO equation???
-    \label{fig:iradon_nofilter}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_nofilter}};
+       \node[below=of img] {\(X\)};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption[Unfiltered iRadon]{This is the unfiltered reconstruction of the object using the \gls{Radon transform}}\label{fig:iradon_nofilter}%TODO equation???
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_filter}
-    \caption[Filtered iRadon]{Ram-lak (Fourier ramp) filter applied to \figurename~\ref{fig:iradon_nofilter}.}
-    \label{fig:iradon_filter}
+    \begin{tikzpicture}[node distance=0cm]
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_filter}};
+       \node[below=of img] {\(v\)\vphantom{\(X\)}};
+       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+    \end{tikzpicture}
+    \caption[Filtered iRadon]{Ram-lak (Fourier ramp) filter applied to \figurename~\ref{fig:iradon_nofilter}.}\label{fig:iradon_filter}
   \end{subfigure}
-    \hfill
-    \label{fig:irandons}
+   \hspace*{\fill}
   \caption{The result of a tomographic reconstruction (using equally spaced angular steps and no translation between frames) requires Fourier filtering to normalise spatial contrast.}\label{fig:irandons}%TODO simulations with no drift and skew and use equation
 \end{figure}
+%
+%
+%
+% \begin{figure}
+%   \centering
+%    \hspace*{\fill}
+%   \begin{subfigure}[t]{0.3\textwidth}
+%     \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_nofilter}
+%     \caption[Unfiltered iRadon]{This is the unfiltered reconstruction of the object using the \gls{Radon transform}}%TODO equation???
+%     \label{fig:iradon_nofilter}
+%   \end{subfigure}\hfill
+%   \begin{subfigure}[t]{0.3\textwidth}
+%     \includegraphics[width=\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/iradon_filter}
+%     \caption[Filtered iRadon]{Ram-lak (Fourier ramp) filter applied to \figurename~\ref{fig:iradon_nofilter}.}
+%     \label{fig:iradon_filter}
+%   \end{subfigure}
+%      \hspace*{\fill}
+%     % \label{fig:irandons}
+%   \caption{The result of a tomographic reconstruction (using equally spaced angular steps and no translation between frames) requires Fourier filtering to normalise spatial contrast.}\label{fig:irandons}%TODO simulations with no drift and skew and use equation
+% \end{figure}
 
 The second approach is less prone to compound errors but relies on precise identification and tracking of fiducial markers.
 % distinction and tracking fiducials.
@@ -436,7 +462,7 @@ The reoriented back projected volumes are summed and finally filtered to remove 
       \includegraphics{flopt_algorithm_forward}
       \caption{Forward model}
       \label{fig:flopt_algorithm_forward}
-    \end{subfigure}~
+    \end{subfigure}\vspace{\abovecaptionskip}
     \begin{subfigure}[t]{\textwidth}
       \centering
       \includegraphics{flopt_algorithm}
@@ -584,22 +610,25 @@ This is repeated for each angle with each line projection stacked to create a si
 
 \begin{figure}
   \centering
-  \begin{subfigure}[t]{0.4\textwidth}
+   \hspace*{\fill}
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_camerman}};
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_camerman}};
        \node[below=of img] {\(Z\)};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{}
-  \end{subfigure}~
-  \begin{subfigure}[t]{0.4\textwidth}
+    \caption{Filtered reconstruction Cameraman testcard}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_filter}};
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/no_helix/flopt_filter}};
        \node[below=of img] {\(X\)};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{}
-  \end{subfigure}\caption{
+    \caption{Filtered reconstruction of Lena testcard}
+  \end{subfigure}
+   \hspace*{\fill}
+   \caption{
   Filtered reconstruction of the ground truth reference image from \figurename~\ref{fig:recon_iterative} using the new proposed algorithm.
   }\label{fig:flopt_filter}
 \end{figure}
@@ -644,46 +673,69 @@ In \figurename~\ref{fig:helical_comparison} the respective images from each algo
 See \figurename~\ref{fig:flopt_helix_sinugram} for a \gls{sinugram} of a sample whereby a helical shift has been induced.
 When using correlation as a metric of reproduction quality, at zero helicity, the new algorithm fairs slightly worse at \SI{94}{\percent} correlation compared to the \gls{Radon transform} at \SI{96}{\percent}.
 As expected, the \gls{Radon transform} rapidly deteriorates once a systematic drift is applied; where-as the new algorithm maintains quality of reconstruction, see \figurename~\ref{fig:helical_comparison}.
+%
+% \begin{figure}
+%   \centering
+%    \hspace*{\fill}
+%   \begin{subfigure}[t]{0.3\textwidth}
+%     \begin{tikzpicture}[node distance=0cm]
+%       \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/topdown_bead_paths}};
+%        \node[below=of img] {\(X\)};
+%        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+%     \end{tikzpicture}
+%     \caption{Top down views (\(X,Y\)) of the source image with the fiducial paths marked.}\label{fig:topdown_bead_paths}
+%   \end{subfigure}\hfill
+%   \begin{subfigure}[t]{0.3\textwidth}
+%     \begin{tikzpicture}[node distance=0cm]
+%       \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}};
+%        \node[below=of img] {\(v\)\vphantom{\(X\)}};
+%        \node[left=of img,rotate=90,yshift=0.2cm] {\(n\)};
+%     \end{tikzpicture}
+%     \caption{Sinugram (\(v,n\)) of a sample whose axis of rotation has a systematic drift}\label{fig:flopt_helix_sinugram}
+%   \end{subfigure}
+%    \hspace*{\fill}
+%    \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}\label{fig:flopts}
+% \end{figure}
 
 \begin{figure}
   \centering
-  \begin{subfigure}[t]{0.4\textwidth}
+  \hspace*{\fill}
+ \begin{subfigure}[t]{0.3\textwidth}
+   \begin{tikzpicture}[node distance=0cm]
+     \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/topdown_bead_paths}};
+      \node[below=of img] {\(X\)};
+      \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
+   \end{tikzpicture}
+   \caption{Top down views (\(X,Y\)) of the source image with the fiducial paths marked.}\label{fig:topdown_bead_paths}
+ \end{subfigure}\hfill
+ \begin{subfigure}[t]{0.3\textwidth}
+   \begin{tikzpicture}[node distance=0cm]
+     \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}};
+      \node[below=of img] {\(v\)\vphantom{\(X\)}};
+      \node[left=of img,rotate=90,yshift=0.2cm] {\(n\)};
+   \end{tikzpicture}
+   \caption{Sinugram (\(v,n\)) of a sample whose axis of rotation has a systematic drift}\label{fig:flopt_helix_sinugram}
+ \end{subfigure}\hspace*{\fill}
+  \\\vspace{\abovecaptionskip}
+  \hspace*{\fill}
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/topdown_bead_paths}};
+      \node (img) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/unfilttered_reconstruction_helix_iradon}};
        \node[below=of img] {\(X\)};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{Top down views (\(X,Y\)) of the source image with the fiducial paths marked.}\label{fig:topdown_bead_paths}
-  \end{subfigure}~
-  \begin{subfigure}[t]{0.4\textwidth}
+    \caption{Unfiltered reconstruction using a \gls{Radon transform}.}\label{fig:unfilttered_reconstruction_helix_iradon} %TODO bring up contrast
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/sinugram_stretch}};
-       \node[below=of img] {\(v\)\vphantom{\(X\)}};
-       \node[left=of img,rotate=90,yshift=0.2cm] {\(n\)};
-    \end{tikzpicture}
-    \caption{Sinugram (\(v,n\)) of a sample whose axis of rotation has a systematic drift}\label{fig:flopt_helix_sinugram}
-  \end{subfigure}\caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}\label{fig:flopts}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \begin{subfigure}[t]{0.4\textwidth}
-    \begin{tikzpicture}[node distance=0cm]
-      \node (img) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/unfilttered_reconstruction_helix_iradon}};
-       \node[below=of img] {\(X\)};
-       \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
-    \end{tikzpicture}
-    \caption{Unfiltered reconstruction using a \gls{Radon transform}.} %TODO bring up contrast
-    \label{fig:unfilttered_reconstruction_helix_iradon}
-  \end{subfigure}~
-  \begin{subfigure}[t]{0.4\textwidth}
-    \begin{tikzpicture}[node distance=0cm]
-      \node (img1) {\includegraphics[width=0.85\textwidth]{Chapters/flopt/Figs/PDF/results/helix/filtered_recon_helix}};
+      \node (img1) {\includegraphics[width=0.8\textwidth]{Chapters/flopt/Figs/PDF/results/helix/filtered_recon_helix}};
        \node[below=of img1] {\(v\)\vphantom{\(X\)}};
-       \node[left=of img1,rotate=90,yshift=0.2cm] {\(n\)};
+       \node[left=of img1,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
     \caption{Filtered reconstruction using the new algorithm.}\label{fig:filtered_recon_helix}
   \end{subfigure}
+   \hspace*{\fill}
+   % \caption{}
   \caption{Comparison of the two reconstructions under sample imaging with a systematic drift, in 3D though represented here in 2D.}\label{fig:flopts}
 \end{figure}
 
