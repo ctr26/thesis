@@ -2,7 +2,7 @@
 
 % \usepackage{makeidx}
 
-\makeglossaries
+\makeglossaries{}
 \makeindex
 
 \setabbreviationstyle[acronym]{long-short}
@@ -20,7 +20,7 @@
 \glsxtrnewsymbol[description={Wavelength}]{lambda}{\ensuremath{\lambda}}
 \glsxtrnewsymbol[description={Numerical aperture}]{NA}{NA}
 \glsxtrnewsymbol[description={Electric field}]{E}{\ensuremath{E}}
-\glsxtrnewsymbol[description={Intensity,\(\gls{E}^2\)}]{I}{\ensuremath{I}}
+\glsxtrnewsymbol[description={Intensity,~\(\gls{E}^2\)}]{I}{\ensuremath{I}}
 \glsxtrnewsymbol[description={Spot size of a Gaussian beam}]{w_0}{\ensuremath{w_0}}
 
 %Computer vision
@@ -44,10 +44,10 @@
 \glsxtrnewsymbol[description={\(3\times3\) matrix containing coordinates from \gls{T}}]{T_x}{\ensuremath{\mathbf{T_\times}}}
 \glsxtrnewsymbol[description={Mean square error: \(\operatorname{MSE}=\frac{1}{n}\sum_{i=1}^n{(Y_i-\hat{Y_i})}^2\)}]{MSE}{\ensuremath{MSE}}
 
-\glsxtrnewsymbol[description={tissue viscosity}]{eta_1_visc}{\ensuremath{\eta_1}}
-\glsxtrnewsymbol[description={cellular viscosity}]{eta_2_visc}{\ensuremath{\eta_2}}
-\glsxtrnewsymbol[description={tau 1}]{tau_visc}{\ensuremath{\tau}}
-\glsxtrnewsymbol[description={ensemble stiffness}]{E_visc}{\ensuremath{E}}
+\glsxtrnewsymbol[description={Tissue viscosity}]{eta_1_visc}{\ensuremath{\eta_1}}
+\glsxtrnewsymbol[description={Cellular viscosity}]{eta_2_visc}{\ensuremath{\eta_2}}
+\glsxtrnewsymbol[description={Time constant of the tissue}]{tau_visc}{\ensuremath{\tau}}
+\glsxtrnewsymbol[description={Ensemble stiffness}]{E_visc}{\ensuremath{E}}
 
 % Mean Square Error
 % Glossary
@@ -371,8 +371,8 @@
     name={zebrafish},
     description={\emph{Danio rerio}. A model organism  ubiquitous in light-sheet imaging}
 }
-\newglossaryentry{Chorion}{
-    name={Chorion},
+\newglossaryentry{chorion}{
+    name={chorion},
     description={The soft membrane surrounding embryos}
 }
 \newglossaryentry{sample plane}{
@@ -523,5 +523,7 @@
 \newacronym{RhoA}{RhoA}{Ras homolog gene family, member A}
 \newacronym{WT}{WT}{wild type}
 \newacronym{GFP}{GFP}{Green Fluorescent Protein}
+\newacronym{PFA}{PFA}{paraformaldehyde}
+\newacronym{flOPT}{flOPT}{frame localisation Optical Projection Tomography}
 % \newacronym{MoECad}{MoECad}{}
 % \newacronym{LWD}{LWD}{Long Working Distance}

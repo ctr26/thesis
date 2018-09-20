@@ -38,8 +38,8 @@ This chapter introduces the instrument which was built and used during this thes
 It was required that the system presented here facilitated a wide range of imaging challenges, with two specific %biological aims to be met.
 imaging tasks to be performed.
 The first %of which task required the system to
-task was to image Zebrafish embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during the \SI{1}{}k~cell stage of embryo development (see Chapter~\ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
-The second required the imaging of live (SHSY5Y) mammalian cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using SPT.\@
+task was to image \gls{zebrafish} embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during the \SI{1}{}k~cell stage of embryo development (see Chapter~\ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
+The second required the imaging of live (\gls{SH-SY5Y}) mammalian cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using \gls{SPT}.
 \pagebreak
 \subsection*{Specification}\label{sec:specification}
 
@@ -109,11 +109,11 @@ The camera was mounted at \SI{45}{\degree} on a \gls{3D} printed mount that corr
 Rotating the camera was necessary as it allowed the camera shutter and illumination beam to propagate concomitantly for slit-scanning, see later Chapter~\ref{chapter:dualslit}.
 
 For the illumination path, a \SI{22.5}{\degree} mirror
-(to the horizon, see \figurename~\ref{fig:soldiworks_top}d)
+(to the horizon, see \figurename~\ref{fig:soldiworks_top})
 was used to deliver the laser illumination from the scanning optics into the illumination objective on the \gls{illumination arm}.
 The additional mirror was needed so that the scanning optics could be mounted flat to the optical breadboard, making positioning and optical mounting simpler.
 Using two mirrors also provided the sufficient degrees of freedom to align the axis of the scanning optics to the optical axis along the \gls{illumination arm}.
-Finally, the light-sheet generating mirror of the scanning pair of was suspended off the edge of the breadboard for delivery of the  illumination from the bottom optical table, see \figurename\ref{fig:soldiworks_top}a.
+Finally, the light-sheet generating mirror of the scanning pair of was suspended off of the edge of the breadboard for delivery of the  illumination from the bottom optical table, see \figurename\ref{fig:soldiworks_top}.
 
 % Mechanical design changes for more stable an extensible system than previous work.
 % Large detection area for future upgrades on detection arm - Like my relaying
@@ -267,15 +267,15 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 \end{figure}
 \clearpage
 \begin{figure}
-    \ContinuedFloat
+    \ContinuedFloat{}
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_top}
-        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the top, gravity is going through the page}\label{fig:soldiworks_top}
+        \caption[\gls{CAD} model of \gls{light-sheet} microscope from above]{\gls{CAD} model of \gls{light-sheet} microscope from above, gravity is going through the page}\label{fig:soldiworks_top}
     \end{subfigure}   % \ContinuedFloat
 \end{figure}
 \begin{figure}
-        \ContinuedFloat
+        \ContinuedFloat{}
     \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
     \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
     Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
@@ -393,7 +393,8 @@ send the appropriate electronic signals and serial commands.
 \begin{figure}
     \centering
   \includegraphics{./controller_scheme} %TODO my own.
-  \caption{Control schematic of the digitally scanned light-sheet microscope.
+  \caption[Control schematic of the digitally scanned light-sheet microscope]{
+  Control schematic of the digitally scanned light-sheet microscope.
   All control signals are generated within \gls{LabVIEW} and distributed to the components.
   Components requiring fast signalling (lasers, scanning mirror, objective actuators) are synchronised by sending pre-built packaged signal trains.}\label{fig:control}
 \end{figure}
@@ -418,7 +419,8 @@ Once the exposure window is finished, the \(y\) and \(z\) mirror is sinusoidally
 \begin{figure}
   \centering
   \includegraphics{slit_signals}
-  \caption{The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
+  \caption[The signals required to synchronise a rolling shutter in a digitally scanned light sheet]{
+  The signals required to synchronise a rolling shutter in a digitally scanned light sheet.
   A pre-drive phase for the \(y\) mirror is needed to ensure the illumination profile of the light-sheet is uniform.
   The camera requires time to initialise the electronics and so a delay period is added within which the pre-drive of both mirrors is performed.
   Both mirrors are sinusoidally returned to their start position ready for the next acquisition.
@@ -459,7 +461,7 @@ Using a \gls{queueing architecture} ensured that command flooding and \gls{race 
 %This ensures that command flooding and race conditions are avoided and the consumer loop can be self regulating.
 
 The commands were packaged as a bundle.
-The first part being an enumerated type which changed the \emph{state} of the \glslink{producer-consumer architecture}{consumer}; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g.\ camera exposure).
+The first part being an enumerated type which changed the \emph{state} of the \glslink{producer-consumer architecture}{consumer}; the second being the necessary front panel data which informed the consumer on any updates to the states (e.g.~camera exposure).
 By using this queuing architecture, consumers can then communicate with each other whilst functioning independently.
 
 %
@@ -515,7 +517,8 @@ By using this queuing architecture, consumers can then communicate with each oth
 \begin{figure}
     \centering
     \includegraphics{/software_layout}
-    \caption{Schematic diagram of the dependancies of each routine in the \gls{LabVIEW} software (\emph{SPIM}, the kernel) that runs the light-sheet microscope.
+    \caption[Schematic diagram of the dependancies of each routine in the \gls{LabVIEW} software (\emph{SPIM}, the kernel) that runs the light-sheet microscope]{
+    Schematic diagram of the dependancies of each routine in the \gls{LabVIEW} software (\emph{SPIM}, the kernel) that runs the light-sheet microscope.
     The \emph{Camera consumer} and \emph{XYZ consumer} package the Hamamatsu capture (grey) and Prior iScan libraries (\emph{Scan}) respectively.
     The \emph{Waves consumer} packages the signal generating routines (red) and drives the resultant signals to the DAQ board using \emph{Run waves}.
     Each of the waves routines (red) are concatenations of \emph{XY waveforms}, which itself relies on \emph{XY waves} (blue) generates signal trains from calibration coordinates and front panel data.
@@ -610,7 +613,7 @@ The module was used to set the limits of the usable volumetric FOV and match the
     \includegraphics[width=0.9\linewidth]{zfish_48hr_noto_magenta}
     \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
   \end{subfigure}
-  \caption{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+  \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
 \end{figure}
 
 A \gls{light-sheet} microscope was built to the design specification in Section~\ref{sec:specification}.

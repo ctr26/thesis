@@ -4,7 +4,7 @@
 %****************************** Third Chapter **********************************
 %*******************************************************************************
 % **************************** Define Graphics Path **************************
-\ifpdf
+\ifpdf{}
     \graphicspath{{Chapters/spt/Figs/Raster/}{Chapters/spt/Figs/PDF/}{Chapters/spt/Figs/}}
 \else
     \graphicspath{{Chapters/spt/Figs/Vector/}{Chapters/spt/Figs/}}
@@ -97,7 +97,7 @@ Incoming capsids are actively transported towards the nuclear pore complexes by 
 The capsid then releases the viral DNA through the nuclear pores into the nucleus~\cite{ojalaHerpesSimplexVirus2000}.
 Virion proteins drive the initial transcription to produce %immediate early
 mRNAs.
-Translation of these early mRNAs promotes further phases of viral gene transcription and replication of the viral DNA.
+Translation of these early mRNAs promotes further phases of viral gene transcription and replication of the viral DNA.\@
 %In ongoing, efficient infection, r
 Replication of the viral DNA is achieved through actions of viral polymerases and other viral replicative machinery.
 These replicated DNAs are used as templates for mRNAs, which produce viral structural proteins, and are also packaged into capsids~\cite{bainesHerpesSimplexVirus2011a}.
@@ -307,7 +307,7 @@ due to its ease of implementation, speed, precision and robustness.% is iterativ
 \subsection{Particle tracking or linking}
 
 Approaches to the linking of detected particles include simple nearest-neighbour\cite{crockerMethodsDigitalVideo1996} which assigns lineage to the nearest detected particle in the following frame, making it susceptible to misassignment in the case of occlusions.
-Multi-frame associations use the the additional available frames to increase the confidence in an assignment, these techniques include multiple hypothesis tracking\cite{coraluppiRecursiveTrackFusion2004}, dynamic programming~\cite{rinkRabConversionMechanism2005} and combinatorial schemes~\cite{sbalzariniFeaturePointTracking2005}, with or without explicit use of motion models and state estimation
+Multi-frame associations use the the additional available frames to increase the confidence in an assignment, these techniques include multiple hypothesis tracking~\cite{coraluppiRecursiveTrackFusion2004}, dynamic programming~\cite{rinkRabConversionMechanism2005} and combinatorial schemes~\cite{sbalzariniFeaturePointTracking2005}, with or without explicit use of motion models and state estimation
 (such as Kalman filtering~\cite{kuAutomatedTrackingSystem2007}).
 % Narest-neighbour linking
 %
@@ -421,7 +421,7 @@ Particle tracking results within the image data stack were then combined with in
 	\begin{subfigure}[t]{0.45\linewidth}
 		\centering
 		\includegraphics{Chapters/spt/Figs/PDF/tracking/2_piezo_track}
-		\caption{The particle moves out of the light-sheet e.g. due to diffusion or flow}\label{fig:SPIMSPT2}
+		\caption{The particle moves out of the light-sheet e.g.~due to diffusion or flow}\label{fig:SPIMSPT2}
 	\end{subfigure}
     \\\vspace{\abovecaptionskip}
     % \begin{subfigure}[t]{0.1\linewidth}
@@ -556,8 +556,7 @@ Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation 
     \includegraphics{simulation/size_view_diffusion_3d_bigger}
     \caption{3D view}\label{fig:diffusion_3d}
   \end{subfigure}
-  \caption{Simulations of a single particle diffusing within a light-sheet with a viscosity
-  in a Newtonian fluid medium with a viscosity of \SI{1.31}{\milli\pascal\second} (\SI{25}{\percent} glycerol in water~\cite{segurViscosityGlycerolIts1951}) at a temperature of \SI{25}{\kelvin}.
+  \caption[Simulations of a single particle diffusing within a \gls{light-sheet}]{Simulations of a single particle diffusing within a \gls{light-sheet} with a viscosity, in a Newtonian fluid medium, with a viscosity of \SI{1.31}{\milli\pascal\second} (\SI{25}{\percent} glycerol in water~\cite{segurViscosityGlycerolIts1951}) at a temperature of \SI{25}{\kelvin}.
   The particle track length (blue, from green to red) corresponds to \SI{40}{\milli\second} of real time}\label{fig:diffusion}
 \end{figure}
 
@@ -565,7 +564,7 @@ Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation 
 
 It was demonstrated in the computational simulations and by Savin and Doyle~\cite{savinStaticDynamicErrors2005}, that a particle moving in a real system will demonstrate a motion blur.
 In an astigmatic imaging system, the image of a particle does not vary linearly with the distance the particle has travelled axially during the image exposure period.
-A single particle moving quickly in the \(xy\) plane will appear to stretch and the localised position of the particle will be the average of the start and end position.
+A single particle moving quickly in the \(xy \) plane will appear to stretch and the localised position of the particle will be the average of the start and end position.
 In order to study axial localisation using motion-blurred image data acquired with an astigmatic system, the following image formation approximation was developed.
 %\subsubsection{Astigmatism}
 % This response was modelled % using a false
@@ -658,8 +657,8 @@ The approximate PSF is defined such that no motion blur is considered:}
     %     \caption{Normalised total area intensity}
     % \end{subfigure}
   \caption{
-  %(a) 
-  Approximate versus numerical \gls{PSF} profile of a particle using normalised peak intensity, a weaker model for astigmatism.
+  %(a)
+  Approximate versus numerical \gls{PSF} profile of a particle using normalised peak intensity.%, a weaker model for astigmatism.
   % (b) Uses normalised area of the approximate and numerical PSFs for a more accurate model of astigmatism
   }\label{fig:guassian_peak}
 \end{figure}
@@ -684,9 +683,10 @@ To retrieve the areas of each modelled \gls{PSF}, they were integrated across al
 \begin{figure}
   \centering
   \includegraphics{./mathematica/area_analysis}
-  \caption{
-  (a) The absolute error from Equation~\ref{eq:motion_error} was plotted against distance the particle travels in a single exposure frame.
-  (b) The degree of astigmatism \(k\) was reframed such that it a substitute parameter represented the ratio of the width of the Gaussian at \(z=0\) and \(z=L\).
+  \caption[Effect on axial localisation error as a function of particle travel distance and degree of astigmatism]{
+  Effect on axial localisation error as a function of particle travel distance and degree of astigmatism.
+  (a), the absolute error from Equation~\ref{eq:motion_error} was plotted against distance the particle travels in a single exposure frame.
+  (b), the degree of astigmatism \(k\) was reframed such that it a substitute parameter represented the ratio of the width of the Gaussian at \(z=0\) and \(z=L\).
   This graph shows that as the ratio approaches unity the error due to astigmatic smearing becomes zero.
   However, when the ratio of the widths approaches zero, the error does not approach infinity as would be expected.
   }\label{fig:area_analysis}
@@ -773,14 +773,14 @@ Virally infected HeLa cells were mounted on cover glass and imaged using the mod
 %\subsubsection{Mounting}
 %As seen in chapter X mounting on flat glass is difficult.
 %Cell culture requires a buffered medium, with most commercial solutions involving atmospheric control
-The cells were infected with HSV-1 expressing tegument proteins fused to fluorescent proteins (\gls{VP26}-mTurquoise, \gls{VP1/2}-dtTomato, \gls{VP16}-cYFP).
+The cells were infected with HSV-1 expressing tegument proteins fused to fluorescent proteins (\gls{VP26}-mTurquoise, \gls{VP1/2}-tdTomato, \gls{VP16}-cYFP).
 %The infected cells were %infected with
 %HeLa cells were
 %mounted on clean \SI{25}{\milli\metre} $\times$ \SI{25}{\milli\metre} coverslips.
 Trypsin was used to help lift cells in culture into solution and was left to act for \SI{3}{\minute}.
 \SI{10}{\percent} Foetal Bovine Serum (FBS) was added to deactivate the Trypsin as it is a protease enzyme and will further degrade the cells.
 Coverslips were submerged in the cellular solution and left to adhere and culture on the glass.
-\SI{3}{\percent} paraformaldehyde was used to fix cells for the preliminary visualisation experiments.
+\SI{3}{\percent} \gls{PFA} was used to fix cells for the preliminary visualisation experiments.
 The glass coverslips were mounted in the custom imaging chamber discussed in Chapter~\ref{chapter:chamber} for light-sheet imaging.
 
 %The some viral tugment proteins (\gls{VP26}, VP1-2, VP16) for
@@ -797,7 +797,7 @@ The glass coverslips were mounted in the custom imaging chamber discussed in Cha
     \includegraphics[height=5cm]{/calibration/merged_slice}
     \caption{Merged}\label{fig:three_colour_slice}
 	\end{subfigure}
-	\caption{
+	\caption[\gls{HSV}-1 viral proteins volumetrically imaged in fixed cells using the light-sheet fluorescence microscope]{
     \gls{HSV}-1 viral proteins volumetrically imaged in fixed cells using the light-sheet fluorescence microscope.
     \gls{VP26} is a capsid protein and marks where the viral capsid is in the nucleus.
     \gls{VP1/2} is a capsid protein that is recruited by the capsid and transcribed by the cell.
@@ -823,7 +823,8 @@ The cylindrical lens was inserted in between the camera and the tube lens as add
 \begin{figure}
   \centering
   \includegraphics{./calibration/Calibration.pdf}
-  \caption{Curves showing calibration between axial depth within the light-sheet and template matched cross-correlation (blue) and covariance (orange).
+  \caption[Calibration curves for axial depth within the light-sheet versus template matched cross-correlation and covariance]{
+  Curves showing calibration between axial depth within the light-sheet and template matched cross-correlation (blue) and covariance (orange).
   Normalisation here refers to the input images being normalised, which in the case of covariance does not necessarily ensure a normalised output.
   }\label{fig:SPT_Calibration}
 \end{figure}
@@ -844,7 +845,7 @@ However there is a lower residual sum of squares, meaning co-variance may reduce
 
 \begin{table}
 \centering
-\caption{Table of the regressional analysis for the calibration curves in \figurename~\ref{fig:SPT_Calibration}.
+\caption[Table of the regressional analysis for the calibration curves in \figurename~\ref{fig:SPT_Calibration}.]{Table of the regressional analysis for the calibration curves in \figurename~\ref{fig:SPT_Calibration}.
 RSS:~Residual sum of squares; \(R^2\): Coefficient of determination; RMSE:~Root mean square error}\label{tab:linear_calibration}
   \begin{tabular}{lccc}
     \toprule
@@ -922,7 +923,8 @@ It is possible to align multiple calibration volumes and create an averaged or m
         \includegraphics[width=1.06cm]{nn/12}
         \caption{\(z=0.75\)}
     \end{subfigure}
-    \caption{
+    \caption[Proposed method for using a neural network to estimate axial position from images.]{
+    Proposed method for using a neural network to estimate axial position from images.
     (a) A schematic of a trained \gls{NN} converting a simulated image into an axial position.
     The image is first flattened and fed into a hidden layer of 10 neurons;
     the weighted outputs of these neurons are fed into the next layer;
@@ -947,7 +949,7 @@ The ground truth axial positions, as simulated, were then fed to the neural netw
 \begin{figure}
     \centering
     \includegraphics{nn_cont_astig}
-    \caption{
+    \caption[Histogram of a neural network predicting the axial positing of simulated astigmatic images.]{
     Histogram of a neural network predicting the axial positing of simulated astigmatic images.
     Assuming a normal distribution, the centre of the distribution is \(\mu=-0.008\) with a variance of \(\sigma=0.037\).
     }\label{fig:nn_cont_astig}

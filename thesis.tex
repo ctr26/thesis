@@ -5,6 +5,8 @@
 %\documentclass[a4paper,12pt,customfont,numbered,print,index,draft]{Classes/PhDThesisPSnPDF}
 \documentclass[a4paper,12pt,customfont,numbered,print,withindex,print,custombib]{Classes/PhDThesisPSnPDF}
 
+%%REGEX \$(.*?)\$  \($1 \)
+
 % ******************************************************************************
 % ******************************* Class Options ********************************
 % *********************** See README for more details **************************
@@ -93,7 +95,7 @@
 % author name for submission to the Student Registry, use the `abstract' option in
 % the document class.
 
-\ifdefineAbstract
+\ifdefineAbstract{}
  \pagestyle{empty}
  \includeonly{Declaration/declaration, Abstract/abstract}
 \fi
@@ -104,8 +106,8 @@
 % Useful option to review a particular chapter or to send it to supervisior.
 % To use choose `chapter' option in the document class
 
-\ifdefineChapter
-  \includeonly{Chapters/literature/chapter}
+\ifdefineChapter{}
+  \includeonly{Chapters/conclusions/chapter}
 \fi
 
 % ******************************** Front Matter ********************************
@@ -125,16 +127,16 @@
 \tableofcontents
 \listoffigures
 \listoftables
-\printglossaries
+\printglossaries{}
 % \printindex
 %\printnomenclature
 
 % ******************************** Main Matter *********************************
-\mainmatter
+\mainmatter{}
 
 %TECHNOLOGY FIRST
 \include{Chapters/intro/chapter} %0         %DONE %DONE
-\include{Chapters/principles/chapter} %1    %DONE %DONE
+\include{Chapters/principles/chapter} %1    %DONE %DONE %DONE
 \include{Chapters/literature/chapter} %2    %DONE %DONE
 \include{Chapters/design/chapter} %3        %DONE %DONE
 \include{Chapters/homography/chapter} %4    %DONE %DONE
@@ -170,7 +172,7 @@
 %\bibliographystyle{apalike}
 % \bibliographystyle{unsrt} % Use for unsorted references
 %\bibliographystyle{plainnat} % use this to have URLs listed in References
-\cleardoublepage
+\cleardoublepage{}
 
 % \bibliography{References/references,References/_references} % Path to your References.bib file
 
@@ -191,14 +193,14 @@
 
 \include{Appendix1/appendix1}
 \include{Appendix2/appendix2}
-\listoftodos
+\listoftodos{}
 \end{appendices}
 
 % *************************************** Index ********************************
 
 % \printthesisindex % If index is present
 % \printindex
-\printthesisindex
+\printthesisindex{}
 \clearpage
 \nosection{That's all folks!}
 

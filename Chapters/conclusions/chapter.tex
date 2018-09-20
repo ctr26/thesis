@@ -4,7 +4,7 @@
 %****************************** Chapter **********************************
 %*******************************************************************************
 % **************************** Define Graphics Path **************************
-\ifpdf
+\ifpdf{}
     \graphicspath{{Chapters/conclusions/Figs/Raster/}{Chapters/conclusions/Figs/PDF/}{Chapters/conclusions/Figs/}}
 \else
     \graphicspath{{Chapters/conclusions/Figs/Vector/}{Chapters/conclusions/Figs/}}
@@ -28,7 +28,7 @@ This provided a variable field of view for imaging organisms and single cells, w
 
 %Homography
 \section{Homographically generated light-sheets}
-In Chapter~\ref{chapter:homography} the method for generation of control signal voltage waveforms for registerring the light-sheet to the imaging plane was improved upon.
+In Chapter~\ref{chapter:homography} the method for generation of control signal voltage waveforms for registering the light-sheet to the imaging plane was improved upon.
 Standard methods of generation rely on three positional coordinates being record for registering the illumination volume to the imaging volume.
 To use four available coordinates and achieve greater registration accuracy, additional non-linear mathematics is needed to project affine input coordinates onto the resultant non-affine illumination space.
 The non-linearity observed arises from imperfections in the scanning optics, this was characterised for the scan lens which converts beam angle into beam position at the sample volume.
@@ -39,7 +39,7 @@ When comparing the 3~point and 4~point correction it was found that there was an
 Chapter~\ref{chapter:flopt} then used the mathematics presented in Chapter~\ref{chapter:homography} to address the related issue of computer-tomography reconstructions in systems prone to mechanical error; in this case for optical projection tomography.
 The ubiquitous Radon transform is typically used to reconstruct projected data sets but take no account of motions beyond rotation about the axis normal to the plane projected.
 This assumption is valid for stable systems, but leads to reconstruction error for systems with limited available angles as well as systems with mechanical jitter and systematic drift.
-Provided there are 6 or more fiducial markers common to each adjacent image pair from an \gls{OPT} image set, each point can be triangulated and the resultant rotation and translation matrices between each image pair can be computed.
+Provided there are 5 or more fiducial markers common to each adjacent image pair from an \gls{OPT} image set, each point can be triangulated and the resultant rotation and translation matrices between each image pair can be computed.
 Each image from the set can then be computational back-projected and aligned using the recovered matrices.
 The resultant volume is then filtered to provide a faithful reconstruction of the volume that is robust to systematic mechanical errors as well as jitter.
 
@@ -83,7 +83,7 @@ Dynamic blur for an astigmatic \gls{PSF} was then considered.
 By using a Gaussian model of an astigmatic \gls{PSF} it was shown that, using typical parameters as found for the light-sheet microscope here, there is an average \SI{25}{\percent} error axial localisation when using the parameters of the light-sheet microscope in this work.
 The magnitude of this error could potentially explain why single particles do escape tracking before they bleach, as demonstrated by Spille~\emph{et.~al}~\cite{spilleDirectObservationMobility2015}.
 
-SHSY5Y mammalian cells infected with \gls{HSV}-1 were then fixed and mounted on glass cover slips for imaging.
+\gls{SH-SY5Y} mammalian cells infected with \gls{HSV}-1 were then fixed and mounted on glass cover slips for imaging.
 Three viral proteins were labelled to demonstrate the feasible of tracking single virus particles in a live cell.
 
 \section{Light-sheet microscopy and magnetic tweezers} %\ref{sec:motivation/tweezers}
@@ -96,7 +96,7 @@ Viscoelastic properties were then extracted from the model fitting and then moni
 This was the first demonstration of a direct link between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
 The blastula tissue was shown to have an intrinsic viscoelastic response.
 The stiffening blastula, composed of radially anisotropic cells, may drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
-The viscoelastic timescale parameter, \(\tau\), was found to remain constant across both time and embryonic mutations.
+The viscoelastic timescale parameter, \(\tau \), was found to remain constant across both time and embryonic mutations.
 
 %Only with an understanding of how forces propagate within tissues can morphogenesis be fully elucidated. In this work a technique was developed to mechanically probe deep tissue using the presented light-sheet microscope. A non-invasive magnetic  eld was used to to move a magnetic bead embedded in a live embryo. The light-sheet microscope was used to image the cells and the bead in real-time and three dimensions.
 %%
@@ -142,9 +142,9 @@ Alternatively a \gls{2P} beam could also be used to create a light-sheet thinner
 \subsection{Imaging}
 
 During this work, a plug-and-play \gls{FLIM} enabled camera became commercially available for wide-field microscopes, combined with the presented light-sheet microscope this could provide a fast volumetric fluorescence lifetime readout from cells to organisms.
-Stelzer~\emph{et. al} showed that volumetric light-sheet combined with FLIM can be useful in organismal imaging~\cite{gregerThreedimensionalFluorescenceLifetime2011a}.
+Stelzer~\emph{et~al.} showed that volumetric light-sheet combined with FLIM can be useful in organismal imaging~\cite{gregerThreedimensionalFluorescenceLifetime2011a}.
 FLIM combined with the viscoelastic measurements seen in the Chapter~\ref{chapter:tweezers} could further elucidate tensions occurring locally to the bead under motion, with a suitable fluorescent reporter~\cite{colomFluorescentMembraneTension2018}.
-Fluorescence lifetime could also be used for indicating if a virion has moved between boundaries within a cell or collected tegument proteins, though the \gls{SNR} of single particle lifetime measurement may be too low.
+Fluorescence lifetime could also be used for indicating if a \gls{virion} has moved between boundaries within a cell or collected tegument proteins, though the \gls{SNR} of single particle lifetime measurement may be too low.
 
 \section{Waveform generation}
 
@@ -177,13 +177,13 @@ A joint Richardson-Lucy deconvolution~\cite{ingaramoRichardsonLucyDeconvolution2
 As an image splitter would be used, a brighter image would be needed to maintain the \gls{SNR}, this could be achieved using more illumination light or increasing the overall exposure time.
 The method proposed would be able to achieve potential super-resolution at video rates.
 
-\section{Frame localisation optial projection tomography}
+\section{Frame localisation optical projection tomography}
 % flopt - attempt reconsutrction with real data
 % Fiducial free provided there is sufficient texture
 
 Chapter~\ref{chapter:flopt} presented a theoretical framework for the reconstruction of \gls{OPT} data sets that was robust to systematic mechanical drift and noise.
-To verify that the reconstruction works beyond simulated data, an \gls{OPT} image set with 5 or more fidicual beads will need to be reconstructed.
-Watson~\emph{et al.}~\cite{watsonOPTiMOpticalProjection2017}, have published a set of mechanical adaptors and softwares so that such a data set could be made using a standard inverted fluorescence microscope.
+To verify that the reconstruction works beyond simulated data, an \gls{OPT} image set with 5 or more fiducial beads will need to be reconstructed.
+Watson~\emph{et~al.}~\cite{watsonOPTiMOpticalProjection2017}, have published a set of mechanical adaptors and softwares so that such a data set could be made using a standard inverted fluorescence microscope.
 Given an appropriate dataset, a particle tracking algorithm for the labelling trajectories that is robust to occlusions will also be needed.
 
 \subsection{Fiducial-free optical projection tomography}
@@ -240,7 +240,7 @@ That said, given the capabilities of the chamber developed in Chapter~\ref{chapt
 % both options could be explored as both embryo types
 would benefit from the fast and gentle volumetric imaging provided by light-sheet microscopes.
 
-Organoids, which are miniaturised forms of organs built or grown from organ samples, would also benefit from light-sheet imaging.
+\gls{organoid}s, which are miniaturised forms of organs built or grown from organ samples, would also benefit from light-sheet imaging.
 The issue for imaging organoids lies with them being often very opaque to visible light.
 Recent advances in clearing techniques and expansion microscopy would make the imaging of large fixed organoids (including brain organoids) viable for light-sheet microscopy.
 Clearing techniques use chemical regents to wash away scattering material from samples, particularly highly scattering lipids, to reduce the opacity of the sample~\cite{_clearing_2016}. %TODO Check

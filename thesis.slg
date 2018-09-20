@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 20.09.2018  00:22:27
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/8WsmCVEyek", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/_RSj3zg1rd", Output: "thesis.sls"
+;; at 20.09.2018  16:39:36
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/wlgh4UdXQn", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/LPjbJ_wOr1", Output: "thesis.sls"
 
 
 Building indexentry-tree:
@@ -42,14 +42,8 @@ sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 
 Forming letter-groups:
 Letter-group: "¼€" -> "N"
-Letter-group: "ë_†" -> "X"
-Letter-group: "ë_†" -> "X"
-Letter-group: "Ë" -> "R"
-Letter-group: "Ú" -> "T"
-Letter-group: "—_å¨Ð†" -> "E"
-Letter-group: "—Ú€_1_å¨Ð†" -> "E"
-Letter-group: "—Ú€_2_å¨Ð†" -> "E"
 Letter-group: "—" -> "E"
+Letter-group: "Ú" -> "T"
 Letter-group: "€´È¤€" -> "A"
 Letter-group: "œÃå" -> "F"
 Letter-group: "¨" -> "I"
@@ -60,9 +54,12 @@ Letter-group: "æ_0" -> "W"
 Letter-group: "ð_Ë" -> "Z"
 Letter-group: "´€»„€" -> "L"
 Letter-group: "ë" -> "X"
+Letter-group: "ë_†" -> "X"
 Letter-group: "ë" -> "X"
 Letter-group: "È" -> "P"
 Letter-group: "æ" -> "W"
+Letter-group: "ë_†" -> "X"
+Letter-group: "Ë" -> "R"
 Letter-group: "ë" -> "X"
 Letter-group: "Ú_ë" -> "T"
 Letter-group: "—ÐÐ—¼Ú¨€´" -> "E"
@@ -73,6 +70,9 @@ Letter-group: "œ" -> "F"
 Letter-group: "®" -> "K"
 Letter-group: "¤" -> "H"
 Letter-group: "»Ð—" -> "M"
+Letter-group: "—_å¨Ð†" -> "E"
+Letter-group: "—Ú€_1_å¨Ð†" -> "E"
+Letter-group: "—Ú€_2_å¨Ð†" -> "E"
 Letter-group: "Ú€à_å¨Ð†" -> "T"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "€´È¤€" -> "A"
@@ -114,14 +114,16 @@ sort-other-runs: ("w") ("w'") (FORWARD FORWARD) 2.
 sort-other-runs: ("w") ("w'") (FORWARD) 3.
 Letter-group: "æ" -> "W"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-other-runs: ("X") ("x") (BACKWARD FORWARD FORWARD) 1.
+sort-other-runs: ("X") ("x") (FORWARD FORWARD) 2.
+sort-other-runs: ("X") ("x'") (BACKWARD FORWARD FORWARD) 1.
+sort-other-runs: ("X") ("x'") (FORWARD FORWARD) 2.
 sort-other-runs: ("x") ("x'") (BACKWARD FORWARD FORWARD) 1.
 sort-other-runs: ("x") ("x'") (FORWARD FORWARD) 2.
 sort-other-runs: ("x") ("x'") (FORWARD) 3.
-sort-other-runs: ("X_c'") ("X_c") (BACKWARD FORWARD FORWARD) 1.
-sort-other-runs: ("X_c'") ("X_c") (FORWARD FORWARD) 2.
-sort-other-runs: ("X_c'") ("X_c") (FORWARD) 3.
-sort-other-runs: ("X") ("x") (BACKWARD FORWARD FORWARD) 1.
-sort-other-runs: ("X") ("x") (FORWARD FORWARD) 2.
+sort-other-runs: ("X_c") ("X_c'") (BACKWARD FORWARD FORWARD) 1.
+sort-other-runs: ("X_c") ("X_c'") (FORWARD FORWARD) 2.
+sort-other-runs: ("X_c") ("X_c'") (FORWARD) 3.
 Letter-group: "ë" -> "X"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 Letter-group: "ð_Ë" -> "Z"
