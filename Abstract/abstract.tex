@@ -7,28 +7,38 @@
     \begin{multicols}{2}\sffamily
 
 Fluorescence microscopy is one of the cornerstones of modern biology but has generally been limited to 2D culture dishes.
-Light-sheet microscopy, a recent advance which was awarded Nature Method of the Year 2014, allows fast, non-invasive 3D imaging across an entire organism.
+Light-sheet microscopy, a recent advance which was awarded Nature Method of the Year in 2014, allows fast, non-invasive 3D imaging across an entire organism.
 This works by decoupling illumination and detection such that the microscope only illuminates a thin section of tissue at a time. By scanning this \emph{light-sheet} through an organism we can image in 3D, more quickly and with less damage than other techniques such as confocal microscopy.
+In this work, a custom digitally scanned light-sheet microscope was built, for which the technology was applied and developed to enable two biological studies: the study of material properties of developing embryos and the tracking of virus particles in live cells.
 
-In this work a custom light-sheet microscope was built which was have applied to studying the cell mechanics of developing embryos. Internal stresses within tissues induce cellular migrations that can govern the organism's resultant anatomy.
-A technique was developed to mechanically probe deep tissue using magnetism.
-By embedding a magnetic bead in an embryo, we can use a controllable, non-invasive magnetic field to move the bead.
-By pushing a magnetic bead and allowing it to relax we can fit a model to its trajectory and so extract local mechanical properties.
-The mechanical roles of key proteins in embryonic development can be inferred by comparing results between genetically modified embryos.
-Our investigations so far have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development. These results are currently being prepared for publication with our collaborators.
+In addition to designing and constructing a light-sheet fluorescence microscope, several technological improvements were also investigated to better address for these biological questions.
+The first was a three-dimensional region-of-interest technique which greatly simplifies volumetric imaging calibration whilst also being more robust, with an observed \SI{42}{\percent} improvement in light collection efficiency compared to current approaches.
+The projective mathematical theory, used in this technique, was then applied to optical projection tomography to produce a new triangulation-based reconstruction algorithm that is robust to affine sample motion, including mechanical jitter and systematic drift.
+The second improvement for light-sheet microscopy builds upon confocal slit scanning, a technique used to increase image contrast whilst doubling the acquisition time for a single image.
+By exploiting the acquisition procedure for confocal slit scanning, full speed imaging with the same increased contrast was realised.
+Finally an open-hardware solution for multi-scale sample mounting was produced.
+These improvements to speed, contrast and acquisition speed in the light-sheet microscope allowed us to address the biological questions of interest.
 
-
-The scope of three-dimensional tracking was moved from going from the microscopic (tracking a single magnetic beads) to nanoscopic scale by to tracking virus particles (virions) which invade host cells and hijack their machinery to replicate and then spread. By visualising the journey of virions through the cell we may reveal weaknesses in infection pathways.
-Light-sheet microscopy is better suited than other techniques for tracking virus trafficking in 3D as virions are exceptionally small and fast.
-Herpes Simplex Virus 1 was studied which is the widespread cause of cold sores and genital herpes.
+First, the light-sheet microscope was applied to the tracking of virus particles (virions) in live cells.
+These particles invade host cells and hijack their machinery to replicate and then spread causing disease.
+To investigate viral infection, the pathways in which virus particles travel need to be visualised \emph{in vivo} and in three dimensions.
+% By visualising the journey of virions through the cell we may reveal weaknesses in infection pathways.
+Light-sheet microscopy is better suited than other techniques for tracking virus trafficking in 3D as virions are exceptionally small and fast-moving.
+In this work Herpes Simplex Virus 1 was considered.
+HSV-1 is the widespread cause of cold sores and genital herpes.
 Furthermore, it serves as a biological model for other Herpesviruses which are associated with many serious diseases including chickenpox and certain lymphomas.
 
-
-In addition to designing and constructing a light-sheet fluorescence microscope technological improvement were investigated:
-The first was a three-dimensional region-of-interest technique which promises to simultaneously simplify volumetric imaging calibration whilst also being more robust than current approaches.
-The second improvement builds upon confocal slit scanning, a technique used to increase image contrast whilst doubling the acquisition time for a single image. This development allowed for full speed imaging with the same increased contrast.
-
-
+Then, the tracking of particles in three dimensions was brought from the nanoscopic (tracking single virions) to the microscopic (tracking a single magnetic beads) scale in developing zebrafish embryos.
+% First the micrscope was applied to studying the cell mechanics of developing zebrafish embryos.
+Internal stresses within tissues induce cellular migrations that can govern the resultant anatomy of the organism.
+A technique was developed to mechanically probe deep tissue using magnetism.
+By embedding a magnetic bead in a live embryo, non-invasive magnetic fields were used to move the bead within the developing tissue.
+% we can use a controllable, non-invasive magnetic field to move the bead.
+Using the model fitting of bead trajectories in simple push-relax-pull-relax experiments, local mechanical properties were extracted.
+% By pushing a magnetic bead and allowing it to relax we can fit a model to its trajectory and so extract local mechanical properties.
+In addition, the mechanical roles of key proteins in embryonic development were inferred by comparing these extracted material properties between genetically modified and wild type embryos.
+For the first time, our investigations have contradicted previous reports that rho-kinase increases cell stiffness in embryonic development.
+% These results are currently being prepared for publication with our collaborators.
 
       %  Fluorescence microscopy is one of the cornerstones of modern biology, but has generally been limited to 2D culture dishes.
       %  Light-sheet microscopy, a recent advance which was awarded Nature Method of the Year 2014, allows fast,
@@ -117,8 +127,8 @@ The second improvement builds upon confocal slit scanning, a technique used to i
   \begin{subfigure}[t]{0.7\textwidth}
     % \centering
     \includegraphics[width=\linewidth]{./Abstract/jackson_russell.png}
-    \linebreak
-    { \sffamily \emph{Image of beads drifting through the focal plane of the light-sheet microscope built during this work, where colour encodes time; featured in Interalia magazine 2016~\cite{MicroChoreographyGallery2016}}}
+    \newline
+    \caption*{\sffamily \emph{Image of beads drifting through the focal plane of the light-sheet microscope built during this work, where colour encodes time; featured in Interalia magazine 2016~\cite{MicroChoreographyGallery2016}}}
     % \caption{Image of beads drifting through the focal plane of the light-sheet microscope where colour encodes time}
   \end{subfigure}
 \end{figure}

@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 20.09.2018  16:39:35
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/HnYYc9wemg", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/NSqnK6TN4g", Output: "thesis.acr"
+;; at 20.09.2018  22:59:02
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/bWYpQVMofI", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/n88svkIt3s", Output: "thesis.acr"
 
 
 Building indexentry-tree:
@@ -73,8 +73,6 @@ Forming letter-groups:
 Letter-group: "Ð´»" -> "S"
 Letter-group: "Ð¨»" -> "S"
 Letter-group: "»Ð¨»" -> "M"
-Letter-group: "¼Ë€†" -> "D"
-Letter-group: "¼ËÃ†®" -> "D"
 Letter-group: "ÈÐœ" -> "P"
 Letter-group: "††" -> "C"
 Letter-group: "†€" -> "C"
@@ -82,6 +80,7 @@ Letter-group: "ÃÈÚ" -> "O"
 Letter-group: "3" -> "glsnumbers"
 Letter-group: "¤Ðå" -> "H"
 Letter-group: "Ë€†1" -> "R"
+Letter-group: "¼ËÃ†®" -> "D"
 Letter-group: "Ð¼Ë" -> "S"
 Letter-group: "ÃÚœ" -> "O"
 Letter-group: "ÐÈ¨»" -> "S"
@@ -129,6 +128,7 @@ Letter-group: "Èœ€" -> "P"
 Letter-group: "¼¼" -> "N"
 Letter-group: "æÚ" -> "W"
 Letter-group: "Ë€»" -> "R"
+Letter-group: "¼Ë€†" -> "D"
 Letter-group: "Ë¤Ã€" -> "R"
 Letter-group: "È´€" -> "P"
 Letter-group: "œ´¨»" -> "F"

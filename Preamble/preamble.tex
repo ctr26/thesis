@@ -249,7 +249,46 @@
   \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
   \markright{#1}}
 
+  % \newcommand{\nochapter}[1]{%
+  %   \refstepcounter{chapter}%
+  %   \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}%
+  %   \markright{#1}}
+
+  \newcommand{\nochapter}[1]{%
+    \refstepcounter{chapter}%
+    \addcontentsline{toc}{chapter}{#1}%
+    \markright{#1}}
 
   \usepackage{tikz}
   \usepackage{graphicx}
   \usetikzlibrary{positioning}
+
+  \AtEveryBibitem{%
+    \clearfield{note}%
+  }
+
+%
+% \usepackage[active,graphics]{preview}
+%
+% \usepackage{array}
+% \makeatletter
+% \font\dummyft@=dummy \relax
+% \dummyft@
+% \tracinglostchars=\z@
+% \count@\sixt@@n
+% \loop
+% \ifnum\count@ >\z@
+% \advance\count@\m@ne
+% \textfont\count@\dummyft@
+% \scriptfont\count@\dummyft@
+% \scriptscriptfont\count@\dummyft@
+% \repeat
+% \let\selectfont\relax
+% \let\mathversion\@gobble
+% \let\getanddefine@fonts\@gobbletwo
+% \pagestyle{empty}
+% \let\ps@fancy\ps@empty
+% \let\hline\relax
+% \newcolumntype{|}{}
+% \let\cleardoublepage\relax
+% \makeatother

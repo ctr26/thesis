@@ -1,8 +1,6 @@
 (indexentry :tkey (("SLM" "\\glossentry{SLM}") ) :locref "{}{xv}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("SIM" "\\glossentry{SIM}") ) :locref "{}{xv}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("mSIM" "\\glossentry{mSIM}") ) :locref "{}{xv}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("DNRAC" "\\glossentry{DNRAC}") ) :locref "{}{xvii}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("DNROCK" "\\glossentry{DNROCK}") ) :locref "{}{xvii}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("PSF" "\\glossentry{PSF}") ) :locref "{}{xix}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("CCD" "\\glossentry{CCD}") ) :locref "{}{xix}" :attr "pageglsnumberformat" ) 
 (indexentry :tkey (("SIM" "\\glossentry{SIM}") ) :locref "{}{xix}" :attr "pageglsnumberformat" ) 

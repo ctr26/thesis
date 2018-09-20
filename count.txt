@@ -1,20 +1,20 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 32983
-Words in headers: 653
-Words outside text (captions, etc.): 6071
-Number of headers: 213
+Words in text: 33123
+Words in headers: 651
+Words outside text (captions, etc.): 6096
+Number of headers: 212
 Number of floats/tables/figures: 88
 Number of math inlines: 475
 Number of math displayed: 87
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  720+7+0 (2/1/0/0) _top_
+  858+7+25 (2/1/0/0) _top_
   113+1+0 (1/0/0/0) Chapter: Introduction
   754+15+0 (4/0/0/0) Section: Motivation
   49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
   1056+22+289 (10/6/34/6) Section: Light microscopy
-  1561+23+174 (13/3/19/1) Section: Fluorescence microscopy
+  1562+23+174 (13/3/19/1) Section: Fluorescence microscopy
   887+22+298 (8/3/9/1) Section: Three dimensional fluorescence microscopy
   1004+16+201 (6/2/4/1) Chapter: Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature
   566+14+258 (7/2/0/0) Section: Objective arrangements
@@ -75,14 +75,13 @@ Subcounts:
   246+5+0 (2/0/0/0) Section: The sample chamber
   111+11+0 (2/0/0/0) Section: Viral imaging using single particle tracking
   72+5+0 (1/0/0/0) Section: Magnetic tweezers and light-sheet microscopy
-  375+2+0 (1/0/0/1) Section: Additional samples
-  0+2+0 (1/0/0/0) Chapter: Appendixed Methods
+  376+2+0 (1/0/0/1) Section: Additional samples
+  0+1+0 (1/0/0/0) Chapter: Methods
   272+6+25 (1/1/7/2) Section: Measuring focal length of scan lens}\label{appendix:scanlens
-  0+3+0 (1/0/0/0) Section: System alignments protocol
   0+2+0 (1/0/0/0) Chapter: Useful derivations
   62+2+0 (1/0/5/2) Section: Convolution theorem}\label{appendix:convolution_theorem
   122+2+0 (1/0/6/3) Section: Fourier transform
-  292+1+0 (1/0/15/6) Section: Huygens
+  292+3+0 (1/0/15/6) Section: Huygens wavelet theory
   7+2+0 (1/0/0/1) Section: Bragg conditons
   98+3+0 (1/0/5/2) Section: Fourier slice theorem}\label{appendix:fourierslice
   0+2+0 (1/0/0/0) Chapter: Particle tracking
