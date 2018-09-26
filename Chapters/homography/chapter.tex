@@ -516,7 +516,7 @@ Normalised FOV are inserted into \(\textbf{M}'\), producing the heavily simplifi
 \end{align}
 
 \(z_i\) represents top and bottom axial extrema where \(i\) is the codified vertices of the \gls{3D}-\gls{FOV}, as in \figurename~\ref{fig:homography/geometry}.
-\(V\) refers to the input calibration voltages of the galvanic mirrors for the \gls{FOV} and \(V' \) is the resultant voltage for a given \(x \) (normalised) and \(z\) which are the desired voltages for creating the \glslink{homography}{homographic} \gls{light-sheet}.
+\(V\) refers to the input calibration voltages of the galvanometric mirrors for the \gls{FOV} and \(V' \) is the resultant voltage for a given \(x \) (normalised) and \(z\) which are the desired voltages for creating the \glslink{homography}{homographic} \gls{light-sheet}.
 To further save computation time,
 %generating waveforms
 non-extrema points can be interpolated to create signal trains rather than point-wise; for higher-order corrections point-wise generation would be necessary.
@@ -694,6 +694,7 @@ mismatch for real samples including fluorescent beads, dyes and a model organism
 \end{figure}
 
 \begin{figure}
+  \centering
   \includegraphics{in_situ/fish}
   \caption[Correction demonstrated in a model organism]{Correction demonstrated in a model organism:
   Presented is a transgenic \gls{zebrafish} expressing mCherry:beta-actinCAAX, in which the membrane contrast is substantially improved by the 4~pt registration.% and is used to visually compare the 4~pt and the 3~pt correction.}
@@ -725,7 +726,7 @@ Each bead (of \SI{\sim500}{}) was localised in \gls{3D} %laterally localised man
 %Once localised, each bead's peak
 and its peak fluorescence intensity was compared in the 4~pt and 3~pt case, and was found to be, on average,
 %The intensity improvement in the 4~pt case's distributed peak average was
-42\% higher across the entire volume (\(\SI{512}{\micro\metre} \times \SI{512}{\micro\metre}\times \SI{100}{\micro\metre})\) for the 4~pt registration.
+\SI{42}{\percent} higher across the entire volume (\(\SI{512}{\micro\metre} \times \SI{512}{\micro\metre}\times \SI{100}{\micro\metre})\) for the 4~pt registration.
 For a \SI{10}{\micro\metre} \gls{light-sheet} this corresponds to an axial light-sheet mismatch of \SI{6.9}{\micro\metre} on average, for the 3~pt case. %TODO recalculate.
 %\figurename~\ref{fig:3} reiterates the message from \figurename~\ref{fig:scan_lens} in that the deeper one penetrates the sample the more valid and useful a 4~pt correction is.
 %We implmeneted this in our iSPIM.
@@ -746,8 +747,8 @@ the sample itself was 4 hours post-fertilisation.
 
 \section{Conclusions}
 
-Considerations in registration between detection and illumination volumes\cite{royer_adaptive_2016} are becoming increasingly pertinent with the current trends of exceptionally large samples\cite{chen_expansion_2015} being imaged at diffraction limited resolution and at depth\cite{wang_direct_2015,truong_deep_2011}.
-Advances in cameras\cite{zheng_0.5_2014,brady_multiscale_2012}, optics\cite{sofroniew_large_2016} and fast piezo technology will further exaggerate errors introduced when using linearly generated waveforms in the next generation of light-sheet microscope.
+Considerations in registration between detection and illumination volumes~\cite{royer_adaptive_2016} are becoming increasingly pertinent with the current trends of exceptionally large samples~\cite{chen_expansion_2015} being imaged at diffraction limited resolution and at depth~\cite{wang_direct_2015,truong_deep_2011}.
+Advances in cameras~\cite{zheng_0.5_2014,brady_multiscale_2012}, optics~\cite{sofroniew_large_2016} and fast piezo technology will further exaggerate errors introduced when using linearly generated waveforms in the next generation of light-sheet microscope.
 
 It was demonstrated that, for \gls{iSPIM} systems using virtual light-sheets, a 4~pt correction (non-linear waveform generation) versus a 3~pt correction (affine waveform generation) will better counteract errors introduced by beam scanning optics, conveniently and for minimal computational cost.
 
