@@ -16,12 +16,12 @@
 
 \chapter{Contemporary \gls{light-sheet} microscope technology}\label{chapter:literature}
 
-\gls{LSFM} is revolutionising the way in which complex, living biological samples can be imaged at high spatial and temporal resolution. %-
+\gls{LSFM} is revolutionising the way in which complex, living biological samples can be imaged at high spatial and temporal resolution.
 The technique differs from conventional \gls{epi-fluorescence} microscopy in that the sample is illuminated orthogonally to the detection axis as shown in \figurename~\ref{fig:epi_con_lsfm}.
-The decoupling of illumination and excitation allows for the construction of light sheets which excite a single plane of interest, which are thin in the direction of the optical axis of the detection system.%~\cite{14,15,16}.
+The decoupling of illumination and excitation allows for the construction of light sheets which excite a single plane of interest, which are thin in the direction of the optical axis of the detection system. %~\cite{14,15,16}.
 As such, the technique offers \gls{optical sectioning} capability comparable to that of confocal microscopy whilst still using a \gls{wide-field} detection system~\cite{siedentpf_uber_1903,voie_orthogonal-plane_1993,huisken_optical_2004-1}.
 
-This garners two key advantages: firstly, as only the plane of interest being detected is irradiated, the incident photon dosage is drastically reduced and so photo-toxicity to the sample is minimised.%-
+This garners two key advantages: firstly, as only the plane of interest being detected is irradiated, the incident photon dosage is drastically reduced and so photo-toxicity to the sample is minimised.
 This is in stark contrast to confocal imaging where signal is collected from a small voxel along the illumination axis whilst the entire 3D sample is illuminated when recording a single image plane.
 Secondly, \gls{wide-field} detection enables a significant temporal resolution increase in \gls{LSFM} versus confocal because an entire 2D slice of the sample is measured at once, rather than a single zero-dimensional pixel.
 For rapid volumetric imaging of complex organisms \gls{LSFM} is becoming the technique of choice in developmental biology~\cite{keller_fast_2010,verveer_high-resolution_2007,mickoleit_high-resolution_2014,icha_using_2016,keller_visualizing_2015,ichikawa_live_2014}, plant science~\cite{wangenheim_rules_2016} and cell biology~\cite{capoulade_quantitative_2011,cella_zanacchi_live-cell_2011}.
@@ -99,9 +99,8 @@ High quality \gls{LSFM} is dependent on how well the illumination is generated, 
 \subsection{Optical \gls{light-sheet} generation}
 %TODO Etendue calculations
 
-
 Huisken~\emph{et~al.} were seminal in their usage of Gaussian \gls{Laser} emissions for the generation of their light sheets.
-\gls{Gaussian beam}s, however, have a distinct trade-off when used in LSFM applications, in that the thinner the light sheet the narrower the usable field of view.
+\gls{Gaussian beam}s, however, have a distinct trade-off when used in \gls{LSFM} applications, in that the thinner the light sheet the narrower the usable field of view.
 
 Equations~\eqref{eq:GuasianBeam} to~\eqref{eq:Rayleigh} are the Gaussian beam approximation, which describes the propogation of a coherent Gaussian beam in free space.
 The \gls{FWHM} (\(\sqrt{2\ln(2)}w(z)\)) %\mynote[inline]{check maths}
@@ -136,10 +135,11 @@ diode \gls{Laser} emits
 \begin{align}
 	I(r,z)    & = {I_0} {\left(\frac{w_0}{w{(z)}}\right)}^2 {e^{\frac{-2r^2}{w{(z)}^2}}\label{eq:GuasianBeam}} \\
 	w(z) & = \gls{w_0} \sqrt{1+\frac{z}{z_R}} \label{eq:Lorrentzian}                                                   \\
-	z_R       & = \frac{\pi w^2}{\lambda} \label{eq:Rayleigh}
+	z_R       & = \frac{\pi w_0^2}{\lambda} \label{eq:Rayleigh} \\
+  w_0 & = 1.4 \lambda \frac{\gls{NA}}{n} \label{eq:spot_size}
 \end{align}
 
-Where \gls{z_R} is the \gls{Rayleigh length}; \gls{w_0} is the spot of size of the beam and \gls{lambda} is the wavelength of light.
+Where \gls{z_R} is the \gls{Rayleigh length}; \gls{w_0} is the spot of size of the beam; \gls{lambda} is the wavelength of light and $n$ is the refractive index.
 
 % Introduce Gaussian beam
 % In cylindrical lens case laser light needs to be over expanded and cut to ensure a FOV homo
@@ -305,7 +305,7 @@ samples prepared with standard mounting procedures may be imaged in a petri-dish
 
 In an attempt to maximise sample accessibility and numerical aperture, Betzig~\emph{et~al.}~\cite{chenLatticeLightSheetMicroscopy2014} commissioned a high \gls{NA}~(\SI{0.6}{}) custom excitation objective to fit with the high \gls{NA}~(\SI{1.1}{})~\gls{LWD} detection objective (Nikon CFI75).
 A custom excitation objective was needed as high~\gls{NA} objectives are physically large with short \gls{working distance}s.
-In mounting the orthogonal pair at an angle such that they were planar so a flat surface, Betzig~\emph{et~al.} maximised detection and excitation \gls{NA} whilst minimising sample mounting impedance.
+In mounting the orthogonal pair at an angle such that they were planar to a flat surface, Betzig~\emph{et~al.} maximised detection and excitation \gls{NA} whilst minimising sample mounting impedance.
 
 % Theer~\emph{et.~al.} \cite{theerPSPIMHighNA2016}
 % created the most unhindered sample mounting conditions realistically feasible using two objectives.
@@ -380,8 +380,8 @@ The technique suffers in that only half the imaging \gls{NA} may be collected.
 Hillman~\emph{et~al.} do so by using a single polygonal mirror in the infinity space of the detection objection to redirect excitation and emission light~\cite{bouchardSweptConfocallyalignedPlanar2015}, see \figurename~\ref{fig:single_objectives/scape}.
 The polygonal mirror then rotates to sweep the light-sheet and detecting focal plane through the sample.
 
-Virtual sample manipulation is alluring as virtual manipulations can be performed that in are impossible physically.
-Zhang~\emph{et~al.}~\cite{li_axial_2014} created a virtual sample using a similar relay system to Dunsby~\emph{et~al.}, but crucially they positioned an atomically flat mirror which rotated their virtual sample by \SI{90}{\degree}, shown in \figurename~\ref{fig:single_objectives/atomic_mirror}.
+Virtual sample manipulation is alluring as virtual manipulations can be performed that are impossible physically.
+Zhang~\emph{et~al.}~\cite{li_axial_2014} created a virtual sample using a similar relay system to Dunsby~\emph{et~al.}, but crucially they positioned a flat mirror which rotated their virtual sample by \SI{90}{\degree}, shown in \figurename~\ref{fig:single_objectives/atomic_mirror}.
 In doing so, the real sample could be illuminated along the optical axis and the mirrored virtual projection was imaged directly onto a camera. % using a standard wide field configuration.
 
 Using small mirrors near the sample is another viable, though more restrictive, approach to single objective \gls{LSFM}.
@@ -406,7 +406,7 @@ They then demonstrated the \gls{exotic beam} profiles using the same \gls{SLM}.
   \begin{subfigure}[t]{0.475\textwidth}
     \centering
     \includegraphics{single_objectives/atomic_mirror}
-    \caption{Atomically flat mirror to rotate virtual image~\cite{li_axial_2014}}\label{fig:single_objectives/atomic_mirror}
+    \caption{A flat mirror is used to rotate virtual image~\cite{li_axial_2014}}\label{fig:single_objectives/atomic_mirror}
   \end{subfigure}
   \begin{subfigure}[t]{0.5\textwidth}
     \centering
@@ -492,7 +492,7 @@ classical \gls{Gaussian beam} limitations, particular the trade-off between thin
 \subsection{Bessel beams}
 
 \gls{Bessel beam}s are non-diffracting and ``self-healing'' non-diffracting beams, they produce thin long beams which reconstruct behind occlusions (see \figurename~\ref{fig:exotic_beams_cartoon_exotic}), making them very desirable for light-sheet applications.
-They can be optically constructed from either an \gls{axicon} lens or a amplitude mask with a annular ring opening, the latter being inexpensive but the most optically lossy.
+Bessel beams can be constructed, optically, from either an \gls{axicon} lens or an amplitude mask with an annular ring opening, the latter being inexpensive but the most optically lossy.
 Unlike Gaussian beams the extension and thickness of a theoretical \gls{Bessel beam} can be entirely decoupled, in practice a \gls{Bessel beam}s only behave as such over short distances~~\cite{gao_3d_2014} of up to \SI{\sim30}{\micro\meter}.
 %\mynote[inline]{how short?}
 % with the thickness being controlled by the outter-most radius and their extension
@@ -503,7 +503,7 @@ Betzig~\emph{et~al.} exploited these additional orders by constructing multiple 
 The spacing of which was controlled by varying the periodicity of the
 % Achieved by superimposing a
 sinusoidal amplitude pattern (diffraction grating) on an annular amplitude mask (\gls{Bessel beam} mask).
-In doing so, the undesirable orders constructively interfered to reinforce the zeroth orders of the parallel beams.
+In doing so, the undesirable orders were constructively interfered to reinforce the zeroth orders of the parallel beams.
 Finally, they tuned the periodicity \gls{lattice light-sheet} such that the outer orders above and below the scanning plane lay at the first minima in the detection \gls{PSF} reducing the net fluorescent axial background.
 
 \subsubsection{Airy Beams}

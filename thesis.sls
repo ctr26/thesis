@@ -67,6 +67,7 @@
 \glsXpageXglsnumberformat{}{7}\delimN 
 \glsXpageXglsnumberformat{}{36}\delimN 
 \glsXpageXglsnumberformat{}{39}\delimN 
+\glsXpageXglsnumberformat{}{40}\delimN 
 \glsXpageXglsnumberformat{}{42}\delimN 
 \glsXpageXglsnumberformat{}{50}\delimN 
 \glsXpageXglsnumberformat{}{60}\delimN 
@@ -98,7 +99,7 @@
 \glsgroupheading{N}\relax\glsresetentrylist
 \glossentry{NA}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xxi}, 
-\glsXpageXglsnumberformat{}{32}\delimN 
+\glsXpageXglsnumberformat{}{30}\delimN 
 \glsXpageXglsnumberformat{}{34}\delimR 
 \glsXpageXglsnumberformat{}{36}\delimN 
 \glsXpageXglsnumberformat{}{46}\delimN 

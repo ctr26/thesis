@@ -1,6 +1,6 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 23.04.2019  16:52:56
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/bQK4eEwrHk", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/_J2bhzbGqy", Output: "thesis.acr"
+;; at 23.04.2019  17:44:31
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/2HjAN1Q32d", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/cYERpxUyfv", Output: "thesis.acr"
 
 
 Building indexentry-tree:
