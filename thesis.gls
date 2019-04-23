@@ -33,7 +33,7 @@
 \glsXpageXglsnumberformat{}{xix}, 
 \glsXpageXglsnumberformat{}{6}\delimN 
 \glsXpageXglsnumberformat{}{7}\delimN 
-\glsXpageXglsnumberformat{}{47}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{46}}}\glsgroupskip
 \glsgroupheading{A}\relax\glsresetentrylist
 \glossentry{aberration}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{23}}}\relax\glsresetentrylist
@@ -88,13 +88,13 @@
 \glossentry{detection arm}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{42}\delimN 
 \glsXpageXglsnumberformat{}{43}\delimN 
-\glsXpageXglsnumberformat{}{50}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
 \glossentry{dynamic range}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{20}}}\glsgroupskip
 \glsgroupheading{E}\relax\glsresetentrylist
 \glossentry{enumerated type}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{54}\delimN 
-\glsXpageXglsnumberformat{}{55}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{52}\delimN 
+\glsXpageXglsnumberformat{}{53}}}\relax\glsresetentrylist
 \glossentry{epi-fluorescence}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{27}\delimN 
 \glsXpageXglsnumberformat{}{31}}}\relax\glsresetentrylist
@@ -125,7 +125,7 @@
 \glsgroupheading{G}\relax\glsresetentrylist
 \glossentry{galvanometric scanning mirrors}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{22}\delimN 
-\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{46}}}\relax\glsresetentrylist
 \glossentry{Gaussian beam}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{29}\delimN 
 \glsXpageXglsnumberformat{}{38}}}\glsgroupskip
@@ -139,7 +139,7 @@
 \glossentry{illumination arm}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{42}\delimN 
 \glsXpageXglsnumberformat{}{43}\delimN 
-\glsXpageXglsnumberformat{}{49}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{48}}}\relax\glsresetentrylist
 \glossentry{illumination board}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{42}\delimN 
 \glsXpageXglsnumberformat{}{43}\delimN 
@@ -154,19 +154,18 @@
 \glsXpageXglsnumberformat{}{43}}}\relax\glsresetentrylist
 \glossentry{imaging optical rail}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{43}\delimN 
-\glsXpageXglsnumberformat{}{49}\delimN 
-\glsXpageXglsnumberformat{}{50}\delimN 
-\glsXpageXglsnumberformat{}{57}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{47}\delimN 
+\glsXpageXglsnumberformat{}{48}\delimN 
+\glsXpageXglsnumberformat{}{55}}}\glsgroupskip
 \glsgroupheading{L}\relax\glsresetentrylist
 \glossentry{LabVIEW}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xiv}\delimN 
 \glsXpageXglsnumberformat{}{xx}, 
 \glsXpageXglsnumberformat{}{42}\delimN 
 \glsXpageXglsnumberformat{}{44}\delimN 
-\glsXpageXglsnumberformat{}{51}\delimR 
-\glsXpageXglsnumberformat{}{53}\delimN 
-\glsXpageXglsnumberformat{}{55}\delimN 
-\glsXpageXglsnumberformat{}{56}\delimN 
+\glsXpageXglsnumberformat{}{47}\delimN 
+\glsXpageXglsnumberformat{}{50}\delimR 
+\glsXpageXglsnumberformat{}{54}\delimN 
 \glsXpageXglsnumberformat{}{58}\delimN 
 \glsXpageXglsnumberformat{}{153}}}\relax\glsresetentrylist
 \glossentry{Laser}{\glossaryentrynumbers{\relax 
@@ -177,7 +176,7 @@
 \glsXpageXglsnumberformat{}{29}\delimN 
 \glsXpageXglsnumberformat{}{30}\delimN 
 \glsXpageXglsnumberformat{}{39}\delimN 
-\glsXpageXglsnumberformat{}{57}\delimN 
+\glsXpageXglsnumberformat{}{55}\delimN 
 \glsXpageXglsnumberformat{}{95}}}\relax\glsresetentrylist
 \glossentry{lattice light-sheet}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{38}\delimN 
@@ -196,10 +195,10 @@
 \glsXpageXglsnumberformat{}{38}\delimR 
 \glsXpageXglsnumberformat{}{40}\delimN 
 \glsXpageXglsnumberformat{}{42}\delimN 
-\glsXpageXglsnumberformat{}{47}\delimR 
+\glsXpageXglsnumberformat{}{46}\delimR 
+\glsXpageXglsnumberformat{}{49}\delimN 
 \glsXpageXglsnumberformat{}{51}\delimN 
-\glsXpageXglsnumberformat{}{53}\delimN 
-\glsXpageXglsnumberformat{}{57}\delimN 
+\glsXpageXglsnumberformat{}{55}\delimN 
 \glsXpageXglsnumberformat{}{59}\delimN 
 \glsXpageXglsnumberformat{}{61}\delimN 
 \glsXpageXglsnumberformat{}{64}\delimN 
@@ -214,7 +213,7 @@
 \glsXpageXglsnumberformat{}{135}\delimN 
 \glsXpageXglsnumberformat{}{151}\delimN 
 \glsXpageXglsnumberformat{}{153}\delimN 
-\glsXpageXglsnumberformat{}{166}\delimN 
+\glsXpageXglsnumberformat{}{165}\delimN 
 \glsXpageXglsnumberformat{}{169}}}\relax\glsresetentrylist
 \glossentry{Lorentzian}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{29}}}\relax\glsresetentrylist
@@ -226,7 +225,7 @@
 \glsgroupheading{N}\relax\glsresetentrylist
 \glossentry{nyquist sampling theory}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{13}\delimN 
-\glsXpageXglsnumberformat{}{51}\delimN 
+\glsXpageXglsnumberformat{}{47}\delimN 
 \glsXpageXglsnumberformat{}{135}}}\glsgroupskip
 \glsgroupheading{O}\relax\glsresetentrylist
 \glossentry{objective lens}{\glossaryentrynumbers{\relax 
@@ -255,7 +254,7 @@
 \glsXpageXglsnumberformat{}{13}\delimN 
 \glsXpageXglsnumberformat{}{18}\delimN 
 \glsXpageXglsnumberformat{}{19}\delimN 
-\glsXpageXglsnumberformat{}{51}\delimN 
+\glsXpageXglsnumberformat{}{47}\delimN 
 \glsXpageXglsnumberformat{}{70}}}\relax\glsresetentrylist
 \glossentry{photo-toxicity}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{23}}}\relax\glsresetentrylist
@@ -267,15 +266,15 @@
 \glossentry{primary imaging plane}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{6}}}\relax\glsresetentrylist
 \glossentry{producer-consumer architecture}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{53}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{52}}}\glsgroupskip
 \glsgroupheading{Q}\relax\glsresetentrylist
 \glossentry{quantum efficiency}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{20}}}\relax\glsresetentrylist
 \glossentry{queueing architecture}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{53}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{52}}}\glsgroupskip
 \glsgroupheading{R}\relax\glsresetentrylist
 \glossentry{race conditions}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{53}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{52}}}\relax\glsresetentrylist
 \glossentry{Radon transform}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xx}, 
 \glsXpageXglsnumberformat{}{71}\delimN 
@@ -290,7 +289,7 @@
 \glossentry{Rayleigh length}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{29}\delimN 
 \glsXpageXglsnumberformat{}{30}\delimN 
-\glsXpageXglsnumberformat{}{51}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
 \glossentry{read noise}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{20}}}\relax\glsresetentrylist
 \glossentry{resonant scanning mirrors}{\glossaryentrynumbers{\relax 
@@ -312,7 +311,6 @@
 \glossentry{slit-scanning}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xv}\delimN 
 \glsXpageXglsnumberformat{}{xvii}\delimN 
-\glsXpageXglsnumberformat{}{xx}\delimN 
 \glsXpageXglsnumberformat{}{xxi}, 
 \glsXpageXglsnumberformat{}{91}\delimR 
 \glsXpageXglsnumberformat{}{104}\delimN 
@@ -325,7 +323,7 @@
 \glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
 \glossentry{state machine}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xxix}, 
-\glsXpageXglsnumberformat{}{53}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{52}}}\relax\glsresetentrylist
 \glossentry{stokes shift}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
 \glossentry{super-continuum laser}{\glossaryentrynumbers{\relax 
@@ -337,7 +335,7 @@
 \glsgroupheading{T}\relax\glsresetentrylist
 \glossentry{telecentric}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{30}\delimN 
-\glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{46}}}\relax\glsresetentrylist
 \glossentry{tomography}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{32}\delimN 
 \glsXpageXglsnumberformat{}{35}}}\relax\glsresetentrylist
@@ -387,6 +385,7 @@
 \glsXpageXglsnumberformat{}{xxi}\delimR 
 \glsXpageXglsnumberformat{}{xxiii}, 
 \glsXpageXglsnumberformat{}{41}\delimN 
+\glsXpageXglsnumberformat{}{56}\delimN 
 \glsXpageXglsnumberformat{}{57}\delimN 
 \glsXpageXglsnumberformat{}{67}\delimN 
 \glsXpageXglsnumberformat{}{112}\delimN 
@@ -397,7 +396,8 @@
 \glsXpageXglsnumberformat{}{147}\delimN 
 \glsXpageXglsnumberformat{}{151}\delimR 
 \glsXpageXglsnumberformat{}{153}\delimN 
-\glsXpageXglsnumberformat{}{156}\delimR 
+\glsXpageXglsnumberformat{}{156}\delimN 
+\glsXpageXglsnumberformat{}{158}\delimN 
 \glsXpageXglsnumberformat{}{159}\delimN 
-\glsXpageXglsnumberformat{}{162}}}%
+\glsXpageXglsnumberformat{}{161}}}%
 \end{theglossary}\glossarypostamble

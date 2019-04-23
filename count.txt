@@ -1,10 +1,10 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 33152
+Words in text: 33164
 Words in headers: 647
-Words outside text (captions, etc.): 6093
+Words outside text (captions, etc.): 6105
 Number of headers: 211
-Number of floats/tables/figures: 88
+Number of floats/tables/figures: 87
 Number of math inlines: 475
 Number of math displayed: 87
 Subcounts:
@@ -21,10 +21,10 @@ Subcounts:
   377+4+167 (1/2/0/0) Section: Single objective \gls{light-sheet} microscopy
   620+11+74 (6/1/0/0) Section: Illumination
   92+1+0 (1/0/0/0) Section: Summary
-  161+6+0 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
-  1489+17+362 (10/4/14/0) Section: Hardware
-  1084+16+299 (9/3/9/1) Section: Software
-  316+27+24 (7/1/0/0) Section: Specification review
+  190+6+12 (2/0/0/0) Chapter: Light-sheet microscope design and considerations }\label{chapter:design
+  1471+17+362 (10/2/14/0) Section: Hardware
+  1084+16+323 (9/5/9/1) Section: Software
+  317+27+0 (7/0/0/0) Section: Specification review
   119+3+0 (1/0/0/0) Chapter: Homographically generated light-sheets}\label{chapter:homography
   862+17+138 (5/1/67/17) Section: Homographic theory
   414+10+290 (3/3/5/0) Section: Experimental implementation and verification

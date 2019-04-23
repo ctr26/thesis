@@ -40,6 +40,8 @@ imaging tasks to be performed.
 The first %of which task required the system to
 task was to image \gls{zebrafish} embryos (\SI{\sim500}{\micro\meter}), surrounded by a magnetic tweezer system, during the \SI{1}{}k~cell stage of embryo development (see Chapter~\ref{chapter:tweezers}); this was for the study of developmental mechanobiology.
 The second required the imaging of live (\gls{SH-SY5Y}) mammalian cells (\SI{\sim50}{\micro\meter}) for viral particulate tracking; this was for the study of 3D-live-cell viral egress using \gls{SPT}.
+
+The instrument developed here was a complete rebuild of a previous instrument, certain individually components were transferred through but the entire hardware and software scheme was redesigned and assembled~\footnote{Rebuilt twice as the microscope moved buildings half way through this thesis.}.
 \pagebreak
 \subsection*{Specification}\label{sec:specification}
 
@@ -76,10 +78,9 @@ To facilitate these biological aims the system has to address these specificatio
 
 \section{Hardware}
 
-The design presented here is an adaptation of a previous \gls{light-sheet} microscope, whose entire optical assembly was mounted on a set of rails rotated at \SI{45}{\degree}.
+The design presented here is an adaptation of a previous \gls{light-sheet} microscope~\cite{chmielewskiFastImagingLive2015}, whose entire optical assembly was mounted on a set of rails rotated at \SI{45}{\degree}.
 The upgrade and redesign of the system was made such that the illumination and detection paths of the new system could be extended so that liquid tuneable lenses could be mounted in the vertically to reduce gravity induced optical aberrations.
-
-The new design presented in this thesis adapts a previous design.
+% The new design presented in this thesis adapts a previous design.
 For precise tracking of single virions, a more stabilised method of suspending the microscope objectives was needed as this minimises vibrational blur.
 This was problematic in the previous design due to design using cantilevered detection optics away from the frame, causing general instability.
 % suspension of objectives was needed.
@@ -172,8 +173,8 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
 % The old SPIM also lacked in that it did not have any motorised XYZ translation, this meant that is could not achieve large area imaging, high-throughput experiments nor could it facilitate single particle tracking in thick samples.
 %\subsection{iSPIM Design}
 %All demonstrations of the 4~pt correction were performed on an iSPIM (\emph{inverted Selective Plane Imaging Microscope}).
-\begin{landscape}
-  \begin{figure}
+\begin{sidewaysfigure}
+  % \begin{figure}
   \centering
   \includegraphics[width=\linewidth]{./optical_design_colour}
   \caption[Full optical design of new \gls{light-sheet} microscope]{
@@ -186,8 +187,8 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
   %Optical design of the new SPIM microscope.
   %Straight black lines represent mirrors; arrowed lines represent lenses; coloured lines represent laser light.
   }\label{fig:optical_design_colour}
-  \end{figure}
-\end{landscape}
+  % \end{figure}
+\end{sidewaysfigure}
 
 % A (\emph{Coherent Obis 561nm}) laser was used as the beam source.
 % A pair of galvanometric mirrors (\emph{Cambridge Technology}) were used to produce 2D beam steering via an image relay, this approach is well established in scanning microscopy and is known to introduce ordinarily negligible field curvature.
@@ -203,12 +204,12 @@ Each component was also computer controllable, and an open-source \gls{LabVIEW} 
 %\nomenclature[z-WD]{WD}{WD of View}
 
 A (\emph{\(10\times 0.3 \gls{NA}\)}) Nikon water-dipping objective was used for illumination and mounted at right angles to a (\emph{\(25\times1.1 \gls{NA}\)}) Nikon LWD water immersion objective.
-The water dipping objective used here has a \SI{3.5}{\milli\meter} WD and narrow physical profile; meaning that when matched with the bulkier high NA detection objective
-there would be mechanical overlap if collimated light was coupled into the illumination lenses.
-Instead, the illumination tube lens supplied slightly diverging light to the back aperture of the illumination objective, which was found to efficiently resolve the challenge of separating the detection and illumination objective lenses.
+The illumination objective used here has a \SI{3.5}{\milli\meter} \gls{WD} and narrow physical profile; meaning that when matched with the bulkier high NA detection objective
+there would be mechanical overlap if collimated light was coupled into the illumination lenses;
+instead, the illumination tube lens transmitted slightly diverging light to the back aperture of the illumination objective, which was found to efficiently resolve the challenge of separating the detection and illumination objective lenses.
 %there was a slight mechanically interference, which was corrected for using the tube lens to adjust the working distance.
 %, once their positioned with their foci were co-aligned.
-Very few objective pairs maximise detection and illumination \gls{NA} whilst being water dipping and compatible, and a solution the solution Chapter~\ref{chapter:chamber} was found to be effective for imaging.
+Very few objective pairs maximise detection and illumination \gls{NA} whilst being water dipping and compatible, and a solution presented in Chapter~\ref{chapter:chamber} was found to be effective for imaging.
 A piezo scanner (Physik Instrumente~\emph{P-726 PIFOC high-load objective scanner}) was used to manually move the detection objective to match the detection focal plane to the illumination plane.
 
 \subsection{Illumination}
@@ -229,7 +230,7 @@ using dichroic mirrors % were chosen to ensure the each laser line propagated fr
 the illumination setup is illustrated in \figurename~\ref{fig:optical_design_colour}.
 %See \figurename~\ref{fig:optical_design_colour}.
 
-An alternative to using independent laser lines is using a white light laser source with chromatic notch filters. %and using the dichroic mirrors as long pass filters whilst using other filters to create the short pass.
+An alternative to using independent laser lines was consideredsing a white light laser source with chromatic notch filters. %and using the dichroic mirrors as long pass filters whilst using other filters to create the short pass.
 To modulate the power for each channel would require fast intensity modulation potentially using an \gls{AOTF}.
 %If this were the case then the power of each individual laser line would be dependent on the other laser lines.
 %To then circumvent this an intensity modulator such as an
@@ -237,7 +238,7 @@ To modulate the power for each channel would require fast intensity modulation p
 %The former solution is more economical and more predictable.
 White light sources (e.g. Fianium \emph{SC390} supercontinuum lasers) are expensive; do not produce homogeneous emissions;
 %as well as the overall solution being more costly.
-are more costly as well as the class 4 laser beam being intrinsically more hazardous than the class 3b diode laser in this design.
+are more costly as well as the class 4 laser beam being intrinsically more hazardous than the class 3b diode lasers in this design.
 %, each colour may have been wholly variant in terms of quality for instance.
 
 \subsection{Light-sheet generation}
@@ -245,7 +246,7 @@ are more costly as well as the class 4 laser beam being intrinsically more hazar
 For generation of the \gls{light-sheet} a \glslink{galvanometric scanning mirrors}{galvanometric scanning mirror} (\emph{Cambridge Technology}) was placed behind a \gls{telecentric} scan lens.
 The \gls{telecentric} lens converts incident angle to emitted position such that a scanning mirror placed on-axis one focal distance behind the lens will produce a paraxial sweeping beam.
 The \gls{light-sheet} generating scanning mirror was conjugated using a pair of matched lenses, in a \gls{4f} configuration, on a second scanning mirror.
-The second mirror was mounted at \SI{90}{\degree} to the light-sheet generating mirror to allow the sheet be displaced move axially with respect to the imaging lens.
+The second mirror was mounted at \SI{90}{\degree} to the light-sheet generating mirror to allow the sheet to be displaced axially with respect to the imaging lens.
 This allowed for fast volumetric imaging as well as correction for distortions caused by the scanning optics, discussed further in Chapter~\ref{chapter:homography}.
 \figurename~\ref{fig:soldiworks_top} presents a schematic of light sheet generation.
 
@@ -256,55 +257,98 @@ This allowed for fast volumetric imaging as well as correction for distortions c
 %
 % The light sheet generation components were all housed in cage system optomechanics as opposed to the free space optics of the bottom breadboard.
 % The cage system was used as it projects the sensitive galvanometer mirrors as well as make lens alignment easier as the cage system \textit{should} remove off axis by virtue.
-\clearpage
-\begin{figure}
-    \centering
+
+% a double-page figure
+\begin{figure}[p]% will be the left-side figure
+  \begin{leftfullpage}
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_side}
-        \caption{\gls{CAD} model of \gls{light-sheet} microscope from the side, gravity is down}\label{fig:solidworks_design_front}
+        \caption{\gls{CAD} model of the \gls{light-sheet} microscope from the side, gravity is down}\label{fig:solidworks_design_front}
     \end{subfigure}
+  \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
+  \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
+  Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
+  The coordinate system was chosen with the imaging axis being coaxial with the axially direction (\(z\)) in the imaging direction, and right-handed with the \(x\) direction into the page and \(y\) in the direction of propagation of the illumination.\\
+  \textcolor{illustrator_green}{\textbf{↑IL}}: Illumination comes from below on the right of the diagram.
+  \textcolor{illustrator_green}{\textbf{SM1}}: Scan mirror, generates the \gls{light-sheet}.
+  \textcolor{illustrator_green}{\textbf{SMR}}: Scan mirror relay, optically relays image of \textcolor{illustrator_green}{\textbf{SM1}} onto \textcolor{illustrator_green}{\textbf{SM2}}.
+  \textcolor{illustrator_green}{\textbf{SM2}}: Scan mirror, moves the \gls{light-sheet} axially.
+  \textcolor{illustrator_green}{\textbf{SL}}: Scan lens, keeps the \gls{light-sheet} par-axial at the specimen plane.
+  \textcolor{illustrator_green}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the \gls{light-sheet} into \gls{illumination arm}.
+  \textcolor{illustrator_green}{\textbf{TL}}: Tube lens (\emph{ITL200}), focuses collimated illumination light into the back aperture of the illumination objective \textcolor{illustrator_green}{\textbf{OBJ}}. Objective lens, for illumination.\\
+  \textcolor{illustrator_red}{\textbf{OBJ}}: Objective lens, for imaging.
+  \textcolor{illustrator_red}{\textbf{TL}}: Tube lens (\emph{ITL200}), images specimen plane to an image plane
+  \textcolor{illustrator_red}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
+  \textcolor{illustrator_red}{\textbf{OBJ-R}}: Objective relay, on a turret for choosing multiple magnifications.
+  \textcolor{illustrator_red}{\textbf{FW}}: Filter wheel, for rejecting the non-fluorescent signal.
+  \textcolor{illustrator_red}{\textbf{TL-R}}: Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
+  \textcolor{illustrator_red}{\textbf{CAM}}: Camera (sCMOS, Hamamatsu Orca Flash 4 v2.0), for detection of the fluorescent signal.
+  }\label{fig:spim_cad}
+  \end{leftfullpage}
 \end{figure}
-\clearpage
-\begin{figure}
-    \ContinuedFloat{}
+\begin{figure}[p]% will be the right-side figure
+  \begin{fullpage}
+      \ContinuedFloat{}
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics{spim_cad_top}
         \caption[\gls{CAD} model of \gls{light-sheet} microscope from above]{\gls{CAD} model of \gls{light-sheet} microscope from above, gravity is going through the page}\label{fig:soldiworks_top}
     \end{subfigure}   % \ContinuedFloat
+  \end{fullpage}
+  % \caption{}
 \end{figure}
-\begin{figure}
-        \ContinuedFloat{}
-    \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
-    \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
-    Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
-    The coordinate system was chosen with the imaging axis being coaxial with the the axially direction (\(z\)) in the imaging direction, and right-handed with the \(x\) direction into the page and \(y\) in the direction of propagation of the illumination.\\
-    \textcolor{illustrator_green}{\textbf{↑IL}}: Illumination comes from below on the right of the diagram.
-    \textcolor{illustrator_green}{\textbf{SM1}}: Scan mirror, generates the \gls{light-sheet}.
-    \textcolor{illustrator_green}{\textbf{SMR}}: Scan mirror relay, optically relays image of \textcolor{illustrator_green}{\textbf{SM1}} onto \textcolor{illustrator_green}{\textbf{SM2}}.
-    \textcolor{illustrator_green}{\textbf{SM2}}: Scan mirror, moves the \gls{light-sheet} axially.
-    \textcolor{illustrator_green}{\textbf{SL}}: Scan lens, keeps the \gls{light-sheet} par-axial at the specimen plane.
-    \textcolor{illustrator_green}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the \gls{light-sheet} into \gls{illumination arm}.
-    \textcolor{illustrator_green}{\textbf{TL}}: Tube lens (\emph{ITL200}), focuses collimated illumination light into the back aperture of the illumination objective \textcolor{illustrator_green}{\textbf{OBJ}}. Objective lens, for illumination.\\
-    \textcolor{illustrator_red}{\textbf{OBJ}}: Objective lens, for imaging.
-    \textcolor{illustrator_red}{\textbf{TL}}: Tube lens (\emph{ITL200}), images specimen plane to an image plane
-    \textcolor{illustrator_red}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
-    \textcolor{illustrator_red}{\textbf{OBJ-R}}: Objective relay, on a turret for choosing multiple magnifications.
-    \textcolor{illustrator_red}{\textbf{FW}}: Filter wheel, for rejecting the non-fluorescent signal.
-    \textcolor{illustrator_red}{\textbf{TL-R}}: Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
-    \textcolor{illustrator_red}{\textbf{CAM}}: Camera (sCMOS, Hamamatsu Orca Flash 4 v2.0), for detection of the fluorescent signal.
-    }\label{fig:spim_cad}
-    % \textcolor{illustrator_red}{OBJ}. {OBJ}. Objective lens, for imaging.
-    % \textcolor{illustrator_red}{TL}. Tube lens, images specimen plane to an image plane
-    % \textcolor{illustrator_red}{TM}. Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
-    % \textcolor{illustrator_red}{OBJ-R}. Objective relay, on a turret for choosing multiple magnifications.
-    % \textcolor{illustrator_red}{FW}. Filter wheel, for rejecting the non-fluorescent signal.
-    % \textcolor{illustrator_red}{TL-R}. Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
-    % \textcolor{illustrator_red}{CAM}. Camera, for detection of fluorescent signal.
-    % }
-\end{figure}
-\clearpage
+% end of the figure
+%
+% \clearpage
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}[b]{\textwidth}
+%         \centering
+%         \includegraphics{spim_cad_side}
+%         \caption{\gls{CAD} model of the \gls{light-sheet} microscope from the side, gravity is down}\label{fig:solidworks_design_front}
+%     \end{subfigure}
+% \end{figure}
+% \clearpage
+% \begin{figure}
+%     \ContinuedFloat{}
+%     \begin{subfigure}[b]{\textwidth}
+%         \centering
+%         \includegraphics{spim_cad_top}
+%         \caption[\gls{CAD} model of \gls{light-sheet} microscope from above]{\gls{CAD} model of \gls{light-sheet} microscope from above, gravity is going through the page}\label{fig:soldiworks_top}
+%     \end{subfigure}   % \ContinuedFloat
+% \end{figure}
+% \begin{figure}
+%         \ContinuedFloat{}
+%     \caption[\gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard]{
+%     \gls{CAD} three dimensional representation of the \SI{45}{\degree} inverted geometry imaging breadboard.
+%     Sample access is allowed from beneath whilst still creating a fully orthogonal detection and illumination system.
+%     The coordinate system was chosen with the imaging axis being coaxial with the axially direction (\(z\)) in the imaging direction, and right-handed with the \(x\) direction into the page and \(y\) in the direction of propagation of the illumination.\\
+%     \textcolor{illustrator_green}{\textbf{↑IL}}: Illumination comes from below on the right of the diagram.
+%     \textcolor{illustrator_green}{\textbf{SM1}}: Scan mirror, generates the \gls{light-sheet}.
+%     \textcolor{illustrator_green}{\textbf{SMR}}: Scan mirror relay, optically relays image of \textcolor{illustrator_green}{\textbf{SM1}} onto \textcolor{illustrator_green}{\textbf{SM2}}.
+%     \textcolor{illustrator_green}{\textbf{SM2}}: Scan mirror, moves the \gls{light-sheet} axially.
+%     \textcolor{illustrator_green}{\textbf{SL}}: Scan lens, keeps the \gls{light-sheet} par-axial at the specimen plane.
+%     \textcolor{illustrator_green}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the \gls{light-sheet} into \gls{illumination arm}.
+%     \textcolor{illustrator_green}{\textbf{TL}}: Tube lens (\emph{ITL200}), focuses collimated illumination light into the back aperture of the illumination objective \textcolor{illustrator_green}{\textbf{OBJ}}. Objective lens, for illumination.\\
+%     \textcolor{illustrator_red}{\textbf{OBJ}}: Objective lens, for imaging.
+%     \textcolor{illustrator_red}{\textbf{TL}}: Tube lens (\emph{ITL200}), images specimen plane to an image plane
+%     \textcolor{illustrator_red}{\textbf{TM}}: Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
+%     \textcolor{illustrator_red}{\textbf{OBJ-R}}: Objective relay, on a turret for choosing multiple magnifications.
+%     \textcolor{illustrator_red}{\textbf{FW}}: Filter wheel, for rejecting the non-fluorescent signal.
+%     \textcolor{illustrator_red}{\textbf{TL-R}}: Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
+%     \textcolor{illustrator_red}{\textbf{CAM}}: Camera (sCMOS, Hamamatsu Orca Flash 4 v2.0), for detection of the fluorescent signal.
+%     }\label{fig:spim_cad}
+%     % \textcolor{illustrator_red}{OBJ}. {OBJ}. Objective lens, for imaging.
+%     % \textcolor{illustrator_red}{TL}. Tube lens, images specimen plane to an image plane
+%     % \textcolor{illustrator_red}{TM}. Turning mirror (\SI{22.5}{\degree}), redirects the emitted light into \gls{imaging optical rail}.
+%     % \textcolor{illustrator_red}{OBJ-R}. Objective relay, on a turret for choosing multiple magnifications.
+%     % \textcolor{illustrator_red}{FW}. Filter wheel, for rejecting the non-fluorescent signal.
+%     % \textcolor{illustrator_red}{TL-R}. Tube lens relay, for imaging the relayed image plane onto the camera (CAM).
+%     % \textcolor{illustrator_red}{CAM}. Camera, for detection of fluorescent signal.
+%     % }
+% \end{figure}
+% \clearpage
 % \begin{figure}
 % \centering
 % \includegraphics[width=1\linewidth]{./Raster/solidworks_design_front}
@@ -350,7 +394,7 @@ The downside of stopping down the back aperture, was that some light was discard
 
 %With a scan lens focal \SI{37.3\pm0.1}{\milli\meter}
 
-%In the the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
+%In the old SPIM a standard NA of laser used was 0.15 which created a FOV of \SI{520}{\micro\meter} \footnote{The chip size of the sCMOS camera is \SI{13}{\milli\meter} and the magnification of the detection objective lens is \SI{25}{}$\times$ giving a field of view of \SI{520}{\micro\meter}} and a beam waist of \SI{1.3 \pm 1}{\micro\meter} (from equation \ref{eq:rayleigh}).
 %To recreate a numerical aperture of \SI{0.15 \pm 0.05}, for an objective of focal length \SI{20}{\milli\meter}  the back aperture would need to be filled by a beam of diameter \SI{6}{\milli\meter}.
 %Therefore the illumination laser needs to be magnified \SI{1.7}{}$\times$.
 %Standard optical lenses are heavily quantised in terms of their focal length, a viable magnification for instance would be a \SI{160}{\milli\meter} , \SI{30}{\milli\meter} pair placed just before the flip mirror.
@@ -362,8 +406,8 @@ The downside of stopping down the back aperture, was that some light was discard
 \subsection{Detection}
 
 %The optics surrounding the detection arm are far simpler than the excitation arm.
-The detection lens used was a PlanAchromat \SI{25}{\times} high (\SI{1.1}{}) \gls{NA} objective, select the unparalleled lateral resolution for a water dipping lens that could fit the mechanical constraints of the \gls{light-sheet} system.
-This was coupled to second \emph{ITL200} tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
+A PlanAchromat \SI{25}{\times} high (\SI{1.1}{}) \gls{NA} objective was used as the detection lens, owing to its excellent lateral resolution, unparalleled for a water dipping lens, and to its suitability to the mechanical constraints of the \gls{light-sheet} system.
+This was coupled to a second \emph{ITL200} tube lens which imaged infinity corrected emission light onto the Orca Flash 4.0v2 detector.
 % Before the detector there was
 In the path between the detection objective a Prior Filter wheel housing emission filters (Semrock the \emph{442/647};
 Chroma the \emph{ET605/70m} and \emph{ZT405/488/561/647rpc}) was installed to reject scattered illumination light.
@@ -374,7 +418,7 @@ A further lens relay was added on the \gls{imaging optical rail} after the \gls{
 The relay comprised a tube lens and two objective lenses on a rotating turret.
 This provided a par-focal solution for magnifying the imaging by \SI{2.5}{\times} (\emph{Olympus MPLFLN1.25x}) and \SI{1.25}{\times} (\emph{Olympus MPLFLN2.5x}) for \SI{62.5}{\times} and \SI{31.25}{\times} total magnifications respectively.
 Using microscope objectives for the additional optical relay ensured that there were minimal optical losses as the lenses are designed for the weak fluorescent signal, as well as for minimal distortion and chromatic aberrations.
-Imaging at \SI{62.5}{\times} magnification gives \SI{99.2}{\nano\meter} lateral sampling at the specimen plane.
+%Imaging at \SI{62.5}{\times} magnification gives \SI{99.2}{\nano\meter} lateral sampling at the specimen plane.
 The \glslink{Rayleigh length}{Raleigh} condition of the system, using \SI{561}{\nano\meter} light, is \SI{311}{\nano\meter} resolution.
 %Meaning that
 Therefore, at \SI{62.5}{\times} magnification, the system is sampled sufficiently for \glslink{nyquist sampling theory}{Nyquist criterion} (\SI{155.55}{\nano\meter})
@@ -454,10 +498,10 @@ A modular, extensible and easy-to-use software solution was needed to control th
 % LabVIEW provides a wide library of drivers and libraries for hardware interfacing in science.
 % Due to LabVIEW's modularity and fast development environment it is ideal for producing software for a microscope under development as any new hardware can be quickly and easily implemented and not necessarily by the original software writer.
 
-It was required that the components within the microscope were interfaced in a parallel manner as well as controlling and interfacing with each other (e.g.~the XYZ controller triggering the capturing of a image volume).
-The software controller was engineered using a \glslink{producer-consumer architecture}{producer} where each \glslink{producer-consumer architecture}{consumer} was a parallel \gls{state machine}.
-The \glslink{producer-consumer architecture}{producer} will receive front panel inputs, then convert and pass those commands on to the \glslink{producer-consumer architecture}{consumer}s.
-Using a \gls{queueing architecture} ensured that command flooding and \gls{race conditions} are avoided, and the consumer loop can be self regulating.
+It was required that the components within the microscope were interfaced with in a parallel manner, as well as being able to control and interface with each other (e.g.~the XYZ controller triggering the capturing of an image volume).
+The software controller was engineered using a \gls{producer-consumer architecture} where each \glslink{producer-consumer architecture}{consumer} was a parallel \gls{state machine}.
+The \glslink{producer-consumer architecture}{producer} received front panel inputs, then converted and passed those commands on to the \glslink{producer-consumer architecture}{consumer}s.
+Using a \gls{queueing architecture} ensured that command flooding and \gls{race conditions} were avoided, and the consumer loop was self-regulating.
 %This ensures that command flooding and race conditions are avoided and the consumer loop can be self regulating.
 
 The commands were packaged as a bundle.
@@ -531,7 +575,7 @@ By using this queuing architecture, consumers can then communicate with each oth
 
 \subsubsection{Kernel}
 
-The kernel stores the acquisition settings and initiates all the queues to be sent the the sub modules, \textbf{Camera}, \textbf{Waveform Generator} and \textbf{XYZ Translator}.
+The kernel stores the acquisition settings and initiates all the queues to be sent the sub modules, \textbf{Camera}, \textbf{Waveform Generator} and \textbf{XYZ Translator}.
 All acquisition settings and properties are converted into \gls{enumerated type}{enumerated} state machine commands.
 Acquisition modes are organised into imaging orders, such as \emph{XYZ}, \emph{XYZC}, \emph{XYCZ}, \emph{XYT}; where \emph{XY} is a single frame, \emph{Z} is an iteration axially, \emph{C} is the colour channels selected, and \emph{T} is the time course selected.
 Each of the dimensions (\emph{XYZT}) are governed by the parameters \emph{Start}, \emph{Step}, \emph{Range}; where start is the initial position or time; step is the step size, meaning spatial resolution or temporal resolution; and range is the range over which the dimension covers, spatially or temporally.
@@ -554,7 +598,7 @@ soft update states (for instance changes to \gls{exposure time}), and hard updat
 (for when an acquisition setting requires the camera link to be unloaded, such as changing the \emph{sensor mode} which controls the shutter directions).
 The difference between hard and soft updates is poorly documented and the categorisation of was found empirically.
 
-The second consumer loop exists within the the camera module to handle saving and displaying of image data.
+The second consumer loop exists within the camera module to handle saving and displaying of image data.
 This consumer has two settings: the first receives queued image arrays directly from the camera, this is used for live preview mode and small image sequences such as single volumes; the second reads and converts image files from the file-stream of the camera.
 The latter mode does not drop frames as the camera is streaming data directly to the hard drive, provided the read and write streams of the hard-drive do not overflow.
 The single frame acquisition mode will also not drop frames due to their sequence being queued, but, there may be a delay between the presented image and the live view at high frame rates.
@@ -567,7 +611,7 @@ Mode 1, sets the camera to full frame and mode 12, slit scanning.
 Once the mode is set the line interval (\(\times 403850\)) and slit exposure (\(\times \text{1F0110}\)) is set according to the equation:
 
 \begin{align}
-    \text{Slit exposure} &= \frac{\text{Exposure} \times \text{Slit width}}{\SI{10}{\milli\second} + \text{FOV}_y + \text{Slit width}} \\
+    \text{Slit exposure} &= \frac{\text{Exposure} \times \text{Slit width}}{\SI{10}{} + \text{FOV}_y + \text{Slit width}} \\
     \text{Line interval} &= \frac{\text{Slit exposure}}{\text{Slit width}}
 \end{align}
 
@@ -580,7 +624,7 @@ and are forced to synchronise using propagation error values
 .
 
 The camera and lasers were addressed using digital (\gls{TTL}) signals which are hardware limited between \SIrange{0}{5}{\volt}.
-Voltages to the objective actuator and scanning mirrors were software limited between \SIrange{0}{10}{\volt} and \SIrange{-10}{10}{\volt} (\SI{10}{\volt} = \SI{100}{\micro\meter}) respectively, to prevent damage to the electronics.
+Voltages to the objective actuator and scanning mirrors were software limited between \SIrange{0}{10}{\volt} (\SI{10}{\volt} = \SI{100}{\micro\meter}) and \SIrange{-10}{10}{\volt} respectively, to prevent damage to the electronics.
 The objective actuator was positioned linearly, by voltage, using the conversation \SI{10}{\per\volt\micro\meter}; with \SI{16}{\bit} voltage resolution from the \gls{DAQ}, this gave an addressable axial resolution of \SI{1.52}{\nano\meter}, which was \SI{4}{\times} larger than the reported closed loop resolution (\SI{0.4}{\nano\meter}) of actuator.
 Achieving the full resolution would have required addressing the actuator using serial commands which would have been too slow for the required imaging modes, such particle tracking.
 As such the resolution trade-off was accepted.
@@ -597,24 +641,94 @@ As such the resolution trade-off was accepted.
 \subsubsection{Calibration module}
 
 The calibration module set the microscope to live image preview mode with direct user control over the objective actuator voltage and mirror voltages.
-The module was used to set the limits of the usable volumetric FOV and match the focus of the objective to mirror positions, discussed in detail in Chapter~\ref{chapter:homography}.
+The module was used to set the limits of the usable volumetric \gls{FOV} and match the focus of the objective to mirror positions; this is discussed in detail in Chapter~\ref{chapter:homography}.
+%
+% \clearpage
+% \begin{figure}
+%   \centering
+%   \begin{subfigure}[t]{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{zfish_48hr_eye_magneta}
+%     \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
+%   \end{subfigure}
+%   \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+% \end{figure}
+%   \clearpage
+%   \begin{figure}
+%   \ContinuedFloat{}
+%   \begin{subfigure}[t]{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{zfish_48hr_noto_magenta}
+%     \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
+%   \end{subfigure}
+%     \caption{}
+% \end{figure}
+% \clearpage
+% a double-page figure
+\begin{figure}[p]% will be the left-side figure
+  \begin{leftfullpage}
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{zfish_48hr_eye_magneta}
+      \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
+    \end{subfigure}
+    \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+  \end{leftfullpage}
+\end{figure}
+\begin{figure}[p]% will be the right-side figure
+  \begin{fullpage}
+    \ContinuedFloat{}
+    \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{zfish_48hr_noto_magenta}
+      \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
+    \end{subfigure}
+      \caption[]{\phantom{.}\linebreak\phantom{.}}
+  \end{fullpage}
+\end{figure}
+% end of the figure
+
+% \begin{figure}
+%   \begin{leftfullpage}
+%     \centering
+%     \begin{subfigure}[t]{\textwidth}
+%       \centering
+%       \includegraphics[width=\textwidth]{zfish_48hr_eye_magneta}
+%       \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
+%     \end{subfigure}
+%     \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+%   \end{leftfullpage}
+% \end{figure}
+%   \begin{figure}
+%     \ContinuedFloat{}
+%       \begin{fullpage}
+%     \begin{subfigure}[t]{\textwidth}
+%       \centering
+%       \includegraphics[width=\textwidth]{zfish_48hr_noto_magenta}
+%       \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
+%     \end{subfigure}
+%       \caption{}
+%   \end{fullpage}
+% \end{figure}
+
+
+% \begin{figure}
+%   \centering
+%   \begin{subfigure}[t]{0.4\linewidth}
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{zfish_48hr_eye_magneta}
+%     \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
+%   \end{subfigure}\quad
+%   \begin{subfigure}[t]{0.4\linewidth}
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{zfish_48hr_noto_magenta}
+%     \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
+%   \end{subfigure}
+%   \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
+% \end{figure}
 
 \section{Specification review}
-
-\begin{figure}
-  \centering
-  \begin{subfigure}[t]{0.4\linewidth}
-    \centering
-    \includegraphics[width=0.9\linewidth]{zfish_48hr_eye_magneta}
-    \caption{\SI{48}{\hour}, \gls{zebrafish} eye}
-  \end{subfigure}\quad
-  \begin{subfigure}[t]{0.4\linewidth}
-    \centering
-    \includegraphics[width=0.9\linewidth]{zfish_48hr_noto_magenta}
-    \caption{\SI{48}{\hour}, \gls{zebrafish} notochord}
-  \end{subfigure}
-  \caption[Preliminary images of zebrafish]{Preliminary images of zebrafish expressing \gls{GFP} and produced from the light-sheet microscope designed and built in this work.}\label{fig:zfish_pretty}
-\end{figure}
 
 A \gls{light-sheet} microscope was built to the design specification in Section~\ref{sec:specification}.
 
@@ -636,15 +750,15 @@ The translator enabled precision positioning as well as large FOV imaging throug
 Chapter~\ref{chapter:chamber} discusses, in detail, the sample mounting procedures used.
 
 \paragraph{\ref{item:scales}. Multiple magnifications}
-A par-focal relay using microscope objective lenses was inserted in the detection path to allow for two FOVs to be chosen from. This allow for the imaging of a large gamut of biological samples, from the cell up to the organism.
+A par-focal relay using microscope objective lenses was inserted in the detection path to allow for two FOVs to be chosen from. This allowed for the imaging of a large gamut of biological samples, from the cell up to the organism.
 
 \paragraph{\ref{item:illumination}. Options for exotic illumination development}
-A beam splitter was placed on the lower optical breadboard before reaching the scanning mirrors above. Using flip mirrors and beam dumps enabled the option of a dual-beam illumination or an exotic illumination from the SLM found on one of the arms.
+A beam splitter was placed on the lower optical breadboard before reaching the scanning mirrors above. Using flip mirrors and beam dumps enabled the option of a dual-beam, concomitant illumination or an exotic illumination from the SLM found on one of the arms.
 
 \paragraph{\ref{item:software}. User-friendly and extensible software scheme}
 \gls{LabVIEW} was used to create a modular system for the control software.
 By using an appropriate architecture, as detailed above, modules could interact freely and run in parallel.
-
+\\
 The following chapter will expand on the signal generation presented in this chapter in an attempt to optimise and maximise co-planarity between the imaging and illumination planes.
 
 %The software was designed such that it could be ported to other systems with minimal re-programming
