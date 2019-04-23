@@ -46,8 +46,8 @@ Both of these rays propagate in parallel within the \emph{infinity space} betwee
 \index{magnification}
 \index{ray optics}
 
-Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be selected arbitrarily.
-Typically the back focal points are matched to create a \emph{\gls{4f} system}, as shown in \figurename~\ref{fig:magnification}, as this configuration improves imaging quality by reducing optical aberrations.
+% Due to the parallel propagation of rays in the infinity space the distance between the two lenses may be selected arbitrarily.
+For typical optical systems the back focal points of each lens are matched to create a \emph{\gls{4f} system}, as shown in \figurename~\ref{fig:magnification}, as this configuration improves imaging quality by reducing optical aberrations.
 
 The marginal (\(r_m' \)) and chief (\(r_c' \)) rays incident on the tube lens then govern where a real image of the sample lies at the \emph{primary image plane}.
 \(o_1' \)
@@ -84,7 +84,7 @@ The image size (\(O' \)) in the primary image plane is set by the distance betwe
 
 \index{field of view}
 
-The observable objective \gls{FOV} is limited by the aperture stop of the system typified as the field number (\(F_\text{n}  \)) and the \gls{objective lens} magnification \(M_{\text{objective}} \):
+The observable objective \gls{FOV} is limited by the aperture stop of the system typified as the field number (\gls{F_n})) and the \gls{objective lens} magnification \(M_{\text{objective}} \):
 %The maximum field of view (\(F_{n} \))available is by :
 
 \begin{align}
@@ -107,7 +107,7 @@ Having a conjugated illumination also allows for alternative contrast methods to
 In the illumination beam paths discussed earlier, the specimen is placed between the light source and the \gls{objective lens}.
 In many cases, however, it is advantageous to illuminate the specimen from the side of observation (\emph{epi-illumnination}).
 For instance, when looking at the reflection of opaque samples, or the emission of fluorescent samples.
-Optically the illumination is the same or similar with the condenser lens then being the imaging \gls{objective lens} as well.
+Optically the illumination is the same or similar with the condenser lens then being behind the imaging \gls{objective lens} as well.
 % In that case, some optical components of illumination and imaging are identical, for example, the \gls{objective lens}.
 
 \subsection{Resolution}\label{sec:resolution}\index{resolution}
@@ -130,9 +130,9 @@ This leads to high frequency information being omitted during the imaging proces
 The electric field (\gls{E}\((r)\)) and resultant intensity (\gls{I}\((r)\)) distribution of a single point (delta function) at the primary image plane then becomes:
 
 \begin{align}
-    E(r) &\propto E_0 \frac{J_1 \left( \frac{2\pi r}{\lambda}\sin \alpha \right)}{ \frac{2\pi r}{\lambda} \sin {\alpha})}\label{eq:E_airy}\\
+    E(r) &\propto E_0 \frac{J_1 \left( \frac{2\pi r}{\lambda}\sin \alpha \right)}{ \left(\frac{2\pi r}{\lambda} \sin {\alpha}\right)}\label{eq:E_airy}\\
     \implies
-    I(r) &= I_0 \left[\frac{J_1 \left( \frac{2\pi r}{\lambda} \sin \alpha \right)}{ \frac{2\pi r}{\lambda} \sin {\alpha})}\right]^2\label{eq:I_airy}
+    I(r) &= I_0 \left[\frac{J_1 \left( \frac{2\pi r}{\lambda} \sin \alpha \right)}{ \left(\frac{2\pi r}{(\lambda} \sin {\alpha}\right)}\right]^2\label{eq:I_airy}
 \end{align}
 
 Where \gls{J_1} is a Bessel function of the first kind and \gls{alpha} is the half opening angle of the objective lens.
@@ -188,7 +188,7 @@ The \gls{depth of field} physically refers to the distance a focussed object may
     \begin{subfigure}[b]{\textwidth}
         %\centering
         \includegraphics{+airy_sparrow}
-        \caption{The Sparrow criteon, whereby the centre of the second emitter is one \gls{FWHM} of the function distant from the first emitter.}\label{fig:airy_sparrow}
+        \caption{The Sparrow criteon, whereby the centre of the second emitter is one \gls{FWHM} of the function distant from the first emitter. p.t.o.}\label{fig:airy_sparrow}
     \end{subfigure}
     \end{figure}
     \begin{figure}
@@ -210,7 +210,7 @@ The \gls{depth of field} physically refers to the distance a focussed object may
 % \index{Nyquist sampling}
 
 Once transmitted, the irradiance image produced in the primary image plane is typically recorded digitally, using using a \gls{CCD} array sensor or similar device (e.g.~an \gls{sCMOS} array).
-According to \Gls{nyquist sampling theory}, the resolution of the detector (i.e.~the pitch separating the adjacent rows of sensor elements, \gls{photosite}s) required to resample the image information faithfully is \(d_\text{detector} = \frac{d_r}{2}\).
+According to \Gls{nyquist sampling theory}, the resolution of the detector (i.e.~the pitch separating the adjacent rows of sensor elements, \gls{photosite}s) required to resample the image information faithfully is \(d_\text{detector} =   M_\text{system}\frac{d_r}{2}\).
 To then choose the correct system magnification (\(M_\text{system}\)) it follows that:
 
 \begin{align}
@@ -272,7 +272,8 @@ However, such over-sampling plays an important role in super-resolved systems wh
     % analogous to varying magnification.
     (\subref{fig:digital_airy_sample_9}), shows Nyquist sampling;
     (\subref{fig:digital_airy_sample_23}) is over sampled, giving super detector resolution.
-    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and the images may be mis-interpretted as being produced by a single emitter or by a continuous feature, instead of two distinct point emitters and hence detect a single emitter.}\label{fig:digital_airy}
+    (\subref{fig:digital_airy_sample_3}) and (\subref{fig:digital_airy_sample_5}) do not preserve resolution as they are below Nyquist sampling and the images may be mis-interpretted as being produced by a single emitter or by a continuous feature, instead of two distinct point emitters% and hence detect a single emitter
+    .}\label{fig:digital_airy}
 \end{figure}
 \pagebreak
 
@@ -283,14 +284,14 @@ However, such over-sampling plays an important role in super-resolved systems wh
 
 
 \section{Fluorescence microscopy}
-\subsection{Contrast in optical microscopy}
+% \subsection{Contrast in optical microscopy}
 % Phase contrast, dark field
 \subsection{Fluorescence}\index{fluorescence}
 
 Fluorescent molecules absorb photons of a particular energy with an excitation wavelength (\(\lambda \)) (where energy \(= h \nu = h \frac{c}{\lambda}\)), a short time later the molecules re-emit a photon with lower energy, this energy difference gives rise to a red-shift of the emitted photon.
 This shift in colour allows for suitably coated glass to chromatically separate the desired fluorescent signal and the undesired scattered incident light.
 % Upon being exciting by incident light, an electron within a fluorescent molecule may excite to a higher energy level, provided it has sufficient potential energy to traverse the energy barrier.
-Upon being exciting by incident light, a fluorescent species may be transformed to a higher level state.
+Upon being exciting by incident light, a fluorescent species is transformed to a higher level state.
 The occurs when an electron in the ground state energy level absorbs an incident photon with an energy greater than the difference of the exited state (\(S_1\)) and the ground state (\(S_0\))
 Once in the higher excited state (\(S_1\)), \gls{fluorophore}s will exist there for an average lifetime (\gls{tau}), slowly losing energy to the surroundings through vibrations and molecular collisions.
 Once the electron has \emph{trickled} down the energy levels, it will return to the ground state (\(S_0 \)) emitting a photon with an energy less the amount of energy lost when in the excited state, the \emph{\Gls{stokes shift}}.
@@ -351,7 +352,7 @@ Genetic manipulation can allow for fluorescent proteins to be expressed with hig
 %\subsubsection{Specificity}
 \subsection{Fluoresence microscopy}
 
-\subsubsection{Illumnination}
+\subsubsection{Illumination}
 
 %The Merucry Arc lamp is unibiqitous in lamp-based fluorsence mciroscopes.
 The mercury arc lamp became the ubiquitous excitation source for fluorescence microscopy because it emits a broad visible emission spectrum at a higher intensity than a standard halogen lamp.
@@ -406,7 +407,7 @@ The per-photo-site architecture allows for a region-of-interest area to be addre
 
 Each measured pixel value in the digital image, \(y_i\), is therefore modelled as follows, where \(t_\text{exp}\) is the exposure time, \(g\) is the gain, \(a_i\) a per-pixel factor to allow for non-uniform response to illumination (often assumed constant is unity) and \(f_i\) the incident radiant flux on the photo-site. The numbers of the photo-electronics collected at the photo-site is Poisson-distributed, with expected value:
 \begin{align}
-  E(e_i) = t_\text{exp} a_i f_i
+  E(a_i) = t_\text{exp} a_i f_i
   \intertext{The recorded pixel value is affect by sensor gain and fixed readout noise:}
   y_i = g(a_i) + r_i(g)
   \intertext{\(f_i\) (irradiance) can be quantified from \(\mathbf{y}\) by taking a bias frame \(\mathbf{b}\) and estimate:}
@@ -464,7 +465,7 @@ In some \emph{in vivo} experiments, genetically modified organisms suffer less f
 %Whilst this is true I feel like the firsat half of the sentence is jarring.
 % When imaging live samples expressing fluorescent proteins photobleached molecules can be replaced by newly transcribed(?) fluorescent proteins
 
-\Gls{photobleaching} can be exploited to learn about a specimen, using \gls{FRAP}; wherein an imaging region is purposefully bleached, so that the rate of diffusion of unbleached dye molecules into the \gls{FOV} can be estimate.
+\Gls{photobleaching} can be exploited to learn about a specimen, using \gls{FRAP}; wherein an imaging region is purposefully bleached, so that the rate of diffusion of unbleached dye molecules into the bleached region can be estimated.
 The rate of return of intensity in the imaging region then gives a measure of diffusion.
 
 % FRET STORM PALM
@@ -517,7 +518,9 @@ However, two photons, each with double the desired wavelength, also contain the 
 For this event to occur, there needs to be a high photon density surrounding the \gls{fluorophore}.
 In a laser scanning system, this means that the beam focus of the \gls{objective lens} is the most likely place for fluorescence to occur, with a sharp decline in intensity axially, providing optical sectioning.
 
-By using \gls{2P} excitation, greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced \gls{photo-toxicity}, making the technique very useful for non-invasive live imaging.
+Infra-red light also carries the advantage of being less scattering compared to higher frequency light.
+This means that infra-red light is able to penetrate deeper into tissue and generally disturbs biological samples less.
+So, by using \gls{2P} excitation, greater depth imaging (\SI{\sim6}{fold} deeper) can be achieved with reduced \gls{photo-toxicity}, making the technique very useful for non-invasive live imaging.
 
 \subsubsection{Drawbacks} %500nm -> 10^-01.4 10^+1.8
 
@@ -546,7 +549,7 @@ Furthermore optical sectioning can also be achieved using specific illumination.
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
         \includegraphics[height=3cm]{./sim/third_flower}
-        \caption{\gls{SIM} image reconstructed for one orientation with a \gls{super-resolution} improvement in \(k_y \)}\label{fig:sim_third_flower}
+        \caption{\gls{SIM} image reconstructed for one orientation with a \gls{super-resolution} improvement in \(k_x \)}\label{fig:sim_third_flower}
     \end{subfigure}\hfill
     \begin{subfigure}[t]{0.35\textwidth}
         \centering
@@ -560,7 +563,7 @@ Furthermore optical sectioning can also be achieved using specific illumination.
     % \end{subfigure}
     % \hfill
     \caption[Schematic of \gls{SIM} reconustruction in Fourier space]
-        {Schematic of \gls{SIM} reconustruction in Fourier space.
+        {Schematic of \gls{SIM} reconstruction in Fourier space.
         In (\subref{fig:sim_otf}), the circular area corresponds to the passband of the \gls{objective lens}, the edge being the frequency cut-off.
         The raw data in (\subref{fig:sim_otf}) consists of superposed original image information
         positioned at three different origins.
@@ -612,14 +615,14 @@ By adding a third beam along the optical axis to interfere with the sinusoidal p
         \centering
         \includegraphics[width=\linewidth]{./sim/axial_3_beam}
         \caption{3-beam SIM at \SI{2}{\times}\(k_0\)\\
-        3D reconstruction}\label{fig:sim_axial_3_beam}
+        3D reconstruction}\label{fig:sim_axial_3_beam_3d}
     \end{subfigure}\hfill
     \caption[Axial view of 2 and 3 beam illumination in \gls{SIM}]{
     Axial view of 2 and 3 beam illumination in \gls{SIM}.
     Black points in (\subref{fig:sim_axial_otf}) represent lateral frequency mixing from 2-beam illumination, the grey points represent axial frequency mixing from 3-beam illumination.
     (\subref{fig:sim_axial_otf}) shows the lateral extent of 2-beam \gls{SIM} at maximum (\SI{2}{\times}) excitation frequency, with no added axial resolution.
     (\subref{fig:sim_axial_2_beam_3d}) shows the lateral extent of 2-beam \gls{SIM} at (\SI{1.5}{\times}\(k_0\)), giving reduced resolution but providing increased axial resolution.
-     (\subref{fig:sim_axial_2_beam_3d}) shows the lateral and axial extent of 3-beam \gls{SIM}, doubling in resolution axially and laterally~\cite{gustafssonSurpassingLateralResolution2000}.
+     (\subref{fig:sim_axial_3_beam_3d}) shows the lateral and axial extent of 3-beam \gls{SIM}, doubling in resolution axially and laterally~\cite{gustafssonSurpassingLateralResolution2000}.
      The thick black outlines show the original OTF support of the widefield image.
     % Resulting OTF in (a, c) two- and (b, d) three-beam illumination. The black spots in
     % the microscope’s widefield OTFs (a: two-beam and b: three-beam) show the origins of the

@@ -61,9 +61,10 @@
 \glsXpageXglsnumberformat{}{76}\delimR 
 \glsXpageXglsnumberformat{}{80}\delimN 
 \glsXpageXglsnumberformat{}{87}}}\relax\glsresetentrylist
+\glossentry{F_n}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{7}}}\relax\glsresetentrylist
 \glossentry{FOV}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{7}\delimN 
-\glsXpageXglsnumberformat{}{22}\delimN 
 \glsXpageXglsnumberformat{}{36}\delimN 
 \glsXpageXglsnumberformat{}{39}\delimN 
 \glsXpageXglsnumberformat{}{42}\delimN 
@@ -136,7 +137,7 @@
 \glsXpageXglsnumberformat{}{75}\delimN 
 \glsXpageXglsnumberformat{}{77}}}\relax\glsresetentrylist
 \glossentry{tau}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{14}}}\relax\glsresetentrylist
 \glossentry{tau_visc}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{158}\delimN 
 \glsXpageXglsnumberformat{}{160}\delimN 

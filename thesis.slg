@@ -1,11 +1,12 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 23.04.2019  13:05:12
-;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/ugiaRWQuki", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/N8loRKJ925", Output: "thesis.sls"
+;; at 23.04.2019  16:52:55
+;; Indexstyle: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/sPJj9boUrR", Rawindex: "/var/folders/7d/0r4hcgsd10xgwww5cs8t8n6m0000gn/T/bY2dz4wJx9", Output: "thesis.sls"
 
 
 Building indexentry-tree:
 Hierdepth of index is :TREE
 
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
@@ -46,6 +47,7 @@ Letter-group: "—" -> "E"
 Letter-group: "Ú" -> "T"
 Letter-group: "€´È¤€" -> "A"
 Letter-group: "œÃå" -> "F"
+Letter-group: "œ_¼" -> "F"
 Letter-group: "¨" -> "I"
 Letter-group: "¬_1" -> "J"
 Letter-group: "Ú€à" -> "T"

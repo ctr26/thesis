@@ -102,8 +102,7 @@
 \glsXpageXglsnumberformat{}{75}\delimR 
 \glsXpageXglsnumberformat{}{78}}}\relax\glsresetentrylist
 \glossentry{etendue}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{17}\delimN 
-\glsXpageXglsnumberformat{}{18}}}\relax\glsresetentrylist
+\glsXpageXglsnumberformat{}{17}}}\relax\glsresetentrylist
 \glossentry{exotic beam}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{36}\delimN 
 \glsXpageXglsnumberformat{}{38}}}\relax\glsresetentrylist
@@ -112,7 +111,7 @@
 \glsgroupheading{F}\relax\glsresetentrylist
 \glossentry{fluorophore}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xxviii}, 
-\glsXpageXglsnumberformat{}{16}\delimN 
+\glsXpageXglsnumberformat{}{14}\delimN 
 \glsXpageXglsnumberformat{}{17}\delimN 
 \glsXpageXglsnumberformat{}{20}\delimN 
 \glsXpageXglsnumberformat{}{22}\delimN 
@@ -125,7 +124,7 @@
 \glsXpageXglsnumberformat{}{78}}}\glsgroupskip
 \glsgroupheading{G}\relax\glsresetentrylist
 \glossentry{galvanometric scanning mirrors}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{23}\delimN 
+\glsXpageXglsnumberformat{}{22}\delimN 
 \glsXpageXglsnumberformat{}{47}}}\relax\glsresetentrylist
 \glossentry{Gaussian beam}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{29}\delimN 
@@ -295,7 +294,7 @@
 \glossentry{read noise}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{20}}}\relax\glsresetentrylist
 \glossentry{resonant scanning mirrors}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{23}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{22}}}\glsgroupskip
 \glsgroupheading{S}\relax\glsresetentrylist
 \glossentry{sample plane}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{109}}}\relax\glsresetentrylist
@@ -311,7 +310,7 @@
 \glsXpageXglsnumberformat{}{82}\delimN 
 \glsXpageXglsnumberformat{}{85}}}\relax\glsresetentrylist
 \glossentry{slit-scanning}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{xv}\delimR 
+\glsXpageXglsnumberformat{}{xv}\delimN 
 \glsXpageXglsnumberformat{}{xvii}\delimN 
 \glsXpageXglsnumberformat{}{xx}\delimN 
 \glsXpageXglsnumberformat{}{xxi}, 
@@ -370,7 +369,6 @@
 \glossentry{wide-field}{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{xix}, 
 \glsXpageXglsnumberformat{}{18}\delimN 
-\glsXpageXglsnumberformat{}{19}\delimN 
 \glsXpageXglsnumberformat{}{24}\delimN 
 \glsXpageXglsnumberformat{}{27}\delimR 
 \glsXpageXglsnumberformat{}{29}\delimN 
