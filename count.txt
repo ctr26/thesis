@@ -1,6 +1,6 @@
 File: thesis.tex
 Encoding: utf8
-Words in text: 33124
+Words in text: 33126
 Words in headers: 651
 Words outside text (captions, etc.): 6096
 Number of headers: 212
@@ -9,9 +9,9 @@ Number of math inlines: 475
 Number of math displayed: 87
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  858+7+25 (2/1/0/0) _top_
+  857+7+25 (2/1/0/0) _top_
   113+1+0 (1/0/0/0) Chapter: Introduction
-  754+15+0 (4/0/0/0) Section: Motivation
+  757+15+0 (4/0/0/0) Section: Motivation
   49+4+0 (1/0/0/0) Chapter: Principles of fluorescence microscopy}\label{chapter:principles
   1056+22+289 (10/6/34/6) Section: Light microscopy
   1562+23+174 (13/3/19/1) Section: Fluorescence microscopy
