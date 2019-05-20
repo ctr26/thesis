@@ -103,7 +103,7 @@ The \gls{eOPT} and \gls{tOPT} modes can work in unison to provide contextual inf
 
 \subsection{Reconstruction}
 
-As the sample is rotated each detector pixel collects an intensity \(I(\theta) = I_{n}e^{-k(\theta)}\) at discrete (\(n\)) angles through a full rotation of the sample; where \(I_{n}\) is the unattenuated radiation intensity from the source to the detector, \(k\) is the attenuation caused by the sample along a detected ray an \(I(n)\) is the measured intensity, see \figurename~\ref{fig:OPT_digram}.
+As the sample is rotated each detector pixel collects an intensity \(I(\theta) = I_{0}e^{-k(\theta)}\) at discrete (\(n\)) angles through a full rotation of the sample; where \(I_{0}\) is the unattenuated radiation intensity from the source to the detector, \(k\) is the attenuation caused by the sample along a detected ray, and \(I(\theta)\) is the measured intensity, see \figurename~\ref{fig:OPT_digram}.
 Rays from the sample to the detector approximate straight lines, and so the the rays reaching the detector with a line integrals.
 A projection is then the resulting intensity profile at the detector for a rotation angle, and the integral transform that results in \(P_\theta(v)\)
 % \(f(I_i,\theta_n) \)
@@ -217,14 +217,14 @@ The ray can be defined by using the point \gls{p} in camera-centred coordinates,
 
 From the definition of a \gls{world point}, as observed through an image, we can construct a dual-view model of \gls{world point}s in space as in \figurename~\ref{fig:epi-polar-geom}.
 Using a model of a system with two views allows for the triangulation of rays based on image correspondences, this is an important part of stereo-vision.
-The most important matching constraint which can be used the \emph{epipolar constraint}, and follows directly from the fact that the rays must intersect in 3D space.
+The most important matching constraint which can be used is the \emph{epipolar constraint}, and follows directly from the fact that the rays must intersect in 3D space.
 Epipolar constraints facilitate the search for correspondences, they constrain the search to a 1D line in each image.
 To derive general epipolar constraints, one should consider the epipolar geometry of two cameras as seen in \figurename~\ref{fig:epi-polar-geom}
 
 
-The \textbf{baseline} is defined as the line joining the optical centres.
+The \textbf{baseline} (\(OO'\))is defined as the line joining the optical centres of each view.
 An \textbf{epipole} is the point of intersection of the baseline with the image plan and there are two epipoles per feature, one for each camera.
-An \textbf{epipolar line} is a line of intersection of the epipolar plane with an image plane.
+An \textbf{epipolar line} is a line of intersection of the epipolar plane (\(0\gls{X}O'\)with an image plane.
 It is the image in one camera of the ray from the other camera’s optical centre to the \gls{world point} (\gls{X}).
 For different \gls{world point}s, the epipolar plane rotates about the baseline.
 All epipolar lines intersect the epipole.
@@ -235,7 +235,7 @@ We can derive an expression for the epipolar line.
 The two camera-centered coordinate systems \gls{X_c'} and \gls{X_c} are related by a rotation, \gls{R} and translation, \gls{T} (see in \figurename~\ref{fig:epi-polar-geom}) as follows:
 
 \begin{align}
-    \gls{X_c'} &= \gls{R}\gls{X_c'} + \gls{T}  \\
+    \gls{X_c'} &= \gls{R}\gls{X_c} + \gls{T}  \\
     \intertext{Taking the vector product with \(\gls{T}\), we obtain}
     \gls{T} \times \gls{X_c'} &= \gls{T} \times \gls{R}\gls{X_c}+ \gls{T} \times \gls{T}  \\
     \gls{T} \times \gls{X_c'} &= \gls{T} \times \gls{R}\gls{X_c}\label{eq:Xprime = RTX}
@@ -270,7 +270,7 @@ So equation~\eqref{eq:Xprime = RTX} can be rewritten as:
 
 \begin{align}
 \gls{X_c'} \cdot (\gls{T_x} \gls{R}\gls{X_c}) = 0 \\
-\gls{X_c'} \gls{T} \gls{Essential} \gls{X_c}= 0 \\
+\gls{X_c'}^T \gls{Essential} \gls{X_c}= 0 \\
 \intertext{where}
 \gls{Essential} = \gls{T_x} \gls{R}
 \end{align}
@@ -333,8 +333,8 @@ f k_u & 0 & u_0 \\
 \begin{align}
     \intertext{From~\eqref{eq:pEp} the epipolar constraint becomes}
     % \mathbf{p'}^T E \mathbf{p} &= 0 \\
-    \widetilde{\gls{w'}} ^T \widetilde{\gls{K}}^{-T} E \widetilde{\gls{K}}^{-1} \widetilde{\gls{w}}  &= 0 \\
-    \widetilde{\gls{w'}} ^T F \widetilde{\gls{w}}  &= 0
+    \widetilde{\gls{w'}} ^T \widetilde{\gls{K}}^{-T} \gls{Essential} \widetilde{\gls{K}}^{-1} \widetilde{\gls{w}}  &= 0 \\
+    \widetilde{\gls{w'}} ^T \gls{F} \widetilde{\gls{w}}  &= 0
 \end{align}
 %\subsubsection{Two views}
 %\paragraph{Mapping from one camera to another}
@@ -722,7 +722,7 @@ As expected, the \gls{Radon transform} rapidly deteriorates once a systematic dr
        \node[below=of img] {\(X\)};
        \node[left=of img,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{Unfiltered reconstruction using a \gls{Radon transform}.}\label{fig:unfilttered_reconstruction_helix_iradon}
+    \caption{Reconstruction using a \gls{Radon transform}.}\label{fig:unfilttered_reconstruction_helix_iradon}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.3\textwidth}
     \begin{tikzpicture}[node distance=0cm]
@@ -730,7 +730,7 @@ As expected, the \gls{Radon transform} rapidly deteriorates once a systematic dr
        \node[below=of img1] {\(v\)\vphantom{\(X\)}};
        \node[left=of img1,rotate=90,yshift=0.2cm] {\(Y\)};
     \end{tikzpicture}
-    \caption{Filtered reconstruction using the new algorithm.}\label{fig:filtered_recon_helix}
+    \caption{Reconstruction using the new algorithm.}\label{fig:filtered_recon_helix}
   \end{subfigure}
    \hspace*{\fill}
    % \caption{}
@@ -814,7 +814,7 @@ Consistently the translational matrix (\gls{T}) was more accurately reproduced, 
 A new algorithm for reconstructing OPT data has been demonstrated.
 The new algorithm uses multiple fiducial markers to recover the matrix which describes the rotation and translation of the sample.
 The quality of the reconstructions when compared to a standard \gls{Radon transform} shows a slight improvement, with a great effect when a systematic drift is introduced.
-The measure the accuracy of the decomposition of \gls{F} into \gls{R} and \gls{T} they were compared to the ground truth matrices.
+To measure the accuracy of the decomposition of \gls{F} into \gls{R} and \gls{T} they were compared to the ground truth matrices.
 The element-wise absolute difference \(\left(\frac{x-y}{2(x+y)}\right)\) of each matrix was averaged across the matrix for \gls{R} and \gls{T}.
 In the worst case scenario a maximum of \SI{2}{\percent} average absolute difference was found between ground truth and recovered matrices,
 % When comparing the

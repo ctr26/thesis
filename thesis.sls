@@ -140,6 +140,7 @@
 \glsXpageXglsnumberformat{}{85}\delimN 
 \glsXpageXglsnumberformat{}{87}}}\relax\glsresetentrylist
 \glossentry{T_x}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{74}\delimN 
 \glsXpageXglsnumberformat{}{75}\delimN 
 \glsXpageXglsnumberformat{}{77}}}\relax\glsresetentrylist
 \glossentry{tau}{\glossaryentrynumbers{\relax 
