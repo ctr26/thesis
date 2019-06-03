@@ -1,0 +1,16 @@
+<root>
+<name>log((widefield_fft_log.png (gray rendering) + N(0,1^2)) + 10) (PNG)</name>
+<meta>
+<positionX>0</positionX>
+<positionY>0</positionY>
+<positionZ>0</positionZ>
+<positionT>0</positionT>
+<pixelSizeX>1</pixelSizeX>
+<pixelSizeY>1</pixelSizeY>
+<pixelSizeZ>1</pixelSizeZ>
+<timeInterval>1</timeInterval>
+<channelName0>gray</channelName0>
+</meta>
+<rois/>
+<overlays/>
+</root>
