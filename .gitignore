@@ -40,3 +40,5 @@ thesis.run.xml*
 *.ini
 +
 *.aux
+images_only.pdf
+thesis copy.pdf
