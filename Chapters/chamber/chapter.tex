@@ -75,7 +75,7 @@ These methods present a barrier that can discourage new users of light-sheet mic
         \caption{Asymmetric objective lenses with an inaccessible \gls{sample plane} (objective lenses used here)}\label{fig:assymetric_nikon}
     \end{subfigure}
     \caption[Sets of objective lens pairs for large \gls{NA} \gls{light-sheet} microscopy]{
-    Sets of objective lens pairs for large \gls{NA} \gls{light-sheet} microscopy, dotted lines show available sample planes.red from two ca
+    Sets of objective lens pairs for large \gls{NA} \gls{light-sheet} microscopy, dotted lines show available sample planes.
     (\subref{fig:matched_objectives}) shows the objective arrangement as found in the \gls{diSPIM}, whereby each imaging arm is computationally fused to create a final image volume with higher axial resolution, from the two views.
     (\subref{fig:asymmetric_special}) shows the objective arrangement as found in the \gls{lattice light-sheet}, the objective lenses are chosen to maximise the imaging \gls{NA} and the illumination \gls{NA} whilst allowing the sample plane to be accessible
     (\subref{fig:assymetric_nikon}) shows the objective combination used in this work, where the imaging and illumination objectives both have a high \gls{NA}, however the \gls{sample plane} is inaccessible
@@ -86,39 +86,52 @@ These methods present a barrier that can discourage new users of light-sheet mic
 
 The sample chamber presented here is designed around a pair of objective lenses, a1.1 \gls{NA} \SI{25}{\times} \gls{LWD} and a 0.3 \gls{NA} LWD \SI{10}{\times} water-dipping Nikon objective.
 Both are used for physiological imaging, and are widely used in the field of light-sheet microscopy.
-\figurename~\ref{fig:assymetric_nikon} shows how this objective pair, if mounted at \SI{45}{\degree} to a flat sample will intrude on the imaging volume.
+\figurename~\ref{fig:assymetric_nikon} shows how this objective pair, if mounted at \SI{45}{\degree} (which is convenient for the home microscope builder) to a flat sample will intrude on the imaging volume.
 Similarly the sample plane of the detection objective cannot be reached at any angle for the pair of objectives.
 
 At the core of the design is a right-angle shelf on which a cover-glass bearing the specimen is mounted on
 This gives access to \SI{2x20}{\milli\metre} area of accessible cover-glass at of one of its edges.
-Beneath the shelf is a recess which allows for sample positioning from below using a Raspberry Pi-Cam, as well as mitigating any reflection or scattering from the laser illumination source, \figurename~\ref{fig:chamber_side} presents an an illustration of the recess.
+Beneath the shelf is a recess which allows for sample positioning from below using a Raspberry Pi-Cam (see \figurename~\ref{fig:fish_in_pi_scale} for a standard image), as well as mitigating any reflection or scattering from the laser illumination source, \figurename~\ref{fig:chamber_side} presents an an illustration of the recess.
 The sample is held down firmly by a \glslink{3D printing}{3D printed} brace with embedded magnets.
 The brace is coupled to magnets inserted below mounted in a printed tray, which inserts into a slot.
 The slot also allows for heating module, making it suitable for cell culture, embryos, microbes and more.
-The temperatures used will not damage the printed chamber material (\gls{ABS} plastic printed using a MakerBot Replicator 2x) begins to deform at \SI{140}{\degree}.
+The temperatures used will not damage the printed chamber material (\gls{ABS} plastic printed using a MakerBot Replicator \(2\times\))), which begins to deform at \SI{140}{\degree}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\linewidth]{./fish_in_pi_scale}
+  \caption{Representative image from the RaspberryPi Cam of a \gls{zebrafish} embryo.
+  Specifications:
+  \gls{FOV}: \SI{650}{\micro\meter} |
+  Sensor resolution: \SI{2592x1944}{\text{pixels}} |
+  Pixel size: \SI{1.4x1.4}{\micro\meter} |
+  Size: \SI{25x24x9}{\milli\meter} |
+  Focal length: \SI{3.60}{\milli\meter}
+  }\label{fig:fish_in_pi_scale}
+\end{figure}
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{\linewidth}
          \centering
-        \includegraphics{./chamber_side}
+        \includegraphics{./chamber_side.pdf}
          \caption{Side view showing the shelf}\label{fig:chamber_side}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\linewidth}
+    \begin{subfigure}[b]{0.5\linewidth}
              \centering
-        \includegraphics{./chamber_top}
+        \includegraphics{./chamber_top.pdf}
          \caption{Top view}\label{fig:chamber_top}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4\linewidth}
+    \begin{subfigure}[b]{0.3\linewidth}
              \centering
-        \includegraphics{./chamber_slide}
+        \includegraphics{./chamber_slide.pdf}
          \caption{Insert for slot visible in (b)}\label{fig:chamber_slide}
     \end{subfigure}
     \caption[\gls{CAD} model of proposed sample chamber]{\gls{CAD} model of proposed sample chamber, featuring modular heater inserts with magnet cut-out tray.
     On the side of the chamber and below the sample, Perspex windows are inserted and sealed using cyanoacrylate (Super-Glue), this ensures a liquid-tight seal.
     (a) shows the void below the sample mounting shelf for the camera as well as the view used by the user to position the sample.
     (b) is the top view showing the chamfered edges used for medium minimisation and as physical limits to protect the objectives.
-    (b) also shows the 4 mounting through-holes for fixing the chamber to a stage and the drip stray below.
+    (b) also shows the 4 mounting through-holes for fixing the chamber to a stage and the drip tray below.
     (c) is the heater and magnetic mounting insert, small neodymium magnets insert into the holes and a heater pad is placed on top.
     }
 \end{figure}
@@ -185,23 +198,27 @@ Other spacings and sizings of mounting holes may be easily added to the chamber 
     \centering
     \begin{subfigure}[b]{0.4\linewidth}
          \centering
+         \captionsetup{justification=centering}
         \includegraphics{mounting_strategies_cells/fep}
-         \caption{Agarose cylinder}
+         \caption{Excitation: \(\rightarrow\) \quad  Imaging: \(\bigodot\) \\ Agarose cylinder}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
+             \captionsetup{justification=centering}
         \includegraphics{mounting_strategies_cells/cuvette}
-         \caption{Windowed cuvette}
+         \caption{Excitation: \(\nearrow\) \quad  Imaging: \(\searrow\) \\ Windowed cuvette}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
+             \captionsetup{justification=centering}
         \includegraphics{mounting_strategies_cells/mirrored}
-         \caption{Reflective cuvette}
+         \caption{Excitation: \(\uparrow\) \quad  Imaging: \(\downarrow\) \\ Reflective cuvette}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
+             \captionsetup{justification=centering}
         \includegraphics{mounting_strategies_cells/pedestal}
-         \caption{Agarose on pedestal}
+         \caption{Excitation: \(\swarrow\) \quad Imaging: \(\nwarrow\) \\ Agarose on pedestal}
     \end{subfigure}
     \caption[Strategies for mounting cell culture]{Strategies for mounting cell culture.
     (a) shows a cylinder of a gel used to scaffold a 3D cell culture.
@@ -228,22 +245,26 @@ Other spacings and sizings of mounting holes may be easily added to the chamber 
     \begin{subfigure}[b]{0.4\linewidth}
          \centering
         \includegraphics{mounting_strategies_fish_cartoon/fep}
-         \caption{Agarose cylinder}
+        \captionsetup{justification=centering}
+         \caption{Excitation: \(\rightarrow\) \quad  Imaging: \(\bigodot\) \\ Agarose cylinder}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
         \includegraphics{mounting_strategies_fish_cartoon/cuvette}
-         \caption{Windowed cuvette}
+        \captionsetup{justification=centering}
+         \caption{Excitation: \(\nearrow\) \quad  Imaging: \(\searrow\) \\ Windowed cuvette}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
         \includegraphics{mounting_strategies_fish_cartoon/mirrored}
-         \caption{Reflective cuvette}
+        \captionsetup{justification=centering}
+         \caption{Excitation: \(\uparrow\) \quad  Imaging: \(\downarrow\) \\ Reflective cuvette}
     \end{subfigure}
     \begin{subfigure}[b]{0.4\linewidth}
              \centering
         \includegraphics{mounting_strategies_fish_cartoon/pedestal}
-         \caption{Agarose on pedestal}
+        \captionsetup{justification=centering}
+         \caption{Excitation: \(\swarrow\) \quad Imaging: \(\nwarrow\) \\ Agarose on pedestal}
     \end{subfigure}
     \caption[Strategies for mounting \gls{zebrafish}]{Strategies for mounting \gls{zebrafish} are shown, though the techniques apply widely to other model organisms.
     (a) uses a cylinder of agarose suspended from above and lowered into the imaging volume;
@@ -257,12 +278,16 @@ Other spacings and sizings of mounting holes may be easily added to the chamber 
     \begin{subfigure}[t]{0.4\linewidth}
          \centering
         \includegraphics{edge_mount/cells}
-         \caption{Cell mounting}\label{fig:edge_mount/cells}
+        \captionsetup{justification=centering}
+         \caption{Excitation: \(\swarrow\) \quad Imaging: \(\nwarrow\) \\ Cell mounting}\label{fig:edge_mount/cells}
+         % \caption{Cell mounting}\label{fig:edge_mount/cells}
     \end{subfigure}
     \begin{subfigure}[t]{0.4\linewidth}
              \centering
         \includegraphics{edge_mount/fish}
-         \caption{Organism mounting}\label{fig:edge_mount/fish}
+        \captionsetup{justification=centering}
+        \caption{Excitation: \(\swarrow\) \quad Imaging: \(\nwarrow\) \\ Organism mounting}\label{fig:edge_mount/fish}
+         % \caption{Organism mounting}\label{fig:edge_mount/fish}
     \end{subfigure}
     % \begin{subfigure}[b]{0.4\linewidth}
     %          \centering
@@ -276,7 +301,7 @@ Other spacings and sizings of mounting holes may be easily added to the chamber 
     % \end{subfigure}
     \caption[Strategies for mounting using the edge of a coverslip]{Strategies for mounting using the edge of a coverslip as proposed in this work.
     In (a), cells are cultured on cover glass for which protocols for sterile cell mounting are widespread.
-    In (b), organisms are mounted in \gls{FEP} tubing containing agarose and are adhered to cover glass using nail varnish.
+    In (b), organisms are mounted in \gls{FEP} tubing containing agarose and are adhered to cover glass using epoxy.
     }\label{fig:edge_mount}
 \end{figure}
 
@@ -287,7 +312,7 @@ The dechorionated \gls{zebrafish} were then transferred into molten agarose and 
 Organisms are mounted in agarose within in \gls{FEP} tubing to help match refractive indices between immersion medium and the agarose.
 \SI{0.8}{\percent} \gls{agarose VII} was used as higher percentage agarose may restrict the growth of a developing embryo as well as cause more scattering and refractive index mismatch; \gls{agarose VII} produces the best imaging conditions of the agarose~\cite{floodUsingHydrogelsMicroscopy2016}.
 Once the embryo was embedded in its agarose tubing it was transported (made safe and convenient in the \gls{FEP}) for imaging.
-It was then adhered to a \SI{25}{\milli\metre\square} coverslip using colourless nail varnish at each end of the tubing as in \figurename~\ref{fig:edge_mount/fish}, whilst avoiding the active imaging area along the \gls{FEP} tubing.
+It was then adhered to a \SI{25}{\milli\metre\square} coverslip using colourless epoxy at each end of the tubing as in \figurename~\ref{fig:edge_mount/fish}, whilst avoiding the active imaging area along the \gls{FEP} tubing.
 
 For cell culture imaging, \gls{SH-SY5Y} neuronal cells were cultured of on coverglass, as in \figurename~\ref{fig:edge_mount/cells} that had been functionalised with poly-l-lysene (which is positively charged and glass adherent) to encourage cell adhesion.
 In \figurename~\ref{fig:cell_image} cells were fixed using Formaldehyde and imaged in \gls{PBS}.
@@ -296,7 +321,7 @@ For live cell studies a medium without phenol red (fluorescent), and that does n
 % The dechorionated Zebrafish were then transferred into molten agarose and gently drawn into a length of FEP attached to a pipette tip.
 % Organisms may be mounted agarose within in FEP tubing to help match refractive indices between water immersion medium and the agarose.
 % 0.8% agarose VII was used, higher percentage agarose may restrict the growth of a developing embryo as well as cause more scattering and RI mismatch; agarose VII produces the best imaging conditions of the agarose3.
-% Once an embryo is embedded in its agarose tubing it may be transported conveniently, for imaging; it should then be adhered to a 25 mm2 coverslip using nail varnish at each end of the tubing whilst avoiding the activate imaging area along the FEP tubing.
+% Once an embryo is embedded in its agarose tubing it may be transported conveniently, for imaging; it should then be adhered to a 25 mm2 coverslip using epoxy at each end of the tubing whilst avoiding the activate imaging area along the FEP tubing.
 % For cell culture imaging \gls{SH-SY5Y} neuronal cells were cultured of on coverglass that had been functionalised with Poly-L-lysene to help cell adhesion.
 % For the image in Figure 3 cells were fixed using Formaldehyde and imaged in Phosphate-buffered saline (PBS).
 % For live cell studies a medium without Phenol red and that does not require atmospheric control should be used (ex.
@@ -335,7 +360,7 @@ Both approaches are available for the design presented here, provided care is ta
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{./fish_image}
-    \caption[Two colour imaging of a transgenic \gls{zebrafish} 24 h.p.f.]{Two colour imaging of a transgenic \gls{zebrafish} \SI{24}{\text{h.p.f.}}
+    \caption[Two colour imaging of a transgenic \gls{zebrafish} 24 h.p.f.]{Raw, optical, two-colour, slice, image of a transgenic \gls{zebrafish} \SI{24}{\text{h.p.f.}}
     The left hand image shows a membrane-local Beta-actin: mcherryCAAX probe;
     the right image shows fluorescent histones within the nucleus using a h2b:GFP probe.}\label{fig:fish_image}
 \end{figure}
