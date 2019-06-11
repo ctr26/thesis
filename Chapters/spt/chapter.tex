@@ -25,9 +25,7 @@ Viral infections begin when infectious virus particles (\gls{virion}s) invade th
 The virus hijacks the cellular machinery to replicate and produce progeny virus particles which then spread further infection.
 Herpesviruses pass through two distinct stages in their life cycle: lytic replication and latency.
 %Although many studies exist about the replication cycle of herpesviruses,
-Among the key steps within the lifecycle and remains about the later
-%Not much is known about the later
-stages of the infection cycle, the assembly of virus particles and their egress from the cell.
+Among the key steps within the lifecycle and remains about the later not much is known about the later stages of the infection cycle, the assembly of virus particles and their egress from the cell.
 Assembly and egress of viruses are essential stages in the herpesvirus lytic replication and contribute directly to pathogenesis.
 Imaging these processes, in particular, is an important goal of biomedical research.
 %Support for the today largely recognized model of assembly and egress was provided mostly by electron micrographs (reviewed in \cite{[2, 3]}).
@@ -49,8 +47,8 @@ Most of these tegument proteins possess multiple functions aiding in the entry o
 Contained in the viral envelope of \gls{HSV}-1 are at least 11 glycoproteins as well as several membrane-associated proteins which play important roles in viral entry and egress as well as virus-induced cell fusion~\cite{reskeUnderstandingHSV1Entry2007,johnsonHerpesvirusesRemodelHost2011}.
 
 The proteins considered in this work are \gls{VP26}, \gls{VP1/2} and \gls{VP16}.
-\gls{VP26}\cite{tangCrystalStructuresMajor2007} and \gls{VP1/2} are structural proteins found in the capsid.
-\gls{VP16} is a tegument protein which complexes with host DNA to induce gene transcription, the initiation of gene expression.
+\gls{VP26}~\cite{tangCrystalStructuresMajor2007} is a structural protein found in the capsid.
+\gls{VP16} and \gls{VP1/2} are tegument proteins which complex with host DNA to induce gene transcription, the initiation of gene expression.
 
 \begin{table}
     \centering
@@ -91,7 +89,7 @@ UL25         & UL37               & UL44 (gC)    \\
 \end{table}
 
 \subsection{Herpesvirus infection cycle}
-To initiate infection, herpesviruses first bind to cellular surface proteins which act as virus receptors as in \figurename~\ref{fig:viral_egress}.
+To initiate infection, herpesviruses first bind to cellular surface proteins which act as virus receptors. %as in \figurename~\ref{fig:viral_egress}.
 Then, by direct fusion to the plasma membrane or by endocytosis~\cite{heldweinEntryHerpesvirusesMammalian2008}, the viral \gls{capsid} is delivered into the cytosol.
 Incoming capsids are actively transported towards the nuclear pore complexes by exploiting microtubules within the cell~\cite{radtkeMinusEndDirectedMicrotubule2010,sodeikMicrotubulemediatedTransportIncoming1997}.
 The capsid then releases the viral DNA through the nuclear pores into the nucleus~\cite{ojalaHerpesSimplexVirus2000}.
@@ -229,7 +227,7 @@ Enveloped virions are finally secreted from cells by exocytosis~\cite{miranda-sa
 While optical imaging is generally limited to a lateral resolution of \SI{\sim250}{\nano\metre} by diffraction, sparse emitters can be localised with much higher precision by mathematical image analysis methods; such as fitting a parametric equation to their image data.
 % fitting a model function to their image data.
 Tracking individual particles is an important tool for modern biology.
-It has been used to study intracellular transport of mRNA~\cite{spilleDirectObservationMobility2015} and by observing cell membrane dynamics~\cite{cognetAdvancesLivecellSingleparticle2014}.
+It has been used to study intracellular transport of mRNA~\cite{spilleDirectObservationMobility2015} and to observe cell membrane dynamics~\cite{cognetAdvancesLivecellSingleparticle2014}.
 % Beneath the methods of super-resolution imaging, awarded by the Nobel Prize in chemistry in 2014, the principles of localisation microscopy are also applied in single particle tracking (SPT) as was shown already in early single molecule studies [41, 42].
 %SPT is a real-time imaging technique that monitors the movement of individual particles and can provide information about dynamic behaviour within a biological system. %in a cellular context.
 Many studies exist on intercellular and intracellular viral trafficking
@@ -280,11 +278,11 @@ The \gls{light-sheet} microscope will use an astigmatic lens in the detection pa
 
 \subsection{Particle detection}
 
-Particle tracking can be broadly described as a two stage process, spatial detection then temporal tracking.
+Particle tracking can be broadly described as a two stage process, spatial detection as in \figurename~\ref{fig:spt/detection} and then temporal tracking as in \figurename~\ref{fig:spt/tracking}.
 %The spatial localisation of a particle involves accurately marking where one or many particles are within an image.
 %Humans are naturally able to do this as they have evolved to notice patterns and anomalies.
 %Programming a computer to undertake this exercise was an early feat in the field of computer vision\cite{Crocker1996}.
-Crocker~\emph{et~al.} define a particle tracking method as consisting of the following computable steps.
+Crocker~\emph{et~al.}~\cite{Crocker1996} define a particle tracking method as consisting of the following computable steps.
 %Volumetric data is considered as singular images in two dimensions.
 Each image is first
 corrected for any distortion or error from the digitation process, followed by bandpass filtering to suppress image noise. %as digitised video is inherently imperfect and may not be truly representative.
@@ -342,15 +340,15 @@ Multi-frame associations use the the additional available frames to increase the
             \centering
             \includegraphics{/spt/detection}
             \caption{
-                Detect coordinate positions (\(xy\)) of each particle at each frame (\(t\), coloured), Equation~\eqref{eq:xyt_detection}
-            }
+                Detect coordinate positions (\(xy\)) of each particle at each frame (\(t\), coloured), Matrix~\eqref{eq:xyt_detection}
+            }\label{fig:spt/detection}
     \end{subfigure}\quad
     \begin{subfigure}[t]{0.45\linewidth}
             \centering
             \includegraphics{/spt/tracking}
             \caption{
-                Track particles (\(n\), coloured) with coordinates (\(xy\)) at each frame (\(t\)), Equation~\eqref{eq:xytn_detection}
-            }
+                Track particles (\(n\), coloured) with coordinates (\(xy\)) at each frame (\(t\)), Matrix~\eqref{eq:xytn_detection}
+            }\label{fig:spt/tracking}
     \end{subfigure}
     \caption{Routine for detecting and tracking particles.}\label{fig:particle_track}
     \begin{subfigure}[t]{0.45\linewidth}
@@ -455,6 +453,7 @@ in the imaging plane axes %of the imaging plane
 results in an overall axial asymmetry in the detection \gls{PSF}, for point sources this allows axial position to be encoded in the recorded image.
 This technique was used to great effect in \gls{dSTORM} and PALM systems, which rely on the localisation of point emitters to create \gls{3D} \gls{super-resolution} volumes~\cite{huangThreeDimensionalSuperResolutionImaging2008}.
 The range over which a cylindrical lens can axially encode is, at most, \SI{\sim1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
+This range is much less than the thickness of a light-sheet which is ideal for ensuring an even illumination throughout the entire astigmatic \gls{PSF}.
 
 %Compare 2D guassian fitting ratio threatening
 %\subsection{Fitting} %Gaussian fitting
@@ -494,8 +493,8 @@ Provided the astigmatism
 calibration images vary smoothly with axial position
 , a cross-correlation for every image in the calibrated stack may not be needed.
 By using all the images in the calibration stack, the computational time increases in proportion to the number of axial images in that stack.
-The ratio of the the cross correlation of with a pair of calibration images spaced axially and equally about the focal centre of the stack will however give an estimate of particle position.
-This estimate is sufficient for real-time tracking; and provided the images of the point-emitter are recorded, a more accurate axial localisation step can be applied in post-capture analysis.
+The ratio of the cross correlation of the recorded image with a pair of calibration images spaced axially and equally about the focal centre of the stack will however give an estimate of particle position.
+This estimate is sufficient for real-time tracking~\cite{spilleDynamicThreedimensionalTracking2012}; and provided the images of the point-emitter are recorded, a more accurate axial localisation step can be applied in post-capture analysis.
 The discrete cross-correlation function is defined a follows:
 \begin{align}
 (f \star g)[n]\ \stackrel{\mathrm{def}}{=} \sum_{m=-\infty}^{\infty} f^*[m]\ g[m+n]
@@ -523,7 +522,7 @@ The intensity of the final image of a particle was attenuated as its position va
   I(x,y,z) &= I_0 {\left(\frac{w_0}{w(y)}\right)}^2 e^{\left(-2\frac{z^2}{{w(y)}^2}\right)}
 \end{align}
 
-Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation objective, \(n\) is the refractive index of glass; \(\lambda \) is the wavelength of excitation light; \(y_R\) is the Rayleigh length and \(w(y)\) is the beam waist through \(y\).
+Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation objective, \(n\) is the refractive index of the medium; \(\lambda \) is the wavelength of excitation light; \(y_R\) is the Rayleigh length and \(w(y)\) is the beam waist through \(y\).
 
 % \begin{figure}
 % 	\centering
@@ -556,7 +555,7 @@ Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation 
     \includegraphics{simulation/size_view_diffusion_3d_bigger}
     \caption{3D view}\label{fig:diffusion_3d}
   \end{subfigure}
-  \caption[Simulations of a single particle diffusing within a \gls{light-sheet}]{Simulations of a single particle diffusing within a \gls{light-sheet} with a viscosity, in a Newtonian fluid medium, with a viscosity of \SI{1.31}{\milli\pascal\second} (\SI{25}{\percent} glycerol in water~\cite{segurViscosityGlycerolIts1951}) at a temperature of \SI{25}{\kelvin}.
+  \caption[Simulations of a single particle diffusing within a \gls{light-sheet}]{Simulations of a single particle diffusing within a \gls{light-sheet}, in a Newtonian fluid medium, with a viscosity of \SI{1.31}{\milli\pascal\second} (\SI{25}{\percent} glycerol in water~\cite{segurViscosityGlycerolIts1951}) at a temperature of \SI{25}{\kelvin}.
   The particle track length (blue, from green to red) corresponds to \SI{40}{\milli\second} of real time}\label{fig:diffusion}
 \end{figure}
 
