@@ -455,7 +455,7 @@ This technique was used to great effect in \gls{dSTORM} and PALM systems, which 
 The range over which a cylindrical lens can axially encode is, at most, \SI{\sim1}{\micro\metre} before the non-linearity in the astigmatism becomes too great and the \gls{PSF} is too blurred to fit computationally.
 This range is much less than the thickness of a light-sheet which is ideal for ensuring an even illumination throughout the entire astigmatic \gls{PSF}.
 
-%Compare 2D guassian fitting ratio threatening
+%Compare 2D gaussian fitting ratio threatening
 %\subsection{Fitting} %Gaussian fitting
 \subsection{Axial localisation}
 
@@ -563,7 +563,7 @@ Where \(w_0\) is the beam waist; NA is the numerical aperture of the excitation 
 
 It was demonstrated in the computational simulations and by Savin and Doyle~\cite{savinStaticDynamicErrors2005}, that a particle moving in a real system will demonstrate a motion blur.
 In an astigmatic imaging system, the image of a particle does not vary linearly with the distance the particle has travelled axially during the image exposure period.
-A single particle moving quickly in the \(xy \) plane will appear to stretch and the localised position of the particle will be the average of the start and end position.
+A single particle moving quickly in the \(xy \) plane will appear to stretch and the localised position of the particle will be the average of the start and end position as a result of the integral of the image over all intermediate positions.
 In order to study axial localisation using motion-blurred image data acquired with an astigmatic system, the following image formation approximation was developed.
 %\subsubsection{Astigmatism}
 % This response was modelled % using a false
@@ -571,15 +571,16 @@ In order to study axial localisation using motion-blurred image data acquired wi
 % a false astigmatism %was used, %added to the simulation,
 % to emulate an approximate response of the system.
 
-A Gaussian was convolved with the single point in space, with the assumption that the depth of field of the detection objective was the same as the width of the light-sheet (\(D_{\text{objective}}=2w_0\)) and that intensity across the sheet was uniform.
+A Gaussian was convolved with the single point in space, with the assumptions that the depth of field of the detection objective was the same as the width of the light-sheet (\(D_{\text{objective}}=2w_0\)) and that intensity across the sheet was uniform.
+As previously mentioned a typical light-sheet will be larger than the range over which cylindrical lenses' astigmatism is linear but well within an order of magnitude and most standard light-sheet object pairs are chosen such that the depth of field of the imaging lens is matched to the sheet thickness.
 % the latter assumption is invalid, but a varying intensity only controls the SNR across the sheet.
-A Gaussian function being used to model a static particle is a valid assumption as Gaussian models are used in the fitting process for localisation from the pixel data.
+The assumption that a Gaussian function is a model for the image of a particle prior to any motion blurring is a valid as these same model is used during some fitting processes for particle localisation from pixel data.
 
 To simulate a particle being imaged using an astigmatic lens the
 % To astigmatically narrow the Gaussian as the particle at positions along \(z\)
 the standard Gaussian equation of:
 \begin{align}
-  f(x,y) &= e^{-\frac{x^2 + y^2}{2\sigma^2} } \label{eq:1d_astig_model}
+  f(x,y) &= e^{- \frac{x^2}{2\sigma_x^2} - \frac{y^2}{2\sigma_{y}^2} } \label{eq:1d_astig_model}
 \intertext{was modified to use a simple model of astigmatism %.}
 %\intertext{Featuring an assumed linear astigmatism where $c$ is the bias value to create a minimum width of the particle the diffraction limited spot size and $k$ is the degree of astigmatism featuring.
 %In real optical systems astigmatism is non-linear but assumed to be linear for short distances from the focal plane.}
@@ -587,17 +588,17 @@ the standard Gaussian equation of:
 by assuming that \(\sigma \) depends on \(z\) such that:}
 \sigma \rightarrow \sigma(z) &= |kz + c|
 \intertext{Where \(k\) is how quickly the Gaussian narrows, which is an analogue of using a more astigmatic imaging system.
-\(c\) describes the radius of the \gls{PSF} when there is no astigmatism, which is when the particle is in focus at \(z=0\).
-It useful to express \(k\) in terms \(a\), where \(a\) is a function of \(c\) and \(w_0\) such that the Gaussian is \(\frac{1}{a}\) narrower when at the extrma of the depth of field, \(z=w_0\).}
+\(c\) describes the radius of the \gls{PSF} when the particle is in focus at \(z=0\).
+It useful to express \(k\) in terms \(a\), such that the Gaussian is \(\frac{1}{a}\) narrower when at the extrema of the depth of field, \(z=w_0\).}
 \implies k & = \frac{a c}{w_0}
 \intertext{
 % The negative gradient relationship then holds for the orthogonal dimension to give a full \gls{3D} model:
 To scale the model to three dimensions, we assume \(k = -k\) in the \(y\) axis, forcing the astigmatic model of the \gls{PSF} to narrow in \(y\) as \(x\) broadens, and visa versa.
 }
-f(x,y,z) &= e^{-\frac{x^2}{2{(|kz+c|)}^2} +\frac{y^2}{2{(|-kz+c|)}^2} } \label{eq:2d_astig_model}
+f(x,y,z) &= e^{-\frac{x^2}{2{(|kz+c|)}^2} - \frac{y^2}{2{(|-kz+c|)}^2} } \label{eq:2d_astig_model}
 \end{align}
 \begin{align}
-\intertext{To make calculations tractable, all modelling was considered in \(xz\) as the effect of astigmatism in \(y\) is independent.
+\intertext{To make calculations tractable, all modelling was considered in \(xz\) as the effect of astigmatism in \(yz\) is mirrored and independent.
 %\intertext{
 % By normalising the Gaussian model, we simulate that an equivalent number of photons are being emitted by the particle, this allows the approximate and numerical PSFs to be compared.
 The approximate PSF is defined such that no motion blur is considered:}
@@ -605,11 +606,11 @@ The approximate PSF is defined such that no motion blur is considered:}
 {\text{PSF}}_{\text{Approximate}} &= e^{-\frac{x^2}{2 {\sigma(z)}^2}}
 \end{align}
 \begin{align}
-    \intertext{Assuming that the particle moves in the \(z\) direction, with uniform speed and uniform emission of photons en-route, integrating the approximate \gls{PSF} gives the numerical \gls{PSF} as subject to dynamic blur:}
+    \intertext{Assuming that the particle moves in the \(z\) direction from the centre of the imaging field, with uniform speed and uniform emission of photons en-route, integrating the approximate \gls{PSF} gives the numerical \gls{PSF} as subject to dynamic blur:}
    {\text{PSF}}_{\text{Numerical}} &= \frac{1}{L}\int_{0}^{L}e^{-\frac{x^2}{2 {\sigma(z)}^2}} \mathop{dz}\label{eq:psf_num_raw}\\
    \intertext{
    The integral has to be scaled by \(\frac{1}{L}\) to rescale the peak value to unity.
-   The resultant function is then by comparable with \(\text{PSF}_{\text{Approximate}}\) as shown in \figurename~\ref{fig:guassian_peak}.
+   The resultant function is then by comparable with \(\text{PSF}_{\text{Approximate}}\) as shown in \figurename~\ref{fig:gaussian_peak}.
    Evaluating~\eqref{eq:psf_num_raw} gives:
    }
    %&= \frac{{w_0} \left(\text{Ei}\left(-\frac{x^2}{2 c^2}\right)-\text{Ei}\left(-\frac{{w_0}^2 x^2}{2 c^2 ({w_0}+a L)^2}\right)\right)}{2 \sqrt{2 \pi } a c L} \\
@@ -628,7 +629,7 @@ The approximate PSF is defined such that no motion blur is considered:}
 \end{align}
 % \begin{figure}
 %   \centering
-%   \includegraphics{./mathematica/guassians}
+%   \includegraphics{./mathematica/gaussians}
 %   \caption{a) approximate versus reality PSF profile of a particle using normalised peak intensity, a weaker model for astigmatism
 %   b) Uses normalised area of the approximate and numerical PSFs for a more accurate model of astigmatism}
 %   \label{}
@@ -647,27 +648,27 @@ The approximate PSF is defined such that no motion blur is considered:}
     % \begin{subfigure}[t]{\linewidth}
         % \centering
         \includegraphics{./mathematica/guassian_peak}
-        % \caption{Normalised peak intensity}\label{fig:guassian_peak}
+        % \caption{Normalised peak intensity}\label{fig:gaussian_peak}
     % \end{subfigure}
     % \\
     % \begin{subfigure}[t]{\linewidth}
     %     \centering
-    %     \includegraphics{./mathematica/guassian_area}
+    %     \includegraphics{./mathematica/gaussian_area}
     %     \caption{Normalised total area intensity}
     % \end{subfigure}
   \caption{
   %(a)
-  Approximate versus numerical \gls{PSF} profile of a particle using normalised peak intensity.%, a weaker model for astigmatism.
+  Approximate (red) versus numerical (blue) \gls{PSF} profile of a particle using normalised peak intensity.%, a weaker model for astigmatism.
   % (b) Uses normalised area of the approximate and numerical PSFs for a more accurate model of astigmatism
-  }\label{fig:guassian_peak}
+  }\label{fig:gaussian_peak}
 \end{figure}
 
 \subsection{Area analysis}
 
-For Gaussian-like functions the total area under the curve is proportional to \(\sigma(z)\), so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of error may be obtained.
-This analysis does not work for normalised Gaussians functions as the area is unity in each case. %, as such the unnormalised model was used.
+For Gaussian-like functions the total area under the curve is proportional to \(\sigma(z)\), so by comparing the area covered by the approximate and numerical \gls{PSF}s, a valid measure of the error between the localisation of a static particle and a motion-blurred particles may be obtained.
+This analysis does not work for normalised Gaussian functions as the area is unity in each case. %, as such the unnormalised model was used.
 % Using an unnormalised function was still valid as the area was being used as a proxy for finding a measure of the width of the PSF being interrogated.
-To retrieve the areas of each modelled \gls{PSF}, they were integrated across all space:
+To retrieve the areas of each modelled \gls{PSF}, they were integrated across all \(x\):
 \begin{align}
   \int_{-\infty}^{\infty} \text{PSF}{(x,\cdots)}_{\text{Approximate}} \mathop{dx} &= \frac{\sqrt{2 \pi }}{\sqrt{\frac{1}{{\left(\frac{a c L}{w_0}+c\right)}^2}}}\\
   \int_{-\infty}^{\infty} \text{PSF}{(x,\cdots)}_{\text{Numerical}} \mathop{dx} &=\sqrt{\frac{\pi }{2}} \left(\frac{2 (a L+w_0)}{a L \sqrt{\frac{w_0^2}{c^2 {(a L+w_0)}^2}}}-\frac{2 w_0}{a \sqrt{\frac{1}{c^2}} L}+c \left(-\frac{a L}{w_0}-2\right)\right)
@@ -768,7 +769,7 @@ there is an average expected axial localisation error of \textbf{\SI{\sim25}{\pe
 \subsection{Cellular imaging}
 
 % As a proof of principle, v
-Virally infected HeLa cells were mounted on cover glass and imaged using the modified light-sheet microscope.
+Virally infected HeLa cells were mounted on cover glass and imaged using the modified light-sheet microscope, shown in \figurename~\ref{fig:three_colour_slice}.
 %\subsubsection{Mounting}
 %As seen in chapter X mounting on flat glass is difficult.
 %Cell culture requires a buffered medium, with most commercial solutions involving atmospheric control
@@ -789,7 +790,7 @@ The glass coverslips were mounted in the custom imaging chamber discussed in Cha
 	\begin{subfigure}[b]{0.7\linewidth}
     \centering
     \includegraphics[height=5cm]{/calibration/three_colour_slice}
-    \caption{Separate colour channels}\label{fig:merged_slice}
+    \caption{Separate colour channels of a single a optical slice}\label{fig:merged_slice}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.25\linewidth}
     \centering
@@ -815,6 +816,12 @@ The weakly cylindrical lens (\(f = \SI{1}{\metre}\)) was inserted in between the
 %This was found empirically to be sufficiently astigmatic by eye.
 The cylindrical lens was inserted in between the camera and the tube lens as adding the cylindrical lens in an infinity space would have amplified the astigmatic effect (to beyond usable), and disabled any tuning of the astigmatism through positioning.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{./bead_montage}
+  \caption[Image montage of the axial image series of an astigmatically aberrated bead.]{Image montage of the axial series of an astigmatically aberrated bead.}\label{fig:bead_montage}
+\end{figure}
+
 % %Placing a very long focal length cylindrical length
 %
 % ; for this system presented here, that would mean using a custom very long focal distance lens. %amplifies the effect and so a custom lens would have been needed.
@@ -832,7 +839,7 @@ For calibration of the axial particle tracking, an agarose gel of beads containi
 Moving the stage would have better emulated how a particle would appear, however, the mechanical resolution and hysteresis of the translation stage made this infeasible.
 
 To compare the quality of the calibration, %The calibrations
-the curves were fit with straight lines and their with the respective regression statistics present in Table~\ref{tab:linear_calibration}.
+the curves from \figurename~\ref{SPT_Calibration} were fit with straight lines and their respective regression statistics are present in Table~\ref{tab:linear_calibration}.
 %When fitting a linear regression %we find that
 It was shown that using cross-correlation, provides larger \(R^2\) value and hence a better fit for a linear model. %a more linear curve calibration.
 However there is a lower residual sum of squares, meaning co-variance may reduce the error in fitting.
@@ -855,6 +862,7 @@ RSS:~Residual sum of squares; \(R^2\): Coefficient of determination; RMSE:~Root 
   \end{tabular}
 \end{table}
 
+
 %TALK HERE ABOUT $R^2$ AND VARIANCE
 % %Covar:
 % SSE: 0.633
@@ -873,12 +881,12 @@ RSS:~Residual sum of squares; \(R^2\): Coefficient of determination; RMSE:~Root 
 
 It was shown that the inverted light-sheet system described in this work, is capable of axially localising particles.
 This was demonstrated experimentally using static sub-diffraction limit particles with a view to applying the same techniques to dynamic particles.
-It was also shown that dynamic particles within when tracked astigmatically are susceptible to a localisation error on the order of \SI{25}{\percent} given standard imaging and biological conditions.
+It was also shown that dynamic particles (within the depth of field of a typical imaging system a cylindrical lens) when tracked astigmatically, are susceptible to a localisation error on the order of \SI{25}{\percent} given standard imaging and biological conditions.
 This was demonstrated on a model system numerically.
 % analytically and could be used in other systems for calculations.
 
-The detection objective used in the light-sheet system was affected by significant spherical aberration.
-The spherical aberration was addressed using a bespoke tool to manually rotate the correction collar on the objective lens; this then lead to dramatic coma effects which had otherwise been masked by spherical aberration.
+The detection objective used in the light-sheet system was affected by significant spherical aberration as the correction collar was inaccessible when the lens was mounted in the system.
+The spherical aberration was addressed using a bespoke tool to manually rotate the correction collar on the objective lens; this then lead to dramatic coma effects which had otherwise been masked by spherical aberration as shown in \figurename~\ref{fig:bead_montage}.
 The latter aberration could not be corrected for which made Gaussian fitting infeasible for axial localisation.
 However, template matching techniques did still produce a viable calibration curve that could be used, with cross-correlation being the lowest mean square error
 and the more reliable estimator.
@@ -887,7 +895,7 @@ and the more reliable estimator.
 
 \section{Future work}
 
-It was also shown that a Nyquist limited cellular image could also be acquired using this system.
+It was also shown in \figurename~\ref{fig:virus_image} that a Nyquist limited cellular image could also be acquired using this system.
 By using a \ce{CO_2} free buffer, such as HEPES, HeLa could be imaged in this system for long enough to observe viral egress within a live cell.
 The next step for particle tracking would be to observe single particles diffusing in a viscous medium that acts as an analogue for the cell.
 Once both of these have been demonstrated, SPT of viral egress from a live cell may be achieved.
@@ -925,7 +933,7 @@ It is possible to align multiple calibration volumes and create an averaged or m
     \caption[Proposed method for using a neural network to estimate axial position from images.]{
     Proposed method for using a neural network to estimate axial position from images.
     (a) A schematic of a trained \gls{NN} converting a simulated image into an axial position.
-    The image is first flattened and fed into a hidden layer of 10 neurons;
+    The image is first flattened (from 2D to 1D) and fed into a hidden layer of 10 neurons;
     the weighted outputs of these neurons are fed into the next layer;
     then those outputs are weighted and fed into a final output node with the range \SIrange{0}{1}{}.
     (b), (c) and (d) are example simulated images showing astigmatism at their respective normalised axial position \(z\).
@@ -935,14 +943,15 @@ It is possible to align multiple calibration volumes and create an averaged or m
 Training a \gls{NN} could be a more robust approach.
 \gls{NN}s take multiple inputs and produce a single output based on a back propagation step which helps determine the weightings on the \emph{neurons} in the hidden layer or layers, shown in \figurename~\ref{fig:nn_astig_scheme}.
 Convolutional neural networks work in a similar fashion except that the weightings are image convolution steps; by using convolution steps the overall size of the neural network needed reduces making image recognition possible.
-By training a neural network on a given input segmented input image, with the known output of axial position, a fast and accurate machine for producing axial localisations could be utilised.
+By training a neural network on a given segmented input image, with the known output of axial position, a fast and accurate machine for producing axial localisations could be utilised.
 \gls{NN}s are also computationally inexpensive as most of the effort put in occurs during the training step.
 
-Using a \gls{NN} to predict the axial location of a bead from it's image was briefly explored for feasibility.
+Using a \gls{NN} to predict the axial location of a bead from it's image was briefly explored, for feasibility.
 Simulated data was used from the model presented in Equation~\eqref{eq:2d_astig_model}.
 The ground truth axial positions, as simulated, were then fed to the neural network which had a single output.
 3000 example images were given to help the network converge more quickly, though this may be unrealistic in a real microscope.
-\figurename~\ref{fig:nn_cont_astig} shows that the absolute error of the \gls{NN}, when compared to the ground truth, produces a normal distribution centered on \SI{0.8}{\percent} with a variance of \SI{3.7}{\percent}.
+\figurename~\ref{fig:nn_cont_astig} shows that the absolute error of the \gls{NN}, when compared to the ground truth, produces a normal distribution centered on \SI{0.8}{\percent} with a variance of \SI{3.7}{\percent} proving that the technique works.
+Moving forward, the technique will need to be compared to competing algorithms on real datasets in the style of the super-resolution fight club by Sage~\emph{et~al.}~\cite{sageSuperresolutionFightClub2019}.
 % The errors associated in this work
 
 \begin{figure}

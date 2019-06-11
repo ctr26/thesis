@@ -7905,23 +7905,5 @@ Scanned by artmisa using Canon DR2580C + flatbed option},
   pmcid = {PMC4402132}
 }
 
-@article{sageSuperresolutionFightClub2019,
-  langid = {english},
-  title = {Super-Resolution Fight Club: Assessment of {{2D}} and {{3D}} Single-Molecule Localization Microscopy Software},
-  volume = {16},
-  issn = {1548-7105},
-  url = {https://www.nature.com/articles/s41592-019-0364-4},
-  doi = {10.1038/s41592-019-0364-4},
-  shorttitle = {Super-Resolution Fight Club},
-  abstract = {This study reports results from the second community-wide single-molecule localization microscopy software challenge, which tested over 30 software packages on realistic simulated data for multiple popular 3D image acquisition modes, as well as 2D localization microscopy.},
-  number = {5},
-  journaltitle = {Nature Methods},
-  urldate = {2019-06-11},
-  date = {2019-05},
-  pages = {387},
-  author = {Sage, Daniel and Pham, Thanh-An and Babcock, Hazen and Lukes, Tomas and Pengo, Thomas and Chao, Jerry and Velmurugan, Ramraj and Herbert, Alex and Agrawal, Anurag and Colabrese, Silvia and Wheeler, Ann and Archetti, Anna and Rieger, Bernd and Ober, Raimund and Hagen, Guy M. and Sibarita, Jean-Baptiste and Ries, Jonas and Henriques, Ricardo and Unser, Michael and Holden, Seamus},
-  file = {/Users/craggles/Zotero/storage/TJKWKL2M/Sage et al_2019_Super-resolution fight club.pdf;/Users/craggles/Zotero/storage/LA9XRLG3/s41592-019-0364-4.html}
-}
-
 @preamble{ "\ifdefined\DeclarePrefChars\DeclarePrefChars{'’-}\else\fi " }
 
