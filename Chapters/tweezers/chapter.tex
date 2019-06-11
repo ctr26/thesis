@@ -40,7 +40,7 @@ Tracking the bead movement gives the dynamic material properties of the surround
 This technique was used to study the emergence of the first cohesive tissue of the \gls{zebrafish} blastula, between the “high” to “sphere” stages of development.
 
 It was found that mesenchymal blastomeres become first motile, and then adherent, to form the tissue that will go on to contribute to the first morphogenetic movement of the embryo.
-Moreover, there was a three-fold increase in both tissue elasticity and viscosity was associated with the mid-blastula transition.
+Moreover, there was a three-fold increase in both tissue elasticity and viscosity associated with the mid-blastula transition.
 This was dependent upon E-cadherin-based intercellular adhesions and Rac-1-dependent cell protrusion; abrogating either of these processes interfered with the developmental changes of the embryo.
 Interestingly, reducing Rho-kinase-dependent cell contractility increased both tissue viscosity and elasticity and increased the number of cell protrusions.
 
@@ -81,7 +81,7 @@ Finally, the costs of keeping \gls{zebrafish} are lower than that of other verte
 \begin{figure}
  \centering
  \includegraphics{Chapters/tweezers/Figs/PDF/zebrafish_stages}
- \caption[Periods of embryonal development of the \gls{zebrafish}]{
+ \caption[Periods of embryonal development of the \gls{zebrafish}]{\footnotemark{}
 Periods of embryonal development of the \gls{zebrafish}.
 The embryo develops from a single cell into a larva in three days, undergoing extensive morphological changes.
 See Table~\ref{tab:zfish_dev}.
@@ -90,6 +90,7 @@ See Table~\ref{tab:zfish_dev}.
  % See Table~\ref{tab:zfish_dev}.
  }\label{fig:zebrafish_stages}
 \end{figure}
+\footnotetext{Reproduced from \cite{kimmelStagesEmbryonicDevelopment1995}}
 
 \begin{table}
  \centering
@@ -107,7 +108,7 @@ See Table~\ref{tab:zfish_dev}.
  \SI{72}{\hour} & Early larva & The swim bladder inflates; food-seeking behaviour occurs. \\
   \bottomrule
  \end{tabular*}
- \caption{Developmental stages of \gls{zebrafish}}\label{tab:zfish_dev}
+ \caption{Developmental stages of \gls{zebrafish}~\cite{kimmelStagesEmbryonicDevelopment1995}}\label{tab:zfish_dev}
 \end{table}
 
 %Additionally, the \gls{zebrafish} is suitable for genetic studies: its genome sequence and tools for genetic manipulation are available, breeding is easy and possible from three months after fertilisation (D'Costa \& Shepherd, 2009), and the costs of keeping \gls{zebrafish} are low compared with other vertebrates (Lieschke \& Currie, 2007).
@@ -190,27 +191,27 @@ The simplest phenomenological model capable of mimicking the viscoelastic respon
 More precisely, the model assumes a parallel spring and dash‐pot~\cite{meyersMechanicalBehaviorMaterials2008} in series with a second dash‐pot, see \figurename~\ref{fig:viscoelastic_model}.
 
 The model is described by the following parameters: dynamic viscosities, \gls{eta_1_visc} and \gls{eta_2_visc}, and elastic stiffness, \gls{E_visc}.
-When a strain \(\sigma \) is applied, the spherical rigid object, in this case a magnetic bead made of superparamagnetic nanoparticles embedded into a polyester matrix, moves and the displacement is quantified by the strain \(\epsilon \).
+When a stress \(\sigma \) is applied, the spherical rigid object, in this case a magnetic bead made of superparamagnetic nanoparticles embedded into a polyester matrix, moves and the displacement is quantified by the strain \(\epsilon \).
 The same parameter is used to evaluate the recovery phase, when \(\epsilon = 0\).
 The experimental protocol used here consists of two phases: the creep phase, where from equilibrium the state at \(t=0\) an instantaneous and constant force is applied on the bead and kept for a given time, \(t_1 \) (\SI{60}{\second}); and the recovery phase where the force is removed at \(t_1\) where the bead displacement is monitored for a suitable time period (\SI{120}{\second}).
 To model the equations of motion the a linear spring is described by:
 %to derive the model's equations, we recall the viscoelasticity’s fundamental equations. A linear spring is described by:
 
-\begin{align}
- \epsilon &= \frac{1}{\gls{E_visc}} \sigma \label{eq:linearspring}
+\begin{gather}
+ \epsilon = \frac{1}{\gls{E_visc}} \sigma \footnote{See Appendix \ref{appendix:tweezertheory} for proof} \label{eq:linearspring}
  \intertext{while a dash-pot obeys:}
- \dot{\epsilon} &= \frac{1}{\eta}\sigma
+ \dot{\epsilon} = \frac{1}{\eta}\sigma
  \intertext{The equation for a spring and a dash-pot connected in parallel follows as:}
- \sigma = \sigma_E + \sigma_{\eta_{2}} &= E \epsilon_p + \eta_{2} \dot{\epsilon_p}\\
- \ln\left(\frac{\sigma}{\eta_{2}}-\frac{E}{\eta_2} \epsilon_p \right) &= -\frac{E}{\eta_{2}}t+\ln C_1
+ \sigma = \sigma_E + \sigma_{\eta_{2}} = E \epsilon_p + \eta_{2} \dot{\epsilon_p}\\
+ \ln\left(\frac{\sigma}{\eta_{2}}-\frac{E}{\eta_2} \epsilon_p \right) = -\frac{E}{\eta_{2}}t+\ln C_1
  \intertext{Setting the initial conditions of \(\epsilon_p = 0\) at \(t = 0\):}
- \epsilon_p &= \frac{\sigma}{E}\left(1-\exp\left(-\frac{E}{\eta_2}t\right)\right)
+ \epsilon_p = \frac{\sigma}{E}\left(1-\exp\left(-\frac{E}{\eta_2}t\right)\right)
  \intertext{The temporal variation of the dash-pot is ruled by:}
- \sigma = \eta_1 \dot{\epsilon_s} &\implies \epsilon_s = \frac{\sigma}{\eta_1}t
- \intertext{Knowing that \(\epsilon = \epsilon_s + \epsilon_p\), the strain variance is therefore:}
- \epsilon &= \frac{\sigma}{\eta_1}t + \frac{\sigma}{E}\left(1-\exp\left(-\frac{E}{\eta_2}t\right)\right)
-\end{align}
-\begin{align}
+ \sigma = \eta_1 \dot{\epsilon_s} \implies \epsilon_s = \frac{\sigma}{\eta_1}t
+ \intertext{Knowing that \(\epsilon = \epsilon_s + \epsilon_p\), the strain is therefore:}
+ \epsilon = \frac{\sigma}{\eta_1}t + \frac{\sigma}{E}\left(1-\exp\left(-\frac{E}{\eta_2}t\right)\right)
+% \end{gather}
+% \begin{gather}
  \intertext{During the second phase, which starts at \(t_1\), the force is no longer applied %\(\sigma = 0\)
  and the total strain is given by the
  previous displacement of \(\eta_1\) dash‐pot blocked at \(t = t_1\), and the relaxation of the Kelvin‐Voigt model which is described by:}
@@ -227,39 +228,8 @@ To model the equations of motion the a linear spring is described by:
  \frac{\sigma}{\eta_1}t_1 + \frac{\sigma}{E}\left(\exp\left( \frac{t_1}{\tau_2}\right)-1\right)\exp\left(-\frac{t}{\tau_2} \right) &\text{for } t\leq t_1
  \end{cases} \label{eq:modelfitting}
  \intertext{ where \(\tau_2 = \frac{\eta_2}{E}\) } \nonumber
-\end{align}
+\end{gather}
 
-%The parameters from \eqref{eq:modelfitting} need to be reviewed and amended if one intends to link them to experimental data as one applies a known force and looks at the displacement of the bead from its initial position and not to stress and strain.
-
-A bead moving through a viscous fluid can be described by Stokes' law \(F = 6 \pi \eta' r \nu \), where \(r\) is the radius of the bead and \(\nu \) is the critical velocity of the bead.
-Stokes' law may be written as:
-
-\begin{align}
- F &= 6 \pi \eta' r \frac{dx}{dt} \\
- \implies \frac{F}{\pi r^2} &= 6 \eta' \frac{d}{dt}\frac{x}{r} \\
- \implies \sigma &= 6 \eta' \frac{\epsilon}{dt}
- \intertext{Giving the equation of a dash-pot}
- \dot{\epsilon} = \frac{\sigma}{\eta}
-\end{align}
-
-To model the elastic spring, the elastic response of the tissue due to the bead displacement is approximated by the Thomson's solution of a point force in an infinite isotropic medium~\cite{l.d.landaue.m.lifshitzTheoryElasticity1970}.
-The displacement (\(\mathbf{u}\)) in cylindrical coordinates (\((p,z)\)) for a point force (\(F_z\)) located at the origin and directed along the (\(z\)) axis is given by:
-
-\begin{align}
- \mathbf{u} = \frac{F_z}{4 \pi \mu r }\left[ \frac{pz}{4(1-v)r^2} \mathbf{\hat{p}}+\left(1- \frac{p^2}{4(1-v)r^2}\right)\mathbf{\hat{z}}\right]\label{eq:thomsons}
-\end{align}
-
-Where \(\mathbf{\hat{p}}\) and \(\mathbf{\hat{z}}\) are unit vectors, \(\mu \) is the shear modulus (deformation at constant volume) and \(\nu \) is Poisson's ratio (a negative ratio of transverse to axial strain of a specimen, under an axial force).
-As only forces in the \(\mathbf{\hat{z}}\) direction are being considering, Equation~\eqref{eq:thomsons} becomes:
-
-\begin{align}
- u_z &= \frac{F_z}{4 \pi \mu r }\left[\left(1- \frac{p^2}{4(1-v)r^2}\right)\right]
- \intertext{Evaluating the displacement only on the \(z\) axis where \(p=0\), reduces this to:}
- \nabla z &= \frac{F_z}{4\pi \mu r}
- \intertext{In the close proximity to the bead of radius \(r_{\text{bead}} \), the displacement is given by:}
- \frac{\nabla z}{r_{\text{bead}}} = \frac{1}{4 \mu} \frac{F_z}{\pi r_{\text{bead}}^2} & \implies \epsilon = \frac{1}{4\mu} \sigma
-\end{align}
-Which is equivalent to~\eqref{eq:linearspring} when substituting \(E \) with \(4\mu \).
 
 \subsection{Magnetic tweezer design}
 

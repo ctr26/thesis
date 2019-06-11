@@ -267,3 +267,37 @@ The correlation of two signals is not an absolute error which can be used to mak
 When $L\to0$ this result of $\text{FWHM}_\text{Error}$ can be below zero, which would suggest that the result is not an accurate measure of the true error.
 This is likely due to the process requiring a series expansion, at $x=0$; as the series expansion is only an approximation of the target function.
 Since attaining error from the FWHM fails for small values of $L$ an analysis using area was considered.
+
+\section{Magnetic tweezer alternate proof}\label{appendix:tweezertheory}
+
+%The parameters from \eqref{eq:modelfitting} need to be reviewed and amended if one intends to link them to experimental data as one applies a known force and looks at the displacement of the bead from its initial position and not to stress and strain.
+
+A bead moving through a viscous fluid can be described by Stokes' law \(F = 6 \pi \eta' r \nu \), where \(r\) is the radius of the bead and \(\nu \) is the critical velocity of the bead.
+Stokes' law may be written as:
+
+\begin{align}
+ F &= 6 \pi \eta' r \frac{dx}{dt} \\
+ \implies \frac{F}{\pi r^2} &= 6 \eta' \frac{d}{dt}\frac{x}{r} \\
+ \implies \sigma &= 6 \eta' \frac{\epsilon}{dt}
+ \intertext{Giving the equation of a dash-pot}
+ \dot{\epsilon} = \frac{\sigma}{\eta}
+\end{align}
+
+To model the elastic spring, the elastic response of the tissue due to the bead displacement is approximated by the Thomson's solution of a point force in an infinite isotropic medium~\cite{l.d.landaue.m.lifshitzTheoryElasticity1970}.
+The displacement (\(\mathbf{u}\)) in cylindrical coordinates (\((p,z)\)) for a point force (\(F_z\)) located at the origin and directed along the (\(z\)) axis is given by:
+
+\begin{align}
+ \mathbf{u} = \frac{F_z}{4 \pi \mu r }\left[ \frac{pz}{4(1-v)r^2} \mathbf{\hat{p}}+\left(1- \frac{p^2}{4(1-v)r^2}\right)\mathbf{\hat{z}}\right]\label{eq:thomsons}
+\end{align}
+
+Where \(\mathbf{\hat{p}}\) and \(\mathbf{\hat{z}}\) are unit vectors, \(\mu \) is the shear modulus (deformation at constant volume) and \(\nu \) is Poisson's ratio (a negative ratio of transverse to axial strain of a specimen, under an axial force).
+As only forces in the \(\mathbf{\hat{z}}\) direction are being considering, Equation~\eqref{eq:thomsons} becomes:
+
+\begin{align}
+ u_z &= \frac{F_z}{4 \pi \mu r }\left[\left(1- \frac{p^2}{4(1-v)r^2}\right)\right]
+ \intertext{Evaluating the displacement only on the \(z\) axis where \(p=0\), reduces this to:}
+ \nabla z &= \frac{F_z}{4\pi \mu r}
+ \intertext{In the close proximity to the bead of radius \(r_{\text{bead}} \), the displacement is given by:}
+ \frac{\nabla z}{r_{\text{bead}}} = \frac{1}{4 \mu} \frac{F_z}{\pi r_{\text{bead}}^2} & \implies \epsilon = \frac{1}{4\mu} \sigma
+\end{align}
+Which is equivalent to~\eqref{eq:linearspring} when substituting \(E \) with \(4\mu \).
