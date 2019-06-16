@@ -42,3 +42,13 @@ thesis.run.xml*
 *.aux
 images_only.pdf
 thesis copy.pdf
+thesis.acn
+thesis.acr
+thesis.alg
+thesis.glg
+thesis.gls
+thesis.pdf
+thesis.slg
+thesis.slo
+thesis.sls
+thesis.xdy
