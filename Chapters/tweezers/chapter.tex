@@ -215,7 +215,7 @@ To model the equations of motion the a linear spring is described by:
  \intertext{During the second phase, which starts at \(t_1\), the force is no longer applied %\(\sigma = 0\)
  and the total strain is given by the
  previous displacement of \(\eta_1\) dash‐pot blocked at \(t = t_1\), and the relaxation of the Kelvin‐Voigt model which is described by:}
- E \epsilon_p + \eta_2 \dot{\epsilon_p} = 0 \implies \epsilon_p = C_2 \exp\left(-\frac{E}{\eta_2}t\right)
+ E \epsilon_p + \eta_2 \dot{\epsilon_p} = 0 \implies \epsilon_p = C_2 \exp\left(-\frac{E}{\eta_2}(t-t_1)\right)
  \intertext{From the continuity of strain and \(t = t_1\), \(C_2\) becomes:}
  \frac{\sigma}{\eta_1}t + \frac{\sigma}{E}\left(1-\exp\left(-\frac{E}{\eta_2}t_1\right)\right) = C_2 \exp\left(-\frac{E}{\eta_2}t\right)\\
  C_2 = \frac{\sigma}{E}\left(\exp\left( \frac{E}{\eta_2}t_1\right)-1\right)
@@ -225,7 +225,7 @@ To model the equations of motion the a linear spring is described by:
  \epsilon =
  \begin{cases}
  \frac{\sigma}{\eta_1}t + \frac{\sigma}{E}\left(1-\exp(-\frac{t}{\tau_2})\right) &\text{for } t\geq t_1\\
- \frac{\sigma}{\eta_1}t_1 + \frac{\sigma}{E}\left(\exp\left( \frac{t_1}{\tau_2}\right)-1\right)\exp\left(-\frac{t}{\tau_2} \right) &\text{for } t\leq t_1
+ \frac{\sigma}{\eta_1}t_1 + \frac{\sigma}{E}\left(\exp\left( \frac{t_1}{\tau_2}\right)-1\right)\exp\left(-\frac{t}{\tau_2} \right) &\text{for } (t-t_1)\leq t_1
  \end{cases} \label{eq:modelfitting}
  \intertext{ where \(\tau_2 = \frac{\eta_2}{E}\) } \nonumber
 \end{gather}
@@ -233,24 +233,25 @@ To model the equations of motion the a linear spring is described by:
 
 \subsection{Magnetic tweezer design}
 
-In the magnetic tweezer systems a square loop of iron was used to carry magnetic flux from four solenoids to four embedded magnetic tips.
+In the magnetic tweezers system a square loop of iron was used to carry magnetic flux from four solenoids to four embedded magnetic tips.
 The lower magnetic tips were mounted azimuthally at \SI{30}{\degree}, allowing for the very large \SI{1.1}{\text{NA}}, long working distance, Nikon, objective lens to image the magnetic centre of the magnetic poles.
 However, this allowance for the large objective lens by re-orientating the tweezer poles reduces the the maximum magnetic field strength by \SI{10}{\percent}.
-Orienting the poles at the optimal angle to the azimuth (\SI{45}{\degree}) would provide \SI{2.33}{\tesla} from COMSOl simulations.
+Orienting the poles at the optimal angle to the azimuth (\SI{45}{\degree}) would provide \SI{2.33}{\tesla} from COMSOL simulations.
 
 \begin{figure}
  \centering
  \begin{subfigure}[t]{0.45\linewidth}
   \centering
-  \includegraphics[width=\linewidth]{tweezer_spim_render_shooped}
+  \includegraphics[width=\linewidth]{tweezer_spim_render_shooped.pdf}
   \caption{\Gls{light-sheet} objective lens placed within the magnetic tweezer chamber.}
  \end{subfigure}\quad
  \begin{subfigure}[t]{0.45\linewidth}
   \centering
-  \includegraphics[width=\linewidth]{tweezer_spim_render_side}
+  \includegraphics[width=\linewidth]{tweezer_spim_render_side.pdf}
   \caption{Side view with magnetic centre of tweezers at the double focus of the illumination and imaging objective lenses.}
  \end{subfigure}
- \caption{CAD designs of the magnetic tweezer housing coupled to the light-sheet objective lenses.}\label{fig:tweezer_spim}
+ \caption{CAD design of the magnetic tweezer housing coupled to the light-sheet objective lenses.
+ Orange denotes magnetic flux through the square iron core which in-turn feeds magnetic flux until the magnetic tweezers.}\label{fig:tweezer_spim}
 \end{figure}
 %\subsubsection{Mechanics}
 % Fitting objectives in
