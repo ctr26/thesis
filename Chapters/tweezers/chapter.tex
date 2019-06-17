@@ -285,7 +285,7 @@ Once the tweezer system was fixed to the light-sheet system, the automated stage
 The tweezer positioning was coarse-positioned by eye using the automated stage, followed by fine correction utilising the bright-field imaging built into the sample chamber.
 
 % 3D magnetic field gradient is shaped by a combination of currents to obtain forces of range of .
-% Force calibration was realised by analysing the velocities of a diameter paramagnetic bead in known viscosity silicone oil at different combination of intensities of currents.
+% Force calibration was realised by analysing the velocities of a diameter paramagnetic bead in known viscosity silicone oil at different combination of iythntensities of currents.
 % The coordinate systems of the Magnetic tweezers and the light-sheet system were required to be aligned due to the non-linear decline of force of the magnetic field away from the magnetic centre.
 % This was achieved by defining an origin within the tweezer system itself, where force in every direction was maximal.
 % This point was then recorded by carefully inserting a fiducial magnetic bead attached to an arm and positioned using micrometer screws.
@@ -338,6 +338,7 @@ The percentage bend correlation method was used for correlation between cell and
 To perform a model fitting, as derived in Equation~\eqref{eq:modelfitting}, the magnetic bead was tracked algorithmically.
 Each volume was \SI{2048 x 2048 x 100}{}~\text{voxels}, with each volume acquisition taking \SI{5}{\second}.
 Each push-pull experiment produced 42 volumetric spatial coordinates in time (\(x,y,z,t)\), hence the entire data set to be analysed was \SI{172}{\giga\byte}.
+A single colour channel was used for both cellular fluorescence and the bead for two reasons, firstly this doubled the potential temporal resolution and therefore halved the overall photon dose to the embryo; secondly the bead was exceptionally bright in it's own channel, much more so than the embryo) and so we relied on spectral bleed-through on the dichroic mirror which reduced the fluorescence intensity to a signal comparable with the cells.
 Two methods of bead tracking were explored, slice-wise Hough transform analysis and template matching.
 %
 % To perform a model fitting as derived in \eqref{eq:modelfitting} the magnetic bead needed to be tracked algorithmically.
@@ -494,9 +495,9 @@ And so, imaging the membranes exclusively provided sufficient information to elu
 Even though it has been speculated that morphogenetic change must depend upon changes in the physical properties of tissues, there is little direct evidence to support this idea.
 This study intended to verify whether the changes that are observed in cell movements and protrusive activity during the high- to sphere-stage transition, were accompanied by a modulation of physical properties of the blastoderm.
 To address this question, magnetic tweezers were used to apply a direct a known force to a \SI{40}{\micro\meter} diameter superparamagnetic bead implanted into the blastoderm~\cite{fisherThreedimensionalForceMicroscope2005}. %, and push-pull experiments were performed to extract viscoelastic properties of the developing \gls{zebrafish}.
-Beads were implanted in blastula-stage embryos and the cells surrounding them were imaged for up to 8 hours.
-No changes were detected in local cell arrangement, actin-cytoskeleton organisation or myosin localisation around the beads.
-Embryos containing a bead developed unperturbed by its presence.
+% Beads were implanted in blastula-stage embryos and the cells surrounding them were imaged for up to 8 hours.
+% No changes were detected in local cell arrangement, actin-cytoskeleton organisation or myosin localisation around the beads.
+% Embryos containing a bead developed unperturbed by its presence.
 
 % Even though it has been speculated that morphogenetic change must depend upon changes in the physical properties of tissues, there is little direct evidence to support this idea.
 % We wish to ask if the changes that we see in cell movements and protrusive activity during the high- to sphere-stage transformation are accompanied by a modulation of physical properties of the blastoderm.
@@ -510,7 +511,7 @@ Beads were implanted in blastula-stage embryos and the cells surrounding them we
 No changes in local cell arrangement, actin cytoskeleton organisation or myosin localisation around the beads were detected.
 Embryos containing a bead developed unperturbed by its presence.
 The physical properties of the tissue were measured by applying a calibrated, constant force (in the order of \SI{8}{\milli\newton}) for \SI{1}{\minute} and tracking the displacement of the bead during, and after, force application.
-Force was directed alternately radially towards or away from the yolk at \SI{3}{\minute} min intervals.
+Force was directed alternately radially towards or away from the yolk at \SI{3}{\minute} intervals.
 Bead trajectories revealed that embryonic tissue acts as a viscoelastic medium.
 Trajectories invariably showed an initial fast displacement followed by a slower, linear displacement, or \emph{creep}, see \figurename~\ref{fig:combined_displacement}.
 Upon release, the bead recoiled rapidly towards its original position in a reversal of the initial fast displacement.
@@ -544,7 +545,7 @@ and \gls{eta_2_visc} 2.5 fold
 over a development time of \SI{75}{\minute}.
 No significant differences were found between the two directions of force application
 (\(p_E > 0.05\), \(p_{\eta_1} > 0.05\), \(p_{\eta_2} > 0.05\)).
-This trend was seen irrespective of the starting developmental age of the embryo, which may suggest work hardening of the \gls{zebrafish}. %TODO Colin dont like
+% This trend was seen irrespective of the starting developmental age of the embryo, which may suggest work hardening of the \gls{zebrafish}. %TODO Colin dont like %TODO swoger dnt like
 A characteristic time constant of the elastic deformation, \gls{tau_visc}, can be derived from the ratio of \gls{eta_2_visc} to \gls{E_visc}.
 Despite large changes in both \gls{eta_2_visc} and \gls{E_visc}, \gls{tau_visc} remained largely constant over the developmental time (mean = \SI{5.33}{\second}).
 This suggests that this tissue may contain a mechanism of self-regulation of \gls{tau_visc}, or that both \gls{E_visc} and \gls{eta_2_visc} are determined by a common feature.
@@ -587,7 +588,8 @@ This suggests that this tissue may contain a mechanism of self-regulation of \gl
 % mean = \SI{5.33}{\second}).
 % This suggests that this tissue may contain a mechanism of self-regulation of \(\tau\) or that both E and \(\eta_2\) are determined by a common feature.
 %%
-The proposed mechanical models provide a good explanation for the trajectory of the bead during the active force application and the initial recoil period. However, bead movements in the later recovery period were more erratic and were not accounted for by the model.
+The proposed mechanical models provide a good explanation for the trajectory of the bead during the active force application and the initial recoil (\(R^2 = \SI{0.94(5)}\)). %TODO R^2
+However, bead movements in the later recovery period were more erratic and were not accounted for by the model.
 Potentially, these deviations may have resulted from additional processes, such as active cell movements.
 The fitted mechanical model implies that the tissue can be described by two mechanical elements, namely, a soft viscoelastic component and a purely viscous component.
 A simple hypothesis would be that the viscoelastic component derives from the mechanics of individual cells, whereas the viscosity component is a measure of cell-cell interaction.
@@ -641,6 +643,7 @@ secondly, these measurements were repeated in embryos in which there had been a 
     \includegraphics{Chapters/tweezers/Figs/PDF/Tissue_-_Time}
     \caption{Change of tissue viscosity \gls{eta_2_visc} over time}\label{fig:tissue_time}
    \end{subfigure}\hfill
+   \caption{p.t.o}
 \end{figure}
 \begin{figure}
   \ContinuedFloat{}
@@ -651,7 +654,7 @@ secondly, these measurements were repeated in embryos in which there had been a 
   \end{subfigure}\hfill
   \caption[Genetic knockdowns have consequences on the developmental evolution of rheological parameters in \gls{zebrafish}]{
 Genetic knockdowns have consequences on the developmental evolution of rheological parameters in \gls{zebrafish}, viscosity coefficients, \gls{eta_1_visc} (a\ref{fig:cells_time}) and \gls{eta_2_visc} (\subref{fig:cells_time}), and elastic modulus, \gls{E_visc} (\ref{fig:stiffness_time}), are decreased in MoECad (n=151 pulls, 9 embryos), and \gls{DNRAC} (n=158 pulls, 9 embryos) genotypes, while they are increased in the \gls{DNROCK} (n=107 pulls, 9 embryos) genotype compared to \gls{WT} (n=178 pulls, 9 embryos).
-Not experiments are shown to terminate together as some specimens did not survive the full \SI{2}{\hour} course of the experiment.
+Note, experiments are shown to not terminate together as some specimens did not survive the full \SI{2}{\hour} course of the experiment.
  %
  % These knock downs have consequences on the developmental evolution of rheological parameters, viscosity coefficients \gls{eta_1_visc} \ref{fig:cells_time} and \gls{eta_2_visc} (\ref{fig:tissue_time}), and, elastic modulus \gls{E_visc} (\ref{fig:stiffness_time}):
  % they are decreased in MoECad (n=151 pulls, 9 embryos), and \gls{DNRAC} (n=158 pulls, 9 embryos) while they are increased in \gls{DNROCK} (n=107 pulls, 9 embryos) compared to \gls{WT} (n=178 pulls, 9 embryos).
@@ -681,7 +684,7 @@ Cell shape changes and cell displacements were measured along the axis of force 
 Four sectors were defined around the bead relative to this axis (\figurename~\ref{fig:cell_tracking}a); here, only the front and rear sectors were considered.
 In front of the bead, during the elastic period, cells were both compressed and displaced forward by its movement (\figurename~\ref{fig:cell_tracking}c-d).
 This tendency of cells to deform diminished over development time (\figurename~\ref{fig:cell_tracking}f, \(p_\text{linear-regression} = 0.016\)). %ROX r^2
-In fact, cell shape strain rates were highly correlated with, and largely account for, tissue deformation strain rate (\figurename~\ref{fig:cell_tracking}f,	\(p\text{correlation} = 0.0001757\), \(R^2 = 0.743\)).
+In fact, cell shape (measured as an assumed eclipse with the ratio of the two axes being the shape strain metric) strain rates were highly correlated with, and largely account for, tissue deformation strain rate (\figurename~\ref{fig:cell_tracking}f,	\(p\text{correlation} = 0.0001757\), \(R^2 = 0.743\)).
 The cell shape strain rate coefficient correlated with \gls{E_visc} (\figurename~\ref{fig:cell_tracking}i, \(p_\text{correlation} = 0.0449\), \(R^2 = 0.453\)).
 Behind the bead, we observed a complementary pattern of cell and tissue stretching (\(p_\text{correlation} = 0.0748\), \(R^2 = 0.473\)) at all except the earliest developmental stages.
 Incomplete cell adhesions, which in turn created holes in the tissue when the bead moved with excess force, may be the cause of this effect.
@@ -721,7 +724,7 @@ In conclusion, the cellular signature of the elastic periods were largely accoun
  In (a) the labels 1, 2 and 3 follow respective cells over time.
  The yellow dot in the \gls{LSFM} images marks the original position  of the bead centre.
  (c)~-~(d): Analysis of the coefficient of deformations \(C_t\) and \(C_C\) showed that tissue (c) and cells (d) were compressed at the front  of the bead while they were stretched at the rear during bead  pulling (n = 14 pulls, 3 embryos).
- (e)~-~(h): Analysis of cell area  and cell aspect ratio revealed that cells disappear from the imaging plane, suggesting that cells at the front rearranged in 3D, while at the rear, cells were stretched (e).
+ (e)~-~(h): Analysis of cell area  and cell aspect ratio revealed that cells disappear from the plane of interest, suggesting that cells at the front rearranged in 3D, while at the rear, cells were stretched (e).
  Along developmental time, tissue deformation (\(C_t\)), cell deformation \(C_C\) and cell intercalation (\(C_t\)-\(C_s\) during elastic phase (in \SI{}{\micro\metre\squared\per\minute})), at the front of the bead, show that tissue compression could be accounted for mainly by cell shape changes (f), while, during creep phase, strain rates showed that this accountancy is lost, suggesting cell rearrangement is a major event (g).
  When the force was released, cells at the front relaxed to their original shape (h).
 %  p.t.o.}
@@ -745,7 +748,8 @@ Lines represent linear regressions.
 \end{figure}
 \footnotetext{Figure currently being prepared for publication, reproduced with permission from Dr.~Julien Dumortier}
 To investigate how tissue deforms during the creep phase, which is defined by \gls{eta_1_visc} in the mechanical model, the behaviour of cells in the tissue at the front and rear of the bead were visually inspected.
-Cells became more compressed and moved out of the imaging plane (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}a-b).
+Only a single plane of interest was considered (the plane of the bead) for the image analysis, which made the analysis more tractable as the software routines that were used often failed to segment cells sensibly and required significantly more computing time for the full \gls{3D} analysis.
+Cells became more compressed and moved out of the plane of interest (decreasing in area) in front of the bead and, conversely, cells became stretched and entered  the plane at the rear (\figurename~\ref{fig:cell_tracking}a-b).
 This behaviour may be quantified by comparing changes in cell aspect ratio and area through both the elastic and creep periods (\figurename~\ref{fig:cell_tracking}e).
 Early cell shape changes gave way to area changes during the creep period; this may be interpreted as the result of cells rearranging in the tissue in front of and behind the bead.
 
@@ -779,7 +783,7 @@ The results of analysing movement during bead displacement were consistent with 
 To study how changes in these parameters affect embryo development, and the mechanical properties of the blastoderm, we employed a genetically altered line of zebrafish deficient in E-Cadherin (CDH1) expression.
 E-Cadherin is an essential transmembrane protein which mediates cellular adhesion, a fundamental requirement for building a cohesive tissue.
 To achieve this, we employed a knockdown Morpholino approach (MoECad)~\cite{babbEcadherinRegulatesCell2004} for cell adhesion, which lead to defects in the high-to-sphere transformation;
-these embryos failed to achieve a spherical shape (\figurename~\ref{fig:cell_tracking}a).
+these embryos failed to achieve a spherical shape. %(\figurename~\ref{fig:cell_tracking}a).
 Rheological measurements showed that MoECad-treated embryos remained less stiff and less viscous than their wildtype counterparts.
 Furthermore, they were reduced in their ability to elevate these properties over developmental time (\figurename~\ref{fig:visco_time}), resulting in developmental trends that were significantly different to the \gls{WT} genotype.
 Cell migration and cell protrusive activity are two important cell behaviours in the blastoderm.
@@ -805,7 +809,7 @@ The resultant parameters segregated according to their mechanical properties: so
 Cells in the stiffer \gls{DNROCK}-injected embryos deformed less in the elastic period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0017\)) and exhibited fewer cell rearrangements in the creep period (\(p\text{\gls{WT}-\gls{DNROCK}} = 0.0013\)) (\figurename~\ref{fig:cell_tracking}j).
 These results confirm that the previously-observed correlations between cellular and rheological parameters hold true under this expanded range;
 stiffness, \gls{E_visc}, is strongly correlated with initial cell shape deformation, while \gls{eta_1_visc} is strongly correlated with cell rearrangements.
-This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology.
+This suggests that there may be a relatively simple cellular interpretation of the physical model measured using magnetic bead rheology. %TODO FIGURE 4J
 
 % The results of analysing %cell shape changes and
 % movement during bead displacement are consistent with our simple hypothesis of a two-component model.
@@ -897,6 +901,7 @@ Tissue stiffness and viscosity are well-correlated with the number of protrusion
 These findings highlight a potentially fundamental difference in the determination of mechanical properties between epithelial and mesenchymal tissues.
 Epithelial cells represent relatively static configurations, based upon adhesion and contraction, while mesenchymal cells are adhesive and stiff, but dependent upon dynamic protrusion-based motility.
 The stiffening blastula, composed of radially anisotropic cells, is thus poised to drive blastula thinning and yolk bulging in the next morphogenetic movement of the zebrafish embryo.
+\figurename~\ref{interconnected_protein_signalling} depicts the connection of protein signalling interactions with environmental effects.
 
 % The study presented here has demonstrated that, for the first time, a direct link between cell behaviours and embryo morphogenesis arising from changing mechanical properties.
 % By applying a directed local force to a developing embryo through an embedded magnetic bead, local and ensemble mechanical properties of tissue were characterised.
