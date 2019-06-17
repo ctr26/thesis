@@ -37,7 +37,7 @@ When comparing the 3~point and 4~point correction it was found that there was an
 %Flopt
 \section{Frame localisation optical projection tomography}
 Chapter~\ref{chapter:flopt} then used the mathematics presented in Chapter~\ref{chapter:homography} to address the related issue of computer-tomography reconstructions in systems prone to mechanical error; in this case for optical projection tomography.
-The ubiquitous Radon transform is typically used to reconstruct projected data sets but take no account of motions beyond rotation about the axis normal to the plane projected.
+The ubiquitous Radon transform is typically used to reconstruct projected data sets but takes no account of motions beyond rotation about the axis normal to the plane projected.
 This assumption is valid for stable systems, but leads to reconstruction error for systems with limited available angles as well as systems with mechanical jitter and systematic drift.
 Provided there are 5 or more fiducial markers common to each adjacent image pair from an \gls{OPT} image set, each point can be triangulated and the resultant rotation and translation matrices between each image pair can be computed.
 Each image from the set can then be computational back-projected and aligned using the recovered matrices.
@@ -46,7 +46,7 @@ The resultant volume is then filtered to provide a faithful reconstruction of th
 %DUAL SLIT
 \section{Confocal \gls{slit-scanning} microscopy}
 The illumination and imaging volume registration was also critical for Chapter~\ref{chapter:dualslit} where synchronisation of the rolling shutter on the camera and the sweeping of the beam had to be well matched.
-By synchronising the rolling shutter and the beam sweeping images can be recorded with better optical sectioning and higher contrast as out-of-focus light is rejected by the virtual pinhole in the direction of the rolling shutter.
+By synchronising the rolling shutter and the beam sweeping images can be recorded with better optical sectioning and higher contrast as out-of-focus light is rejected by the virtual slit in the direction of the rolling shutter.
 This was implemented on the light-sheet microscope and it was found that
 % was characterised to show
 the maximal \gls{SNR} was when the shutter width and the beam waist were comparable in size.
@@ -67,7 +67,7 @@ The key original element of the chamber was the use a shelf for sample mounting.
 This allowed for the mounting of flat glass coverslips, which are viable for use in common cell and organism mounting procedures.
 It also allowed for the use of a large opening angle detection objective lens mounted at \SI{45}{\degree} in conjunction with a high NA illumination objective lens.
 Enabling the use of these two objectives allowed for the imaging of organisms as well as sub-cellular activities in cell culture.
-The chamber includes addition design features including: chamfered edges in the medium containing section to act as hard stops if protecting the objective lenses and minimise the use of media; a positioning camera and window with a coupled infrared and white light source for transmitted light imaging; a side window for positioning samples by eye; a drip-tray for instrument protection safety against spillages; a module for inserting heating elements, and magnets to be used for securing samples; and cleared through-holes for bolting the chamber to a metric breadboard.
+The chamber includes addition design features including: chamfered edges in the medium containing section to act as hard stops, protecting the objective lenses and minimise the use of media; a positioning camera and window with a coupled infrared and white light source for transmitted light imaging; a side window for positioning samples by eye; a drip-tray for instrument protection safety against spillages; a module for inserting heating elements, and magnets to be used for securing samples; and cleared through-holes for bolting the chamber to a metric breadboard.
 
 \section{Particle tracking for viral egress} %\ref{sec:motivation/spt}
 Full, three-dimensional, sub-diffraction limited particle tracking, in live cells, was needed; as motivated in Section~\ref{sec:motivation/spt}.
